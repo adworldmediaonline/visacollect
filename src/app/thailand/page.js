@@ -1,3 +1,3 @@
 export default function ThailandHome() {
-  return <div>Thailand Home</div>;
+  return <div className="">Thailand Home</div>;
 }
