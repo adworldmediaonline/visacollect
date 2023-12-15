@@ -52,7 +52,7 @@ export default function Page() {
                 </div>
                 <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                     <h2 className="py-1 text-sm font-semibold text-secondary">
-                        Emergency contact's email
+                        Emergency contact&apos;s email
                     </h2>
                     <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
                         text
@@ -60,7 +60,7 @@ export default function Page() {
                 </div>
                 <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                     <h2 className="py-1 text-sm font-semibold text-secondary">
-                        Emergency contact's full name
+                        Emergency contact&apos;s full name
                     </h2>
                     <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
                         text
@@ -68,7 +68,7 @@ export default function Page() {
                 </div>
                 <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                     <h2 className="py-1 text-sm font-semibold text-secondary">
-                        Emergency contact's country code and phone number
+                        Emergency contact&apos;s country code and phone number
                     </h2>
                     <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
                         text

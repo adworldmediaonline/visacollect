@@ -123,7 +123,7 @@ export default function Page() {
 
                                 <div className="main-form-section">
                                     <div className="label-section">
-                                        <label className="">Emergency contact's email</label>
+                                        <label className="">Emergency contact&apos;s email</label>
                                     </div>
                                     <div className="order-2 col-span-9">
                                         <Field
@@ -144,7 +144,7 @@ export default function Page() {
 
                                 <div className="main-form-section">
                                     <div className="label-section">
-                                        <label className="">Emergency contact's full name </label>
+                                        <label className="">Emergency contact&apos;s full name </label>
                                     </div>
                                     <div className="order-2 col-span-9">
                                         <Field
@@ -165,7 +165,7 @@ export default function Page() {
 
                                 <div className="main-form-section">
                                     <div className="label-section">
-                                        <label className="">Emergency contact's country code and phone number </label>
+                                        <label className="">Emergency contact&apos;s country code and phone number </label>
                                     </div>
                                     <div className="order-2 col-span-9">
                                         <Field
