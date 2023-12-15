@@ -19,9 +19,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <FormProvider>
           <ReactQueryProvider>
-            <Header />
+            {/* <Header /> */}
             <div className="pt-[70px]">{children}</div>
-            <Footer />
+            {/* <Footer /> */}
             <ToastContainer />
             {/* <ReactQueryDevtools initialIsOpen={false} /> */}
           </ReactQueryProvider>
