@@ -3,6 +3,7 @@ import SubHeading from "@/components/thailand/common/SubHeading";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { BsQuestionCircleFill } from "react-icons/bs";
 import React from "react";
+import { registrationSchema } from "../_thailandFormSchema/thailandFormSchema";
 
 export default function Page() {
   return (
@@ -18,11 +19,12 @@ export default function Page() {
 
         <div>
           <Formik
-            // initialValues={applicationSchema.initialValues}
-            // validationSchema={applicationSchema.yupSchema}
+            initialValues={registrationSchema.initialValues}
+            validationSchema={registrationSchema.yupSchema}
             validateOnChange={true}
             validateOnMount={true}
             onSubmit={(values, { setSubmitting, resetForm }) => {
+              // console.log("Registration Data:", values);
               postMutation.mutate(values);
               setSubmitting(false);
               resetForm();
@@ -38,13 +40,13 @@ export default function Page() {
                   <div className="order-2 col-span-9">
                     <Field
                       type="text"
-                      id="arrivalDate"
-                      name="arrivalDate"
-                      // placeholder="Date Of Birth"
+                      id="emailAddress"
+                      name="emailAddress"
+                      // placeholder="email Address"
                       className="new-form-input "
                     />
 
-                    <ErrorMessage name="countryCitizenship">
+                    <ErrorMessage name="emailAddress">
                       {(errorMsg) => (
                         <div style={{ color: "red" }}>{errorMsg}</div>
                       )}
@@ -60,13 +62,13 @@ export default function Page() {
                   <div className="order-2 col-span-9">
                     <Field
                       type="date"
-                      id="arrivalDate"
-                      name="arrivalDate"
+                      id="whenArriveDestination"
+                      name="whenArriveDestination"
                       // placeholder="Date Of Birth"
                       className="new-form-input "
                     />
 
-                    <ErrorMessage name="countryCitizenship">
+                    <ErrorMessage name="whenArriveDestination">
                       {(errorMsg) => (
                         <div style={{ color: "red" }}>{errorMsg}</div>
                       )}
@@ -83,13 +85,13 @@ export default function Page() {
                   <div className="order-2 col-span-9">
                     <Field
                       type="date"
-                      id="arrivalDate"
-                      name="arrivalDate"
+                      id="whenDepartDestination"
+                      name="whenDepartDestination"
                       // placeholder="Date Of Birth"
                       className="new-form-input "
                     />
 
-                    <ErrorMessage name="countryCitizenship">
+                    <ErrorMessage name="whenDepartDestination">
                       {(errorMsg) => (
                         <div style={{ color: "red" }}>{errorMsg}</div>
                       )}
@@ -105,15 +107,15 @@ export default function Page() {
                     <Field
                       required
                       component="select"
-                      id="countryCitizenship"
-                      name="countryCitizenship"
+                      id="destinationCountry"
+                      name="destinationCountry"
                       className="new-form-input "
                     >
                       <option value="">Select</option>
-                      <option value="">Thailand</option>
+                      <option value="Thailand">Thailand</option>
                     </Field>
 
-                    <ErrorMessage name="countryCitizenship">
+                    <ErrorMessage name="destinationCountry">
                       {(errorMsg) => (
                         <div style={{ color: "red" }}>{errorMsg}</div>
                       )}
@@ -128,13 +130,13 @@ export default function Page() {
                   <div className="order-2 col-span-9">
                     <Field
                       type="text"
-                      id="arrivalDate"
-                      name="arrivalDate"
+                      id="emergencyContactEmail"
+                      name="emergencyContactEmail"
                       // placeholder="Date Of Birth"
                       className="new-form-input "
                     />
 
-                    <ErrorMessage name="countryCitizenship">
+                    <ErrorMessage name="emergencyContactEmail">
                       {(errorMsg) => (
                         <div style={{ color: "red" }}>{errorMsg}</div>
                       )}
@@ -151,13 +153,13 @@ export default function Page() {
                   <div className="order-2 col-span-9">
                     <Field
                       type="text"
-                      id="arrivalDate"
-                      name="arrivalDate"
+                      id="emergencyContactFullName"
+                      name="emergencyContactFullName"
                       // placeholder="Date Of Birth"
                       className="new-form-input "
                     />
 
-                    <ErrorMessage name="countryCitizenship">
+                    <ErrorMessage name="emergencyContactFullName">
                       {(errorMsg) => (
                         <div style={{ color: "red" }}>{errorMsg}</div>
                       )}
@@ -174,13 +176,13 @@ export default function Page() {
                   <div className="order-2 col-span-9">
                     <Field
                       type="text"
-                      id="arrivalDate"
-                      name="arrivalDate"
+                      id="EmergencyContactCountryCodeAndPhoneNumber"
+                      name="EmergencyContactCountryCodeAndPhoneNumber"
                       // placeholder="Date Of Birth"
                       className="new-form-input "
                     />
 
-                    <ErrorMessage name="countryCitizenship">
+                    <ErrorMessage name="EmergencyContactCountryCodeAndPhoneNumber">
                       {(errorMsg) => (
                         <div style={{ color: "red" }}>{errorMsg}</div>
                       )}
@@ -191,7 +193,7 @@ export default function Page() {
                 <div className="py-8 text-center">
                   <button
                     className={`cursor-pointer w-fit items-center gap-3 border-2 rounded-lg font-semibold border-blueColor text-blueColor px-8 py-3 ${
-                      !isValid ? "cursor-not-allowed opacity-50" : ""
+                      !isValid ? "cursor-not-allowed opacity-40" : ""
                     }`}
                     disabled={!isValid}
                     type="submit"
