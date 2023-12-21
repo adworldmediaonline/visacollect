@@ -161,5 +161,8 @@ body {
 /* Navbar--close */
 
 .btnBlue{
-    @apply bg-blueColor hover:bg-black rounded-md text-white
+    @apply bg-primaryMain hover:bg-black rounded-md text-white
+}
+.btnBlack{
+  @apply bg-black hover:bg-primaryMain rounded-md text-white
 }

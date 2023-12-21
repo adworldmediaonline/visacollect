@@ -4,7 +4,6 @@ const Quicklooksrilanka = () => {
   return (
     <div className="container">
       <div className="grid md:grid-cols-12 gap-8 py-12">
-
         <div className="col-span-6 md:order-2 md:pt-0 pt-20 flex justify-between items-center space-x-4">
           <img
             src="/assets/images/thailand/thai1.png"
@@ -20,23 +19,20 @@ const Quicklooksrilanka = () => {
             <h3 className="md:text-[37px] text-[30px] font-semibold">
               E-VISA Thailand
             </h3>
-            <hr className="h-[3px] bg-blueColor w-48" />
+            <hr className="h-[3px] bg-primaryMain w-48" />
           </div>
           <p className="text-justify tracking-tighter">
-            Lorem Ipsum is simply dummy text of the printing
-            and typesetting industry. Lorem Ipsum has been the
-            industry&apos;s standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has
-            survived not only five centuries, but also the leap into
-            electronic typesetting, remaining essentially unchanged.
-            It was popularised in the 1960s with the release of Letraset
-            sheets containing Lorem Ipsum passages, and more
-            recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry&apos;s standard dummy
+            text ever since the 1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type specimen book. It has survived
+            not only five centuries, but also the leap into electronic
+            typesetting, remaining essentially unchanged. It was popularised in
+            the 1960s with the release of Letraset sheets containing Lorem Ipsum
+            passages, and more recently with desktop publishing software like
+            Aldus PageMaker including versions of Lorem Ipsum.
           </p>
         </div>
-
       </div>
     </div>
   );
