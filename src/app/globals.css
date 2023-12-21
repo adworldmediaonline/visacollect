@@ -166,3 +166,13 @@ body {
 .btnBlack{
   @apply bg-black hover:bg-primaryMain rounded-md text-white
 }
+
+.testimonialBg {
+  background: linear-gradient(
+    to bottom,
+    rgb(240 249 255)  0%,
+    rgb(240 249 255) 20%,
+    #0068E5 20%,
+    #0068E5 100%
+  );
+}

@@ -26,7 +26,7 @@ export default function WhyChooseUs() {
     },
   ];
   return (
-    <div className="grid grid-cols-12">
+    <div className="grid grid-cols-12 bg-white">
       <div className="col-span-5">
         <img
           src="/assets/images/main/whyChooseUs.png"
