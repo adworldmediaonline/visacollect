@@ -21,7 +21,7 @@ const HeadingSection = ({ sub, title }) => {
   };
   return (
     <div className="md:space-y-2">
-      <h2 className="md:text-5xl text-xl font-bold text-gray-700">{title}</h2>
+      <h2 className="md:text-5xl text-2xl font-bold text-gray-700">{title}</h2>
       <h5 className=" text-gray-700 leading-loose">{sub}</h5>
     </div>
   );

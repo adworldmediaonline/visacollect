@@ -30,7 +30,7 @@ const HowItWorks = () => {
 
   return (
     <div className="md:py-20 py-12 bg-sky-50">
-      <div className="text-center mx-auto md:max-w-4xl">
+      <div className="container text-center mx-auto md:max-w-4xl">
         <HeadingSection
           sub="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
           the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
@@ -40,9 +40,9 @@ const HowItWorks = () => {
       </div>
 
       <div className="container">
-        <div className="grid grid-cols-3">
+        <div className="md:grid grid-cols-3">
           {testimonial.map((item, e) => (
-            <div className="group md:mx-5 py-10" key={e}>
+            <div className="group md:mx-5 md:py-10 py-4" key={e}>
               <div className=" text-center bg-white shadow-md  hover:drop-shadow-xs  hover:shadow-lg rounded-xl py-10">
                 <div className=" duration duration-1000 rounded-full   w-full flex justify-center">
                   <img

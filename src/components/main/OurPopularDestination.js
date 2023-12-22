@@ -42,7 +42,7 @@ const OurPopularDestination = () => {
       </div>
       {/* title end  */}
       <div className="container space-y-8">
-        <div className="grid grid-cols-4 gap-6">
+        <div className="md:grid grid-cols-4 gap-6 md:space-y-0 space-y-8">
           {data.map((e, i) => (
             <div
               key={i}
