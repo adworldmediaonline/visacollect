@@ -54,7 +54,7 @@ const BannerMain = () => {
             </div>
           </div>
         </div>
-        <div className="absolute w-96 rounded-md p-8 bg-white text-black top-36 right-24 space-y-4">
+        <div className="md:absolute md:w-96 rounded-md p-8 bg-white text-black top-36 right-24 space-y-4">
           <h2 className="font-semibold text-lg">
             Get Started With Your Visa Now!
           </h2>

@@ -116,11 +116,11 @@ function Testimonial() {
         src="/assets/images/main/waves.png"
         className="absolute bottom-0 w-full"
       />
-      <div className="absolute top-16 left-32 -space-y-4">
-        <h2 className="font-extrabold text-5xl text-primaryMain">
+      <div className="md:absolute top-16 left-32 -space-y-4">
+        <h2 className="font-extrabold md:text-5xl text-2xl text-primaryMain md:pb-0 pb-8 text-center">
           Testimonial
         </h2>
-        <h2 className="font-extrabold text-5xl  transform scale-y-[-1] bg-gradient-to-b from-primaryMain via-blue-500 to-blue-300 text-transparent bg-clip-text">
+        <h2 className="font-extrabold text-5xl md:block hidden transform scale-y-[-1] bg-gradient-to-b from-primaryMain via-blue-500 to-blue-300 text-transparent bg-clip-text">
           Testimonial
         </h2>
       </div>
@@ -128,15 +128,21 @@ function Testimonial() {
         <Slider {...settings} ref={customeSlider} className="mx-auto">
           {testimonial.map((e, i) => (
             <div key={i}>
-              <div className="grid grid-cols-12 gap-20 items-center">
-                <div className="col-span-8 text-white space-y-4 pt-20">
+              <div className="md:grid grid-cols-12 gap-20 items-center">
+                <div className="col-span-4 pb-12 order-2">
+                  <img
+                    src="/assets/images/main/testimonialImg.png"
+                    className="md:w-80 w-52"
+                  />
+                </div>
+                <div className="col-span-8 text-white space-y-4 md:pt-20">
                   <h3 className="text-xl font-semibold">{e.name}</h3>
                   <p className="font-light italic">
                     Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry`&apos;s
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    typesetting industry. Lorem Ipsum has been the
+                    industry`&apos;s standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled
+                    it to make a type specimen book.
                   </p>
                   <div className="flex space-x-2">
                     <IoIosStar className="text-yellow-500" />
@@ -146,12 +152,6 @@ function Testimonial() {
                     <IoIosStar className="text-yellow-500" />
                   </div>
                   <h4 className="font-semibold">-Destination</h4>
-                </div>
-                <div className="col-span-4 pb-12">
-                  <img
-                    src="/assets/images/main/testimonialImg.png"
-                    className="w-80"
-                  />
                 </div>
               </div>
             </div>

@@ -26,14 +26,14 @@ export default function WhyChooseUs() {
     },
   ];
   return (
-    <div className="grid grid-cols-12 bg-white">
+    <div className="md:grid grid-cols-12 bg-white">
       <div className="col-span-5">
         <img
           src="/assets/images/main/whyChooseUs.png"
           className="brightness-50 "
         />
       </div>
-      <div className="md:col-span-6 px-8 flex flex-col justify-center space-y-8">
+      <div className="md:col-span-6 px-8 flex flex-col justify-center space-y-8 md:py-0 py-8">
         <div className="text-left">
           <HeadingSection
             title="Why Choose Us?"

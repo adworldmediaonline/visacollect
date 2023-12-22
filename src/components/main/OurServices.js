@@ -117,7 +117,7 @@ const OurServices = () => {
             <Slider {...settings} ref={customeSlider} className="mx-auto  ">
               {testimonial.map((item, e) => (
                 <div className="group p-4" key={e}>
-                  <div className="bg-white border hover:drop-shadow-xs hover:shadow-lg rounded-xl h-96 p-6 space-y-4">
+                  <div className="bg-white border hover:drop-shadow-xs hover:shadow-lg rounded-xl md:h-96 p-6 space-y-4">
                     <div className=" duration duration-1000 rounded-full w-full">
                       <img
                         src={item.image}

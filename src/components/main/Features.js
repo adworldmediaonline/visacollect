@@ -24,12 +24,12 @@ export default function Features() {
     },
   ];
   return (
-    <div className="relative w-full h-80 overflow-y-auto ">
+    <div className="relative w-full md:h-80 overflow-y-auto ">
       <div
         className="background-image fixed top-0 left-0 w-full h-full bg-cover bg-center -z-10 "
         style={{ backgroundImage: `url(/assets/images/main/feature.png)` }}
       ></div>
-      <div className="flex justify-center items-center p-20 space-x-14">
+      <div className="md:grid grid-cols-4 justify-center items-center p-10 md:space-x-14 md:space-y-0 space-y-8">
         {smallIcon.map((e, i) => (
           <div
             key={i}
