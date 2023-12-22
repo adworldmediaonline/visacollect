@@ -47,7 +47,7 @@ const BannerMain = () => {
             <div className="flex space-x-4">
               {smallIcon.map((e, i) => (
                 <div key={i} className="text-white w-24 space-y-2">
-                  <img src={e.imgSrc} />
+                  <img src={e.imgSrc} className="w-8 h-8" />
                   <h5 className="text-sm">{e.title}</h5>
                 </div>
               ))}

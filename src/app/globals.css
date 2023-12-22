@@ -161,5 +161,18 @@ body {
 /* Navbar--close */
 
 .btnBlue{
-    @apply bg-blueColor hover:bg-black rounded-md text-white
+    @apply bg-primaryMain hover:bg-black rounded-md text-white
+}
+.btnBlack{
+  @apply bg-black hover:bg-primaryMain rounded-md text-white
+}
+
+.testimonialBg {
+  background: linear-gradient(
+    to bottom,
+    rgb(240 249 255)  0%,
+    rgb(240 249 255) 20%,
+    #0068E5 20%,
+    #0068E5 100%
+  );
 }

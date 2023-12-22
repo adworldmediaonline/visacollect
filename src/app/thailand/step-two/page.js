@@ -257,7 +257,7 @@ export default function Page() {
 
                 <div className="py-5 text-center">
                   <button
-                    className="inline-flex rounded-lg  items-center gap-3 px-8 py-2 text-xl font-semibold cursor-pointer text-blueColor border border-blueColor "
+                    className="inline-flex rounded-lg  items-center gap-3 px-8 py-2 text-xl font-semibold cursor-pointer text-primaryMain border border-primaryMain "
                     type="button"
                   >
                     <FaCirclePlus /> Add Another Person
@@ -353,7 +353,7 @@ export default function Page() {
                 </div>
                 {/* table end  */}
 
-                <div className="px-10 py-5 border rounded-lg border-blueColor bg-blueColor/10">
+                <div className="px-10 py-5 border rounded-lg border-primaryMain bg-primaryMain/10">
                   <div className="flex items-center justify-between pb-5 text-black">
                     <p className="text-2xl font-semibold">
                       {" "}
@@ -390,7 +390,7 @@ export default function Page() {
 
                 <div className="py-8 text-center">
                   <button
-                    className={`cursor-pointer w-fit items-center gap-3 border-2 rounded-lg font-semibold border-blueColor text-blueColor px-8 py-3 ${
+                    className={`cursor-pointer w-fit items-center gap-3 border-2 rounded-lg font-semibold border-primaryMain text-primaryMain px-8 py-3 ${
                       !isValid ? "cursor-not-allowed opacity-50" : ""
                     }`}
                     disabled={!isValid}

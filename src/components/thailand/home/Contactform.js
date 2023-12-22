@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Select from 'react-select';
+import React, { useState } from "react";
+import Select from "react-select";
 
 const Contactform = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const options = [
-    { value: 'india', label: 'India' },
-    { value: 'usa', label: 'USA' },
-    { value: 'spain', label: 'Spain' },
+    { value: "india", label: "India" },
+    { value: "usa", label: "USA" },
+    { value: "spain", label: "Spain" },
   ];
 
   return (
@@ -54,7 +54,7 @@ const Contactform = () => {
                 className="border w-full p-4 "
               ></textarea>
             </div>
-            <button className="bg-blueColor text-white md:w-56 md:px-6 md:py-3 px-2 py-3 font-medium text-md">
+            <button className="bg-primaryMain text-white md:w-56 md:px-6 md:py-3 px-2 py-3 font-medium text-md">
               Submit Your Enquiry
             </button>
           </div>
