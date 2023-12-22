@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
         </div>
         <div className="space-y-4">
           {dataList.map((e, i) => (
-            <div className="flex space-x-2">
+            <div key={i} className="flex space-x-2">
               <span className="mt-1">
                 <FaCheckCircle size="20" className="text-primaryMain" />
               </span>
