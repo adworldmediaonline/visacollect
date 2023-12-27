@@ -45,7 +45,7 @@ const Navbar = () => {
                                 </li>
                             </Link>
 
-                            <Link href="/Application">
+                            <Link href="/turkey/Application">
                                 <li className="mobile-nav">
                                     Visa Application
                                 </li>
