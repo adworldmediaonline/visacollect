@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         <FormProvider>
           <ReactQueryProvider>
             {/* <Header /> */}
-            <div className="pt-[70px]">{children}</div>
+            <div className="">{children}</div>
             {/* <Footer /> */}
             <ToastContainer />
             {/* <ReactQueryDevtools initialIsOpen={false} /> */}
