@@ -1,5 +1,6 @@
-import Texteft from '@/components/common/Texteft'
+
 import React from 'react'
+import Texteft from '../../common/Texteft'
 
 const MedicalAttend = () => {
   return (

@@ -1,6 +1,7 @@
-import BannerPage from '@/components/common/BannerPage'
-import Advisory from '@/components/process/Advisory'
-import FullProcess from '@/components/process/FullProcess'
+
+import BannerPage from '@/components/india/common/BannerPage'
+import Advisory from '@/components/india/process/Advisory'
+import FullProcess from '@/components/india/process/FullProcess'
 import React from 'react'
 
 const page = () => {

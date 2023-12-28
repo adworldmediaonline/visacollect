@@ -1,5 +1,5 @@
 import React from 'react'
-import Texteft from '@/components/common/Texteft'
+import Texteft from '../../common/Texteft'
 const Business = () => {
   return (
     <div className='px-5 py-5'>
