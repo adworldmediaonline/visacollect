@@ -38,7 +38,7 @@ const Header = ({ bgcolor }) => {
     <div className={`header bg-white shadow-md ${scrolled ? "bg-white" : ""}`}>
       <nav className="container navbar ">
         <div className="flex items-center w-full md:justify-between md:space-x-12">
-          <Link href="/" className="logo flex space-x-4">
+          <Link href="/india" className="logo flex space-x-4">
             {scrolled ? (
               <>
                 <Image
@@ -83,7 +83,7 @@ const Header = ({ bgcolor }) => {
                 : "nav-menu"
             }
           >
-            <Link href="/">
+            <Link href="/india">
               <li className="relative hidden text-sm font-semibold cursor-pointer group dropdown drop-shadow-2xl md:flex nav-item nav-desk hover:text-primary">
                 Home
               </li>
