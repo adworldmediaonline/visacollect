@@ -41,5 +41,23 @@ export default {
     VISA_ADD_TEMPORARY_EXIT: '/visa/visaLastTemporaryExitUrl',
     VISA_GET_TEMPORARY_EXIT_BY_FORM_ID: '/visa/visaLastTemporaryExitUrl/',
     
+
+
+    // Srilanka Endpoints
+
+    SL_VISA_TOURIST_INDIVIDUAL: '/slvisa/touristIndividual',
+    SL_VISA_TOURIST_GROUPS: '/slvisa/touristGroups',
+    SL_VISA_TOURIST_GROUPS_MEMBERS: '/slvisa/touristGroupsMembers',
+  
+    SL_VISA_TOURIST_THIRD_PARTY: '/slvisa/touristThirdParty',
+    SL_VISA_TOURIST_THIRD_PARTY_MEMBERS: '/slvisa/touristThirdPartyMembers',
+  
+    SL_VISA_BUSINESS_INDIVIDUAL: '/slvisa/businessIndividual',
+    SL_VISA_BUSINESS_GROUPS: '/slvisa/businessGroups',
+    SL_VISA_BUSINESS_GROUPS_MEMBERS: '/slvisa/businessGroupsMembers',
+  
+    SL_VISA_BUSINESS_THIRD_PARTY: '/slvisa/businessThirdParty',
+    SL_VISA_BUSINESS_THIRD_PARTY_MEMBERS: '/slvisa/businessThirdPartyMembers',
+    SL_VISA_BUSINESS_THIRD_PARTY_PAYMENT: '/slvisa/businessThirdPartyPayment',
 };
 

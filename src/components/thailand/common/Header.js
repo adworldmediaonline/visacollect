@@ -37,7 +37,7 @@ const Header = ({ bgcolor }) => {
     >
       <nav className="container navbarMainVisa ">
         <div className="flex items-center w-full md:justify-between md:space-x-12">
-          <Link href="/" className="space-x-4">
+          <Link href="/thailand" className="space-x-4">
             {scrolled ? (
               <>
                 <Image
@@ -68,7 +68,7 @@ const Header = ({ bgcolor }) => {
                 : "nav-menuMainVisa"
             }
           >
-            <Link href="/">
+            <Link href="/thailand">
               <li className="relative hidden text-sm font-semibold cursor-pointer group dropdown drop-shadow-2xl md:flex nav-itemMainVisa nav-desk hover:text-primary">
                 Home
               </li>
