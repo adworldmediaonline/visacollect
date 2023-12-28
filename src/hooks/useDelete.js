@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> c53cf47f2dac498797a858519c553fe4d9f4f7c9
 import axiosInstance from '@/services/api';
 import { QueryClient, useMutation } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
