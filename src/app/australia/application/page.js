@@ -3,7 +3,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { BsQuestionCircleFill } from 'react-icons/bs';
 import { CiCalendarDate } from 'react-icons/ci';
 import ReactDatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+
 import usePost from '@/hooks/usePost';
 import apiEndpoint from '@/services/apiEndpoint';
 import SubHeading from '@/components/australia/common/SubHeading';
@@ -77,7 +77,7 @@ const Page = () => {
                 },
               });
               setSubmitting(false);
-              // resetForm();
+              resetForm();
             }}
           >
             {({ values, isValid, setFieldValue }) => (
@@ -143,7 +143,7 @@ const Page = () => {
                       className="w-full new-form-input"
                       name="travelDetails.plannedDate"
                       placeholderText="Enter planned date of travel"
-                    // wrapperClassName="date-picker"
+                      // wrapperClassName="date-picker"
                     />
 
                     <ErrorMessage name="travelDetails.plannedDate">
@@ -342,7 +342,7 @@ const Page = () => {
                       className="w-full new-form-input"
                       name="personalDetails.dateOfBirth"
                       placeholderText="Enter date of birth"
-                    // wrapperClassName="date-picker"
+                      // wrapperClassName="date-picker"
                     />
 
                     <ErrorMessage name="personalDetails.dateOfBirth">
@@ -536,7 +536,7 @@ const Page = () => {
                       className="w-full new-form-input"
                       name="passportDetails.dateOfIssue"
                       placeholderText="Enter date of issue"
-                    // wrapperClassName="date-picker"
+                      // wrapperClassName="date-picker"
                     />
 
                     <ErrorMessage name="passportDetails.dateOfIssue">
@@ -566,7 +566,7 @@ const Page = () => {
                       className="w-full new-form-input"
                       name="passportDetails.dateOfExpiry"
                       placeholderText="Enter date of expiry"
-                    // wrapperClassName="date-picker"
+                      // wrapperClassName="date-picker"
                     />
 
                     <ErrorMessage name="passportDetails.dateOfExpiry">
@@ -1144,7 +1144,7 @@ const Page = () => {
                           className="w-full new-form-input"
                           name="travelInsurance.startDate"
                           placeholderText="Enter start date"
-                        // wrapperClassName="date-picker"
+                          // wrapperClassName="date-picker"
                         />
 
                         <ErrorMessage name="travelInsurance.startDate">
@@ -1176,7 +1176,7 @@ const Page = () => {
                           className="w-full new-form-input"
                           name="travelInsurance.returnDate"
                           placeholderText="Enter return date"
-                        // wrapperClassName="date-picker"
+                          // wrapperClassName="date-picker"
                         />
 
                         <ErrorMessage name="travelInsurance.returnDate">
@@ -1316,8 +1316,9 @@ const Page = () => {
                     </div>
                   ) : null}
                   <button
-                    className={`cursor-pointer w-full items-center gap-3 border-2 rounded-lg font-semibold border-primary text-primary px-8 py-3 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
-                      }`}
+                    className={`cursor-pointer w-full items-center gap-3 border-2 rounded-lg font-semibold border-primary text-primary px-8 py-3 ${
+                      !isValid ? 'cursor-not-allowed opacity-50' : ''
+                    }`}
                     disabled={!isValid}
                     type="submit"
                   >

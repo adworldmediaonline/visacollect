@@ -9,7 +9,7 @@
   /* Form Section */
 .main-form-section
 {
-  @apply md:grid grid-cols-12 gap-4 py-2 items-start 
+  @apply md:grid grid-cols-12 gap-4 py-2 items-start
 }
 
 .new-form-input
@@ -25,7 +25,7 @@
 
 .label-section
 {
-  @apply col-span-3 
+  @apply col-span-3
 }
 
 .mark-section
@@ -35,5 +35,5 @@
 
 .tooltip-content
 {
-  @apply absolute -top-12  w-[230px] right-0 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 
+  @apply absolute -top-12  w-[230px] right-0 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100
 }
