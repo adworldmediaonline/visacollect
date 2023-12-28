@@ -1,59 +1,54 @@
-import * as Yup from "yup";
+import * as Yup from 'yup';
 
-export const registrationSchema = {
+export const thailandSchema = {
   yupSchema: Yup.object().shape({
     emailAddress: Yup.string()
-      .email("Invalid email format")
-      .required("This Field is required"),
-    whenArriveDestination: Yup.string().required("This Field is required"),
-    whenDepartDestination: Yup.string().required("This Field is required"),
-    destinationCountry: Yup.string().required("This Field is required"),
+      .email('Invalid email format')
+      .required('This Field is required'),
+    whenArriveDestination: Yup.date().required('This Field is required'),
+    whenDepartDestination: Yup.date().required('This Field is required'),
+    destinationCountry: Yup.string().required('This Field is required'),
     emergencyContactEmail: Yup.string()
-      .email("Invalid email format")
-      .required("This Field is required"),
-    emergencyContactFullName: Yup.string().required("This Field is required"),
-    EmergencyContactCountryCodeAndPhoneNumber: Yup.string().required(
-      "This Field is required"
-    ),
-    // mobileGroupTourist: Yup.string()
-    //   .matches(/^[0-9]{10}$/, "Mobile number must be a valid 10-digit number")
-    //   .required("Mobile is required"),
+      .email('Invalid email format')
+      .required('This Field is required'),
+    emergencyContactFullName: Yup.string().required('This Field is required'),
+    emergencyContactCountryCodeAndPhoneNumber: Yup.string()
+      .matches(/^[0-9]{10}$/, 'Phone number must be a valid 10-digit number')
+      .required('Phone is required'),
   }),
   initialValues: {
-    emailAddress: "",
-    whenArriveDestination: "",
-    whenDepartDestination: "",
-    destinationCountry: "",
+    emailAddress: '',
+    whenArriveDestination: '',
+    whenDepartDestination: '',
+    destinationCountry: '',
 
-    emergencyContactEmail: "",
-    emergencyContactFullName: "",
-    EmergencyContactCountryCodeAndPhoneNumber: "",
+    emergencyContactEmail: '',
+    emergencyContactFullName: '',
+    emergencyContactCountryCodeAndPhoneNumber: '',
   },
-};
 
-export const applicantInformationSchema = {
-  yupSchema: Yup.object().shape({
-    firstName: Yup.string().required("This Field is required"),
-    lastName: Yup.string().required("This Field is required"),
-    nationality: Yup.string().required("This Field is required"),
-    gender: Yup.string().required("This Field is required"),
-    dateOfBirth: Yup.string().required("This Field is required"),
-    countryOfBirth: Yup.string().required("This Field is required"),
-    countryOfResidence: Yup.string().required("This Field is required"),
-    passportNumber: Yup.string().required("This Field is required"),
-    passportIssueDate: Yup.string().required("This Field is required"),
-    passportExpirationDate: Yup.string().required("This Field is required"),
+  personYupSchema: Yup.object().shape({
+    firstName: Yup.string().required('This Field is required'),
+    lastName: Yup.string().required('This Field is required'),
+    nationality: Yup.string().required('This Field is required'),
+    gender: Yup.string().required('This Field is required'),
+    dateOfBirth: Yup.date().required('This Field is required'),
+    countryOfBirth: Yup.string().required('This Field is required'),
+    countryOfResidence: Yup.string().required('This Field is required'),
+    passportNumber: Yup.string().required('This Field is required'),
+    passportIssueDate: Yup.date().required('This Field is required'),
+    passportExpirationDate: Yup.date().required('This Field is required'),
   }),
-  initialValues: {
-    firstName: "",
-    lastName: "",
-    nationality: "",
-    gender: "",
-    dateOfBirth: "",
-    countryOfBirth: "",
-    countryOfResidence: "",
-    passportNumber: "",
-    passportIssueDate: "",
-    passportExpirationDate: "",
+  personInitialValues: {
+    firstName: '',
+    lastName: '',
+    nationality: '',
+    gender: '',
+    dateOfBirth: '',
+    countryOfBirth: '',
+    countryOfResidence: '',
+    passportNumber: '',
+    passportIssueDate: '',
+    passportExpirationDate: '',
   },
 };
