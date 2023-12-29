@@ -10,6 +10,7 @@ import SubHeading from '@/components/australia/common/SubHeading';
 import Heading from '@/components/australia/common/Heading';
 import { applicationSchema } from '@/constant/australiaConstant';
 import { getAllCountries } from '@/lib/getAllCountries';
+import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 
 const Page = () => {
   const postMutation = usePost(
@@ -129,26 +130,13 @@ const Page = () => {
                     </div>
                   </div>
                   <div className="order-2 col-span-8">
-                    <ReactDatePicker
-                      showIcon
-                      minDate={new Date()}
-                      selected={values.travelDetails.plannedDate}
-                      onChange={date =>
-                        setFieldValue('travelDetails.plannedDate', date)
-                      }
-                      dateFormat="dd-MM-yyyy"
-                      icon={<CiCalendarDate />}
-                      className="w-full new-form-input"
+                    <ReactDatePickerInput
+                      className="new-form-input"
                       name="travelDetails.plannedDate"
-                      placeholderText="Enter planned date of travel"
-                      // wrapperClassName="date-picker"
+                      selected={values.travelDetails.plannedDate}
+                      setFieldValue={setFieldValue}
+                      minDate={new Date()}
                     />
-
-                    <ErrorMessage name="travelDetails.plannedDate">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
                   </div>
                 </div>
                 <div className="main-form-section">
@@ -328,26 +316,13 @@ const Page = () => {
                   <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
-                    <ReactDatePicker
-                      showIcon
-                      selected={values.personalDetails.dateOfBirth}
-                      maxDate={new Date()}
-                      onChange={date =>
-                        setFieldValue('personalDetails.dateOfBirth', date)
-                      }
-                      dateFormat="dd-MM-yyyy"
-                      icon={<CiCalendarDate />}
-                      className="w-full new-form-input"
+                    <ReactDatePickerInput
+                      className="new-form-input"
                       name="personalDetails.dateOfBirth"
-                      placeholderText="Enter date of birth"
-                      // wrapperClassName="date-picker"
+                      selected={values.personalDetails.dateOfBirth}
+                      setFieldValue={setFieldValue}
+                      maxDate={new Date()}
                     />
-
-                    <ErrorMessage name="personalDetails.dateOfBirth">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
                   </div>
                 </div>
                 <div className="main-form-section">
@@ -522,26 +497,14 @@ const Page = () => {
                   <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
-                    <ReactDatePicker
-                      showIcon
-                      selected={values.passportDetails.dateOfIssue}
-                      minDate={new Date(values.personalDetails.dateOfBirth)}
-                      onChange={date =>
-                        setFieldValue('passportDetails.dateOfIssue', date)
-                      }
-                      dateFormat="dd-MM-yyyy"
-                      icon={<CiCalendarDate />}
-                      className="w-full new-form-input"
+                    <ReactDatePickerInput
+                      className="new-form-input"
                       name="passportDetails.dateOfIssue"
-                      placeholderText="Enter date of issue"
-                      // wrapperClassName="date-picker"
+                      selected={values.passportDetails.dateOfIssue}
+                      setFieldValue={setFieldValue}
+                      minDate={new Date(values.personalDetails.dateOfBirth)}
+                      disabled={values.personalDetails.dateOfBirth === ''}
                     />
-
-                    <ErrorMessage name="passportDetails.dateOfIssue">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
                   </div>
                 </div>
                 <div className="main-form-section">
@@ -552,26 +515,13 @@ const Page = () => {
                   <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
-                    <ReactDatePicker
-                      showIcon
-                      selected={values.passportDetails.dateOfExpiry}
-                      minDate={new Date()}
-                      onChange={date =>
-                        setFieldValue('passportDetails.dateOfExpiry', date)
-                      }
-                      dateFormat="dd-MM-yyyy"
-                      icon={<CiCalendarDate />}
-                      className="w-full new-form-input"
+                    <ReactDatePickerInput
+                      className="new-form-input"
                       name="passportDetails.dateOfExpiry"
-                      placeholderText="Enter date of expiry"
-                      // wrapperClassName="date-picker"
+                      selected={values.passportDetails.dateOfExpiry}
+                      setFieldValue={setFieldValue}
+                      minDate={new Date()}
                     />
-
-                    <ErrorMessage name="passportDetails.dateOfExpiry">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
                   </div>
                 </div>
 
@@ -1129,25 +1079,12 @@ const Page = () => {
                       <div className="mark-section group"></div>
 
                       <div className="order-2 col-span-8">
-                        <ReactDatePicker
-                          showIcon
-                          selected={values.travelInsurance.startDate}
-                          onChange={date =>
-                            setFieldValue('travelInsurance.startDate', date)
-                          }
-                          dateFormat="dd-MM-yyyy"
-                          icon={<CiCalendarDate />}
-                          className="w-full new-form-input"
+                        <ReactDatePickerInput
+                          className="new-form-input"
                           name="travelInsurance.startDate"
-                          placeholderText="Enter start date"
-                          // wrapperClassName="date-picker"
+                          selected={values.travelInsurance.startDate}
+                          setFieldValue={setFieldValue}
                         />
-
-                        <ErrorMessage name="travelInsurance.startDate">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
-                          )}
-                        </ErrorMessage>
                       </div>
                     </div>
                     <div className="main-form-section">
@@ -1158,26 +1095,13 @@ const Page = () => {
                       <div className="mark-section group"></div>
 
                       <div className="order-2 col-span-8">
-                        <ReactDatePicker
-                          showIcon
-                          selected={values.travelInsurance.returnDate}
-                          minDate={new Date(values.travelInsurance.startDate)}
-                          onChange={date =>
-                            setFieldValue('travelInsurance.returnDate', date)
-                          }
-                          dateFormat="dd-MM-yyyy"
-                          icon={<CiCalendarDate />}
-                          className="w-full new-form-input"
+                        <ReactDatePickerInput
+                          className="new-form-input"
                           name="travelInsurance.returnDate"
-                          placeholderText="Enter return date"
-                          // wrapperClassName="date-picker"
+                          selected={values.travelInsurance.returnDate}
+                          setFieldValue={setFieldValue}
+                          minDate={new Date(values.travelInsurance.startDate)}
                         />
-
-                        <ErrorMessage name="travelInsurance.returnDate">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
-                          )}
-                        </ErrorMessage>
                       </div>
                     </div>
                     <p className="py-3 font-bold">

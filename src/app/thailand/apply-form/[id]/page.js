@@ -109,7 +109,6 @@ export default function Page({ params }) {
                         name="whenArriveDestination"
                         selected={new Date(values.whenArriveDestination)}
                         setFieldValue={setFieldValue}
-                        placeholderText="Select a date"
                       />
                     </div>
                   </div>
@@ -124,7 +123,6 @@ export default function Page({ params }) {
                         name="whenDepartDestination"
                         selected={new Date(values.whenDepartDestination)}
                         setFieldValue={setFieldValue}
-                        placeholderText="Select a date"
                       />
                     </div>
                   </div>
