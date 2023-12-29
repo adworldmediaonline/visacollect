@@ -9,6 +9,8 @@ import SubHeading from '@/components/turkey/common/SubHeading';
 import { applicationSchema } from '@/constant/turkeyConstant';
 import apiEndpoint from '@/services/apiEndpoint';
 import usePost from '@/hooks/usePost';
+import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
+import { minDate } from '@/lib/minDate';
 const Page = () => {
   const postMutation = usePost(
     apiEndpoint.TURKEY_VISA_APPLICATION,
@@ -35,7 +37,7 @@ const Page = () => {
               resetForm();
             }}
           >
-            {({ values, isValid }) => (
+            {({ values, isValid, setFieldValue }) => (
               <Form>
                 <SubHeading subHead="ITINERARY" />
                 <div className="main-form-section">
@@ -87,19 +89,14 @@ const Page = () => {
                     </div>
                   </div>
                   <div className="order-2 col-span-8">
-                    <Field
-                      type="date"
-                      id="arrivalDate"
+                    <ReactDatePickerInput
+                      className="new-form-input"
+                      placeholderText="Select a date"
                       name="arrivalDate"
-                      // placeholder="Date Of Birth"
-                      className="new-form-input "
+                      selected={values.arrivalDate}
+                      setFieldValue={setFieldValue}
+                      minDate={minDate(1)}
                     />
-
-                    <ErrorMessage name="arrivalDate">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
                   </div>
                 </div>
                 <div className="main-form-section">
@@ -246,16 +243,27 @@ const Page = () => {
                                 </div>
                                 <div className="mark-section group"></div>
                                 <div className="order-2 col-span-8">
-                                  <Field
+                                  {/* <Field
                                     className="new-form-input "
                                     name={`passportDetails.${index}.dateOfBirth`}
                                     type="date"
-                                  />
+                                  /> */}
 
                                   <ErrorMessage
                                     name={`passportDetails.${index}.dateOfBirth`}
                                     component="div"
                                     className="text-red-600"
+                                  />
+
+                                  <ReactDatePickerInput
+                                    className="new-form-input"
+                                    placeholderText="Select a date"
+                                    name={`passportDetails.${index}.dateOfBirth`}
+                                    selected={
+                                      values.passportDetails[index].dateOfBirth
+                                    }
+                                    setFieldValue={setFieldValue}
+                                    maxDate={new Date()}
                                   />
                                 </div>
                               </div>

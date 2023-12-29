@@ -10,7 +10,11 @@ import ReactDatePicker from 'react-datepicker';
 import { CiCalendarDate } from 'react-icons/ci';
 import 'react-datepicker/dist/react-datepicker.css';
 import BannerPage from '@/components/india/common/BannerPage';
-import { airportsSeaports, eligibleCountriesEvisaIndia, step1ValidationSchema } from '@/constant/indiaConstant';
+import {
+  airportsSeaports,
+  eligibleCountriesEvisaIndia,
+  step1ValidationSchema,
+} from '@/constant/indiaConstant';
 const StepOne = () => {
   const postMutation = usePost(
     apiEndpoint.VISA_ADD_STEP1,

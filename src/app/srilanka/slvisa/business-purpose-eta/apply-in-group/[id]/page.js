@@ -90,7 +90,6 @@ const Page = ({ params }) => {
             >
               {({ values, isValid }) => (
                 <Form>
-                  {console.log(values)}
                   <div className="main-form-section">
                     <div className="label-section">
                       <label>
@@ -171,8 +170,12 @@ const Page = ({ params }) => {
                         className="new-form-input "
                       >
                         <option value="">Select</option>
-                        <option value="PARTICIPATE IN BUSINESS MEETINGS AND NEGOTIATIONS">PARTICIPATE IN BUSINESS MEETINGS AND NEGOTIATIONS</option>
-                        <option value="SHORT TERM TRAINING PROGRAMS">SHORT TERM TRAINING PROGRAMS</option>
+                        <option value="PARTICIPATE IN BUSINESS MEETINGS AND NEGOTIATIONS">
+                          PARTICIPATE IN BUSINESS MEETINGS AND NEGOTIATIONS
+                        </option>
+                        <option value="SHORT TERM TRAINING PROGRAMS">
+                          SHORT TERM TRAINING PROGRAMS
+                        </option>
                       </Field>
 
                       <ErrorMessage name="purposeOfVisitBusinessGroup">
@@ -886,8 +889,9 @@ const Page = ({ params }) => {
                       </div>
                     ) : null}
                     <button
-                      className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#F7BD6D] px-8 py-2 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
-                        }`}
+                      className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#F7BD6D] px-8 py-2 ${
+                        !isValid ? 'cursor-not-allowed opacity-50' : ''
+                      }`}
                       disabled={!isValid}
                       type="submit"
                     >

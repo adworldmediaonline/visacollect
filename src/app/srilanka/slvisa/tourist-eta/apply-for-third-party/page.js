@@ -26,7 +26,6 @@ const Page = () => {
           para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
         />
 
-
         <div className="container md:py-8 py-20 md;px-0 px-3">
           <StepProcess
             color1=" bg-[#F7BD6D]"
@@ -55,7 +54,6 @@ const Page = () => {
             >
               {({ values, isValid }) => (
                 <Form>
-                  {console.log(values)}
                   <div className="main-form-section">
                     <div className="label-section">
                       <label>
@@ -135,14 +133,31 @@ const Page = () => {
                         className="new-form-input "
                       >
                         <option value="">Select</option>
-                        <option value="M.I.C.E Tourism (Meetings, Incentives, Conferences & Exhibitions/Events)">M.I.C.E Tourism (Meetings, Incentives, Conferences & Exhibitions/Events)</option>
-                        <option value="Medical treatment including Ayurvedic (herbal)">Medical treatment including Ayurvedic (herbal)</option>
-                        <option value="Participate in Art, Music, and Dance Events">Participate in Art, Music, and Dance Events</option>
-                        <option value="Participate in Pilgrimages">Participate in Pilgrimages</option>
-                        <option value="Participate in Sport Events">Participate in Sport Events</option>
-                        <option value="Participate in Weddings">Participate in Weddings</option>
-                        <option value="Sightseeing or Holidaying">Sightseeing or Holidaying</option>
-                        <option value="Visiting friends and relatives">Visiting friends and relatives</option>
+                        <option value="M.I.C.E Tourism (Meetings, Incentives, Conferences & Exhibitions/Events)">
+                          M.I.C.E Tourism (Meetings, Incentives, Conferences &
+                          Exhibitions/Events)
+                        </option>
+                        <option value="Medical treatment including Ayurvedic (herbal)">
+                          Medical treatment including Ayurvedic (herbal)
+                        </option>
+                        <option value="Participate in Art, Music, and Dance Events">
+                          Participate in Art, Music, and Dance Events
+                        </option>
+                        <option value="Participate in Pilgrimages">
+                          Participate in Pilgrimages
+                        </option>
+                        <option value="Participate in Sport Events">
+                          Participate in Sport Events
+                        </option>
+                        <option value="Participate in Weddings">
+                          Participate in Weddings
+                        </option>
+                        <option value="Sightseeing or Holidaying">
+                          Sightseeing or Holidaying
+                        </option>
+                        <option value="Visiting friends and relatives">
+                          Visiting friends and relatives
+                        </option>
                       </Field>
 
                       <ErrorMessage name="purposeOfVisitThirdPartyTourist">
@@ -673,8 +688,9 @@ const Page = () => {
                       </div>
                     ) : null}
                     <button
-                      className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#F7BD6D] px-8 py-2 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
-                        }`}
+                      className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#F7BD6D] px-8 py-2 ${
+                        !isValid ? 'cursor-not-allowed opacity-50' : ''
+                      }`}
                       disabled={!isValid}
                       type="submit"
                     >

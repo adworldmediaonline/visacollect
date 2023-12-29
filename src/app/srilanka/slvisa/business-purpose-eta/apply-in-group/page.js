@@ -9,8 +9,6 @@ import usePost from '@/hooks/usePost';
 import apiEndpoint from '@/services/apiEndpoint';
 import { ImSpinner2 } from 'react-icons/im';
 import { businessGroupSchema } from '@/constant/srilankaConstant';
-console.log(businessGroupSchema.yupSchema);
-console.log(Object.entries(businessGroupSchema.initialValues).length);
 const Page = () => {
   const postMutation = usePost(
     apiEndpoint.SL_VISA_BUSINESS_GROUPS,
@@ -54,7 +52,6 @@ const Page = () => {
           >
             {({ values, isValid }) => (
               <Form>
-                {console.log(values)}
                 <div className="main-form-section">
                   <div className="label-section">
                     <label>

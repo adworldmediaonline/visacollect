@@ -165,7 +165,6 @@ const StepEight = () => {
             validateOnChange={true}
             validateOnMount={true}
             onSubmit={(values, { setSubmitting, resetForm }) => {
-              // console.log(values);
               paymentNowUpdateMutation.mutate({
                 lastExitStepUrl: '/',
                 termsAndConditions: values.termsAndConditions,

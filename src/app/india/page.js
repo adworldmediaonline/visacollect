@@ -348,7 +348,6 @@ const Home = () => {
                       validateOnChange={true}
                       validateOnMount={true}
                       onSubmit={(values, { setSubmitting, resetForm }) => {
-                        // console.log(values.visaApplicationId);
                         setVisaApplicationId(values.visaApplicationId);
 
                         setSubmitting(false);
@@ -501,7 +500,6 @@ const Home = () => {
                               values,
                               { setSubmitting, resetForm }
                             ) => {
-                              // console.log(values.visaApplicationId);
                               setVisaApplicationId(values.visaApplicationId);
 
                               setSubmitting(false);
