@@ -12,7 +12,10 @@ import { useRouter } from 'next/navigation';
 import Formmainsection from '@/components/srilanka/common/Formmainsection';
 import Formsubhead from '@/components/srilanka/common/Formsubhead';
 import Formheading from '@/components/srilanka/common/Formheading';
-import { applyInGroupsData, touristGroupsSchema } from '@/constant/srilankaConstant';
+import {
+  applyInGroupsData,
+  touristGroupsSchema,
+} from '@/constant/srilankaConstant';
 import SingleFileUpload from '@/components/srilanka/SingleFileUpload';
 import useQueryGet from '@/hooks/useQuery';
 import { useFormContext } from '@/context/formContext';
@@ -622,7 +625,7 @@ const Page = ({ params }) => {
                               name="isChildInformationEnable"
                               className="w-6 h-6"
                             />
-                            <h2 className='text-white'> Enable </h2>
+                            <h2 className="text-white"> Enable </h2>
                           </div>
                         </div>
                       </div>
@@ -639,41 +642,46 @@ const Page = ({ params }) => {
                             name="childInformation"
                             render={arrayHelpers => (
                               <div>
-                                <table className='w-full'>
-                                <thead>
-                                  <tr>
-                                    <th><div className="label-section">
-                                      <label>Surname/Family Name *</label>
-                                    </div>
-
-                                    </th>
-                                    <th> <div className="label-section">
-                                      <label>Other/Given Names *</label>
-                                    </div>
-
-                                    </th>
-                                    <th>  <div className="label-section">
-                                      <label>Date of Birth*</label>
-                                    </div>
-                                    </th>
-                                    <th> <div className="label-section">
-                                      <label>Gender*</label>
-                                    </div>
-                                    </th>
-                                    <th> <div className="label-section">
-                                      <label>Relationship *</label>
-                                    </div>
-                                    </th>
-                                    <th>Action</th>
-                                  </tr>
-                                </thead>
+                                <table className="w-full">
+                                  <thead>
+                                    <tr>
+                                      <th>
+                                        <div className="label-section">
+                                          <label>Surname/Family Name *</label>
+                                        </div>
+                                      </th>
+                                      <th>
+                                        {' '}
+                                        <div className="label-section">
+                                          <label>Other/Given Names *</label>
+                                        </div>
+                                      </th>
+                                      <th>
+                                        {' '}
+                                        <div className="label-section">
+                                          <label>Date of Birth*</label>
+                                        </div>
+                                      </th>
+                                      <th>
+                                        {' '}
+                                        <div className="label-section">
+                                          <label>Gender*</label>
+                                        </div>
+                                      </th>
+                                      <th>
+                                        {' '}
+                                        <div className="label-section">
+                                          <label>Relationship *</label>
+                                        </div>
+                                      </th>
+                                      <th>Action</th>
+                                    </tr>
+                                  </thead>
                                   <tbody>
                                     {values.childInformation?.map(
                                       (child, index) => (
                                         <tr key={index}>
-                                          <td className='px-3 py-2'>
-                                         
-
+                                          <td className="px-3 py-2">
                                             <div className="order-2 col-span-8">
                                               <Field
                                                 className="new-form-input "
@@ -683,7 +691,6 @@ const Page = ({ params }) => {
                                           </td>
 
                                           <td>
-                                           
                                             <div className="order-2 col-span-8">
                                               <Field
                                                 className="new-form-input "
@@ -692,9 +699,7 @@ const Page = ({ params }) => {
                                             </div>
                                           </td>
 
-                                          <td className='px-3 py-2'>
-                                          
-
+                                          <td className="px-3 py-2">
                                             <div className="order-2 col-span-8">
                                               <Field
                                                 type="date"
@@ -705,8 +710,6 @@ const Page = ({ params }) => {
                                           </td>
 
                                           <td>
-                                           
-
                                             <div className="order-2 col-span-8">
                                               <Field
                                                 component="select"
@@ -725,8 +728,7 @@ const Page = ({ params }) => {
                                             </div>
                                           </td>
 
-                                          <td className='px-3 py-2'>
-                                          
+                                          <td className="px-3 py-2">
                                             <div className="order-2 col-span-8">
                                               <Field
                                                 component="select"
@@ -831,8 +833,9 @@ const Page = ({ params }) => {
                       </div>
                     ) : null}
                     <button
-                      className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
-                        }`}
+                      className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${
+                        !isValid ? 'cursor-not-allowed opacity-50' : ''
+                      }`}
                       disabled={!isValid}
                       type="submit"
                     >
@@ -869,87 +872,87 @@ const Page = ({ params }) => {
                       <tbody>
                         {touristGroupsData?.members?.length > 0
                           ? touristGroupsData?.members
-                            ?.filter(member => member?._id !== params?.id)
-                            .map(member => (
-                              <tr key={member._id}>
-                                <td className="p-4">
-                                  <div
-                                    variant="small"
-                                    color="blue-gray"
-                                    className="font-normal"
+                              ?.filter(member => member?._id !== params?.id)
+                              .map(member => (
+                                <tr key={member._id}>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {member?.givenNameGroupTourist}
+                                    </div>
+                                  </td>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {member?.passportNumberGroupTourist}
+                                    </div>
+                                  </td>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {member?.nationalityGroupTourist}
+                                    </div>
+                                  </td>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {member?.dateOfBirthGroupTourist}
+                                    </div>
+                                  </td>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {member?.issueDateGroupTourist}
+                                    </div>
+                                  </td>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {member?.genderGroupTourist}
+                                    </div>
+                                  </td>
+                                  <td
+                                    className={`p-4 flex space-x-5 items-center`}
                                   >
-                                    {member?.givenNameGroupTourist}
-                                  </div>
-                                </td>
-                                <td className="p-4">
-                                  <div
-                                    variant="small"
-                                    color="blue-gray"
-                                    className="font-normal"
-                                  >
-                                    {member?.passportNumberGroupTourist}
-                                  </div>
-                                </td>
-                                <td className="p-4">
-                                  <div
-                                    variant="small"
-                                    color="blue-gray"
-                                    className="font-normal"
-                                  >
-                                    {member?.nationalityGroupTourist}
-                                  </div>
-                                </td>
-                                <td className="p-4">
-                                  <div
-                                    variant="small"
-                                    color="blue-gray"
-                                    className="font-normal"
-                                  >
-                                    {member?.dateOfBirthGroupTourist}
-                                  </div>
-                                </td>
-                                <td className="p-4">
-                                  <div
-                                    variant="small"
-                                    color="blue-gray"
-                                    className="font-normal"
-                                  >
-                                    {member?.issueDateGroupTourist}
-                                  </div>
-                                </td>
-                                <td className="p-4">
-                                  <div
-                                    variant="small"
-                                    color="blue-gray"
-                                    className="font-normal"
-                                  >
-                                    {member?.genderGroupTourist}
-                                  </div>
-                                </td>
-                                <td
-                                  className={`p-4 flex space-x-5 items-center`}
-                                >
-                                  <Link
-                                    href={`/srilanka/slvisa/tourist-eta/apply-in-group/step-two/${member?._id}`}
-                                  >
-                                    <CiEdit size={24} />
-                                  </Link>
+                                    <Link
+                                      href={`/srilanka/slvisa/tourist-eta/apply-in-group/step-two/${member?._id}`}
+                                    >
+                                      <CiEdit size={24} />
+                                    </Link>
 
-                                  <button
-                                    type="button"
-                                    onClick={() =>
-                                      deleteMutation.mutate(member?._id)
-                                    }
-                                  >
-                                    {deleteMutation.isPending ? (
-                                      <ImSpinner2 className="animate-spin" />
-                                    ) : (
-                                      <MdDelete size={24} />
-                                    )}
-                                  </button>
-                                </td>
-                              </tr>
-                            ))
+                                    <button
+                                      type="button"
+                                      onClick={() =>
+                                        deleteMutation.mutate(member?._id)
+                                      }
+                                    >
+                                      {deleteMutation.isPending ? (
+                                        <ImSpinner2 className="animate-spin" />
+                                      ) : (
+                                        <MdDelete size={24} />
+                                      )}
+                                    </button>
+                                  </td>
+                                </tr>
+                              ))
                           : 'No Member found'}
                         {deleteMutation.error ? (
                           <div className="text-red-500">
