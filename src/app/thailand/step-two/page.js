@@ -1,9 +1,7 @@
 'use client';
 import SubHeading from '@/components/thailand/common/SubHeading';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { BsQuestionCircleFill } from 'react-icons/bs';
 import React from 'react';
-import { FaCirclePlus } from 'react-icons/fa6';
 import { thailandSchema } from '../_thailandFormSchema/thailandFormSchema';
 import { CiEdit } from 'react-icons/ci';
 import apiEndpoint from '@/services/apiEndpoint';
@@ -15,6 +13,8 @@ import { ImSpinner2 } from 'react-icons/im';
 import { MdDelete } from 'react-icons/md';
 import Link from 'next/link';
 import useDelete from '@/hooks/useDelete';
+import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
+import { minDateWithDate } from '@/lib/minDate';
 
 export default function Page() {
   const { state } = useFormContext();
@@ -82,7 +82,7 @@ export default function Page() {
                 // resetForm();
               }}
             >
-              {({ values, isValid }) => (
+              {({ values, isValid, setFieldValue }) => (
                 <Form>
                   <SubHeading subHead="Your Applicant Information" />
                   <div className="main-form-section">
@@ -94,7 +94,6 @@ export default function Page() {
                         type="text"
                         id="firstName"
                         name="firstName"
-                        // placeholder="Date Of Birth"
                         className="new-form-input "
                       />
 
@@ -114,7 +113,6 @@ export default function Page() {
                         type="text"
                         id="lastName"
                         name="lastName"
-                        // placeholder="Date Of Birth"
                         className="new-form-input "
                       />
 
@@ -178,19 +176,13 @@ export default function Page() {
                       <label>Date of birth </label>
                     </div>
                     <div className="order-2 col-span-9">
-                      <Field
-                        type="date"
-                        id="dateOfBirth"
+                      <ReactDatePickerInput
+                        className="new-form-input"
                         name="dateOfBirth"
-                        // placeholder="Date Of Birth"
-                        className="new-form-input "
+                        selected={values.dateOfBirth}
+                        setFieldValue={setFieldValue}
+                        maxDate={new Date()}
                       />
-
-                      <ErrorMessage name="dateOfBirth">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
                     </div>
                   </div>
 
@@ -270,19 +262,14 @@ export default function Page() {
                       <label>Passport issue date</label>
                     </div>
                     <div className="order-2 col-span-9">
-                      <Field
-                        type="date"
-                        id="passportIssueDate"
+                      <ReactDatePickerInput
+                        className="new-form-input"
                         name="passportIssueDate"
-                        // placeholder="Date Of Birth"
-                        className="new-form-input "
+                        selected={values.passportIssueDate}
+                        setFieldValue={setFieldValue}
+                        minDate={new Date(values.dateOfBirth)}
+                        disabled={values.dateOfBirth === ''}
                       />
-
-                      <ErrorMessage name="passportIssueDate">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
                     </div>
                   </div>
 
@@ -291,19 +278,13 @@ export default function Page() {
                       <label>Passport expiration date</label>
                     </div>
                     <div className="order-2 col-span-9">
-                      <Field
-                        type="date"
-                        id="passportExpirationDate"
+                      <ReactDatePickerInput
+                        className="new-form-input"
                         name="passportExpirationDate"
-                        // placeholder="Date Of Birth"
-                        className="new-form-input "
+                        selected={values.passportExpirationDate}
+                        setFieldValue={setFieldValue}
+                        minDate={minDateWithDate(1, values.passportIssueDate)}
                       />
-
-                      <ErrorMessage name="passportExpirationDate">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
                     </div>
                   </div>
 
@@ -457,10 +438,13 @@ export default function Page() {
                         {' '}
                         Products{' '}
                         <span className="text-sm font-normal">
-                          CA Embassy Registration Embassy Registration (CA)
+                          Embassy Registration (CA)
                         </span>
                       </p>
-                      <p className="text-xl font-semibold">NA</p>
+                      <p className="text-xl font-semibold">
+                        {thailandVisaApplicationData?.persons?.length}{' '}
+                        Applicants
+                      </p>
                     </div>
                     <div className="flex items-center justify-between pb-5 text-black">
                       <p className="text-2xl font-semibold">
