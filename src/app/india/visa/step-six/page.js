@@ -63,6 +63,7 @@ const StepSix = () => {
     temporaryExitUpdateMutation.mutate({
       lastExitStepUrl: pathName,
     });
+    localStorage.clear();
   };
 
   if (isPending) {

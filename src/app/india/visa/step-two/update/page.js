@@ -135,12 +135,12 @@ export default function StepTwoUpdate() {
                             <div className="form-input-main-div">
                               <label className="form-label">
                                 Previous Last Name*
-                                <div className="group relative">
+                                <div className="relative group">
                                   <BsQuestionCircleFill
                                     className="text-primary info-icon"
                                     size={20}
                                   />
-                                  <div className="absolute -top-12 -right-32 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 ">
+                                  <div className="absolute p-2 text-xs text-white transition-all scale-0 bg-gray-800 rounded -top-12 -right-32 group-hover:scale-100 ">
                                     Enter your previous last name
                                   </div>
                                 </div>
