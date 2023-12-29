@@ -37,7 +37,7 @@ const Header = ({ bgcolor }) => {
     >
       <nav className="container navbarMainVisa ">
         <div className="flex items-center w-full md:justify-between md:space-x-12">
-          <Link href="/thailand" className="space-x-4">
+          <Link href="/" className="space-x-4">
             {scrolled ? (
               <>
                 <Image
@@ -100,7 +100,7 @@ const Header = ({ bgcolor }) => {
               </Link>
             </li>
             {/* for mobile end */}
-            <Link href="#">
+            <Link href="/thailand/apply-form">
               <li className="relative hidden text-sm font-semibold cursor-pointer group dropdown drop-shadow-2xl md:flex nav-itemMainVisa nav-desk hover:text-primary">
                 eVisa Application
               </li>
@@ -108,7 +108,7 @@ const Header = ({ bgcolor }) => {
             {/* for mobile start */}
             <li className="block md:hidden">
               <Link
-                href="#"
+                href="/thailand/apply-form"
                 className="flex items-center px-2 py-4 mx-4 space-x-2 font-semibold border-b border-b-secondary"
               >
                 <span className="w-2 h-2 bg-black"></span>

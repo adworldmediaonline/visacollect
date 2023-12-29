@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="container">
         <div className="md:grid grid-cols-12 flex justify-between items-center z-10">
           <div className="md:col-span-2">
-            <Link href="/srilanka" > <img src="/assets/images/srilanka/common/logo.png" className="w-32 p-2" /> </Link>
+            <Link href="/" > <img src="/assets/images/srilanka/common/logo.png" className="w-32 p-2" /> </Link>
           </div>
           <div className="md:col-span-8  px-12">
 
