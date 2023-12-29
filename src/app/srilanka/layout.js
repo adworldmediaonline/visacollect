@@ -1,7 +1,6 @@
 import { Inter } from 'next/font/google';
 import './globals.css';
 import 'react-datepicker/dist/react-datepicker.css';
-import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '@/components/srilanka/common/Navbar';
 import Footer from '@/components/srilanka/common/Footer';
 
