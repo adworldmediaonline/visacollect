@@ -19,6 +19,8 @@ import usePost from '@/hooks/usePost';
 import { addDays } from '@/lib/addDays';
 import SingleFileUpload from '@/components/srilanka/SingleFileUpload';
 import Formsubhead from '@/components/srilanka/common/Formsubhead';
+import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
+import { minDate, minDateWithDate } from '@/lib/minDate';
 
 const Page = () => {
   const postMutation = usePost(
@@ -194,26 +196,13 @@ const Page = () => {
                   </div>
 
                   <div className="order-2 col-span-8">
-                    <ReactDatePicker
-                      showIcon
-                      selected={values.dateOfBirthIndividualTourist}
-                      maxDate={new Date()}
-                      onChange={date =>
-                        setFieldValue('dateOfBirthIndividualTourist', date)
-                      }
-                      dateFormat="dd-MM-yyyy"
-                      icon={<CiCalendarDate />}
-                      className="w-full new-form-input"
+                    <ReactDatePickerInput
+                      className="new-form-input"
                       name="dateOfBirthIndividualTourist"
-                      placeholderText="Enter date of birth"
-                    // wrapperClassName="date-picker"
+                      selected={values.dateOfBirthIndividualTourist}
+                      setFieldValue={setFieldValue}
+                      maxDate={new Date()}
                     />
-
-                    <ErrorMessage name="dateOfBirthIndividualTourist">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
                   </div>
                 </div>
                 <div className="main-form-section">
@@ -419,27 +408,14 @@ const Page = () => {
                   </div>
 
                   <div className="order-2 col-span-8">
-                    <ReactDatePicker
-                      showIcon
-                      selected={values.issueDateIndividualTourist}
-                      minDate={new Date(values.dateOfBirthIndividualTourist)}
-                      onChange={date =>
-                        setFieldValue('issueDateIndividualTourist', date)
-                      }
-                      dateFormat="dd-MM-yyyy"
-                      icon={<CiCalendarDate />}
-                      className="w-full new-form-input"
+                    <ReactDatePickerInput
+                      className="new-form-input"
                       name="issueDateIndividualTourist"
-                      placeholderText="Enter issue date"
-                      // wrapperClassName="date-picker"
+                      selected={values.issueDateIndividualTourist}
+                      setFieldValue={setFieldValue}
+                      minDate={new Date(values.dateOfBirthIndividualTourist)}
                       disabled={values.dateOfBirthIndividualTourist === ''}
                     />
-
-                    <ErrorMessage name="issueDateIndividualTourist">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
                   </div>
                 </div>
                 <div className="main-form-section">
@@ -455,26 +431,16 @@ const Page = () => {
                   </div>
 
                   <div className="order-2 col-span-8">
-                    <ReactDatePicker
-                      showIcon
-                      selected={values.expiryDateIndividualTourist}
-                      minDate={new Date()}
-                      onChange={date =>
-                        setFieldValue('expiryDateIndividualTourist', date)
-                      }
-                      dateFormat="dd-MM-yyyy"
-                      icon={<CiCalendarDate />}
-                      className="w-full new-form-input"
+                    <ReactDatePickerInput
+                      className="new-form-input"
                       name="expiryDateIndividualTourist"
-                      placeholderText="Enter expiry date"
-                    // wrapperClassName="date-picker"
-                    />
-
-                    <ErrorMessage name="expiryDateIndividualTourist">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
+                      selected={values.expiryDateIndividualTourist}
+                      setFieldValue={setFieldValue}
+                      minDate={minDateWithDate(
+                        1,
+                        values.issueDateIndividualTourist
                       )}
-                    </ErrorMessage>
+                    />
                   </div>
                 </div>
 
@@ -558,7 +524,7 @@ const Page = () => {
                             name="isChildInformationEnable"
                             className="w-6 h-6"
                           />
-                          <h2 className='text-white'> Enable </h2>
+                          <h2 className="text-white"> Enable </h2>
                         </div>
                       </div>
                     </div>
@@ -575,40 +541,46 @@ const Page = () => {
                           name="childInformation"
                           render={arrayHelpers => (
                             <div>
-                              <table className='w-full'>
+                              <table className="w-full">
                                 <thead>
                                   <tr>
-                                    <th><div className="label-section">
-                                      <label>Surname/Family Name *</label>
-                                    </div>
-
+                                    <th>
+                                      <div className="label-section">
+                                        <label>Surname/Family Name *</label>
+                                      </div>
                                     </th>
-                                    <th> <div className="label-section">
-                                      <label>Other/Given Names *</label>
-                                    </div>
-
+                                    <th>
+                                      {' '}
+                                      <div className="label-section">
+                                        <label>Other/Given Names *</label>
+                                      </div>
                                     </th>
-                                    <th>  <div className="label-section">
-                                      <label>Date of Birth*</label>
-                                    </div>
+                                    <th>
+                                      {' '}
+                                      <div className="label-section">
+                                        <label>Date of Birth*</label>
+                                      </div>
                                     </th>
-                                    <th> <div className="label-section">
-                                      <label>Gender*</label>
-                                    </div>
+                                    <th>
+                                      {' '}
+                                      <div className="label-section">
+                                        <label>Gender*</label>
+                                      </div>
                                     </th>
-                                    <th> <div className="label-section">
-                                      <label>Relationship *</label>
-                                    </div>
+                                    <th>
+                                      {' '}
+                                      <div className="label-section">
+                                        <label>Relationship *</label>
+                                      </div>
                                     </th>
                                     <th>Action</th>
                                   </tr>
                                 </thead>
-                                <tbody >
+                                <tbody>
                                   {values.childInformation?.map(
                                     (child, index) => (
-                                      <tr key={index}  >
-                                        <td className='px-3 py-2'>
-
+                                      <tr key={index}>
+                                        <td className="px-3 py-2">
                                           <div className="order-2 col-span-8">
                                             <Field
                                               className="new-form-input "
@@ -618,7 +590,6 @@ const Page = () => {
                                         </td>
 
                                         <td>
-
                                           <div className="order-2 col-span-8">
                                             <Field
                                               className="new-form-input "
@@ -627,9 +598,7 @@ const Page = () => {
                                           </div>
                                         </td>
 
-                                        <td className='px-3 py-2'>
-
-
+                                        <td className="px-3 py-2">
                                           <div className="order-2 col-span-8">
                                             <Field
                                               type="date"
@@ -640,8 +609,6 @@ const Page = () => {
                                         </td>
 
                                         <td>
-
-
                                           <div className="order-2 col-span-8">
                                             <Field
                                               component="select"
@@ -658,8 +625,7 @@ const Page = () => {
                                           </div>
                                         </td>
 
-                                        <td className='px-3 py-2'>
-
+                                        <td className="px-3 py-2">
                                           <div className="order-2 col-span-8">
                                             <Field
                                               component="select"
@@ -681,7 +647,10 @@ const Page = () => {
                                               arrayHelpers.remove(index)
                                             }
                                           >
-                                            <MdDeleteOutline className='text-primary' size={30} />
+                                            <MdDeleteOutline
+                                              className="text-primary"
+                                              size={30}
+                                            />
                                           </button>
                                         </td>
                                       </tr>
@@ -762,30 +731,13 @@ const Page = () => {
                   </div>
 
                   <div className="order-2 col-span-8">
-                    <ReactDatePicker
-                      showIcon
-                      selected={values.attendantArrivalDateIndividualTourist}
-                      minDate={addDays(values.expiryDateIndividualTourist, 180)}
-                      onChange={date =>
-                        setFieldValue(
-                          'attendantArrivalDateIndividualTourist',
-                          date
-                        )
-                      }
-                      dateFormat="dd-MM-yyyy"
-                      icon={<CiCalendarDate />}
-                      className="w-full new-form-input"
+                    <ReactDatePickerInput
+                      className="new-form-input"
                       name="attendantArrivalDateIndividualTourist"
-                      placeholderText="Enter arrival date"
-                      // wrapperClassName="date-picker"
-                      disabled={values.expiryDateIndividualTourist === ''}
+                      selected={values.attendantArrivalDateIndividualTourist}
+                      setFieldValue={setFieldValue}
+                      minDate={minDate(1)}
                     />
-
-                    <ErrorMessage name="attendantArrivalDateIndividualTourist">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
                   </div>
                 </div>
                 <div className="main-form-section">
@@ -1306,8 +1258,9 @@ const Page = () => {
                     </div>
                   ) : null}
                   <button
-                    className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
-                      }`}
+                    className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${
+                      !isValid ? 'cursor-not-allowed opacity-50' : ''
+                    }`}
                     disabled={!isValid}
                     type="submit"
                   >

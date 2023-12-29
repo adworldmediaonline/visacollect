@@ -12,12 +12,17 @@ import { MdDeleteOutline } from 'react-icons/md';
 import Formheading from '@/components/srilanka/common/Formheading';
 import Formmainsection from '@/components/srilanka/common/Formmainsection';
 import Formsubhead from '@/components/srilanka/common/Formsubhead';
-import { applyIndividualRadioData, touristIndividualsSchema } from '@/constant/srilankaConstant';
+import {
+  applyIndividualRadioData,
+  touristIndividualsSchema,
+} from '@/constant/srilankaConstant';
 import SingleFileUpload from '@/components/srilanka/SingleFileUpload';
 import apiEndpoint from '@/services/apiEndpoint';
 import axiosInstance from '@/services/api';
 import useUpdate from '@/hooks/useUpdate';
 import { addDays } from '@/lib/addDays';
+import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
+import { minDateWithDate } from '@/lib/minDate';
 
 export default function Page({ params }) {
   const router = useRouter();
@@ -103,7 +108,7 @@ export default function Page({ params }) {
           <Formheading
             formHead="Travel Information - Tourist Purpose - Individual"
             formPara="All information should be entered as per the applicant's passport"
-          // subHead=""
+            // subHead=""
           />
 
           <div>
@@ -243,38 +248,13 @@ export default function Page({ params }) {
                     </div>
 
                     <div className="order-2 col-span-8">
-                      {/* <Field
-                        type="date"
-                        id="dateOfBirthIndividualTourist"
+                      <ReactDatePickerInput
+                        className="new-form-input"
                         name="dateOfBirthIndividualTourist"
-                        // placeholder="Date Of Birth"
-                        className="new-form-input "
-                      /> */}
-
-                      <ReactDatePicker
-                        showIcon
-                        selected={
-                          values.dateOfBirthIndividualTourist
-                            ? new Date(values.dateOfBirthIndividualTourist)
-                            : null
-                        }
+                        selected={new Date(values.dateOfBirthIndividualTourist)}
+                        setFieldValue={setFieldValue}
                         maxDate={new Date()}
-                        onChange={date =>
-                          setFieldValue('dateOfBirthIndividualTourist', date)
-                        }
-                        dateFormat="dd-MM-yyyy"
-                        icon={<CiCalendarDate />}
-                        className="w-full new-form-input"
-                        name="dateOfBirthIndividualTourist"
-                        placeholderText="Enter date of birth"
-                      // wrapperClassName="date-picker"
                       />
-
-                      <ErrorMessage name="dateOfBirthIndividualTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
                     </div>
                   </div>
                   <div className="main-form-section">
@@ -480,27 +460,14 @@ export default function Page({ params }) {
                     </div>
 
                     <div className="order-2 col-span-8">
-                      <ReactDatePicker
-                        showIcon
-                        selected={new Date(values.issueDateIndividualTourist)}
-                        minDate={new Date(values.dateOfBirthIndividualTourist)}
-                        onChange={date =>
-                          setFieldValue('issueDateIndividualTourist', date)
-                        }
-                        dateFormat="dd-MM-yyyy"
-                        icon={<CiCalendarDate />}
-                        className="w-full new-form-input"
+                      <ReactDatePickerInput
+                        className="new-form-input"
                         name="issueDateIndividualTourist"
-                        placeholderText="Enter issue date"
-                        // wrapperClassName="date-picker"
+                        selected={new Date(values.issueDateIndividualTourist)}
+                        setFieldValue={setFieldValue}
+                        minDate={new Date(values.dateOfBirthIndividualTourist)}
                         disabled={values.dateOfBirthIndividualTourist === ''}
                       />
-
-                      <ErrorMessage name="issueDateIndividualTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
                     </div>
                   </div>
                   <div className="main-form-section">
@@ -516,26 +483,16 @@ export default function Page({ params }) {
                     </div>
 
                     <div className="order-2 col-span-8">
-                      <ReactDatePicker
-                        showIcon
-                        selected={new Date(values.expiryDateIndividualTourist)}
-                        minDate={new Date()}
-                        onChange={date =>
-                          setFieldValue('expiryDateIndividualTourist', date)
-                        }
-                        dateFormat="dd-MM-yyyy"
-                        icon={<CiCalendarDate />}
-                        className="w-full new-form-input"
+                      <ReactDatePickerInput
+                        className="new-form-input"
                         name="expiryDateIndividualTourist"
-                        placeholderText="Enter expiry date"
-                      // wrapperClassName="date-picker"
-                      />
-
-                      <ErrorMessage name="expiryDateIndividualTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
+                        selected={values.expiryDateIndividualTourist}
+                        setFieldValue={setFieldValue}
+                        minDate={minDateWithDate(
+                          1,
+                          values.issueDateIndividualTourist
                         )}
-                      </ErrorMessage>
+                      />
                     </div>
                   </div>
 
@@ -578,7 +535,7 @@ export default function Page({ params }) {
                           </label>
                         </div>
                         {values.passportImageIndividualTourist instanceof
-                          File ? (
+                        File ? (
                           <div className="flex items-center w-full">
                             <Image
                               src={URL.createObjectURL(
@@ -635,7 +592,7 @@ export default function Page({ params }) {
                               name="isChildInformationEnable"
                               className="w-6 h-6"
                             />
-                            <h2 className='text-white'> Enable </h2>
+                            <h2 className="text-white"> Enable </h2>
                           </div>
                         </div>
                       </div>
@@ -652,40 +609,46 @@ export default function Page({ params }) {
                             name="childInformation"
                             render={arrayHelpers => (
                               <div>
-                                  <table className='w-full'>
-                                <thead>
-                                  <tr>
-                                    <th><div className="label-section">
-                                      <label>Surname/Family Name *</label>
-                                    </div>
-
-                                    </th>
-                                    <th> <div className="label-section">
-                                      <label>Other/Given Names *</label>
-                                    </div>
-
-                                    </th>
-                                    <th>  <div className="label-section">
-                                      <label>Date of Birth*</label>
-                                    </div>
-                                    </th>
-                                    <th> <div className="label-section">
-                                      <label>Gender*</label>
-                                    </div>
-                                    </th>
-                                    <th> <div className="label-section">
-                                      <label>Relationship *</label>
-                                    </div>
-                                    </th>
-                                    <th>Action</th>
-                                  </tr>
-                                </thead>
+                                <table className="w-full">
+                                  <thead>
+                                    <tr>
+                                      <th>
+                                        <div className="label-section">
+                                          <label>Surname/Family Name *</label>
+                                        </div>
+                                      </th>
+                                      <th>
+                                        {' '}
+                                        <div className="label-section">
+                                          <label>Other/Given Names *</label>
+                                        </div>
+                                      </th>
+                                      <th>
+                                        {' '}
+                                        <div className="label-section">
+                                          <label>Date of Birth*</label>
+                                        </div>
+                                      </th>
+                                      <th>
+                                        {' '}
+                                        <div className="label-section">
+                                          <label>Gender*</label>
+                                        </div>
+                                      </th>
+                                      <th>
+                                        {' '}
+                                        <div className="label-section">
+                                          <label>Relationship *</label>
+                                        </div>
+                                      </th>
+                                      <th>Action</th>
+                                    </tr>
+                                  </thead>
                                   <tbody>
                                     {values.childInformation?.map(
-                                       (child, index) => (
-                                        <tr key={index}  >
-                                          <td className='px-3 py-2'>
-  
+                                      (child, index) => (
+                                        <tr key={index}>
+                                          <td className="px-3 py-2">
                                             <div className="order-2 col-span-8">
                                               <Field
                                                 className="new-form-input "
@@ -693,9 +656,8 @@ export default function Page({ params }) {
                                               />
                                             </div>
                                           </td>
-  
+
                                           <td>
-  
                                             <div className="order-2 col-span-8">
                                               <Field
                                                 className="new-form-input "
@@ -703,10 +665,8 @@ export default function Page({ params }) {
                                               />
                                             </div>
                                           </td>
-  
-                                          <td className='px-3 py-2'>
-  
-  
+
+                                          <td className="px-3 py-2">
                                             <div className="order-2 col-span-8">
                                               <Field
                                                 type="date"
@@ -715,10 +675,8 @@ export default function Page({ params }) {
                                               />
                                             </div>
                                           </td>
-  
+
                                           <td>
-  
-  
                                             <div className="order-2 col-span-8">
                                               <Field
                                                 component="select"
@@ -727,16 +685,17 @@ export default function Page({ params }) {
                                               >
                                                 {' '}
                                                 <option value="">Select</option>
-                                                <option value="male">Male</option>
+                                                <option value="male">
+                                                  Male
+                                                </option>
                                                 <option value="female">
                                                   Female
                                                 </option>
                                               </Field>
                                             </div>
                                           </td>
-  
-                                          <td className='px-3 py-2'>
-  
+
+                                          <td className="px-3 py-2">
                                             <div className="order-2 col-span-8">
                                               <Field
                                                 component="select"
@@ -758,7 +717,10 @@ export default function Page({ params }) {
                                                 arrayHelpers.remove(index)
                                               }
                                             >
-                                              <MdDeleteOutline className='text-primary' size={30} />
+                                              <MdDeleteOutline
+                                                className="text-primary"
+                                                size={30}
+                                              />
                                             </button>
                                           </td>
                                         </tr>
@@ -1398,8 +1360,9 @@ export default function Page({ params }) {
                       </div>
                     ) : null}
                     <button
-                      className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
-                        }`}
+                      className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${
+                        !isValid ? 'cursor-not-allowed opacity-50' : ''
+                      }`}
                       disabled={!isValid}
                       type="submit"
                     >
