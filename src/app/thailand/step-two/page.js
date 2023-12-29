@@ -333,25 +333,25 @@ export default function Page() {
                     <table className="w-full text-left border table-auto min-w-max">
                       <thead>
                         <tr className="rounded-xl">
-                          <th className="bg-[#F7BD6D] text-black p-4 ">
+                          <th className="bg-[#0068E5] text-black p-4 ">
                             Full name
                           </th>
-                          <th className="bg-[#F7BD6D] text-black p-4 ">
+                          <th className="bg-[#0068E5] text-black p-4 ">
                             Nationality
                           </th>
-                          <th className="bg-[#F7BD6D] text-black p-4 ">
+                          <th className="bg-[#0068E5] text-black p-4 ">
                             Gender
                           </th>
-                          <th className="bg-[#F7BD6D] text-black p-4 ">
+                          <th className="bg-[#0068E5] text-black p-4 ">
                             Date Of Birth
                           </th>
-                          <th className="bg-[#F7BD6D] text-black p-4 ">
+                          <th className="bg-[#0068E5] text-black p-4 ">
                             Country of birth
                           </th>
-                          <th className="bg-[#F7BD6D] text-black p-4 ">
+                          <th className="bg-[#0068E5] text-black p-4 ">
                             Passport number
                           </th>
-                          <th className="bg-[#F7BD6D] text-black p-4 ">
+                          <th className="bg-[#0068E5] text-black p-4 ">
                             Action
                           </th>
                         </tr>

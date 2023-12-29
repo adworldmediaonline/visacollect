@@ -56,10 +56,10 @@ const Page = () => {
           <div className="  md:py-8 py-20 md;px-0 px-3 ">
             <StepProcess
               color1="bg-[#E3E3E3]"
-              color2="bg-[#F7BD6D]" 
+              color2="bg-[#0068E5]"
               color3="bg-[#E3E3E3] "
               color4="bg-[#E3E3E3]"
-              />
+            />
           </div>
           <Formheading formHead="Travel Information - Tourist Purpose - Individual" />
           <div className="space-y-2 divide-y-[1px] pt-5">
@@ -367,7 +367,7 @@ const Page = () => {
             <div className="py-8 text-center">
               <Link
                 href={`/srilanka/slvisa/tourist-eta/apply-individual/${touristIndividualData?._id}`}
-                className="formbtn cursor-pointer inline-flex items-center gap-3 bg-[#F7BD6D] px-8 py-2"
+                className="formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2"
               >
                 Edit Data
               </Link>

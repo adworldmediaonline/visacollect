@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-const Mainsection = ({ title, para, button, stripeText, linkPath,img }) => {
+const Mainsection = ({ title, para, button, stripeText, linkPath, img }) => {
   return (
     <div>
       <div
@@ -22,7 +22,7 @@ const Mainsection = ({ title, para, button, stripeText, linkPath,img }) => {
             <div className="pt-3">
               <Link
                 href={linkPath}
-                className="bg-[#F7BD6D] transition duration-200 hover:bg-[#1e1e1e] hover:text-white border border-transparent hover:border-white  px-6 py-3 font-medium text-md"
+                className="bg-[#0068E5] transition duration-200 hover:bg-[#1e1e1e] hover:text-white border border-transparent hover:border-white  px-6 py-3 font-medium text-md"
               >
                 {button}
               </Link>

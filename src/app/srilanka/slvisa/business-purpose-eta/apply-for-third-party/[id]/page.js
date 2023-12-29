@@ -64,13 +64,13 @@ const Page = ({ params }) => {
             para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
           />
 
-<div className="container md:py-8 py-20 md;px-0 px-3">
-      <StepProcess
-          color1=" bg-[#F7BD6D]"
-          color2="bg-[#E3E3E3]"
-          color3="bg-[#E3E3E3] "
-          color4="bg-[#E3E3E3]"
-        />
+          <div className="container md:py-8 py-20 md;px-0 px-3">
+            <StepProcess
+              color1=" bg-[#0068E5]"
+              color2="bg-[#E3E3E3]"
+              color3="bg-[#E3E3E3] "
+              color4="bg-[#E3E3E3]"
+            />
             <Formheading
               formHead="Travel Information - Business Purpose - Third Party"
               formPara="All information should be entered as per the applicant’s passport"
@@ -179,9 +179,9 @@ const Page = ({ params }) => {
                           name="purposeOfVisitThirdPartyBusiness"
                           className="new-form-input "
                         >
-                         <option value="">Select</option>
-                        <option value="PARTICIPATE IN BUSINESS MEETINGS AND NEGOTIATIONS">PARTICIPATE IN BUSINESS MEETINGS AND NEGOTIATIONS</option>
-                        <option value="SHORT TERM TRAINING PROGRAMS">SHORT TERM TRAINING PROGRAMS</option>
+                          <option value="">Select</option>
+                          <option value="PARTICIPATE IN BUSINESS MEETINGS AND NEGOTIATIONS">PARTICIPATE IN BUSINESS MEETINGS AND NEGOTIATIONS</option>
+                          <option value="SHORT TERM TRAINING PROGRAMS">SHORT TERM TRAINING PROGRAMS</option>
                         </Field>
 
                         <ErrorMessage name="purposeOfVisitThirdPartyBusiness">
@@ -1373,9 +1373,8 @@ const Page = ({ params }) => {
                         </div>
                       ) : null}
                       <button
-                        className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#F7BD6D] px-8 py-2 ${
-                          !isValid ? 'cursor-not-allowed opacity-50' : ''
-                        }`}
+                        className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
+                          }`}
                         disabled={!isValid}
                         type="submit"
                       >

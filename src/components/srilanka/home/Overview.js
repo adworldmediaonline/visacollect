@@ -6,10 +6,10 @@ const Overview = () => {
       <div className=" md:w-[85%] w-[100%] md:m-auto p-0 m-0">
         <div className="md:container md:pt-20 py-4">
           <div className="md:text-center text-start mx-auto py-4 font-semibold text-3xl space-y-3">
-          <h3 className="md:text-[37px] text-[30px] font-semibold">
-            Overview of Sri Lanka Tourism
-          </h3>
-          <hr className="h-[3px] bg-[#F7BD6D] md:mx-auto w-48" />
+            <h3 className="md:text-[37px] text-[30px] font-semibold">
+              Overview of Sri Lanka Tourism
+            </h3>
+            <hr className="h-[3px] bg-[#0068E5] md:mx-auto w-48" />
           </div>
           <p className="md:text-center text-justify tracking-tighter">
             There are numerous tour and travel companies in Sri Lanka that offer
