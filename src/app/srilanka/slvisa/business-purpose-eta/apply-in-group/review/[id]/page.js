@@ -81,7 +81,7 @@ const Page = ({ params }) => {
           <div className="  md:py-8 py-20 md;px-0 px-3 ">
             <StepProcess
               color1="bg-[#E3E3E3]"
-              color2="bg-[#F7BD6D]"
+              color2="bg-[#0068E5]"
               color3="bg-[#E3E3E3] "
               color4="bg-[#E3E3E3]"
             />
@@ -300,7 +300,7 @@ const Page = ({ params }) => {
             <div className="py-8 text-center">
               <Link
                 href={`/srilanka/slvisa/business-purpose-eta/apply-in-group/${businessGroupsData?._id}`}
-                className="formbtn cursor-pointer inline-flex items-center gap-3 bg-[#F7BD6D] px-8 py-2"
+                className="formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2"
               >
                 Edit Travel Info
               </Link>
@@ -312,7 +312,7 @@ const Page = ({ params }) => {
                   <thead>
                     <tr className="rounded-xl">
                       {tableHead.map(head => (
-                        <th key={head} className="bg-[#F7BD6D] text-black p-4 ">
+                        <th key={head} className="bg-[#0068E5] text-black p-4 ">
                           <div
                             variant="small"
                             color="blue-gray"
@@ -401,7 +401,7 @@ const Page = ({ params }) => {
                   </tbody>
                 </table>
                 <div className="flex justify-end w-full ">
-                  <div className="w-fit bg-[#F7BD6D] text-black flex space-x-5 items-center p-3 font-semibold">
+                  <div className="w-fit bg-[#0068E5] text-black flex space-x-5 items-center p-3 font-semibold">
                     <p>Total Visa Fee </p> <p> 50 USD </p>
                   </div>
                 </div>
@@ -411,7 +411,7 @@ const Page = ({ params }) => {
             <div className="py-8 text-center">
               <Link
                 href="/srilanka/slvisa/business-purpose-eta/apply-in-group/step-two"
-                className="formbtn cursor-pointer inline-flex items-center gap-3 bg-[#F7BD6D] px-8 py-2"
+                className="formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2"
               >
                 Edit Member Info
               </Link>

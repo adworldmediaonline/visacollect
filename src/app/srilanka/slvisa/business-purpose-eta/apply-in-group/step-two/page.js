@@ -83,7 +83,7 @@ const Page = () => {
 
         <div className="container md:py-8 py-20 md;px-0 px-3">
           <StepProcess
-            color1=" bg-[#F7BD6D]"
+            color1=" bg-[#0068E5]"
             color2="bg-[#E3E3E3]"
             color3="bg-[#E3E3E3] "
             color4="bg-[#E3E3E3]"
@@ -602,18 +602,18 @@ const Page = () => {
                   {/* CHILD INFORMATION ADDED START */}
                   <div>
                     <div className="pt-5 pb-10">
-                      <div className=" flex w-full justify-between bg-[#F7BD6D] px-3 py-4">
-                        <h2 className="text-lg font-semibold text-black ">
+                      <div className=" flex w-full justify-between bg-[#0068E5] px-3 py-4">
+                        <h2 className="text-lg font-semibold text-white ">
                           Child information in parent&apos;s passport{' '}
                         </h2>
                         <div>
-                          <div className="flex items-center gap-4">
+                          <div className="flex items-center gap-2">
                             <Field
                               type="checkbox"
                               name="isChildInformationEnable"
                               className="w-6 h-6"
                             />
-                            <h2> Enable </h2>
+                            <h2 className='text-white'> Enable </h2>
                           </div>
                         </div>
                       </div>
@@ -630,38 +630,40 @@ const Page = () => {
                             name="childInformation"
                             render={arrayHelpers => (
                               <div>
-                                <table>
-                                  <thead>
-                                    <tr>
-                                      <th>Surname/Family Name</th>
-                                      <th>Other Given Names</th>
-                                      <th>Date of Birth</th>
-                                      <th>Gender</th>
-                                      <th>Relationship</th>
-                                      <th>Action</th>
-                                    </tr>
-                                  </thead>
+                                <table className='w-full'>
+                                <thead>
+                                  <tr>
+                                    <th><div className="label-section">
+                                      <label>Surname/Family Name *</label>
+                                    </div>
+
+                                    </th>
+                                    <th> <div className="label-section">
+                                      <label>Other/Given Names *</label>
+                                    </div>
+
+                                    </th>
+                                    <th>  <div className="label-section">
+                                      <label>Date of Birth*</label>
+                                    </div>
+                                    </th>
+                                    <th> <div className="label-section">
+                                      <label>Gender*</label>
+                                    </div>
+                                    </th>
+                                    <th> <div className="label-section">
+                                      <label>Relationship *</label>
+                                    </div>
+                                    </th>
+                                    <th>Action</th>
+                                  </tr>
+                                </thead>
                                   <tbody>
                                     {values.childInformation?.map(
                                       (child, index) => (
                                         <tr key={index}>
-                                          <td>
-                                            <div className="label-section">
-                                              <label>
-                                                Surname/Family Name *
-                                              </label>
-                                            </div>
-
-                                            <div className="mark-section group">
-                                              <BsQuestionCircleFill
-                                                className=" side-icon"
-                                                size={20}
-                                              />
-                                              <div className="tooltip-content">
-                                                Enter your last name
-                                              </div>
-                                            </div>
-
+                                          <td className='px-3 py-2'>
+                                            
                                             <div className="order-2 col-span-8">
                                               <Field
                                                 className="new-form-input "
@@ -671,20 +673,7 @@ const Page = () => {
                                           </td>
 
                                           <td>
-                                            <div className="label-section">
-                                              <label>Other/Given Names *</label>
-                                            </div>
-
-                                            <div className="mark-section group">
-                                              <BsQuestionCircleFill
-                                                className=" side-icon"
-                                                size={20}
-                                              />
-                                              <div className="tooltip-content">
-                                                Enter your first name
-                                              </div>
-                                            </div>
-
+                                            
                                             <div className="order-2 col-span-8">
                                               <Field
                                                 className="new-form-input "
@@ -693,23 +682,8 @@ const Page = () => {
                                             </div>
                                           </td>
 
-                                          <td>
-                                            <div className="label-section">
-                                              <label>Date of Birth*</label>
-                                            </div>
-
-                                            <div className="mark-section group">
-                                              <BsQuestionCircleFill
-                                                className=" side-icon"
-                                                size={20}
-                                              />
-                                              <div className="tooltip-content">
-                                                Select your date of birth as it
-                                                appears in your passport in the
-                                                calendar provided below.
-                                              </div>
-                                            </div>
-
+                                          <td className='px-3 py-2'>
+                                          
                                             <div className="order-2 col-span-8">
                                               <Field
                                                 type="date"
@@ -720,20 +694,7 @@ const Page = () => {
                                           </td>
 
                                           <td>
-                                            <div className="label-section">
-                                              <label>Gender*</label>
-                                            </div>
-
-                                            <div className="mark-section group">
-                                              <BsQuestionCircleFill
-                                                className=" side-icon"
-                                                size={20}
-                                              />
-                                              <div className="tooltip-content">
-                                                Please select your gender: Male
-                                                or Female.
-                                              </div>
-                                            </div>
+                                            
 
                                             <div className="order-2 col-span-8">
                                               <Field
@@ -753,22 +714,8 @@ const Page = () => {
                                             </div>
                                           </td>
 
-                                          <td>
-                                            <div className="label-section">
-                                              <label>Relationship *</label>
-                                            </div>
-
-                                            <div className="mark-section group">
-                                              <BsQuestionCircleFill
-                                                className=" side-icon"
-                                                size={20}
-                                              />
-                                              <div className="tooltip-content">
-                                                Please select your relation with
-                                                the person
-                                              </div>
-                                            </div>
-
+                                          <td className='px-3 py-2'>
+                                        
                                             <div className="order-2 col-span-8">
                                               <Field
                                                 component="select"
@@ -802,7 +749,7 @@ const Page = () => {
                                 <div className="py-8 text-center">
                                   <button
                                     type="button"
-                                    className="formbtn cursor-pointer inline-flex items-center gap-3 bg-[#F7BD6D] px-8 py-2"
+                                    className="formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2"
                                     onClick={() =>
                                       arrayHelpers.push({
                                         surnameFamilyName: '',
@@ -874,9 +821,8 @@ const Page = () => {
                       </div>
                     ) : null}
                     <button
-                      className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#F7BD6D] px-8 py-2 ${
-                        !isValid ? 'cursor-not-allowed opacity-50' : ''
-                      }`}
+                      className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
+                        }`}
                       disabled={!isValid}
                       type="submit"
                     >
@@ -897,7 +843,7 @@ const Page = () => {
                           {tableHead?.map(head => (
                             <th
                               key={head}
-                              className="bg-[#F7BD6D] text-black p-4 "
+                              className="bg-[#0068E5] text-black p-4 "
                             >
                               <div
                                 variant="small"
@@ -1007,7 +953,7 @@ const Page = () => {
                     {businessGroupsData?.members?.length > 0 ? (
                       <Link
                         href={`/srilanka/slvisa/business-purpose-eta/apply-in-group/review/${businessGroupsData?._id}`}
-                        className="formbtn cursor-pointer inline-flex items-center gap-3 bg-[#F7BD6D] px-8 py-2"
+                        className="formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2"
                       >
                         Next
                       </Link>
