@@ -107,8 +107,9 @@ export default function Page({ params }) {
                       <ReactDatePickerInput
                         className="new-form-input"
                         name="whenArriveDestination"
-                        selected={new Date(values.whenArriveDestination)}
+                        selected={values.whenArriveDestination}
                         setFieldValue={setFieldValue}
+                        minDate={minDate(1)}
                       />
                     </div>
                   </div>
@@ -121,8 +122,10 @@ export default function Page({ params }) {
                       <ReactDatePickerInput
                         className="new-form-input"
                         name="whenDepartDestination"
-                        selected={new Date(values.whenDepartDestination)}
+                        selected={values.whenDepartDestination}
                         setFieldValue={setFieldValue}
+                        minDate={new Date(values.whenArriveDestination)}
+                        disabled={values.whenArriveDestination === ''}
                       />
                     </div>
                   </div>
