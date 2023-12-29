@@ -1,7 +1,6 @@
 import { Inter } from 'next/font/google';
 import { ToastContainer } from 'react-toastify';
 import { FormProvider } from '@/context/formContext';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import ReactQueryProvider from '@/components/ReactQueryProvider';
 import 'react-datepicker/dist/react-datepicker.css';
 import './globals.css';
@@ -20,8 +19,8 @@ export default function RootLayout({ children }) {
           <ReactQueryProvider>
             <div>{children}</div>
             <ToastContainer />
-            {/* <ReactQueryDevtools initialIsOpen={false} /> */}
           </ReactQueryProvider>
+          z
         </FormProvider>
       </body>
     </html>
