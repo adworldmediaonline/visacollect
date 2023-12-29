@@ -36,11 +36,11 @@ const Documentissued = () => {
     <div className="container">
       <div className=" md:w-[85%] w-full md:m-auto">
         <div className="md:container md:pt-20">
-        <div className="md:text-center text-start mx-auto md:py-4 font-semibold text-3xl space-y-3">
-          <h3 className="md:text-[37px] text-[30px] font-semibold">
-          List of Sri Lanka Document issued for all foreign nationals:
-          </h3>
-          <hr className="h-[3px] bg-[#F7BD6D] md:mx-auto w-48" />
+          <div className="md:text-center text-start mx-auto md:py-4 font-semibold text-3xl space-y-3">
+            <h3 className="md:text-[37px] text-[30px] font-semibold">
+              List of Sri Lanka Document issued for all foreign nationals:
+            </h3>
+            <hr className="h-[3px] bg-[#0068E5] md:mx-auto w-48" />
           </div>
           <p className="md:text-center text-justify tracking-tighter">
             There are numerous tour and travel companies in Sri Lanka that offer
@@ -60,22 +60,22 @@ const Documentissued = () => {
             <ul className="list-disc p-4">
               <li>{e.list1}</li>
               {
-                e.list2?
-                <li>{e.list2}</li>:''
+                e.list2 ?
+                  <li>{e.list2}</li> : ''
               }
-               {
-                e.list3?
-                <li>{e.list3}</li>:''
+              {
+                e.list3 ?
+                  <li>{e.list3}</li> : ''
               }
-               {
-                e.list4?
-                <li>{e.list4}</li>:''
+              {
+                e.list4 ?
+                  <li>{e.list4}</li> : ''
               }
-               {
-                e.list5?
-                <li>{e.list5}</li>:''
+              {
+                e.list5 ?
+                  <li>{e.list5}</li> : ''
               }
-        
+
             </ul>
           </div>
         ))}

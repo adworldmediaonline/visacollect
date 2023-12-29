@@ -8,7 +8,7 @@ const Formheading = ({ formHead, formPara, subHead }) => {
         <h3 className="md:text-[30px] text-[25px] font-semibold">
           {formHead}
         </h3>
-        <hr className="h-[3px] bg-[#F7BD6D] w-48" />
+        <hr className="h-[3px] bg-[#0068E5] w-48" />
 
         <p className='text-[17px] font-light'>{formPara}</p>
       </div>

@@ -28,7 +28,7 @@ const Page = () => {
 
         <div className="container md:py-8 py-20 md;px-0 px-3">
           <StepProcess
-            color1=" bg-[#F7BD6D]"
+            color1=" bg-[#0068E5]"
             color2="bg-[#E3E3E3]"
             color3="bg-[#E3E3E3] "
             color4="bg-[#E3E3E3]"
@@ -688,9 +688,8 @@ const Page = () => {
                       </div>
                     ) : null}
                     <button
-                      className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#F7BD6D] px-8 py-2 ${
-                        !isValid ? 'cursor-not-allowed opacity-50' : ''
-                      }`}
+                      className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
+                        }`}
                       disabled={!isValid}
                       type="submit"
                     >

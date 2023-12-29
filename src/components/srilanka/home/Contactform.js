@@ -54,7 +54,7 @@ const Contactform = () => {
                 className="border w-full p-4 "
               ></textarea>
             </div>
-            <button className="bg-[#F7BD6D] md:w-56 md:px-6 md:py-3 px-2 py-3 font-medium text-md">
+            <button className="bg-[#0068E5] md:w-56 md:px-6 md:py-3 px-2 py-3 font-medium text-md">
               Submit Your Enquiry
             </button>
           </div>

@@ -108,7 +108,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t-2 container border-[#F7BD6D]">
+      <div className="border-t-2 container border-[#0068E5]">
         <h2 className="text-white text-center p-2">
           Copyright © 2023 e-Visa All Rights Reserved.
         </h2>
