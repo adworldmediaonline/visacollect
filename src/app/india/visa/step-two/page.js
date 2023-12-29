@@ -59,6 +59,7 @@ const StepTwo = () => {
     temporaryExitUpdateMutation.mutate({
       lastExitStepUrl: pathName,
     });
+    localStorage.clear();
   };
 
   if (error) {

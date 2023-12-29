@@ -10,8 +10,14 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import PhoneInput from 'react-phone-number-input';
 import { Country } from 'country-state-city';
 import BannerPage from '@/components/india/common/BannerPage';
-import { airportsSeaports, eligibleCountriesEvisaIndia, step1ValidationSchema } from '@/constant/indiaConstant';
+import {
+  airportsSeaports,
+  eligibleCountriesEvisaIndia,
+  step1ValidationSchema,
+} from '@/constant/indiaConstant';
 import { useFormContext } from '@/context/formContext';
+import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
+import { minDate, minDateWithDate } from '@/lib/minDate';
 
 export default function StepOneUpdate() {
   const { state } = useFormContext();
@@ -63,8 +69,8 @@ export default function StepOneUpdate() {
                   setSubmitting(false);
                 }}
               >
-                {({ values, isValid, handleSubmit }) => (
-                  <Form onSubmit={handleSubmit} className="formMain">
+                {({ values, isValid, setFieldValue }) => (
+                  <Form className="formMain">
                     <div className="form-input-main-div">
                       <label className="form-label">Application Type*</label>
                       <div className="input-error-wrapper">
@@ -175,18 +181,13 @@ export default function StepOneUpdate() {
                     <div className="form-input-main-div">
                       <label className="form-label">Date Of Birth</label>
                       <div className="input-error-wrapper">
-                        <Field
-                          required
-                          type="date"
+                        <ReactDatePickerInput
+                          className="new-form-input"
                           name="dateOfBirth"
-                          id="dateOfBirth"
-                          className="form-input"
+                          selected={new Date(values.dateOfBirth)}
+                          setFieldValue={setFieldValue}
+                          maxDate={new Date()}
                         />
-                        <ErrorMessage name="dateOfBirth">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
-                          )}
-                        </ErrorMessage>
                       </div>
                     </div>
 
@@ -946,18 +947,16 @@ export default function StepOneUpdate() {
                         Expected Date of Arrival
                       </label>
                       <div className="input-error-wrapper">
-                        <Field
-                          required
-                          type="date"
+                        <ReactDatePickerInput
+                          className="new-form-input"
                           name="expectedDateOfArrival"
-                          id="expectedDateOfArrival"
-                          className="form-input"
-                        />
-                        <ErrorMessage name="expectedDateOfArrival">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
+                          selected={new Date(values.expectedDateOfArrival)}
+                          setFieldValue={setFieldValue}
+                          minDate={minDateWithDate(
+                            3,
+                            values.expectedDateOfArrival
                           )}
-                        </ErrorMessage>
+                        />
                       </div>
                     </div>
 

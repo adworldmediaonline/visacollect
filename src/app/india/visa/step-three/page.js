@@ -59,6 +59,7 @@ const StepThree = () => {
     temporaryExitUpdateMutation.mutate({
       lastExitStepUrl: pathName,
     });
+    localStorage.clear();
   };
 
   if (getAllStepsDataIsPending) {
@@ -547,15 +548,6 @@ const StepThree = () => {
                               </div>
                             </label>
                             <div className="input-error-wrapper">
-                              {/* <Field
-                            name="fatherNationality"
-                            component="select"
-                            className="p-2 border rounded select-input"
-                          >
-                            <option value="">Select Nationality</option>
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
-                          </Field> */}
                               <Field
                                 required
                                 component="select"
