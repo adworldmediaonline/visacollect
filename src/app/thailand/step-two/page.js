@@ -15,6 +15,7 @@ import Link from 'next/link';
 import useDelete from '@/hooks/useDelete';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import { minDateWithDate } from '@/lib/minDate';
+import { formatDateYearDayMonth } from '@/lib/dateFormatter';
 
 export default function Page() {
   const { state } = useFormContext();
@@ -79,7 +80,7 @@ export default function Page() {
                   formId: thailandVisaApplicationData._id,
                 });
                 setSubmitting(false);
-                // resetForm();
+                resetForm();
               }}
             >
               {({ values, isValid, setFieldValue }) => (
@@ -374,7 +375,7 @@ export default function Page() {
                                   color="blue-gray"
                                   className="font-normal"
                                 >
-                                  {person?.dateOfBirth}
+                                  {formatDateYearDayMonth(person?.dateOfBirth)}
                                 </div>
                               </td>
                               <td className="p-4">

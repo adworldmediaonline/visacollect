@@ -63,6 +63,7 @@ const StepFour = () => {
     temporaryExitUpdateMutation.mutate({
       lastExitStepUrl: pathname,
     });
+    localStorage.clear();
   };
 
   const currentYear = new Date().getFullYear();

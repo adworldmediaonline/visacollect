@@ -50,6 +50,7 @@ const StepFive = () => {
     temporaryExitUpdateMutation.mutate({
       lastExitStepUrl: pathName,
     });
+    localStorage.clear();
   };
 
   if (isPending) {
