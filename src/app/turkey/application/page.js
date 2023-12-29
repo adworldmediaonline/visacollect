@@ -91,7 +91,6 @@ const Page = () => {
                   <div className="order-2 col-span-8">
                     <ReactDatePickerInput
                       className="new-form-input"
-                      placeholderText="Select a date"
                       name="arrivalDate"
                       selected={values.arrivalDate}
                       setFieldValue={setFieldValue}
@@ -243,21 +242,8 @@ const Page = () => {
                                 </div>
                                 <div className="mark-section group"></div>
                                 <div className="order-2 col-span-8">
-                                  {/* <Field
-                                    className="new-form-input "
-                                    name={`passportDetails.${index}.dateOfBirth`}
-                                    type="date"
-                                  /> */}
-
-                                  <ErrorMessage
-                                    name={`passportDetails.${index}.dateOfBirth`}
-                                    component="div"
-                                    className="text-red-600"
-                                  />
-
                                   <ReactDatePickerInput
                                     className="new-form-input"
-                                    placeholderText="Select a date"
                                     name={`passportDetails.${index}.dateOfBirth`}
                                     selected={
                                       values.passportDetails[index].dateOfBirth
