@@ -1,13 +1,13 @@
-"use client";
-import React, { useRef } from "react";
-import Button from "./Button";
+'use client';
+import React, { useRef } from 'react';
+import Button from './Button';
 
 const BannerPage = ({ heading, buttonTitle }) => {
   const ref = useRef(null);
   // const isInView = useInView(ref, { once: true });
 
   return (
-    <div className="">
+    <div>
       <div
         className=" bg-cover bg-no-repeat bg-right-bottom"
         style={{
@@ -22,7 +22,7 @@ const BannerPage = ({ heading, buttonTitle }) => {
               </h2>
 
               <div>
-                {buttonTitle ? <Button title={buttonTitle} link="#" /> : ""}
+                {buttonTitle ? <Button title={buttonTitle} link="#" /> : ''}
               </div>
             </div>
           </div>

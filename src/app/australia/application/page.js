@@ -86,7 +86,7 @@ const Page = () => {
 
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Purpose of stay: * </label>
+                    <label>Purpose of stay: * </label>
                   </div>
 
                   <div className="mark-section group">
@@ -119,9 +119,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">
-                      Planned date of travel to Australia:*
-                    </label>
+                    <label>Planned date of travel to Australia:*</label>
                   </div>
 
                   <div className="mark-section group">
@@ -155,7 +153,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Passenger nationality: * </label>
+                    <label>Passenger nationality: * </label>
                   </div>
 
                   <div className="mark-section group">
@@ -186,7 +184,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Port of Arrival:*</label>
+                    <label>Port of Arrival:*</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -217,7 +215,7 @@ const Page = () => {
 
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Given Name: *</label>
+                    <label>Given Name: *</label>
                   </div>
 
                   <div className="mark-section group">
@@ -244,7 +242,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Surname(s) / family name(s): m*</label>
+                    <label>Surname(s) / family name(s): m*</label>
                   </div>
 
                   <div className="mark-section group">
@@ -271,7 +269,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">E-mail address: *</label>
+                    <label>E-mail address: *</label>
                   </div>
 
                   <div className="mark-section group">
@@ -297,7 +295,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Confirm e-mail address: *</label>
+                    <label>Confirm e-mail address: *</label>
                   </div>
 
                   <div className="mark-section group">
@@ -324,7 +322,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Date of birth: *</label>
+                    <label>Date of birth: *</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -354,7 +352,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Country/territory of birth:*</label>
+                    <label>Country/territory of birth:*</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -380,7 +378,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">City of birth:*</label>
+                    <label>City of birth:*</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -403,7 +401,7 @@ const Page = () => {
 
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Marital status: *</label>
+                    <label>Marital status: *</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -434,7 +432,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Gender</label>
+                    <label>Gender</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -464,7 +462,7 @@ const Page = () => {
 
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Passport Number: * </label>
+                    <label>Passport Number: * </label>
                   </div>
 
                   <div className="mark-section group">
@@ -491,7 +489,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Issuing authority: *</label>
+                    <label>Issuing authority: *</label>
                   </div>
 
                   <div className="mark-section group">
@@ -518,7 +516,7 @@ const Page = () => {
 
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Passport date of issue: *</label>
+                    <label>Passport date of issue: *</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -548,7 +546,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Passport date of expiry: *</label>
+                    <label>Passport date of expiry: *</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -593,7 +591,7 @@ const Page = () => {
                 {values.passportDetails.citizen && (
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">Additional citizenship*: *</label>
+                      <label>Additional citizenship*: *</label>
                     </div>
 
                     <div className="mark-section group">
@@ -657,7 +655,7 @@ const Page = () => {
 
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Street address / name: *</label>
+                    <label>Street address / name: *</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -679,7 +677,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">House number / unit: *</label>
+                    <label>House number / unit: *</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -701,7 +699,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Apartment number / unit: *</label>
+                    <label>Apartment number / unit: *</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -723,7 +721,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Zip code / postal code: *</label>
+                    <label>Zip code / postal code: *</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -745,7 +743,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">City/town: *</label>
+                    <label>City/town: *</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -767,7 +765,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Province/state: *</label>
+                    <label>Province/state: *</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -789,7 +787,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Country/territory: *</label>
+                    <label>Country/territory: *</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -816,7 +814,7 @@ const Page = () => {
 
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Phone number: *</label>
+                    <label>Phone number: *</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -936,7 +934,7 @@ const Page = () => {
                 <SubHeading subHead="VAT INVOICE (OPTIONAL)" />
 
                 <div className="flex gap-4 pb-6">
-                  <div className="">
+                  <div>
                     <Field
                       type="checkbox"
                       className="w-6 h-6"
@@ -951,7 +949,7 @@ const Page = () => {
                     {' '}
                     <div className="main-form-section">
                       <div className="label-section">
-                        <label className="">
+                        <label>
                           Tax identification number (Company VAT): *
                         </label>
                       </div>
@@ -974,7 +972,7 @@ const Page = () => {
                     </div>
                     <div className="main-form-section">
                       <div className="label-section">
-                        <label className="">
+                        <label>
                           Company, employer, school or facility name: *
                         </label>
                       </div>
@@ -997,7 +995,7 @@ const Page = () => {
                     </div>
                     <div className="main-form-section">
                       <div className="label-section">
-                        <label className="">Company country: *</label>
+                        <label>Company country: *</label>
                       </div>
 
                       <div className="mark-section group"></div>
@@ -1023,7 +1021,7 @@ const Page = () => {
                     </div>
                     <div className="main-form-section">
                       <div className="label-section">
-                        <label className="">Company city: *</label>
+                        <label>Company city: *</label>
                       </div>
 
                       <div className="mark-section group"></div>
@@ -1044,7 +1042,7 @@ const Page = () => {
                     </div>
                     <div className="main-form-section">
                       <div className="label-section">
-                        <label className="">Company postal: *</label>
+                        <label>Company postal: *</label>
                       </div>
 
                       <div className="mark-section group"></div>
@@ -1065,7 +1063,7 @@ const Page = () => {
                     </div>
                     <div className="main-form-section">
                       <div className="label-section">
-                        <label className="">Company street: *</label>
+                        <label>Company street: *</label>
                       </div>
 
                       <div className="mark-section group"></div>
@@ -1125,9 +1123,7 @@ const Page = () => {
                     </ul>
                     <div className="main-form-section">
                       <div className="label-section">
-                        <label className="">
-                          Please select a start date: *
-                        </label>
+                        <label>Please select a start date: *</label>
                       </div>
 
                       <div className="mark-section group"></div>
@@ -1156,9 +1152,7 @@ const Page = () => {
                     </div>
                     <div className="main-form-section">
                       <div className="label-section">
-                        <label className="">
-                          Please select a return date: *
-                        </label>
+                        <label>Please select a return date: *</label>
                       </div>
 
                       <div className="mark-section group"></div>
@@ -1200,7 +1194,7 @@ const Page = () => {
                     </div>
                     {/* <div className="pb-6">
                       <div className="flex gap-4 pb-2">
-                        <div className="">
+                        <div  >
                           <Field
                             type="radio"
                             className="w-6 h-6"
@@ -1214,7 +1208,7 @@ const Page = () => {
                       </div>
 
                       <div className="flex gap-4 ">
-                        <div className="">
+                        <div  >
                           <Field
                             type="radio"
                             className="w-6 h-6"
@@ -1278,7 +1272,7 @@ const Page = () => {
                 <hr className="w-full h-[0.15rem]  mt-4 bg-primary" />
 
                 <div className="flex gap-4 pt-12">
-                  <div className="">
+                  <div>
                     <Field
                       type="checkbox"
                       className="w-6 h-6"

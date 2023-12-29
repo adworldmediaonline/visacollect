@@ -1,8 +1,8 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { FaBars, FaTimes } from "react-icons/fa";
+'use client';
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { FaBars, FaTimes } from 'react-icons/fa';
 const Header = ({ bgcolor }) => {
   // setting mobile nav
   const [click, setClick] = useState(false);
@@ -23,16 +23,16 @@ const Header = ({ bgcolor }) => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
     <div
       className={`headerMainVisa bg-white shadow-md ${
-        scrolled ? "bg-white" : ""
+        scrolled ? 'bg-white' : ''
       }`}
     >
       <nav className="container navbarMainVisa ">
@@ -64,8 +64,8 @@ const Header = ({ bgcolor }) => {
           <ul
             className={
               click
-                ? "nav-menuMainVisa active md:space-y-0 space-y-0 py-5 "
-                : "nav-menuMainVisa"
+                ? 'nav-menuMainVisa active md:space-y-0 space-y-0 py-5 '
+                : 'nav-menuMainVisa'
             }
           >
             <Link href="/thailand">
@@ -80,7 +80,7 @@ const Header = ({ bgcolor }) => {
                 className="flex items-center px-2 py-4 mx-4 space-x-2 font-semibold border-b border-b-secondary"
               >
                 <span className="w-2 h-2 bg-black"></span>
-                <p className="">Home</p>
+                <p>Home</p>
               </Link>
             </li>
             {/* for mobile end */}
@@ -96,7 +96,7 @@ const Header = ({ bgcolor }) => {
                 className="flex items-center px-2 py-4 mx-4 space-x-2 font-semibold border-b border-b-secondary"
               >
                 <span className="w-2 h-2 bg-black"></span>
-                <p className="">About Us</p>
+                <p>About Us</p>
               </Link>
             </li>
             {/* for mobile end */}
@@ -112,7 +112,7 @@ const Header = ({ bgcolor }) => {
                 className="flex items-center px-2 py-4 mx-4 space-x-2 font-semibold border-b border-b-secondary"
               >
                 <span className="w-2 h-2 bg-black"></span>
-                <p className="">eVisa Application</p>
+                <p>eVisa Application</p>
               </Link>
             </li>
             {/* for mobile end */}
@@ -128,7 +128,7 @@ const Header = ({ bgcolor }) => {
                 className="flex items-center px-2 py-4 mx-4 space-x-2 font-semibold border-b border-b-secondary"
               >
                 <span className="w-2 h-2 bg-black"></span>
-                <p className="">Our Services</p>
+                <p>Our Services</p>
               </Link>
             </li>
             {/* for mobile end */}
@@ -151,16 +151,16 @@ const Header = ({ bgcolor }) => {
 
         <div className="hamburgerMainVisa" onClick={handleClick}>
           {click ? (
-            <FaTimes size={30} style={{ color: "#000" }} />
+            <FaTimes size={30} style={{ color: '#000' }} />
           ) : (
-            <FaBars size={30} style={{ color: "#000" }} />
+            <FaBars size={30} style={{ color: '#000' }} />
           )}
         </div>
       </nav>
       {bgcolor ? (
         <hr
           className={
-            scrolled ? "bg-black text-black" : "bg-black  w-[93%] mx-auto"
+            scrolled ? 'bg-black text-black' : 'bg-black  w-[93%] mx-auto'
           }
         />
       ) : null}

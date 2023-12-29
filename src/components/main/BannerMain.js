@@ -1,27 +1,27 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
+import React from 'react';
 
 const BannerMain = () => {
   const smallIcon = [
     {
       id: 1,
-      imgSrc: "/assets/images/main/happy.png",
-      title: "10k+ Happy Customers",
+      imgSrc: '/assets/images/main/happy.png',
+      title: '10k+ Happy Customers',
     },
     {
       id: 2,
-      imgSrc: "/assets/images/main/time.png",
-      title: "99% On Time Delivery",
+      imgSrc: '/assets/images/main/time.png',
+      title: '99% On Time Delivery',
     },
     {
       id: 3,
-      imgSrc: "/assets/images/main/experience.png",
-      title: "5+ Years of Experience",
+      imgSrc: '/assets/images/main/experience.png',
+      title: '5+ Years of Experience',
     },
     {
       id: 4,
-      imgSrc: "/assets/images/main/rating.png",
-      title: "Ratings By Customers",
+      imgSrc: '/assets/images/main/rating.png',
+      title: 'Ratings By Customers',
     },
   ];
   return (
@@ -30,14 +30,14 @@ const BannerMain = () => {
         className="w-full relative"
         style={{
           backgroundImage: "url('/assets/images/main/bannerimg.png')",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
         }}
       >
         <div className="container justify-center flex flex-col h-[550px]">
           <div className="space-y-3">
             <h2 className="text-white md:text-[55px] text-[40px] font-bold leading-[1.2] md:w-[50%]">
-              {" "}
+              {' '}
               Find Visa information for all countries and apply today.
             </h2>
             <p className="text-white md:w-[70%] py-2">
@@ -60,7 +60,7 @@ const BannerMain = () => {
           </h2>
           <div className="mb-5">
             <label
-              for="fName"
+              htmlFor="fName"
               className=" block text-base font-medium text-[#07074D]"
             >
               Where am I from?
@@ -72,7 +72,7 @@ const BannerMain = () => {
               placeholder="First Name"
               className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             >
-              <option default disabled selected>
+              <option default disabled>
                 Select
               </option>
               <option>India</option>
@@ -82,7 +82,7 @@ const BannerMain = () => {
           </div>
           <div className="mb-5">
             <label
-              for="fName"
+              htmlFor="fName"
               className=" block text-base font-medium text-[#07074D]"
             >
               Where am I Going?
@@ -94,7 +94,7 @@ const BannerMain = () => {
               placeholder="First Name"
               className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             >
-              <option default disabled selected>
+              <option default disabled>
                 Select
               </option>
               <option>India</option>

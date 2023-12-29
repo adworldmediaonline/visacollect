@@ -19,9 +19,10 @@ const StepThree = () => {
             />
           </div>
           <div className="mb-5">
-            <label for="email" className="form-label">
+            <label htmlFor="email" className="form-label">
               Email Address
             </label>
+
             <input
               type="email"
               name="email"
@@ -31,7 +32,7 @@ const StepThree = () => {
             />
           </div>
           <div className="mb-5">
-            <label for="subject" className="form-label">
+            <label htmlFor="subject" className="form-label">
               Subject
             </label>
             <input

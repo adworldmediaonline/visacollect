@@ -40,7 +40,7 @@ const Page = () => {
                 <SubHeading subHead="ITINERARY" />
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Country Citizenship * </label>
+                    <label>Country Citizenship * </label>
                   </div>
 
                   <div className="mark-section group">
@@ -77,7 +77,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Arrival Date * </label>
+                    <label>Arrival Date * </label>
                   </div>
 
                   <div className="mark-section group">
@@ -289,7 +289,7 @@ const Page = () => {
 
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Full Name: *</label>
+                    <label>Full Name: *</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -311,7 +311,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Address: *</label>
+                    <label>Address: *</label>
                   </div>
 
                   <div className="mark-section group"></div>
@@ -333,7 +333,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Email: *</label>
+                    <label>Email: *</label>
                   </div>
 
                   <div className="mark-section group">
@@ -360,7 +360,7 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label className="">Contact Number: *</label>
+                    <label>Contact Number: *</label>
                   </div>
 
                   <div className="mark-section group">

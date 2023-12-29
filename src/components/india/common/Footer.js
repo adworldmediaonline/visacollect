@@ -1,39 +1,40 @@
-import React from "react";
-import { IoIosMail } from "react-icons/io";
-import { FaPhoneAlt } from "react-icons/fa";
-import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import Link from "next/link";
-import Image from "next/image";
+import React from 'react';
+import { IoIosMail } from 'react-icons/io';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import Link from 'next/link';
+import Image from 'next/image';
 const Footer = () => {
   const data = [
     {
       id: 1,
       icon: <FaFacebookF />,
-      href: "#",
+      href: '#',
     },
     {
       id: 2,
       icon: <FaInstagram />,
-      href: "#",
+      href: '#',
     },
     {
       id: 3,
       icon: <FaLinkedin />,
-      href: "#",
+      href: '#',
     },
     {
       id: 4,
       icon: <FaXTwitter />,
-      href: "#",
+      href: '#',
     },
   ];
   return (
-    <div className="">
+    <div>
       <div
         className="pb-6 bg-right-bottom bg-no-repeat bg-cover"
         style={{
-          backgroundImage: ' url("/assets/images/india/common/bannerfooter.png")',
+          backgroundImage:
+            ' url("/assets/images/india/common/bannerfooter.png")',
         }}
       >
         <div className="container ">
@@ -70,10 +71,10 @@ const Footer = () => {
                       ))}
                     </ul>
                   </div> */}
-                  <ul className="">
+                  <ul>
                     <Link href="#">
                       <li className="flex items-center mt-2 space-x-2 text-base hover:text-primary">
-                        <IoIosMail className="w-6 h-6 p-1 text-black bg-white rounded-full" />{" "}
+                        <IoIosMail className="w-6 h-6 p-1 text-black bg-white rounded-full" />{' '}
                         <span className="text-white">
                           india-travelservices.com
                         </span>
@@ -95,31 +96,31 @@ const Footer = () => {
                       <h2 className="text-xl font-semibold text-white underline capitalize underline-offset-8 decoration-primary">
                         Quick Links
                       </h2>
-                      <ul className="">
+                      <ul>
                         <Link href="/">
                           <li className="mt-2 text-base text-white hover:text-primary">
-                            <span className="">Home</span>
+                            <span>Home</span>
                           </li>
                         </Link>
                         <Link href="/">
                           <li className="mt-2 text-base text-white hover:text-primary">
-                            <span className="">About Us</span>
+                            <span>About Us</span>
                           </li>
                         </Link>
 
                         <Link href="/visa/step-one">
                           <li className="mt-2 text-base text-white hover:text-primary">
-                            <span className="">Apply VISA</span>
+                            <span>Apply VISA</span>
                           </li>
                         </Link>
                         <Link href="/">
                           <li className="mt-2 text-base text-white hover:text-primary">
-                            <span className="">Ongoing Application</span>
+                            <span>Ongoing Application</span>
                           </li>
                         </Link>
                         <Link href="/">
                           <li className="mt-2 text-base text-white hover:text-primary">
-                            <span className="">Contact Us</span>
+                            <span>Contact Us</span>
                           </li>
                         </Link>
                       </ul>
@@ -132,25 +133,25 @@ const Footer = () => {
                   <h2 className="text-xl font-semibold text-white underline capitalize underline-offset-8 decoration-primary">
                     Apply For Indian VISA
                   </h2>
-                  <ul className="">
+                  <ul>
                     <Link href="/visa/step-one">
                       <li className="mt-2 text-base text-white hover:text-primary">
-                        <span className=""> Indian eVisa Online</span>
+                        <span> Indian eVisa Online</span>
                       </li>
                     </Link>
                     <Link href="/visa/step-one">
                       <li className="mt-2 text-base text-white hover:text-primary">
-                        <span className="">Indian Tourist eVisa</span>
+                        <span>Indian Tourist eVisa</span>
                       </li>
                     </Link>
                     <Link href="/visa/step-one">
                       <li className="mt-2 text-base text-white hover:text-primary">
-                        <span className="">Indian Medical eVisa</span>
+                        <span>Indian Medical eVisa</span>
                       </li>
                     </Link>
                     <Link href="/visa/step-one">
                       <li className="mt-2 text-base text-white hover:text-primary">
-                        <span className=""> Indian Business eVisa</span>
+                        <span> Indian Business eVisa</span>
                       </li>
                     </Link>
                   </ul>
@@ -161,25 +162,25 @@ const Footer = () => {
                   <h2 className="text-xl font-semibold text-white underline capitalize underline-offset-8 decoration-primary">
                     Support
                   </h2>
-                  <ul className="">
+                  <ul>
                     <Link href="/terms-and-conditions">
                       <li className="mt-2 text-base text-white hover:text-primary">
-                        <span className=""> Terms & Conditions</span>
+                        <span> Terms & Conditions</span>
                       </li>
                     </Link>
                     <Link href="/privacy-policy">
                       <li className="mt-2 text-base text-white hover:text-primary">
-                        <span className="">Privacy Policy</span>
+                        <span>Privacy Policy</span>
                       </li>
                     </Link>
                     <Link href="/cookie-policy">
                       <li className="mt-2 text-base text-white hover:text-primary">
-                        <span className="">Cookies Policy</span>
+                        <span>Cookies Policy</span>
                       </li>
                     </Link>
                     <Link href="/cancellation-and-refund-policy">
                       <li className="mt-2 text-base text-white hover:text-primary">
-                        <span className="">Cancellation and Refund Policy</span>
+                        <span>Cancellation and Refund Policy</span>
                       </li>
                     </Link>
                   </ul>
@@ -189,7 +190,7 @@ const Footer = () => {
             <hr className="h-[1px] bg-primary border-primary" />
             <div className="px-5 py-5 text-base text-center text-white md:px-0">
               <p>
-                {" "}
+                {' '}
                 Copyright © 2023 |
                 <span className="px-2 font-semibold">E-Visa</span>| All Rights
                 Reserved

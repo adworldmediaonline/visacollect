@@ -93,7 +93,7 @@ const Page = () => {
         <SubHeading subHead="SELECT PAYMENT METHOD" />
         <div className="space-y-2 divide-y-[1px] pt-5"></div>
 
-        <div className="">
+        <div>
           <button>Buy</button>
         </div>
       </div>
