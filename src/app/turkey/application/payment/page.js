@@ -169,7 +169,7 @@ export default function Payment() {
           <SubHeading subHead="SELECT PAYMENT METHOD" />
           <div className="space-y-2 divide-y-[1px] pt-5"></div>
 
-          <div className="">
+          <div>
             <button onClick={handlePayment}>Buy</button>
           </div>
         </div>

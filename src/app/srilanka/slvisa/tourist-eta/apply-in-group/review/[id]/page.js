@@ -55,12 +55,12 @@ const Page = ({ params }) => {
         />
         <div className="container">
           <div className="  md:py-8 py-20 md;px-0 px-3 ">
-          <StepProcess
+            <StepProcess
               color1="bg-[#E3E3E3]"
-              color2="bg-[#F7BD6D]" 
+              color2="bg-[#F7BD6D]"
               color3="bg-[#E3E3E3] "
               color4="bg-[#E3E3E3]"
-              />
+            />
           </div>
           <Formheading formHead="Travel Information - Tourist Purpose - Group" />
           <div className="space-y-2 divide-y-[1px] pt-5">
@@ -284,7 +284,7 @@ const Page = ({ params }) => {
                 </table>
                 <div className="flex justify-end w-full ">
                   <div className="w-fit bg-[#F7BD6D] text-black flex space-x-5 items-center p-3 font-semibold">
-                    <p>Total Visa Fee </p> <p className=""> 50 USD </p>
+                    <p>Total Visa Fee </p> <p> 50 USD </p>
                   </div>
                 </div>
               </div>

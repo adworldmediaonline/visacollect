@@ -303,7 +303,7 @@ const Page = ({ params }) => {
                 </table>
                 <div className="flex justify-end w-full ">
                   <div className="w-fit bg-[#F7BD6D] text-black flex space-x-5 items-center p-3 font-semibold">
-                    <p>Total Visa Fee </p> <p className=""> 50 USD </p>
+                    <p>Total Visa Fee </p> <p> 50 USD </p>
                   </div>
                 </div>
               </div>

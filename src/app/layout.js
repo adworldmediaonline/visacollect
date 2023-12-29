@@ -3,6 +3,7 @@ import { ToastContainer } from 'react-toastify';
 import { FormProvider } from '@/context/formContext';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import ReactQueryProvider from '@/components/ReactQueryProvider';
+import 'react-datepicker/dist/react-datepicker.css';
 import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,9 +18,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <FormProvider>
           <ReactQueryProvider>
-            {/* <Header /> */}
             <div>{children}</div>
-            {/* <Footer /> */}
             <ToastContainer />
             {/* <ReactQueryDevtools initialIsOpen={false} /> */}
           </ReactQueryProvider>

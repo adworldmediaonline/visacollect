@@ -1,9 +1,9 @@
-import React from "react";
-import { FaFacebookF, FaLinkedinIn, FaPinterestP } from "react-icons/fa";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { FiTwitter } from "react-icons/fi";
-import { FiMail } from "react-icons/fi";
-import { MdCall } from "react-icons/md";
+import React from 'react';
+import { FaFacebookF, FaLinkedinIn, FaPinterestP } from 'react-icons/fa';
+import { AiOutlineInstagram } from 'react-icons/ai';
+import { FiTwitter } from 'react-icons/fi';
+import { FiMail } from 'react-icons/fi';
+import { MdCall } from 'react-icons/md';
 
 const Footer = () => {
   return (
@@ -11,14 +11,17 @@ const Footer = () => {
       className="w-full "
       style={{
         backgroundImage: "url('/assets/images/srilanka/common/footer.png')",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
       }}
     >
       <div className="container">
         <div className="md:grid md:grid-cols-7  gap-8 py-8">
           <div className="col-span-3">
-            <img src="/assets/images/srilanka/common/whitelogo.png" className="w-36" />
+            <img
+              src="/assets/images/srilanka/common/whitelogo.png"
+              className="w-36"
+            />
             <p className="text-white py-4">
               Lorem Ipsum is simply dummy text of the printing and <br />
               typesetting industry.
@@ -79,7 +82,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="">
+            <div>
               <h3 className="head-footer text-white font-bold text-[18px]">
                 Apply For VISA
               </h3>
@@ -91,7 +94,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="">
+            <div>
               <h3 className="head-footer text-white font-bold text-[18px]">
                 Support
               </h3>
@@ -105,9 +108,10 @@ const Footer = () => {
         </div>
       </div>
 
-
       <div className="border-t-2 container border-[#F7BD6D]">
-        <h2 className="text-white text-center p-2">Copyright © 2023 e-Visa All Rights Reserved.</h2>
+        <h2 className="text-white text-center p-2">
+          Copyright © 2023 e-Visa All Rights Reserved.
+        </h2>
       </div>
     </div>
   );

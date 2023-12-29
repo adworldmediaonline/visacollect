@@ -94,7 +94,7 @@ const StepFive = () => {
               <SavedFormId />
               <Form onSubmit={handleSubmit} className="container pt-4 pb-16">
                 <div>
-                  <div className="">
+                  <div>
                     <h2 className="text-3xl font-semibold">
                       Details of Visa Sought
                     </h2>

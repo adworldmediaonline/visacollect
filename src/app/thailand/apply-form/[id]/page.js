@@ -84,7 +84,7 @@ export default function Page({ params }) {
                   <SubHeading subHead="Embassy Registration" />
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">Email address </label>
+                      <label>Email address </label>
                     </div>
                     <div className="order-2 col-span-9">
                       <Field
@@ -103,9 +103,7 @@ export default function Page({ params }) {
                   </div>
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">
-                        When do you arrive at your destination?{' '}
-                      </label>
+                      <label>When do you arrive at your destination? </label>
                     </div>
                     <div className="order-2 col-span-9">
                       <ReactDatePickerInput
@@ -120,9 +118,7 @@ export default function Page({ params }) {
 
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">
-                        When do you depart from your destination?{' '}
-                      </label>
+                      <label>When do you depart from your destination? </label>
                     </div>
                     <div className="order-2 col-span-9">
                       <ReactDatePickerInput
@@ -137,7 +133,7 @@ export default function Page({ params }) {
 
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">Destination country</label>
+                      <label>Destination country</label>
                     </div>
                     <div className="order-2 col-span-9">
                       <Field
@@ -161,7 +157,7 @@ export default function Page({ params }) {
 
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">Emergency contact&apos;s email</label>
+                      <label>Emergency contact&apos;s email</label>
                     </div>
                     <div className="order-2 col-span-9">
                       <Field
@@ -181,9 +177,7 @@ export default function Page({ params }) {
 
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">
-                        Emergency contact&apos;s full name{' '}
-                      </label>
+                      <label>Emergency contact&apos;s full name </label>
                     </div>
                     <div className="order-2 col-span-9">
                       <Field
@@ -203,7 +197,7 @@ export default function Page({ params }) {
 
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">
+                      <label>
                         Emergency contact&apos;s country code and phone number{' '}
                       </label>
                     </div>

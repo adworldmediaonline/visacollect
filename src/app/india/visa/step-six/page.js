@@ -133,7 +133,7 @@ const StepSix = () => {
               <Form onSubmit={handleSubmit} className="container pt-4 pb-16">
                 {/* upload file start  */}
                 <div className="mb-6 space-y-8">
-                  <div className="">
+                  <div>
                     <label className="mb-3 block font-semibold text-[#07074D]">
                       Upload Your Image
                     </label>
@@ -217,7 +217,7 @@ const StepSix = () => {
                   </p>
                 </div>
                 <div className="py-8">
-                  <div className="">
+                  <div>
                     <h2 className="text-3xl font-semibold">Upload Documents</h2>
                     <hr className="h-1 text-primary bg-primary w-36" />
                   </div>

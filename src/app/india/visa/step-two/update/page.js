@@ -9,7 +9,12 @@ import { ImSpinner2 } from 'react-icons/im';
 import { Country } from 'country-state-city';
 import useUpdate from '@/hooks/useUpdate';
 import { BsQuestionCircleFill } from 'react-icons/bs';
-import { educationalQualificationList, nationalityRegionData, religionNames, step2ValidationSchema } from '@/constant/indiaConstant';
+import {
+  educationalQualificationList,
+  nationalityRegionData,
+  religionNames,
+  step2ValidationSchema,
+} from '@/constant/indiaConstant';
 import { useFormContext } from '@/context/formContext';
 import BannerPage from '@/components/india/common/BannerPage';
 
@@ -168,7 +173,7 @@ export default function StepTwoUpdate() {
                               name="gender"
                               className="p-2 border rounded select-input"
                             >
-                              <option value="" disabled selected>
+                              <option value="" disabled>
                                 Select Gender*
                               </option>
                               <option value="male">Male</option>
@@ -228,7 +233,7 @@ export default function StepTwoUpdate() {
                               name="countryRegionOfBirth"
                               className="p-2 border rounded select-input"
                             >
-                              <option value="" disabled selected>
+                              <option value="" disabled>
                                 Select Country*
                               </option>
                               {Country?.getAllCountries()?.map(
@@ -273,7 +278,7 @@ export default function StepTwoUpdate() {
                               name="religion"
                               className="p-2 border rounded select-input"
                             >
-                              <option value="" disabled selected>
+                              <option value="" disabled>
                                 Select Religion*
                               </option>
                               {religionNames?.map(religion => (
@@ -334,7 +339,7 @@ export default function StepTwoUpdate() {
                               name="educationalQualification"
                               className="p-2 border rounded select-input"
                             >
-                              <option value="" disabled selected>
+                              <option value="" disabled>
                                 Select Educational Qualification*
                               </option>
                               {educationalQualificationList?.map(education => (
@@ -361,7 +366,7 @@ export default function StepTwoUpdate() {
                               className="p-2 border rounded opacity-50 select-input"
                               disabled={true}
                             >
-                              <option value="" disabled selected>
+                              <option value="" disabled>
                                 choose*
                               </option>
                               {nationalityRegionData?.map((country, index) => (
@@ -393,7 +398,7 @@ export default function StepTwoUpdate() {
                               className="p-2 border rounded select-input"
                               component="select"
                             >
-                              <option value="" disabled selected>
+                              <option value="" disabled>
                                 Select*
                               </option>
                               <option value="birth">By Birth</option>
@@ -421,7 +426,7 @@ export default function StepTwoUpdate() {
                                 name="previousNationality"
                                 className="p-2 border rounded select-input"
                               >
-                                <option value="" disabled selected>
+                                <option value="" disabled>
                                   Select*
                                 </option>
                                 {Country?.getAllCountries()?.map(
@@ -659,7 +664,7 @@ export default function StepTwoUpdate() {
                                   name="countryOfIssue"
                                   className="p-2 border rounded select-input"
                                 >
-                                  <option value="" disabled selected>
+                                  <option value="" disabled>
                                     Select*
                                   </option>
                                   {Country?.getAllCountries()?.map(
@@ -744,7 +749,7 @@ export default function StepTwoUpdate() {
                                   name="passportNationalityMentionedTherein"
                                   className="p-2 border rounded select-input"
                                 >
-                                  <option value="" disabled selected>
+                                  <option value="" disabled>
                                     Select*
                                   </option>
                                   {Country?.getAllCountries()?.map(

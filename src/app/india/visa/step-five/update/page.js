@@ -58,7 +58,7 @@ export default function Step5Update() {
             {({ values, isValid, handleSubmit }) => (
               <Form onSubmit={handleSubmit} className="container py-16">
                 <div>
-                  <div className="">
+                  <div>
                     <h2 className="text-3xl font-semibold">
                       Details of Visa Sought
                     </h2>

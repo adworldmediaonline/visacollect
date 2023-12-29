@@ -196,7 +196,9 @@ const Home = () => {
                                   <div className="text-red-600">
                                     Not Found Please try Again or Submit new
                                     form{' '}
-                                    <Link href="/india/visa/step-one">Create</Link>
+                                    <Link href="/india/visa/step-one">
+                                      Create
+                                    </Link>
                                   </div>
                                 ) : null}
 
@@ -286,7 +288,7 @@ const Home = () => {
                           >
                             Partially Form Not Completed
                           </Dialog.Title>
-                          <div className="">
+                          <div>
                             <p className="text-sm text-gray-500">
                               Your Partially form is not completed.
                             </p>
@@ -303,7 +305,7 @@ const Home = () => {
                           >
                             Payment is Pending
                           </Dialog.Title>
-                          <div className="">
+                          <div>
                             <p className="text-sm text-gray-500">
                               Your Payment is not completed.
                             </p>
@@ -322,7 +324,7 @@ const Home = () => {
                         >
                           Payment is Successful
                         </Dialog.Title>
-                        <div className="">
+                        <div>
                           <p className="text-sm text-gray-500">
                             Your Payment is completed.
                           </p>
@@ -525,7 +527,9 @@ const Home = () => {
                                     <div className="text-red-600">
                                       Not Found Please try Again or Submit new
                                       form{' '}
-                                      <Link href="/india/visa/step-one">Create</Link>
+                                      <Link href="/india/visa/step-one">
+                                        Create
+                                      </Link>
                                     </div>
                                   ) : null}
                                   <div className="space-x-4">

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Touristattractions = () => {
   return (
@@ -11,7 +11,7 @@ const Touristattractions = () => {
           />
         </div>
 
-        <div className="">
+        <div>
           <h3 className="Secheading md:text-[37px] text-[30px] font-semibold pb-4">
             To obtain the E-VISA Thailand eligible citizen must:
           </h3>
@@ -33,14 +33,14 @@ const Touristattractions = () => {
         </div>
       </div>
       <div className="grid md:grid-cols-2 items-center justify-between gap-8  py-12">
-        <div className="">
+        <div>
           <img
             src="/assets/images/thailand/attr2.png"
             className="w-full object-cover md:object-top md:h-[400px]"
           />
         </div>
 
-        <div className="">
+        <div>
           <h3 className="Secheading md:text-[37px] text-[30px] font-semibold pb-4">
             ETA Thailand Application
           </h3>

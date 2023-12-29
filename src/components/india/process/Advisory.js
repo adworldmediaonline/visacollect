@@ -130,7 +130,7 @@ const Advisory = () => {
                     alt=""
                     className="md:w-5 md:h-5 "
                   />
-                  <span className="">{item.text}</span>
+                  <span>{item.text}</span>
                 </div>
               </div>
             ))}

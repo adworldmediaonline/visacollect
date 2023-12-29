@@ -14,7 +14,12 @@ import { CiCalendarDate } from 'react-icons/ci';
 import ReactDatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import BannerPage from '@/components/india/common/BannerPage';
-import { educationalQualificationList, nationalityRegionData, religionNames, step2ValidationSchema } from '@/constant/indiaConstant';
+import {
+  educationalQualificationList,
+  nationalityRegionData,
+  religionNames,
+  step2ValidationSchema,
+} from '@/constant/indiaConstant';
 import { useFormContext } from '@/context/formContext';
 import SavedFormId from '@/components/india/common/SavedFormId';
 
@@ -249,7 +254,7 @@ const StepTwo = () => {
                               name="gender"
                               className="p-2 border rounded select-input"
                             >
-                              <option value="" disabled selected>
+                              <option value="" disabled>
                                 Select Gender*
                               </option>
                               <option value="male">Male</option>
@@ -349,7 +354,7 @@ const StepTwo = () => {
                               name="countryRegionOfBirth"
                               className="p-2 border rounded select-input"
                             >
-                              <option value="" disabled selected>
+                              <option value="" disabled>
                                 Select Country*
                               </option>
                               {Country?.getAllCountries()?.map(
@@ -414,7 +419,7 @@ const StepTwo = () => {
                               name="religion"
                               className="p-2 border rounded select-input"
                             >
-                              <option value="" disabled selected>
+                              <option value="" disabled>
                                 Select Religion*
                               </option>
                               {religionNames?.map(religion => (
@@ -493,7 +498,7 @@ const StepTwo = () => {
                               name="educationalQualification"
                               className="p-2 border rounded select-input"
                             >
-                              <option value="" disabled selected>
+                              <option value="" disabled>
                                 Select Educational Qualification*
                               </option>
 
@@ -532,7 +537,7 @@ const StepTwo = () => {
                               className="p-2 border rounded select-input"
                               disabled={true}
                             >
-                              <option value="" disabled selected>
+                              <option value="" disabled>
                                 choose*
                               </option>
                               {nationalityRegionData?.map((country, index) => (
@@ -574,7 +579,7 @@ const StepTwo = () => {
                               className="p-2 border rounded select-input"
                               component="select"
                             >
-                              <option value="" disabled selected>
+                              <option value="" disabled>
                                 Select*
                               </option>
                               <option value="birth">By Birth</option>
@@ -611,7 +616,7 @@ const StepTwo = () => {
                                 name="previousNationality"
                                 className="p-2 border rounded select-input"
                               >
-                                <option value="" disabled selected>
+                                <option value="" disabled>
                                   Select*
                                 </option>
                                 {Country?.getAllCountries()?.map(
@@ -905,7 +910,7 @@ const StepTwo = () => {
                                   name="countryOfIssue"
                                   className="p-2 border rounded select-input"
                                 >
-                                  <option value="" disabled selected>
+                                  <option value="" disabled>
                                     Select*
                                   </option>
                                   {Country?.getAllCountries()?.map(
@@ -1026,7 +1031,7 @@ const StepTwo = () => {
                                   name="passportNationalityMentionedTherein"
                                   className="p-2 border rounded select-input"
                                 >
-                                  <option value="" disabled selected>
+                                  <option value="" disabled>
                                     Select*
                                   </option>
                                   {Country?.getAllCountries()?.map(

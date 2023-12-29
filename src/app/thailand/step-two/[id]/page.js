@@ -96,7 +96,7 @@ export default function Page({ params }) {
                   <SubHeading subHead="Your Applicant Information" />
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">First and middle name </label>
+                      <label>First and middle name </label>
                     </div>
                     <div className="order-2 col-span-9">
                       <Field
@@ -116,7 +116,7 @@ export default function Page({ params }) {
                   </div>
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">Last name </label>
+                      <label>Last name </label>
                     </div>
                     <div className="order-2 col-span-9">
                       <Field
@@ -137,7 +137,7 @@ export default function Page({ params }) {
 
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">Nationality</label>
+                      <label>Nationality</label>
                     </div>
                     <div className="order-2 col-span-9">
                       <Field
@@ -160,7 +160,7 @@ export default function Page({ params }) {
                   </div>
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">Gender</label>
+                      <label>Gender</label>
                     </div>
                     <div className="order-2 col-span-9">
                       <Field
@@ -184,7 +184,7 @@ export default function Page({ params }) {
                   </div>
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">Date of birth </label>
+                      <label>Date of birth </label>
                     </div>
                     <div className="order-2 col-span-9">
                       <Field
@@ -205,7 +205,7 @@ export default function Page({ params }) {
 
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">Country of birth</label>
+                      <label>Country of birth</label>
                     </div>
                     <div className="order-2 col-span-9">
                       <Field
@@ -230,7 +230,7 @@ export default function Page({ params }) {
 
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">Country of residence</label>
+                      <label>Country of residence</label>
                     </div>
                     <div className="order-2 col-span-9">
                       <Field
@@ -255,7 +255,7 @@ export default function Page({ params }) {
 
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">Passport number </label>
+                      <label>Passport number </label>
                     </div>
                     <div className="order-2 col-span-9">
                       <Field
@@ -276,7 +276,7 @@ export default function Page({ params }) {
 
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">Passport issue date</label>
+                      <label>Passport issue date</label>
                     </div>
                     <div className="order-2 col-span-9">
                       <Field
@@ -297,7 +297,7 @@ export default function Page({ params }) {
 
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label className="">Passport expiration date</label>
+                      <label>Passport expiration date</label>
                     </div>
                     <div className="order-2 col-span-9">
                       <Field
