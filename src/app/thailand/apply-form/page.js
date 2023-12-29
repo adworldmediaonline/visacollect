@@ -7,6 +7,7 @@ import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import usePost from '@/hooks/usePost';
 import apiEndpoint from '@/services/apiEndpoint';
 import { ImSpinner8 } from 'react-icons/im';
+import { minDate } from '@/lib/minDate';
 
 export default function Page() {
   const postMutation = usePost(
@@ -72,6 +73,7 @@ export default function Page() {
                       name="whenArriveDestination"
                       selected={values.whenArriveDestination}
                       setFieldValue={setFieldValue}
+                      minDate={minDate(1)}
                     />
                   </div>
                 </div>
@@ -86,6 +88,8 @@ export default function Page() {
                       name="whenDepartDestination"
                       selected={values.whenDepartDestination}
                       setFieldValue={setFieldValue}
+                      minDate={new Date(values.whenArriveDestination)}
+                      disabled={values.whenArriveDestination === ''}
                     />
                   </div>
                 </div>
