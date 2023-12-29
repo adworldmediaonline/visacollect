@@ -26,7 +26,7 @@ const Page = () => {
   const postMutation = usePost(
     apiEndpoint.SL_VISA_TOURIST_INDIVIDUAL,
     1,
-    'srilanka/slvisa/tourist-eta/apply-individual/review',
+    '/srilanka/slvisa/tourist-eta/apply-individual/review',
     true,
     'touristIndividual'
   );
