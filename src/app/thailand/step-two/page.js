@@ -84,7 +84,6 @@ export default function Page() {
             >
               {({ values, isValid }) => (
                 <Form>
-                  {console.log(values)}
                   <SubHeading subHead="Your Applicant Information" />
                   <div className="main-form-section">
                     <div className="label-section">

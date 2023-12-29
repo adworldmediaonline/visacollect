@@ -7,6 +7,8 @@ export default function ReactDatePickerInput({
   setFieldValue,
   name,
   selected,
+  minDate = '',
+  maxDate = '',
 }) {
   const years = React.useMemo(
     () =>
@@ -88,6 +90,8 @@ export default function ReactDatePickerInput({
         showIcon
         icon={<CiCalendarDate />}
         toggleCalendarOnIconClick
+        minDate={minDate}
+        maxDate={maxDate}
       />
       <ErrorMessage name={name}>
         {errorMsg => <div style={{ color: 'red' }}>{errorMsg}</div>}

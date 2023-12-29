@@ -73,10 +73,8 @@ export default function Page({ params }) {
               validateOnChange={true}
               validateOnMount={true}
               onSubmit={(values, { setSubmitting, resetForm }) => {
-                console.log(values);
                 updateMutation.mutate(values);
                 setSubmitting(false);
-                // resetForm();
               }}
             >
               {({ values, isValid, setFieldValue }) => (

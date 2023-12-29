@@ -11,7 +11,10 @@ import { MdDeleteOutline } from 'react-icons/md';
 import Formmainsection from '@/components/srilanka/common/Formmainsection';
 import StepProcess from '@/components/srilanka/common/StepProcess';
 import Formheading from '@/components/srilanka/common/Formheading';
-import { applyIndividualRadioData, touristIndividualsSchema } from '@/constant/srilankaConstant';
+import {
+  applyIndividualRadioData,
+  touristIndividualsSchema,
+} from '@/constant/srilankaConstant';
 import usePost from '@/hooks/usePost';
 import { addDays } from '@/lib/addDays';
 import SingleFileUpload from '@/components/srilanka/SingleFileUpload';
