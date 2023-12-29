@@ -91,7 +91,7 @@ const Header = ({ bgcolor }) => {
             {/* for mobile start */}
             <li className="block md:hidden">
               <Link
-                href="/"
+                href="/india"
                 className="flex items-center px-2 py-4 mx-4 space-x-2 font-semibold border-b border-b-secondary"
               >
                 <span className="w-2 h-2 bg-black"></span>
@@ -99,7 +99,7 @@ const Header = ({ bgcolor }) => {
               </Link>
             </li>
             {/* for mobile end */}
-            <Link href="/visa/step-one">
+            <Link href="/india/visa/step-one">
               <li className="relative hidden text-sm font-semibold cursor-pointer group dropdown drop-shadow-2xl md:flex nav-item nav-desk hover:text-primary">
                 Apply E-VISA
               </li>
@@ -107,7 +107,7 @@ const Header = ({ bgcolor }) => {
             {/* for mobile start */}
             <li className="block md:hidden">
               <Link
-                href="/visa/step-one"
+                href="/india/visa/step-one"
                 className="flex items-center px-2 py-4 mx-4 space-x-2 font-semibold border-b border-b-secondary"
               >
                 <span className="w-2 h-2 bg-black"></span>
