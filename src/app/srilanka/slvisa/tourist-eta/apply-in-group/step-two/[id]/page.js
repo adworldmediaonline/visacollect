@@ -23,6 +23,8 @@ import apiEndpoint from '@/services/apiEndpoint';
 import useUpdate from '@/hooks/useUpdate';
 import useDelete from '@/hooks/useDelete';
 import StepProcess from '@/components/srilanka/common/StepProcess';
+import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
+import { minDateWithDate } from '@/lib/minDate';
 const Page = ({ params }) => {
   const { state } = useFormContext();
   const router = useRouter();
@@ -234,19 +236,13 @@ const Page = ({ params }) => {
                     </div>
 
                     <div className="order-2 col-span-8">
-                      <Field
-                        type="date"
-                        id="dateOfBirthGroupTourist"
+                      <ReactDatePickerInput
+                        className="new-form-input"
                         name="dateOfBirthGroupTourist"
-                        // placeholder="Date Of Birth"
-                        className="new-form-input "
+                        selected={new Date(values.dateOfBirthGroupTourist)}
+                        setFieldValue={setFieldValue}
+                        maxDate={new Date()}
                       />
-
-                      <ErrorMessage name="dateOfBirthGroupTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
                     </div>
                   </div>
                   <div className="main-form-section">
@@ -487,19 +483,14 @@ const Page = ({ params }) => {
                     </div>
 
                     <div className="order-2 col-span-8">
-                      <Field
-                        type="date"
-                        id="issueDateGroupTourist"
-                        name="issueDateGroupTourist"
-                        // placeholder="Date Of Birth"
+                      <ReactDatePickerInput
                         className="new-form-input"
+                        name="issueDateGroupTourist"
+                        selected={new Date(values.issueDateGroupTourist)}
+                        setFieldValue={setFieldValue}
+                        minDate={new Date(values.dateOfBirthGroupTourist)}
+                        disabled={values.dateOfBirthGroupTourist === ''}
                       />
-
-                      <ErrorMessage name="issueDateGroupTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
                     </div>
                   </div>
                   <div className="main-form-section">
@@ -515,19 +506,16 @@ const Page = ({ params }) => {
                     </div>
 
                     <div className="order-2 col-span-8">
-                      <Field
-                        type="date"
-                        id="expiryDateGroupTourist"
+                      <ReactDatePickerInput
+                        className="new-form-input"
                         name="expiryDateGroupTourist"
-                        // placeholder="Expiry Date"
-                        className="new-form-input "
-                      />
-
-                      <ErrorMessage name="expiryDateGroupTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
+                        selected={new Date(values.expiryDateGroupTourist)}
+                        setFieldValue={setFieldValue}
+                        minDate={minDateWithDate(
+                          1,
+                          values.issueDateGroupTourist
                         )}
-                      </ErrorMessage>
+                      />
                     </div>
                   </div>
 
