@@ -486,7 +486,7 @@ export default function Page({ params }) {
                       <ReactDatePickerInput
                         className="new-form-input"
                         name="expiryDateIndividualTourist"
-                        selected={values.expiryDateIndividualTourist}
+                        selected={new Date(values.expiryDateIndividualTourist)}
                         setFieldValue={setFieldValue}
                         minDate={minDateWithDate(
                           1,
