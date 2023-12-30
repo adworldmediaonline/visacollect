@@ -27,7 +27,7 @@ const Page = ({ params }) => {
     apiEndpoint.SL_VISA_TOURIST_THIRD_PARTY,
     id,
     'form updated successfully',
-    'srilanka/slvisa/tourist-eta/apply-for-third-party/step-two',
+    '/srilanka/slvisa/tourist-eta/apply-for-third-party/step-two',
     getQuery.refetch,
     'touristThirdParty'
   );
