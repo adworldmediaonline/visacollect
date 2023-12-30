@@ -8,6 +8,7 @@ import Formsubhead from '@/components/srilanka/common/Formsubhead';
 import useQueryGet from '@/hooks/useQuery';
 import apiEndpoint from '@/services/apiEndpoint';
 import StepProcess from '@/components/srilanka/common/StepProcess';
+import { formatDateYearDayMonth } from '@/lib/dateFormatter';
 
 const tableHead = [
   'Given Name',
@@ -213,72 +214,74 @@ const Page = ({ params }) => {
                   <tbody>
                     {touristGroupsData?.members?.length > 0
                       ? touristGroupsData?.members?.map(member => (
-                        <tr key={member._id}>
-                          <td className="p-4">
-                            <div
-                              variant="small"
-                              color="blue-gray"
-                              className="font-normal"
-                            >
-                              {member?.givenNameGroupTourist}
-                            </div>
-                          </td>
-                          <td className="p-4">
-                            <div
-                              variant="small"
-                              color="blue-gray"
-                              className="font-normal"
-                            >
-                              {member?.passportNumberGroupTourist}
-                            </div>
-                          </td>
-                          <td className="p-4">
-                            <div
-                              variant="small"
-                              color="blue-gray"
-                              className="font-normal"
-                            >
-                              {member?.nationalityGroupTourist}
-                            </div>
-                          </td>
-                          <td className="p-4">
-                            <div
-                              variant="small"
-                              color="blue-gray"
-                              className="font-normal"
-                            >
-                              {member?.dateOfBirthGroupTourist}
-                            </div>
-                          </td>
-                          <td className="p-4">
-                            <div
-                              variant="small"
-                              color="blue-gray"
-                              className="font-normal"
-                            >
-                              {member?.issueDateGroupTourist}
-                            </div>
-                          </td>
-                          <td className="p-4">
-                            <div
-                              variant="small"
-                              color="blue-gray"
-                              className="font-normal"
-                            >
-                              {member?.genderGroupTourist}
-                            </div>
-                          </td>
-                          <td className="p-4">
-                            <div
-                              variant="small"
-                              color="blue-gray"
-                              className="font-normal"
-                            >
-                              {member?.expiryDateGroupTourist}
-                            </div>
-                          </td>
-                        </tr>
-                      ))
+                          <tr key={member._id}>
+                            <td className="p-4">
+                              <div
+                                variant="small"
+                                color="blue-gray"
+                                className="font-normal"
+                              >
+                                {member?.givenNameGroupTourist}
+                              </div>
+                            </td>
+                            <td className="p-4">
+                              <div
+                                variant="small"
+                                color="blue-gray"
+                                className="font-normal"
+                              >
+                                {member?.passportNumberGroupTourist}
+                              </div>
+                            </td>
+                            <td className="p-4">
+                              <div
+                                variant="small"
+                                color="blue-gray"
+                                className="font-normal"
+                              >
+                                {member?.nationalityGroupTourist}
+                              </div>
+                            </td>
+                            <td className="p-4">
+                              <div
+                                variant="small"
+                                color="blue-gray"
+                                className="font-normal"
+                              >
+                                {formatDateYearDayMonth(
+                                  member?.dateOfBirthGroupTourist
+                                )}
+                              </div>
+                            </td>
+                            <td className="p-4">
+                              <div
+                                variant="small"
+                                color="blue-gray"
+                                className="font-normal"
+                              >
+                                {member?.issueDateGroupTourist}
+                              </div>
+                            </td>
+                            <td className="p-4">
+                              <div
+                                variant="small"
+                                color="blue-gray"
+                                className="font-normal"
+                              >
+                                {member?.genderGroupTourist}
+                              </div>
+                            </td>
+                            <td className="p-4">
+                              <div
+                                variant="small"
+                                color="blue-gray"
+                                className="font-normal"
+                              >
+                                {member?.expiryDateGroupTourist}
+                              </div>
+                            </td>
+                          </tr>
+                        ))
                       : 'No Member found'}
                   </tbody>
                 </table>
