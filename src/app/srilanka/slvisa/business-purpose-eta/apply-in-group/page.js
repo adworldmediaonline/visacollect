@@ -9,6 +9,8 @@ import usePost from '@/hooks/usePost';
 import apiEndpoint from '@/services/apiEndpoint';
 import { ImSpinner2 } from 'react-icons/im';
 import { businessGroupSchema } from '@/constant/srilankaConstant';
+import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
+import { minDate } from '@/lib/minDate';
 const Page = () => {
   const postMutation = usePost(
     apiEndpoint.SL_VISA_BUSINESS_GROUPS,
@@ -47,10 +49,10 @@ const Page = () => {
             onSubmit={(values, { setSubmitting, resetForm }) => {
               postMutation.mutate(values);
               setSubmitting(false);
-              // resetForm();
+              resetForm();
             }}
           >
-            {({ values, isValid }) => (
+            {({ values, isValid, setFieldValue }) => (
               <Form>
                 <div className="main-form-section">
                   <div className="label-section">
@@ -96,18 +98,13 @@ const Page = () => {
                   </div>
 
                   <div className="order-2 col-span-8">
-                    <Field
-                      type="date"
-                      id="attendantArrivalDateBusinessGroup"
+                    <ReactDatePickerInput
+                      className="new-form-input"
                       name="attendantArrivalDateBusinessGroup"
-                      className="new-form-input "
+                      selected={values.attendantArrivalDateBusinessGroup}
+                      setFieldValue={setFieldValue}
+                      minDate={minDate(1)}
                     />
-
-                    <ErrorMessage name="attendantArrivalDateBusinessGroup">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
                   </div>
                 </div>
                 <div className="main-form-section">
@@ -837,8 +834,9 @@ const Page = () => {
                     </div>
                   ) : null}
                   <button
-                    className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
-                      }`}
+                    className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${
+                      !isValid ? 'cursor-not-allowed opacity-50' : ''
+                    }`}
                     disabled={!isValid}
                     type="submit"
                   >

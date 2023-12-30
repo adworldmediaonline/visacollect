@@ -20,6 +20,8 @@ import useDelete from '@/hooks/useDelete';
 import SingleFileUpload from '@/components/srilanka/SingleFileUpload';
 import useUpdate from '@/hooks/useUpdate';
 import StepProcess from '@/components/srilanka/common/StepProcess';
+import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
+import { minDateWithDate } from '@/lib/minDate';
 const data = [
   {
     id: 1,
@@ -107,7 +109,9 @@ const Page = ({ params }) => {
   }
 
   if (getQuery.error) {
-    return router.push('/srilanka/slvisa/business-purpose-eta/apply-for-third-party');
+    return router.push(
+      '/srilanka/slvisa/business-purpose-eta/apply-for-third-party'
+    );
   }
 
   if (getQuery.isSuccess) {
@@ -302,19 +306,15 @@ const Page = ({ params }) => {
                       </div>
 
                       <div className="order-2 col-span-8">
-                        <Field
-                          type="date"
-                          id="dateOfBirthThirdPartyBusiness"
+                        <ReactDatePickerInput
+                          className="new-form-input"
                           name="dateOfBirthThirdPartyBusiness"
-                          // placeholder="Date Of Birth"
-                          className="new-form-input "
+                          selected={
+                            new Date(values.dateOfBirthThirdPartyBusiness)
+                          }
+                          setFieldValue={setFieldValue}
+                          maxDate={new Date()}
                         />
-
-                        <ErrorMessage name="dateOfBirthThirdPartyBusiness">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
-                          )}
-                        </ErrorMessage>
                       </div>
                     </div>
                     <div className="main-form-section">
@@ -581,19 +581,18 @@ const Page = ({ params }) => {
                       </div>
 
                       <div className="order-2 col-span-8">
-                        <Field
-                          type="date"
-                          id="issueDateThirdPartyBusiness"
+                        <ReactDatePickerInput
+                          className="new-form-input"
                           name="issueDateThirdPartyBusiness"
-                          // placeholder="Date Of Birth"
-                          className="new-form-input "
+                          selected={
+                            new Date(values.issueDateThirdPartyBusiness)
+                          }
+                          setFieldValue={setFieldValue}
+                          minDate={
+                            new Date(values.dateOfBirthThirdPartyBusiness)
+                          }
+                          disabled={values.dateOfBirthThirdPartyBusiness === ''}
                         />
-
-                        <ErrorMessage name="issueDateThirdPartyBusiness">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
-                          )}
-                        </ErrorMessage>
                       </div>
                     </div>
                     <div className="main-form-section">
@@ -613,19 +612,18 @@ const Page = ({ params }) => {
                       </div>
 
                       <div className="order-2 col-span-8">
-                        <Field
-                          type="date"
-                          id="expiryDateThirdPartyBusiness"
+                        <ReactDatePickerInput
+                          className="new-form-input"
                           name="expiryDateThirdPartyBusiness"
-                          // placeholder="Expiry Date"
-                          className="new-form-input "
-                        />
-
-                        <ErrorMessage name="expiryDateThirdPartyBusiness">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
+                          selected={
+                            new Date(values.expiryDateThirdPartyBusiness)
+                          }
+                          setFieldValue={setFieldValue}
+                          minDate={minDateWithDate(
+                            1,
+                            values.issueDateThirdPartyBusiness
                           )}
-                        </ErrorMessage>
+                        />
                       </div>
                     </div>
 
@@ -675,7 +673,7 @@ const Page = ({ params }) => {
                           </div>
 
                           {values.passportImageThirdPartyBusiness instanceof
-                            File ? (
+                          File ? (
                             <div className="flex items-center w-full">
                               <div className="relative h-28 w-28">
                                 <Image
@@ -732,7 +730,7 @@ const Page = ({ params }) => {
                                 name="isChildInformationEnable"
                                 className="w-6 h-6"
                               />
-                              <h2 className='text-white'> Enable </h2>
+                              <h2 className="text-white"> Enable </h2>
                             </div>
                           </div>
                         </div>
@@ -750,41 +748,46 @@ const Page = ({ params }) => {
                               name="childInformation"
                               render={arrayHelpers => (
                                 <div>
-                                  <table className='w-full'>
-                                <thead>
-                                  <tr>
-                                    <th><div className="label-section">
-                                      <label>Surname/Family Name *</label>
-                                    </div>
-
-                                    </th>
-                                    <th> <div className="label-section">
-                                      <label>Other/Given Names *</label>
-                                    </div>
-
-                                    </th>
-                                    <th>  <div className="label-section">
-                                      <label>Date of Birth*</label>
-                                    </div>
-                                    </th>
-                                    <th> <div className="label-section">
-                                      <label>Gender*</label>
-                                    </div>
-                                    </th>
-                                    <th> <div className="label-section">
-                                      <label>Relationship *</label>
-                                    </div>
-                                    </th>
-                                    <th>Action</th>
-                                  </tr>
-                                </thead>
+                                  <table className="w-full">
+                                    <thead>
+                                      <tr>
+                                        <th>
+                                          <div className="label-section">
+                                            <label>Surname/Family Name *</label>
+                                          </div>
+                                        </th>
+                                        <th>
+                                          {' '}
+                                          <div className="label-section">
+                                            <label>Other/Given Names *</label>
+                                          </div>
+                                        </th>
+                                        <th>
+                                          {' '}
+                                          <div className="label-section">
+                                            <label>Date of Birth*</label>
+                                          </div>
+                                        </th>
+                                        <th>
+                                          {' '}
+                                          <div className="label-section">
+                                            <label>Gender*</label>
+                                          </div>
+                                        </th>
+                                        <th>
+                                          {' '}
+                                          <div className="label-section">
+                                            <label>Relationship *</label>
+                                          </div>
+                                        </th>
+                                        <th>Action</th>
+                                      </tr>
+                                    </thead>
                                     <tbody>
                                       {values.childInformation?.map(
                                         (child, index) => (
                                           <tr key={index}>
-                                            <td className='px-3 py-2'>
-                                              
-
+                                            <td className="px-3 py-2">
                                               <div className="order-2 col-span-8">
                                                 <Field
                                                   className="new-form-input "
@@ -794,7 +797,6 @@ const Page = ({ params }) => {
                                             </td>
 
                                             <td>
-                                             
                                               <div className="order-2 col-span-8">
                                                 <Field
                                                   className="new-form-input "
@@ -803,9 +805,7 @@ const Page = ({ params }) => {
                                               </div>
                                             </td>
 
-                                            <td className='px-3 py-2'>
-                                             
-
+                                            <td className="px-3 py-2">
                                               <div className="order-2 col-span-8">
                                                 <Field
                                                   type="date"
@@ -816,7 +816,6 @@ const Page = ({ params }) => {
                                             </td>
 
                                             <td>
-                                           
                                               <div className="order-2 col-span-8">
                                                 <Field
                                                   component="select"
@@ -837,8 +836,7 @@ const Page = ({ params }) => {
                                               </div>
                                             </td>
 
-                                            <td className='px-3 py-2'>
-                                             
+                                            <td className="px-3 py-2">
                                               <div className="order-2 col-span-8">
                                                 <Field
                                                   component="select"
@@ -946,8 +944,9 @@ const Page = ({ params }) => {
                         </div>
                       ) : null}
                       <button
-                        className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
-                          }`}
+                        className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${
+                          !isValid ? 'cursor-not-allowed opacity-50' : ''
+                        }`}
                         disabled={!isValid}
                         type="submit"
                       >

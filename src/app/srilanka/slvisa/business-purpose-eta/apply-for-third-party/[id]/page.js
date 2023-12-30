@@ -12,6 +12,8 @@ import useQueryGet from '@/hooks/useQuery';
 import StepProcess from '@/components/srilanka/common/StepProcess';
 import useUpdate from '@/hooks/useUpdate';
 import { businessThirdPartySchema } from '@/constant/srilankaConstant';
+import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
+import { minDate } from '@/lib/minDate';
 
 const Page = ({ params }) => {
   const { id } = params;
@@ -41,7 +43,9 @@ const Page = ({ params }) => {
   }
 
   if (getQuery.error) {
-    return router.push('/srilanka/slvisa/business-purpose-eta/apply-for-third-party');
+    return router.push(
+      '/srilanka/slvisa/business-purpose-eta/apply-for-third-party'
+    );
   }
   if (getQuery.isSuccess) {
     const {
@@ -89,7 +93,7 @@ const Page = ({ params }) => {
                   setSubmitting(false);
                 }}
               >
-                {({ values, isValid }) => (
+                {({ values, isValid, setFieldValue }) => (
                   <Form>
                     <div className="main-form-section">
                       <div className="label-section">
@@ -142,18 +146,17 @@ const Page = ({ params }) => {
                       </div>
 
                       <div className="order-2 col-span-8">
-                        <Field
-                          type="date"
-                          id="attendantArrivalDateThirdPartyBusiness"
+                        <ReactDatePickerInput
+                          className="new-form-input"
                           name="attendantArrivalDateThirdPartyBusiness"
-                          className="new-form-input "
+                          selected={
+                            new Date(
+                              values.attendantArrivalDateThirdPartyBusiness
+                            )
+                          }
+                          setFieldValue={setFieldValue}
+                          minDate={minDate(1)}
                         />
-
-                        <ErrorMessage name="attendantArrivalDateThirdPartyBusiness">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
-                          )}
-                        </ErrorMessage>
                       </div>
                     </div>
                     <div className="main-form-section">
@@ -180,8 +183,12 @@ const Page = ({ params }) => {
                           className="new-form-input "
                         >
                           <option value="">Select</option>
-                          <option value="PARTICIPATE IN BUSINESS MEETINGS AND NEGOTIATIONS">PARTICIPATE IN BUSINESS MEETINGS AND NEGOTIATIONS</option>
-                          <option value="SHORT TERM TRAINING PROGRAMS">SHORT TERM TRAINING PROGRAMS</option>
+                          <option value="PARTICIPATE IN BUSINESS MEETINGS AND NEGOTIATIONS">
+                            PARTICIPATE IN BUSINESS MEETINGS AND NEGOTIATIONS
+                          </option>
+                          <option value="SHORT TERM TRAINING PROGRAMS">
+                            SHORT TERM TRAINING PROGRAMS
+                          </option>
                         </Field>
 
                         <ErrorMessage name="purposeOfVisitThirdPartyBusiness">
@@ -1373,8 +1380,9 @@ const Page = ({ params }) => {
                         </div>
                       ) : null}
                       <button
-                        className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
-                          }`}
+                        className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${
+                          !isValid ? 'cursor-not-allowed opacity-50' : ''
+                        }`}
                         disabled={!isValid}
                         type="submit"
                       >
