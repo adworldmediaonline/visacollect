@@ -25,6 +25,7 @@ import useDelete from '@/hooks/useDelete';
 import StepProcess from '@/components/srilanka/common/StepProcess';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import { minDateWithDate } from '@/lib/minDate';
+import { formatDateYearDayMonth } from '@/lib/dateFormatter';
 const Page = ({ params }) => {
   const { state } = useFormContext();
   const router = useRouter();
@@ -896,7 +897,9 @@ const Page = ({ params }) => {
                                       color="blue-gray"
                                       className="font-normal"
                                     >
-                                      {member?.dateOfBirthGroupTourist}
+                                      {formatDateYearDayMonth(
+                                        member?.dateOfBirthGroupTourist
+                                      )}
                                     </div>
                                   </td>
                                   <td className="p-4">
