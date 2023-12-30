@@ -13,13 +13,18 @@ import Formmainsection from '@/components/srilanka/common/Formmainsection';
 import Formheading from '@/components/srilanka/common/Formheading';
 import Formsubhead from '@/components/srilanka/common/Formsubhead';
 import StepProcess from '@/components/srilanka/common/StepProcess';
-import { applyInThirdPartyMemberData, touristThirdPartySchema } from '@/constant/srilankaConstant';
+import {
+  applyInThirdPartyMemberData,
+  touristThirdPartySchema,
+} from '@/constant/srilankaConstant';
 import { useFormContext } from '@/context/formContext';
 import useQueryGet from '@/hooks/useQuery';
 import apiEndpoint from '@/services/apiEndpoint';
 import useUpdate from '@/hooks/useUpdate';
 import SingleFileUpload from '@/components/srilanka/SingleFileUpload';
 import useDelete from '@/hooks/useDelete';
+import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
+import { minDateWithDate } from '@/lib/minDate';
 
 const tableHead = [
   'Given Name',
@@ -255,19 +260,15 @@ const Page = ({ params }) => {
                       </div>
 
                       <div className="order-2 col-span-8">
-                        <Field
-                          type="date"
-                          id="dateOfBirthThirdPartyTourist"
+                        <ReactDatePickerInput
+                          className="new-form-input"
                           name="dateOfBirthThirdPartyTourist"
-                          // placeholder="Date Of Birth"
-                          className="new-form-input "
+                          selected={
+                            new Date(values.dateOfBirthThirdPartyTourist)
+                          }
+                          setFieldValue={setFieldValue}
+                          maxDate={new Date()}
                         />
-
-                        <ErrorMessage name="dateOfBirthThirdPartyTourist">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
-                          )}
-                        </ErrorMessage>
                       </div>
                     </div>
                     <div className="main-form-section">
@@ -534,19 +535,16 @@ const Page = ({ params }) => {
                       </div>
 
                       <div className="order-2 col-span-8">
-                        <Field
-                          type="date"
-                          id="issueDateThirdPartyTourist"
+                        <ReactDatePickerInput
+                          className="new-form-input"
                           name="issueDateThirdPartyTourist"
-                          // placeholder="Date Of Birth"
-                          className="new-form-input "
+                          selected={new Date(values.issueDateThirdPartyTourist)}
+                          setFieldValue={setFieldValue}
+                          minDate={
+                            new Date(values.dateOfBirthThirdPartyTourist)
+                          }
+                          disabled={values.dateOfBirthThirdPartyTourist === ''}
                         />
-
-                        <ErrorMessage name="issueDateThirdPartyTourist">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
-                          )}
-                        </ErrorMessage>
                       </div>
                     </div>
                     <div className="main-form-section">
@@ -566,19 +564,18 @@ const Page = ({ params }) => {
                       </div>
 
                       <div className="order-2 col-span-8">
-                        <Field
-                          type="date"
-                          id="expiryDateThirdPartyTourist"
+                        <ReactDatePickerInput
+                          className="new-form-input"
                           name="expiryDateThirdPartyTourist"
-                          // placeholder="Expiry Date"
-                          className="new-form-input "
-                        />
-
-                        <ErrorMessage name="expiryDateThirdPartyTourist">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
+                          selected={
+                            new Date(values.expiryDateThirdPartyTourist)
+                          }
+                          setFieldValue={setFieldValue}
+                          minDate={minDateWithDate(
+                            1,
+                            values.issueDateThirdPartyTourist
                           )}
-                        </ErrorMessage>
+                        />
                       </div>
                     </div>
 
@@ -628,7 +625,7 @@ const Page = ({ params }) => {
                           </div>
 
                           {values.passportImageThirdPartyTourist instanceof
-                            File ? (
+                          File ? (
                             <div className="flex items-center w-full">
                               <div className="relative h-28 w-28">
                                 <Image
@@ -685,7 +682,7 @@ const Page = ({ params }) => {
                                 name="isChildInformationEnable"
                                 className="w-6 h-6"
                               />
-                              <h2 className='text-white'> Enable </h2>
+                              <h2 className="text-white"> Enable </h2>
                             </div>
                           </div>
                         </div>
@@ -703,39 +700,46 @@ const Page = ({ params }) => {
                               name="childInformation"
                               render={arrayHelpers => (
                                 <div>
-                                   <table className='w-full'>
-                                <thead>
-                                  <tr>
-                                    <th><div className="label-section">
-                                      <label>Surname/Family Name *</label>
-                                    </div>
-
-                                    </th>
-                                    <th> <div className="label-section">
-                                      <label>Other/Given Names *</label>
-                                    </div>
-
-                                    </th>
-                                    <th>  <div className="label-section">
-                                      <label>Date of Birth*</label>
-                                    </div>
-                                    </th>
-                                    <th> <div className="label-section">
-                                      <label>Gender*</label>
-                                    </div>
-                                    </th>
-                                    <th> <div className="label-section">
-                                      <label>Relationship *</label>
-                                    </div>
-                                    </th>
-                                    <th>Action</th>
-                                  </tr>
-                                </thead>
+                                  <table className="w-full">
+                                    <thead>
+                                      <tr>
+                                        <th>
+                                          <div className="label-section">
+                                            <label>Surname/Family Name *</label>
+                                          </div>
+                                        </th>
+                                        <th>
+                                          {' '}
+                                          <div className="label-section">
+                                            <label>Other/Given Names *</label>
+                                          </div>
+                                        </th>
+                                        <th>
+                                          {' '}
+                                          <div className="label-section">
+                                            <label>Date of Birth*</label>
+                                          </div>
+                                        </th>
+                                        <th>
+                                          {' '}
+                                          <div className="label-section">
+                                            <label>Gender*</label>
+                                          </div>
+                                        </th>
+                                        <th>
+                                          {' '}
+                                          <div className="label-section">
+                                            <label>Relationship *</label>
+                                          </div>
+                                        </th>
+                                        <th>Action</th>
+                                      </tr>
+                                    </thead>
                                     <tbody>
                                       {values.childInformation?.map(
                                         (child, index) => (
                                           <tr key={index}>
-                                            <td className='px-3 py-2'>
+                                            <td className="px-3 py-2">
                                               <div className="order-2 col-span-8">
                                                 <Field
                                                   className="new-form-input "
@@ -745,7 +749,6 @@ const Page = ({ params }) => {
                                             </td>
 
                                             <td>
-                                              
                                               <div className="order-2 col-span-8">
                                                 <Field
                                                   className="new-form-input "
@@ -754,9 +757,7 @@ const Page = ({ params }) => {
                                               </div>
                                             </td>
 
-                                            <td className='px-3 py-2'>
-                                            
-
+                                            <td className="px-3 py-2">
                                               <div className="order-2 col-span-8">
                                                 <Field
                                                   type="date"
@@ -767,8 +768,6 @@ const Page = ({ params }) => {
                                             </td>
 
                                             <td>
-                                            
-
                                               <div className="order-2 col-span-8">
                                                 <Field
                                                   component="select"
@@ -789,9 +788,7 @@ const Page = ({ params }) => {
                                               </div>
                                             </td>
 
-                                            <td className='px-3 py-2'>
-                                          
-
+                                            <td className="px-3 py-2">
                                               <div className="order-2 col-span-8">
                                                 <Field
                                                   component="select"
@@ -899,8 +896,9 @@ const Page = ({ params }) => {
                         </div>
                       ) : null}
                       <button
-                        className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
-                          }`}
+                        className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${
+                          !isValid ? 'cursor-not-allowed opacity-50' : ''
+                        }`}
                         disabled={!isValid}
                         type="submit"
                       >

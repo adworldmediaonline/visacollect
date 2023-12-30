@@ -9,6 +9,8 @@ import { touristThirdPartySchema } from '@/constant/srilankaConstant';
 import usePost from '@/hooks/usePost';
 import apiEndpoint from '@/services/apiEndpoint';
 import StepProcess from '@/components/srilanka/common/StepProcess';
+import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
+import { minDate } from '@/lib/minDate';
 
 const Page = () => {
   const postMutation = usePost(
@@ -52,7 +54,7 @@ const Page = () => {
                 resetForm();
               }}
             >
-              {({ values, isValid }) => (
+              {({ values, isValid, setFieldValue }) => (
                 <Form>
                   <div className="main-form-section">
                     <div className="label-section">
@@ -98,18 +100,13 @@ const Page = () => {
                     </div>
 
                     <div className="order-2 col-span-8">
-                      <Field
-                        type="date"
-                        id="attendantArrivalDateThirdPartyTourist"
+                      <ReactDatePickerInput
+                        className="new-form-input"
                         name="attendantArrivalDateThirdPartyTourist"
-                        className="new-form-input "
+                        selected={values.attendantArrivalDateThirdPartyTourist}
+                        setFieldValue={setFieldValue}
+                        minDate={minDate(1)}
                       />
-
-                      <ErrorMessage name="attendantArrivalDateThirdPartyTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
                     </div>
                   </div>
                   <div className="main-form-section">
@@ -688,8 +685,9 @@ const Page = () => {
                       </div>
                     ) : null}
                     <button
-                      className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
-                        }`}
+                      className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${
+                        !isValid ? 'cursor-not-allowed opacity-50' : ''
+                      }`}
                       disabled={!isValid}
                       type="submit"
                     >

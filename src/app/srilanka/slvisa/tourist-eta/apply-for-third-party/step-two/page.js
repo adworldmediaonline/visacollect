@@ -9,7 +9,10 @@ import { MdDelete, MdDeleteOutline } from 'react-icons/md';
 import { ImSpinner2 } from 'react-icons/im';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { applyInThirdPartyMemberData, touristThirdPartySchema } from '@/constant/srilankaConstant';
+import {
+  applyInThirdPartyMemberData,
+  touristThirdPartySchema,
+} from '@/constant/srilankaConstant';
 import Formheading from '@/components/srilanka/common/Formheading';
 import Formmainsection from '@/components/srilanka/common/Formmainsection';
 import Formsubhead from '@/components/srilanka/common/Formsubhead';
@@ -20,6 +23,8 @@ import usePost from '@/hooks/usePost';
 import useDelete from '@/hooks/useDelete';
 import SingleFileUpload from '@/components/srilanka/SingleFileUpload';
 import StepProcess from '@/components/srilanka/common/StepProcess';
+import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
+import { minDateWithDate } from '@/lib/minDate';
 const data = [
   {
     id: 1,
@@ -268,19 +273,13 @@ const Page = () => {
                       </div>
 
                       <div className="order-2 col-span-8">
-                        <Field
-                          type="date"
-                          id="dateOfBirthThirdPartyTourist"
+                        <ReactDatePickerInput
+                          className="new-form-input"
                           name="dateOfBirthThirdPartyTourist"
-                          // placeholder="Date Of Birth"
-                          className="new-form-input "
+                          selected={values.dateOfBirthThirdPartyTourist}
+                          setFieldValue={setFieldValue}
+                          maxDate={new Date()}
                         />
-
-                        <ErrorMessage name="dateOfBirthThirdPartyTourist">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
-                          )}
-                        </ErrorMessage>
                       </div>
                     </div>
                     <div className="main-form-section">
@@ -547,19 +546,16 @@ const Page = () => {
                       </div>
 
                       <div className="order-2 col-span-8">
-                        <Field
-                          type="date"
-                          id="issueDateThirdPartyTourist"
+                        <ReactDatePickerInput
+                          className="new-form-input"
                           name="issueDateThirdPartyTourist"
-                          // placeholder="Date Of Birth"
-                          className="new-form-input "
+                          selected={values.issueDateThirdPartyTourist}
+                          setFieldValue={setFieldValue}
+                          minDate={
+                            new Date(values.dateOfBirthThirdPartyTourist)
+                          }
+                          disabled={values.dateOfBirthThirdPartyTourist === ''}
                         />
-
-                        <ErrorMessage name="issueDateThirdPartyTourist">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
-                          )}
-                        </ErrorMessage>
                       </div>
                     </div>
                     <div className="main-form-section">
@@ -579,19 +575,16 @@ const Page = () => {
                       </div>
 
                       <div className="order-2 col-span-8">
-                        <Field
-                          type="date"
-                          id="expiryDateThirdPartyTourist"
+                        <ReactDatePickerInput
+                          className="new-form-input"
                           name="expiryDateThirdPartyTourist"
-                          // placeholder="Expiry Date"
-                          className="new-form-input "
-                        />
-
-                        <ErrorMessage name="expiryDateThirdPartyTourist">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
+                          selected={values.expiryDateThirdPartyTourist}
+                          setFieldValue={setFieldValue}
+                          minDate={minDateWithDate(
+                            1,
+                            values.issueDateThirdPartyTourist
                           )}
-                        </ErrorMessage>
+                        />
                       </div>
                     </div>
 
@@ -681,7 +674,7 @@ const Page = () => {
                                 name="isChildInformationEnable"
                                 className="w-6 h-6"
                               />
-                              <h2  className='text-white'> Enable </h2>
+                              <h2 className="text-white"> Enable </h2>
                             </div>
                           </div>
                         </div>
@@ -699,41 +692,46 @@ const Page = () => {
                               name="childInformation"
                               render={arrayHelpers => (
                                 <div>
-                                  <table className='w-full'>
-                                <thead>
-                                  <tr>
-                                    <th><div className="label-section">
-                                      <label>Surname/Family Name *</label>
-                                    </div>
-
-                                    </th>
-                                    <th> <div className="label-section">
-                                      <label>Other/Given Names *</label>
-                                    </div>
-
-                                    </th>
-                                    <th>  <div className="label-section">
-                                      <label>Date of Birth*</label>
-                                    </div>
-                                    </th>
-                                    <th> <div className="label-section">
-                                      <label>Gender*</label>
-                                    </div>
-                                    </th>
-                                    <th> <div className="label-section">
-                                      <label>Relationship *</label>
-                                    </div>
-                                    </th>
-                                    <th>Action</th>
-                                  </tr>
-                                </thead>
+                                  <table className="w-full">
+                                    <thead>
+                                      <tr>
+                                        <th>
+                                          <div className="label-section">
+                                            <label>Surname/Family Name *</label>
+                                          </div>
+                                        </th>
+                                        <th>
+                                          {' '}
+                                          <div className="label-section">
+                                            <label>Other/Given Names *</label>
+                                          </div>
+                                        </th>
+                                        <th>
+                                          {' '}
+                                          <div className="label-section">
+                                            <label>Date of Birth*</label>
+                                          </div>
+                                        </th>
+                                        <th>
+                                          {' '}
+                                          <div className="label-section">
+                                            <label>Gender*</label>
+                                          </div>
+                                        </th>
+                                        <th>
+                                          {' '}
+                                          <div className="label-section">
+                                            <label>Relationship *</label>
+                                          </div>
+                                        </th>
+                                        <th>Action</th>
+                                      </tr>
+                                    </thead>
                                     <tbody>
                                       {values.childInformation?.map(
                                         (child, index) => (
                                           <tr key={index}>
-                                            <td className='px-3 py-2'>
-                                            
-
+                                            <td className="px-3 py-2">
                                               <div className="order-2 col-span-8">
                                                 <Field
                                                   className="new-form-input "
@@ -743,8 +741,6 @@ const Page = () => {
                                             </td>
 
                                             <td>
-                                              
-
                                               <div className="order-2 col-span-8">
                                                 <Field
                                                   className="new-form-input "
@@ -753,9 +749,7 @@ const Page = () => {
                                               </div>
                                             </td>
 
-                                            <td className='px-3 py-2'>
-                                              
-
+                                            <td className="px-3 py-2">
                                               <div className="order-2 col-span-8">
                                                 <Field
                                                   type="date"
@@ -765,9 +759,7 @@ const Page = () => {
                                               </div>
                                             </td>
 
-                                            <td className='px-3 py-2'>
-                                           
-
+                                            <td className="px-3 py-2">
                                               <div className="order-2 col-span-8">
                                                 <Field
                                                   component="select"
@@ -788,8 +780,7 @@ const Page = () => {
                                               </div>
                                             </td>
 
-                                            <td className='px-3 py-2'>
-                                            
+                                            <td className="px-3 py-2">
                                               <div className="order-2 col-span-8">
                                                 <Field
                                                   component="select"
@@ -897,8 +888,9 @@ const Page = () => {
                         </div>
                       ) : null}
                       <button
-                        className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
-                          }`}
+                        className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${
+                          !isValid ? 'cursor-not-allowed opacity-50' : ''
+                        }`}
                         disabled={!isValid}
                         type="submit"
                       >

@@ -11,6 +11,8 @@ import apiEndpoint from '@/services/apiEndpoint';
 import useQueryGet from '@/hooks/useQuery';
 import useUpdate from '@/hooks/useUpdate';
 import StepProcess from '@/components/srilanka/common/StepProcess';
+import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
+import { minDate } from '@/lib/minDate';
 
 const Page = ({ params }) => {
   const { id } = params;
@@ -88,7 +90,7 @@ const Page = ({ params }) => {
                   setSubmitting(false);
                 }}
               >
-                {({ values, isValid }) => (
+                {({ values, isValid, setFieldValue }) => (
                   <Form>
                     <div className="main-form-section">
                       <div className="label-section">
@@ -137,18 +139,17 @@ const Page = ({ params }) => {
                       </div>
 
                       <div className="order-2 col-span-8">
-                        <Field
-                          type="date"
-                          id="attendantArrivalDateThirdPartyTourist"
+                        <ReactDatePickerInput
+                          className="new-form-input"
                           name="attendantArrivalDateThirdPartyTourist"
-                          className="new-form-input "
+                          selected={
+                            new Date(
+                              values.attendantArrivalDateThirdPartyTourist
+                            )
+                          }
+                          setFieldValue={setFieldValue}
+                          minDate={minDate(1)}
                         />
-
-                        <ErrorMessage name="attendantArrivalDateThirdPartyTourist">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
-                          )}
-                        </ErrorMessage>
                       </div>
                     </div>
                     <div className="main-form-section">
@@ -175,14 +176,31 @@ const Page = ({ params }) => {
                           className="new-form-input "
                         >
                           <option value="">Select</option>
-                          <option value="M.I.C.E Tourism (Meetings, Incentives, Conferences & Exhibitions/Events)">M.I.C.E Tourism (Meetings, Incentives, Conferences & Exhibitions/Events)</option>
-                          <option value="Medical treatment including Ayurvedic (herbal)">Medical treatment including Ayurvedic (herbal)</option>
-                          <option value="Participate in Art, Music, and Dance Events">Participate in Art, Music, and Dance Events</option>
-                          <option value="Participate in Pilgrimages">Participate in Pilgrimages</option>
-                          <option value="Participate in Sport Events">Participate in Sport Events</option>
-                          <option value="Participate in Weddings">Participate in Weddings</option>
-                          <option value="Sightseeing or Holidaying">Sightseeing or Holidaying</option>
-                          <option value="Visiting friends and relatives">Visiting friends and relatives</option>
+                          <option value="M.I.C.E Tourism (Meetings, Incentives, Conferences & Exhibitions/Events)">
+                            M.I.C.E Tourism (Meetings, Incentives, Conferences &
+                            Exhibitions/Events)
+                          </option>
+                          <option value="Medical treatment including Ayurvedic (herbal)">
+                            Medical treatment including Ayurvedic (herbal)
+                          </option>
+                          <option value="Participate in Art, Music, and Dance Events">
+                            Participate in Art, Music, and Dance Events
+                          </option>
+                          <option value="Participate in Pilgrimages">
+                            Participate in Pilgrimages
+                          </option>
+                          <option value="Participate in Sport Events">
+                            Participate in Sport Events
+                          </option>
+                          <option value="Participate in Weddings">
+                            Participate in Weddings
+                          </option>
+                          <option value="Sightseeing or Holidaying">
+                            Sightseeing or Holidaying
+                          </option>
+                          <option value="Visiting friends and relatives">
+                            Visiting friends and relatives
+                          </option>
                         </Field>
 
                         <ErrorMessage name="purposeOfVisitThirdPartyTourist">
@@ -749,8 +767,9 @@ const Page = ({ params }) => {
                         </div>
                       ) : null}
                       <button
-                        className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
-                          }`}
+                        className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${
+                          !isValid ? 'cursor-not-allowed opacity-50' : ''
+                        }`}
                         disabled={!isValid}
                         type="submit"
                       >
