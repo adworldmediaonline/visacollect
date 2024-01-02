@@ -69,7 +69,7 @@ const Page = ({ params }) => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Where you have been during last 14 days before this travel
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristGroupsData?.whereHaveBeenGroupTourist}
               </p>
             </div>
@@ -77,15 +77,17 @@ const Page = ({ params }) => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Intended Arrival Date
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
-                {touristGroupsData?.attendantArrivalDateGroupTourist}
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
+                {formatDateYearDayMonth(
+                  touristGroupsData?.attendantArrivalDateGroupTourist
+                )}
               </p>
             </div>
             <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Purpose of Visit
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristGroupsData?.purposeOfVisitGroupTourist}
               </p>
             </div>
@@ -93,7 +95,7 @@ const Page = ({ params }) => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 No. of validity required
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristGroupsData?.visaValidPeriodGroupTourist}
               </p>
             </div>
@@ -101,7 +103,7 @@ const Page = ({ params }) => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Port of Departure
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristGroupsData?.portOfDepartureGroupTourist}
               </p>
             </div>
@@ -109,7 +111,7 @@ const Page = ({ params }) => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Airline/Vessel
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristGroupsData?.ArilineVesselGroupTourist}
               </p>
             </div>
@@ -117,7 +119,7 @@ const Page = ({ params }) => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Flight/Vessel Number
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristGroupsData?.flightVesselNumberGroupTourist}
               </p>
             </div>
@@ -130,7 +132,7 @@ const Page = ({ params }) => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Address
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristGroupsData?.addressLineOneGroupTourist}
               </p>
             </div>
@@ -138,7 +140,7 @@ const Page = ({ params }) => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Address in Sri Lanka
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristGroupsData?.addressInSrilankaGroupTourist}
               </p>
             </div>
@@ -146,7 +148,7 @@ const Page = ({ params }) => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Email Address
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristGroupsData?.emailGroupTourist}
               </p>
             </div>
@@ -154,7 +156,7 @@ const Page = ({ params }) => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Alternate Email
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristGroupsData?.alternateEmailGroupTourist}
               </p>
             </div>
@@ -162,7 +164,7 @@ const Page = ({ params }) => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Telephone Number
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristGroupsData?.telephoneGroupTourist}
               </p>
             </div>
@@ -170,7 +172,7 @@ const Page = ({ params }) => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Mobile Number
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristGroupsData?.mobileGroupTourist}
               </p>
             </div>
@@ -178,7 +180,7 @@ const Page = ({ params }) => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Fax Number
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristGroupsData?.faxNumberGroupTourist}
               </p>
             </div>
@@ -194,97 +196,106 @@ const Page = ({ params }) => {
 
             <div className="py-8">
               <div className="w-full h-full ">
-                <table className="w-full text-left table-auto min-w-max">
-                  <thead>
-                    <tr className="rounded-xl">
-                      {tableHead.map(head => (
-                        <th key={head} className="bg-[#0068E5] text-black p-4 ">
-                          <div
-                            variant="small"
-                            color="blue-gray"
-                            className="font-bold leading-none "
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left table-auto min-w-max">
+                    <thead>
+                      <tr className="rounded-xl">
+                        {tableHead.map(head => (
+                          <th
+                            key={head}
+                            className="bg-[#0068E5] text-black p-4 "
                           >
-                            {head}
-                          </div>
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
+                            <div
+                              variant="small"
+                              color="blue-gray"
+                              className="font-bold leading-none "
+                            >
+                              {head}
+                            </div>
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
 
-                  <tbody>
-                    {touristGroupsData?.members?.length > 0
-                      ? touristGroupsData?.members?.map(member => (
-                          <tr key={member._id}>
-                            <td className="p-4">
-                              <div
-                                variant="small"
-                                color="blue-gray"
-                                className="font-normal"
-                              >
-                                {member?.givenNameGroupTourist}
-                              </div>
-                            </td>
-                            <td className="p-4">
-                              <div
-                                variant="small"
-                                color="blue-gray"
-                                className="font-normal"
-                              >
-                                {member?.passportNumberGroupTourist}
-                              </div>
-                            </td>
-                            <td className="p-4">
-                              <div
-                                variant="small"
-                                color="blue-gray"
-                                className="font-normal"
-                              >
-                                {member?.nationalityGroupTourist}
-                              </div>
-                            </td>
-                            <td className="p-4">
-                              <div
-                                variant="small"
-                                color="blue-gray"
-                                className="font-normal"
-                              >
-                                {formatDateYearDayMonth(
-                                  member?.dateOfBirthGroupTourist
-                                )}
-                              </div>
-                            </td>
-                            <td className="p-4">
-                              <div
-                                variant="small"
-                                color="blue-gray"
-                                className="font-normal"
-                              >
-                                {member?.issueDateGroupTourist}
-                              </div>
-                            </td>
-                            <td className="p-4">
-                              <div
-                                variant="small"
-                                color="blue-gray"
-                                className="font-normal"
-                              >
-                                {member?.genderGroupTourist}
-                              </div>
-                            </td>
-                            <td className="p-4">
-                              <div
-                                variant="small"
-                                color="blue-gray"
-                                className="font-normal"
-                              >
-                                {member?.expiryDateGroupTourist}
-                              </div>
-                            </td>
-                          </tr>
-                        ))
-                      : 'No Member found'}
-                  </tbody>
-                </table>
+                    <tbody>
+                      {touristGroupsData?.members?.length > 0
+                        ? touristGroupsData?.members?.map(member => (
+                            <tr key={member._id}>
+                              <td className="p-4">
+                                <div
+                                  variant="small"
+                                  color="blue-gray"
+                                  className="font-normal"
+                                >
+                                  {member?.givenNameGroupTourist}
+                                </div>
+                              </td>
+                              <td className="p-4">
+                                <div
+                                  variant="small"
+                                  color="blue-gray"
+                                  className="font-normal"
+                                >
+                                  {member?.passportNumberGroupTourist}
+                                </div>
+                              </td>
+                              <td className="p-4">
+                                <div
+                                  variant="small"
+                                  color="blue-gray"
+                                  className="font-normal"
+                                >
+                                  {member?.nationalityGroupTourist}
+                                </div>
+                              </td>
+                              <td className="p-4">
+                                <div
+                                  variant="small"
+                                  color="blue-gray"
+                                  className="font-normal"
+                                >
+                                  {formatDateYearDayMonth(
+                                    member?.dateOfBirthGroupTourist
+                                  )}
+                                </div>
+                              </td>
+                              <td className="p-4">
+                                <div
+                                  variant="small"
+                                  color="blue-gray"
+                                  className="font-normal"
+                                >
+                                  {formatDateYearDayMonth(
+                                    member?.issueDateGroupTourist
+                                  )}
+                                </div>
+                              </td>
+                              <td className="p-4">
+                                <div
+                                  variant="small"
+                                  color="blue-gray"
+                                  className="font-normal"
+                                >
+                                  {member?.genderGroupTourist}
+                                </div>
+                              </td>
+                              <td className="p-4">
+                                <div
+                                  variant="small"
+                                  color="blue-gray"
+                                  className="font-normal"
+                                >
+                                  {formatDateYearDayMonth(
+                                    member?.expiryDateGroupTourist
+                                  )}
+                                </div>
+                              </td>
+                            </tr>
+                          ))
+                        : 'No Member found'}
+                    </tbody>
+                  </table>
+                </div>
                 <div className="flex justify-end w-full ">
                   <div className="w-fit bg-[#0068E5] text-black flex space-x-5 items-center p-3 font-semibold">
                     <p>Total Visa Fee </p> <p> 50 USD </p>
@@ -310,7 +321,7 @@ const Page = ({ params }) => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Total Application Fee for the Individual
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 View Document
               </p>
             </div>
@@ -318,7 +329,7 @@ const Page = ({ params }) => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 eServices Processing Fee
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 View Document
               </p>
             </div>
@@ -326,7 +337,7 @@ const Page = ({ params }) => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Total VISA Application Fee
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 View Document
               </p>
             </div>
