@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import useQueryGet from '@/hooks/useQuery';
 import useUpdate from '@/hooks/useUpdate';
 import apiEndpoint from '@/services/apiEndpoint';
+import { minDate } from '@/lib/minDate';
 
 export default function Page({ params }) {
   const { id } = params;
@@ -107,7 +108,7 @@ export default function Page({ params }) {
                       <ReactDatePickerInput
                         className="new-form-input"
                         name="whenArriveDestination"
-                        selected={values.whenArriveDestination}
+                        selected={new Date(values.whenArriveDestination)}
                         setFieldValue={setFieldValue}
                         minDate={minDate(1)}
                       />
@@ -122,7 +123,7 @@ export default function Page({ params }) {
                       <ReactDatePickerInput
                         className="new-form-input"
                         name="whenDepartDestination"
-                        selected={values.whenDepartDestination}
+                        selected={new Date(values.whenDepartDestination)}
                         setFieldValue={setFieldValue}
                         minDate={new Date(values.whenArriveDestination)}
                         disabled={values.whenArriveDestination === ''}
