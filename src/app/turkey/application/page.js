@@ -15,7 +15,7 @@ const Page = () => {
   const postMutation = usePost(
     apiEndpoint.TURKEY_VISA_APPLICATION,
     1,
-    '/turkey/application/payment',
+    '/turkey/application/review',
     true,
     'turkeyVisaApplication'
   );
@@ -270,7 +270,7 @@ const Page = () => {
                             })
                           }
                         >
-                          <FaCirclePlus /> Add New Application
+                          <FaCirclePlus /> Add More Application
                         </button>
                       </div>
                     </div>
