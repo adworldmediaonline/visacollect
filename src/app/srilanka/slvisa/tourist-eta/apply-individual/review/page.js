@@ -4,6 +4,7 @@ import Formmainsection from '@/components/srilanka/common/Formmainsection';
 import Formsubhead from '@/components/srilanka/common/Formsubhead';
 import StepProcess from '@/components/srilanka/common/StepProcess';
 import { useFormContext } from '@/context/formContext';
+import { formatDateYearDayMonth } from '@/lib/dateFormatter';
 import axiosInstance from '@/services/api';
 import apiEndpoint from '@/services/apiEndpoint';
 import { useQuery } from '@tanstack/react-query';
@@ -67,7 +68,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Surname / Family Name
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.familyNameIndividualTourist}
               </p>
             </div>
@@ -75,7 +76,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Other / Given Names
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.givenNameIndividualTourist}
               </p>
             </div>
@@ -83,7 +84,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Title
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.titleIndividualTourist}
               </p>
             </div>
@@ -92,14 +93,16 @@ const Page = () => {
                 Date of Birth
               </h2>
               <p className="font-bold leading-relaxed tracking-wide text-justify capitalize">
-                {touristIndividualData?.dateOfBirthIndividualTourist}
+                {formatDateYearDayMonth(
+                  touristIndividualData?.dateOfBirthIndividualTourist
+                )}
               </p>
             </div>
             <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Gender
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.genderIndividualTourist}
               </p>
             </div>
@@ -107,7 +110,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Nationality
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.nationalityIndividualTourist}
               </p>
             </div>
@@ -115,7 +118,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Are you fully vaccinated for covid-19
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.covidVaccinatedIndividualTourist}
               </p>
             </div>
@@ -123,7 +126,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Country of Birth
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.countryOfBirthIndividualTourist}
               </p>
             </div>
@@ -131,7 +134,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Occupation
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.occupationIndividualTourist}
               </p>
             </div>
@@ -139,7 +142,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Passport Number
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.passportNumberIndividualTourist}
               </p>
             </div>
@@ -147,23 +150,27 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Passport Issued Date
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
-                {touristIndividualData?.issueDateIndividualTourist}
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
+                {formatDateYearDayMonth(
+                  touristIndividualData?.issueDateIndividualTourist
+                )}
               </p>
             </div>
             <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Passport Expiry Date
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
-                {touristIndividualData?.expiryDateIndividualTourist}
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
+                {formatDateYearDayMonth(
+                  touristIndividualData?.expiryDateIndividualTourist
+                )}
               </p>
             </div>
             <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Passport Front Page
               </h2>
-              {/* <p className="font-bold leading-relaxed tracking-wide text-justify capitalize "> */}
+              {/* <p className="font-bold leading-relaxed tracking-wide text-justify "> */}
               <div className="relative w-32 aspect-video">
                 <Image
                   src={touristIndividualData?.passportImageIndividualTourist}
@@ -183,7 +190,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Where you have been during last 14 days before this travel
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.whereHaveBeenIndividualTourist}
               </p>
             </div>
@@ -191,15 +198,17 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Intended Arrival Date
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
-                {touristIndividualData?.attendantArrivalDateIndividualTourist}
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
+                {formatDateYearDayMonth(
+                  touristIndividualData?.attendantArrivalDateIndividualTourist
+                )}
               </p>
             </div>
             <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Purpose of Visit
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.purposeOfVisitIndividualTourist}
               </p>
             </div>
@@ -207,7 +216,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 No. of validity required
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.visaValidPeriodIndividualTourist}
               </p>
             </div>
@@ -215,7 +224,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Port of Departure
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.portOfDepartureIndividualTourist}
               </p>
             </div>
@@ -223,7 +232,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Airline/Vessel
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.arilineVesselIndividualTourist}
               </p>
             </div>
@@ -231,7 +240,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Flight/Vessel Number
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.flightVesselNumberIndividualTourist}
               </p>
             </div>
@@ -244,7 +253,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Address
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.addressLineOneIndividualTourist}
               </p>
             </div>
@@ -252,7 +261,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Address 2
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.addressLineTwoIndividualTourist}
               </p>
             </div>
@@ -260,7 +269,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Address in Sri Lanka
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.addressInSrilankaIndividualTourist}
               </p>
             </div>
@@ -268,7 +277,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Email Address
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.emailIndividualTourist}
               </p>
             </div>
@@ -276,7 +285,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Alternate Email
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.alternateEmailIndividualTourist}
               </p>
             </div>
@@ -284,7 +293,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Telephone Number
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.telephoneIndividualTourist}
               </p>
             </div>
@@ -292,7 +301,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Mobile Number
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.mobileIndividualTourist}
               </p>
             </div>
@@ -300,7 +309,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Fax Number
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.faxNumberIndividualTourist}
               </p>
             </div>
@@ -313,7 +322,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Total Application Fee for the Individual
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 View Document
               </p>
             </div>
@@ -321,7 +330,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 eServices Processing Fee
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 View Document
               </p>
             </div>
@@ -329,7 +338,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Total VISA Application Fee
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 View Document
               </p>
             </div>
@@ -342,7 +351,7 @@ const Page = () => {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 Do you have a valid residence visa to Sri Lanka?
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.validResidenceIndividualTourist}
               </p>
             </div>
@@ -351,7 +360,7 @@ const Page = () => {
                 Are you currently in Sri Lanka with a valid ETA or obtained an
                 extension of visa?
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.validEtaOrExtensionIndividualTourist}
               </p>
             </div>

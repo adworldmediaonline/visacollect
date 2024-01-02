@@ -25,6 +25,7 @@ import SingleFileUpload from '@/components/srilanka/SingleFileUpload';
 import StepProcess from '@/components/srilanka/common/StepProcess';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import { minDateWithDate } from '@/lib/minDate';
+import { formatDateYearDayMonth } from '@/lib/dateFormatter';
 const data = [
   {
     id: 1,
@@ -692,126 +693,138 @@ const Page = () => {
                               name="childInformation"
                               render={arrayHelpers => (
                                 <div>
-                                  <table className="w-full">
-                                    <thead>
-                                      <tr>
-                                        <th>
-                                          <div className="label-section">
-                                            <label>Surname/Family Name *</label>
-                                          </div>
-                                        </th>
-                                        <th>
-                                          {' '}
-                                          <div className="label-section">
-                                            <label>Other/Given Names *</label>
-                                          </div>
-                                        </th>
-                                        <th>
-                                          {' '}
-                                          <div className="label-section">
-                                            <label>Date of Birth*</label>
-                                          </div>
-                                        </th>
-                                        <th>
-                                          {' '}
-                                          <div className="label-section">
-                                            <label>Gender*</label>
-                                          </div>
-                                        </th>
-                                        <th>
-                                          {' '}
-                                          <div className="label-section">
-                                            <label>Relationship *</label>
-                                          </div>
-                                        </th>
-                                        <th>Action</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      {values.childInformation?.map(
-                                        (child, index) => (
-                                          <tr key={index}>
-                                            <td className="px-3 py-2">
-                                              <div className="order-2 col-span-8">
-                                                <Field
-                                                  className="new-form-input "
-                                                  name={`childInformation[${index}].surnameFamilyName`}
-                                                />
-                                              </div>
-                                            </td>
+                                  <div className="overflow-x-auto">
+                                    <table className="w-full">
+                                      <thead>
+                                        <tr>
+                                          <th>
+                                            <div className="label-section">
+                                              <label>
+                                                Surname/Family Name *
+                                              </label>
+                                            </div>
+                                          </th>
+                                          <th>
+                                            {' '}
+                                            <div className="label-section">
+                                              <label>Other/Given Names *</label>
+                                            </div>
+                                          </th>
+                                          <th>
+                                            {' '}
+                                            <div className="label-section">
+                                              <label>Date of Birth*</label>
+                                            </div>
+                                          </th>
+                                          <th>
+                                            {' '}
+                                            <div className="label-section">
+                                              <label>Gender*</label>
+                                            </div>
+                                          </th>
+                                          <th>
+                                            {' '}
+                                            <div className="label-section">
+                                              <label>Relationship *</label>
+                                            </div>
+                                          </th>
+                                          <th>Action</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        {values.childInformation?.map(
+                                          (child, index) => (
+                                            <tr key={index}>
+                                              <td className="px-3 py-2">
+                                                <div className="order-2 col-span-8">
+                                                  <Field
+                                                    className="new-form-input "
+                                                    name={`childInformation[${index}].surnameFamilyName`}
+                                                  />
+                                                </div>
+                                              </td>
 
-                                            <td>
-                                              <div className="order-2 col-span-8">
-                                                <Field
-                                                  className="new-form-input "
-                                                  name={`childInformation.${index}.otherGivenNames`}
-                                                />
-                                              </div>
-                                            </td>
+                                              <td>
+                                                <div className="order-2 col-span-8">
+                                                  <Field
+                                                    className="new-form-input "
+                                                    name={`childInformation.${index}.otherGivenNames`}
+                                                  />
+                                                </div>
+                                              </td>
 
-                                            <td className="px-3 py-2">
-                                              <div className="order-2 col-span-8">
-                                                <Field
-                                                  type="date"
-                                                  className="new-form-input "
-                                                  name={`childInformation.${index}.dateOfBirth`}
-                                                />
-                                              </div>
-                                            </td>
+                                              <td className="px-3 py-2">
+                                                <div className="order-2 col-span-8">
+                                                  <ReactDatePickerInput
+                                                    className="new-form-input"
+                                                    name={`childInformation.${index}.dateOfBirth`}
+                                                    selected={
+                                                      values.childInformation[
+                                                        index
+                                                      ].dateOfBirth
+                                                    }
+                                                    setFieldValue={
+                                                      setFieldValue
+                                                    }
+                                                    maxDate={new Date()}
+                                                  />
+                                                </div>
+                                              </td>
 
-                                            <td className="px-3 py-2">
-                                              <div className="order-2 col-span-8">
-                                                <Field
-                                                  component="select"
-                                                  className="new-form-input "
-                                                  name={`childInformation.${index}.gender`}
+                                              <td className="px-3 py-2">
+                                                <div className="order-2 col-span-8">
+                                                  <Field
+                                                    component="select"
+                                                    className="new-form-input "
+                                                    name={`childInformation.${index}.gender`}
+                                                  >
+                                                    {' '}
+                                                    <option value="">
+                                                      Select
+                                                    </option>
+                                                    <option value="male">
+                                                      Male
+                                                    </option>
+                                                    <option value="female">
+                                                      Female
+                                                    </option>
+                                                  </Field>
+                                                </div>
+                                              </td>
+
+                                              <td className="px-3 py-2">
+                                                <div className="order-2 col-span-8">
+                                                  <Field
+                                                    component="select"
+                                                    className="new-form-input "
+                                                    name={`childInformation.${index}.relationship`}
+                                                  >
+                                                    {' '}
+                                                    <option value="">
+                                                      Select
+                                                    </option>
+                                                    <option value="male">
+                                                      child
+                                                    </option>
+                                                  </Field>
+                                                </div>
+                                              </td>
+                                              <td>
+                                                <button
+                                                  type="button"
+                                                  onClick={() =>
+                                                    arrayHelpers.remove(index)
+                                                  }
                                                 >
-                                                  {' '}
-                                                  <option value="">
-                                                    Select
-                                                  </option>
-                                                  <option value="male">
-                                                    Male
-                                                  </option>
-                                                  <option value="female">
-                                                    Female
-                                                  </option>
-                                                </Field>
-                                              </div>
-                                            </td>
-
-                                            <td className="px-3 py-2">
-                                              <div className="order-2 col-span-8">
-                                                <Field
-                                                  component="select"
-                                                  className="new-form-input "
-                                                  name={`childInformation.${index}.relationship`}
-                                                >
-                                                  {' '}
-                                                  <option value="">
-                                                    Select
-                                                  </option>
-                                                  <option value="male">
-                                                    child
-                                                  </option>
-                                                </Field>
-                                              </div>
-                                            </td>
-                                            <td>
-                                              <button
-                                                type="button"
-                                                onClick={() =>
-                                                  arrayHelpers.remove(index)
-                                                }
-                                              >
-                                                <MdDeleteOutline />
-                                              </button>
-                                            </td>
-                                          </tr>
-                                        )
-                                      )}
-                                    </tbody>
-                                  </table>
+                                                  <MdDeleteOutline />
+                                                </button>
+                                              </td>
+                                            </tr>
+                                          )
+                                        )}
+                                      </tbody>
+                                    </table>
+                                  </div>
 
                                   <div className="py-8 text-center">
                                     <button
@@ -905,120 +918,126 @@ const Page = () => {
                     </div>
 
                     <div className="w-full h-full ">
-                      <table className="w-full text-left table-auto min-w-max">
-                        <thead>
-                          <tr className="rounded-xl">
-                            {tableHead.map(head => (
-                              <th
-                                key={head}
-                                className="bg-[#0068E5] text-black p-4 "
-                              >
-                                <div
-                                  variant="small"
-                                  color="blue-gray"
-                                  className="font-bold leading-none "
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-left table-auto min-w-max">
+                          <thead>
+                            <tr className="rounded-xl">
+                              {tableHead.map(head => (
+                                <th
+                                  key={head}
+                                  className="bg-[#0068E5] text-black p-4 "
                                 >
-                                  {head}
-                                </div>
-                              </th>
-                            ))}
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {touristThirdPartyData?.members?.length > 0 ? (
-                            touristThirdPartyData?.members?.map(member => (
-                              <tr key={member._id}>
-                                <td className="p-4">
                                   <div
                                     variant="small"
                                     color="blue-gray"
-                                    className="font-normal"
+                                    className="font-bold leading-none "
                                   >
-                                    {member?.givenNameThirdPartyTouristMember}
+                                    {head}
                                   </div>
-                                </td>
-                                <td className="p-4">
-                                  <div
-                                    variant="small"
-                                    color="blue-gray"
-                                    className="font-normal"
-                                  >
-                                    {member?.passportNumberThirdPartyTourist}
-                                  </div>
-                                </td>
-                                <td className="p-4">
-                                  <div
-                                    variant="small"
-                                    color="blue-gray"
-                                    className="font-normal"
-                                  >
-                                    {member?.nationalityThirdPartyTourist}
-                                  </div>
-                                </td>
-                                <td className="p-4">
-                                  <div
-                                    variant="small"
-                                    color="blue-gray"
-                                    className="font-normal"
-                                  >
-                                    {member?.dateOfBirthThirdPartyTourist}
-                                  </div>
-                                </td>
-                                <td className="p-4">
-                                  <div
-                                    variant="small"
-                                    color="blue-gray"
-                                    className="font-normal"
-                                  >
-                                    {member?.issueDateThirdPartyTourist}
-                                  </div>
-                                </td>
-                                <td className="p-4">
-                                  <div
-                                    variant="small"
-                                    color="blue-gray"
-                                    className="font-normal"
-                                  >
-                                    {member?.genderThirdPartyTourist}
-                                  </div>
-                                </td>
-                                <td
-                                  className={`p-4 flex space-x-5 items-center`}
-                                >
-                                  <Link
-                                    href={`/srilanka/slvisa/tourist-eta/apply-for-third-party/step-two/${member?._id}`}
-                                  >
-                                    <CiEdit size={24} />
-                                  </Link>
-
-                                  <button
-                                    type="button"
-                                    onClick={() =>
-                                      deleteMutation.mutate(member?._id)
-                                    }
-                                  >
-                                    {deleteMutation.isPending ? (
-                                      <ImSpinner2 className="animate-spin" />
-                                    ) : (
-                                      <MdDelete size={24} />
-                                    )}
-                                  </button>
-                                </td>
-                              </tr>
-                            ))
-                          ) : (
-                            <tr>
-                              <td>No Member found</td>
+                                </th>
+                              ))}
                             </tr>
-                          )}
-                          {deleteMutation.error ? (
-                            <div className="text-red-500">
-                              An error occurred:{' '}
-                              {deleteMutation?.error?.message}
-                            </div>
-                          ) : null}
-                        </tbody>
-                      </table>
+                          </thead>
+                          <tbody>
+                            {touristThirdPartyData?.members?.length > 0 ? (
+                              touristThirdPartyData?.members?.map(member => (
+                                <tr key={member._id}>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {member?.givenNameThirdPartyTouristMember}
+                                    </div>
+                                  </td>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {member?.passportNumberThirdPartyTourist}
+                                    </div>
+                                  </td>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {member?.nationalityThirdPartyTourist}
+                                    </div>
+                                  </td>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {formatDateYearDayMonth(
+                                        member?.dateOfBirthThirdPartyTourist
+                                      )}
+                                    </div>
+                                  </td>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {formatDateYearDayMonth(
+                                        member?.issueDateThirdPartyTourist
+                                      )}
+                                    </div>
+                                  </td>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {member?.genderThirdPartyTourist}
+                                    </div>
+                                  </td>
+                                  <td
+                                    className={`p-4 flex space-x-5 items-center`}
+                                  >
+                                    <Link
+                                      href={`/srilanka/slvisa/tourist-eta/apply-for-third-party/step-two/${member?._id}`}
+                                    >
+                                      <CiEdit size={24} />
+                                    </Link>
+
+                                    <button
+                                      type="button"
+                                      onClick={() =>
+                                        deleteMutation.mutate(member?._id)
+                                      }
+                                    >
+                                      {deleteMutation.isPending ? (
+                                        <ImSpinner2 className="animate-spin" />
+                                      ) : (
+                                        <MdDelete size={24} />
+                                      )}
+                                    </button>
+                                  </td>
+                                </tr>
+                              ))
+                            ) : (
+                              <tr>
+                                <td>No Member found</td>
+                              </tr>
+                            )}
+                            {deleteMutation.error ? (
+                              <div className="text-red-500">
+                                An error occurred:{' '}
+                                {deleteMutation?.error?.message}
+                              </div>
+                            ) : null}
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                     <div className="flex items-center justify-center my-5">
                       {touristThirdPartyData?.members?.length > 0 ? (

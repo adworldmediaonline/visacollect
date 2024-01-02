@@ -41,7 +41,7 @@ const Page = () => {
             <h2 className="py-1 text-sm font-semibold text-secondary">
               Destination
             </h2>
-            <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+            <p className="font-bold leading-relaxed tracking-wide text-justify ">
               AUSTRALIA
             </p>
           </div>
@@ -49,7 +49,7 @@ const Page = () => {
             <h2 className="py-1 text-sm font-semibold text-secondary">
               Application Number
             </h2>
-            <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+            <p className="font-bold leading-relaxed tracking-wide text-justify ">
               name
             </p>
           </div>
@@ -57,14 +57,14 @@ const Page = () => {
             <h2 className="py-1 text-sm font-semibold text-secondary">
               Passenger
             </h2>
-            <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+            <p className="font-bold leading-relaxed tracking-wide text-justify ">
               {applicationData?.personalDetails?.givenName}{' '}
               {applicationData?.personalDetails?.surnameFamilyName}
             </p>
           </div>
           <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
             <h2 className="py-1 text-sm font-semibold text-secondary">email</h2>
-            <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+            <p className="font-bold leading-relaxed tracking-wide text-justify ">
               {applicationData?.personalDetails?.emailAddress}
             </p>
           </div>
@@ -76,7 +76,7 @@ const Page = () => {
             <h2 className="py-1 text-sm font-semibold text-secondary">
               E-visa Fee
             </h2>
-            <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+            <p className="font-bold leading-relaxed tracking-wide text-justify ">
               59
             </p>
           </div>
@@ -84,7 +84,7 @@ const Page = () => {
             <h2 className="py-1 text-sm font-semibold text-secondary">
               Insurance Fee
             </h2>
-            <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+            <p className="font-bold leading-relaxed tracking-wide text-justify ">
               {applicationData?.travelInsurance?.insuranceFee}
             </p>
           </div>

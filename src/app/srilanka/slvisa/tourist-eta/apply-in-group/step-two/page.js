@@ -668,10 +668,15 @@ const Page = () => {
 
                                           <td className="px-3 py-2">
                                             <div className="order-2 col-span-8">
-                                              <Field
-                                                type="date"
-                                                className="new-form-input "
+                                              <ReactDatePickerInput
+                                                className="new-form-input"
                                                 name={`childInformation.${index}.dateOfBirth`}
+                                                selected={
+                                                  values.childInformation[index]
+                                                    .dateOfBirth
+                                                }
+                                                setFieldValue={setFieldValue}
+                                                maxDate={new Date()}
                                               />
                                             </div>
                                           </td>
@@ -818,119 +823,126 @@ const Page = () => {
                   </div>
 
                   <div className="w-full h-full ">
-                    <table className="w-full text-left table-auto min-w-max">
-                      <thead>
-                        <tr className="rounded-xl">
-                          {applyInGroupsData?.tableHead?.map(head => (
-                            <th
-                              key={head}
-                              className="bg-[#0068E5] text-black p-4 "
-                            >
-                              <div
-                                variant="small"
-                                color="blue-gray"
-                                className="font-bold leading-none "
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-left table-auto min-w-max">
+                        <thead>
+                          <tr className="rounded-xl">
+                            {applyInGroupsData?.tableHead?.map(head => (
+                              <th
+                                key={head}
+                                className="bg-[#0068E5] text-black p-4 "
                               >
-                                {head}
-                              </div>
-                            </th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {touristGroupsData?.members?.length > 0 ? (
-                          touristGroupsData?.members?.map(member => (
-                            <tr key={member._id}>
-                              <td className="p-4">
                                 <div
                                   variant="small"
                                   color="blue-gray"
-                                  className="font-normal"
+                                  className="font-bold leading-none "
                                 >
-                                  {member?.givenNameGroupTourist}
+                                  {head}
                                 </div>
-                              </td>
-                              <td className="p-4">
-                                <div
-                                  variant="small"
-                                  color="blue-gray"
-                                  className="font-normal"
-                                >
-                                  {member?.passportNumberGroupTourist}
-                                </div>
-                              </td>
-                              <td className="p-4">
-                                <div
-                                  variant="small"
-                                  color="blue-gray"
-                                  className="font-normal"
-                                >
-                                  {member?.nationalityGroupTourist}
-                                </div>
-                              </td>
-                              <td className="p-4">
-                                <div
-                                  variant="small"
-                                  color="blue-gray"
-                                  className="font-normal"
-                                >
-                                  {formatDateYearDayMonth(
-                                    member?.dateOfBirthGroupTourist
-                                  )}
-                                </div>
-                              </td>
-                              <td className="p-4">
-                                <div
-                                  variant="small"
-                                  color="blue-gray"
-                                  className="font-normal"
-                                >
-                                  {member?.issueDateGroupTourist}
-                                </div>
-                              </td>
-                              <td className="p-4">
-                                <div
-                                  variant="small"
-                                  color="blue-gray"
-                                  className="font-normal"
-                                >
-                                  {member?.genderGroupTourist}
-                                </div>
-                              </td>
-                              <td className={`p-4 flex space-x-5 items-center`}>
-                                <Link
-                                  href={`/srilanka/slvisa/tourist-eta/apply-in-group/step-two/${member?._id}`}
-                                >
-                                  <CiEdit size={24} />
-                                </Link>
-
-                                <button
-                                  type="button"
-                                  onClick={() =>
-                                    deleteMutation.mutate(member?._id)
-                                  }
-                                >
-                                  {deleteMutation.isPending ? (
-                                    <ImSpinner2 className="animate-spin" />
-                                  ) : (
-                                    <MdDelete size={24} />
-                                  )}
-                                </button>
-                              </td>
-                            </tr>
-                          ))
-                        ) : (
-                          <tr>
-                            <td>No Member found</td>
+                              </th>
+                            ))}
                           </tr>
-                        )}
-                        {deleteMutation.error ? (
-                          <div className="text-red-500">
-                            An error occurred: {deleteMutation?.error?.message}
-                          </div>
-                        ) : null}
-                      </tbody>
-                    </table>
+                        </thead>
+                        <tbody>
+                          {touristGroupsData?.members?.length > 0 ? (
+                            touristGroupsData?.members?.map(member => (
+                              <tr key={member._id}>
+                                <td className="p-4">
+                                  <div
+                                    variant="small"
+                                    color="blue-gray"
+                                    className="font-normal"
+                                  >
+                                    {member?.givenNameGroupTourist}
+                                  </div>
+                                </td>
+                                <td className="p-4">
+                                  <div
+                                    variant="small"
+                                    color="blue-gray"
+                                    className="font-normal"
+                                  >
+                                    {member?.passportNumberGroupTourist}
+                                  </div>
+                                </td>
+                                <td className="p-4">
+                                  <div
+                                    variant="small"
+                                    color="blue-gray"
+                                    className="font-normal"
+                                  >
+                                    {member?.nationalityGroupTourist}
+                                  </div>
+                                </td>
+                                <td className="p-4">
+                                  <div
+                                    variant="small"
+                                    color="blue-gray"
+                                    className="font-normal"
+                                  >
+                                    {formatDateYearDayMonth(
+                                      member?.dateOfBirthGroupTourist
+                                    )}
+                                  </div>
+                                </td>
+                                <td className="p-4">
+                                  <div
+                                    variant="small"
+                                    color="blue-gray"
+                                    className="font-normal"
+                                  >
+                                    {formatDateYearDayMonth(
+                                      member?.issueDateGroupTourist
+                                    )}
+                                  </div>
+                                </td>
+                                <td className="p-4">
+                                  <div
+                                    variant="small"
+                                    color="blue-gray"
+                                    className="font-normal"
+                                  >
+                                    {member?.genderGroupTourist}
+                                  </div>
+                                </td>
+                                <td
+                                  className={`p-4 flex space-x-5 items-center`}
+                                >
+                                  <Link
+                                    href={`/srilanka/slvisa/tourist-eta/apply-in-group/step-two/${member?._id}`}
+                                  >
+                                    <CiEdit size={24} />
+                                  </Link>
+
+                                  <button
+                                    type="button"
+                                    onClick={() =>
+                                      deleteMutation.mutate(member?._id)
+                                    }
+                                  >
+                                    {deleteMutation.isPending ? (
+                                      <ImSpinner2 className="animate-spin" />
+                                    ) : (
+                                      <MdDelete size={24} />
+                                    )}
+                                  </button>
+                                </td>
+                              </tr>
+                            ))
+                          ) : (
+                            <tr>
+                              <td>No Member found</td>
+                            </tr>
+                          )}
+                          {deleteMutation.error ? (
+                            <div className="text-red-500">
+                              An error occurred:{' '}
+                              {deleteMutation?.error?.message}
+                            </div>
+                          ) : null}
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
 
                   <div className="flex items-center justify-center my-5">

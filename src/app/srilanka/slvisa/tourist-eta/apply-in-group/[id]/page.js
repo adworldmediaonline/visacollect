@@ -83,7 +83,7 @@ export default function Page({ params }) {
                 setSubmitting(false);
               }}
             >
-              {({ values, isValid }) => (
+              {({ values, isValid, setFieldValue }) => (
                 <Form>
                   <div className="main-form-section">
                     <div className="label-section">
