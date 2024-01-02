@@ -614,10 +614,15 @@ const Page = () => {
 
                                         <td className="px-3 py-2">
                                           <div className="order-2 col-span-8">
-                                            <Field
-                                              type="date"
-                                              className="new-form-input "
+                                            <ReactDatePickerInput
+                                              className="new-form-input"
                                               name={`childInformation.${index}.dateOfBirth`}
+                                              selected={
+                                                values.childInformation[index]
+                                                  .dateOfBirth
+                                              }
+                                              setFieldValue={setFieldValue}
+                                              maxDate={new Date()}
                                             />
                                           </div>
                                         </td>
