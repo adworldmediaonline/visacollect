@@ -296,7 +296,9 @@ export default function Page() {
                       </div>
                     ) : null}
                     <button
-                      className="inline-flex items-center gap-3 px-8 py-2 text-xl font-semibold border rounded-lg cursor-pointer text-primaryMain border-primaryMain"
+                      className={`inline-flex items-center justify-center gap-3 px-8 py-2 text-xl font-semibold border rounded-lg cursor-pointer text-primaryMain border-primaryMain ${
+                        !isValid ? 'opacity-50' : ''
+                      }`}
                       disabled={!isValid}
                       type="submit"
                     >
@@ -312,124 +314,133 @@ export default function Page() {
 
                   {/* table start  */}
                   <div className="w-full h-full py-8">
-                    <table className="w-full text-left border table-auto min-w-max">
-                      <thead>
-                        <tr className="rounded-xl">
-                          <th className="bg-[#0068E5] text-black p-4 ">
-                            Full name
-                          </th>
-                          <th className="bg-[#0068E5] text-black p-4 ">
-                            Nationality
-                          </th>
-                          <th className="bg-[#0068E5] text-black p-4 ">
-                            Gender
-                          </th>
-                          <th className="bg-[#0068E5] text-black p-4 ">
-                            Date Of Birth
-                          </th>
-                          <th className="bg-[#0068E5] text-black p-4 ">
-                            Country of birth
-                          </th>
-                          <th className="bg-[#0068E5] text-black p-4 ">
-                            Passport number
-                          </th>
-                          <th className="bg-[#0068E5] text-black p-4 ">
-                            Action
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {thailandVisaApplicationData?.persons?.length > 0 ? (
-                          thailandVisaApplicationData?.persons?.map(person => (
-                            <tr key={person._id}>
-                              <td className="p-4">
-                                <div
-                                  variant="small"
-                                  color="blue-gray"
-                                  className="font-normal"
-                                >
-                                  {person?.firstName} {person?.lastName}
-                                </div>
-                              </td>
-                              <td className="p-4">
-                                <div
-                                  variant="small"
-                                  color="blue-gray"
-                                  className="font-normal"
-                                >
-                                  {person?.nationality}
-                                </div>
-                              </td>
-                              <td className="p-4">
-                                <div
-                                  variant="small"
-                                  color="blue-gray"
-                                  className="font-normal"
-                                >
-                                  {person?.gender}
-                                </div>
-                              </td>
-                              <td className="p-4">
-                                <div
-                                  variant="small"
-                                  color="blue-gray"
-                                  className="font-normal"
-                                >
-                                  {formatDateYearDayMonth(person?.dateOfBirth)}
-                                </div>
-                              </td>
-                              <td className="p-4">
-                                <div
-                                  variant="small"
-                                  color="blue-gray"
-                                  className="font-normal"
-                                >
-                                  {person?.countryOfBirth}
-                                </div>
-                              </td>
-                              <td className="p-4">
-                                <div
-                                  variant="small"
-                                  color="blue-gray"
-                                  className="font-normal"
-                                >
-                                  {person?.passportNumber}
-                                </div>
-                              </td>
-                              <td className={`p-4 flex space-x-5 items-center`}>
-                                <Link
-                                  href={`/thailand/step-two/${person?._id}`}
-                                >
-                                  <CiEdit size={24} />
-                                </Link>
-
-                                <button
-                                  type="button"
-                                  onClick={() =>
-                                    deleteMutation.mutate(person?._id)
-                                  }
-                                >
-                                  {deleteMutation.isPending ? (
-                                    <ImSpinner2 className="animate-spin" />
-                                  ) : (
-                                    <MdDelete size={24} />
-                                  )}
-                                </button>
-                              </td>
-                            </tr>
-                          ))
-                        ) : (
-                          <tr>
-                            <td>No Person found</td>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-left border table-auto min-w-max">
+                        <thead>
+                          <tr className="rounded-xl">
+                            <th className="bg-[#0068E5] text-black p-4 ">
+                              Full name
+                            </th>
+                            <th className="bg-[#0068E5] text-black p-4 ">
+                              Nationality
+                            </th>
+                            <th className="bg-[#0068E5] text-black p-4 ">
+                              Gender
+                            </th>
+                            <th className="bg-[#0068E5] text-black p-4 ">
+                              Date Of Birth
+                            </th>
+                            <th className="bg-[#0068E5] text-black p-4 ">
+                              Country of birth
+                            </th>
+                            <th className="bg-[#0068E5] text-black p-4 ">
+                              Passport number
+                            </th>
+                            <th className="bg-[#0068E5] text-black p-4 ">
+                              Action
+                            </th>
                           </tr>
-                        )}
-                        {deleteMutation.error ? (
-                          <div className="text-red-500">
-                            An error occurred: {deleteMutation?.error?.message}
-                          </div>
-                        ) : null}
-                      </tbody>
-                    </table>
+                        </thead>
+                        <tbody>
+                          {thailandVisaApplicationData?.persons?.length > 0 ? (
+                            thailandVisaApplicationData?.persons?.map(
+                              person => (
+                                <tr key={person._id}>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {person?.firstName} {person?.lastName}
+                                    </div>
+                                  </td>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {person?.nationality}
+                                    </div>
+                                  </td>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {person?.gender}
+                                    </div>
+                                  </td>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {formatDateYearDayMonth(
+                                        person?.dateOfBirth
+                                      )}
+                                    </div>
+                                  </td>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {person?.countryOfBirth}
+                                    </div>
+                                  </td>
+                                  <td className="p-4">
+                                    <div
+                                      variant="small"
+                                      color="blue-gray"
+                                      className="font-normal"
+                                    >
+                                      {person?.passportNumber}
+                                    </div>
+                                  </td>
+                                  <td
+                                    className={`p-4 flex space-x-5 items-center`}
+                                  >
+                                    <Link
+                                      href={`/thailand/step-two/${person?._id}`}
+                                    >
+                                      <CiEdit size={24} />
+                                    </Link>
+
+                                    <button
+                                      type="button"
+                                      onClick={() =>
+                                        deleteMutation.mutate(person?._id)
+                                      }
+                                    >
+                                      {deleteMutation.isPending ? (
+                                        <ImSpinner2 className="animate-spin" />
+                                      ) : (
+                                        <MdDelete size={24} />
+                                      )}
+                                    </button>
+                                  </td>
+                                </tr>
+                              )
+                            )
+                          ) : (
+                            <tr>
+                              <td>No Person found</td>
+                            </tr>
+                          )}
+                          {deleteMutation.error ? (
+                            <div className="text-red-500">
+                              An error occurred:{' '}
+                              {deleteMutation?.error?.message}
+                            </div>
+                          ) : null}
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                   {/* table end  */}
 
