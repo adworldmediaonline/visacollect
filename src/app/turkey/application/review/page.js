@@ -108,7 +108,7 @@ export default function Payment() {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 ORDER ID
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 ID
               </p>
             </div>
@@ -116,7 +116,7 @@ export default function Payment() {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 FULL NAME
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {applicationData?.contactDetailsFullName}
               </p>
             </div>
@@ -124,7 +124,7 @@ export default function Payment() {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 EMAIL
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {applicationData?.contactDetailsEmail}
               </p>
             </div>
@@ -132,7 +132,7 @@ export default function Payment() {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 MOBILE / CELL NUMBER
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {applicationData?.contactDetailsContactNumber}
               </p>
             </div>
@@ -140,7 +140,7 @@ export default function Payment() {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 ADDRESS
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {applicationData?.contactDetailsAddress}
               </p>
             </div>
@@ -152,15 +152,15 @@ export default function Payment() {
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 NUMBER OF APPLICATION
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
-                ID
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
+                {applicationData?.passportDetails?.length}
               </p>
             </div>
             <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
               <h2 className="py-1 text-sm font-semibold text-secondary">
                 TOTAL AMOUNT
               </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify capitalize ">
+              <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 ID
               </p>
             </div>
