@@ -11,9 +11,9 @@ export const Banner = () => {
                 </p>
             </div>
             <div className="container py-16">
-                <div className='grid grid-cols-2 gap-10'  >
+                <div className='grid grid-cols-2 gap-10 justify-between'  >
                     <div className="space-y-5 flex flex-col items-center justify-center h-full w-full ">
-                        <h2 className="md:text-4xl italic text-black text-xl font-bold ">
+                        <h2 className="md:text-4xl italic text-gray-500 text-xl font-semibold ">
                             Welcome to Australia
                         </h2>
                         <div className=''>
@@ -32,7 +32,7 @@ export const Banner = () => {
                                     <p className='text-lg text-primary'>Visa</p>
                                     <p className='text-sm text-gray-500'>REQUIRED FOR TRAVEL</p>
                                 </div>
-                                <div className='col-span-2'>
+                                <div className='col-span-2 p-3'>
                                     <div className=' border border-primary rounded-md'>
                                         <div className='bg-primary py-3 text-xl text-white flex justify-center'>
                                             Type of Visa
