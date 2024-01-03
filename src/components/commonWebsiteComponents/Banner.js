@@ -11,7 +11,7 @@ export const Banner = () => {
                 </p>
             </div>
             <div className="container py-16">
-                <div className='grid grid-cols-2 gap-10 justify-between'  >
+                <div className='grid md:grid-cols-2 gap-10 md:justify-between'  >
                     <div className="space-y-5 flex flex-col items-center justify-center h-full w-full ">
                         <h2 className="md:text-4xl italic text-gray-500 text-xl font-semibold ">
                             Welcome to Australia
@@ -27,12 +27,12 @@ export const Banner = () => {
                     </div>
                     <div>
                         <div className="border-l-8 border-primaryMain border-r border-t border-b text-black font-semibold p-4 text-lg  rounded-lg ">
-                            <div className='grid grid-cols-3 space-x-5'>
+                            <div className='grid md:grid-cols-3 md:space-x-5'>
                                 <div>
                                     <p className='text-lg text-primary'>Visa</p>
                                     <p className='text-sm text-gray-500'>REQUIRED FOR TRAVEL</p>
                                 </div>
-                                <div className='col-span-2 p-3'>
+                                <div className='md:col-span-2 p-3'>
                                     <div className=' border border-primary rounded-md'>
                                         <div className='bg-primary py-3 text-xl text-white flex justify-center'>
                                             Type of Visa

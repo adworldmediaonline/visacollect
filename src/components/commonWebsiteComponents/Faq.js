@@ -38,7 +38,7 @@ const Faq = () => {
 
 
                 <div className="">
-                    <div className="container md:pl-10 pt-20">
+                    <div className="container md:pl-10 pl-0 pt-20">
                         <div
 
                         >
