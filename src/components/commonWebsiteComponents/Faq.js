@@ -25,7 +25,7 @@ const Faq = () => {
 
     return (
         <div className="bg-[#f3f5f7]">
-        <div className="md:pt-16 pt-12">
+        <div className="py-16">
             <div className="container">
                 <div className="space-y-4">
                     <div className="w-fit md:mx-auto">
