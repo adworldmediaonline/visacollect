@@ -28,11 +28,11 @@ function ContactForm() {
             <div className="flex items-center border-2  py-2 px-3 rounded-md">
               <IoMdPerson className="md:text-gray-500 text-black" size="25" />
               <input
-                id="email"
+                id="name"
                 className=" pl-2 w-full outline-none border-none bg-transparent"
-                type="email"
-                name="email"
-                placeholder="Email Address"
+                type="name"
+                name="name"
+                placeholder="Name"
               />
             </div>
             <div className="flex items-center border-2  py-2 px-3 rounded-md">
@@ -48,11 +48,11 @@ function ContactForm() {
             <div className="flex items-center border-2  py-2 px-3 rounded-md">
               <FaPhoneAlt className="md:text-gray-500 text-black" size="20" />
               <input
-                id="email"
-                className=" pl-2 w-full outline-none border  bg-transparent"
-                type="email"
-                name="email"
-                placeholder="Email Address"
+                id="phone"
+                className=" pl-2 w-full outline-none border-none  bg-transparent"
+                type="phone"
+                name="phone"
+                placeholder="Phone Number"
               />
             </div>
 
