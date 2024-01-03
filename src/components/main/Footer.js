@@ -162,24 +162,19 @@ const Footer = () => {
                     Support
                   </h2>
                   <ul>
-                    <Link href="/terms-and-conditions">
+                    <Link href="/termsAndConditions">
                       <li className="mt-2 text-base text-white hover:text-primaryMain">
                         <span> Terms & Conditions</span>
                       </li>
                     </Link>
-                    <Link href="/privacy-policy">
+                    <Link href="/privacyPolicy">
                       <li className="mt-2 text-base text-white hover:text-primaryMain">
                         <span>Privacy Policy</span>
                       </li>
                     </Link>
-                    <Link href="/cookie-policy">
+                    <Link href="/cancellation">
                       <li className="mt-2 text-base text-white hover:text-primaryMain">
-                        <span>Cookies Policy</span>
-                      </li>
-                    </Link>
-                    <Link href="/cancellation-and-refund-policy">
-                      <li className="mt-2 text-base text-white hover:text-primaryMain">
-                        <span>Cancellation and Refund Policy</span>
+                        <span>Cancellation</span>
                       </li>
                     </Link>
                   </ul>

@@ -30,7 +30,7 @@ const ProcessingStep = () => {
         },
     ];
     return (
-        <div className="bg-[#F4F7FF] md:py-16 py-8 space-y-12">
+        <div className="bg-[#f3f5f7] md:py-16 py-8 space-y-12">
             <div className="container md:text-center text-left space-y-4 ">
                 <UnderlineTextCenter title="Processing Steps " />
                 <TitleText title="Simple & fast application process" />

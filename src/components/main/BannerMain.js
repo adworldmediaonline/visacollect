@@ -46,8 +46,8 @@ const BannerMain = () => {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <div className="container justify-center flex flex-col h-[550px]">
-          <div className="space-y-3">
+        <div className="container justify-center flex flex-col h-[600px]">
+          <div className="space-y-3 pt-12">
             <h2 className="text-white md:text-[55px] text-[40px] font-bold leading-[1.2] md:w-[50%]">
               {' '}
               Find Visa information for all countries and apply today.
