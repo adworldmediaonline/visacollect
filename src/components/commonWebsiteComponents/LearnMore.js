@@ -44,7 +44,7 @@ const LearnMore = () => {
                 <div className="col-span-6 md:pt-0 md:order-2">
                     <img
                         src="/assets/images/australia/visainfo.png"
-                        className="w-full object-cover md:h-[300px] object object-center rounded-lg"
+                        className="w-full object-cover md:h-[300px] h-[200px] object object-center rounded-lg"
                     />
                 </div>
             </div>
