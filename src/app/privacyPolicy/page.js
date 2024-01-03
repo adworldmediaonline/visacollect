@@ -10,10 +10,10 @@ const PrivacyPolicy = () => {
                 <div className=" mx-auto">
                     <h1 className="text-4xl lg:py-6 font-semibold mb-3">Privacy Policy</h1>
                     <p className="text-base my-2 text-justify font-medium leading-relaxed">
-                        Welcome to Privacy Policy of India-TravelServices. We value your
+                        Welcome to Privacy Policy of TVisa Services. We value your
                         privacy and want to be transparent about how we collect, use, and
                         share your information. This policy applies to our website,
-                        https://www.india-travelservices.com, and all our products and
+                     and all our products and
                         services.{" "}
                     </p>
                 </div>
@@ -85,7 +85,7 @@ const PrivacyPolicy = () => {
                         We may update this Privacy Policy from time to time. Any changes will
                         be posted on our website, and it is your responsibility to review the
                         policy periodically. If you have any questions or concerns about our
-                        Privacy Policy, please contact us at info@india-travelservices.com.
+                        Privacy Policy, please contact us at info@travel-indiaonline.com.
                     </p>
                 </div>
             </div>

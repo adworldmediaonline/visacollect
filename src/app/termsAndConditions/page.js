@@ -11,7 +11,7 @@ const TermsAndCondition = () => {
                 <div className=" mx-auto">
                     <h1 className="text-4xl lg:py-6 font-semibold mb-3">Terms and Condition</h1>
                     <p className="text-base my-2 text-justify font-medium leading-relaxed">
-                        Welcome to India Travel Services! We&apos;re glad you&apos;re here. By using our website, you agree to follow our User Agreement and Privacy Policy. We may update our content without notice, so please check periodically. Your continued use of the site means you accept any changes.                                   </p>
+                        Welcome to Visa Services! We&apos;re glad you&apos;re here. By using our website, you agree to follow our User Agreement and Privacy Policy. We may update our content without notice, so please check periodically. Your continued use of the site means you accept any changes.                                   </p>
                 </div>
 
                 <div className=" mx-auto mt-7">
@@ -63,7 +63,7 @@ const TermsAndCondition = () => {
                         Copyrights and Trademarks
                     </h3>
                     <p className="text-base my-2 text-justify font-medium leading-relaxed" >
-                        All content and materials on India Travel Services are protected by copyright and trademark laws. Any unauthorised use is strictly prohibited.
+                        All content and materials on Visa Services are protected by copyright and trademark laws. Any unauthorised use is strictly prohibited.
                     </p>
                 </div>
 
@@ -72,7 +72,7 @@ const TermsAndCondition = () => {
                         Governing Law
                     </h3>
                     <p className="text-base my-2 text-justify font-medium leading-relaxed" >
-                        By accessing our website, you agree to follow our country&apos;s laws. Any legal action related to this User Agreement will be brought to the courts in the same city as India Travel Services Pvt Ltd&apos;s corporate office.
+                        By accessing our website, you agree to follow our country&apos;s laws. Any legal action related to this User Agreement will be brought to the courts in the same city as Visa Services Pvt Ltd&apos;s corporate office.
                     </p>
                 </div>
 
@@ -102,7 +102,7 @@ const TermsAndCondition = () => {
                         Contact Information
                     </h3>
                     <p className="text-base my-2 text-justify font-medium leading-relaxed" >
-                        If you have any questions or comments about our Terms of Service, please contact us at info@india-travelservices.com.
+                        If you have any questions or comments about our Terms of Service, please contact us at info@travel-indiaonline.com.
                     </p>
                 </div>
 
