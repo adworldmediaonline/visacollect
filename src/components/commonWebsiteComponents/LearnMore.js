@@ -58,7 +58,7 @@ const LearnMore = () => {
                     With the Australia Visitor Visa Subclass 600, you can:
                 </p>
                 <p className='text-left pt-4'>
-                    Engage in tourism activities, such as sightseeing, recreational activities, and exploring Australia's iconic landmarks.
+                    Engage in tourism activities, such as sightseeing, recreational activities, and exploring Australia&apos;s iconic landmarks.
                 </p>
                 <p className='text-left pt-4'>
                     Visit family or friends residing in Australia.
@@ -149,7 +149,7 @@ const LearnMore = () => {
                     <h2 className="md:text-3xl text-2xl text-black">Required Documents to Apply</h2>
                 </div>
                 <p className='text-left pt-4'>
-                    Applicant's Photo
+                    Applicant&apos;s Photo
                     </p>
                     <p className='text-left pt-4'>
                     National ID
