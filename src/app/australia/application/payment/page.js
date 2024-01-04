@@ -7,12 +7,22 @@ import React from 'react';
 import { useFormContext } from '@/context/formContext';
 import useQueryGet from '@/hooks/useQuery';
 
+import usePostPayment from '@/hooks/usePostPayment';
+
 const Page = () => {
   const { state } = useFormContext();
   const router = useRouter();
   const getQuery = useQueryGet(
     apiEndpoint.AUSTRALIA_VISA_APPLICATION,
     state.formId,
+    'australiaVisaApplication'
+  );
+
+  const makePaymentMutation = usePostPayment(
+    apiEndpoint.AUSTRALIA_VISA_APPLICATION_PAYMENT,
+    'Payment completed successfully',
+    // '/australia/application/payment/success',
+    false,
     'australiaVisaApplication'
   );
 
@@ -31,6 +41,14 @@ const Page = () => {
 
   if (getQuery.isSuccess) {
     const { data: applicationData } = getQuery.data;
+
+    const makePayment = async () => {
+      makePaymentMutation.mutate({
+        evisaFee: 59,
+        insuranceFee: applicationData?.travelInsurance?.insuranceFee,
+        formId: applicationData._id,
+      });
+    };
     return (
       <div className="container  md:py-8 py-20 md;px-0 px-3 ">
         <Heading formHead="eVisitor ETA Visa to Australia Application" />
@@ -94,7 +112,19 @@ const Page = () => {
         <div className="space-y-2 divide-y-[1px] pt-5"></div>
 
         <div>
-          <button>Buy</button>
+          {makePaymentMutation.isError ? (
+            <div className="text-red-500">
+              An error occurred: {makePaymentMutation.error.message}
+            </div>
+          ) : null}
+          <button
+            className={`cursor-pointer w-full items-center gap-3 border-2 rounded-lg font-semibold border-primary text-primary px-8 py-3
+            }`}
+            disabled={makePaymentMutation.isPending}
+            onClick={makePayment}
+          >
+            {makePaymentMutation.isPending ? <>Loading...</> : 'Buy'}
+          </button>
         </div>
       </div>
     );

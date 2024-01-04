@@ -33,14 +33,14 @@ const OurPopularDestination = () => {
       link: '/turkey',
     },
     {
-      id: 4,
-      imgSrc: '/assets/images/main/thailand.jpg',
+      id: 5,
+      imgSrc: '/assets/images/main/india-desti.png',
       title: 'Thailand',
       link: '/thailand',
     },
     {
-      id: 4,
-      imgSrc: '/assets/images/main/cambodia.jpg',
+      id: 6,
+      imgSrc: '/assets/images/main/india-desti.png',
       title: 'Cambodia',
       link: '/cambodia',
     },
