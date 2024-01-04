@@ -1,17 +1,27 @@
 
-import ProcessingStep from '@/components/australia/home/ProcessingStep';
+import ProcessingStep from '@/components/commonWebsiteComponents/ProcessingStep';
 import { Banner } from '@/components/commonWebsiteComponents/Banner';
 import Faq from '@/components/commonWebsiteComponents/Faq';
 import LearnMore from '@/components/commonWebsiteComponents/LearnMore';
 import React from 'react';
+import { faqData1, learnMoreSectionData, processingdata1 } from '@/constant/data';
+
+
 
 const Page = () => {
   return (
     <div>
-      <Banner />
-      <ProcessingStep />
-      <LearnMore />
-      <Faq />
+      <Banner
+        name="Australia"
+        type="visatype"
+        validity=" Valid for 1 year"
+        entries="Multiple Entries"
+        price="$126.67"
+        link="/australia/application"
+      />
+      <ProcessingStep processingdata={processingdata1} />
+      <LearnMore learnMoreSectionData={learnMoreSectionData} />
+      <Faq faqData={faqData1} />
     </div>
   );
 };

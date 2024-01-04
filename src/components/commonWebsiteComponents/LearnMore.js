@@ -2,7 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import UnderlineTextCenter from '../australia/common/UnderlineTextCenter';
 
-const LearnMore = () => {
+const LearnMore = ({ learnMoreSectionData }) => {
+    console.log(learnMoreSectionData);
+    const { sections } = learnMoreSectionData
     return (
         <div className="container py-16">
             <div className="space-y-4 md:text-center">
@@ -10,23 +12,53 @@ const LearnMore = () => {
                     <UnderlineTextCenter title="Learn More" />
                 </div>
 
-                <div className='flex justify-start' >
-                    <h2 className="md:text-3xl text-2xl text-black">Apply today for the Australia Visitor Visa Subclass 600 with us!</h2>
-                </div>
-                <p className='text-left pt-4'>
-                    Embark on your Australian adventure with the Visitor Visa! Australia, a land of dynamic cities and natural wonders, invites you to explore the country as a tourist and/or visit family and friends. To begin your journey, you need one essential document - the Australia Visitor Visa (Subclass 600).
-                </p>
-                <p className='text-left pt-4'>
-                    At iVisa, we transform the traditionally complex visa application process into a simple and speedy task. Our streamlined online services and mobile app allow you to apply for your Visitor Visaanytime, anywhere, ensuring a hassle-free experience.
-                </p>
-                <p className='text-left pt-4'>
-                    Get ready to explore Australia while we take care of all your visa needs swiftly and efficiently!
-                </p>
+                {sections?.map((section, index) => <>
+                    <div className={`${section?.image ? 'flex space-x-5 ' : ''}`}>
+                        <div className={`${section?.image ? 'w-full text-left' : ''}`}>
+                            <div className='flex justify-start' key={index} >
+                                <h2 className="md:text-3xl text-2xl text-black">{section?.title}</h2>
+                            </div>
+                            {section?.paragraphs?.map((paragraph, index) => <>
+                                <p className='text-left pt-4' key={index}>
+                                    {paragraph?.text}
+                                </p>
+                            </>
+                            )}
+
+                            {section?.lists?.map((list, index) =>
+                                <div key={index}>
+                                    <div className='text-left'>
+                                        {list?.title}
+                                    </div>
+                                    <ul className='list-disc flex flex-col items-start justify-start'>
+                                        {list?.listItems?.map((item, index) =>
+                                            <>
+                                                <li key={index}>
+                                                    {item}
+                                                </li>
+                                            </>
+                                        )}
+
+                                    </ul>
+                                </div>
+                            )}
+
+                        </div>
+                        {!!section?.image &&
+                            <div className={`${section?.image ? 'w-full' : ''}`}>
+                                <img
+                                    src="/assets/images/australia/visainfo.png"
+                                    className="w-full object-cover md:h-[300px] h-[200px] object object-center rounded-lg"
+                                />
+                            </div>}
+
+                    </div>
+                </>)}
+
             </div>
 
-            <hr className='w-full h-[2px] bg-primary my-10' />
 
-            <div className="grid gap-12 py-10 md:grid-cols-12">
+            <div className="grid gap-12 py-10 md:grid-cols-12 pt-7">
                 <div className="order-2 col-span-6">
                     <div className="py-4">
                         <div className='flex justify-start' >
@@ -48,9 +80,9 @@ const LearnMore = () => {
                     />
                 </div>
             </div>
-            <hr className='w-full h-[2px] bg-primary my-10' />
 
-            <div>
+
+            <div className='pt-7'>
                 <div className='flex justify-start' >
                     <h2 className="md:text-3xl text-2xl text-black">What can you do with the Australia Visitor Visa?</h2>
                 </div>
@@ -65,9 +97,8 @@ const LearnMore = () => {
                 </p>
             </div>
 
-            <hr className='w-full h-[2px] bg-primary my-10' />
 
-            <div className=''>
+            <div className='pt-7'>
                 <div className='flex justify-start' >
                     <h2 className="md:text-3xl text-2xl text-black">What can you not do with the Australia Visitor Visa Subclass 600?</h2>
                 </div>
@@ -89,9 +120,8 @@ const LearnMore = () => {
             </div>
 
 
-            <hr className='w-full h-[2px] bg-primary my-10' />
 
-            <div className=''>
+            <div className='pt-7'>
                 <div className='flex justify-start' >
                     <h2 className="md:text-3xl text-2xl text-black">Australia Visitor Visa: Financial requirements</h2>
                 </div>
@@ -113,9 +143,8 @@ const LearnMore = () => {
             </div>
 
 
-            <hr className='w-full h-[2px] bg-primary my-10' />
 
-            <div className=''>
+            <div className='pt-7'>
                 <div className='flex justify-start' >
                     <h2 className="md:text-3xl text-2xl text-black">How to apply for the Australia Visitor Visa Subclass 600</h2>
                 </div>
@@ -142,69 +171,68 @@ const LearnMore = () => {
                 </p>
             </div>
 
-            <hr className='w-full h-[2px] bg-primary my-10' />
 
-            <div className=''>
+            <div className='pt-7'>
                 <div className='flex justify-start' >
                     <h2 className="md:text-3xl text-2xl text-black">Required Documents to Apply</h2>
                 </div>
                 <p className='text-left pt-4'>
                     Applicant&apos;s Photo
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     National ID
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     Passport page
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     All passport pages
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     Scans of the passport pages that have immigration stamps
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     Legal Guardian Passport Scan (if applicable)
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     Bank statements from the last 3 months
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     Bank statement (if applicable)
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     Airline confirmation
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     Proof of accommodation
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     Employment Proof (if applicable)
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     Book of Family (if applicable)
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     Invitation Letter (if applicable)
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     Cover Letter
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     Supporting Document (if applicable)
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     Travel itinerary (if applicable)
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     Birth certificate (if applicable)
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     Proof of Marriage or Spousal Relationship (if applicable)
-                    </p>
-                    <p className='text-left pt-4'>
+                </p>
+                <p className='text-left pt-4'>
                     Certificate of Incorporation (if applicable)
-                    </p>
+                </p>
             </div>
 
         </div>
