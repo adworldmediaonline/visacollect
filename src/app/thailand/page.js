@@ -1,24 +1,26 @@
-import Contactform from '@/components/thailand/home/Contactform';
-import Mainsection from '@/components/thailand/home/Mainsection';
-import Quicklooksrilanka from '@/components/thailand/home/Quicklooksrilanka';
-import Steps from '@/components/thailand/home/Steps';
-import Touristattractions from '@/components/thailand/home/Touristattractions';
-import React from 'react';
-
-export default function Page() {
+import { Banner } from '@/components/commonWebsiteComponents/Banner'
+import Faq from '@/components/commonWebsiteComponents/Faq'
+import LearnMore from '@/components/commonWebsiteComponents/LearnMore'
+import ProcessingStep from '@/components/commonWebsiteComponents/ProcessingStep'
+import { faqData1, learnMoreSectionData, processingData1 } from '@/constant/data'
+import React from 'react'
+function Page() {
   return (
     <div>
-      <Mainsection
-        img="/assets/images/thailand/banner.png"
-        title="3 Simple Steps To Get Your eVisa Thailand!"
-        para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-        button="Apply Now"
-        linkPath="/thailand/apply-form"
+
+      <Banner
+        name="Thailand"
+        type="visatype"
+        validity=" Valid for 1 year"
+        entries="Single Entries"
+        price="$126.67"
+        link="/thailand/apply-form"
       />
-      <Quicklooksrilanka />
-      <Steps />
-      <Touristattractions />
-      <Contactform />
+       <LearnMore learnMoreSectionData={learnMoreSectionData} />
+      <ProcessingStep processingData={processingData1} />
+      <Faq faqData={faqData1} />
+
     </div>
   );
 }
+export default Page

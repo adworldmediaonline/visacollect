@@ -4,7 +4,7 @@ import { Banner } from '@/components/commonWebsiteComponents/Banner';
 import Faq from '@/components/commonWebsiteComponents/Faq';
 import LearnMore from '@/components/commonWebsiteComponents/LearnMore';
 import React from 'react';
-import { faqData1, learnMoreSectionData, processingdata1 } from '@/constant/data';
+import { faqData1, learnMoreSectionData, processingData1 } from '@/constant/data';
 
 
 
@@ -19,7 +19,7 @@ const Page = () => {
         price="$126.67"
         link="/australia/application"
       />
-      <ProcessingStep processingdata={processingdata1} />
+      <ProcessingStep processingData={processingData1} />
       <LearnMore learnMoreSectionData={learnMoreSectionData} />
       <Faq faqData={faqData1} />
     </div>
