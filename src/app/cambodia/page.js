@@ -1,15 +1,23 @@
+import { Banner } from '@/components/commonWebsiteComponents/Banner'
+import Faq from '@/components/commonWebsiteComponents/Faq'
+import ProcessingStep from '@/components/commonWebsiteComponents/ProcessingStep'
+import { faqData2, processingdata2 } from '@/constant/data'
 import React from 'react'
-import Link from 'next/link';
 function Page() {
   return (
     <div>
-      <div className=''>
-        <Link href="/cambodia/application">
-          <button className="w-full py-3 text-white duration-150 ease-in-out rounded px-16 text-xl font-semibold  bg-primary hover:scale-105">
-            Apply Now
-          </button>
-        </Link>
-      </div>
+
+      <Banner
+        name="Cambodia"
+        type="visatype"
+        validity=" Valid for 1 year"
+        entries="Single Entries"
+        price="$126.67"
+        link="/cambodia/application"
+      />
+      <ProcessingStep processingdata={processingdata2} />
+      <Faq faqData={faqData2} />
+
     </div>
   )
 }
