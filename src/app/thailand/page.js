@@ -16,8 +16,9 @@ function Page() {
         price="$126.67"
         link="/thailand/apply-form"
       />
+        <ProcessingStep processingData={processingData1} />
        <LearnMore learnMoreSectionData={learnMoreSectionData} />
-      <ProcessingStep processingData={processingData1} />
+    
       <Faq faqData={faqData1} />
 
     </div>

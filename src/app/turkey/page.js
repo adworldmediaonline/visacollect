@@ -16,8 +16,9 @@ function Page() {
         price="$126.67"
         link="/turkey/application"
       />
-      <LearnMore learnMoreSectionData={learnMoreSectionData} />
       <ProcessingStep processingData={processingData1} />
+      <LearnMore learnMoreSectionData={learnMoreSectionData} />
+      
       <Faq faqData={faqData1} />
 
     </div>
