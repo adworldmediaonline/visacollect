@@ -47,7 +47,7 @@ const BannerMain = () => {
         }}
       >
         <div className="container justify-center flex flex-col h-[600px]">
-          <div className="space-y-3 pt-12">
+          <div className="pt-12 space-y-3">
             <h2 className="text-white md:text-[55px] text-[40px] font-bold leading-[1.2] md:w-[50%]">
               {' '}
               Find Visa information for all countries and apply today.
@@ -119,6 +119,7 @@ const BannerMain = () => {
               <option value="srilanka">Sri lanka</option>
               <option value="/turkey">Turkey</option>
               <option value="/thailand">Thailand</option>
+              <option value="/cambodia">Cambodia</option>
             </select>
           </div>
           <button
