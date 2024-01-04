@@ -1,34 +1,28 @@
-
-import Mainsection from "@/components/srilanka/common/Mainsection";
-import Contactform from "@/components/srilanka/home/Contactform";
-import Documentissued from "@/components/srilanka/home/Documentissued";
-import Overview from "@/components/srilanka/home/Overview";
-import Quicklooksrilanka from "@/components/srilanka/home/Quicklooksrilanka";
-import Touristattractions from "@/components/srilanka/home/Touristattractions";
-import React from "react";
-
-const page = () => {
+import { Banner } from '@/components/commonWebsiteComponents/Banner'
+import Faq from '@/components/commonWebsiteComponents/Faq'
+import LearnMore from '@/components/commonWebsiteComponents/LearnMore'
+import ProcessingStep from '@/components/commonWebsiteComponents/ProcessingStep'
+import { faqData1, learnMoreSectionData, processingData1 } from '@/constant/data'
+import React from 'react'
+function Page() {
   return (
     <div>
 
-      <Mainsection
-      img="/assets/images/srilanka/home/Mainimage.png"
-      title="Lorem Ipsum is simply  dummy text of the printing" 
-      para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-      button="Apply Now"
-      link="/srilanka/apply-individual"
-      stripeText="    Important Information: Fully Vaccinated tourist can stay at any type
-      of hotel and no on-arrival PCR test required. More details can found
-      in the...."
-      linkPath="/srilanka/slvisa"
+      <Banner
+        name="Srilanka"
+        type="visatype"
+        validity=" Valid for 1 year"
+        entries="Single Entries"
+        price="$126.67"
+        link="/srilanka/slvisa/tourist-eta/apply-individual"
       />
-      <Quicklooksrilanka />
-      <Overview />
-      <Touristattractions />
-      <Documentissued/>
-     <Contactform/>
+      <ProcessingStep processingData={processingData1} />
+      <LearnMore learnMoreSectionData={learnMoreSectionData} />
+      
+      <Faq faqData={faqData1} />
+
     </div>
   );
 };
 
-export default page;
+export default Page;
