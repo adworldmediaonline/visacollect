@@ -6,7 +6,7 @@ const LearnMore = ({ learnMoreSectionData }) => {
     console.log(learnMoreSectionData);
     const { sections } = learnMoreSectionData
     return (
-        <div className='bg-[#f3f5f7]'>
+        <div className=''>
             <div className="container py-16">
                 <div className="space-y-4 md:text-center">
                     <div>
