@@ -1,5 +1,6 @@
 import { Banner } from '@/components/commonWebsiteComponents/Banner'
 import Faq from '@/components/commonWebsiteComponents/Faq'
+import LearnMore from '@/components/commonWebsiteComponents/LearnMore'
 import ProcessingStep from '@/components/commonWebsiteComponents/ProcessingStep'
 import { faqData1, learnMoreSectionData, processingData1 } from '@/constant/data'
 import React from 'react'
