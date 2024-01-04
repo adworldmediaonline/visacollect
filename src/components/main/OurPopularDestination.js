@@ -16,27 +16,33 @@ const OurPopularDestination = () => {
     },
     {
       id: 2,
-      imgSrc: '/assets/images/main/india-desti.png',
+      imgSrc: '/assets/images/main/srilanka.jpg',
       title: 'Srilanka',
       link: '/srilanka',
     },
     {
       id: 3,
-      imgSrc: '/assets/images/main/india-desti.png',
+      imgSrc: '/assets/images/main/australia.jpg',
       title: 'Australia',
       link: '/australia',
     },
     {
       id: 4,
-      imgSrc: '/assets/images/main/india-desti.png',
+      imgSrc: '/assets/images/main/turkey.jpg',
       title: 'Turkey',
       link: '/turkey',
     },
     {
       id: 4,
-      imgSrc: '/assets/images/main/india-desti.png',
+      imgSrc: '/assets/images/main/thailand.jpg',
       title: 'Thailand',
       link: '/thailand',
+    },
+    {
+      id: 4,
+      imgSrc: '/assets/images/main/cambodia.jpg',
+      title: 'Cambodia',
+      link: '/cambodia',
     },
   ];
 
@@ -59,7 +65,7 @@ const OurPopularDestination = () => {
                   src={e.imgSrc}
                   width={500}
                   height={500}
-                  className="mx-auto full"
+                  className="mx-auto full h-[200px] "
                   alt="banner"
                 />
                 <div className="absolute bottom-0 z-10 flex items-end justify-end w-full h-full bg-black/40">

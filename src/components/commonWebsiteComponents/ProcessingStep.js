@@ -4,7 +4,7 @@ import UnderlineTextCenter from "../australia/common/UnderlineTextCenter";
 import TitleText from "../australia/common/TitleText";
 import Link from "next/link";
 
-const ProcessingStep = ({processingdata}) => {
+const ProcessingStep = ({processingData}) => {
 
    
     return (
@@ -15,7 +15,7 @@ const ProcessingStep = ({processingdata}) => {
             </div>
             <div className="container">
                 <div className=" md:grid grid-cols-3 justify-start gap-10 md:space-y-0 space-y-8">
-                    {processingdata.map((e, i) => (
+                    {processingData.map((e, i) => (
                         <div
                             key={i}
                             className={`shadow-lg p-8 rounded-xl bg-white ${e.customeHeight}`}
