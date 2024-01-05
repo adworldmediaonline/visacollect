@@ -34,15 +34,27 @@ const OurPopularDestination = () => {
     },
     {
       id: 5,
-      imgSrc: '/assets/images/main/india-desti.png',
+      imgSrc: '/assets/images/main/thailand.jpg',
       title: 'Thailand',
       link: '/thailand',
     },
     {
       id: 6,
-      imgSrc: '/assets/images/main/india-desti.png',
+      imgSrc: '/assets/images/main/cambodia.jpg',
       title: 'Cambodia',
       link: '/cambodia',
+    },
+    {
+      id: 7,
+      imgSrc: '/assets/images/main/oman.jpg',
+      title: 'Oman',
+      link: '/oman',
+    },
+    {
+      id: 8,
+      imgSrc: '/assets/images/main/egypt.jpg',
+      title: 'Egypt',
+      link: '/egypt',
     },
   ];
 
@@ -89,9 +101,11 @@ const OurPopularDestination = () => {
           ))}
         </div>
         <div>
+        <Link href="/all-countries">
           <button className="flex px-12 py-2 mx-auto text-center btnBlue">
             View All Countries
           </button>
+          </Link>
         </div>
       </div>
     </div>

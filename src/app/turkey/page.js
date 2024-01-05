@@ -18,7 +18,7 @@ function Page() {
       />
       <ProcessingStep processingData={processingData1} />
       <LearnMore learnMoreSectionData={learnMoreSectionData} />
-      
+
       <Faq faqData={faqData1} />
 
     </div>
