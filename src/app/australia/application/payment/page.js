@@ -36,7 +36,7 @@ const Page = () => {
   }
 
   if (getQuery.error) {
-    return router.push('/application');
+    return router.push('/australia/application');
   }
 
   if (getQuery.isSuccess) {

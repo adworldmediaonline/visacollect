@@ -1,4 +1,4 @@
-export default {
+const apiEndpoint = {
   // Turkey endpoint
 
   TURKEY_VISA_APPLICATION: '/turkeyvisa/turkeyVisaApplication',
@@ -59,4 +59,9 @@ export default {
   THAILAND_VISA_APPLICATION: '/thailandvisa/thailandVisaApplication',
   THAILAND_VISA_APPLICATION_PERSON:
     '/thailandvisa/thailandVisaApplicationPerson',
+
+  // cambodia endpoints
+  CAMBODIA_VISA_APPLICATION: '/cambodiavisa/cambodiaVisaApplication',
 };
+
+export default apiEndpoint;
