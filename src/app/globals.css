@@ -193,9 +193,10 @@ width: 100% !important;
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 .react-datepicker__view-calendar-icon input{
-  padding: 9px 10px 9px 25px !important;
+  padding: 9px 10px 9px 35px !important;
 }
 
 .react-datepicker__calendar-icon {
   padding: 0.8rem !important;
 }
+
