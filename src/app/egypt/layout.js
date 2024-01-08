@@ -6,7 +6,7 @@ import Footer from '@/components/main/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'E-Visa Cambodia',
+  title: 'E-Visa ',
 };
 
 export default function RootLayout({ children }) {
