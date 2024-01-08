@@ -184,7 +184,7 @@ const Page = () => {
                       id="passportDetails.passportNumber"
                     />
                     <div className="text-gray-400 text-xs">
-                      Including a middle name is recommended, but it's not required if you don't have one and Enter this information as it appears in your passport.
+                      Including a middle name is recommended, but it&apos;s not required if you don&apos;t have one and Enter this information as it appears in your passport.
                     </div>
 
                     <ErrorMessage name="passportDetails.passportNumber">
