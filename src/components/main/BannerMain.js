@@ -120,6 +120,7 @@ const BannerMain = () => {
               <option value="/turkey">Turkey</option>
               <option value="/thailand">Thailand</option>
               <option value="/cambodia">Cambodia</option>
+              <option value="/egypt">Egypt</option>
             </select>
           </div>
           <button

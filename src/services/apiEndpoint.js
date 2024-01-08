@@ -62,6 +62,10 @@ const apiEndpoint = {
 
   // cambodia endpoints
   CAMBODIA_VISA_APPLICATION: '/cambodiavisa/cambodiaVisaApplication',
+
+  // egypt endpoints
+  EGYPT_VISA_APPLICATION: '/egyptvisa/egyptVisaApplication',
+  EGYPT_VISA_APPLICATION_VISA_DETAIL: '/egyptvisa/egyptVisaDetail',
 };
 
 export default apiEndpoint;
