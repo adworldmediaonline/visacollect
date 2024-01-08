@@ -46,9 +46,6 @@ export const cambodiaSchema = {
     }),
 
     travelDetails: Yup.object().shape({
-      enteringLandOrAir: Yup.string()
-        .oneOf(['yes'])
-        .required('Entering land or air is required'),
       portOfEntry: Yup.string().required('Port of entry is required'),
       proposedDateOfEntry: Yup.date()
         .min(
@@ -93,7 +90,6 @@ export const cambodiaSchema = {
       phoneNumber: '',
     },
     travelDetails: {
-      enteringLandOrAir: '',
       portOfEntry: '',
       proposedDateOfEntry: '',
       touristPurpose: '',

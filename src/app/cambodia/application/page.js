@@ -7,8 +7,19 @@ import React from 'react';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import { getAllCountries } from '@/lib/getAllCountries';
 import { cambodiaSchema } from '@/constant/cambodiaSchema';
+import usePost from '@/hooks/usePost';
+import apiEndpoint from '@/services/apiEndpoint';
+import { ImSpinner2 } from 'react-icons/im';
+import { addDays } from 'date-fns';
 
 function Page() {
+  const postMutation = usePost(
+    apiEndpoint.CAMBODIA_VISA_APPLICATION,
+    1,
+    '/cambodia/payment',
+    true,
+    'cambodiaVisaApplication'
+  );
   return (
     <div>
       <div className="container  md:py-8 py-20 md;px-0 px-3 ">
@@ -21,17 +32,7 @@ function Page() {
             validateOnChange={true}
             validateOnMount={true}
             onSubmit={(values, { setSubmitting, resetForm }) => {
-              console.log(values);
-              // postMutation.mutate({
-              //     ...values,
-              //     travelInsurance: {
-              //         ...values.travelInsurance,
-              //         insuranceFee: calculateTotalPrice(
-              //             values.travelInsurance.startDate,
-              //             values.travelInsurance.returnDate
-              //         ),
-              //     },
-              // });
+              postMutation.mutate(values);
               setSubmitting(false);
               // resetForm();
             }}
@@ -140,12 +141,12 @@ function Page() {
                   <div className="order-2 col-span-8">
                     <ReactDatePickerInput
                       className="new-form-input"
-                      name="personalDetails.dateOfBirth"
-                      // selected={values.personalDetails.dateOfBirth}
+                      name="dateOfBirth"
+                      selected={values.dateOfBirth}
                       setFieldValue={setFieldValue}
-                      maxDate={new Date()}
+                      maxDate={values.passportDateOfIssue}
                     />
-                    <ErrorMessage name="personalDetails.dateOfBirth">
+                    <ErrorMessage name="dateOfBirth">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -321,12 +322,12 @@ function Page() {
                   <div className="order-2 col-span-8">
                     <ReactDatePickerInput
                       className="new-form-input"
-                      name="passportDetails.passportDateOfIssue"
-                      // selected={values.passportDetails.passportDateOfIssue}
+                      name="passportDateOfIssue"
+                      selected={values.passportDateOfIssue}
                       setFieldValue={setFieldValue}
                       maxDate={new Date()}
                     />
-                    <ErrorMessage name="passportDetails.passportDateOfIssue">
+                    <ErrorMessage name="passportDateOfIssue">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -351,9 +352,9 @@ function Page() {
                     <ReactDatePickerInput
                       className="new-form-input"
                       name="passportDetails.passportExpiryDate"
-                      // selected={values.passportDetails.passportExpiryDate}
+                      selected={values.passportDetails.passportExpiryDate}
                       setFieldValue={setFieldValue}
-                      maxDate={new Date()}
+                      minDate={addDays(values.passportDateOfIssue, 180)}
                     />
                     <ErrorMessage name="passportDetails.passportExpiryDate">
                       {errorMsg => (
@@ -447,33 +448,6 @@ function Page() {
 
                 <SubHeading subHead="Travel Details" />
 
-                <div className="flex flex-col gap-2 py-4">
-                  <h2>Are you entering Cambodia by Land or Air? *</h2>
-
-                  <div className="flex gap-8 pt-4">
-                    <div className="flex gap-4">
-                      <Field
-                        type="radio"
-                        className="w-6 h-6"
-                        name="travelDetails.enteringLandOrAir"
-                        id="travelDetailsenteringLandOrAirYes"
-                        value="yes"
-                      />
-                      <h3>Yes</h3>
-                    </div>
-                    <div className="flex gap-4">
-                      <Field
-                        type="radio"
-                        className="w-6 h-6"
-                        name="travelDetails.enteringLandOrAir"
-                        id="travelDetailsenteringLandOrAirNo"
-                        value="no"
-                      />
-                      <h3>No</h3>
-                    </div>
-                  </div>
-                </div>
-
                 <div className="pt-10 main-form-section">
                   <div className="label-section">
                     <label>Port of Entry * </label>
@@ -527,9 +501,9 @@ function Page() {
                     <ReactDatePickerInput
                       className="new-form-input"
                       name="travelDetails.proposedDateOfEntry"
-                      // selected={values.travelDetails.proposedDateOfEntry}
+                      selected={values.travelDetails.proposedDateOfEntry}
                       setFieldValue={setFieldValue}
-                      maxDate={new Date()}
+                      minDate={addDays(new Date(), 5)}
                     />
                     <ErrorMessage name="travelDetails.proposedDateOfEntry">
                       {errorMsg => (
@@ -566,40 +540,42 @@ function Page() {
                   </div>
                 </div>
 
-                <div className="pt-10 main-form-section">
-                  <div className="label-section">
-                    <label>Purpose of Visit * </label>
-                  </div>
+                {values.travelDetails.touristPurpose === 'no' && (
+                  <div className="pt-10 main-form-section">
+                    <div className="label-section">
+                      <label>Purpose of Visit * </label>
+                    </div>
 
-                  <div className="mark-section group">
-                    <BsQuestionCircleFill className=" side-icon" size={20} />
-                    <div className="tooltip-content">
-                      Please select the Purpose of Visit that best describes
-                      your trip to Cambodia.{' '}
+                    <div className="mark-section group">
+                      <BsQuestionCircleFill className=" side-icon" size={20} />
+                      <div className="tooltip-content">
+                        Please select the Purpose of Visit that best describes
+                        your trip to Cambodia.{' '}
+                      </div>
+                    </div>
+
+                    <div className="order-2 col-span-8">
+                      <Field
+                        required
+                        id="travelDetails.purposeOfVisit"
+                        name="travelDetails.purposeOfVisit"
+                        component="select"
+                        className="new-form-input"
+                      >
+                        <option value="">Select</option>
+                        <option value="tourism">Tourism</option>
+                        <option value="india">Business</option>
+                        <option value="transit">Transit</option>
+                      </Field>
+
+                      <ErrorMessage name="travelDetails.purposeOfVisit">
+                        {errorMsg => (
+                          <div style={{ color: 'red' }}>{errorMsg}</div>
+                        )}
+                      </ErrorMessage>
                     </div>
                   </div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      required
-                      id="travelDetails.purposeOfVisit"
-                      name="travelDetails.purposeOfVisit"
-                      component="select"
-                      className="new-form-input"
-                    >
-                      <option value="">Select</option>
-                      <option value="Tourism">Tourism</option>
-                      <option value="india">Business</option>
-                      <option value="australia">Transit</option>
-                    </Field>
-
-                    <ErrorMessage name="travelDetails.purposeOfVisit">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
+                )}
 
                 <SubHeading subHead="Declaration of Applicant" />
 
@@ -636,6 +612,11 @@ function Page() {
                 </div>
 
                 <div className="py-8 text-center">
+                  {postMutation.isError ? (
+                    <div className="text-red-500">
+                      An error occurred: {postMutation.error.message}
+                    </div>
+                  ) : null}
                   <button
                     className={`cursor-pointer w-fit items-center gap-3  rounded-lg font-semibold text-white bg-primaryMain px-8 py-3 ${
                       !isValid ? 'cursor-not-allowed opacity-50' : ''
@@ -643,7 +624,14 @@ function Page() {
                     disabled={!isValid}
                     type="submit"
                   >
-                    Next
+                    {postMutation.isPending ? (
+                      <>
+                        {' '}
+                        <ImSpinner2 className="animate-spin" />
+                      </>
+                    ) : (
+                      'Next'
+                    )}
                   </button>
                 </div>
               </Form>
