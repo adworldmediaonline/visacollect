@@ -125,7 +125,7 @@ const Page = () => {
 
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label>Emergency contact's email</label>
+                    <label>Emergency contact&apos;s email</label>
                   </div>
 
                   <div className="order-2 col-span-8">
@@ -145,7 +145,7 @@ const Page = () => {
 
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label>Emergency contact's full name  </label>
+                    <label>Emergency contact&apos;s full name  </label>
                   </div>
 
                   <div className="order-2 col-span-8">
@@ -156,7 +156,7 @@ const Page = () => {
                       id="passportDetails.passportNumber"
                     />
                     <div className="text-gray-400 text-xs">
-                      Including their middle name is recommended, but it's not required if they don't have one.
+                      Including their middle name is recommended, but it&apos;s not required if they don&apos;t have one.
                     </div>
 
                     <ErrorMessage name="passportDetails.passportNumber">
@@ -169,7 +169,7 @@ const Page = () => {
 
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label>Emergency contact's country code and phone number</label>
+                    <label>Emergency contact&apos;s country code and phone number</label>
                   </div>
 
 
@@ -181,7 +181,7 @@ const Page = () => {
                       name="personalDetails.emailAddress"
                     />
                     <div className="text-gray-400 text-xs">
-                      Please ensure the country code is correct for your phone number. If it isn't, select the correct one.
+                      Please ensure the country code is correct for your phone number. If it isn&apos;t, select the correct one.
                     </div>
                     <ErrorMessage name="personalDetails.emailAddress">
                       {errorMsg => (
@@ -190,8 +190,6 @@ const Page = () => {
                     </ErrorMessage>
                   </div>
                 </div>
-
-
 
 
                 <div className="main-form-section">
@@ -224,7 +222,7 @@ const Page = () => {
                       type="submit"
                     >
 
-                     Next
+                      Next
 
                     </button>
                   </div>
