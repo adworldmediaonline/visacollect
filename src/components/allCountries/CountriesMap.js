@@ -55,6 +55,18 @@ export const CountriesMap = () => {
             title: 'Egypt',
             link: '/egypt',
         },
+        {
+            id: 9,
+            imgSrc: '/assets/images/main/singapore.jpg',
+            title: 'Singapore',
+            link: '/singapore',
+        },
+        {
+            id: 10,
+            imgSrc: '/assets/images/main/malaysia.jpg',
+            title: 'Malaysia',
+            link: '/malaysia',
+        },
     ];
 
     return (

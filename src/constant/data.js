@@ -41,6 +41,30 @@ const faqData1 = [
         des: "If you can't find your nationality on the list, the reason may be that your nationality is not eligible for ETA Australia. Please contact our support team.",
     },
 ];
+const cambodiafaq = [
+    {
+        id: 1,
+        title: "How can I reach the e-Visa customer service team?",
+        des: "Our customer service team is available 24/7 to address any questions or concerns you may have about our services.",
+    },
+    {
+        id: 2,
+        title: "How long does it take to apply for a Cambodian Business eVisa?",
+        des: "The application process for a Cambodia Business eVisa takes approximately 15 minutes using our simplified online form.",
+    },
+    {
+        id: 3,
+        title:
+            "When should I apply for the Cambodia Business eVisa?",
+        des: "We recommend applying at least 7 days in advance to avoid any potential delays in processing.",
+    },
+    {
+        id: 4,
+        title:
+            "What is the duration of stay allowed with the Cambodia Business eVisa?",
+        des: "The single-entry Cambodia Business eVisa allows a stay of up to 30 days in the country.",
+    },
+];
 
 
 const learnMoreSectionData = {
@@ -319,4 +343,4 @@ const learnMoreSectionData = {
 }
 
 
-export { faqData1, processingData1, learnMoreSectionData }
+export { faqData1, processingData1, learnMoreSectionData, cambodiafaq }
