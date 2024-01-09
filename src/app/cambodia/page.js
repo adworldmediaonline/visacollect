@@ -16,7 +16,8 @@ function Page() {
         price="$126.67"
         link="/cambodia/application"
       />
-       <ProcessingStep processingData={processingData1} />
+       <ProcessingStep processingData={processingData1}
+       link="/cambodia/application" />
        <LearnMore learnMoreSectionData={learnMoreSectionDataCambodia} />
      
       <Faq faqData={cambodiafaq} />

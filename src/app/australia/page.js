@@ -19,7 +19,8 @@ const Page = () => {
         price="$126.67"
         link="/australia/application"
       />
-      <ProcessingStep processingData={processingData1} />
+      <ProcessingStep processingData={processingData1} 
+       link="/australia/application"/>
       <LearnMore learnMoreSectionData={learnMoreSectionData} />
       <Faq faqData={faqData1} />
     </div>

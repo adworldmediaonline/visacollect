@@ -4,7 +4,7 @@ import UnderlineTextCenter from "../australia/common/UnderlineTextCenter";
 import TitleText from "../australia/common/TitleText";
 import Link from "next/link";
 
-const ProcessingStep = ({processingData}) => {
+const ProcessingStep = ({processingData,link}) => {
 
    
     return (
@@ -33,9 +33,9 @@ const ProcessingStep = ({processingData}) => {
                         </div>
                     ))}
                 </div>
-                <Link href="/application">
+                <Link href={link}>
                     <div className="pt-10 flex justify-center items-center w-full">
-                        <button className="bg-primary text-white rounded-lg transition duration-200 hover:bg-[#1e1e1e] hover:text-white px-4 py-2 font-medium text-md md:block hidden">
+                        <button className="bg-primary text-white transition duration-200 hover:bg-[#1e1e1e] hover:text-white px-12 rounded-full py-3 font-medium text-md md:block hidden">
                             Apply For ETA Visa
                         </button>
                     </div>

@@ -16,7 +16,8 @@ function Page() {
         price="$126.67"
         link="/malaysia/embassy-registration"
       />
-      <ProcessingStep processingData={processingData1} />
+      <ProcessingStep processingData={processingData1}
+      link="/malaysia/embassy-registration" />
       <LearnMore learnMoreSectionData={learnMoreSectionData} />
 
       <Faq faqData={faqData1} />

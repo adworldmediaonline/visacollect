@@ -16,7 +16,8 @@ function Page() {
         price="$126.67"
         link="/egypt/step-one"
       />
-       <ProcessingStep processingData={processingData1} />
+       <ProcessingStep processingData={processingData1}
+       link="/egypt/step-one" />
        <LearnMore learnMoreSectionData={learnMoreSectionData} />
      
       <Faq faqData={faqData1} />
