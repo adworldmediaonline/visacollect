@@ -6,21 +6,28 @@ import PhoneInput, {
   isValidPhoneNumber,
 } from 'react-phone-number-input';
 import { useState } from 'react';
+
 export default function CustomReactPhoneNumberInput({
   setFieldValue,
-
+  setFieldTouched,
+  errors,
+  touched,
   name,
+  defaultValue,
   ...props
 }) {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(defaultValue || '');
   console.log(value);
   const handleChange = value => {
     if (value && isValidPhoneNumber(value)) {
       setFieldValue(name, formatPhoneNumberIntl(value));
+      setFieldTouched(name, true);
     } else {
       setValue(value);
+      setFieldTouched(name, false);
     }
   };
+
   return (
     <>
       <PhoneInput
@@ -28,13 +35,7 @@ export default function CustomReactPhoneNumberInput({
         placeholder="Enter phone number"
         value={value}
         onChange={handleChange}
-        error={
-          value
-            ? isValidPhoneNumber(value)
-              ? undefined
-              : 'Invalid phone number'
-            : 'Phone number required'
-        }
+        error={touched[name] && errors[name] ? errors[name] : undefined}
       />
       {/* Is possible: {value && isPossiblePhoneNumber(value) ? 'true' : 'false'}
       Is valid: {value && isValidPhoneNumber(value) ? 'true' : 'false'}
