@@ -329,7 +329,7 @@ export default function Page({ params }) {
           </Link>
 
           <button
-            className="items-center gap-3 px-8 py-3 font-semibold border-2 rounded-lg cursor-pointer w-fit border-primaryMain text-primaryMain"
+            className="items-center gap-3 px-12 py-3 font-semibold border-2 rounded-full cursor-pointer w-fit border-primaryMain text-primaryMain"
             type="submit"
           >
             Continue

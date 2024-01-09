@@ -187,7 +187,7 @@ export default function Page() {
                     </div>
                   ) : null}
                   <button
-                    className={`cursor-pointer w-fit items-center gap-3 border-2 rounded-lg font-semibold border-primaryMain text-primaryMain px-8 py-3 ${
+                    className={`cursor-pointer w-fit items-center gap-3 border-2 rounded-full font-semibold bg-primaryMain text-white px-12 py-3 ${
                       !isValid ? 'cursor-not-allowed opacity-40' : ''
                     }`}
                     disabled={!isValid}

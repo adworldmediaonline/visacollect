@@ -491,7 +491,7 @@ export default function Page({ params }) {
                     {thailandVisaApplicationData?.persons?.length > 0 ? (
                       <Link
                         href={`/thailand/review/${thailandVisaApplicationData?._id}`}
-                        className="items-center gap-3 px-8 py-3 font-semibold border-2 rounded-lg cursor-pointer w-fit border-primaryMain text-primaryMain "
+                        className="items-center gap-3 px-12 py-3 rounded-full font-semibold border-2 rounded-lg cursor-pointer w-fit border-primaryMain text-primaryMain "
                       >
                         Continue
                       </Link>
