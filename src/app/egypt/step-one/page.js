@@ -32,7 +32,7 @@ function Page() {
             onSubmit={(values, { setSubmitting, resetForm }) => {
               postMutation.mutate(values);
               setSubmitting(false);
-              resetForm();
+              // resetForm();
             }}
           >
             {({ values, isValid, setFieldValue }) => (

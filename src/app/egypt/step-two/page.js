@@ -25,9 +25,9 @@ const Page = () => {
 
   const postMutation = usePost(
     apiEndpoint.EGYPT_VISA_APPLICATION_VISA_DETAIL,
-    1,
+    2,
     '/egypt/payment',
-    true,
+    false,
     'egyptVisaApplication'
   );
 
@@ -47,13 +47,13 @@ const Page = () => {
   if (getQuery.isSuccess) {
     const {
       data: {
-        data: { _id, __v, createdAt, updatedAt, ...egyptVisaApplicationData },
+        data: { __v, createdAt, updatedAt, ...egyptVisaApplicationData },
       },
     } = getQuery;
     return (
       <div>
         <div className="container  md:py-8 py-20 md;px-0 px-3 ">
-          <Heading formHead=" Apply for a Egypt eVisa " />
+          <Heading formHead="Apply for a Egypt eVisa " />
 
           <div>
             <Formik
@@ -138,7 +138,9 @@ const Page = () => {
                                 <tr key={index}>
                                   <td>
                                     <div className="order-2 col-span-8">
-                                      <p className="text-lg font-bold">1</p>
+                                      <p className="text-lg font-bold">
+                                        {index + 1}
+                                      </p>
                                     </div>
                                   </td>
                                   <td className="px-3 py-2">
@@ -282,12 +284,13 @@ const Page = () => {
                     <div className="mark-section group"></div>
 
                     <div className="order-2 col-span-8">
-                      <textarea
-                        id="orderDetails.specialRequest"
+                      <Field
+                        component="textarea"
+                        // id="orderDetails.specialRequest"
                         name="orderDetails.specialRequest"
                         rows="4"
                         className="w-full border border-gray-400"
-                      ></textarea>
+                      />
                       <ErrorMessage name="orderDetails.specialRequest">
                         {errorMsg => (
                           <div style={{ color: 'red' }}>{errorMsg}</div>
