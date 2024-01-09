@@ -14,7 +14,7 @@ function Page() {
         validity=" Valid for 1 year"
         entries="Single Entries"
         price="$126.67"
-        link="/singapore/application"
+        link="/singapore/embassy-application"
       />
       <ProcessingStep processingData={processingData1} />
       <LearnMore learnMoreSectionData={learnMoreSectionData} />
