@@ -38,24 +38,24 @@ const OurPopularDestination = () => {
       title: 'Thailand',
       link: '/thailand',
     },
-    {
-      id: 6,
-      imgSrc: '/assets/images/main/cambodia.jpg',
-      title: 'Cambodia',
-      link: '/cambodia',
-    },
-    {
-      id: 7,
-      imgSrc: '/assets/images/main/oman.jpg',
-      title: 'Oman',
-      link: '/oman',
-    },
-    {
-      id: 8,
-      imgSrc: '/assets/images/main/egypt.jpg',
-      title: 'Egypt',
-      link: '/egypt',
-    },
+    // {
+    //   id: 6,
+    //   imgSrc: '/assets/images/main/cambodia.jpg',
+    //   title: 'Cambodia',
+    //   link: '/cambodia',
+    // },
+    // {
+    //   id: 7,
+    //   imgSrc: '/assets/images/main/oman.jpg',
+    //   title: 'Oman',
+    //   link: '/oman',
+    // },
+    // {
+    //   id: 8,
+    //   imgSrc: '/assets/images/main/egypt.jpg',
+    //   title: 'Egypt',
+    //   link: '/egypt',
+    // },
   ];
 
   return (
@@ -101,7 +101,7 @@ const OurPopularDestination = () => {
           ))}
         </div>
         <div>
-        <Link href="/all-countries">
+        <Link href="#">
           <button className="flex px-12 py-2 mx-auto text-center btnBlue">
             View All Countries
           </button>
