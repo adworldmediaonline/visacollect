@@ -13,7 +13,7 @@ const Page = () => {
   return (
     <div>
       <div className="container  md:py-8 py-20 md;px-0 px-3 ">
-        <Heading formHead="Apply Now for Singapore Application" />
+        <Heading formHead="Apply Now for Malaysia Application" />
 
         <div>
           <Formik
@@ -38,131 +38,7 @@ const Page = () => {
           >
             {({ values, isValid, setFieldValue }) => (
               <Form>
-                <SubHeading subHead="Your Application" />
-
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label> Where are you from? </label>
-                  </div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      required
-                      id="travelDetails.purposeOfStay"
-                      name="travelDetails.purposeOfStay"
-                      component="select"
-                      className="new-form-input"
-                    >
-                      <option value="">Select</option>
-                      {getAllCountries()}
-                    </Field>
-
-                    <ErrorMessage name="travelDetails.purposeOfStay">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
-
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label> Applying for </label>
-                  </div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      required
-                      id="travelDetails.purposeOfStay"
-                      name="travelDetails.purposeOfStay"
-                      component="select"
-                      className="new-form-input"
-                    >
-                      <option value="">
-                        SG Arrival Card + Health Declaration - 30 days, Single
-                        Entry
-                      </option>
-                    </Field>
-
-                    <ErrorMessage name="travelDetails.purposeOfStay">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
-
-                <SubHeading subHead="Your Trip Details" />
-
-                <div className="main-form-section" id="trip">
-                  <div className="label-section">
-                    <label>When do you arrive at your destination?</label>
-                  </div>
-
-                  <div className="order-2 col-span-8">
-                    <ReactDatePickerInput
-                      className="new-form-input"
-                      name="personalDetails.dateOfBirth"
-                      // selected={values.personalDetails.dateOfBirth}
-                      setFieldValue={setFieldValue}
-                      maxDate={new Date()}
-                    />
-                  </div>
-                </div>
-
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label>When do you depart from your destination?</label>
-                  </div>
-
-                  <div className="order-2 col-span-8">
-                    <ReactDatePickerInput
-                      className="new-form-input"
-                      name="personalDetails.dateOfBirth"
-                      // selected={values.personalDetails.dateOfBirth}
-                      setFieldValue={setFieldValue}
-                      maxDate={new Date()}
-                    />
-                  </div>
-                </div>
-
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label>E-mail address: *</label>
-                  </div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      type="text"
-                      className="new-form-input"
-                      name="personalDetails.emailAddress"
-                    />
-
-                    <ErrorMessage name="personalDetails.emailAddress">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 py-7">
-                  <Field
-                    type="checkbox"
-                    className="w-6 h-6"
-                    name="passportDetails.citizen"
-                    id="passportDetails.citizen"
-                  />
-                  <h2>
-                    I certify that I have read and accept the iVisa Terms and
-                    Conditions, Privacy Policy, and Refund Policy.
-                  </h2>
-                  <ErrorMessage name="passportDetails.citizen">
-                    {errorMsg => <div style={{ color: 'red' }}>{errorMsg}</div>}
-                  </ErrorMessage>
-                </div>
-
-                <SubHeading subHead="Your Personal Details" />
+                <SubHeading subHead="Your Applicant Information" />
 
                 <div className="main-form-section">
                   <div className="label-section">
@@ -216,6 +92,34 @@ const Page = () => {
 
                 <div className="main-form-section">
                   <div className="label-section">
+                    <label>Nationality</label>
+                  </div>
+
+                  <div className="order-2 col-span-8">
+                    <Field
+                      required
+                      id="travelDetails.purposeOfStay"
+                      name="travelDetails.purposeOfStay"
+                      component="select"
+                      className="new-form-input"
+                    >
+                      <option value="">Select</option>
+                      {getAllCountries()}
+                    </Field>
+                    <div className="text-xs text-gray-400">
+                      Select the nationality listed on your passport.
+                    </div>
+
+                    <ErrorMessage name="travelDetails.purposeOfStay">
+                      {errorMsg => (
+                        <div style={{ color: 'red' }}>{errorMsg}</div>
+                      )}
+                    </ErrorMessage>
+                  </div>
+                </div>
+
+                <div className="main-form-section">
+                  <div className="label-section">
                     <label> Gender </label>
                   </div>
 
@@ -260,7 +164,6 @@ const Page = () => {
                     />
                   </div>
                 </div>
-
                 <div className="main-form-section">
                   <div className="label-section">
                     <label>Country of birth </label>
@@ -285,7 +188,6 @@ const Page = () => {
                     </ErrorMessage>
                   </div>
                 </div>
-
                 <div className="main-form-section">
                   <div className="label-section">
                     <label>Country of residence </label>
@@ -313,46 +215,6 @@ const Page = () => {
 
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label>Nationality</label>
-                  </div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      required
-                      id="travelDetails.purposeOfStay"
-                      name="travelDetails.purposeOfStay"
-                      component="select"
-                      className="new-form-input"
-                    >
-                      <option value="">Select</option>
-                      {getAllCountries()}
-                    </Field>
-                    <div className="text-xs text-gray-400">
-                      Select the nationality listed on your passport.
-                    </div>
-
-                    <ErrorMessage name="travelDetails.purposeOfStay">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 py-7">
-                  <Field
-                    type="checkbox"
-                    className="w-6 h-6"
-                    name="passportDetails.citizen"
-                    id="passportDetails.citizen"
-                  />
-                  <h2>Skip entering passport information for now.</h2>
-                  <ErrorMessage name="passportDetails.citizen">
-                    {errorMsg => <div style={{ color: 'red' }}>{errorMsg}</div>}
-                  </ErrorMessage>
-                </div>
-                <div className="main-form-section">
-                  <div className="label-section">
                     <label>Passport number</label>
                   </div>
 
@@ -368,6 +230,25 @@ const Page = () => {
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
                     </ErrorMessage>
+                  </div>
+                </div>
+
+                <div className="main-form-section">
+                  <div className="label-section">
+                    <label>Passport Issue date</label>
+                  </div>
+
+                  <div className="mark-section group"></div>
+
+                  <div className="order-2 col-span-8">
+                    <ReactDatePickerInput
+                      className="new-form-input"
+                      name="passportDetails.dateOfIssue"
+                      // selected={values.passportDetails.dateOfIssue}
+                      setFieldValue={setFieldValue}
+                      // minDate={new Date(values.personalDetails.dateOfBirth)}
+                      // disabled={values.personalDetails.dateOfBirth === ''}
+                    />
                   </div>
                 </div>
 
@@ -454,9 +335,9 @@ const Page = () => {
                       </td>
 
                       <td className="flex justify-center space-x-3">
-                        <Link href="#trip">
+                        <button type="button">
                           <FaEdit className="text-primary" size={30} />
-                        </Link>
+                        </button>
                         <button type="button">
                           <MdDeleteOutline className="text-primary" size={30} />
                         </button>
@@ -465,7 +346,7 @@ const Page = () => {
                   </tbody>
                 </table>
 
-                <Link href="/singapore/payment">
+                <Link href="/malaysia/payment">
                   <div className="py-8 text-center">
                     <button
                       className={`cursor-pointer w-fit items-center gap-3  rounded-lg font-semibold text-white bg-primaryMain px-8 py-3 ${

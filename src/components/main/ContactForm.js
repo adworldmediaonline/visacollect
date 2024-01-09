@@ -58,7 +58,7 @@ function ContactForm() {
 
             <button
               type="submit"
-              className="btnBlack px-8 py-2 hover:-translate-y-1 transition-all duration-500 text-white font-semibold mb-2"
+              className="btnBlack bg-black"
             >
               Join Now!
             </button>
