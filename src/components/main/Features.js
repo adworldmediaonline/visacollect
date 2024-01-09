@@ -29,14 +29,14 @@ export default function Features() {
         className="background-image fixed top-0 left-0 w-full h-full bg-cover bg-center -z-10 "
         style={{ backgroundImage: `url(/assets/images/main/feature.png)` }}
       ></div>
-      <div className="md:grid grid-cols-4 justify-center items-center p-10 md:space-x-14 md:space-y-0 space-y-8">
+      <div className="md:grid grid-cols-4 justify-center items-center pt-20 container gap-6 md:space-y-0 space-y-8">
         {smallIcon.map((e, i) => (
           <div
             key={i}
-            className="text-white flex flex-col justify-center items-center space-y-2 bg-black/50 p-8 rounded-md border-2 border-primaryMain/80 hover:brightness-150  shadow-md  hover:drop-shadow-2xl  hover:shadow-lg hover:-translate-y-4 duration-200"
+            className="text-white flex flex-col justify-center py-8 items-center space-y-2 bg-black/50 rounded-md border-2 border-primaryMain/80 hover:brightness-150  shadow-md  hover:drop-shadow-2xl  hover:shadow-lg hover:-translate-y-4 duration-200 "
           >
-            <img src={e.imgSrc} />
-            <h5 className="font-semibold text-lg">{e.title}</h5>
+            <img src={e.imgSrc} className="w-16 h-[3.5rem]" />
+            <h5 className="font-semibold text-center ">{e.title}</h5>
           </div>
         ))}
       </div>
