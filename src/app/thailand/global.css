@@ -1,39 +1,31 @@
 .container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-
-  /* Form Section */
-.main-form-section
-{
-  @apply md:grid grid-cols-12 gap-4 py-2 items-start
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.new-form-input
-{
-  @apply border border-gray-300 py-[10px] px-1 rounded-lg outline-none ring-0 focus:ring-blue-200 focus:ring-1 w-full
+/* Form Section */
+.main-form-section {
+  @apply items-start grid-cols-12 gap-4 py-2 md:grid;
 }
 
-
-.side-icon
-{
-  @apply items-start float-right md:mt-0 -mt-6 text-[#0068E5]
+.new-form-input {
+  @apply border border-gray-300 py-[10px] px-1 rounded-lg outline-none ring-0 focus:ring-blue-200 focus:ring-1 w-full;
 }
 
-.label-section
-{
-  @apply col-span-3
+.side-icon {
+  @apply items-start float-right md:mt-0 -mt-6 text-[#0068E5];
 }
 
-.mark-section
-{
-  @apply  relative col-span-1 order-3
+.label-section {
+  @apply col-span-3;
 }
 
-.tooltip-content
-{
-  @apply absolute -top-12  w-[230px] right-0 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100
+.mark-section {
+  @apply relative order-3 col-span-1;
+}
+
+.tooltip-content {
+  @apply absolute -top-12  w-[230px] right-0 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100;
 }
