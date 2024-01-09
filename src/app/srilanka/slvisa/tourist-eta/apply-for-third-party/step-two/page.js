@@ -1043,7 +1043,7 @@ const Page = () => {
                       {touristThirdPartyData?.members?.length > 0 ? (
                         <Link
                           href={`/srilanka/slvisa/tourist-eta/apply-for-third-party/review/${touristThirdPartyData?._id}`}
-                          className="formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2"
+                          className="formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-12 py-3 rounded-full"
                         >
                           Next
                         </Link>

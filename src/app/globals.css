@@ -161,7 +161,7 @@ body {
 /* Navbar--close */
 
 .btnBlue{
-    @apply bg-primaryMain hover:bg-black rounded-md text-white
+    @apply bg-primaryMain hover:bg-black rounded-md text-white 
 }
 .btnBlack{
   @apply  px-8 py-2 hover:-translate-y-1 transition-all duration-500  font-semibold mb-2 hover:bg-primaryMain rounded-md text-white

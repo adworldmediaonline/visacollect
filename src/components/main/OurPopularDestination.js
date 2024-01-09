@@ -100,9 +100,9 @@ const OurPopularDestination = () => {
             </div>
           ))}
         </div>
-        <div>
+        <div className='flex justify-center'>
         <Link href="#">
-          <button className="flex px-12 py-2 mx-auto text-center btnBlue">
+          <button className="flex px-12 py-2 mx-auto text-center btnBlue ">
             View All Countries
           </button>
           </Link>
