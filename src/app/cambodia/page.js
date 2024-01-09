@@ -2,7 +2,7 @@ import { Banner } from '@/components/commonWebsiteComponents/Banner'
 import Faq from '@/components/commonWebsiteComponents/Faq'
 import LearnMore from '@/components/commonWebsiteComponents/LearnMore'
 import ProcessingStep from '@/components/commonWebsiteComponents/ProcessingStep'
-import { cambodiafaq, learnMoreSectionData, processingData1 } from '@/constant/data'
+import { cambodiafaq, learnMoreSectionDataCambodia, processingData1 } from '@/constant/data'
 import React from 'react'
 function Page() {
   return (
@@ -17,7 +17,7 @@ function Page() {
         link="/cambodia/application"
       />
        <ProcessingStep processingData={processingData1} />
-       <LearnMore learnMoreSectionData={learnMoreSectionData} />
+       <LearnMore learnMoreSectionData={learnMoreSectionDataCambodia} />
      
       <Faq faqData={cambodiafaq} />
 

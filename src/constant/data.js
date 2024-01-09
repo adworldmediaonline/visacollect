@@ -342,5 +342,170 @@ const learnMoreSectionData = {
     ]
 }
 
+const learnMoreSectionDataCambodia = {
+    sections: [
+        {
+            title: "Explore the Beauty of Cambodia with Ease!",
+            paragraphs: [
+                {
+                    text: "Hassle-free Begin your journey to Cambodia by obtaining your eVisa through e-Visa via india-travelservices.com! The Ministry of Foreign Affairs and International Cooperation introduced the e-visa in April 2006 to boost tourism and facilitate visits to Cambodia. With the new e-visa, travelers can enjoy a stay of up to three months without the need to obtain a visa upon arrival at Cambodian airports or consulates abroad.                    "
+                },
 
-export { faqData1, processingData1, learnMoreSectionData, cambodiafaq }
+            ],
+
+        },
+        {
+            title: "Why Choose e-Visa for Your Cambodia Visa?",
+            paragraphs: [
+                {
+                    text: "At e-Visa, we simplify the Cambodia Visa application process, allowing you to complete it from the comfort of your home. Expert staff at e-Visa is dedicated to guiding you through every step, ensuring a smooth and efficient experience.                    "
+                },
+
+            ],
+        },
+        {
+            title: "Everything You Need to Know About Cambodia eVisa",
+            lists: [
+                {
+                    title: "What is the Cambodia eVisa?",
+                    listItems: [
+                        `The Cambodia e-visa is an official document that grants authorisation for travel to and from Cambodia. Electronically linked to your passport, it's a convenient way to facilitate your entry into this beautiful country.`
+                    ]
+                },
+                {
+                    title: "Eligibility for Cambodia Tourist Visa",
+                    listItems: [
+                        `Most countries need to apply for a Cambodia e-Visa, with only a few exceptions. Connect with our eVisa experts to verify your eligibility and apply instantly.                        `
+                    ]
+                },
+                {
+                    title: "Validity and Duration",
+                    listItems: [
+                        `The Cambodia e-visa is valid for 90 days from the date of issuance and allows a maximum stay of 30 days in the country. It's intended for tourist purposes only.`
+                    ]
+                },
+                {
+                    title: "Easy Online eVisa Application Process",
+                    listItems: [
+                        'To apply, provide personal information and trip details. e-Visa simplifies the process, requiring only a valid passport, a passport-size photo, email address, proof of accommodation, and means of payment.'
+                    ]
+                },
+
+            ]
+        },
+
+        {
+            title: "eVisa Application Steps:",
+
+            lists: [
+                {
+                    title: "Step-1: Complete the form with basic data and select the processing time.                    ",
+
+                },
+                {
+                    title: "Step-2: Review personal information, make the payment, and ensure accuracy.",
+                },
+                {
+                    title: `Step-3: Finalize the form within 3 minutes, click "accept," and wait for the email confirmation.`,
+
+                },
+
+            ]
+        },
+        {
+            title: "eVisa Costs and Processing Times",
+            paragraphs: [
+                {
+                    text: "e-Visa offers three processing options:   "
+                },
+            ],
+            lists: [
+                {
+                    title: "Standard (8 days)   ",
+
+                },
+                {
+                    title: "Rush (5 days) ",
+                },
+                {
+                    title: `Super Rush (4 days) `,
+
+                },
+                {
+                    title: `Note: Prices include both service and visa fees, with minimal chances of rejection.`,
+
+                },
+
+            ]
+        },
+        {
+            title: "Entering Cambodia with Your e-Visa",
+            paragraphs: [
+                {
+                    text: "Present two printed copies of your e-visa and your passport at Phnom Penh or Sihanoukville International Airports. One copy is kept by immigration, while you retain the other."
+                },
+            ],
+
+        },
+        {
+            title: "FAQs and Assistance",
+            paragraphs: [
+                {
+                    text: "Find answers to common questions on our website or contact our customer support team at help@e-visa.com for personalized assistance."
+                },
+            ],
+
+        },
+        {
+            title: "COVID-19 Precautions",
+            paragraphs: [
+                {
+                    text: "As of now, there are no testing or vaccination requirements for entering Cambodia, and no quarantine is necessary."
+                },
+            ],
+
+        },
+        {
+            title: "Required Documents for e-Visa:",
+            paragraphs: [
+                {
+                    text: "Valid passport, applicant photo, proof of accommodation, and means of payment. e-Visa ensures a seamless process tailored to your needs."
+                },
+                {
+                    text: "Important Instructions:"
+                },
+            ],
+            lists: [
+                {
+                    title: "The eVisa is valid for tourism purposes only. ",
+
+                },
+                {
+                    title: "Validity is 90 days, with a maximum stay of 30 days. ",
+                },
+                {
+                    title: `Citizens of certain countries are exempt. `,
+
+                },
+                {
+                    title: "Extension possible through local authorities.",
+                },
+                {
+                    title: "Super rush processing takes approximately 4 days.                    ",
+                },
+                {
+                    title: "Enter only through designated ports: Phnom Penh and Sihanoukville International Airports.                    ",
+                },
+                {
+                    title: " Hop on on your Cambodia adventure with confidence! Apply for your eVisa through e-Visa today and enjoy a stress-free journey.                    ",
+                },
+
+            ]
+
+        },
+
+
+    ]
+}
+
+export { faqData1, processingData1, learnMoreSectionData, cambodiafaq, learnMoreSectionDataCambodia }
