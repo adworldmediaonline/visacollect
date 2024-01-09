@@ -16,7 +16,8 @@ function Page() {
         price="$126.67"
         link="/srilanka/slvisa/tourist-eta/apply-individual"
       />
-      <ProcessingStep processingData={processingData1} />
+      <ProcessingStep processingData={processingData1}
+      link="/srilanka/slvisa/tourist-eta/apply-individual" />
       <LearnMore learnMoreSectionData={learnMoreSectionData} />
       
       <Faq faqData={faqData1} />

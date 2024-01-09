@@ -18,7 +18,7 @@ export const Banner = ({name,type,validity,entries,price,link}) => {
                         </h2>
                         <div className=''>
                             <Link href={link}>
-                                <button className="w-full py-3 text-white duration-150 ease-in-out rounded px-16 text-xl font-semibold  bg-primary hover:scale-105">
+                                <button className="w-full py-3 text-white duration-150 ease-in-out  px-16 rounded-full text-xl font-semibold  bg-primary hover:scale-105">
                                     Apply Now
                                 </button>
                             </Link>

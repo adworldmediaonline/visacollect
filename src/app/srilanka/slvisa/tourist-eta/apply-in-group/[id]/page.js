@@ -625,7 +625,7 @@ export default function Page({ params }) {
                       </div>
                     ) : null}
                     <button
-                      className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2 ${
+                      className={`formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-12 py-3 rounded-full ${
                         !isValid ? 'cursor-not-allowed opacity-50' : ''
                       }`}
                       disabled={!isValid}

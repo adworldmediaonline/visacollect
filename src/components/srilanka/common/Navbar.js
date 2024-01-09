@@ -80,7 +80,7 @@ const Navbar = () => {
 
           </div>
           <div className="md:col-span-2">
-            <button className="bg-[#0068E5] transition duration-200 hover:bg-[#1e1e1e] text-white px-4 py-2 font-medium text-md md:block hidden">
+            <button className="bg-[#0068E5] transition duration-200 hover:bg-[#1e1e1e] text-white px-8 py-3 font-medium text-md md:block rounded-full hidden">
               Contact Us
             </button>
 
