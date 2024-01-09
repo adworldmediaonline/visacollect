@@ -35,7 +35,14 @@ function Page() {
               // resetForm();
             }}
           >
-            {({ values, isValid, setFieldValue }) => (
+            {({
+              values,
+              isValid,
+              setFieldValue,
+              errors,
+              touched,
+              setFieldTouched,
+            }) => (
               <Form>
                 {console.log(values)}
                 <SubHeading subHead="Information for Visa" />
@@ -240,6 +247,9 @@ function Page() {
                       className="new-form-input"
                       name="phoneNumber"
                       setFieldValue={setFieldValue}
+                      errors={errors}
+                      touched={touched}
+                      setFieldTouched={setFieldTouched}
                     />
 
                     <ErrorMessage name="phoneNumber">
@@ -338,6 +348,9 @@ function Page() {
                             className="new-form-input"
                             name="communicationChannelNumberOrId"
                             setFieldValue={setFieldValue}
+                            errors={errors}
+                            touched={touched}
+                            setFieldTouched={setFieldTouched}
                           />
                           <ErrorMessage name="communicationChannelNumberOrId">
                             {errorMsg => (
