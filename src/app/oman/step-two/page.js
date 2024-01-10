@@ -29,7 +29,7 @@ function Page() {
 
         <div>
           <Formik
-            initialValues={omanSchema.initialValue}
+            initialValues={omanSchema.peopleInitialValues}
             // validationSchema={omanSchema.yupSchema}
             validateOnChange={true}
             validateOnMount={true}
@@ -52,236 +52,6 @@ function Page() {
             {({ values, isValid, setFieldValue }) => (
               <Form>
                 {console.log(values)}
-                <SubHeading subHead="General Details" />
-
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label>Your current address</label>
-                  </div>
-
-                  <div className="mark-section group"></div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      type="text"
-                      className="new-form-input"
-                      name="generalDetails.currentAddress"
-                      id="generalDetails.currentAddress"
-                    />
-
-                    <ErrorMessage name="generalDetails.currentAddress">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label>City</label>
-                  </div>
-
-                  <div className="mark-section group"></div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      type="text"
-                      className="new-form-input"
-                      name="generalDetails.city"
-                      id="generalDetails.city"
-                    />
-
-                    <ErrorMessage name="generalDetails.city">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label>State / Province</label>
-                  </div>
-
-                  <div className="mark-section group"></div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      type="text"
-                      className="new-form-input"
-                      name="generalDetails.state"
-                      id="generalDetails.state"
-                    />
-
-                    <ErrorMessage name="generalDetails.state">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
-
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label>Zipcode / Pincode / Postal Code</label>
-                  </div>
-
-                  <div className="mark-section group"></div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      type="text"
-                      className="new-form-input"
-                      name="generalDetails.zipCode"
-                      id="generalDetails.zipCode"
-                    />
-
-                    <ErrorMessage name="generalDetails.zipCode">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
-
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label>Contact Number</label>
-                  </div>
-
-                  <div className="mark-section group"></div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      required
-                      type="text"
-                      className="new-form-input"
-                      name="generalDetails.phoneNumber"
-                      id="generalDetails.phoneNumber"
-                    />
-
-                    <ErrorMessage name="generalDetails.phoneNumber">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label>Whatsapp Number</label>
-                  </div>
-
-                  <div className="mark-section group">
-                    <BsQuestionCircleFill className=" side-icon" size={20} />
-                    <div className="tooltip-content">
-                      For effective communication and timely updates, please
-                      enter your WhatsApp number.
-                    </div>
-                  </div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      required
-                      type="text"
-                      className="new-form-input"
-                      name="generalDetails.whatsappNumber"
-                      id="generalDetails.whatsappNumber"
-                    />
-
-                    <ErrorMessage name="generalDetails.whatsappNumber">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label>Travel Date/ Arrival Date</label>
-                  </div>
-
-                  <div className="mark-section group">
-                    <BsQuestionCircleFill className=" side-icon" size={20} />
-                    <div className="tooltip-content">
-                      The &apos;Arrival Date&apos; field is where you can
-                      specify the date you plan to arrive at your destination
-                    </div>
-                  </div>
-
-                  <div className="order-2 col-span-8">
-                    <ReactDatePickerInput
-                      className="new-form-input"
-                      name="arrivalDate"
-                      // selected={values.arrivalDate}
-                      setFieldValue={setFieldValue}
-                      maxDate={new Date()}
-                    />
-                    <ErrorMessage name="arrivalDate">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label>Type your email</label>
-                  </div>
-
-                  <div className="mark-section group">
-                    <BsQuestionCircleFill className=" side-icon" size={20} />
-                    <div className="tooltip-content">
-                      Please enter a valid email address in this field. We will
-                      use this email address to communicate with you and send
-                      important updates.
-                    </div>
-                  </div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      required
-                      type="text"
-                      className="new-form-input"
-                      name="generalDetails.email"
-                      id="generalDetails.email"
-                    />
-
-                    <ErrorMessage name="generalDetails.email">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label>Purpose of Visit</label>
-                  </div>
-
-                  <div className="mark-section group"></div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      required
-                      component="select"
-                      className="new-form-input"
-                      name="generalDetails.purposeOfVisit"
-                      id="generalDetails.purposeOfVisit"
-                    >
-                      <option value="">Select</option>
-                      <option value="">one</option>
-                      <option value="">two</option>
-                      <option value="">three</option>
-                    </Field>
-
-                    <ErrorMessage name="generalDetails.purposeOfVisit">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
 
                 <SubHeading subHead="Personal Details" />
 
@@ -296,11 +66,11 @@ function Page() {
                     <Field
                       type="text"
                       className="new-form-input"
-                      name="personalDetails.firstName"
-                      id="personalDetails.firstName"
+                      name="firstName"
+                      id="firstName"
                     />
 
-                    <ErrorMessage name="personalDetails.firstName">
+                    <ErrorMessage name="firstName">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -318,11 +88,11 @@ function Page() {
                     <Field
                       type="text"
                       className="new-form-input"
-                      name="personalDetails.lastName"
-                      id="personalDetails.lastName"
+                      name="lastName"
+                      id="lastName"
                     />
 
-                    <ErrorMessage name="personalDetails.lastName">
+                    <ErrorMessage name="lastName">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -341,14 +111,14 @@ function Page() {
                       required
                       component="select"
                       className="new-form-input"
-                      name="personalDetails.nationality"
-                      id="personalDetails.nationality"
+                      name="nationality"
+                      id="nationality"
                     >
                       <option value="">Select</option>
                       {getAllCountries()}
                     </Field>
 
-                    <ErrorMessage name="personalDetails.nationality">
+                    <ErrorMessage name="nationality">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -367,8 +137,8 @@ function Page() {
                       required
                       component="select"
                       className="new-form-input"
-                      name="personalDetails.entryType"
-                      id="personalDetails.entryType"
+                      name="entryType"
+                      id="entryType"
                     >
                       <option value="">Select</option>
                       <option value="">30 days</option>
@@ -376,7 +146,7 @@ function Page() {
                       <option value="">10 days</option>
                     </Field>
 
-                    <ErrorMessage name="personalDetails.entryType">
+                    <ErrorMessage name="entryType">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -416,8 +186,8 @@ function Page() {
                       type="text"
                       component="select"
                       className="new-form-input"
-                      name="personalDetails.gender"
-                      id="personalDetails.gender"
+                      name="gender"
+                      id="gender"
                     >
                       <option value="">Select</option>
 
@@ -425,7 +195,7 @@ function Page() {
                       <option value="female">FEMALE</option>
                     </Field>
 
-                    <ErrorMessage name="personalDetails.gender">
+                    <ErrorMessage name="gender">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -443,11 +213,11 @@ function Page() {
                     <Field
                       type="text"
                       className="new-form-input"
-                      name="personalDetails.passportNumber"
-                      id="personalDetails.passportNumber"
+                      name="passportNumber"
+                      id="passportNumber"
                     />
 
-                    <ErrorMessage name="personalDetails.passportNumber">
+                    <ErrorMessage name="passportNumber">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -494,13 +264,13 @@ function Page() {
                     <div className="flex items-center w-full h-full gap-8 p-2 mb-5 overflow-hidden border rounded-md">
                       <div className="bg-gray-200 rounded-lg">
                         <SingleFileUpload
-                          id="personalDetails.passportColouredPhoto"
-                          name="personalDetails.passportColouredPhoto"
+                          id="passportColouredPhoto"
+                          name="passportColouredPhoto"
                           setFieldValue={setFieldValue}
-                          value={values.personalDetails.passportColouredPhoto}
+                          value={values.passportColouredPhoto}
                           errorMessage={
                             <ErrorMessage
-                              name="personalDetails.passportColouredPhoto"
+                              name="passportColouredPhoto"
                               component="div"
                             />
                           }
@@ -508,17 +278,17 @@ function Page() {
                         />
 
                         <label
-                          htmlFor="personalDetails.passportColouredPhoto"
+                          htmlFor="passportColouredPhoto"
                           className="relative flex items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center"
                         >
                           <LuImagePlus size={40} className="text-gray-500" />
                         </label>
                       </div>
-                      {values.personalDetails.passportColouredPhoto ? (
+                      {values.passportColouredPhoto ? (
                         <div className="flex items-center w-full">
                           <Image
                             src={URL.createObjectURL(
-                              values.personalDetails.passportColouredPhoto
+                              values.passportColouredPhoto
                             )}
                             alt={`Uploaded Image`}
                             width={100}
@@ -533,7 +303,7 @@ function Page() {
                       )}
                     </div>
 
-                    <ErrorMessage name="personalDetails.passportColouredPhoto">
+                    <ErrorMessage name="passportColouredPhoto">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -558,32 +328,27 @@ function Page() {
                     <div className="flex items-center w-full h-full gap-8 p-2 mb-5 overflow-hidden border rounded-md">
                       <div className="bg-gray-200 rounded-lg">
                         <SingleFileUpload
-                          id="personalDetails.profilePhoto"
-                          name="personalDetails.profilePhoto"
+                          id="profilePhoto"
+                          name="profilePhoto"
                           setFieldValue={setFieldValue}
-                          value={values.personalDetails.profilePhoto}
+                          value={values.profilePhoto}
                           errorMessage={
-                            <ErrorMessage
-                              name="personalDetails.profilePhoto"
-                              component="div"
-                            />
+                            <ErrorMessage name="profilePhoto" component="div" />
                           }
                           accept="image/png, image/jpeg"
                         />
 
                         <label
-                          htmlFor="personalDetails.profilePhoto"
+                          htmlFor="profilePhoto"
                           className="relative flex items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center"
                         >
                           <LuImagePlus size={40} className="text-gray-500" />
                         </label>
                       </div>
-                      {values.personalDetails.profilePhoto ? (
+                      {values.profilePhoto ? (
                         <div className="flex items-center w-full">
                           <Image
-                            src={URL.createObjectURL(
-                              values.personalDetails.profilePhoto
-                            )}
+                            src={URL.createObjectURL(values.profilePhoto)}
                             alt={`Uploaded Image`}
                             width={100}
                             height={100}
@@ -597,7 +362,7 @@ function Page() {
                       )}
                     </div>
 
-                    <ErrorMessage name="personalDetails.profilePhoto">
+                    <ErrorMessage name="profilePhoto">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -612,19 +377,6 @@ function Page() {
                   >
                     + Add Another Peron
                   </button>
-                </div>
-
-                <div className="flex items-center gap-4 py-7">
-                  <Field
-                    type="checkbox"
-                    className="w-6 h-6"
-                    name="termsAndConditions"
-                    id="termsAndConditions"
-                  />
-                  <h2>I have read and agree with the terms and conditions.</h2>
-                  <ErrorMessage name="termsAndConditions">
-                    {errorMsg => <div style={{ color: 'red' }}>{errorMsg}</div>}
-                  </ErrorMessage>
                 </div>
 
                 <div className="py-8 text-center">

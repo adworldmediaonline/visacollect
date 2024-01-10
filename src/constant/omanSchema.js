@@ -1,30 +1,34 @@
 export const omanSchema = {
-  yupSchema: {},
-  initialValue: {
-    personalDetails: {
-      firstName: '',
-      lastName: '',
-      nationality: '',
-      entryType: '',
-      gender: '',
-      passportNumber: '',
-      passportColouredPhoto:'',
-      profilePhoto:'',
-    },
-    generalDetails: {
-      currentAddress: '',
-      city: '',
-      state: '',
-      zipCode: '',
-      phoneNumber: '',
-      whatsappNumber: '',
-      email: '',
-      purposeOfVisit: '',
-    },
+  peopleYupSchema: {},
+  peopleInitialValues: {
+    firstName: '',
+    lastName: '',
+    nationality: '',
+    entryType: '',
+    gender: '',
+    passportNumber: '',
+    passportColouredPhoto: '',
+    profilePhoto: '',
     passportExpiryDate: '',
     dateOfBirth: '',
+   
+  },
+  yupSchema: {},
+  initialValues: {
+    currentAddress: '',
+    city: '',
+    state: '',
+    zipCode: '',
+    phoneNumber: '',
+    whatsappNumber: '',
+    email: '',
+    purposeOfVisit: '',
     arrivalDate: '',
-    interested:'',
     termsAndConditions: false,
   },
-};
+  
+
+
+ 
+}
+
