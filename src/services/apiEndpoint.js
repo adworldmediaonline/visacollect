@@ -71,6 +71,10 @@ const apiEndpoint = {
   SINGAPORE_VISA_APPLICATION: '/singaporevisa/singaporeVisaApplication',
   SINGAPORE_VISA_APPLICATION_PEOPLE:
     '/singaporevisa/singaporeVisaApplicationPeople',
+  // malaysia
+  MALAYSIA_VISA_APPLICATION: '/malaysiavisa/malaysiaVisaApplication',
+  MALAYSIA_VISA_APPLICATION_PEOPLE:
+    '/malaysiavisa/malaysiaVisaApplicationPeople',
 };
 
 export default apiEndpoint;
