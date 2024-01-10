@@ -19,8 +19,7 @@ const options = [
   { value: 'Flight', label: 'Flight' },
   { value: 'airportTransfer', label: 'Airport Transfer' },
   { value: 'tourPackage', label: 'Tour Package' },
-]
-
+];
 
 function Page() {
   return (
@@ -60,9 +59,7 @@ function Page() {
                     <label>Your current address</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
@@ -84,9 +81,7 @@ function Page() {
                     <label>City</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
@@ -108,9 +103,7 @@ function Page() {
                     <label>State / Province</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
@@ -133,9 +126,7 @@ function Page() {
                     <label>Zipcode / Pincode / Postal Code</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
@@ -158,9 +149,7 @@ function Page() {
                     <label>Contact Number</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
@@ -186,7 +175,8 @@ function Page() {
                   <div className="mark-section group">
                     <BsQuestionCircleFill className=" side-icon" size={20} />
                     <div className="tooltip-content">
-                      For effective communication and timely updates, please enter your WhatsApp number.
+                      For effective communication and timely updates, please
+                      enter your WhatsApp number.
                     </div>
                   </div>
 
@@ -214,7 +204,8 @@ function Page() {
                   <div className="mark-section group">
                     <BsQuestionCircleFill className=" side-icon" size={20} />
                     <div className="tooltip-content">
-                      The &apos;Arrival Date&apos; field is where you can specify the date you plan to arrive at your destination
+                      The &apos;Arrival Date&apos; field is where you can
+                      specify the date you plan to arrive at your destination
                     </div>
                   </div>
 
@@ -241,7 +232,9 @@ function Page() {
                   <div className="mark-section group">
                     <BsQuestionCircleFill className=" side-icon" size={20} />
                     <div className="tooltip-content">
-                      Please enter a valid email address in this field. We will use this email address to communicate with you and send important updates.
+                      Please enter a valid email address in this field. We will
+                      use this email address to communicate with you and send
+                      important updates.
                     </div>
                   </div>
 
@@ -292,15 +285,12 @@ function Page() {
 
                 <SubHeading subHead="Personal Details" />
 
-
                 <div className="main-form-section">
                   <div className="label-section">
                     <label>First Name</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
@@ -322,9 +312,7 @@ function Page() {
                     <label>Last Name </label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
@@ -346,9 +334,7 @@ function Page() {
                     <label>Nationality</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
@@ -374,9 +360,7 @@ function Page() {
                     <label>Entry Type</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
@@ -390,7 +374,6 @@ function Page() {
                       <option value="">30 days</option>
                       <option value="">1 year</option>
                       <option value="">10 days</option>
-
                     </Field>
 
                     <ErrorMessage name="personalDetails.entryType">
@@ -405,9 +388,7 @@ function Page() {
                     <label>Date of Birth</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <ReactDatePickerInput
@@ -456,9 +437,7 @@ function Page() {
                     <label>Passport Number </label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
@@ -480,9 +459,7 @@ function Page() {
                     <label>Passport Expiry Date *</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <ReactDatePickerInput
@@ -499,10 +476,6 @@ function Page() {
                     </ErrorMessage>
                   </div>
                 </div>
-
-
-
-
 
                 <div className="main-form-section">
                   <div className="label-section">
@@ -633,11 +606,9 @@ function Page() {
                   {/* upload file end  */}
                 </div>
 
-
                 <div className="py-8 text-center">
                   <button
                     className={`cursor-pointer w-fit items-center gap-3  rounded-lg font-semibold text-white bg-primaryMain px-8 py-3 `}
-
                   >
                     + Add Another Peron
                   </button>
@@ -650,26 +621,23 @@ function Page() {
                     name="termsAndConditions"
                     id="termsAndConditions"
                   />
-                  <h2>
-                    I have read and agree with the terms and conditions.
-                  </h2>
+                  <h2>I have read and agree with the terms and conditions.</h2>
                   <ErrorMessage name="termsAndConditions">
                     {errorMsg => <div style={{ color: 'red' }}>{errorMsg}</div>}
                   </ErrorMessage>
                 </div>
 
-
                 <div className="py-8 text-center">
                   <button
-                    className={`cursor-pointer w-fit items-center gap-3  rounded-full font-semibold text-white bg-primaryMain px-12 py-3 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
-                      }`}
+                    className={`cursor-pointer w-fit items-center gap-3  rounded-full font-semibold text-white bg-primaryMain px-12 py-3 ${
+                      !isValid ? 'cursor-not-allowed opacity-50' : ''
+                    }`}
                     disabled={!isValid}
                     type="submit"
                   >
                     Submit
                   </button>
                 </div>
-
               </Form>
             )}
           </Formik>
