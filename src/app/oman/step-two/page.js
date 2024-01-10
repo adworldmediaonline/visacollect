@@ -19,8 +19,7 @@ const options = [
   { value: 'Flight', label: 'Flight' },
   { value: 'airportTransfer', label: 'Airport Transfer' },
   { value: 'tourPackage', label: 'Tour Package' },
-]
-
+];
 
 function Page() {
   return (
@@ -53,18 +52,15 @@ function Page() {
             {({ values, isValid, setFieldValue }) => (
               <Form>
                 {console.log(values)}
-              
-                <SubHeading subHead="Personal Details" />
 
+                <SubHeading subHead="Personal Details" />
 
                 <div className="main-form-section">
                   <div className="label-section">
                     <label>First Name</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
@@ -86,9 +82,7 @@ function Page() {
                     <label>Last Name </label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
@@ -110,9 +104,7 @@ function Page() {
                     <label>Nationality</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
@@ -138,9 +130,7 @@ function Page() {
                     <label>Entry Type</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
@@ -154,7 +144,6 @@ function Page() {
                       <option value="">30 days</option>
                       <option value="">1 year</option>
                       <option value="">10 days</option>
-
                     </Field>
 
                     <ErrorMessage name="entryType">
@@ -169,9 +158,7 @@ function Page() {
                     <label>Date of Birth</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <ReactDatePickerInput
@@ -220,9 +207,7 @@ function Page() {
                     <label>Passport Number </label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
@@ -244,9 +229,7 @@ function Page() {
                     <label>Passport Expiry Date *</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <ReactDatePickerInput
@@ -263,10 +246,6 @@ function Page() {
                     </ErrorMessage>
                   </div>
                 </div>
-
-
-
-
 
                 <div className="main-form-section">
                   <div className="label-section">
@@ -354,10 +333,7 @@ function Page() {
                           setFieldValue={setFieldValue}
                           value={values.profilePhoto}
                           errorMessage={
-                            <ErrorMessage
-                              name="profilePhoto"
-                              component="div"
-                            />
+                            <ErrorMessage name="profilePhoto" component="div" />
                           }
                           accept="image/png, image/jpeg"
                         />
@@ -372,9 +348,7 @@ function Page() {
                       {values.profilePhoto ? (
                         <div className="flex items-center w-full">
                           <Image
-                            src={URL.createObjectURL(
-                              values.profilePhoto
-                            )}
+                            src={URL.createObjectURL(values.profilePhoto)}
                             alt={`Uploaded Image`}
                             width={100}
                             height={100}
@@ -397,30 +371,25 @@ function Page() {
                   {/* upload file end  */}
                 </div>
 
-
                 <div className="py-8 text-center">
                   <button
                     className={`cursor-pointer w-fit items-center gap-3  rounded-lg font-semibold text-white bg-primaryMain px-8 py-3 `}
-
                   >
                     + Add Another Peron
                   </button>
                 </div>
 
-            
-
-
                 <div className="py-8 text-center">
                   <button
-                    className={`cursor-pointer w-fit items-center gap-3  rounded-full font-semibold text-white bg-primaryMain px-12 py-3 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
-                      }`}
+                    className={`cursor-pointer w-fit items-center gap-3  rounded-full font-semibold text-white bg-primaryMain px-12 py-3 ${
+                      !isValid ? 'cursor-not-allowed opacity-50' : ''
+                    }`}
                     disabled={!isValid}
                     type="submit"
                   >
                     Submit
                   </button>
                 </div>
-
               </Form>
             )}
           </Formik>
