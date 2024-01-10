@@ -372,7 +372,7 @@ const Page = () => {
                                     <div className="py-8 text-center">
 
                                         <button
-                                            className={`cursor-pointer w-fit items-center gap-3  rounded-lg font-semibold text-white bg-primaryMain px-8 py-3 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
+                                            className={`cursor-pointer w-fit items-center gap-3  rounded-full font-semibold text-white bg-primaryMain px-12 py-3 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
                                                 }`}
                                             disabled={!isValid}
                                             type="submit"

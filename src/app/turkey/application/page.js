@@ -389,7 +389,7 @@ const Page = () => {
                     </div>
                   ) : null}
                   <button
-                    className={`cursor-pointer w-full items-center gap-3 border-2 rounded-lg font-semibold border-primary text-primary px-8 py-3 ${
+                    className={`cursor-pointer  items-center gap-3 border-2  font-semibold bg-primary text-white w-fit px-12 py-3 rounded-full ${
                       !isValid ? 'cursor-not-allowed opacity-50' : ''
                     }`}
                     disabled={!isValid}

@@ -1234,7 +1234,7 @@ const Page = () => {
                     </div>
                   ) : null}
                   <button
-                    className={`cursor-pointer w-full items-center gap-3 border-2 r font-semibold bg-primary text-white px-12 py-3 rounded-full ${
+                    className={`cursor-pointer w-fit items-center gap-3 border-2 r font-semibold bg-primary text-white px-12 py-3 rounded-full ${
                       !isValid ? 'cursor-not-allowed opacity-50' : ''
                     }`}
                     disabled={!isValid}
