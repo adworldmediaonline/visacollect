@@ -86,7 +86,6 @@ const Page = () => {
             >
               {({ values, isValid, setFieldValue }) => (
                 <Form>
-                  {console.log(values)}
                   <SubHeading subHead="Passport Details" />
 
                   <FieldArray

@@ -1,15 +1,25 @@
 'use client';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { BsQuestionCircleFill } from 'react-icons/bs';
 import SubHeading from '@/components/australia/common/SubHeading';
 import Heading from '@/components/australia/common/Heading';
 import { getAllCountries } from '@/lib/getAllCountries';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
-import { MdDeleteOutline } from 'react-icons/md';
-import { FaEdit } from 'react-icons/fa';
 import Link from 'next/link';
+import { singaporeSchema } from '@/constant/singaporeSchema';
+import usePost from '@/hooks/usePost';
+import { ImSpinner2 } from 'react-icons/im';
+import apiEndpoint from '@/services/apiEndpoint';
+import { addDays } from 'date-fns';
+import CustomReactPhoneNumberInput from '@/components/common/CustomReactPhoneNumberInput';
 
 const Page = () => {
+  const postMutation = usePost(
+    apiEndpoint.SINGAPORE_VISA_APPLICATION,
+    1,
+    '/singapore/step-two',
+    true,
+    'singaporeVisaApplication'
+  );
   return (
     <div>
       <div className="container  md:py-8 py-20 md;px-0 px-3 ">
@@ -17,26 +27,24 @@ const Page = () => {
 
         <div>
           <Formik
-            // initialValues={.initialValues}
-            // validationSchema={.yupSchema}
+            initialValues={singaporeSchema.initialValues}
+            validationSchema={singaporeSchema.yupSchema}
             validateOnChange={true}
             validateOnMount={true}
             onSubmit={(values, { setSubmitting, resetForm }) => {
-              // postMutation.mutate({
-              //   ...values,
-              //   travelInsurance: {
-              //     ...values.travelInsurance,
-              //     insuranceFee: calculateTotalPrice(
-              //       values.travelInsurance.startDate,
-              //       values.travelInsurance.returnDate
-              //     ),
-              //   },
-              // });
+              postMutation.mutate(values);
               setSubmitting(false);
-              // resetForm();
+              resetForm();
             }}
           >
-            {({ values, isValid, setFieldValue }) => (
+            {({
+              values,
+              isValid,
+              setFieldValue,
+              errors,
+              touched,
+              setFieldTouched,
+            }) => (
               <Form>
                 <SubHeading subHead="Embassy Registration" />
 
@@ -49,10 +57,10 @@ const Page = () => {
                     <Field
                       type="text"
                       className="new-form-input"
-                      name="personalDetails.emailAddress"
+                      name="email"
                     />
 
-                    <ErrorMessage name="personalDetails.emailAddress">
+                    <ErrorMessage name="email">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -68,10 +76,10 @@ const Page = () => {
                   <div className="order-2 col-span-8">
                     <ReactDatePickerInput
                       className="new-form-input"
-                      name="personalDetails.dateOfBirth"
-                      // selected={values.personalDetails.dateOfBirth}
+                      name="arriveDestination"
+                      selected={values.arriveDestination}
                       setFieldValue={setFieldValue}
-                      maxDate={new Date()}
+                      minDate={new Date()}
                     />
                   </div>
                 </div>
@@ -84,10 +92,10 @@ const Page = () => {
                   <div className="order-2 col-span-8">
                     <ReactDatePickerInput
                       className="new-form-input"
-                      name="personalDetails.dateOfBirth"
-                      // selected={values.personalDetails.dateOfBirth}
+                      name="departDestination"
+                      selected={values.departDestination}
                       setFieldValue={setFieldValue}
-                      maxDate={new Date()}
+                      minDate={addDays(values.arriveDestination, 1)}
                     />
                   </div>
                 </div>
@@ -100,8 +108,8 @@ const Page = () => {
                   <div className="order-2 col-span-8">
                     <Field
                       required
-                      id="travelDetails.purposeOfStay"
-                      name="travelDetails.purposeOfStay"
+                      id="destinationCountry"
+                      name="destinationCountry"
                       component="select"
                       className="new-form-input"
                     >
@@ -109,7 +117,7 @@ const Page = () => {
                       {getAllCountries()}
                     </Field>
 
-                    <ErrorMessage name="travelDetails.purposeOfStay">
+                    <ErrorMessage name="destinationCountry">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -126,10 +134,10 @@ const Page = () => {
                     <Field
                       type="text"
                       className="new-form-input"
-                      name="personalDetails.emailAddress"
+                      name="emergencyContactEmail"
                     />
 
-                    <ErrorMessage name="personalDetails.emailAddress">
+                    <ErrorMessage name="emergencyContactEmail">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -146,15 +154,15 @@ const Page = () => {
                     <Field
                       required
                       className="new-form-input"
-                      name="passportDetails.passportNumber"
-                      id="passportDetails.passportNumber"
+                      name="emergencyContactFullName"
+                      id="emergencyContactFullName"
                     />
                     <div className="text-xs text-gray-400">
                       Including their middle name is recommended, but it&apos;s
                       not required if they don&apos;t have one.
                     </div>
 
-                    <ErrorMessage name="passportDetails.passportNumber">
+                    <ErrorMessage name="emergencyContactFullName">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -170,20 +178,19 @@ const Page = () => {
                   </div>
 
                   <div className="order-2 col-span-8">
-                    <Field
-                      type="text"
+                    <CustomReactPhoneNumberInput
                       className="new-form-input"
-                      name="personalDetails.emailAddress"
+                      name="emergencyContactPhoneNumber"
+                      setFieldValue={setFieldValue}
+                      errors={errors}
+                      touched={touched}
+                      setFieldTouched={setFieldTouched}
                     />
+
                     <div className="text-xs text-gray-400">
                       Please ensure the country code is correct for your phone
                       number. If it isn&apos;t, select the correct one.
                     </div>
-                    <ErrorMessage name="personalDetails.emailAddress">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
                   </div>
                 </div>
 
@@ -197,28 +204,38 @@ const Page = () => {
                   <div className="order-2 col-span-8">
                     <ReactDatePickerInput
                       className="new-form-input"
-                      name="passportDetails.dateOfIssue"
-                      // selected={values.passportDetails.dateOfIssue}
+                      name="passportExpirationDate"
+                      selected={values.passportExpirationDate}
                       setFieldValue={setFieldValue}
-                      // minDate={new Date(values.personalDetails.dateOfBirth)}
-                      // disabled={values.personalDetails.dateOfBirth === ''}
+                      minDate={addDays(new Date(), 180)}
+                      disabled={values.arriveDestination === ''}
                     />
                   </div>
                 </div>
 
-                <Link href="/singapore/step-two">
-                  <div className="py-8 text-center">
-                    <button
-                      className={`cursor-pointer w-fit items-center gap-3  rounded-full font-semibold text-white bg-primaryMain px-12 py-3 ${
-                        !isValid ? 'cursor-not-allowed opacity-50' : ''
-                      }`}
-                      disabled={!isValid}
-                      type="submit"
-                    >
-                      Next
-                    </button>
-                  </div>
-                </Link>
+                <div className="py-8 text-center">
+                  {postMutation.isError ? (
+                    <div className="text-red-500">
+                      An error occurred: {postMutation.error.message}
+                    </div>
+                  ) : null}
+                  <button
+                    className={`cursor-pointer w-fit items-center gap-3  rounded-full font-semibold text-white bg-primaryMain px-12 py-3 ${
+                      !isValid ? 'cursor-not-allowed opacity-50' : ''
+                    }`}
+                    disabled={!isValid}
+                    type="submit"
+                  >
+                    {postMutation.isPending ? (
+                      <>
+                        {' '}
+                        <ImSpinner2 className="animate-spin" />
+                      </>
+                    ) : (
+                      'Next'
+                    )}
+                  </button>
+                </div>
               </Form>
             )}
           </Formik>
