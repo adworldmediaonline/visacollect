@@ -56,18 +56,8 @@ const OurPopularDestination = () => {
       title: 'Egypt',
       link: '/egypt',
     },
-    {
-      id: 8,
-      imgSrc: '/assets/images/main/egypt.jpg',
-      title: 'Singapore',
-      link: '/singapore',
-    },
-    {
-      id: 9,
-      imgSrc: '/assets/images/main/egypt.jpg',
-      title: 'Malaysia',
-      link: '/malaysia',
-    },
+    
+  
   ];
 
   return (
@@ -113,7 +103,7 @@ const OurPopularDestination = () => {
           ))}
         </div>
         <div className="flex justify-center">
-          <Link href="/all-countries">
+          <Link href="#">
             <button className="flex px-12 py-2 mx-auto text-center btnBlue ">
               View All Countries
             </button>
