@@ -1,15 +1,22 @@
 import * as Yup from 'yup';
 const imageValidation = Yup.mixed()
-  .test('fileType', 'Invalid file format', value => {
-    if (!value) return true; // Skip validation if no file is selected
-    const supportedFormats = ['image/jpeg', 'image/png', 'image/gif'];
-    return supportedFormats.includes(value.type);
+  .test('fileFormat', 'Only PNG and JPG files are allowed', value => {
+    if (!value) {
+      return true;
+    }
+
+    if (value instanceof File) {
+      return ['image/png', 'image/jpeg'].includes(value.type);
+    }
+
+    if (typeof value === 'string') {
+      return true;
+    }
+
+    return false;
   })
-  .test('fileSize', 'File size is too large', value => {
-    if (!value) return true; // Skip validation if no file is selected
-    const maxSizeInBytes = 5 * 1024 * 1024; // 5MB
-    return value.size <= maxSizeInBytes;
-  });
+  .required('Please select a file or enter a URL');
+
 export const omanSchema = {
   peopleYupSchema: Yup.object().shape({
     firstName: Yup.string().required('First name is required'),
@@ -22,7 +29,12 @@ export const omanSchema = {
       'Passport coloured photo is required'
     ),
     profilePhoto: imageValidation.required('Profile photo is required'),
-    passportExpiryDate: Yup.date().required('Passport expiry date is required'),
+    passportExpiryDate: Yup.date()
+      .min(
+        new Date(new Date().getTime() + 180 * 24 * 60 * 60 * 1000),
+        'Passport expiry must be valid at least 6 months from Intended Date of Entry.'
+      )
+      .required('Passport expiry date is required'),
     dateOfBirth: Yup.date()
       .max(new Date(), 'Date of birth cannot be a future date')
       .required('Date of birth is required'),

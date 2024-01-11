@@ -459,7 +459,7 @@ const Page = ({ params }) => {
                   {malaysiaVisaApplicationData?.peoples?.length > 0 ? (
                     <Link
                       href={`/malaysia/payment/${malaysiaVisaApplicationData?._id}`}
-                      className="cursor-pointer w-fit items-center gap-3  rounded-full font-semibold text-white bg-primaryMain px-12 py-3"
+                      className="items-center gap-3 px-12 py-3 font-semibold text-white rounded-full cursor-pointer w-fit bg-primaryMain"
                     >
                       Next
                     </Link>
