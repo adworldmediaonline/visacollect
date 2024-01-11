@@ -75,6 +75,9 @@ const apiEndpoint = {
   MALAYSIA_VISA_APPLICATION: '/malaysiavisa/malaysiaVisaApplication',
   MALAYSIA_VISA_APPLICATION_PEOPLE:
     '/malaysiavisa/malaysiaVisaApplicationPeople',
+  // oman
+  OMAN_VISA_APPLICATION: '/omanvisa/omanVisaApplication',
+  OMAN_VISA_APPLICATION_PEOPLE: '/omanvisa/omanVisaApplicationPeople',
 };
 
 export default apiEndpoint;

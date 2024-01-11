@@ -5,10 +5,11 @@ import Heading from '@/components/australia/common/Heading';
 import SubHeading from '@/components/australia/common/SubHeading';
 import React from 'react';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
-import { getAllCountries } from '@/lib/getAllCountries';
 import { omanSchema } from '@/constant/omanSchema';
-import Select from 'react-select';
-import Link from 'next/link';
+import usePost from '@/hooks/usePost';
+import apiEndpoint from '@/services/apiEndpoint';
+import { ImSpinner2 } from 'react-icons/im';
+import CustomReactPhoneNumberInput from '@/components/common/CustomReactPhoneNumberInput';
 
 const options = [
   { value: 'hotel', label: 'Hotel' },
@@ -16,10 +17,16 @@ const options = [
   { value: 'Flight', label: 'Flight' },
   { value: 'airportTransfer', label: 'Airport Transfer' },
   { value: 'tourPackage', label: 'Tour Package' },
-]
-
+];
 
 function Page() {
+  const postMutation = usePost(
+    apiEndpoint.OMAN_VISA_APPLICATION,
+    1,
+    '/oman/step-two',
+    true,
+    'omanVisaApplication'
+  );
   return (
     <div>
       <div className="container  md:py-8 py-20 md;px-0 px-3 ">
@@ -27,27 +34,25 @@ function Page() {
 
         <div>
           <Formik
-            initialValues={omanSchema.initialValue}
-            // validationSchema={omanSchema.yupSchema}
+            initialValues={omanSchema.initialValues}
+            validationSchema={omanSchema.yupSchema}
             validateOnChange={true}
             validateOnMount={true}
             onSubmit={(values, { setSubmitting, resetForm }) => {
               console.log(values);
-              // postMutation.mutate({
-              //     ...values,
-              //     travelInsurance: {
-              //         ...values.travelInsurance,
-              //         insuranceFee: calculateTotalPrice(
-              //             values.travelInsurance.startDate,
-              //             values.travelInsurance.returnDate
-              //         ),
-              //     },
-              // });
+              postMutation.mutate(values);
               setSubmitting(false);
               // resetForm();
             }}
           >
-            {({ values, isValid, setFieldValue }) => (
+            {({
+              values,
+              isValid,
+              setFieldValue,
+              setFieldTouched,
+              errors,
+              touched,
+            }) => (
               <Form>
                 {console.log(values)}
                 <SubHeading subHead="General Details" />
@@ -57,19 +62,17 @@ function Page() {
                     <label>Your current address</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
                       type="text"
                       className="new-form-input"
-                      name="generalDetails.currentAddress"
-                      id="generalDetails.currentAddress"
+                      name="currentAddress"
+                      id="currentAddress"
                     />
 
-                    <ErrorMessage name="generalDetails.currentAddress">
+                    <ErrorMessage name="currentAddress">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -81,19 +84,17 @@ function Page() {
                     <label>City</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
                       type="text"
                       className="new-form-input"
-                      name="generalDetails.city"
-                      id="generalDetails.city"
+                      name="city"
+                      id="city"
                     />
 
-                    <ErrorMessage name="generalDetails.city">
+                    <ErrorMessage name="city">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -105,19 +106,17 @@ function Page() {
                     <label>State / Province</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
                       type="text"
                       className="new-form-input"
-                      name="generalDetails.state"
-                      id="generalDetails.state"
+                      name="state"
+                      id="state"
                     />
 
-                    <ErrorMessage name="generalDetails.state">
+                    <ErrorMessage name="state">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -130,19 +129,17 @@ function Page() {
                     <label>Zipcode / Pincode / Postal Code</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
                       type="text"
                       className="new-form-input"
-                      name="generalDetails.zipCode"
-                      id="generalDetails.zipCode"
+                      name="zipCode"
+                      id="zipCode"
                     />
 
-                    <ErrorMessage name="generalDetails.zipCode">
+                    <ErrorMessage name="zipCode">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -155,24 +152,17 @@ function Page() {
                     <label>Contact Number</label>
                   </div>
 
-                  <div className="mark-section group">
-
-                  </div>
+                  <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
-                    <Field
-                      required
-                      type="text"
+                    <CustomReactPhoneNumberInput
                       className="new-form-input"
-                      name="generalDetails.phoneNumber"
-                      id="generalDetails.phoneNumber"
+                      name="phoneNumber"
+                      setFieldValue={setFieldValue}
+                      errors={errors}
+                      touched={touched}
+                      setFieldTouched={setFieldTouched}
                     />
-
-                    <ErrorMessage name="generalDetails.phoneNumber">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
                   </div>
                 </div>
                 <div className="main-form-section">
@@ -183,24 +173,20 @@ function Page() {
                   <div className="mark-section group">
                     <BsQuestionCircleFill className=" side-icon" size={20} />
                     <div className="tooltip-content">
-                      For effective communication and timely updates, please enter your WhatsApp number.
+                      For effective communication and timely updates, please
+                      enter your WhatsApp number.
                     </div>
                   </div>
 
                   <div className="order-2 col-span-8">
-                    <Field
-                      required
-                      type="text"
+                    <CustomReactPhoneNumberInput
                       className="new-form-input"
-                      name="generalDetails.whatsappNumber"
-                      id="generalDetails.whatsappNumber"
+                      name="whatsappNumber"
+                      setFieldValue={setFieldValue}
+                      errors={errors}
+                      touched={touched}
+                      setFieldTouched={setFieldTouched}
                     />
-
-                    <ErrorMessage name="generalDetails.whatsappNumber">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
                   </div>
                 </div>
                 <div className="main-form-section">
@@ -211,7 +197,8 @@ function Page() {
                   <div className="mark-section group">
                     <BsQuestionCircleFill className=" side-icon" size={20} />
                     <div className="tooltip-content">
-                      The &apos;Arrival Date&apos; field is where you can specify the date you plan to arrive at your destination
+                      The &apos;Arrival Date&apos; field is where you can
+                      specify the date you plan to arrive at your destination
                     </div>
                   </div>
 
@@ -219,9 +206,9 @@ function Page() {
                     <ReactDatePickerInput
                       className="new-form-input"
                       name="arrivalDate"
-                      // selected={values.arrivalDate}
+                      selected={values.arrivalDate}
                       setFieldValue={setFieldValue}
-                      maxDate={new Date()}
+                      minDate={new Date()}
                     />
                     <ErrorMessage name="arrivalDate">
                       {errorMsg => (
@@ -238,7 +225,9 @@ function Page() {
                   <div className="mark-section group">
                     <BsQuestionCircleFill className=" side-icon" size={20} />
                     <div className="tooltip-content">
-                      Please enter a valid email address in this field. We will use this email address to communicate with you and send important updates.
+                      Please enter a valid email address in this field. We will
+                      use this email address to communicate with you and send
+                      important updates.
                     </div>
                   </div>
 
@@ -247,11 +236,11 @@ function Page() {
                       required
                       type="text"
                       className="new-form-input"
-                      name="generalDetails.email"
-                      id="generalDetails.email"
+                      name="email"
+                      id="email"
                     />
 
-                    <ErrorMessage name="generalDetails.email">
+                    <ErrorMessage name="email">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -270,16 +259,16 @@ function Page() {
                       required
                       component="select"
                       className="new-form-input"
-                      name="generalDetails.purposeOfVisit"
-                      id="generalDetails.purposeOfVisit"
+                      name="purposeOfVisit"
+                      id="purposeOfVisit"
                     >
                       <option value="">Select</option>
-                      <option value="">one</option>
-                      <option value="">two</option>
-                      <option value="">three</option>
+                      <option value="one">one</option>
+                      <option value="two">two</option>
+                      <option value="three">three</option>
                     </Field>
 
-                    <ErrorMessage name="generalDetails.purposeOfVisit">
+                    <ErrorMessage name="purposeOfVisit">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -294,27 +283,35 @@ function Page() {
                     name="termsAndConditions"
                     id="termsAndConditions"
                   />
-                  <h2>
-                    I have read and agree with the terms and conditions.
-                  </h2>
+                  <h2>I have read and agree with the terms and conditions.</h2>
                   <ErrorMessage name="termsAndConditions">
                     {errorMsg => <div style={{ color: 'red' }}>{errorMsg}</div>}
                   </ErrorMessage>
                 </div>
 
-                <Link href="/oman/step-two">
-                  <div className="py-8 text-center">
-                    <button
-                      className={`cursor-pointer w-fit items-center gap-3  rounded-full font-semibold text-white bg-primaryMain px-12 py-3 ${!isValid ? 'cursor-not-allowed opacity-50' : ''
-                        }`}
-                      disabled={!isValid}
-                      type="submit"
-                    >
-                      Next
-                    </button>
-                  </div>
-                </Link>
-
+                <div className="py-8 text-center">
+                  {postMutation.isError ? (
+                    <div className="text-red-500">
+                      An error occurred: {postMutation.error.message}
+                    </div>
+                  ) : null}
+                  <button
+                    className={`cursor-pointer w-fit items-center gap-3  rounded-full font-semibold text-white bg-primaryMain px-12 py-3 ${
+                      !isValid ? 'cursor-not-allowed opacity-50' : ''
+                    }`}
+                    disabled={!isValid}
+                    type="submit"
+                  >
+                    {postMutation.isPending ? (
+                      <>
+                        {' '}
+                        <ImSpinner2 className="animate-spin" />
+                      </>
+                    ) : (
+                      'Next'
+                    )}
+                  </button>
+                </div>
               </Form>
             )}
           </Formik>
