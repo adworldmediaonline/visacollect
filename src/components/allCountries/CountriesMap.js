@@ -67,6 +67,30 @@ export const CountriesMap = () => {
             title: 'Malaysia',
             link: '/malaysia',
         },
+        {
+            id: 11,
+            imgSrc: '/assets/images/main/indonesia.jpg',
+            title: 'Indonesia',
+            link: '/indonesia',
+        },
+        {
+            id: 12,
+            imgSrc: '/assets/images/main/hongkong.jpg',
+            title: 'Hongkong',
+            link: '/hongkong',
+        },
+        {
+            id: 13,
+            imgSrc: '/assets/images/main/morocco.jpg',
+            title: 'Morocco',
+            link: '/morocco',
+        },
+        {
+            id: 14,
+            imgSrc: '/assets/images/main/japan.jpg',
+            title: 'Japan',
+            link: '/japan',
+        },
     ];
 
     return (
