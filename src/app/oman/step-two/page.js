@@ -7,8 +7,6 @@ import React from 'react';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import { getAllCountries } from '@/lib/getAllCountries';
 import { omanSchema } from '@/constant/omanSchema';
-import Select from 'react-select';
-import Link from 'next/link';
 import SingleFileUpload from '@/components/srilanka/SingleFileUpload';
 import { LuImagePlus } from 'react-icons/lu';
 import Image from 'next/image';
