@@ -6,16 +6,15 @@ import { useRouter } from 'next/navigation';
 import useQueryGet from '@/hooks/useQuery';
 import apiEndpoint from '@/services/apiEndpoint';
 import { ImSpinner2 } from 'react-icons/im';
-import { format } from 'date-fns';
 import Link from 'next/link';
 
 const Page = ({ params }) => {
   const { id } = params;
   const router = useRouter();
   const getQuery = useQueryGet(
-    apiEndpoint.MALAYSIA_VISA_APPLICATION,
+    apiEndpoint.OMAN_VISA_APPLICATION,
     id,
-    'malaysiaVisaApplication'
+    'omanVisaApplication'
   );
 
   if (getQuery.isPending) {
@@ -28,14 +27,13 @@ const Page = ({ params }) => {
   }
 
   if (getQuery.error) {
-    return router.push('/malaysia/step-two');
+    return router.push('/oman/step-two');
   }
 
   if (getQuery.isSuccess) {
     const {
-      data: { data: malaysiaApplicationData },
+      data: { data: omanApplicationData },
     } = getQuery;
-
     return (
       <div className="container  md:py-8 py-20 md;px-0 px-3 ">
         <Heading formHead=" Visa Application Review" />
@@ -43,7 +41,7 @@ const Page = ({ params }) => {
         <div className=" flex justify-between items-center bg-[#0068E5] py-4 px-4 rounded-t-lg my-10">
           <h2 className="text-lg font-semibold text-white ">Order Summary</h2>
           <Link
-            href={`/malaysia/step-one/${malaysiaApplicationData?._id}`}
+            href={`/oman/step-one/${omanApplicationData?._id}`}
             className="px-10 py-2 bg-white rounded-lg text-primary"
           >
             Edit
@@ -52,18 +50,26 @@ const Page = ({ params }) => {
         <div className="space-y-2 divide-y-[1px] pt-5">
           <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
             <h2 className="py-1 text-sm font-semibold text-secondary">
-              Destination
+              Reference Id
             </h2>
             <p className="font-bold leading-relaxed tracking-wide text-justify ">
-              {malaysiaApplicationData?.destinationCountry}
+              name
             </p>
           </div>
           <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
             <h2 className="py-1 text-sm font-semibold text-secondary">
-              First Name and Middle Name
+              Destination
             </h2>
             <p className="font-bold leading-relaxed tracking-wide text-justify ">
-              {malaysiaApplicationData?.peoples[0]?.firstName}
+              name
+            </p>
+          </div>
+          <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
+            <h2 className="py-1 text-sm font-semibold text-secondary">
+              First Name
+            </h2>
+            <p className="font-bold leading-relaxed tracking-wide text-justify ">
+              number
             </p>
           </div>
           <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
@@ -71,7 +77,7 @@ const Page = ({ params }) => {
               Last Name
             </h2>
             <p className="font-bold leading-relaxed tracking-wide text-justify ">
-              {malaysiaApplicationData?.peoples[0]?.lastName}
+              number
             </p>
           </div>
           <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
@@ -79,7 +85,7 @@ const Page = ({ params }) => {
               Passport Number
             </h2>
             <p className="font-bold leading-relaxed tracking-wide text-justify ">
-              {malaysiaApplicationData?.peoples[0]?.passportNumber}
+              number
             </p>
           </div>
           <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
@@ -87,10 +93,7 @@ const Page = ({ params }) => {
               Date of Birth
             </h2>
             <p className="font-bold leading-relaxed tracking-wide text-justify ">
-              {format(
-                new Date(malaysiaApplicationData?.peoples[0]?.dateOfBirth),
-                'dd/MM/yyyy'
-              )}
+              number
             </p>
           </div>
         </div>

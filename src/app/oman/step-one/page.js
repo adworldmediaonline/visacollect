@@ -42,7 +42,7 @@ function Page() {
               console.log(values);
               postMutation.mutate(values);
               setSubmitting(false);
-              // resetForm();
+              resetForm();
             }}
           >
             {({

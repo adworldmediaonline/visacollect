@@ -21,6 +21,7 @@ import { FaEdit } from 'react-icons/fa';
 import { addDays, format } from 'date-fns';
 import usePost from '@/hooks/usePost';
 import useDelete from '@/hooks/useDelete';
+import useUpdate from '@/hooks/useUpdate';
 
 const options = [
   { value: 'hotel', label: 'Hotel' },
@@ -30,20 +31,21 @@ const options = [
   { value: 'tourPackage', label: 'Tour Package' },
 ];
 
-function Page() {
+function Page({ params }) {
   const { state } = useFormContext();
   const router = useRouter();
   const getQuery = useQueryGet(
     apiEndpoint.OMAN_VISA_APPLICATION,
-    state.formId,
+    state?.formId,
     'omanVisaApplication'
   );
 
-  const postMutation = usePost(
+  const updateMutation = useUpdate(
     apiEndpoint.OMAN_VISA_APPLICATION_PEOPLE,
-    'add person',
-    false,
-    false,
+    params?.id,
+    'form',
+    '/oman/step-two',
+    getQuery.refetch,
     'omanVisaApplication'
   );
 
@@ -51,7 +53,7 @@ function Page() {
     apiEndpoint.OMAN_VISA_APPLICATION_PEOPLE,
     getQuery.refetch,
     'omanVisaApplication',
-    'person deleted successfully',
+    'Person deleted successfully',
     false
   );
 
@@ -65,15 +67,20 @@ function Page() {
   }
 
   if (getQuery.error) {
-    return router.push('/oman/step-one');
+    return router.push('/oman/step-two');
   }
 
   if (getQuery.isSuccess) {
     const {
-      data: {
-        data: { __v, createdAt, updatedAt, ...omanVisaApplicationData },
-      },
+      data: { data: omanVisaApplicationData },
     } = getQuery;
+
+    const currentPeople = omanVisaApplicationData?.peoples?.find(
+      person => person?._id === params?.id
+    );
+
+    const { _id, updatedAt, createdAt, __v, formId, ...currentPeopleData } =
+      currentPeople;
     return (
       <div>
         <div className="container  md:py-8 py-20 md;px-0 px-3 ">
@@ -81,7 +88,7 @@ function Page() {
 
           <div>
             <Formik
-              initialValues={omanSchema.peopleInitialValues}
+              initialValues={currentPeopleData}
               validationSchema={omanSchema.peopleYupSchema}
               validateOnChange={true}
               validateOnMount={true}
@@ -101,15 +108,13 @@ function Page() {
                   }
                 });
 
-                postMutation.mutate(formData);
+                updateMutation.mutate(formData);
                 setSubmitting(false);
-                resetForm();
+                // resetForm();
               }}
             >
               {({ values, isValid, setFieldValue }) => (
                 <Form>
-                  {console.log(values)}
-
                   <SubHeading subHead="Personal Details" />
 
                   <div className="main-form-section">
@@ -221,7 +226,7 @@ function Page() {
                       <ReactDatePickerInput
                         className="new-form-input"
                         name="dateOfBirth"
-                        selected={values.dateOfBirth}
+                        selected={new Date(values.dateOfBirth)}
                         setFieldValue={setFieldValue}
                         maxDate={new Date()}
                       />
@@ -292,7 +297,7 @@ function Page() {
                       <ReactDatePickerInput
                         className="new-form-input"
                         name="passportExpiryDate"
-                        selected={values.passportExpiryDate}
+                        selected={new Date(values.passportExpiryDate)}
                         setFieldValue={setFieldValue}
                         minDate={addDays(new Date(), 180)}
                       />
@@ -336,16 +341,32 @@ function Page() {
                             <LuImagePlus size={40} className="text-gray-500" />
                           </label>
                         </div>
-                        {values.passportColouredPhoto ? (
+
+                        {values.passportColouredPhoto instanceof File ? (
                           <div className="flex items-center w-full">
-                            <Image
-                              src={URL.createObjectURL(
-                                values.passportColouredPhoto
-                              )}
-                              alt={`Uploaded Image`}
-                              width={100}
-                              height={100}
-                            />
+                            <div className="relative h-28 w-28">
+                              <Image
+                                src={URL.createObjectURL(
+                                  values.passportColouredPhoto
+                                )}
+                                alt="Uploaded Image"
+                                fill={true}
+                                sizes="100vw"
+                                className="object-cover"
+                              />
+                            </div>
+                          </div>
+                        ) : values.passportColouredPhoto ? (
+                          <div className="flex items-center w-full">
+                            <div className="relative h-28 w-28">
+                              <Image
+                                src={values.passportColouredPhoto}
+                                alt="Uploaded Image"
+                                fill={true}
+                                sizes="100vw"
+                                className="object-cover"
+                              />
+                            </div>
                           </div>
                         ) : (
                           <div className="text-sm">
@@ -386,7 +407,7 @@ function Page() {
                             value={values.profilePhoto}
                             errorMessage={
                               <ErrorMessage
-                                name="profilePhoto"
+                                name="profilePicture"
                                 component="div"
                               />
                             }
@@ -400,14 +421,30 @@ function Page() {
                             <LuImagePlus size={40} className="text-gray-500" />
                           </label>
                         </div>
-                        {values.profilePhoto ? (
+
+                        {values.profilePhoto instanceof File ? (
                           <div className="flex items-center w-full">
-                            <Image
-                              src={URL.createObjectURL(values.profilePhoto)}
-                              alt={`Uploaded Image`}
-                              width={100}
-                              height={100}
-                            />
+                            <div className="relative h-28 w-28">
+                              <Image
+                                src={URL.createObjectURL(values.profilePhoto)}
+                                alt="Uploaded Image"
+                                fill={true}
+                                sizes="100vw"
+                                className="object-cover"
+                              />
+                            </div>
+                          </div>
+                        ) : values.profilePhoto ? (
+                          <div className="flex items-center w-full">
+                            <div className="relative h-28 w-28">
+                              <Image
+                                src={values.profilePhoto}
+                                alt="Uploaded Image"
+                                fill={true}
+                                sizes="100vw"
+                                className="object-cover"
+                              />
+                            </div>
                           </div>
                         ) : (
                           <div className="text-sm">
@@ -427,9 +464,9 @@ function Page() {
                   </div>
 
                   <div className="py-8 text-center">
-                    {postMutation.isError ? (
+                    {updateMutation.isError ? (
                       <div className="text-red-500">
-                        An error occurred: {postMutation.error.message}
+                        An error occurred: {updateMutation.error.message}
                       </div>
                     ) : null}
                     <button
@@ -439,12 +476,12 @@ function Page() {
                       disabled={!isValid}
                       type="submit"
                     >
-                      {postMutation.isPending ? (
+                      {updateMutation.isPending ? (
                         <>
                           <ImSpinner2 className="animate-spin" /> Loading
                         </>
                       ) : (
-                        '+ Add Another person'
+                        'Update'
                       )}
                     </button>
                   </div>
@@ -480,58 +517,60 @@ function Page() {
                     </thead>
                     <tbody>
                       {omanVisaApplicationData?.peoples?.length > 0 ? (
-                        omanVisaApplicationData?.peoples?.map(people => (
-                          <tr key={people._id}>
-                            <td className="px-3 py-2">
-                              <div className="order-2 col-span-8 text-center">
-                                {people?.firstName}
-                              </div>
-                            </td>
+                        omanVisaApplicationData?.peoples
+                          ?.filter(people => people?._id !== params?.id)
+                          .map(people => (
+                            <tr key={people._id}>
+                              <td className="px-3 py-2">
+                                <div className="order-2 col-span-8 text-center">
+                                  {people?.firstName}
+                                </div>
+                              </td>
 
-                            <td>
-                              <div className="order-2 col-span-8 text-center">
-                                {people?.lastName}
-                              </div>
-                            </td>
+                              <td>
+                                <div className="order-2 col-span-8 text-center">
+                                  {people?.lastName}
+                                </div>
+                              </td>
 
-                            <td className="px-3 py-2">
-                              <div className="order-2 col-span-8 text-center">
-                                {people?.gender}
-                              </div>
-                            </td>
+                              <td className="px-3 py-2">
+                                <div className="order-2 col-span-8 text-center">
+                                  {people?.gender}
+                                </div>
+                              </td>
 
-                            <td>
-                              <div className="order-2 col-span-8 text-center">
-                                {format(
-                                  new Date(people?.dateOfBirth),
-                                  'dd/MM/yyyy'
-                                )}
-                              </div>
-                            </td>
+                              <td>
+                                <div className="order-2 col-span-8 text-center">
+                                  {format(
+                                    new Date(people?.dateOfBirth),
+                                    'dd/MM/yyyy'
+                                  )}
+                                </div>
+                              </td>
 
-                            <td className="flex justify-center space-x-3">
-                              <Link href={`/oman/step-two/${people?._id}`}>
-                                <FaEdit className="text-primary" size={30} />
-                              </Link>
+                              <td className="flex justify-center space-x-3">
+                                <Link href={`/oman/step-two/${people?._id}`}>
+                                  <FaEdit className="text-primary" size={30} />
+                                </Link>
 
-                              <button
-                                type="button"
-                                onClick={() =>
-                                  deleteMutation.mutate(people?._id)
-                                }
-                              >
-                                {deleteMutation.isPending ? (
-                                  <ImSpinner2 className="animate-spin" />
-                                ) : (
-                                  <MdDeleteOutline
-                                    className="text-primary"
-                                    size={30}
-                                  />
-                                )}
-                              </button>
-                            </td>
-                          </tr>
-                        ))
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    deleteMutation.mutate(people?._id)
+                                  }
+                                >
+                                  {deleteMutation.isPending ? (
+                                    <ImSpinner2 className="animate-spin" />
+                                  ) : (
+                                    <MdDeleteOutline
+                                      className="text-primary"
+                                      size={30}
+                                    />
+                                  )}
+                                </button>
+                              </td>
+                            </tr>
+                          ))
                       ) : (
                         <tr>
                           <td>No People found</td>
