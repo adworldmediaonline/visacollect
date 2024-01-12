@@ -1,44 +1,56 @@
 'use client';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { BsQuestionCircleFill } from 'react-icons/bs';
-import SubHeading from '@/components/australia/common/SubHeading';
 import Heading from '@/components/australia/common/Heading';
-import { getAllCountries } from '@/lib/getAllCountries';
+import SubHeading from '@/components/australia/common/SubHeading';
+import React from 'react';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
-import { MdDeleteOutline } from 'react-icons/md';
-import { FaEdit } from 'react-icons/fa';
-import Link from 'next/link';
-import { singaporeSchema } from '@/constant/singaporeSchema';
-import { ImSpinner2 } from 'react-icons/im';
-import usePost from '@/hooks/usePost';
+import { getAllCountries } from '@/lib/getAllCountries';
+import { omanSchema } from '@/constant/omanSchema';
+import SingleFileUpload from '@/components/srilanka/SingleFileUpload';
+import { LuImagePlus } from 'react-icons/lu';
+import Image from 'next/image';
 import { useFormContext } from '@/context/formContext';
 import { useRouter } from 'next/navigation';
 import useQueryGet from '@/hooks/useQuery';
 import apiEndpoint from '@/services/apiEndpoint';
-import useDelete from '@/hooks/useDelete';
+import { ImSpinner2 } from 'react-icons/im';
+import Link from 'next/link';
+import { MdDeleteOutline } from 'react-icons/md';
+import { FaEdit } from 'react-icons/fa';
 import { addDays, format } from 'date-fns';
+import usePost from '@/hooks/usePost';
+import useDelete from '@/hooks/useDelete';
 
-const Page = () => {
+const options = [
+  { value: 'hotel', label: 'Hotel' },
+  { value: 'toursAndctivity', label: 'Tours & Activity' },
+  { value: 'Flight', label: 'Flight' },
+  { value: 'airportTransfer', label: 'Airport Transfer' },
+  { value: 'tourPackage', label: 'Tour Package' },
+];
+
+function Page() {
   const { state } = useFormContext();
   const router = useRouter();
   const getQuery = useQueryGet(
-    apiEndpoint.SINGAPORE_VISA_APPLICATION,
+    apiEndpoint.OMAN_VISA_APPLICATION,
     state.formId,
-    'singaporeVisaApplication'
+    'omanVisaApplication'
   );
 
   const postMutation = usePost(
-    apiEndpoint.SINGAPORE_VISA_APPLICATION_PEOPLE,
+    apiEndpoint.OMAN_VISA_APPLICATION_PEOPLE,
     'add person',
     false,
     false,
-    'singaporeVisaApplication'
+    'omanVisaApplication'
   );
 
   const deleteMutation = useDelete(
-    apiEndpoint.SINGAPORE_VISA_APPLICATION_PEOPLE,
+    apiEndpoint.OMAN_VISA_APPLICATION_PEOPLE,
     getQuery.refetch,
-    'singaporeVisaApplication',
+    'omanVisaApplication',
     'person deleted successfully',
     false
   );
@@ -53,56 +65,65 @@ const Page = () => {
   }
 
   if (getQuery.error) {
-    return router.push('/singapore/step-one');
+    return router.push('/morocco/step-one');
   }
 
   if (getQuery.isSuccess) {
     const {
       data: {
-        data: { __v, createdAt, updatedAt, ...singaporeVisaApplicationData },
+        data: { __v, createdAt, updatedAt, ...omanVisaApplicationData },
       },
     } = getQuery;
     return (
       <div>
         <div className="container  md:py-8 py-20 md;px-0 px-3 ">
-          <Heading formHead="Apply Now for Singapore Application" />
+          <Heading formHead=" Visa Application Form " />
 
           <div>
             <Formik
-              initialValues={singaporeSchema.personInitialValues}
-              validationSchema={singaporeSchema.personYupSchema}
+              initialValues={omanSchema.peopleInitialValues}
+              validationSchema={omanSchema.peopleYupSchema}
               validateOnChange={true}
               validateOnMount={true}
               onSubmit={(values, { setSubmitting, resetForm }) => {
-                postMutation.mutate({
+                const formData = new FormData();
+
+                Object.entries({
                   ...values,
-                  formId: singaporeVisaApplicationData._id,
+                  formId: omanVisaApplicationData._id,
+                }).forEach(([key, value]) => {
+                  if (Array.isArray(value)) {
+                    formData.append(key, JSON.stringify(value));
+                  } else if (value instanceof File) {
+                    formData.append(key, value);
+                  } else {
+                    formData.append(key, value);
+                  }
                 });
+
+                postMutation.mutate(formData);
                 setSubmitting(false);
-                // resetForm();
+                resetForm();
               }}
             >
               {({ values, isValid, setFieldValue }) => (
                 <Form>
-                  <SubHeading subHead="Your Applicant Information" />
+                  <SubHeading subHead="Personal Details" />
 
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label>First name and middle name </label>
+                      <label>First Name</label>
                     </div>
+
+                    <div className="mark-section group"></div>
 
                     <div className="order-2 col-span-8">
                       <Field
-                        required
+                        type="text"
                         className="new-form-input"
                         name="firstName"
                         id="firstName"
                       />
-                      <div className="text-xs text-gray-400">
-                        Including a middle name is recommended, but it&apos;s
-                        not required if you don&apos;t have one and Enter this
-                        information as it appears in your passport.
-                      </div>
 
                       <ErrorMessage name="firstName">
                         {errorMsg => (
@@ -111,22 +132,20 @@ const Page = () => {
                       </ErrorMessage>
                     </div>
                   </div>
-
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label>Last name </label>
+                      <label>Last Name </label>
                     </div>
+
+                    <div className="mark-section group"></div>
 
                     <div className="order-2 col-span-8">
                       <Field
-                        required
+                        type="text"
                         className="new-form-input"
                         name="lastName"
                         id="lastName"
                       />
-                      <div className="text-xs text-gray-400">
-                        Enter this information as it appears in your passport.
-                      </div>
 
                       <ErrorMessage name="lastName">
                         {errorMsg => (
@@ -135,26 +154,24 @@ const Page = () => {
                       </ErrorMessage>
                     </div>
                   </div>
-
                   <div className="main-form-section">
                     <div className="label-section">
                       <label>Nationality</label>
                     </div>
 
+                    <div className="mark-section group"></div>
+
                     <div className="order-2 col-span-8">
                       <Field
                         required
-                        id="nationality"
-                        name="nationality"
                         component="select"
                         className="new-form-input"
+                        name="nationality"
+                        id="nationality"
                       >
                         <option value="">Select</option>
                         {getAllCountries()}
                       </Field>
-                      <div className="text-xs text-gray-400">
-                        Select the nationality listed on your passport.
-                      </div>
 
                       <ErrorMessage name="nationality">
                         {errorMsg => (
@@ -163,149 +180,37 @@ const Page = () => {
                       </ErrorMessage>
                     </div>
                   </div>
-
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label> Gender </label>
-                    </div>
-
-                    <div className="order-2 col-span-8">
-                      <Field
-                        required
-                        id="gender"
-                        name="gender"
-                        component="select"
-                        className="new-form-input"
-                      >
-                        <option value="">Select</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                      </Field>
-                      <div className="text-xs text-gray-400">
-                        Select the gender listed on your passport.
-                      </div>
-
-                      <ErrorMessage name="gender">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                  </div>
-
-                  <div className="main-form-section">
-                    <div className="label-section">
-                      <label>Country of birth </label>
-                    </div>
-
-                    <div className="order-2 col-span-8">
-                      <Field
-                        required
-                        id="countryOfBirth"
-                        name="countryOfBirth"
-                        component="select"
-                        className="new-form-input"
-                      >
-                        <option value="">Select</option>
-                        {getAllCountries()}
-                      </Field>
-
-                      <ErrorMessage name="countryOfBirth">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                  </div>
-                  <div className="main-form-section">
-                    <div className="label-section">
-                      <label>Country of residence </label>
-                    </div>
-
-                    <div className="order-2 col-span-8">
-                      <Field
-                        required
-                        id="countryOfResidence"
-                        name="countryOfResidence"
-                        component="select"
-                        className="new-form-input"
-                      >
-                        <option value="">Select</option>
-                        {getAllCountries()}
-                      </Field>
-
-                      <ErrorMessage name="countryOfResidence">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                  </div>
-
-                  <div className="main-form-section">
-                    <div className="label-section">
-                      <label>Passport number</label>
-                    </div>
-
-                    <div className="order-2 col-span-8">
-                      <Field
-                        type="text"
-                        className="new-form-input"
-                        name="passportNumber"
-                      />
-
-                      <ErrorMessage name="passportNumber">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                  </div>
-
-                  <div className="main-form-section">
-                    <div className="label-section">
-                      <label>Passport Issue date</label>
+                      <label>Entry Type</label>
                     </div>
 
                     <div className="mark-section group"></div>
 
                     <div className="order-2 col-span-8">
-                      <ReactDatePickerInput
+                      <Field
+                        required
+                        component="select"
                         className="new-form-input"
-                        name="passportIssueDate"
-                        selected={values.passportIssueDate}
-                        setFieldValue={setFieldValue}
-                        maxDate={new Date()}
-                      />
-                      <ErrorMessage name="passportIssueDate">
+                        name="entryType"
+                        id="entryType"
+                      >
+                        <option value="">Select</option>
+                        <option value="30 days">30 days</option>
+                        <option value="1 year">1 year</option>
+                        <option value="10 days">10 days</option>
+                      </Field>
+
+                      <ErrorMessage name="entryType">
                         {errorMsg => (
                           <div style={{ color: 'red' }}>{errorMsg}</div>
                         )}
                       </ErrorMessage>
                     </div>
                   </div>
-
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label>Passport expiration date</label>
-                    </div>
-
-                    <div className="mark-section group"></div>
-
-                    <div className="order-2 col-span-8">
-                      <ReactDatePickerInput
-                        className="new-form-input"
-                        name="passportExpirationDate"
-                        selected={values.passportExpirationDate}
-                        setFieldValue={setFieldValue}
-                        minDate={addDays(new Date(), 180)}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="main-form-section">
-                    <div className="label-section">
-                      <label>Date of birth</label>
+                      <label>Date of Birth</label>
                     </div>
 
                     <div className="mark-section group"></div>
@@ -316,8 +221,7 @@ const Page = () => {
                         name="dateOfBirth"
                         selected={values.dateOfBirth}
                         setFieldValue={setFieldValue}
-                        maxDate={values.passportIssueDate}
-                        disabled={values.passportIssueDate === ''}
+                        maxDate={new Date()}
                       />
                       <ErrorMessage name="dateOfBirth">
                         {errorMsg => (
@@ -325,6 +229,199 @@ const Page = () => {
                         )}
                       </ErrorMessage>
                     </div>
+                  </div>
+                  <div className="main-form-section">
+                    <div className="label-section">
+                      <label>Gender</label>
+                    </div>
+
+                    <div className="mark-section group"></div>
+                    <div className="order-2 col-span-8">
+                      <Field
+                        type="text"
+                        component="select"
+                        className="new-form-input"
+                        name="gender"
+                        id="gender"
+                      >
+                        <option value="">Select</option>
+
+                        <option value="male">MALE</option>
+                        <option value="female">FEMALE</option>
+                      </Field>
+
+                      <ErrorMessage name="gender">
+                        {errorMsg => (
+                          <div style={{ color: 'red' }}>{errorMsg}</div>
+                        )}
+                      </ErrorMessage>
+                    </div>
+                  </div>
+                  <div className="main-form-section">
+                    <div className="label-section">
+                      <label>Passport Number </label>
+                    </div>
+
+                    <div className="mark-section group"></div>
+
+                    <div className="order-2 col-span-8">
+                      <Field
+                        type="text"
+                        className="new-form-input"
+                        name="passportNumber"
+                        id="passportNumber"
+                      />
+
+                      <ErrorMessage name="passportNumber">
+                        {errorMsg => (
+                          <div style={{ color: 'red' }}>{errorMsg}</div>
+                        )}
+                      </ErrorMessage>
+                    </div>
+                  </div>
+                  <div className="main-form-section">
+                    <div className="label-section">
+                      <label>Passport Expiry Date *</label>
+                    </div>
+
+                    <div className="mark-section group"></div>
+
+                    <div className="order-2 col-span-8">
+                      <ReactDatePickerInput
+                        className="new-form-input"
+                        name="passportExpiryDate"
+                        selected={values.passportExpiryDate}
+                        setFieldValue={setFieldValue}
+                        minDate={addDays(new Date(), 180)}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="main-form-section">
+                    <div className="label-section">
+                      <label>Passport Colored Picture</label>
+                    </div>
+
+                    <div className="mark-section group">
+                      <BsQuestionCircleFill className=" side-icon" size={20} />
+                      <div className="tooltip-content">
+                        Please upload passport picture
+                      </div>
+                    </div>
+
+                    {/* upload file start  */}
+                    <div className="order-2 col-span-8">
+                      <div className="flex items-center w-full h-full gap-8 p-2 mb-5 overflow-hidden border rounded-md">
+                        <div className="bg-gray-200 rounded-lg">
+                          <SingleFileUpload
+                            id="passportColouredPhoto"
+                            name="passportColouredPhoto"
+                            setFieldValue={setFieldValue}
+                            value={values.passportColouredPhoto}
+                            errorMessage={
+                              <ErrorMessage
+                                name="passportColouredPhoto"
+                                component="div"
+                              />
+                            }
+                            accept="image/png, image/jpeg"
+                          />
+
+                          <label
+                            htmlFor="passportColouredPhoto"
+                            className="relative flex items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center"
+                          >
+                            <LuImagePlus size={40} className="text-gray-500" />
+                          </label>
+                        </div>
+                        {values.passportColouredPhoto ? (
+                          <div className="flex items-center w-full">
+                            <Image
+                              src={URL.createObjectURL(
+                                values.passportColouredPhoto
+                              )}
+                              alt={`Uploaded Image`}
+                              width={100}
+                              height={100}
+                            />
+                          </div>
+                        ) : (
+                          <div className="text-sm">
+                            <p>Choose the Photo To Upload</p>
+                            <p>No file chosen yet</p>
+                          </div>
+                        )}
+                      </div>
+
+                      <ErrorMessage name="passportColouredPhoto">
+                        {errorMsg => (
+                          <div style={{ color: 'red' }}>{errorMsg}</div>
+                        )}
+                      </ErrorMessage>
+                    </div>
+                    {/* upload file end  */}
+                  </div>
+                  <div className="main-form-section">
+                    <div className="label-section">
+                      <label>Colored Photograph</label>
+                    </div>
+
+                    <div className="mark-section group">
+                      <BsQuestionCircleFill className=" side-icon" size={20} />
+                      <div className="tooltip-content">
+                        Please upload your colored picture
+                      </div>
+                    </div>
+
+                    {/* upload file start  */}
+                    <div className="order-2 col-span-8">
+                      <div className="flex items-center w-full h-full gap-8 p-2 mb-5 overflow-hidden border rounded-md">
+                        <div className="bg-gray-200 rounded-lg">
+                          <SingleFileUpload
+                            id="profilePhoto"
+                            name="profilePhoto"
+                            setFieldValue={setFieldValue}
+                            value={values.profilePhoto}
+                            errorMessage={
+                              <ErrorMessage
+                                name="profilePhoto"
+                                component="div"
+                              />
+                            }
+                            accept="image/png, image/jpeg"
+                          />
+
+                          <label
+                            htmlFor="profilePhoto"
+                            className="relative flex items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center"
+                          >
+                            <LuImagePlus size={40} className="text-gray-500" />
+                          </label>
+                        </div>
+                        {values.profilePhoto ? (
+                          <div className="flex items-center w-full">
+                            <Image
+                              src={URL.createObjectURL(values.profilePhoto)}
+                              alt={`Uploaded Image`}
+                              width={100}
+                              height={100}
+                            />
+                          </div>
+                        ) : (
+                          <div className="text-sm">
+                            <p>Choose the Photo To Upload</p>
+                            <p>No file chosen yet</p>
+                          </div>
+                        )}
+                      </div>
+
+                      <ErrorMessage name="profilePhoto">
+                        {errorMsg => (
+                          <div style={{ color: 'red' }}>{errorMsg}</div>
+                        )}
+                      </ErrorMessage>
+                    </div>
+                    {/* upload file end  */}
                   </div>
 
                   <div className="py-8 text-center">
@@ -380,8 +477,8 @@ const Page = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {singaporeVisaApplicationData?.peoples?.length > 0 ? (
-                        singaporeVisaApplicationData?.peoples?.map(people => (
+                      {omanVisaApplicationData?.peoples?.length > 0 ? (
+                        omanVisaApplicationData?.peoples?.map(people => (
                           <tr key={people._id}>
                             <td className="px-3 py-2">
                               <div className="order-2 col-span-8 text-center">
@@ -411,7 +508,7 @@ const Page = () => {
                             </td>
 
                             <td className="flex justify-center space-x-3">
-                              <Link href={`/singapore/step-two/${people?._id}`}>
+                              <Link href={`/oman/step-two/${people?._id}`}>
                                 <FaEdit className="text-primary" size={30} />
                               </Link>
 
@@ -445,10 +542,10 @@ const Page = () => {
                       ) : null}
                     </tbody>
                   </table>
-                  {singaporeVisaApplicationData?.peoples?.length > 0 ? (
+                  {omanVisaApplicationData?.peoples?.length > 0 ? (
                     <Link
-                      href={`/singapore/payment/${singaporeVisaApplicationData?._id}`}
-                      className="cursor-pointer w-fit items-center gap-3  rounded-full font-semibold text-white bg-primaryMain px-12 py-3"
+                      href={`/oman/payment/${omanVisaApplicationData?._id}`}
+                      className="items-center gap-3 px-12 py-3 font-semibold text-white rounded-full cursor-pointer w-fit bg-primaryMain"
                     >
                       Next
                     </Link>
@@ -461,6 +558,6 @@ const Page = () => {
       </div>
     );
   }
-};
+}
 
 export default Page;

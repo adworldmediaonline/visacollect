@@ -17,21 +17,23 @@ import useQueryGet from '@/hooks/useQuery';
 import apiEndpoint from '@/services/apiEndpoint';
 import useDelete from '@/hooks/useDelete';
 import { addDays, format } from 'date-fns';
+import useUpdate from '@/hooks/useUpdate';
 
-const Page = () => {
+const Page = ({ params }) => {
   const { state } = useFormContext();
   const router = useRouter();
   const getQuery = useQueryGet(
     apiEndpoint.SINGAPORE_VISA_APPLICATION,
-    state.formId,
+    state?.formId,
     'singaporeVisaApplication'
   );
 
-  const postMutation = usePost(
+  const updateMutation = useUpdate(
     apiEndpoint.SINGAPORE_VISA_APPLICATION_PEOPLE,
-    'add person',
-    false,
-    false,
+    params?.id,
+    'form',
+    '/japan/step-two',
+    getQuery.refetch,
     'singaporeVisaApplication'
   );
 
@@ -39,7 +41,7 @@ const Page = () => {
     apiEndpoint.SINGAPORE_VISA_APPLICATION_PEOPLE,
     getQuery.refetch,
     'singaporeVisaApplication',
-    'person deleted successfully',
+    'Person deleted successfully',
     false
   );
 
@@ -53,28 +55,33 @@ const Page = () => {
   }
 
   if (getQuery.error) {
-    return router.push('/singapore/step-one');
+    return router.push('/japan/step-two');
   }
 
   if (getQuery.isSuccess) {
     const {
-      data: {
-        data: { __v, createdAt, updatedAt, ...singaporeVisaApplicationData },
-      },
+      data: { data: singaporeVisaApplicationData },
     } = getQuery;
+
+    const currentPeople = singaporeVisaApplicationData?.peoples?.find(
+      person => person?._id === params?.id
+    );
+
+    const { _id, updatedAt, createdAt, __v, formId, ...currentPeopleData } =
+      currentPeople;
     return (
       <div>
         <div className="container  md:py-8 py-20 md;px-0 px-3 ">
-          <Heading formHead="Apply Now for Singapore Application" />
+          <Heading formHead="Apply Now for Japan Application" />
 
           <div>
             <Formik
-              initialValues={singaporeSchema.personInitialValues}
+              initialValues={currentPeopleData}
               validationSchema={singaporeSchema.personYupSchema}
               validateOnChange={true}
               validateOnMount={true}
               onSubmit={(values, { setSubmitting, resetForm }) => {
-                postMutation.mutate({
+                updateMutation.mutate({
                   ...values,
                   formId: singaporeVisaApplicationData._id,
                 });
@@ -273,7 +280,7 @@ const Page = () => {
                       <ReactDatePickerInput
                         className="new-form-input"
                         name="passportIssueDate"
-                        selected={values.passportIssueDate}
+                        selected={new Date(values.passportIssueDate)}
                         setFieldValue={setFieldValue}
                         maxDate={new Date()}
                       />
@@ -296,7 +303,7 @@ const Page = () => {
                       <ReactDatePickerInput
                         className="new-form-input"
                         name="passportExpirationDate"
-                        selected={values.passportExpirationDate}
+                        selected={new Date(values.passportExpirationDate)}
                         setFieldValue={setFieldValue}
                         minDate={addDays(new Date(), 180)}
                       />
@@ -314,7 +321,7 @@ const Page = () => {
                       <ReactDatePickerInput
                         className="new-form-input"
                         name="dateOfBirth"
-                        selected={values.dateOfBirth}
+                        selected={new Date(values.dateOfBirth)}
                         setFieldValue={setFieldValue}
                         maxDate={values.passportIssueDate}
                         disabled={values.passportIssueDate === ''}
@@ -328,9 +335,9 @@ const Page = () => {
                   </div>
 
                   <div className="py-8 text-center">
-                    {postMutation.isError ? (
+                    {updateMutation.isError ? (
                       <div className="text-red-500">
-                        An error occurred: {postMutation.error.message}
+                        An error occurred: {updateMutation.error.message}
                       </div>
                     ) : null}
                     <button
@@ -340,12 +347,12 @@ const Page = () => {
                       disabled={!isValid}
                       type="submit"
                     >
-                      {postMutation.isPending ? (
+                      {updateMutation.isPending ? (
                         <>
                           <ImSpinner2 className="animate-spin" /> Loading
                         </>
                       ) : (
-                        '+ Add Another person'
+                        'Update'
                       )}
                     </button>
                   </div>
@@ -381,58 +388,62 @@ const Page = () => {
                     </thead>
                     <tbody>
                       {singaporeVisaApplicationData?.peoples?.length > 0 ? (
-                        singaporeVisaApplicationData?.peoples?.map(people => (
-                          <tr key={people._id}>
-                            <td className="px-3 py-2">
-                              <div className="order-2 col-span-8 text-center">
-                                {people?.firstName}
-                              </div>
-                            </td>
+                        singaporeVisaApplicationData?.peoples
+                          ?.filter(people => people?._id !== params?.id)
+                          .map(people => (
+                            <tr key={people._id}>
+                              <td className="px-3 py-2">
+                                <div className="order-2 col-span-8 text-center">
+                                  {people?.firstName}
+                                </div>
+                              </td>
 
-                            <td>
-                              <div className="order-2 col-span-8 text-center">
-                                {people?.lastName}
-                              </div>
-                            </td>
+                              <td>
+                                <div className="order-2 col-span-8 text-center">
+                                  {people?.lastName}
+                                </div>
+                              </td>
 
-                            <td className="px-3 py-2">
-                              <div className="order-2 col-span-8 text-center">
-                                {people?.gender}
-                              </div>
-                            </td>
+                              <td className="px-3 py-2">
+                                <div className="order-2 col-span-8 text-center">
+                                  {people?.gender}
+                                </div>
+                              </td>
 
-                            <td>
-                              <div className="order-2 col-span-8 text-center">
-                                {format(
-                                  new Date(people?.dateOfBirth),
-                                  'dd/MM/yyyy'
-                                )}
-                              </div>
-                            </td>
+                              <td>
+                                <div className="order-2 col-span-8 text-center">
+                                  {format(
+                                    new Date(people?.dateOfBirth),
+                                    'dd/MM/yyyy'
+                                  )}
+                                </div>
+                              </td>
 
-                            <td className="flex justify-center space-x-3">
-                              <Link href={`/singapore/step-two/${people?._id}`}>
-                                <FaEdit className="text-primary" size={30} />
-                              </Link>
+                              <td className="flex justify-center space-x-3">
+                                <Link
+                                  href={`/singapore/step-two/${people?._id}`}
+                                >
+                                  <FaEdit className="text-primary" size={30} />
+                                </Link>
 
-                              <button
-                                type="button"
-                                onClick={() =>
-                                  deleteMutation.mutate(people?._id)
-                                }
-                              >
-                                {deleteMutation.isPending ? (
-                                  <ImSpinner2 className="animate-spin" />
-                                ) : (
-                                  <MdDeleteOutline
-                                    className="text-primary"
-                                    size={30}
-                                  />
-                                )}
-                              </button>
-                            </td>
-                          </tr>
-                        ))
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    deleteMutation.mutate(people?._id)
+                                  }
+                                >
+                                  {deleteMutation.isPending ? (
+                                    <ImSpinner2 className="animate-spin" />
+                                  ) : (
+                                    <MdDeleteOutline
+                                      className="text-primary"
+                                      size={30}
+                                    />
+                                  )}
+                                </button>
+                              </td>
+                            </tr>
+                          ))
                       ) : (
                         <tr>
                           <td>No People found</td>
