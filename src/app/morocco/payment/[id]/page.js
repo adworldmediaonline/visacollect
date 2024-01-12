@@ -2,61 +2,46 @@
 import SubHeading from '@/components/australia/common/SubHeading';
 import Heading from '@/components/australia/common/Heading';
 import React from 'react';
-import { useFormContext } from '@/context/formContext';
 import { useRouter } from 'next/navigation';
 import useQueryGet from '@/hooks/useQuery';
 import apiEndpoint from '@/services/apiEndpoint';
-import usePostPayment from '@/hooks/usePostPayment';
+import { ImSpinner2 } from 'react-icons/im';
 import Link from 'next/link';
 
-const Page = () => {
-  const { state } = useFormContext();
+const Page = ({ params }) => {
+  const { id } = params;
   const router = useRouter();
   const getQuery = useQueryGet(
-    apiEndpoint.CAMBODIA_VISA_APPLICATION,
-    state.formId,
-    'cambodiaVisaApplication'
+    apiEndpoint.OMAN_VISA_APPLICATION,
+    id,
+    'omanVisaApplication'
   );
-
-  // const makePaymentMutation = usePostPayment(
-  //   apiEndpoint.CAMBODIA_VISA_APPLICATION_PAYMENT,
-  //   'Payment completed successfully',
-  //   // '/australia/application/payment/success',
-  //   false,
-  //   'cambodiaVisaApplication'
-  // );
 
   if (getQuery.isPending) {
     return (
       <div className="flex items-center justify-center flex-1 h-full pt-20">
-        {/* <ImSpinner2 className="w-4 h-4 text-black animate-spin" /> */}
+        <ImSpinner2 className="w-4 h-4 text-black animate-spin" />
         loading
       </div>
     );
   }
 
   if (getQuery.error) {
-    return router.push('/cambodia/application');
+    return router.push('/oman/step-two');
   }
 
   if (getQuery.isSuccess) {
-    const { data: applicationData } = getQuery.data;
-
-    // const makePayment = async () => {
-    //   makePaymentMutation.mutate({
-    //     evisaFee: 59,
-    //     formId: applicationData._id,
-    //   });
-    // };
-
+    const {
+      data: { data: omanApplicationData },
+    } = getQuery;
     return (
       <div className="container  md:py-8 py-20 md;px-0 px-3 ">
-        <Heading formHead=" ETA Visa to Cambodia Application" />
+        <Heading formHead=" Visa Application Review" />
 
         <div className=" flex justify-between items-center bg-[#0068E5] py-4 px-4 rounded-t-lg my-10">
           <h2 className="text-lg font-semibold text-white ">Order Summary</h2>
           <Link
-            href={`/cambodia/application/${applicationData?._id}`}
+            href={`/oman/step-one/${omanApplicationData?._id}`}
             className="px-10 py-2 bg-white rounded-lg text-primary"
           >
             Edit
@@ -65,22 +50,34 @@ const Page = () => {
         <div className="space-y-2 divide-y-[1px] pt-5">
           <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
             <h2 className="py-1 text-sm font-semibold text-secondary">
-              Full Name
+              Reference Id
             </h2>
             <p className="font-bold leading-relaxed tracking-wide text-justify ">
-              {console.log(applicationData)}
-              {applicationData?.personalDetails?.firstName}{' '}
-              {applicationData?.personalDetails?.middleName}{' '}
-              {applicationData?.personalDetails?.familyName}
-              {}
+              name
             </p>
           </div>
           <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
             <h2 className="py-1 text-sm font-semibold text-secondary">
-              Email Address
+              Destination
             </h2>
             <p className="font-bold leading-relaxed tracking-wide text-justify ">
-              {applicationData?.contactDetails?.emailAddress}
+              name
+            </p>
+          </div>
+          <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
+            <h2 className="py-1 text-sm font-semibold text-secondary">
+              First Name
+            </h2>
+            <p className="font-bold leading-relaxed tracking-wide text-justify ">
+              number
+            </p>
+          </div>
+          <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
+            <h2 className="py-1 text-sm font-semibold text-secondary">
+              Last Name
+            </h2>
+            <p className="font-bold leading-relaxed tracking-wide text-justify ">
+              number
             </p>
           </div>
           <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
@@ -88,24 +85,15 @@ const Page = () => {
               Passport Number
             </h2>
             <p className="font-bold leading-relaxed tracking-wide text-justify ">
-              {applicationData?.passportDetails?.passportNumber}
+              number
             </p>
           </div>
-        </div>
-
-        <SubHeading subHead="PAYMENT" />
-        <div className="space-y-2 divide-y-[1px] pt-5">
           <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
             <h2 className="py-1 text-sm font-semibold text-secondary">
-              1 Cambodia e-Visa (99 USD)
-            </h2>
-          </div>
-          <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
-            <h2 className="py-1 text-sm font-semibold text-secondary">
-              Total amount
+              Date of Birth
             </h2>
             <p className="font-bold leading-relaxed tracking-wide text-justify ">
-              amount
+              number
             </p>
           </div>
         </div>

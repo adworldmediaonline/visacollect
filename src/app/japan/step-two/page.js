@@ -53,7 +53,7 @@ const Page = () => {
   }
 
   if (getQuery.error) {
-    return router.push('/singapore/step-one');
+    return router.push('/japan/step-one');
   }
 
   if (getQuery.isSuccess) {
@@ -65,7 +65,7 @@ const Page = () => {
     return (
       <div>
         <div className="container  md:py-8 py-20 md;px-0 px-3 ">
-          <Heading formHead="Apply Now for Singapore Application" />
+          <Heading formHead="Apply Now for Japan Application" />
 
           <div>
             <Formik
