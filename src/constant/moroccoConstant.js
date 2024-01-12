@@ -17,7 +17,7 @@ const imageValidation = Yup.mixed()
   })
   .required('Please select a file or enter a URL');
 
-export const omanSchema = {
+export const moroccoSchema = {
   peopleYupSchema: Yup.object().shape({
     firstName: Yup.string().required('First name is required'),
     lastName: Yup.string().required('Last name is required'),

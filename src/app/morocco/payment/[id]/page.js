@@ -12,9 +12,9 @@ const Page = ({ params }) => {
   const { id } = params;
   const router = useRouter();
   const getQuery = useQueryGet(
-    apiEndpoint.OMAN_VISA_APPLICATION,
+    apiEndpoint.MOROCCO_VISA_APPLICATION,
     id,
-    'omanVisaApplication'
+    'moroccoVisaApplication'
   );
 
   if (getQuery.isPending) {
@@ -27,12 +27,12 @@ const Page = ({ params }) => {
   }
 
   if (getQuery.error) {
-    return router.push('/oman/step-two');
+    return router.push('/morocco/step-two');
   }
 
   if (getQuery.isSuccess) {
     const {
-      data: { data: omanApplicationData },
+      data: { data: moroccoApplicationData },
     } = getQuery;
     return (
       <div className="container  md:py-8 py-20 md;px-0 px-3 ">
@@ -41,7 +41,7 @@ const Page = ({ params }) => {
         <div className=" flex justify-between items-center bg-[#0068E5] py-4 px-4 rounded-t-lg my-10">
           <h2 className="text-lg font-semibold text-white ">Order Summary</h2>
           <Link
-            href={`/oman/step-one/${omanApplicationData?._id}`}
+            href={`/morocco/step-one/${moroccoApplicationData?._id}`}
             className="px-10 py-2 bg-white rounded-lg text-primary"
           >
             Edit

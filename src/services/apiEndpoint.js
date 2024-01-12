@@ -83,6 +83,9 @@ const apiEndpoint = {
   // japan
   JAPAN_VISA_APPLICATION: '/japanvisa/japanVisaApplication',
   JAPAN_VISA_APPLICATION_PEOPLE: '/japanvisa/japanVisaApplicationPeople',
+  // morocco
+  MOROCCO_VISA_APPLICATION: '/moroccovisa/moroccoVisaApplication',
+  MOROCCO_VISA_APPLICATION_PEOPLE: '/moroccovisa/moroccoVisaApplicationPeople',
 };
 
 export default apiEndpoint;

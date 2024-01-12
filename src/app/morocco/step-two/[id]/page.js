@@ -6,7 +6,7 @@ import SubHeading from '@/components/australia/common/SubHeading';
 import React from 'react';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import { getAllCountries } from '@/lib/getAllCountries';
-import { omanSchema } from '@/constant/omanSchema';
+
 import SingleFileUpload from '@/components/srilanka/SingleFileUpload';
 import { LuImagePlus } from 'react-icons/lu';
 import Image from 'next/image';
@@ -22,6 +22,7 @@ import { addDays, format } from 'date-fns';
 import usePost from '@/hooks/usePost';
 import useDelete from '@/hooks/useDelete';
 import useUpdate from '@/hooks/useUpdate';
+import { moroccoSchema } from '@/constant/moroccoConstant';
 
 const options = [
   { value: 'hotel', label: 'Hotel' },
@@ -35,24 +36,24 @@ function Page({ params }) {
   const { state } = useFormContext();
   const router = useRouter();
   const getQuery = useQueryGet(
-    apiEndpoint.OMAN_VISA_APPLICATION,
+    apiEndpoint.MOROCCO_VISA_APPLICATION,
     state?.formId,
-    'omanVisaApplication'
+    'moroccoVisaApplication'
   );
 
   const updateMutation = useUpdate(
-    apiEndpoint.OMAN_VISA_APPLICATION_PEOPLE,
+    apiEndpoint.MOROCCO_VISA_APPLICATION_PEOPLE,
     params?.id,
     'form',
     '/morocco/step-two',
     getQuery.refetch,
-    'omanVisaApplication'
+    'moroccoVisaApplication'
   );
 
   const deleteMutation = useDelete(
-    apiEndpoint.OMAN_VISA_APPLICATION_PEOPLE,
+    apiEndpoint.MOROCCO_VISA_APPLICATION_PEOPLE,
     getQuery.refetch,
-    'omanVisaApplication',
+    'moroccoVisaApplication',
     'Person deleted successfully',
     false
   );
@@ -72,10 +73,10 @@ function Page({ params }) {
 
   if (getQuery.isSuccess) {
     const {
-      data: { data: omanVisaApplicationData },
+      data: { data: moroccoVisaApplicationData },
     } = getQuery;
 
-    const currentPeople = omanVisaApplicationData?.peoples?.find(
+    const currentPeople = moroccoVisaApplicationData?.peoples?.find(
       person => person?._id === params?.id
     );
 
@@ -89,7 +90,7 @@ function Page({ params }) {
           <div>
             <Formik
               initialValues={currentPeopleData}
-              validationSchema={omanSchema.peopleYupSchema}
+              validationSchema={moroccoSchema.peopleYupSchema}
               validateOnChange={true}
               validateOnMount={true}
               onSubmit={(values, { setSubmitting, resetForm }) => {
@@ -97,7 +98,7 @@ function Page({ params }) {
 
                 Object.entries({
                   ...values,
-                  formId: omanVisaApplicationData._id,
+                  formId: moroccoVisaApplicationData._id,
                 }).forEach(([key, value]) => {
                   if (Array.isArray(value)) {
                     formData.append(key, JSON.stringify(value));
@@ -516,8 +517,8 @@ function Page({ params }) {
                       </tr>
                     </thead>
                     <tbody>
-                      {omanVisaApplicationData?.peoples?.length > 0 ? (
-                        omanVisaApplicationData?.peoples
+                      {moroccoVisaApplicationData?.peoples?.length > 0 ? (
+                        moroccoVisaApplicationData?.peoples
                           ?.filter(people => people?._id !== params?.id)
                           .map(people => (
                             <tr key={people._id}>
@@ -549,7 +550,7 @@ function Page({ params }) {
                               </td>
 
                               <td className="flex justify-center space-x-3">
-                                <Link href={`/oman/step-two/${people?._id}`}>
+                                <Link href={`/morocco/step-two/${people?._id}`}>
                                   <FaEdit className="text-primary" size={30} />
                                 </Link>
 
@@ -583,9 +584,9 @@ function Page({ params }) {
                       ) : null}
                     </tbody>
                   </table>
-                  {omanVisaApplicationData?.peoples?.length > 0 ? (
+                  {moroccoVisaApplicationData?.peoples?.length > 0 ? (
                     <Link
-                      href={`/oman/payment/${omanVisaApplicationData?._id}`}
+                      href={`/morocco/payment/${moroccoVisaApplicationData?._id}`}
                       className="items-center gap-3 px-12 py-3 font-semibold text-white rounded-full cursor-pointer w-fit bg-primaryMain"
                     >
                       Next
