@@ -13,9 +13,9 @@ const Page = ({ params }) => {
   const { id } = params;
   const router = useRouter();
   const getQuery = useQueryGet(
-    apiEndpoint.SINGAPORE_VISA_APPLICATION,
+    apiEndpoint.JAPAN_VISA_APPLICATION,
     id,
-    'singaporeVisaApplication'
+    'japanVisaApplication'
   );
 
   if (getQuery.isPending) {
@@ -28,12 +28,12 @@ const Page = ({ params }) => {
   }
 
   if (getQuery.error) {
-    return router.push('/singapore/step-two');
+    return router.push('/japan/step-two');
   }
 
   if (getQuery.isSuccess) {
     const {
-      data: { data: singaporeApplicationData },
+      data: { data: japanApplicationData },
     } = getQuery;
 
     return (
@@ -41,10 +41,10 @@ const Page = ({ params }) => {
         <Heading formHead=" Visa Application Review" />
 
         <div className=" flex justify-between items-center bg-[#0068E5] py-4 px-4 rounded-t-lg my-10">
-          <h2 className=" text-white font-semibold text-lg  ">Order Summary</h2>
+          <h2 className="text-lg font-semibold text-white ">Order Summary</h2>
           <Link
-            href={`/singapore/step-one/${singaporeApplicationData?._id}`}
-            className="bg-white text-primary px-10 py-2 rounded-lg"
+            href={`/japan/step-one/${japanApplicationData?._id}`}
+            className="px-10 py-2 bg-white rounded-lg text-primary"
           >
             Edit
           </Link>
@@ -55,7 +55,7 @@ const Page = ({ params }) => {
               Destination
             </h2>
             <p className="font-bold leading-relaxed tracking-wide text-justify ">
-              {singaporeApplicationData?.destinationCountry}
+              {japanApplicationData?.destinationCountry}
             </p>
           </div>
           <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
@@ -63,7 +63,7 @@ const Page = ({ params }) => {
               First Name and Middle Name
             </h2>
             <p className="font-bold leading-relaxed tracking-wide text-justify ">
-              {singaporeApplicationData?.peoples[0]?.firstName}
+              {japanApplicationData?.peoples[0]?.firstName}
             </p>
           </div>
           <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
@@ -71,7 +71,7 @@ const Page = ({ params }) => {
               Last Name
             </h2>
             <p className="font-bold leading-relaxed tracking-wide text-justify ">
-              {singaporeApplicationData?.peoples[0]?.lastName}
+              {japanApplicationData?.peoples[0]?.lastName}
             </p>
           </div>
           <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
@@ -79,7 +79,7 @@ const Page = ({ params }) => {
               Passport Number
             </h2>
             <p className="font-bold leading-relaxed tracking-wide text-justify ">
-              {singaporeApplicationData?.peoples[0]?.passportNumber}
+              {japanApplicationData?.peoples[0]?.passportNumber}
             </p>
           </div>
           <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
@@ -88,7 +88,7 @@ const Page = ({ params }) => {
             </h2>
             <p className="font-bold leading-relaxed tracking-wide text-justify ">
               {format(
-                new Date(singaporeApplicationData?.peoples[0]?.dateOfBirth),
+                new Date(japanApplicationData?.peoples[0]?.dateOfBirth),
                 'dd/MM/yyyy'
               )}
             </p>

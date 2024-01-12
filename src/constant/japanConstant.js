@@ -1,6 +1,6 @@
 import { addDays } from 'date-fns';
 import * as Yup from 'yup';
-export const singaporeSchema = {
+export const japanSchema = {
   yupSchema: Yup.object().shape({
     email: Yup.string()
       .email('Invalid email address')
