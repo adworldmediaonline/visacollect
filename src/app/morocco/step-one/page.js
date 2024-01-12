@@ -5,11 +5,12 @@ import Heading from '@/components/australia/common/Heading';
 import SubHeading from '@/components/australia/common/SubHeading';
 import React from 'react';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
-import { omanSchema } from '@/constant/omanSchema';
+
 import usePost from '@/hooks/usePost';
 import apiEndpoint from '@/services/apiEndpoint';
 import { ImSpinner2 } from 'react-icons/im';
 import CustomReactPhoneNumberInput from '@/components/common/CustomReactPhoneNumberInput';
+import { moroccoSchema } from '@/constant/moroccoConstant';
 
 const options = [
   { value: 'hotel', label: 'Hotel' },
@@ -21,11 +22,11 @@ const options = [
 
 function Page() {
   const postMutation = usePost(
-    apiEndpoint.OMAN_VISA_APPLICATION,
+    apiEndpoint.MOROCCO_VISA_APPLICATION,
     1,
     '/morocco/step-two',
     true,
-    'omanVisaApplication'
+    'moroccoVisaApplication'
   );
   return (
     <div>
@@ -34,8 +35,8 @@ function Page() {
 
         <div>
           <Formik
-            initialValues={omanSchema.initialValues}
-            validationSchema={omanSchema.yupSchema}
+            initialValues={moroccoSchema.initialValues}
+            validationSchema={moroccoSchema.yupSchema}
             validateOnChange={true}
             validateOnMount={true}
             onSubmit={(values, { setSubmitting, resetForm }) => {

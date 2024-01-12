@@ -5,7 +5,7 @@ import Heading from '@/components/australia/common/Heading';
 import SubHeading from '@/components/australia/common/SubHeading';
 import React from 'react';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
-import { omanSchema } from '@/constant/omanSchema';
+
 import usePost from '@/hooks/usePost';
 import apiEndpoint from '@/services/apiEndpoint';
 import { ImSpinner2 } from 'react-icons/im';
@@ -13,6 +13,7 @@ import CustomReactPhoneNumberInput from '@/components/common/CustomReactPhoneNum
 import { useRouter } from 'next/navigation';
 import useQueryGet from '@/hooks/useQuery';
 import useUpdate from '@/hooks/useUpdate';
+import { moroccoSchema } from '@/constant/moroccoConstant';
 
 const options = [
   { value: 'hotel', label: 'Hotel' },
@@ -26,18 +27,18 @@ const Page = ({ params }) => {
   const { id } = params;
   const router = useRouter();
   const getQuery = useQueryGet(
-    apiEndpoint.OMAN_VISA_APPLICATION,
+    apiEndpoint.MOROCCO_VISA_APPLICATION,
     id,
-    'omanVisaApplication'
+    'moroccoVisaApplication'
   );
 
   const updateMutation = useUpdate(
-    apiEndpoint.OMAN_VISA_APPLICATION,
+    apiEndpoint.MOROCCO_VISA_APPLICATION,
     id,
     'form updated successfully',
-    '/oman/step-two',
+    '/morocco/step-two',
     getQuery.refetch,
-    'omanVisaApplication'
+    'moroccoVisaApplication'
   );
 
   if (getQuery.isPending) {
@@ -62,7 +63,7 @@ const Page = ({ params }) => {
           createdAt,
           updatedAt,
           peoples,
-          ...omanVisaApplicationData
+          ...moroccoVisaApplicationData
         },
       },
     } = getQuery;
@@ -73,8 +74,8 @@ const Page = ({ params }) => {
 
           <div>
             <Formik
-              initialValues={omanVisaApplicationData}
-              validationSchema={omanSchema.yupSchema}
+              initialValues={moroccoVisaApplicationData}
+              validationSchema={moroccoSchema.yupSchema}
               validateOnChange={true}
               validateOnMount={true}
               onSubmit={(values, { setSubmitting, resetForm }) => {
