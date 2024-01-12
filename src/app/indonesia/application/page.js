@@ -3,7 +3,7 @@ import { ErrorMessage, Field, FieldArray, Form, Formik } from 'formik';
 import { BsQuestionCircleFill } from 'react-icons/bs';
 import Heading from '@/components/australia/common/Heading';
 import SubHeading from '@/components/australia/common/SubHeading';
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import { getAllCountries } from '@/lib/getAllCountries';
 import usePost from '@/hooks/usePost';
@@ -11,8 +11,17 @@ import apiEndpoint from '@/services/apiEndpoint';
 import { ImSpinner2 } from 'react-icons/im';
 import { addDays } from 'date-fns';
 import { indonesiaSchema } from '@/constant/indonesiaConstant';
+import MyRadioButtonsField from './MyRadioButtonsField';
 
 function Page() {
+  const postMutation = usePost(
+    apiEndpoint.INDONESIA_VISA_APPLICATION,
+    1,
+    '/indonesia/payment',
+    true,
+    'indonesiaVisaApplication'
+  );
+
   return (
     <div>
       <div className="container  md:py-8 py-20 md;px-0 px-3 ">
@@ -24,11 +33,11 @@ function Page() {
             validationSchema={indonesiaSchema.yupSchema}
             validateOnChange={true}
             validateOnMount={true}
-            // onSubmit={(values, { setSubmitting, resetForm }) => {
-            //   postMutation.mutate(values);
-            //   setSubmitting(false);
-            //   // resetForm();
-            // }}
+            onSubmit={(values, { setSubmitting, resetForm }) => {
+              postMutation.mutate(values);
+              setSubmitting(false);
+              resetForm();
+            }}
           >
             {({ values, isValid, setFieldValue }) => (
               <Form>
@@ -167,8 +176,7 @@ function Page() {
                       name="dateOfBirth"
                       selected={values.dateOfBirth}
                       setFieldValue={setFieldValue}
-                      maxDate={values.passportDateOfIssue}
-                      disabled={values.passportDateOfIssue === ''}
+                      maxDate={new Date()}
                     />
                     <ErrorMessage name="dateOfBirth">
                       {errorMsg => (
@@ -177,7 +185,7 @@ function Page() {
                     </ErrorMessage>
                   </div>
                 </div>
-
+                {console.log(values)}
                 <div className="main-form-section">
                   <div className="label-section">
                     <label>Country of Birth *</label>
@@ -350,7 +358,7 @@ function Page() {
                       name="passportDateOfIssue"
                       selected={values.passportDateOfIssue}
                       setFieldValue={setFieldValue}
-                      maxDate={new Date()}
+                      minDate={values.dateOfBirth}
                     />
                     <ErrorMessage name="passportDateOfIssue">
                       {errorMsg => (
@@ -379,8 +387,7 @@ function Page() {
                       name="passportDetails.passportExpiryDate"
                       selected={values.passportDetails.passportExpiryDate}
                       setFieldValue={setFieldValue}
-                      minDate={addDays(values.passportDateOfIssue, 180)}
-                      disabled={values.passportDateOfIssue === ''}
+                      minDate={addDays(new Date(), 180)}
                     />
                     <ErrorMessage name="passportDetails.passportExpiryDate">
                       {errorMsg => (
@@ -492,7 +499,6 @@ function Page() {
                       name="travelDetails.intendedDateOfEntry"
                       selected={values.travelDetails.intendedDateOfEntry}
                       setFieldValue={setFieldValue}
-                      // minDate={addDays(new Date(), 5)}
                       minDate={new Date()}
                     />
                     <ErrorMessage name="travelDetails.intendedDateOfEntry">
@@ -584,11 +590,11 @@ function Page() {
                     <Field
                       type="text"
                       className="new-form-input"
-                      id="travelDetails.addressOfAccommodation"
-                      name="travelDetails.addressOfAccommodation"
+                      id="travelDetails.accommodationAddress"
+                      name="travelDetails.accommodationAddress"
                     />
 
-                    <ErrorMessage name="travelDetails.addressOfAccommodation">
+                    <ErrorMessage name="travelDetails.accommodationAddress">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -612,8 +618,8 @@ function Page() {
                   <div className="order-2 col-span-8">
                     <Field
                       required
-                      id="travelDetails.provinceOfAccommodation"
-                      name="travelDetails.provinceOfAccommodation"
+                      id="travelDetails.accommodationProvince"
+                      name="travelDetails.accommodationProvince"
                       component="select"
                       className="new-form-input"
                     >
@@ -623,7 +629,7 @@ function Page() {
                       <option value="australia">Transit</option>
                     </Field>
 
-                    <ErrorMessage name="travelDetails.provinceOfAccommodation">
+                    <ErrorMessage name="travelDetails.accommodationProvince">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
                       )}
@@ -646,7 +652,14 @@ function Page() {
                       <h3>Yes</h3>
                     </div>
                     <div className="flex gap-4">
-                      <Field
+                      {/* <Field
+                        type="radio"
+                        className="w-6 h-6"
+                        name="travelDetails.travelingWithMinor"
+                        id="travelDetailstravellingWithMinorsNo"
+                        value="no"
+                      /> */}
+                      <MyRadioButtonsField
                         type="radio"
                         className="w-6 h-6"
                         name="travelDetails.travelingWithMinor"
@@ -678,7 +691,7 @@ function Page() {
                       </div>
 
                       <div className="order-2 col-span-8">
-                        <Field
+                        {/* <Field
                           required
                           id="travelDetails.numberOfMinor"
                           name="travelDetails.numberOfMinor"
@@ -689,7 +702,39 @@ function Page() {
                           <option value="1">1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
-                        </Field>
+                        </Field> */}
+                        <select
+                          className="new-form-input"
+                          name="travelDetails.numberOfMinor"
+                          onChange={e => {
+                            // handleChange(
+                            //   'travelDetails.numberOfMinor',
+                            //   e.target.value
+                            // );
+                            setFieldValue(
+                              'travelDetails.numberOfMinor',
+                              e.target.value
+                            );
+                            // setNumberOfMinor(e.target.value);
+                            setFieldValue(
+                              'travelDetails.minorInformation',
+                              Array.from(
+                                {
+                                  length: +e.target.value,
+                                },
+                                (_, index) => ({
+                                  minorPassportNumber: '',
+                                })
+                              )
+                            );
+                          }}
+                          value={values.travelDetails.numberOfMinor}
+                        >
+                          <option value="">Select</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
 
                         <ErrorMessage name="travelDetails.numberOfMinor">
                           {errorMsg => (
@@ -713,7 +758,9 @@ function Page() {
                                     className="main-form-section"
                                   >
                                     <div className="label-section">
-                                      <label>Minor One Passport Number *</label>
+                                      <label>
+                                        Minor {index + 1} Passport Number *
+                                      </label>
                                     </div>
 
                                     <div className="mark-section group">
@@ -740,7 +787,8 @@ function Page() {
                                       >
                                         {errorMsg => (
                                           <div style={{ color: 'red' }}>
-                                            {errorMsg}
+                                            {/* {errorMsg} */}
+                                            required
                                           </div>
                                         )}
                                       </ErrorMessage>
@@ -791,6 +839,11 @@ function Page() {
                 </div>
 
                 <div className="py-8 text-center">
+                  {postMutation.isError ? (
+                    <div className="text-red-500">
+                      An error occurred: {postMutation.error.message}
+                    </div>
+                  ) : null}
                   <button
                     className={`cursor-pointer w-fit items-center gap-3  rounded-full font-semibold text-white bg-primaryMain px-12 py-3 ${
                       !isValid ? 'cursor-not-allowed opacity-50' : ''
@@ -798,7 +851,14 @@ function Page() {
                     disabled={!isValid}
                     type="submit"
                   >
-                    Next
+                    {postMutation.isPending ? (
+                      <>
+                        {' '}
+                        <ImSpinner2 className="animate-spin" />
+                      </>
+                    ) : (
+                      'Next'
+                    )}
                   </button>
                 </div>
               </Form>

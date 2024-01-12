@@ -3,12 +3,12 @@ export const indonesiaSchema = {
   yupSchema: Yup.object().shape({
     passportDateOfIssue: Yup.date()
       .required('Date Of issue is required')
-      .max(new Date(), 'Date of is must be not be a future date'),
+      .min(Yup.ref('dateOfBirth'), 'Date of issue must be after date of birth'),
     dateOfBirth: Yup.date()
       .required('Date Of birth is required')
       .max(
-        Yup.ref('passportDateOfIssue'),
-        'Date of birth must be earlier than the date of issue'
+        new Date(),
+        'Date of birth must be a past date and earlier than date of issue'
       ),
     countryOfCitizenship: Yup.string().required(
       'Country of citizenship is required'
@@ -29,7 +29,6 @@ export const indonesiaSchema = {
 
     passportDetails: Yup.object().shape({
       passportNumber: Yup.string().required('Passport number is required'),
-
       passportExpiryDate: Yup.date()
         .min(
           new Date(new Date().getTime() + 180 * 24 * 60 * 60 * 1000),
