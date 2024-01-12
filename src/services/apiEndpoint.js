@@ -78,6 +78,8 @@ const apiEndpoint = {
   // oman
   OMAN_VISA_APPLICATION: '/omanvisa/omanVisaApplication',
   OMAN_VISA_APPLICATION_PEOPLE: '/omanvisa/omanVisaApplicationPeople',
+  // indonesia
+  INDONESIA_VISA_APPLICATION: '/indonesiavisa/indonesiaVisaApplication',
 };
 
 export default apiEndpoint;
