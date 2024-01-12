@@ -5,7 +5,6 @@ import Heading from '@/components/australia/common/Heading';
 import { getAllCountries } from '@/lib/getAllCountries';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import Link from 'next/link';
-import { singaporeSchema } from '@/constant/singaporeSchema';
 import usePost from '@/hooks/usePost';
 import { ImSpinner2 } from 'react-icons/im';
 import apiEndpoint from '@/services/apiEndpoint';
@@ -14,23 +13,24 @@ import CustomReactPhoneNumberInput from '@/components/common/CustomReactPhoneNum
 import { useRouter } from 'next/navigation';
 import useQueryGet from '@/hooks/useQuery';
 import useUpdate from '@/hooks/useUpdate';
+import { japanSchema } from '@/constant/japanConstant';
 
 const Page = ({ params }) => {
   const { id } = params;
   const router = useRouter();
   const getQuery = useQueryGet(
-    apiEndpoint.SINGAPORE_VISA_APPLICATION,
+    apiEndpoint.JAPAN_VISA_APPLICATION,
     id,
-    'singaporeVisaApplication'
+    'japanVisaApplication'
   );
 
   const updateMutation = useUpdate(
-    apiEndpoint.SINGAPORE_VISA_APPLICATION,
+    apiEndpoint.JAPAN_VISA_APPLICATION,
     id,
     'form updated successfully',
     '/japan/step-two',
     getQuery.refetch,
-    'singaporeVisaApplication'
+    'japanVisaApplication'
   );
 
   if (getQuery.isPending) {
@@ -43,7 +43,7 @@ const Page = ({ params }) => {
   }
 
   if (getQuery.error) {
-    return router.push('/singapore/step-one');
+    return router.push('/japan/step-one');
   }
 
   if (getQuery.isSuccess) {
@@ -55,7 +55,7 @@ const Page = ({ params }) => {
           createdAt,
           updatedAt,
           peoples,
-          ...singaporeVisaApplicationData
+          ...japanVisaApplicationData
         },
       },
     } = getQuery;
@@ -66,8 +66,8 @@ const Page = ({ params }) => {
 
           <div>
             <Formik
-              initialValues={singaporeVisaApplicationData}
-              validationSchema={singaporeSchema.yupSchema}
+              initialValues={japanVisaApplicationData}
+              validationSchema={japanSchema.yupSchema}
               validateOnChange={true}
               validateOnMount={true}
               onSubmit={(values, { setSubmitting, resetForm }) => {

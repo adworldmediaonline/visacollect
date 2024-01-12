@@ -79,7 +79,7 @@ const Page = () => {
                   formId: malaysiaVisaApplicationData._id,
                 });
                 setSubmitting(false);
-                // resetForm();
+                resetForm();
               }}
             >
               {({ values, isValid, setFieldValue }) => (

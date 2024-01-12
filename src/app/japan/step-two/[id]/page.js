@@ -8,7 +8,7 @@ import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import { MdDeleteOutline } from 'react-icons/md';
 import { FaEdit } from 'react-icons/fa';
 import Link from 'next/link';
-import { singaporeSchema } from '@/constant/singaporeSchema';
+
 import { ImSpinner2 } from 'react-icons/im';
 import usePost from '@/hooks/usePost';
 import { useFormContext } from '@/context/formContext';
@@ -18,29 +18,30 @@ import apiEndpoint from '@/services/apiEndpoint';
 import useDelete from '@/hooks/useDelete';
 import { addDays, format } from 'date-fns';
 import useUpdate from '@/hooks/useUpdate';
+import { japanSchema } from '@/constant/japanConstant';
 
 const Page = ({ params }) => {
   const { state } = useFormContext();
   const router = useRouter();
   const getQuery = useQueryGet(
-    apiEndpoint.SINGAPORE_VISA_APPLICATION,
+    apiEndpoint.JAPAN_VISA_APPLICATION,
     state?.formId,
-    'singaporeVisaApplication'
+    'japanVisaApplication'
   );
 
   const updateMutation = useUpdate(
-    apiEndpoint.SINGAPORE_VISA_APPLICATION_PEOPLE,
+    apiEndpoint.JAPAN_VISA_APPLICATION_PEOPLE,
     params?.id,
     'form',
     '/japan/step-two',
     getQuery.refetch,
-    'singaporeVisaApplication'
+    'japanVisaApplication'
   );
 
   const deleteMutation = useDelete(
-    apiEndpoint.SINGAPORE_VISA_APPLICATION_PEOPLE,
+    apiEndpoint.JAPAN_VISA_APPLICATION_PEOPLE,
     getQuery.refetch,
-    'singaporeVisaApplication',
+    'japanVisaApplication',
     'Person deleted successfully',
     false
   );
@@ -60,10 +61,10 @@ const Page = ({ params }) => {
 
   if (getQuery.isSuccess) {
     const {
-      data: { data: singaporeVisaApplicationData },
+      data: { data: japanVisaApplicationData },
     } = getQuery;
 
-    const currentPeople = singaporeVisaApplicationData?.peoples?.find(
+    const currentPeople = japanVisaApplicationData?.peoples?.find(
       person => person?._id === params?.id
     );
 
@@ -77,13 +78,13 @@ const Page = ({ params }) => {
           <div>
             <Formik
               initialValues={currentPeopleData}
-              validationSchema={singaporeSchema.personYupSchema}
+              validationSchema={japanSchema.personYupSchema}
               validateOnChange={true}
               validateOnMount={true}
               onSubmit={(values, { setSubmitting, resetForm }) => {
                 updateMutation.mutate({
                   ...values,
-                  formId: singaporeVisaApplicationData._id,
+                  formId: japanVisaApplicationData._id,
                 });
                 setSubmitting(false);
                 // resetForm();
@@ -387,8 +388,8 @@ const Page = ({ params }) => {
                       </tr>
                     </thead>
                     <tbody>
-                      {singaporeVisaApplicationData?.peoples?.length > 0 ? (
-                        singaporeVisaApplicationData?.peoples
+                      {japanVisaApplicationData?.peoples?.length > 0 ? (
+                        japanVisaApplicationData?.peoples
                           ?.filter(people => people?._id !== params?.id)
                           .map(people => (
                             <tr key={people._id}>
@@ -420,9 +421,7 @@ const Page = ({ params }) => {
                               </td>
 
                               <td className="flex justify-center space-x-3">
-                                <Link
-                                  href={`/singapore/step-two/${people?._id}`}
-                                >
+                                <Link href={`/japan/step-two/${people?._id}`}>
                                   <FaEdit className="text-primary" size={30} />
                                 </Link>
 
@@ -456,10 +455,10 @@ const Page = ({ params }) => {
                       ) : null}
                     </tbody>
                   </table>
-                  {singaporeVisaApplicationData?.peoples?.length > 0 ? (
+                  {japanVisaApplicationData?.peoples?.length > 0 ? (
                     <Link
-                      href={`/singapore/payment/${singaporeVisaApplicationData?._id}`}
-                      className="cursor-pointer w-fit items-center gap-3  rounded-full font-semibold text-white bg-primaryMain px-12 py-3"
+                      href={`/japan/payment/${japanVisaApplicationData?._id}`}
+                      className="items-center gap-3 px-12 py-3 font-semibold text-white rounded-full cursor-pointer w-fit bg-primaryMain"
                     >
                       Next
                     </Link>
