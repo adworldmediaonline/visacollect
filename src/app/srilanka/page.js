@@ -18,7 +18,7 @@ function Page() {
       />
       <ProcessingStep processingData={processingData1}
       link="/srilanka/slvisa/tourist-eta/apply-individual" />
-      <LearnMore learnMoreSectionData={learnMoreSectionData} />
+      <LearnMore learnMoreSectionData={learnMoreSectionData}/>
       
       <Faq faqData={faqData1} />
 

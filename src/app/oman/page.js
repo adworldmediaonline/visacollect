@@ -20,7 +20,7 @@ function Page() {
        link="/thailand/apply-form" />
       <LearnMore learnMoreSectionData={learnMoreSectionData} />
 
-      <Faq faqData={faqData1} />
+      <Faq faqData={faqData1}/>
 
     </div>
   )
