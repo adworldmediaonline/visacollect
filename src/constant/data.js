@@ -65,8 +65,6 @@ const cambodiafaq = [
         des: "The single-entry Cambodia Business eVisa allows a stay of up to 30 days in the country.",
     },
 ];
-
-
 const learnMoreSectionData = {
     sections: [
         {
@@ -508,4 +506,123 @@ const learnMoreSectionDataCambodia = {
     ]
 }
 
-export { faqData1, processingData1, learnMoreSectionData, cambodiafaq, learnMoreSectionDataCambodia }
+const learnMoreSectionDataThailand = {
+    sections: [
+        {
+            title: "Begin your Thai adventure with a Tourist Visa from e-Visa!",
+            paragraphs: [
+                {
+                    text: "Thailand, a top global destination, invites you to explore bustling cities and serene coastlines. A culinary haven, it reflects generosity, pleasantness, and Thai culture's refreshing and easygoing essence."
+                },
+                {
+                    text: "Thailand reopened for tourism in July 2021, and -Visa simplified the visa application process. No embassy visits needed. Discover more about the Thailand Tourist Visa, an electronic visa allowing entry for eligible countries."
+                },
+
+            ],
+
+        },
+        {
+            title: "Which nationalities qualify? ",
+            paragraphs: [
+                {
+                    text: "Residents of 29 countries, including India, China, Romania, and Malta.                    "
+                },
+                {
+                    text: "Note: You do not need a Visa if you're travelling from India. However, a valid passport is required.                    "
+                },
+
+
+            ],
+        },
+        {
+            title: "How long is the visa valid? ",
+            paragraphs: [
+                {
+                    text: "60 days post-arrival, single-entry..                    "
+                },
+
+
+            ], 
+        },
+
+        {
+            title: "What are the requirements? ",
+            paragraphs: [
+                {
+                    text: "Standard documents like a passport page, airline confirmation, and proof of accommodation. e-Visa's 100% online process makes it easy. "
+                },
+                {
+                    text: "Upon approval, enter Thailand through select airports. Present your tourist visa and passport at immigration."
+                },
+
+
+            ], 
+            
+        },
+        {
+            title: "How to apply online? ",
+            paragraphs: [
+                {
+                    text: "Three simple steps: Fill the form, verify details, and upload supporting documents. Fees range from USD $112.99 to $249.99, including the Thai government fee of USD $40.00. "
+                },
+            ],
+        },
+        {
+            title: "COVID-19 measures? ",
+            paragraphs: [
+                {
+                    text: "No testing or quarantine needed. Vaccination certificates not required."
+                },
+            ],
+
+        },
+        {
+            title: "Why eVisa?             ",
+            paragraphs: [
+                {
+                    text: "Trusted and accredited by IATA. Read customer reviews for assurance."
+                },
+            ],
+
+        },
+        {
+            title: "Need assistance? ",
+            paragraphs: [
+                {
+                    text: "Contact our customer support experts, available year-round."
+                },
+                {
+                    text: "Important instructions: The Thailand Tourist Visa is single-entry, valid for sightseeing or tourism. Proof of accommodation must align with travel dates. Entry points include Suvarnabhumi, Don Mueang, Chiang Mai, and Phuket airports."
+                },
+                {
+                    text: "eVisa, a reputable service ensuring your Thai journey starts hassle-free. For more details, explore our FAQs."
+                },
+            ],
+
+        },
+      
+
+
+    ]
+}
+
+const thailandFaq = [
+    {
+        id: 1,
+        title: "Encounter an error while applying for your Thailand Tourist Visa?",
+        des: "No worries! Our dedicated customer support team is ready to assist you promptly. If any issues arise during the application process, we are here to guide you through and resolve them swiftly.",
+    },
+    {
+        id: 2,
+        title: "What to do if your Thailand Tourist Visa application faces cancellation or rejection?",
+        des: "You can reapply immediately or choose to appeal the rejection. In case of rejection, await a letter from the Embassy of Thailand explaining the grounds for refusal. This insight will help you confidently reapply, addressing any previous issues.",
+    },
+    {
+        id: 3,
+        title:
+            " Extended stay in Thailand on your mind? ",
+        des: "If your granted 60-day tourist visa isn't enough, visit any Immigration Office in Thailand to request an extension for an additional 30 days. Ensure you make this request before the original permit expires to avoid a fine of 500 Baht for each extra day stayed. Careful attention to dates is crucial to prevent any complications during your stay.",
+    },
+];
+
+export { faqData1, processingData1, learnMoreSectionData, cambodiafaq, learnMoreSectionDataCambodia, learnMoreSectionDataThailand, thailandFaq }

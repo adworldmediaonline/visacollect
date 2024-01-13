@@ -16,7 +16,7 @@ in the...."
         linkPath="/srilanka/slvisa/tourist-eta/apply-individual"
       />
 
-      <General />
+      <General/>
     </div>
   );
 };
