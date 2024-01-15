@@ -18,13 +18,13 @@ const Page = () => {
     'cambodiaVisaApplication'
   );
 
-  // const makePaymentMutation = usePostPayment(
-  //   apiEndpoint.CAMBODIA_VISA_APPLICATION_PAYMENT,
-  //   'Payment completed successfully',
-  //   // '/australia/application/payment/success',
-  //   false,
-  //   'cambodiaVisaApplication'
-  // );
+  const makePaymentMutation = usePostPayment(
+    apiEndpoint.EVISA_APPLICATION_PAYMENT,
+    'payment added successfully',
+    // '/australia/application/payment/success',
+    false,
+    'cambodiaVisaApplication'
+  );
 
   if (getQuery.isPending) {
     return (
@@ -42,12 +42,12 @@ const Page = () => {
   if (getQuery.isSuccess) {
     const { data: applicationData } = getQuery.data;
 
-    // const makePayment = async () => {
-    //   makePaymentMutation.mutate({
-    //     evisaFee: 59,
-    //     formId: applicationData._id,
-    //   });
-    // };
+    const makePayment = async () => {
+      makePaymentMutation.mutate({
+        totalPrice: 1,
+        formId: applicationData._id,
+      });
+    };
 
     return (
       <div className="container  md:py-8 py-20 md;px-0 px-3 ">
@@ -114,7 +114,19 @@ const Page = () => {
         <div className="space-y-2 divide-y-[1px] pt-5"></div>
 
         <div>
-          <button>Buy</button>
+          {makePaymentMutation.isError ? (
+            <div className="text-red-500">
+              An error occurred: {makePaymentMutation.error.message}
+            </div>
+          ) : null}
+          <button
+            className={`cursor-pointer w-full items-center gap-3 border-2 rounded-lg font-semibold border-primary text-primary px-8 py-3
+            }`}
+            disabled={makePaymentMutation.isPending}
+            onClick={makePayment}
+          >
+            {makePaymentMutation.isPending ? <>Loading...</> : 'Buy'}
+          </button>
         </div>
       </div>
     );
