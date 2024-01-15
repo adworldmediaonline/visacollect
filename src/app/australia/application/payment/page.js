@@ -44,8 +44,7 @@ const Page = () => {
 
     const makePayment = async () => {
       makePaymentMutation.mutate({
-        evisaFee: 59,
-        insuranceFee: applicationData?.travelInsurance?.insuranceFee,
+        totalPrice: 1,
         formId: applicationData._id,
       });
     };

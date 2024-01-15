@@ -126,7 +126,7 @@ function Page() {
                   </div>
                 </div>
 
-                <div className="main-form-section">
+                {/* <div className="main-form-section">
                   <div className="label-section">
                     <label>Date of birth: *</label>
                   </div>
@@ -152,7 +152,7 @@ function Page() {
                       )}
                     </ErrorMessage>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="main-form-section">
                   <div className="label-section">
@@ -363,6 +363,36 @@ function Page() {
                     </ErrorMessage>
                   </div>
                 </div>
+
+                {/* tst */}
+                <div className="main-form-section">
+                  <div className="label-section">
+                    <label>Date of birth: *</label>
+                  </div>
+
+                  <div className="mark-section group">
+                    <BsQuestionCircleFill className=" side-icon" size={20} />
+                    <div className="tooltip-content">
+                      Select your date of birth, as it appears on your passport.{' '}
+                    </div>
+                  </div>
+
+                  <div className="order-2 col-span-8">
+                    <ReactDatePickerInput
+                      className="new-form-input"
+                      name="dateOfBirth"
+                      selected={values.dateOfBirth}
+                      setFieldValue={setFieldValue}
+                      maxDate={values.passportDateOfIssue}
+                    />
+                    <ErrorMessage name="dateOfBirth">
+                      {errorMsg => (
+                        <div style={{ color: 'red' }}>{errorMsg}</div>
+                      )}
+                    </ErrorMessage>
+                  </div>
+                </div>
+                {/* tes remvoe later */}
 
                 <SubHeading subHead="Contact Details" />
 
