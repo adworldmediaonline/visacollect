@@ -175,9 +175,13 @@ width: 100% !important;
 }
 
 /* Form Section */
-.main-form-section
-{
-  @apply md:grid grid-cols-12 gap-4 py-2 items-start
+
+.main-section{
+  @apply  flex justify-between items-end gap-10 
+}
+
+.label-mark{
+  @apply flex justify-between items-start
 }
 
 .new-form-input
