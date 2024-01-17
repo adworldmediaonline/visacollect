@@ -14,7 +14,7 @@ export default function usePostPayment(
   const router = useRouter();
   const mutation = useMutation({
     mutationFn: formData => {
-      return axiosInstance.post(apiEndpointUrl, formData);
+      return axiosInstance.put(apiEndpointUrl, formData);
     },
     onSuccess: async data => {
       console.log(data);
