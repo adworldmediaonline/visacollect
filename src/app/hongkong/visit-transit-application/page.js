@@ -524,7 +524,7 @@ const Page = () => {
 
                             <div className="flex flex-col gap-2 py-7">
                                 <h2 className='font-semibold text-lg'>Is there any included spouse/partner#/children/siblings in the applicant’s travel document who is/are travelling with the applicant? <span className='text-red-500'> *</span></h2>
-                                <p className='text-sm'> A party to a same-sex civil partnership, same-sex civil union, "same-sex marriage", opposite-sex civil partnership or opposite-sex civil union entered into by him/her in accordance with the local law in force of the place of celebration and with such status being legally and officially recorgnised by the local authorities of the place of celebration. </p>
+                                <p className='text-sm'> A party to a same-sex civil partnership, same-sex civil union, &quot;same-sex marriage&quot;, opposite-sex civil partnership or opposite-sex civil union entered into by him/her in accordance with the local law in force of the place of celebration and with such status being legally and officially recorgnised by the local authorities of the place of celebration. </p>
 
                                 <div className="flex gap-8 pt-4">
                                     <div className="flex gap-4">
