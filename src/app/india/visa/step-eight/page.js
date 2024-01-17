@@ -1,6 +1,7 @@
 'use client';
 import BannerPage from '@/components/india/common/BannerPage';
 import { useFormContext } from '@/context/formContext';
+import usePostPayment from '@/hooks/usePostPayment';
 import useUpdate from '@/hooks/useUpdate';
 import axiosInstance from '@/services/api';
 import apiEndpoint from '@/services/apiEndpoint';
@@ -28,7 +29,7 @@ const StepEight = () => {
     isSuccess: getAllStepsDataIsSuccess,
     refetch,
   } = useQuery({
-    queryKey: ['getAllStepsData7'],
+    queryKey: ['getAllStepsData'],
     queryFn: () =>
       axiosInstance.get(`${apiEndpoint.GET_ALL_STEPS_DATA}${state.formId}`),
     enabled: !!state.formId,
@@ -47,6 +48,14 @@ const StepEight = () => {
     'Payment Complete successfully',
     '/india',
     false
+  );
+
+  const makePaymentMutation = usePostPayment(
+    `${apiEndpoint.INDIA_VISA_PAYMENT}/${state.formId}`,
+    'payment added successfully',
+    // '/australia/application/payment/success',
+    false,
+    'getAllStepsData'
   );
 
   const handlePayLater = () => {
@@ -73,6 +82,13 @@ const StepEight = () => {
     if (!getAllStepsData?.data?.step6Data) {
       return router.push('/india/visa/step-six');
     }
+
+    // const makePayment = async () => {
+    //   makePaymentMutation.mutate({
+    //     totalPrice: 1,
+    //     formId: state?.formId,
+    //   });
+    // };
 
     return (
       <div>
@@ -165,7 +181,7 @@ const StepEight = () => {
             validateOnChange={true}
             validateOnMount={true}
             onSubmit={(values, { setSubmitting, resetForm }) => {
-              paymentNowUpdateMutation.mutate({
+              makePaymentMutation.mutate({
                 lastExitStepUrl: '/',
                 termsAndConditions: values.termsAndConditions,
                 paymentStatus: 'pending',
@@ -184,6 +200,7 @@ const StepEight = () => {
                   granted or rejected by the indian government. I authorized
                   them to take the payment from my card online.`,
               });
+
               setSubmitting(false);
               resetForm();
             }}
@@ -234,7 +251,7 @@ const StepEight = () => {
                 <div className="space-x-4 text-center">
                   {/* <MakePaymentComponent isValid={isValid} /> */}
 
-                  <button
+                  {/* <button
                     disabled={!isValid}
                     className={`formbtn cursor-pointer inline-flex items-center gap-3 ${
                       !isValid ? 'cursor-not-allowed opacity-50' : ''
@@ -242,6 +259,22 @@ const StepEight = () => {
                     type="submit"
                   >
                     Pay Now
+                  </button> */}
+
+                  {makePaymentMutation.isError ? (
+                    <div className="text-red-500">
+                      An error occurred: {makePaymentMutation.error.message}
+                    </div>
+                  ) : null}
+                  <button
+                    disabled={!isValid}
+                    className={`formbtn cursor-pointer inline-flex items-center gap-3 ${
+                      !isValid ? 'cursor-not-allowed opacity-50' : ''
+                    }`}
+                    type="submit"
+                    // onClick={makePayment}
+                  >
+                    {makePaymentMutation.isPending ? <>Loading...</> : 'Buy'}
                   </button>
 
                   <button
