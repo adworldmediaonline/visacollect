@@ -1546,7 +1546,7 @@ const Page = () => {
                             </div>
 
                             <div className="flex flex-col gap-2 py-4">
-                                <h2>Are you traveling to Cambodia for Tourist Purpose? *</h2>
+                                <h2>Purpose of travelling to Hong Kong<span className='text-red-500'> *</span></h2>
 
                                 <div className="flex gap-8 pt-4">
                                     <div className="flex gap-4">
@@ -1557,7 +1557,7 @@ const Page = () => {
                                             id="travelDetailstouristPurposeYes"
                                             value="yes"
                                         />
-                                        <h3>Yes</h3>
+                                        <h3>Visit</h3>
                                     </div>
                                     <div className="flex gap-4">
                                         <Field
@@ -1567,13 +1567,13 @@ const Page = () => {
                                             id="travelDetailstouristPurposeNo"
                                             value="no"
                                         />
-                                        <h3>No</h3>
+                                        <h3>Transit</h3>
                                     </div>
                                 </div>
                             </div>
 
                             <div className="flex flex-col gap-2 py-4">
-                                <h2>Are you traveling to Cambodia for Tourist Purpose? *</h2>
+                                <h2>Proposed number of journey(s) to Hong Kong<span className='text-red-500'> *</span></h2>
 
                                 <div className="flex gap-8 pt-4">
                                     <div className="flex gap-4">
@@ -1584,7 +1584,7 @@ const Page = () => {
                                             id="travelDetailstouristPurposeYes"
                                             value="yes"
                                         />
-                                        <h3>Yes</h3>
+                                        <h3>Single</h3>
                                     </div>
                                     <div className="flex gap-4">
                                         <Field
@@ -1594,10 +1594,358 @@ const Page = () => {
                                             id="travelDetailstouristPurposeNo"
                                             value="no"
                                         />
-                                        <h3>No</h3>
+                                        <h3>Double</h3>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <Field
+                                            type="radio"
+                                            className="w-6 h-6"
+                                            name="travelDetails.touristPurpose"
+                                            id="travelDetailstouristPurposeNo"
+                                            value="no"
+                                        />
+                                        <h3>Triple</h3>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <Field
+                                            type="radio"
+                                            className="w-6 h-6"
+                                            name="travelDetails.touristPurpose"
+                                            id="travelDetailstouristPurposeNo"
+                                            value="no"
+                                        />
+                                        <h3>Multiple</h3>
                                     </div>
                                 </div>
                             </div>
+
+                            <div className='main-section pt-8'>
+                                <div className="w-full">
+                                    <div className='label-mark'>
+                                        <div className="">
+                                            <label className=" font-semibold">
+                                                Present address  <span className='text-red-500'> *</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <div className="mark-section  group">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="order-2 col-span-8">
+
+                                        <div className="flex flex-col gap-2 py-7">
+                                            <h2 className=''>Address Type :</h2>
+
+                                            <div className="flex gap-8 pt-4">
+                                                <div className="flex gap-4">
+                                                    <Field
+                                                        type="radio"
+                                                        className="w-6 h-6"
+                                                        name="travelDetails.touristPurpose"
+                                                        id="travelDetailstouristPurposeYes"
+                                                        value="yes"
+                                                    />
+                                                    <h3>Within Hong Kong</h3>
+                                                </div>
+                                                <div className="flex gap-4">
+                                                    <Field
+                                                        type="radio"
+                                                        className="w-6 h-6"
+                                                        name="travelDetails.touristPurpose"
+                                                        id="travelDetailstouristPurposeNo"
+                                                        value="no"
+                                                    />
+                                                    <h3>Other Address</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="w-full">
+                                            <div className='label-mark'>
+                                                <div className="">
+                                                    <label className="">
+                                                        Floor
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <div className="mark-section  group">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="order-2 col-span-8">
+                                                <Field
+                                                    type="text"
+                                                    className="new-form-input"
+                                                    name="personalDetails.familyName"
+                                                    id="personalDetails.familyName"
+                                                />
+
+                                            </div>
+                                        </div>
+                                        <div className='flex justify-between items-end space-x-5 mt-5'>
+                                            <div className="w-full">
+                                                <div className='label-mark'>
+                                                    <div className="">
+                                                        <label className="">
+                                                            Unit
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <div className="mark-section  group">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="order-2 col-span-8">
+                                                    <Field
+                                                        required
+                                                        component="select"
+                                                        className="new-form-input"
+                                                        name="personalDetails.countryOfBirth"
+                                                        id="personalDetails.countryOfBirth"
+                                                    >
+                                                        <option value="">Select</option>
+                                                        <option value="">Select</option>
+                                                        <option value="">Select</option>
+                                                    </Field>
+
+
+                                                </div>
+                                            </div>
+                                            <div className="w-full">
+                                                <div className='label-mark'>
+                                                    <div className="">
+                                                        <label className=" font-semibold">
+
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <div className="mark-section  group">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="order-2 col-span-8">
+                                                    <Field
+                                                        type="text"
+                                                        className="new-form-input"
+                                                        name="personalDetails.familyName"
+                                                        id="personalDetails.familyName"
+                                                    />
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div className="w-full mt-5">
+                                            <div className='label-mark'>
+                                                <div className="">
+                                                    <label className="">
+                                                        Full Address<span className='text-red-500'> *</span>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <div className="mark-section  group">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="order-2 col-span-8">
+                                                <Field
+                                                    type="text"
+                                                    className="new-form-input"
+                                                    name="personalDetails.familyName"
+                                                    id="personalDetails.familyName"
+                                                    component="textarea"
+                                                />
+
+                                            </div>
+                                        </div>
+
+
+                                        <div className='mt-5'>
+                                            <Field
+                                                type="text"
+                                                className="new-form-input"
+                                                name="personalDetails.familyName"
+                                                id="personalDetails.familyName"
+                                                component="textarea"
+                                            />
+                                        </div>
+                                        <ErrorMessage name="personalDetails.familyName">
+                                            {errorMsg => (
+                                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                                            )}
+                                        </ErrorMessage>
+                                    </div>
+                                </div>
+                                <div className="w-full">
+                                    <div className='label-mark'>
+                                        <div className="">
+                                            <label className=" font-semibold">
+                                            Address<span></span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <div className="mark-section  group">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="order-2 col-span-8">
+
+                                        <div className="flex flex-col gap-2 py-7">
+                                            <h2 className=''>Address Type :</h2>
+
+                                            <div className="flex gap-8 pt-4">
+                                                <div className="flex gap-4">
+                                                    <Field
+                                                        type="radio"
+                                                        className="w-6 h-6"
+                                                        name="travelDetails.touristPurpose"
+                                                        id="travelDetailstouristPurposeYes"
+                                                        value="yes"
+                                                    />
+                                                    <h3>Within Hong Kong</h3>
+                                                </div>
+                                                <div className="flex gap-4">
+                                                    <Field
+                                                        type="radio"
+                                                        className="w-6 h-6"
+                                                        name="travelDetails.touristPurpose"
+                                                        id="travelDetailstouristPurposeNo"
+                                                        value="no"
+                                                    />
+                                                    <h3>Other Address</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="w-full">
+                                            <div className='label-mark'>
+                                                <div className="">
+                                                    <label className=" ">
+                                                        Floor
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <div className="mark-section  group">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="order-2 col-span-8">
+                                                <Field
+                                                    type="text"
+                                                    className="new-form-input"
+                                                    name="personalDetails.familyName"
+                                                    id="personalDetails.familyName"
+                                                />
+
+                                            </div>
+                                        </div>
+                                        <div className='flex justify-between items-end space-x-5 mt-5'>
+                                            <div className="w-full">
+                                                <div className='label-mark'>
+                                                    <div className="">
+                                                        <label className="">
+                                                            Unit
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <div className="mark-section  group">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="order-2 col-span-8">
+                                                    <Field
+                                                        required
+                                                        component="select"
+                                                        className="new-form-input"
+                                                        name="personalDetails.countryOfBirth"
+                                                        id="personalDetails.countryOfBirth"
+                                                    >
+                                                        <option value="">Select</option>
+                                                        <option value="">Select</option>
+                                                        <option value="">Select</option>
+                                                    </Field>
+
+
+                                                </div>
+                                            </div>
+                                            <div className="w-full">
+                                                <div className='label-mark'>
+                                                    <div className="">
+                                                        <label className=" font-semibold">
+
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <div className="mark-section  group">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="order-2 col-span-8">
+                                                    <Field
+                                                        type="text"
+                                                        className="new-form-input"
+                                                        name="personalDetails.familyName"
+                                                        id="personalDetails.familyName"
+                                                    />
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div className="w-full mt-5">
+                                            <div className='label-mark'>
+                                                <div className="">
+                                                    <label className="">
+                                                        Full Address
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <div className="mark-section  group">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="order-2 col-span-8">
+                                                <Field
+                                                    type="text"
+                                                    className="new-form-input"
+                                                    name="personalDetails.familyName"
+                                                    id="personalDetails.familyName"
+                                                    component="textarea"
+                                                />
+
+                                            </div>
+                                        </div>
+
+
+                                        <div className='mt-5'>
+                                            <Field
+                                                type="text"
+                                                className="new-form-input"
+                                                name="personalDetails.familyName"
+                                                id="personalDetails.familyName"
+                                                component="textarea"
+                                            />
+                                        </div>
+                                        <ErrorMessage name="personalDetails.familyName">
+                                            {errorMsg => (
+                                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                                            )}
+                                        </ErrorMessage>
+                                    </div>
+                                </div>
+                            </div>
+
 
 
                             <div className="py-8 text-center">
