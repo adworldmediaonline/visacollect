@@ -9,6 +9,7 @@ export default function HeadClient() {
         name="google-site-verification"
         content="qsi8k0I-otMOh5FASZcM5X9KLygQS5gqWtSD9H4Qnxc"
       />
+      {/*  */}
     </Head>
   );
 }
