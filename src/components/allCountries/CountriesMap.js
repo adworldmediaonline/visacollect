@@ -73,12 +73,12 @@ export const CountriesMap = () => {
             title: 'Indonesia',
             link: '/indonesia',
         },
-        {
-            id: 12,
-            imgSrc: '/assets/images/main/hongkong.jpg',
-            title: 'Hongkong',
-            link: '/hongkong',
-        },
+        // {
+        //     id: 12,
+        //     imgSrc: '/assets/images/main/hongkong.jpg',
+        //     title: 'Hongkong',
+        //     link: '/hongkong',
+        // },
         {
             id: 13,
             imgSrc: '/assets/images/main/morocco.jpg',

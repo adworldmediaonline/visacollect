@@ -1624,7 +1624,7 @@ const Page = () => {
                                     <div className='label-mark'>
                                         <div className="">
                                             <label className=" font-semibold">
-                                                Present address  <span className='text-red-500'> *</span>
+                                                Accommodation arrangement in Hong Kong  <span className='text-red-500'> *</span>
                                             </label>
                                         </div>
                                         <div>
@@ -1633,160 +1633,29 @@ const Page = () => {
                                             </div>
                                         </div>
                                     </div>
+
                                     <div className="order-2 col-span-8">
+                                        <Field
+                                            type="text"
+                                            className="new-form-input"
+                                            name="personalDetails.familyName"
+                                            id="personalDetails.familyName"
+                                        />
 
-                                        <div className="flex flex-col gap-2 py-7">
-                                            <h2 className=''>Address Type :</h2>
-
-                                            <div className="flex gap-8 pt-4">
-                                                <div className="flex gap-4">
-                                                    <Field
-                                                        type="radio"
-                                                        className="w-6 h-6"
-                                                        name="travelDetails.touristPurpose"
-                                                        id="travelDetailstouristPurposeYes"
-                                                        value="yes"
-                                                    />
-                                                    <h3>Within Hong Kong</h3>
-                                                </div>
-                                                <div className="flex gap-4">
-                                                    <Field
-                                                        type="radio"
-                                                        className="w-6 h-6"
-                                                        name="travelDetails.touristPurpose"
-                                                        id="travelDetailstouristPurposeNo"
-                                                        value="no"
-                                                    />
-                                                    <h3>Other Address</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="w-full">
-                                            <div className='label-mark'>
-                                                <div className="">
-                                                    <label className="">
-                                                        Floor
-                                                    </label>
-                                                </div>
-                                                <div>
-                                                    <div className="mark-section  group">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="order-2 col-span-8">
-                                                <Field
-                                                    type="text"
-                                                    className="new-form-input"
-                                                    name="personalDetails.familyName"
-                                                    id="personalDetails.familyName"
-                                                />
-
-                                            </div>
-                                        </div>
-                                        <div className='flex justify-between items-end space-x-5 mt-5'>
-                                            <div className="w-full">
-                                                <div className='label-mark'>
-                                                    <div className="">
-                                                        <label className="">
-                                                            Unit
-                                                        </label>
-                                                    </div>
-                                                    <div>
-                                                        <div className="mark-section  group">
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="order-2 col-span-8">
-                                                    <Field
-                                                        required
-                                                        component="select"
-                                                        className="new-form-input"
-                                                        name="personalDetails.countryOfBirth"
-                                                        id="personalDetails.countryOfBirth"
-                                                    >
-                                                        <option value="">Select</option>
-                                                        <option value="">Select</option>
-                                                        <option value="">Select</option>
-                                                    </Field>
-
-
-                                                </div>
-                                            </div>
-                                            <div className="w-full">
-                                                <div className='label-mark'>
-                                                    <div className="">
-                                                        <label className=" font-semibold">
-
-                                                        </label>
-                                                    </div>
-                                                    <div>
-                                                        <div className="mark-section  group">
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="order-2 col-span-8">
-                                                    <Field
-                                                        type="text"
-                                                        className="new-form-input"
-                                                        name="personalDetails.familyName"
-                                                        id="personalDetails.familyName"
-                                                    />
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div className="w-full mt-5">
-                                            <div className='label-mark'>
-                                                <div className="">
-                                                    <label className="">
-                                                        Full Address<span className='text-red-500'> *</span>
-                                                    </label>
-                                                </div>
-                                                <div>
-                                                    <div className="mark-section  group">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="order-2 col-span-8">
-                                                <Field
-                                                    type="text"
-                                                    className="new-form-input"
-                                                    name="personalDetails.familyName"
-                                                    id="personalDetails.familyName"
-                                                    component="textarea"
-                                                />
-
-                                            </div>
-                                        </div>
-
-
-                                        <div className='mt-5'>
-                                            <Field
-                                                type="text"
-                                                className="new-form-input"
-                                                name="personalDetails.familyName"
-                                                id="personalDetails.familyName"
-                                                component="textarea"
-                                            />
-                                        </div>
                                         <ErrorMessage name="personalDetails.familyName">
                                             {errorMsg => (
                                                 <div style={{ color: 'red' }}>{errorMsg}</div>
                                             )}
                                         </ErrorMessage>
                                     </div>
+
+
                                 </div>
                                 <div className="w-full">
                                     <div className='label-mark'>
                                         <div className="">
                                             <label className=" font-semibold">
-                                            Address<span></span>
+                                                Address<span></span>
                                             </label>
                                         </div>
                                         <div>
@@ -1946,6 +1815,335 @@ const Page = () => {
                                 </div>
                             </div>
 
+                            <div className='main-section pt-8'>
+                                <div className="w-full">
+                                    <div className='label-mark'>
+                                        <div className="">
+                                            <label className=" font-semibold">
+                                                Arrival flight information
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <div className="mark-section  group">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="order-2 col-span-8">
+                                        <Field
+                                            type="text"
+                                            className="new-form-input"
+                                            name="personalDetails.familyName"
+                                            id="personalDetails.familyName"
+                                        />
+
+                                        <ErrorMessage name="personalDetails.familyName">
+                                            {errorMsg => (
+                                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                                            )}
+                                        </ErrorMessage>
+                                    </div>
+
+
+                                </div>
+                                <div className="w-full">
+                                    <div className='label-mark'>
+                                        <div className="">
+                                            <label className=" font-semibold">
+                                                Departure flight information
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <div className="mark-section  group">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="order-2 col-span-8">
+                                        <Field
+                                            type="text"
+                                            className="new-form-input"
+                                            name="personalDetails.familyName"
+                                            id="personalDetails.familyName"
+                                        />
+
+                                        <ErrorMessage name="personalDetails.familyName">
+                                            {errorMsg => (
+                                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                                            )}
+                                        </ErrorMessage>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <SubHeading subHead=" Purpose of Visit" />
+
+                            <div className="flex flex-col gap-2 py-4">
+                                <h2>Please complete the following relevant items according to your purpose of visit.<span className='text-red-500'> *</span></h2>
+
+                                <div className="flex items-center gap-8 pt-4">
+                                    <div className="flex gap-4">
+                                        <Field
+                                            type="checkbox"
+                                            className="w-6 h-6"
+                                            name="travelDetails.touristPurpose"
+                                            id="travelDetailstouristPurposeYes"
+                                            value="yes"
+                                        />
+                                        <h3>(i) Leisure visit</h3>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <Field
+                                            type="checkbox"
+                                            className="w-6 h-6"
+                                            name="travelDetails.touristPurpose"
+                                            id="travelDetailstouristPurposeNo"
+                                            value="no"
+                                        />
+                                        <h3>(ii) Transit</h3>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <Field
+                                            type="checkbox"
+                                            className="w-6 h-6"
+                                            name="travelDetails.touristPurpose"
+                                            id="travelDetailstouristPurposeNo"
+                                            value="no"
+                                        />
+                                        <h3>(iii) Business visit</h3>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <Field
+                                            type="checkbox"
+                                            className="w-6 h-6"
+                                            name="travelDetails.touristPurpose"
+                                            id="travelDetailstouristPurposeNo"
+                                            value="no"
+                                        />
+                                        <h3>(iv) Family visit</h3>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <Field
+                                            type="checkbox"
+                                            className="w-6 h-6"
+                                            name="travelDetails.touristPurpose"
+                                            id="travelDetailstouristPurposeNo"
+                                            value="no"
+                                        />
+                                        <h3>(v) Others </h3>
+                                    </div>
+                                    <div className='w-[20%]'>
+                                        <Field
+                                            type="text"
+                                            className="new-form-input "
+                                            name="personalDetails.familyName"
+                                            id="personalDetails.familyName"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='mt-4'>
+                                <h2 className='font-semibold'>(i) Leisure visit</h2>
+
+                                <div className="flex flex-col gap-2 py-4">
+                                    <h2 className='font-semibold'>Have you joined any tour to come to Hong Kong?<span className='text-red-500'>*</span></h2>
+
+                                    <div className="flex gap-8 pt-4">
+                                        <div className="flex gap-4">
+                                            <Field
+                                                type="radio"
+                                                className="w-6 h-6"
+                                                name="travelDetails.touristPurpose"
+                                                id="travelDetailstouristPurposeYes"
+                                                value="yes"
+                                            />
+                                            <h3>Yes</h3>
+                                        </div>
+                                        <div className="flex gap-4">
+                                            <Field
+                                                type="radio"
+                                                className="w-6 h-6"
+                                                name="travelDetails.touristPurpose"
+                                                id="travelDetailstouristPurposeNo"
+                                                value="no"
+                                            />
+                                            <h3>No</h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="w-full">
+                                    <div className='label-mark'>
+                                        <div className="pt-2">
+                                            <label className=" font-semibold">
+                                            Please provide the itinerary of your travel including arrival and departure dates, and place(s) that you will visit. (Maximum 100 Chinese words/300 English characters – please continue on a separate sheet of paper and upload as a supporting document at step 3 if necessary)<span className='text-red-500'>*</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <div className="mark-section  group">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="order-2 col-span-8">
+                                        <div className='flex space-x-5'>
+
+                                            <Field
+                                                type="text"
+                                                className="new-form-input"
+                                                name="personalDetails.familyName"
+                                                id="personalDetails.familyName"
+                                            />
+                                        
+                                        </div>
+                                        <ErrorMessage name="personalDetails.familyName">
+                                            {errorMsg => (
+                                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                                            )}
+                                        </ErrorMessage>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div className='mt-4'>
+                                <h2 className='font-semibold'>(ii) Transit</h2>
+                                <div className='main-section pt-8'>
+                                <div className="w-full">
+                                    <div className='label-mark'>
+                                        <div className="pt-2">
+                                            <label className=" font-semibold">
+                                            Next destination after visiting Hong Kong<span className='text-red-500'>*</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <div className="mark-section  group">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="order-2 col-span-8">
+                                        <div className='flex space-x-5'>
+
+                                            <Field
+                                                type="text"
+                                                className="new-form-input"
+                                                name="personalDetails.familyName"
+                                                id="personalDetails.familyName"
+                                            />
+                                        
+                                        </div>
+                                        <ErrorMessage name="personalDetails.familyName">
+                                            {errorMsg => (
+                                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                                            )}
+                                        </ErrorMessage>
+                                    </div>
+                                </div>
+                                <div className="w-full">
+                                    <div className='label-mark'>
+                                        <div className="pt-2">
+                                            <label className=" font-semibold">
+                                            Purpose of visit<span className='text-red-500'>*</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <div className="mark-section  group">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="order-2 col-span-8">
+                                        <div className='flex space-x-5'>
+
+                                            <Field
+                                                type="text"
+                                                className="new-form-input"
+                                                name="personalDetails.familyName"
+                                                id="personalDetails.familyName"
+                                            />
+                                        
+                                        </div>
+                                        <ErrorMessage name="personalDetails.familyName">
+                                            {errorMsg => (
+                                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                                            )}
+                                        </ErrorMessage>
+                                    </div>
+                                </div>
+                                </div>
+
+                                <div className='main-section pt-8'>
+                                <div className="w-full">
+                                    <div className='label-mark'>
+                                        <div className="pt-2">
+                                            <label className=" font-semibold">
+                                            Next destination after visiting Hong Kong<span className='text-red-500'>*</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <div className="mark-section  group">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="order-2 col-span-8">
+                                        <div className='flex space-x-5'>
+
+                                            <Field
+                                                type="text"
+                                                className="new-form-input"
+                                                name="personalDetails.familyName"
+                                                id="personalDetails.familyName"
+                                            />
+                                        
+                                        </div>
+                                        <ErrorMessage name="personalDetails.familyName">
+                                            {errorMsg => (
+                                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                                            )}
+                                        </ErrorMessage>
+                                    </div>
+                                </div>
+                                <div className="w-full">
+                                    <div className='label-mark'>
+                                        <div className="pt-2">
+                                            <label className=" font-semibold">
+                                            Purpose of visit<span className='text-red-500'>*</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <div className="mark-section  group">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="order-2 col-span-8">
+                                        <div className='flex space-x-5'>
+
+                                            <Field
+                                                type="text"
+                                                className="new-form-input"
+                                                name="personalDetails.familyName"
+                                                id="personalDetails.familyName"
+                                            />
+                                        
+                                        </div>
+                                        <ErrorMessage name="personalDetails.familyName">
+                                            {errorMsg => (
+                                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                                            )}
+                                        </ErrorMessage>
+                                    </div>
+                                </div>
+                                </div>
+                               
+                            </div>
 
 
                             <div className="py-8 text-center">
