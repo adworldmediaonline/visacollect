@@ -1,4 +1,6 @@
 'use client';
+import { allCountriesData } from '@/constant/allCountriesData';
+import { Country } from 'country-state-city';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
@@ -87,13 +89,15 @@ const BannerMain = () => {
               placeholder="First Name"
               className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             >
-              <option default disabled>
-                Select
-              </option>
-              <option>India</option>
-              <option>Australia</option>
-              <option>Sri lanka</option>
+              <option value="">Select</option>
+
+              {Country?.getAllCountries()?.map(country => (
+                <option key={Country.name} value={country.name}>
+                  {country.name}
+                </option>
+              ))}
             </select>
+            {console.log(Country?.getAllCountries())}
           </div>
           <div className="mb-5">
             <label
@@ -114,13 +118,11 @@ const BannerMain = () => {
               <option value="" selected>
                 Select
               </option>
-              <option value="/india">India</option>
-              <option value="/australia">Australia</option>
-              <option value="srilanka">Sri lanka</option>
-              <option value="/turkey">Turkey</option>
-              <option value="/thailand">Thailand</option>
-              <option value="/cambodia">Cambodia</option>
-              <option value="/egypt">Egypt</option>
+              {allCountriesData?.map(country => (
+                <option key={country?.id} value={country?.link}>
+                  {country?.title}
+                </option>
+              ))}
             </select>
           </div>
           <button

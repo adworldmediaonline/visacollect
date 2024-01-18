@@ -1,0 +1,86 @@
+export const allCountriesData = [
+  {
+    id: 1,
+    imgSrc: '/assets/images/main/india-desti.png',
+    title: 'India',
+    link: '/india',
+  },
+  {
+    id: 2,
+    imgSrc: '/assets/images/main/srilanka.jpg',
+    title: 'Srilanka',
+    link: '/srilanka',
+  },
+  {
+    id: 3,
+    imgSrc: '/assets/images/main/australia.jpg',
+    title: 'Australia',
+    link: '/australia',
+  },
+  {
+    id: 4,
+    imgSrc: '/assets/images/main/turkey.jpg',
+    title: 'Turkey',
+    link: '/turkey',
+  },
+  {
+    id: 5,
+    imgSrc: '/assets/images/main/thailand.jpg',
+    title: 'Thailand',
+    link: '/thailand',
+  },
+  {
+    id: 6,
+    imgSrc: '/assets/images/main/cambodia.jpg',
+    title: 'Cambodia',
+    link: '/cambodia',
+  },
+  {
+    id: 7,
+    imgSrc: '/assets/images/main/oman.jpg',
+    title: 'Oman',
+    link: '/oman',
+  },
+  {
+    id: 8,
+    imgSrc: '/assets/images/main/egypt.jpg',
+    title: 'Egypt',
+    link: '/egypt',
+  },
+  {
+    id: 9,
+    imgSrc: '/assets/images/main/singapore.jpg',
+    title: 'Singapore',
+    link: '/singapore',
+  },
+  {
+    id: 10,
+    imgSrc: '/assets/images/main/malaysia.jpg',
+    title: 'Malaysia',
+    link: '/malaysia',
+  },
+  {
+    id: 11,
+    imgSrc: '/assets/images/main/indonesia.jpg',
+    title: 'Indonesia',
+    link: '/indonesia',
+  },
+  // {
+  //     id: 12,
+  //     imgSrc: '/assets/images/main/hongkong.jpg',
+  //     title: 'Hongkong',
+  //     link: '/hongkong',
+  // },
+  {
+    id: 12,
+    imgSrc: '/assets/images/main/morocco.jpg',
+    title: 'Morocco',
+    link: '/morocco',
+  },
+  {
+    id: 13,
+    imgSrc: '/assets/images/main/japan.jpg',
+    title: 'Japan',
+    link: '/japan',
+  },
+];
