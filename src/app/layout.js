@@ -21,10 +21,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <body className={`${poppins.className} antialiased`}>
+
       <Head>
         <meta name="google-site-verification" content="qsi8k0I-otMOh5FASZcM5X9KLygQS5gqWtSD9H4Qnxc" />
       </Head>
-      <body className={`${poppins.className} antialiased`}>
+
         <FormProvider>
           <ReactQueryProvider>
             <div>{children}</div>
