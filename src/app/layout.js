@@ -5,7 +5,7 @@ import ReactQueryProvider from '@/components/ReactQueryProvider';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
-import Head from "next/head";
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
 const poppins = Poppins({
@@ -22,7 +22,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <meta name="google-site-verification" content="qsi8k0I-otMOh5FASZcM5X9KLygQS5gqWtSD9H4Qnxc" />
+        <meta
+          name="google-site-verification"
+          content="qsi8k0I-otMOh5FASZcM5X9KLygQS5gqWtSD9H4Qnxc"
+        />
       </Head>
       <body className={`${poppins.className} antialiased`}>
         <FormProvider>
