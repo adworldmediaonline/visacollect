@@ -18,7 +18,7 @@ export const metadata = {
   title: 'Home',
   description: 'otMOh5FASZcM5X9KLygQS5gqWtSD9H4Qnxc',
 };
-
+//
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
