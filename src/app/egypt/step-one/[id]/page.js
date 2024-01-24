@@ -75,7 +75,6 @@ function Page({ params }) {
                 touched,
               }) => (
                 <Form>
-                  {console.log(values)}
                   <SubHeading subHead="Information for Visa" />
                   <div className="main-form-section">
                     <div className="label-section">

@@ -40,7 +40,6 @@ function Page() {
             validateOnChange={true}
             validateOnMount={true}
             onSubmit={(values, { setSubmitting, resetForm }) => {
-              console.log(values);
               postMutation.mutate(values);
               setSubmitting(false);
               resetForm();
@@ -55,7 +54,6 @@ function Page() {
               touched,
             }) => (
               <Form>
-                {console.log(values)}
                 <SubHeading subHead="General Details" />
 
                 <div className="main-form-section">
