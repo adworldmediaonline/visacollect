@@ -18,17 +18,18 @@ export const metadata = {
   title: '24X7 Online Visa Services | Get Your Visa Apply Today',
   description:
     'Plan your stress-free travel with our 24/7 online visa services. Enjoy quick and reliable visa processing at any time. Apply Visa Today.',
-  metadataBase: new URL(
-    'https://visacollect.com/home/online-visa-services-apply-today/'
-  ),
-  verification: {
-    google: 'qsi8k0I-otMOh5FASZcM5X9KLygQS5gqWtSD9H4Qnxc',
-  },
+  // metadataBase: new URL(
+  //   'https://visacollect.com/home/online-visa-services-apply-today/'
+  // ),
+
   alternates: {
-    canonical: '/',
+    canonical: 'https://visacollect.com/home/online-visa-services-apply-today/',
   },
   keywords:
     'visa application, apply for visa, online visa application, visa services, apply visa online, online visa, online visa services, e visa services, apply for e visa, Online visa services apply Today',
+  verification: {
+    google: 'qsi8k0I-otMOh5FASZcM5X9KLygQS5gqWtSD9H4Qnxc',
+  },
 };
 export default function RootLayout({ children }) {
   return (
