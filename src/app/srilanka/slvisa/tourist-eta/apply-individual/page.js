@@ -21,6 +21,8 @@ import SingleFileUpload from '@/components/srilanka/SingleFileUpload';
 import Formsubhead from '@/components/srilanka/common/Formsubhead';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import { minDate, minDateWithDate } from '@/lib/minDate';
+import { Country } from 'country-state-city';
+import { getAllCountries } from '@/lib/getAllCountries';
 
 const Page = () => {
   const postMutation = usePost(
@@ -258,10 +260,8 @@ const Page = () => {
                       name="nationalityIndividualTourist"
                       className="new-form-input "
                     >
-                      <option value="">Select</option>
-                      <option value="india">India</option>
-                      <option value="australia">Australia</option>
-                      <option value="france">France</option>
+                      <option value="">select</option>
+                      {getAllCountries()}
                     </Field>
 
                     <ErrorMessage name="nationalityIndividualTourist">
@@ -291,10 +291,8 @@ const Page = () => {
                       name="countryOfBirthIndividualTourist"
                       className="new-form-input "
                     >
-                      <option value="">Select</option>
-                      <option value="india">India</option>
-                      <option value="australia">Australia</option>
-                      <option value="france">France</option>
+                      <option value="">select</option>
+                      {getAllCountries()}
                     </Field>
 
                     <ErrorMessage name="countryOfBirthIndividualTourist">
@@ -1053,9 +1051,11 @@ const Page = () => {
                       className="new-form-input "
                     >
                       <option value="">Select</option>
-                      <option value="india">India</option>
-                      <option value="australia">Australia</option>
-                      <option value="france">France</option>
+                      {Country?.getAllCountries()?.map((country, index) => (
+                        <option key={index} value={country?.name}>
+                          {country?.name}
+                        </option>
+                      ))}
                     </Field>
 
                     <ErrorMessage name="countryIndividualTourist">
