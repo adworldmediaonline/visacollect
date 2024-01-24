@@ -97,7 +97,6 @@ const BannerMain = () => {
                 </option>
               ))}
             </select>
-            {console.log(Country?.getAllCountries())}
           </div>
           <div className="mb-5">
             <label

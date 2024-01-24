@@ -48,7 +48,7 @@ const Page = () => {
             }) => (
               <Form>
                 <SubHeading subHead="Embassy Registration" />
-                {console.log(values)}
+
                 <div className="main-form-section">
                   <div className="label-section">
                     <label>Email address</label>

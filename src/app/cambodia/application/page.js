@@ -39,7 +39,6 @@ function Page() {
           >
             {({ values, isValid, setFieldValue }) => (
               <Form>
-                {console.log(values)}
                 <SubHeading subHead="Personal Details" />
 
                 <div className="main-form-section">

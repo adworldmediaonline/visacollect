@@ -68,7 +68,6 @@ const Page = () => {
               Full Name
             </h2>
             <p className="font-bold leading-relaxed tracking-wide text-justify ">
-              {console.log(applicationData)}
               {applicationData?.personalDetails?.firstName}{' '}
               {applicationData?.personalDetails?.middleName}{' '}
               {applicationData?.personalDetails?.familyName}

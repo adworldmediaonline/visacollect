@@ -223,7 +223,7 @@ function Page({ params }) {
                       </ErrorMessage>
                     </div>
                   </div>
-                  {console.log(values)}
+
                   <div className="main-form-section">
                     <div className="label-section">
                       <label>Country of Birth *</label>
