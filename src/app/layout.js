@@ -27,6 +27,8 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
+  keywords:
+    'visa application, apply for visa, online visa application, visa services, apply visa online, online visa, online visa services, e visa services, apply for e visa, Online visa services apply Today',
 };
 export default function RootLayout({ children }) {
   return (

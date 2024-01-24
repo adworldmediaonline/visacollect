@@ -13,6 +13,8 @@ export const metadata = {
   alternates: {
     canonical: '/india-visa-apply-online-now/',
   },
+  keywords:
+    'india visa apply online now, india visa application, e tourist visa india, india travel visa, india visa for us citizens, apply for indian visa, indian visa online application, indian visa application form',
 };
 export default function RootLayout({ children }) {
   return (
