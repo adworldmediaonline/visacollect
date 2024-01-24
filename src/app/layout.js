@@ -15,10 +15,17 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: 'Home',
-  description: 'site created by next js',
+  title: '24X7 Online Visa Services | Get Your Visa Apply Today',
+  description:
+    'Plan your stress-free travel with our 24/7 online visa services. Enjoy quick and reliable visa processing at any time. Apply Visa Today.',
+  metadataBase: new URL(
+    'https://visacollect.com/home/online-visa-services-apply-today/'
+  ),
   verification: {
     google: 'qsi8k0I-otMOh5FASZcM5X9KLygQS5gqWtSD9H4Qnxc',
+  },
+  alternates: {
+    canonical: '/',
   },
 };
 export default function RootLayout({ children }) {
