@@ -311,9 +311,11 @@ export default function Page({ params }) {
                         className="new-form-input "
                       >
                         <option value="">Select</option>
-                        <option value="india">India</option>
-                        <option value="australia">Australia</option>
-                        <option value="france">France</option>
+                        {Country?.getAllCountries()?.map((country, index) => (
+                          <option key={index} value={country?.name}>
+                            {country?.name}
+                          </option>
+                        ))}
                       </Field>
 
                       <ErrorMessage name="nationalityIndividualTourist">
@@ -344,9 +346,11 @@ export default function Page({ params }) {
                         className="new-form-input "
                       >
                         <option value="">Select</option>
-                        <option value="india">India</option>
-                        <option value="australia">Australia</option>
-                        <option value="france">France</option>
+                        {Country?.getAllCountries()?.map((country, index) => (
+                          <option key={index} value={country?.name}>
+                            {country?.name}
+                          </option>
+                        ))}
                       </Field>
 
                       <ErrorMessage name="countryOfBirthIndividualTourist">
@@ -1155,9 +1159,11 @@ export default function Page({ params }) {
                         className="new-form-input "
                       >
                         <option value="">Select</option>
-                        <option value="india">India</option>
-                        <option value="australia">Australia</option>
-                        <option value="france">France</option>
+                        {Country?.getAllCountries()?.map((country, index) => (
+                          <option key={index} value={country?.name}>
+                            {country?.name}
+                          </option>
+                        ))}
                       </Field>
 
                       <ErrorMessage name="countryIndividualTourist">
