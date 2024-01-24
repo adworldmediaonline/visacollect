@@ -17,14 +17,17 @@ export default function CustomReactPhoneNumberInput({
   ...props
 }) {
   const [value, setValue] = useState(defaultValue || '');
+  const [error, setError] = useState('');
 
   const handleChange = value => {
     if (value && isValidPhoneNumber(value)) {
       setFieldValue(name, formatPhoneNumberIntl(value));
       setFieldTouched(name, true);
+      setError('');
     } else {
       setValue(value);
       setFieldTouched(name, false);
+      setError('Phone number is invalid');
     }
   };
 
@@ -37,10 +40,7 @@ export default function CustomReactPhoneNumberInput({
         onChange={handleChange}
         error={touched[name] && errors[name] ? errors[name] : undefined}
       />
-      {/* Is possible: {value && isPossiblePhoneNumber(value) ? 'true' : 'false'}
-      Is valid: {value && isValidPhoneNumber(value) ? 'true' : 'false'}
-      National: {value && formatPhoneNumber(value)}
-      International: {value && formatPhoneNumberIntl(value)} */}
+      {error ? <div className="text-red-500">{error}</div> : ''}
     </>
   );
 }
