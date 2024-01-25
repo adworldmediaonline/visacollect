@@ -5,12 +5,12 @@ import UnderlineTextCenter from '../australia/common/UnderlineTextCenter';
 const LearnMore = ({ learnMoreSectionData }) => {
   const { sections } = learnMoreSectionData;
   return (
-    <div className="">
-      <div className="container py-16">
-        <div className="space-y-4 md:text-center">
-          <div>
+    <div>
+      <div className="container">
+        <div className="space-y-4">
+          {/* <div>
             <UnderlineTextCenter title="Learn More" />
-          </div>
+          </div> */}
 
           {sections?.map((section, index) => (
             <>

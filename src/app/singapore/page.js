@@ -4,7 +4,7 @@ import LearnMore from '@/components/commonWebsiteComponents/LearnMore';
 import ProcessingStep from '@/components/commonWebsiteComponents/ProcessingStep';
 import {
   faqData1,
-  learnMoreSectionData,
+  learnMoreSectionDataAustralia,
   processingData1,
 } from '@/constant/data';
 import React from 'react';
@@ -19,9 +19,11 @@ function Page() {
         price="$126.67"
         link="/singapore/step-one"
       />
-      <ProcessingStep processingData={processingData1}
-       link="/thailand/apply-form" />
-      <LearnMore learnMoreSectionData={learnMoreSectionData} />
+      <ProcessingStep
+        processingData={processingData1}
+        link="/thailand/apply-form"
+      />
+      <LearnMore learnMoreSectionData={learnMoreSectionDataAustralia} />
 
       <Faq faqData={faqData1} />
     </div>

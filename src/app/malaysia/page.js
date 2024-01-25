@@ -4,7 +4,7 @@ import LearnMore from '@/components/commonWebsiteComponents/LearnMore';
 import ProcessingStep from '@/components/commonWebsiteComponents/ProcessingStep';
 import {
   faqData1,
-  learnMoreSectionData,
+  learnMoreSectionDataAustralia,
   processingData1,
 } from '@/constant/data';
 import React from 'react';
@@ -23,7 +23,7 @@ function Page() {
         processingData={processingData1}
         link="/malaysia/step-one"
       />
-      <LearnMore learnMoreSectionData={learnMoreSectionData} />
+      <LearnMore learnMoreSectionData={learnMoreSectionDataAustralia} />
 
       <Faq faqData={faqData1} />
     </div>
