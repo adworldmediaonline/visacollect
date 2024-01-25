@@ -50,13 +50,14 @@ const BannerMain = () => {
       >
         <div className="container justify-center flex flex-col h-[600px]">
           <div className="pt-12 space-y-3">
-            <h2 className="text-white md:text-[55px] text-[40px] font-bold leading-[1.2] md:w-[50%]">
+            <h1 className="text-white md:text-[55px] text-[40px] font-bold leading-[1.2] md:w-[50%]">
               {' '}
-              Find Visa information for all countries and apply today.
-            </h2>
+              No more borders, no more delays. 24x7 online visa services started
+              anytime, anywhere for global destinations.
+            </h1>
             <p className="text-white md:w-[70%] py-2">
-              Focus on your trip, not paperwork. Let us help you easily get your
-              travel documents.
+              Fast and secure: Trust our secure online visa services platform to
+              handle your sensitive information with care.
             </p>
             <div className="flex space-x-4">
               {smallIcon.map((e, i) => (
