@@ -1,6 +1,6 @@
-"use client";
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+'use client';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const HeadingSection = ({ sub, title }) => {
   const ref = useRef(null);
@@ -21,8 +21,8 @@ const HeadingSection = ({ sub, title }) => {
   };
   return (
     <div className="md:space-y-2">
-      <h2 className="md:text-5xl text-2xl font-bold text-gray-700">{title}</h2>
-      <h5 className=" text-gray-700 leading-loose">{sub}</h5>
+      <h3 className="text-2xl font-bold text-gray-700 md:text-5xl">{title}</h3>
+      <h5 className="leading-loose text-gray-700 ">{sub}</h5>
     </div>
   );
 };

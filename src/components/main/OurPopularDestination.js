@@ -56,15 +56,13 @@ const OurPopularDestination = () => {
       title: 'Egypt',
       link: '/egypt',
     },
-    
-  
   ];
 
   return (
     <div className="py-12 space-y-12 md:py-12 bg-sky-50">
       {/* title start  */}
       <div className="max-w-3xl mx-auto text-center">
-        <HeadingSection title="Our Popular Destinations" />
+        <HeadingSection title="We Process Visas for" />
       </div>
       {/* title end  */}
       <div className="container space-y-8">
@@ -105,7 +103,7 @@ const OurPopularDestination = () => {
         <div className="flex justify-center">
           <Link href="/all-countries">
             <button className="flex px-12 py-2 mx-auto text-center btnBlue ">
-              View All Countries
+              Visit All Destinations
             </button>
           </Link>
         </div>
