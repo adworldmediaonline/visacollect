@@ -16,7 +16,6 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
-
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -83,8 +82,6 @@ body {
   height: 100%;
   /* overflow: visible; */
 }
-
-
 
 .headerMainVisa .nav-menuMainVisa {
   display: flex;
@@ -160,39 +157,41 @@ body {
 }
 /* Navbar--close */
 
-.btnBlue{
-    @apply bg-primaryMain hover:bg-black rounded-md text-white 
+.btnBlue {
+  @apply text-white rounded-md bg-primaryMain hover:bg-black;
 }
-.btnBlack{
-  @apply  px-8 py-2 hover:-translate-y-1 transition-all duration-500  font-semibold mb-2 hover:bg-primaryMain rounded-md text-white
+.btnBlack {
+  @apply px-8 py-2 mb-2 font-semibold text-white transition-all duration-500 rounded-md hover:-translate-y-1 hover:bg-primaryMain;
 }
 
 .testimonialBg {
   background: linear-gradient(
     to bottom,
-    rgb(240 249 255)  0%,
+    rgb(240 249 255) 0%,
     rgb(240 249 255) 20%,
-    #0068E5 20%,
-    #0068E5 100%
+    #0068e5 20%,
+    #0068e5 100%
   );
 }
 
-
 /* datepicker */
 
-.react-datepicker-wrapper{
-width: 100% !important;
+.react-datepicker-wrapper {
+  width: 100% !important;
 }
-.border{
+.border {
   width: 100% !important;
   border-radius: 7px;
   outline: 2px solid transparent;
   outline-offset: 2px;
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+    var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+    calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow, 0 0 #0000);
 }
-.react-datepicker__view-calendar-icon input{
+.react-datepicker__view-calendar-icon input {
   padding: 9px 10px 9px 35px !important;
 }
 
@@ -200,3 +199,10 @@ width: 100% !important;
   padding: 0.8rem !important;
 }
 
+/* responsive grid */
+/* Grid styles */
+.responsive-grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
