@@ -114,7 +114,7 @@ function Testimonial() {
       </div>
       <div className="container relative">
         <Slider {...settings} ref={customeSlider} className="mx-auto">
-          {testimonial.map((e, i) => (
+          {testimonial?.map((e, i) => (
             <div key={i}>
               <div className="items-center grid-cols-12 gap-20 md:grid">
                 <div className="order-2 col-span-4 pb-12">
@@ -125,13 +125,7 @@ function Testimonial() {
                 </div>
                 <div className="col-span-8 space-y-4 text-white md:pt-20">
                   <h3 className="text-xl font-semibold">{e.name}</h3>
-                  <p className="italic font-light">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the
-                    industry`&apos;s standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled
-                    it to make a type specimen book.
-                  </p>
+                  <p className="italic font-light">{e.desc}</p>
                   <div className="flex space-x-2">
                     <IoIosStar className="text-yellow-500" />
                     <IoIosStar className="text-yellow-500" />

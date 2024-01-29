@@ -45,7 +45,7 @@ const Page = () => {
           </ul>
         </aside>
       </div>
-      <Faq faqData={faqData1} />
+      <Faq faqData={learnMoreSectionDataAustralia?.faqData} />
     </div>
   );
 };

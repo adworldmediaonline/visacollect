@@ -17,9 +17,32 @@ const LearnMore = ({ learnMoreSectionData }) => {
               <div className={`${section?.image ? 'flex space-x-5 ' : ''}`}>
                 <div className={`${section?.image ? 'w-full text-left' : ''}`}>
                   <div className="flex justify-start pt-10" key={index}>
-                    <h2 className="text-2xl text-black md:text-3xl">
-                      {section?.title}
-                    </h2>
+                    {index === 0 ? (
+                      <h1 className="text-2xl text-black md:text-3xl">
+                        {section?.title}
+                      </h1>
+                    ) : null}
+                    {index === 1 || index === 2 ? (
+                      <h2 className="text-2xl text-black md:text-3xl">
+                        {section?.title}
+                      </h2>
+                    ) : null}
+                    {index === 3 ? (
+                      <h3 className="text-2xl text-black md:text-3xl">
+                        {section?.title}
+                      </h3>
+                    ) : null}
+                    {index === 4 ? (
+                      <h4 className="text-2xl text-black md:text-3xl">
+                        {section?.title}
+                      </h4>
+                    ) : null}
+
+                    {index > 4 ? (
+                      <h5 className="text-2xl text-black md:text-3xl">
+                        {section?.title}
+                      </h5>
+                    ) : null}
                   </div>
                   {section?.paragraphs?.map((paragraph, index) => (
                     <>
