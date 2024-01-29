@@ -18,7 +18,7 @@ export const Banner = ({
         <div>
           <p className="py-8">Home &gt; {pageName}</p>
         </div>
-        <h1 className="text-xl font-light md:text-4xl ">{pageTitle}</h1>
+        <h2 className="text-xl font-light md:text-4xl ">{pageTitle}</h2>
         <div className="mt-8">
           <div className="flex gap-4">
             {/* Passport Select */}

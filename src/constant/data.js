@@ -100,13 +100,13 @@ const learnMoreSectionDataAustralia = {
   sections: [
     {
       title:
-        "Live Your Aussie Dream: Apply for Australia's Visitor Visa in Minutes.",
+        'Live Your Aussie Dream: Apply For Australia Visa Online in Minutes.',
       paragraphs: [
         {
           text: "Dreaming of sun-kissed beaches, vibrant cities, and endless outback horizons? Australia's calling, and your adventure starts with one simple step: your Visitor Visa (Subclass 600).",
         },
         {
-          text: 'Ditch all the confusing paperwork and endless queues. We’ve made visa applications a breeze!',
+          text: 'Ditch all the confusing paperwork and endless queues. We’ve made the Australia Visa application online process a breeze!',
         },
       ],
       lists: [
@@ -122,19 +122,19 @@ const learnMoreSectionDataAustralia = {
         {
           title: "Australia's wonders are just a click away:",
           listItems: [
-            'Applying online, anytime, anywhere: Skip the embassy hustle! Our user-friendly platform and mobile app take care of it all, no matter where you are.',
-            'Simple, step-by-step guidance: Forget the visa jargon. We break it down into bite-sized pieces, making the process crystal clear.',
-            'Fast and efficient: Ditch the waiting game. We handle your application swiftly and professionally, so you can focus on planning your epic adventure.',
-            'Expert support: Got questions? Our friendly team is always happy to help, ensuring a smooth and stress-free journey.',
+            'Explore bustling cities like Sydney and Melbourne.',
+            `Dive into the Great Barrier Reef's colorful coral wonderland.`,
+            'Traverse the rugged beauty of the Outback under starry skies.',
+            'Reconnect with loved ones or make new Aussie mates.',
           ],
         },
       ],
     },
     {
-      title: 'What is Australia’s Visitor Visa (Subclass 600)?            ',
+      title: 'What is Australia’s Visitor Visa (Subclass 600)?',
       paragraphs: [
         {
-          text: "The Australia Visitor Visa (Subclass 600) is essential for temporary entry. It's necessary for tourists or those visiting friends and family. This visa lacks a barcode or QR code, presenting traveler details and conditions. Australian immigration might seek additional information via phone or interview as needed. The Australia Visitor Visa (Subclass 600) can be your true golden ticket to unlock all the fun and more!",
+          text: "The Australia Visitor Visa (Subclass 600) is essential for temporary entry. It's necessary for tourists or those visiting friends and family. This Australia Tourist Visa lacks a barcode or QR code, presenting traveler details and conditions. Australian immigration might seek additional information via phone or interview as needed. The Australia Visitor Visa (Subclass 600) can be your true golden ticket to unlock all the fun and more!",
         },
       ],
       image: '/assets/images/australia/visainfo.png',
@@ -144,10 +144,10 @@ const learnMoreSectionDataAustralia = {
         {
           title: "Here's the lowdown:",
           listItems: [
-            `It's your temporary entry pass: This visa grants you permission to visit Australia for tourism, visit family and friends, or even study for up to 3 months.`,
+            `It's your temporary entry pass: This Australia Tourist Visa grants you permission to visit Australia for tourism, visit family and friends, or even study for up to 3 months`,
             'Skip the queues, apply online: No need to trek to the embassy! You can apply easily and securely from anywhere in the world through our user-friendly platform.',
-            `Know before you go: The visa itself doesn't have fancy barcodes, but it clearly outlines your authorized stay and any conditions specific to your trip.`,
-            'Be prepared for a friendly chat: Immigration officials might reach out for a quick phone call or interview to get to know you and your travel plans better.                      ',
+            `Know before you go: The Australia visa itself doesn't have fancy barcodes, but it clearly outlines your authorized stay and any conditions specific to your trip.`,
+            'Be prepared for a friendly chat: Immigration officials might reach out for a quick phone call or interview to get to know you and your travel plans better.',
           ],
         },
       ],
@@ -158,10 +158,10 @@ const learnMoreSectionDataAustralia = {
           text: ' Remember:',
         },
         {
-          text: "Not everyone needs a visa: Check if you're eligible for an Electronic Travel Authority (ETA) - it's a simpler option for some nationalities.",
+          text: "Not everyone needs to Apply for Australian Visa: Check if you're eligible for an Electronic Travel Authority (ETA) - it's a simpler option for some nationalities.",
         },
         {
-          text: 'Get the right visa for your needs: Subclass 600 covers most visitor situations, but there are other visa options for longer stays or specific purposes.',
+          text: 'Get the right visa for your needs: Subclass 600 covers most visitor situations, but there are other vAustralia Visa options for longer stays or specific purposes.',
         },
       ],
     },
@@ -169,7 +169,7 @@ const learnMoreSectionDataAustralia = {
       title: 'What can you do with a Visitor Visa (subclass 600)?',
       paragraphs: [
         {
-          text: "It’s your calling when you start craving for an adventurous trip. With this visa, Australia's calling and the Visitor Visa (Subclass 600) is your key to unlocking its magic! But beyond paperwork, what does it truly unlock? Here's a glimpse of your Down Under possibilities:",
+          text: "It’s your calling when you start craving for an adventurous trip. With this Australia visa, Australia's calling and the Australian Visitor Visa (Subclass 600) is your key to unlocking its magic! But beyond paperwork, what does it truly unlock? Here's a glimpse of your Down Under possibilities:",
         },
       ],
       lists: [
@@ -183,14 +183,14 @@ const learnMoreSectionDataAustralia = {
         {
           title: '2. Connect More:',
           listItems: [
-            `Barbecue with mates under starry skies, share laughter in bustling city cafes, or catch up with family over a lazy beach sunset. The Visitor Visa lets you reconnect and create lasting memories.`,
+            `BBQ with mates under starry skies, share laughter in bustling city cafes, or catch up with family over a lazy beach sunset. The Australian Visitor Visa lets you reconnect and create lasting memories.`,
             'Whether cheering on Aussie sports teams, exploring vibrant laneways, or simply unwinding together, Australia offers endless ways to bond with the people you love.',
           ],
         },
         {
           title: '3. More Than Just Tourist Tales:',
           listItems: [
-            `Need to attend a short course, conduct business meetings, or receive medical treatment? The Visitor Visa offers options beyond just leisure vacations.`,
+            `Need to attend a short course, conduct business meetings, or receive medical treatment? The Australia Visa offers options beyond just leisure vacations.`,
             'Explore specific visa types tailored to your unique needs and turn any Aussie dream into reality.',
           ],
         },
@@ -201,7 +201,7 @@ const learnMoreSectionDataAustralia = {
         'What should you not do with Australia’s Visitor Visa (Subclass 600)?',
       paragraphs: [
         {
-          text: 'Despite its wide-ranging advantages, it has some guidelines to keep things smooth sailing:                    ',
+          text: 'Despite its wide-ranging advantages, it has some guidelines to keep things smooth sailing:',
         },
       ],
       lists: [
@@ -257,7 +257,7 @@ const learnMoreSectionDataAustralia = {
       title: 'How to apply for the Australia Visitor Visa Subclass 600',
       paragraphs: [
         {
-          text: "Dreaming of sun-kissed beaches, vibrant cities, and epic Aussie adventures? The Visitor Visa (Subclass 600) is your key, and applying with us is easier than ever! Here's how it works:                    ",
+          text: "Dreaming of sun-kissed beaches, vibrant cities, and epic Aussie adventures? The Visitor Visa (Subclass 600) is your key, and applying for Australian e Visa with us is easier than ever! Here's how it works:",
         },
       ],
       lists: [
@@ -271,32 +271,29 @@ const learnMoreSectionDataAustralia = {
           title: 'Step 2: Finish the Journey & Trust the Experts:',
           listItems: [
             `Upload your supporting documents, breeze through the rest of the online form, and hit "Submit!"`,
-            `Our visa gurus will get cracking, ensuring your application meets all government requirements. They'll let you know if anything else is needed, like an appointment for biometrics or a medical exam. No worries, we'll handle booking it all for you!  Otherwise, sit back, relax, and let us work our magic. We'll keep you updated every step of the way.`,
           ],
         },
         {
           title: 'Step 3: Visa Appointment (Optional):',
           listItems: [
             `If needed, your appointment will be pre-booked and you'll receive a clear PDF guide explaining everything you need to do (like giving your biometrics and taking a medical exam).`,
-            `No sweat, even the appointment stage is smooth sailing with our support.
-                        That's it! Grab your sunscreen, your sense of adventure, and get ready to unlock the magic of Australia!
-                        `,
+            `No sweat, even the appointment stage is smooth sailing with our support. That's it! Grab your sunscreen, your sense of adventure, and get ready to unlock the magic of Australia!`,
           ],
         },
         {
           title: "Here's what you'll love about applying with us:",
           listItems: [
             `Simple & seamless: Online application or app, your choice!
-                        Expert guidance: We're visa wizards, ready to assist you every step of the way.
-                        Government-approved: Relax knowing your application is in good hands.
-                        Clear communication: We'll keep you informed, always.
-                        `,
+            Expert guidance: We're visa wizards, ready to assist you every step of the way.
+            Government-approved: Relax knowing your application is in good hands.
+            Clear communication: We'll keep you informed, always.
+            `,
           ],
         },
       ],
     },
     {
-      title: 'Documents Required to Apply for your e-Visa',
+      title: 'Australia Visa Requirements to Apply for your e Visa',
       paragraphs: [
         {
           text: "Applicant's Photo",
@@ -356,6 +353,24 @@ const learnMoreSectionDataAustralia = {
           text: ' Certificate of Incorporation (if applicable)',
         },
       ],
+    },
+  ],
+  faqData: [
+    {
+      id: 1,
+      title: 'How long does it take for ETA Australia to be approved?',
+      des: 'Typically, our applicants can receive their approved ETA Visa in a few days. Check your data thoroughly before submission to speed up this process.',
+    },
+    {
+      id: 2,
+      title:
+        'How can I get a Visa for work, education, permanent residence, or any other purpose?',
+      des: 'You will require a consultation session with a registered Australia Migration Officer who will discuss with you all the requirements as specified by the Department of Home Affairs - you can choose your purpose of travel and book a consultation session on the app form.',
+    },
+    {
+      id: 3,
+      title: "Why can't I find my nationality on the list?",
+      des: "If you can't find your nationality on the list, the reason may be that your nationality is not eligible for ETA Australia. Please contact our support team.",
     },
   ],
 };
