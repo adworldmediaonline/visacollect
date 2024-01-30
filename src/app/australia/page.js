@@ -27,7 +27,7 @@ const Page = () => {
         processingData={processingData1}
         link="/australia/application"
       /> */}
-      <div className="w-full h-[1px] bg-slate-200"></div>
+      <div className="w-full h-[0.5px] bg-gray-200"></div>
       <div className="flex">
         <main className="flex-1 py-2">
           <LearnMore learnMoreSectionData={learnMoreSectionDataAustralia} />
