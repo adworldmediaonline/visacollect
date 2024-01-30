@@ -99,6 +99,30 @@ const learnMoreSectionDataAustralia = {
       },
     ],
   },
+  visaRequirements: {
+    title: 'Australia Visa Requirements to Apply for your e Visa',
+    list: [
+      "Applicant's Photo",
+      'National ID',
+      'Passport page ',
+      'All passport pages ',
+      'Scans of the passport pages that have immigration stamps',
+      'Legal Guardian Passport Scan (if applicable)',
+      ' Bank statements from the last 3 months',
+      '  Bank statement (if applicable)',
+      'Airline confirmation',
+      'Proof of accommodation ',
+      ' Employment Proof (if applicable)',
+      'Book of Family (if applicable)',
+      'Invitation Letter (if applicable)',
+      'Cover Letter',
+      ' Supporting Document (if applicable)',
+      'Travel itinerary (if applicable)',
+      'Birth certificate (if applicable)',
+      ' Proof of Marriage or Spousal Relationship (if applicable)',
+      ' Certificate of Incorporation (if applicable)',
+    ],
+  },
   sections: [
     {
       title:
@@ -292,68 +316,6 @@ const learnMoreSectionDataAustralia = {
             Clear communication: We'll keep you informed, always.
             `,
           ],
-        },
-      ],
-    },
-    {
-      title: 'Australia Visa Requirements to Apply for your e Visa',
-      paragraphs: [
-        {
-          text: "Applicant's Photo",
-        },
-        {
-          text: 'National ID',
-        },
-        {
-          text: 'Passport page ',
-        },
-        {
-          text: 'All passport pages ',
-        },
-        {
-          text: 'Scans of the passport pages that have immigration stamps',
-        },
-        {
-          text: 'Legal Guardian Passport Scan (if applicable)',
-        },
-        {
-          text: ' Bank statements from the last 3 months',
-        },
-        {
-          text: '  Bank statement (if applicable)',
-        },
-        {
-          text: 'Airline confirmation',
-        },
-        {
-          text: 'Proof of accommodation ',
-        },
-        {
-          text: ' Employment Proof (if applicable)',
-        },
-        {
-          text: 'Book of Family (if applicable)',
-        },
-        {
-          text: 'Invitation Letter (if applicable)',
-        },
-        {
-          text: 'Cover Letter',
-        },
-        {
-          text: ' Supporting Document (if applicable)',
-        },
-        {
-          text: 'Travel itinerary (if applicable)',
-        },
-        {
-          text: 'Birth certificate (if applicable)',
-        },
-        {
-          text: ' Proof of Marriage or Spousal Relationship (if applicable)',
-        },
-        {
-          text: ' Certificate of Incorporation (if applicable)',
         },
       ],
     },
