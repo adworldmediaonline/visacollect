@@ -1,3 +1,5 @@
+import { visaInfo } from './images';
+
 const processingData1 = [
   {
     id: 1,
@@ -137,7 +139,8 @@ const learnMoreSectionDataAustralia = {
           text: "The Australia Visitor Visa (Subclass 600) is essential for temporary entry. It's necessary for tourists or those visiting friends and family. This Australia Tourist Visa lacks a barcode or QR code, presenting traveler details and conditions. Australian immigration might seek additional information via phone or interview as needed. The Australia Visitor Visa (Subclass 600) can be your true golden ticket to unlock all the fun and more!",
         },
       ],
-      image: '/assets/images/australia/visainfo.png',
+      image: visaInfo,
+      imageAlt: 'visainfo1',
     },
     {
       lists: [

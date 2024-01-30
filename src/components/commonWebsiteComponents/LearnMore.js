@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import UnderlineTextCenter from '../australia/common/UnderlineTextCenter';
+import Divider from '../common/Divider';
+import Image from 'next/image';
 
 const LearnMore = ({ learnMoreSectionData }) => {
   const { sections } = learnMoreSectionData;
@@ -14,13 +16,16 @@ const LearnMore = ({ learnMoreSectionData }) => {
 
           {sections?.map((section, index) => (
             <>
-              <div className={`${section?.image ? 'flex space-x-5 ' : ''}`}>
+              <div
+                className={`${section?.image ? 'flex flex-col gap-5  ' : ''}`}
+              >
                 <div className={`${section?.image ? 'w-full text-left' : ''}`}>
-                  <div className="flex justify-start pt-10" key={index}>
+                  <div
+                    className="flex justify-start pt-10 [&_h1]:text-primary [&_h2]:text-primary [&_h3]:text-primary [&_h4]:text-primary [&_h5]:text-primary [&_h6]:text-primary"
+                    key={index}
+                  >
                     {index === 0 ? (
-                      <h1 className="text-2xl text-black md:text-3xl">
-                        {section?.title}
-                      </h1>
+                      <h1 className="text-2xl md:text-3xl">{section?.title}</h1>
                     ) : null}
                     {index === 1 || index === 2 ? (
                       <h2 className="text-2xl text-black md:text-3xl">
@@ -44,6 +49,7 @@ const LearnMore = ({ learnMoreSectionData }) => {
                       </h5>
                     ) : null}
                   </div>
+                  <Divider />
                   {section?.paragraphs?.map((paragraph, index) => (
                     <>
                       <p className="pt-4 text-left" key={index}>
@@ -54,8 +60,12 @@ const LearnMore = ({ learnMoreSectionData }) => {
 
                   {section?.lists?.map((list, index) => (
                     <div key={index}>
-                      <div className="py-4 text-left">{list?.title}</div>
-                      <ul className="flex flex-col items-start justify-start list-disc ">
+                      <div className="mt-4 mb-2">
+                        <strong className="py-4 text-left">
+                          {list?.title}
+                        </strong>
+                      </div>
+                      <ul className="flex flex-col items-start justify-start gap-3 list-disc ">
                         {list?.listItems?.map((item, index) => (
                           <>
                             <li className="py-1 text-left" key={index}>
@@ -68,10 +78,11 @@ const LearnMore = ({ learnMoreSectionData }) => {
                   ))}
                 </div>
                 {!!section?.image && (
-                  <div className={`${section?.image ? 'w-full' : ''}`}>
-                    <img
-                      src="/assets/images/australia/visainfo.png"
-                      className="w-full object-cover h-[250px] object object-center rounded-lg"
+                  <div className={`${section?.image ? 'w-full relative' : ''}`}>
+                    <Image
+                      alt={section?.imageAlt}
+                      src={section?.image}
+                      className="object-cover w-full"
                     />
                   </div>
                 )}
