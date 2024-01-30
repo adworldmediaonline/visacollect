@@ -9,10 +9,6 @@ import {
   processingData1,
 } from '@/constant/data';
 import Link from 'next/link';
-import Divider from '@/components/common/Divider';
-import CustomButton from '@/components/common/CustomButton';
-import PageReview from './_homePage/PageReview';
-import RelatedArticlesSlider from '@/components/commonWebsiteComponents/RelatedArticlesSlider';
 
 const Page = () => {
   return (
@@ -49,13 +45,7 @@ const Page = () => {
           </ul>
         </aside>
       </div>
-      <div className="mt-16">
-        <Divider />
-      </div>
-
       <Faq faqData={learnMoreSectionDataAustralia?.faqData} />
-      <PageReview applyLink="#" />
-      <RelatedArticlesSlider />
     </div>
   );
 };

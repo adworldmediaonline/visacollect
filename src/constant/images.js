@@ -1,3 +1,3 @@
-import visaInfo from '../../public/assets/images/australia/visainfo.png';
+import visaInfo from '../../public/assets/images/australia/visaInfo.jpeg';
 
 export { visaInfo };

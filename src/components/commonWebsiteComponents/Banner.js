@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { FaInfoCircle } from 'react-icons/fa';
+import HomePageTitle from '@/app/australia/_homePage/HomePageTitle';
 
 export const Banner = ({
   name,
@@ -18,7 +19,7 @@ export const Banner = ({
         <div>
           <p className="py-8">Home &gt; {pageName}</p>
         </div>
-        <h2 className="text-xl font-light md:text-4xl ">{pageTitle}</h2>
+        <HomePageTitle pageTitle={pageTitle} />
         <div className="mt-8">
           <div className="flex gap-4">
             {/* Passport Select */}
