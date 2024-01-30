@@ -3,6 +3,7 @@ import Link from 'next/link';
 import UnderlineTextCenter from '../australia/common/UnderlineTextCenter';
 import Divider from '../common/Divider';
 import Image from 'next/image';
+import { learnMoreSectionDataAustralia } from '@/constant/data';
 
 const LearnMore = ({ learnMoreSectionData }) => {
   const { sections } = learnMoreSectionData;
@@ -17,13 +18,11 @@ const LearnMore = ({ learnMoreSectionData }) => {
           {sections?.map((section, index) => (
             <>
               <div
+                key={index}
                 className={`${section?.image ? 'flex flex-col gap-5  ' : ''}`}
               >
                 <div className={`${section?.image ? 'w-full text-left' : ''}`}>
-                  <div
-                    className="flex justify-start pt-10 [&_h1]:text-primary [&_h2]:text-primary [&_h3]:text-primary [&_h4]:text-primary [&_h5]:text-primary [&_h6]:text-primary"
-                    key={index}
-                  >
+                  <div className="flex justify-start pt-10 [&_h1]:text-primary [&_h2]:text-primary [&_h3]:text-primary [&_h4]:text-primary [&_h5]:text-primary [&_h6]:text-primary">
                     {index === 0 ? (
                       <h1 className="text-2xl md:text-3xl">{section?.title}</h1>
                     ) : null}
@@ -89,6 +88,24 @@ const LearnMore = ({ learnMoreSectionData }) => {
               </div>
             </>
           ))}
+
+          {learnMoreSectionDataAustralia?.visaRequirements?.title && (
+            <div className="mt-4 mb-2">
+              <h2 className="text-2xl text-primary md:text-3xl">
+                {learnMoreSectionDataAustralia?.visaRequirements?.title}
+              </h2>
+              <Divider />
+            </div>
+          )}
+          {learnMoreSectionDataAustralia?.visaRequirements?.list.map(
+            (item, index) => (
+              <div key={index}>
+                <ul className="flex flex-col items-start justify-start list-disc ">
+                  <li className="text-left">{item}</li>
+                </ul>
+              </div>
+            )
+          )}
         </div>
       </div>
     </div>
