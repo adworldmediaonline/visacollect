@@ -33,7 +33,7 @@ const Page = () => {
       /> */}
       <div className="w-full h-[0.5px] bg-gray-200"></div>
       <div className="flex">
-        <main className="flex-1 py-2">
+        <main className="flex-1 py-2 [&_strong]:text-[#595b66] [&_p]:font-normal [&_p]:text-[#343a40] [&_li]:text-[#343a40]">
           <LearnMore learnMoreSectionData={learnMoreSectionDataAustralia} />
         </main>
         <aside className="basis-[300px]  py-12 space-y-4">

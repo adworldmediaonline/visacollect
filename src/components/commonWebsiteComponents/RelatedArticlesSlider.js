@@ -103,14 +103,14 @@ const RelatedArticlesSlider = () => {
         </div>
 
         <div className="relative flex items-center justify-between">
-          {/* <div className="absolute z-10 hidden text-center -left-8 md:block">
+          <div className="absolute z-10 hidden text-center -left-8 md:block">
             <button onClick={() => customSlider.current.slickPrev()}>
               <IoIosArrowBack
                 size={40}
                 className="p-2 text-white border rounded-full border-primaryMain bg-primaryMain "
               />
             </button>
-          </div> */}
+          </div>
           <div className="w-[100%]">
             <Slider {...settings} ref={customSlider} className="mx-auto ">
               {testimonial.map((item, e) => (
@@ -120,14 +120,14 @@ const RelatedArticlesSlider = () => {
               ))}
             </Slider>
           </div>
-          {/* <div className="absolute z-10 hidden text-center -right-8 md:block">
+          <div className="absolute z-10 hidden text-center -right-8 md:block">
             <button onClick={() => customSlider.current.slickNext()}>
               <IoIosArrowForward
                 size={40}
                 className="p-2 text-white border rounded-full bg-primaryMain border-primaryMain"
               />
             </button>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

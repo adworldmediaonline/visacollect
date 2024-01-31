@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { FaInfoCircle } from 'react-icons/fa';
 import HomePageTitle from '@/app/australia/_homePage/HomePageTitle';
+import { getAllCountries } from '@/lib/getAllCountries';
 
 export const Banner = ({
   name,
@@ -21,43 +22,38 @@ export const Banner = ({
         </div>
         <HomePageTitle pageTitle={pageTitle} />
         <div className="mt-8">
-          <div className="flex gap-4">
-            {/* Passport Select */}
-            <div className="mb-4">
-              <label
-                htmlFor="passportSelect"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Passport
-              </label>
-              <select
-                id="passportSelect"
-                className="p-2 mt-1 text-sm bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300"
-              >
-                {/* Add your passport options here */}
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
-              </select>
-            </div>
+          <div className="flex gap-4 xl">
+            <div className="flex flex-shrink-0 gap-3 basis-96">
+              {/* Passport Select */}
+              <div className="flex-1 mb-4">
+                <label
+                  htmlFor="passportSelect"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Passport
+                </label>
+                <select id="passportSelect" className="text-sm new-form-input">
+                  <option value="">select</option>
+                  {getAllCountries()}
+                </select>
+              </div>
 
-            {/* Destination Select */}
-            <div className="mb-4">
-              <label
-                htmlFor="destinationSelect"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Destination
-              </label>
-              <select
-                id="destinationSelect"
-                className="p-2 mt-1 text-sm bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300"
-              >
-                {/* Add your destination options here */}
-                <option value="destination1">Destination 1</option>
-                <option value="destination2">Destination 2</option>
-                <option value="destination3">Destination 3</option>
-              </select>
+              {/* Destination Select */}
+              <div className="flex-1 mb-4">
+                <label
+                  htmlFor="destinationSelect"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Destination
+                </label>
+                <select
+                  id="destinationSelect"
+                  className="text-sm new-form-input"
+                >
+                  <option value="">select</option>
+                  {getAllCountries()}
+                </select>
+              </div>
             </div>
 
             {/* Business Tourism Buttons */}
