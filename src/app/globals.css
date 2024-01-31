@@ -156,12 +156,13 @@ body {
   } */
 }
 /* Navbar--close */
-
-.btnBlue {
-  @apply text-white rounded-md bg-primaryMain hover:bg-black;
-}
-.btnBlack {
-  @apply px-8 py-2 mb-2 font-semibold text-white transition-all duration-500 rounded-md hover:-translate-y-1 hover:bg-primaryMain;
+@layer components {
+  .btnBlue {
+    @apply text-white rounded-md bg-primaryMain hover:bg-black;
+  }
+  .btnBlack {
+    @apply px-8 py-2 mb-2 font-semibold text-white transition-all duration-500 rounded-md hover:-translate-y-1 hover:bg-primaryMain;
+  }
 }
 
 .testimonialBg {

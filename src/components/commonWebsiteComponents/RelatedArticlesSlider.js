@@ -107,7 +107,7 @@ const RelatedArticlesSlider = () => {
             <button onClick={() => customSlider.current.slickPrev()}>
               <IoIosArrowBack
                 size={40}
-                className="p-2 text-white border rounded-full border-primaryMain bg-primaryMain "
+                className="p-2 border rounded-full text-primaryMain hover:text-white hover:bg-primaryMain border-primaryMain"
               />
             </button>
           </div>
@@ -124,7 +124,7 @@ const RelatedArticlesSlider = () => {
             <button onClick={() => customSlider.current.slickNext()}>
               <IoIosArrowForward
                 size={40}
-                className="p-2 text-white border rounded-full bg-primaryMain border-primaryMain"
+                className="p-2 border rounded-full text-primaryMain hover:text-white hover:bg-primaryMain border-primaryMain"
               />
             </button>
           </div>
