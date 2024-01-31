@@ -19,40 +19,38 @@ const LearnMore = ({ learnMoreSectionData }) => {
           </div> */}
 
           {sections?.map((section, index) => (
-            <>
-              <div
-                key={index}
-                className={`${section?.image ? 'flex flex-col gap-5  ' : ''}`}
-              >
-                <div className={`${section?.image ? 'w-full text-left' : ''}`}>
-                  <SectionHeading heading={section.title} index={index} />
-                  <Divider />
-                  {section?.paragraphs?.map((paragraph, index) => (
-                    <SectionParagraph text={paragraph.text} key={index} />
-                  ))}
+            <div
+              key={index}
+              className={`${section?.image ? 'flex flex-col gap-5  ' : ''}`}
+            >
+              <div>
+                <SectionHeading heading={section.title} />
+                <Divider />
+                {section?.paragraphs?.map((paragraph, index) => (
+                  <SectionParagraph text={paragraph.text} key={index} />
+                ))}
 
-                  {section?.lists?.map((list, index) => (
-                    <div key={index}>
-                      <SectionList list={list} />
-                    </div>
-                  ))}
-                </div>
-                {!!section?.image && (
-                  <div
-                    className={`${
-                      section?.image ? 'w-full relative aspect-video' : ''
-                    }`}
-                  >
-                    <Image
-                      alt={section?.imageAlt}
-                      src={section?.image}
-                      className="object-cover w-full"
-                      fill
-                    />
+                {section?.lists?.map((list, index) => (
+                  <div key={index}>
+                    <SectionList list={list} />
                   </div>
-                )}
+                ))}
               </div>
-            </>
+              {!!section?.image && (
+                <div
+                  className={`${
+                    section?.image ? 'w-full relative aspect-video' : ''
+                  }`}
+                >
+                  <Image
+                    alt={section?.imageAlt}
+                    src={section?.image}
+                    className="object-cover w-full"
+                    fill
+                  />
+                </div>
+              )}
+            </div>
           ))}
 
           {learnMoreSectionDataAustralia?.visaRequirements?.title && (

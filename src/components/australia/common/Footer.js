@@ -38,7 +38,7 @@ const Footer = () => {
       >
         <div className="container ">
           <div className="pt-16">
-            <div className="grid justify-start gap-6 pt-8 pb-12  md:grid-cols-12 md:px-0 md:pt-0">
+            <div className="grid justify-start gap-6 pt-8 pb-12 md:grid-cols-12 md:px-0 md:pt-0">
               <div className="col-span-5 space-y-4">
                 <Link href="/">
                   <div>
@@ -175,7 +175,7 @@ const Footer = () => {
             <div className="px-5 py-5 text-base text-center text-white md:px-0">
               <p>
                 {' '}
-                Copyright © 2023 |
+                Copyright © {new Date().getFullYear()} |
                 <span className="px-2 font-semibold">E-Visa</span>| All Rights
                 Reserved
               </p>

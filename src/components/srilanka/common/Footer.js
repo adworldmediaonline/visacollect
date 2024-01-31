@@ -16,13 +16,13 @@ const Footer = () => {
       }}
     >
       <div className="container">
-        <div className="md:grid md:grid-cols-7  gap-8 py-8">
+        <div className="gap-8 py-8 md:grid md:grid-cols-7">
           <div className="col-span-3">
             <img
               src="/assets/images/srilanka/common/whitelogo.png"
               className="w-36"
             />
-            <p className="text-white py-4">
+            <p className="py-4 text-white">
               Lorem Ipsum is simply dummy text of the printing and <br />
               typesetting industry.
             </p>
@@ -30,50 +30,50 @@ const Footer = () => {
             <div className="flex gap-4">
               <FaFacebookF
                 size={35}
-                className="text-black rounded-full p-2 bg-white"
+                className="p-2 text-black bg-white rounded-full"
               />
               <AiOutlineInstagram
                 size={35}
-                className="text-black rounded-full p-2 bg-white"
+                className="p-2 text-black bg-white rounded-full"
               />
               <FaLinkedinIn
                 size={35}
-                className="text-black rounded-full p-2 bg-white"
+                className="p-2 text-black bg-white rounded-full"
               />
               <FiTwitter
                 size={35}
-                className="text-black rounded-full p-2 bg-white"
+                className="p-2 text-black bg-white rounded-full"
               />
               <FaPinterestP
                 size={35}
-                className="text-black rounded-full p-2 bg-white"
+                className="p-2 text-black bg-white rounded-full"
               />
             </div>
 
-            <div className="pt-8 flex gap-2 items-center">
+            <div className="flex items-center gap-2 pt-8">
               <FiMail
                 size={35}
-                className="text-black rounded-full p-2 bg-white"
+                className="p-2 text-black bg-white rounded-full"
               />
-              <p className="text-white font-light">example@gmail.com</p>
+              <p className="font-light text-white">example@gmail.com</p>
             </div>
 
-            <div className="pt-4 flex gap-2 items-center">
+            <div className="flex items-center gap-2 pt-4">
               <MdCall
                 size={35}
-                className="text-black rounded-full p-2 bg-white"
+                className="p-2 text-black bg-white rounded-full"
               />
-              <p className="text-white font-light">
+              <p className="font-light text-white">
                 +91-9876543219 +91-9876543219
               </p>
             </div>
           </div>
-          <div className="md:col-span-4 grid md:grid-cols-3 grid-cols-2 gap-4 pt-7 md:pt-0">
-            <div className=" ">
+          <div className="grid grid-cols-2 gap-4 md:col-span-4 md:grid-cols-3 pt-7 md:pt-0">
+            <div className="">
               <h3 className="head-footer text-white font-bold text-[18px]">
                 Quick Links
               </h3>
-              <ul className="text-white text-base mt-6 gap-4 flex flex-col footer-menu">
+              <ul className="flex flex-col gap-4 mt-6 text-base text-white footer-menu">
                 <li>Home</li>
                 <li>About Us</li>
                 <li>Charges</li>
@@ -86,7 +86,7 @@ const Footer = () => {
               <h3 className="head-footer text-white font-bold text-[18px]">
                 Apply For VISA
               </h3>
-              <ul className="text-white text-base mt-6 gap-4 flex flex-col footer-menu">
+              <ul className="flex flex-col gap-4 mt-6 text-base text-white footer-menu">
                 <li>Application</li>
                 <li>Reviews</li>
                 <li>Payment</li>
@@ -98,7 +98,7 @@ const Footer = () => {
               <h3 className="head-footer text-white font-bold text-[18px]">
                 Support
               </h3>
-              <ul className="text-white text-base mt-6 gap-4 flex flex-col footer-menu">
+              <ul className="flex flex-col gap-4 mt-6 text-base text-white footer-menu">
                 <li>Terms & Conditions</li>
                 <li>Privacy Policy</li>
                 <li>Cookies Policy</li>
@@ -109,8 +109,8 @@ const Footer = () => {
       </div>
 
       <div className="border-t-2 container border-[#0068E5]">
-        <h2 className="text-white text-center p-2">
-          Copyright © 2023 e-Visa All Rights Reserved.
+        <h2 className="p-2 text-center text-white">
+          Copyright © {new Date().getFullYear()} e-Visa All Rights Reserved.
         </h2>
       </div>
     </div>
