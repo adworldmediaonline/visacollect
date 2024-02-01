@@ -11,7 +11,7 @@ const Faq = ({ faqData }) => {
               <UnderlineTextCenter title="FAQs" />
             </div>
             <div className="max-w-4xl mx-auto md:text-center">
-              <TitleText title="Frequently Asked Question" />
+              <TitleText title="Frequently Asked Questions" />
             </div>
           </div>
 
@@ -29,6 +29,13 @@ const Faq = ({ faqData }) => {
                         >
                           <p className="text-lg font-semibold">{item.title}</p>
                           <p className="pb-2">{item.des}</p>
+                          {item?.applyNow ? (
+                            <div className="flex items-center justify-center gap-3 mx-auto my-5">
+                              <div className="w-10 h-[1.3px] bg-gray-300 block my-3" />
+                              {item?.applyNow}
+                              <div className="w-10 h-[1.3px] bg-gray-300 block my-3" />
+                            </div>
+                          ) : null}
                         </div>
                       );
                     })}
