@@ -211,7 +211,7 @@ export const learnMoreSectionDataSriLanka = {
         {
           href: '/srilanka',
           linkText: 'Sri Lanka government website',
-          text: `Rest assured, your data is handled securely in both the e-Visa.com online environment and the <span class="link">Sri Lanka government website</span>. We use your details solely for submitting your Sri Lanka e Visa application online and acquiring the Sri Lanka Tourist Visa/ETA. Your banking details are never stored, ensuring your data is kept confidential and secure.`,
+          text: `Rest assured, your data is handled securely in both the e-Visa.com online environment and the <span class="link">Sri Lanka government website</span>. We use your details solely for submitting your Sri Lanka e Visa application online and acquiring the Sri Lanka Tourist Visa/ETA. Your banking details are never stored, ensuring your data is kept confidential and secure. Enjoy your adventure in Sri Lanka!`,
         },
       ],
     },
@@ -219,19 +219,35 @@ export const learnMoreSectionDataSriLanka = {
   faqData: [
     {
       id: 1,
-      title: 'How long does it take for ETA Australia to be approved?',
-      des: 'Typically, our applicants can receive their approved ETA Visa in a few days. Check your data thoroughly before submission to speed up this process.',
+      title: 'How do I apply for an e Tourist Sri Lanka Visa?',
+      des: 'You can apply for an e Tourist Sri Lanka Visa online. Fill out the application form, submit the required documents, and pay the visa fee.',
     },
     {
       id: 2,
       title:
-        'How can I get a Visa for work, education, permanent residence, or any other purpose?',
-      des: 'You will require a consultation session with a registered Australia Migration Officer who will discuss with you all the requirements as specified by the Department of Home Affairs - you can choose your purpose of travel and book a consultation session on the app form.',
+        'What documents do I need to apply for an e Tourist Sri Lanka Visa?',
+      des: `Typically, you'll need a valid passport, a digital photo, and proof of onward travel. However, requirements may vary, so it's best to check the official website.`,
     },
     {
       id: 3,
-      title: "Why can't I find my nationality on the list?",
-      des: "If you can't find your nationality on the list, the reason may be that your nationality is not eligible for ETA Australia. Please contact our support team.",
+      title: 'How long does it take to process an e Tourist Sri Lanka Visa?',
+      des: ' The processing time can vary, but it typically takes a few days.',
+    },
+    {
+      id: 4,
+      title: 'How long is the e Tourist Sri Lanka Visa valid for?',
+      des: 'The e Tourist Sri Lanka Visa is usually valid for 30 days from the date of arrival, but it can be extended.',
+    },
+    {
+      id: 5,
+      title: 'Can I work in Sri Lanka with an e Tourist Visa?',
+      des: 'No, the e Tourist Visa does not permit foreign nationals to work in Sri Lanka.',
+    },
+    {
+      id: 6,
+      title:
+        'What should I do if my e Tourist Sri Lanka Visa application is denied?',
+      des: 'If your application is denied, you can reapply after understanding the reasons for the denial and rectifying them.',
     },
   ],
 };
