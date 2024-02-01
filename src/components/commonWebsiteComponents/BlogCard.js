@@ -12,12 +12,9 @@ export default function BlogCard() {
           alt="blog"
         />
         <div className="p-6">
-          <h2 className="mb-1 text-xs font-medium tracking-widest text-gray-400 title-font">
-            CATEGORY
-          </h2>
-          <h1 className="mb-3 text-lg font-medium text-gray-900 title-font">
+          <h3 className="mb-3 text-lg font-medium text-gray-900 title-font">
             The Catalyzer
-          </h1>
+          </h3>
           <p className="mb-3 leading-relaxed">
             Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
             microdosing tousled waistcoat.
