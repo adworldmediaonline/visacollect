@@ -1,5 +1,6 @@
 import { visaInfo } from './images';
 
+// australia
 const learnMoreSectionDataAustralia = {
   pageTitle:
     '<strong>Australia Visa:</strong> Entry requirements and travel information for Australia',
@@ -278,6 +279,7 @@ const learnMoreSectionDataAustralia = {
   ],
 };
 
+// code
 const processingData1 = [
   {
     id: 1,
