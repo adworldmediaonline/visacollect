@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { FaInfoCircle } from 'react-icons/fa';
-import HomePageTitle from '@/app/australia/_homePage/HomePageTitle';
 import { getAllCountries } from '@/lib/getAllCountries';
+import HomePageTitle from '../common/countryHomePage/HomePageTitle';
 
 export const Banner = ({
   name,
