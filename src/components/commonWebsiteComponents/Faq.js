@@ -1,6 +1,8 @@
 import React from 'react';
 import UnderlineTextCenter from '../australia/common/UnderlineTextCenter';
 import TitleText from '../australia/common/TitleText';
+import SectionParagraph from '../common/countryHomePage/SectionParagraph';
+
 const Faq = ({ faqData }) => {
   return (
     <div>
@@ -36,6 +38,16 @@ const Faq = ({ faqData }) => {
                               <div className="w-10 h-[1.3px] bg-gray-300 block my-3" />
                             </div>
                           ) : null}
+                          {item?.extraContent
+                            ? item?.extraContent?.map((content, index) => (
+                                <SectionParagraph
+                                  text={content.text}
+                                  href={content.href}
+                                  linkText={content.linkText}
+                                  key={index}
+                                />
+                              ))
+                            : null}
                         </div>
                       );
                     })}
