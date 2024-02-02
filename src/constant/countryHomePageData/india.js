@@ -462,5 +462,266 @@ export const learnMoreSectionDataIndia = {
         },
       ],
     },
+    {
+      id: 14,
+      title: 'Can I change or extend my e-Visa to another type of visa? ',
+      des: 'No, Indian e-Visa is not changeable or extendable. You must apply visa online for a new visa online with the help of an online visa services portal if you want to change your purpose of visit or stay longer in India.',
+    },
+    {
+      id: 15,
+      title:
+        'What are the entry points for e-Visa holders in India? Can I change my port of entry or exit? ',
+      des: 'There are 28 designated airports and 5 designated seaports for e-Visa holders to enter India. You can find the list of these ports here. You can exit from any of the Indian Immigration Check Posts (ICPs). You can change your port of entry or exit in India.',
+    },
+    {
+      id: 16,
+      title:
+        'What should I do if I don’t receive any confirmation email after 72 hours of submitting my e-Visa application?',
+      des: 'Normally, an e-Visa application is processed within 72 hours or less. However, some applications may take longer due to security or other reasons. If you don’t receive any confirmation email after 72 hours of submitting your e-Visa application, you can contact us or email us at info@e-visa.com. Make sure to provide the complete information while filling up the application form on any online visa services portal. Incorrect or incomplete applications may be rejected.',
+    },
+    {
+      id: 17,
+      title:
+        'Do I need to apply visa online for a separate e-Visa for my minor child?',
+      des: 'Yes, you need to apply India Visa for a separate India eVisa for your minor child. Make sure that your child’s passport is valid for at least 6 months from the date of arrival in India.',
+    },
+    {
+      id: 18,
+      title:
+        'Will I get a refund if I cancel my eVisa application or my trip to India? ',
+      des: 'No, you will not get a refund if you cancel your e-Visa application or your trip to India. The visa fee is a non-refundable processing fee and is not dependent on the grant or rejection of Electronic Travel Authorization (ETA).',
+    },
+    {
+      id: 19,
+      title:
+        'Do I need to pay any extra charges at the airport for an e-Visa (other than the fee paid by me online)?',
+      des: 'No, you do not need to pay any extra charges at the airport for an e-Visa. The fee paid by you online is the only fee required for the e-Visa.',
+    },
+    {
+      id: 20,
+      title:
+        'It is very rare that the payment is not accepted by the e-Visa website. However, if you face any problem, you can try the following solutions:',
+      extraContent: [
+        {
+          text: '1. Clear your browser history and cookies before making the payment.',
+        },
+        {
+          text: '2. Change your browser and try again.',
+        },
+        {
+          text: '3. Contact our Visa representative and resubmit the application with their help. You can pay them directly and they will apply for a visa on your behalf using an online visa services portal.',
+        },
+      ],
+    },
+    {
+      id: 21,
+      title: 'How to get the invoice/receipt of the e-Visa payment?',
+      des: 'You will receive the invoice/receipt of the eVisa payment automatically by email after you make the payment. For more information, please visit our website www.e-visa.com. If you do not receive the invoice/receipt, you can ask our representative to send you one manually by email.',
+    },
+    {
+      id: 22,
+      title:
+        'What are the additional documents required for an e-Business Visa apart from the Passport? ',
+      des: 'You need to provide a business card along with your passport to apply for an e-Business Visa at our online visa services portal. The business card should have the details of the company that you are associated with for business activities.',
+    },
+    {
+      id: 23,
+      title:
+        'What is a business card for your India eVisa application process? ',
+      des: 'A business card is a document that shows your business identity and affiliation. It can be an invitation letter on the company letterhead with the company information, address and phone number.',
+    },
+    {
+      id: 24,
+      title:
+        'What are the additional documents required for an Indian e-Medical Visa apart from the Passport? ',
+      des: 'You need to provide an approval letter from the hospital in India on its letterhead with the tentative date of treatment, the patient’s name, nationality and passport number to apply for an e-Medical Visa.',
+    },
+    {
+      id: 25,
+      title:
+        ' What should I do if I have a new passport but my ETA is on my old passport and it is still valid? ',
+      des: 'You can still use your ETA if it is valid. You just need to bring both your old and new passports when you travel to India.',
+    },
+    {
+      id: 26,
+      title:
+        'Can I enter India by land border with an e-Visa for a different port of entry? ',
+      des: 'No, you cannot enter India by land border with an e-Visa for a different port of entry. You can only enter India through the designated airports and seaports that are listed on the e-Visa website.',
+    },
+    {
+      id: 27,
+      title:
+        'How to fill in the previous visa details in the e-Visa application form? ',
+      des: 'You need to fill in the previous visa details in the e-Visa application form as it is mandatory. If you do not remember the previous details, you can write NA or a suitable phrase according to you while filling the Indian e-Visa application form on any online visa services portal.',
+    },
+    {
+      id: 28,
+      title: 'Can I get a visa on arrival at Indian airports or seaport? ',
+      des: 'The visa on arrival facility is only available for the nationals of Japan, South Korea and UAE who have previously obtained a regular visa or e-Visa. For other eligible nationals, they have to apply for an e-Visa online and wait for the confirmation or grant of ETA before traveling to India.',
+    },
+    {
+      id: 29,
+      title:
+        'What should I do if my e-Visa application is rejected? Will I get a refund?',
+      des: 'You can reapply for the e-Visa if you know the reason for rejection and can amend it. However, you will have to pay the visa fee again. The fee is non-refundable as it is a processing fee and is not dependent on the grant or rejection of the application.',
+    },
+    {
+      id: 30,
+      title: 'Can I enter India by cruise ship with an e-Visa? ',
+      des: 'Yes, you can enter India by cruise ship with an e-Visa through the 5 designated seaports namely Mumbai, Chennai, Cochin, Goa and Mangalore seaports. Please check it on an online visa services portal before making your plan to visit India.',
+    },
+    {
+      id: 31,
+      title: 'What does ‘visible identification mark’ mean?',
+      des: '‘Visible identification mark’ means any distinctive feature on your body such as moles, birthmarks, permanent scars, etc. that can be seen and verified by the Indian immigration authority',
+    },
+    {
+      id: 32,
+      title: 'Who needs to carry the ‘yellow fever vaccination card’? ',
+      des: 'All the foreigners who are coming from or transiting through the yellow fever endemic countries within 6 days of their arrival in India need to carry a valid and original yellow fever vaccination certificate.',
+    },
+    {
+      id: 33,
+      title: 'What if my ETA has errors in my personal details? ',
+      extraContent: [
+        {
+          text: `It is your responsibility to fill in your personal details correctly while applying for an Indian Visa; you should check all the details such as Name, Passport number, nationality, DOB, Photograph, etc. before submitting your eVisa Application at an online visa services portal. `,
+        },
+        {
+          text: `The approval or rejection of your Visa application depends on the information you provide. If you have any doubt or query, you can contact our Visa representative.`,
+        },
+      ],
+    },
+    {
+      id: 34,
+      title: 'Can I use e-Visa for employment purposes? ',
+      des: `No, eVisa is not valid for employment purposes. You need to apply for a regular visa for that.`,
+    },
+    {
+      id: 35,
+      title: 'Can I use e-Visa for NGO activities or journalism purposes?',
+      des: `No, e-Visa is not valid for NGO activities or journalism purposes. However, you can use e-Visa for short duration volunteer work that does not involve any money transactions.`,
+    },
+    {
+      id: 36,
+      title: 'How many attendants can accompany a patient? ',
+      des: `Only two e-Medical Attendant Visas will be issued for each e-Medical Visa (patient).`,
+    },
+    {
+      id: 37,
+      title: 'How much will it cost me to get a tourist visa?',
+      extraContent: [
+        {
+          text: `The cost of getting an Indian eVisa through e-Visa.com depends on the type of Visa and the processing time. If you want the eVisa urgently, the cost will be higher than the regular Visa. `,
+        },
+        {
+          text: `<strong>You can choose from the following options while applying for Indian Visa:</strong>`,
+        },
+        {
+          text: '<strong>Regular:</strong> This is the cheapest option and the standard processing time is 5 days. US Applicants can choose this option if they are not in a hurry. The fee including service charges is 86$.',
+        },
+        {
+          text: '<strong>Faster:</strong> This option is more expensive than the regular Visa and the processing time is 3 days. The fee including service charges is 116$.',
+        },
+        {
+          text: `<strong>Immediate:</strong> This option is also known as super rush processing Visa and the processing time is 2 days. The fee including service charges is 151$.`,
+        },
+        {
+          text: `<strong>Note:</strong> The cost may also vary depending on the country you are applying from and the purpose of your visit.`,
+        },
+      ],
+    },
+    {
+      id: 38,
+      title:
+        'Is there a minimum gap between two visits for tourist visa holders?',
+      des: `Yes, there is a minimum gap of two months between two visits for tourist visa holders. This applies to the nationals of Afghanistan, China, Pakistan, Iraq, Sudan, foreigners of Pakistani origin, and stateless persons.`,
+    },
+    {
+      id: 39,
+      title:
+        'How are the people who come to India to volunteer for various charity organizations treated?',
+      des: `People who come to India to volunteer for various charity organizations should not use e tourist visa as it is not appropriate. They should apply for an Employment Visa as volunteering purposes allow only short stays and no money transactions.`,
+    },
+    {
+      id: 40,
+      title:
+        'Can I convert my business visa to an employment visa without leaving India?',
+      des: `No, you cannot convert your business visa to employment visa without leaving India. You need to apply using an online visa services provider for a new visa if you want to change your visa category.`,
+    },
+    {
+      id: 41,
+      title: ' Can I enter India at any port of entry with my tourist e-visa?',
+      des: `No, you cannot enter India at any port of entry with your tourist e-visa. You can only enter India through the designated airports and seaports that are listed on the e-Visa website.`,
+    },
+    {
+      id: 42,
+      title:
+        'Can I apply for an e-visa with a Diplomatic/Official passport or a Laissez-passer travel document?',
+      des: `No, you cannot apply for an e-visa with a Diplomatic/Official passport or a Laissez-passer travel document. This also applies to applicants holding an emergency/limited passport.`,
+    },
+    {
+      id: 43,
+      title:
+        'Can I use a refugee travel document instead of a passport to travel to India?',
+      des: `No, you cannot use a refugee travel document instead of a passport to travel to India. You need to have a valid passport to apply for an Indian visa. If you have a refugee travel document, you should contact the nearest Indian consulate to avoid any problems.`,
+    },
+    {
+      id: 44,
+      title: 'What is the difference between an e-Visa and a regular visa?',
+      des: `An Indian eVisa is an online eVisa that you can apply for and receive by email. You can print it and carry it with you when you travel to India. A regular visa is a visa that you need to apply for at the Indian embassy or consulate in your country. You need to submit your passport and other documents in person. An e-Visa is a faster and easier way to get a visa than a regular visa.`,
+      extraContent: [
+        {
+          text: `<strong>Apply for Indian eVisa Online Free of Charge with our seamless online visa services. </strong>`,
+        },
+      ],
+      applyNow: (
+        <CustomButton link="/" btnText="https://visacollect.com">
+          <FaArrowRightLong />
+        </CustomButton>
+      ),
+    },
+    {
+      id: 45,
+      title:
+        'Can I re-apply for an e-Visa every time I want to visit India in a year?',
+      des: `No, you cannot re-apply for an e-Visa every time you want to visit India in a year. You can only enter India twice in a calendar year i.e. January - December with an e-Visa.`,
+    },
+    {
+      id: 46,
+      title:
+        'What type of visa should I apply for if I am a spouse or child of a person of Indian origin?',
+      des: `You should apply for a tourist visa if you are a spouse or child of a person of Indian origin. You cannot apply for an entry visa or any other type of visa.`,
+    },
+    {
+      id: 47,
+      title:
+        'Can I apply for an Indian visa from the US if I am a non-US citizen on a B1/B2 visa?',
+      des: `No, you cannot apply for an Indian visa from the US if you are a non-US citizen on a B1/B2 visa. You need to apply for an Indian visa from your home country only.`,
+    },
+    {
+      id: 48,
+      title:
+        'Can I apply for an Indian visa with a US passport if I was a Bangladeshi passport holder before?',
+      des: `Yes, you can apply for an Indian visa with a US passport if you were a Bangladeshi passport holder before. You need to provide your previous passport details along with your current passport details while applying for an Indian visa.`,
+    },
+    {
+      id: 49,
+      title:
+        'What should I choose for my nationality if I have a blue book issued by the US government?',
+      des: `You should choose the USA as your nationality if you have a blue book issued by the US government. A blue book is a travel document that is issued to refugees or stateless persons by the US government.`,
+    },
+    {
+      id: 50,
+      title:
+        'Can I apply for an Indian visa if I am of Indian origin but surrendered my Indian passport and married to a Pakistani origin?',
+      des: `No, you cannot apply for an Indian visa if you are of Indian origin but surrendered your Indian passport and married a Pakistani. You are not eligible for any type of Indian visa.`,
+    },
+    {
+      id: 51,
+      title:
+        'Can I apply for an entry visa if I want to return to India with my parents who are Indian passport holders but do not have a valid US visa?',
+      des: `Yes, you can apply for an entry visa if you want to return to India with your parents who are Indian passport holders but do not have a valid US visa. However, you need to provide a self-attested letter from your parents along with your visa application stating their reason for not having a valid US visa.`,
+    },
   ],
 };
