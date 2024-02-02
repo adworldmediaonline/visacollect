@@ -1,18 +1,13 @@
 import ProcessingStep from '@/components/commonWebsiteComponents/ProcessingStep';
+import React from 'react';
 import { Banner } from '@/components/commonWebsiteComponents/Banner';
 import Faq from '@/components/commonWebsiteComponents/Faq';
 import LearnMore from '@/components/commonWebsiteComponents/LearnMore';
-import React from 'react';
-import {
-  faqData1,
-  learnMoreSectionDataAustralia,
-  processingData1,
-} from '@/constant/data';
 import Link from 'next/link';
 import Divider from '@/components/common/Divider';
-import CustomButton from '@/components/common/CustomButton';
 import PageReview from './_homePage/PageReview';
 import RelatedArticlesSlider from '@/components/commonWebsiteComponents/RelatedArticlesSlider';
+import { learnMoreSectionDataAustralia } from '@/constant/countryHomePageData/australia';
 
 const Page = () => {
   return (
@@ -58,7 +53,9 @@ const Page = () => {
 
       <Faq faqData={learnMoreSectionDataAustralia?.faqData} />
       <PageReview applyLink="#" />
-      <RelatedArticlesSlider />
+      <RelatedArticlesSlider
+        relatedArticles={learnMoreSectionDataAustralia.relatedArticles}
+      />
     </div>
   );
 };

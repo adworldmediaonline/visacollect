@@ -3,40 +3,11 @@ import React, { useRef } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import HeadingSection from '../main/HeadingSection';
 
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import BlogCard from './BlogCard';
-const RelatedArticlesSlider = () => {
+const RelatedArticlesSlider = ({ relatedArticles }) => {
   const customSlider = useRef();
-  const testimonial = [
-    {
-      id: 1,
-      image: '/assets/images/main/ourServiceIcon3.png',
-      name: 'Multiple Payment Options',
-      desc: 'Choose the payment method that suits you best. We accept various options, such as credit cards, PayPal, and bank transfers.',
-    },
-    {
-      id: 2,
-      image: '/assets/images/main/ourServiceIcon1.png',
-      name: 'Simplified Visa Application Process',
-      desc: 'Apply for your visa online with e-Visa. It’s simple, fast, and convenient. Just fill out a form, upload your documents, and submit your order.',
-    },
-    {
-      id: 3,
-      image: '/assets/images/main/ourServiceIcon2.png',
-      name: 'Urgent eVisa Processing',
-      desc: 'Need your visa in a hurry? We can help you get it as soon as possible. We offer expedited processing for urgent cases, such as last-minute trips or emergencies.',
-    },
-
-    {
-      id: 4,
-      image: '/assets/images/main/ourServiceIcon1.png',
-      name: 'Trusted Travel Reviews and Guidance',
-      desc: 'Get the best travel tips and advice from e-Visa. We offer honest and reliable reviews and guidance for various destinations, attractions, and activities. We help you plan your trip and make the most of your travel experience.',
-    },
-  ];
-
   const settings = {
     className: 'center',
     slidesToShow: 3,
@@ -98,8 +69,8 @@ const RelatedArticlesSlider = () => {
   return (
     <div className="bg-white">
       <div className="container space-y-3 ">
-        <div>
-          <h6 className="text-3xl text-gray-500">Related Articles</h6>
+        <div className="pl-4">
+          <h6 className="text-3xl text-gray-500">Explore More</h6>
         </div>
 
         <div className="relative flex items-center justify-between">
@@ -113,9 +84,9 @@ const RelatedArticlesSlider = () => {
           </div>
           <div className="w-[100%]">
             <Slider {...settings} ref={customSlider} className="mx-auto ">
-              {testimonial.map((item, e) => (
-                <div className="p-4 group" key={e}>
-                  <BlogCard />
+              {relatedArticles?.map((article, index) => (
+                <div className="px-4 py-1 group" key={index}>
+                  <BlogCard {...article} />
                 </div>
               ))}
             </Slider>
