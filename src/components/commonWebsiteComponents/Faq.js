@@ -29,14 +29,14 @@ const Faq = ({ faqData }) => {
                   <div className="flex flex-col space-y-3">
                     {faqData?.map((item, index) => {
                       return (
-                        <div className="rounded-sm cursor-pointer " key={index}>
+                        <div className="rounded-sm" key={index}>
                           <Disclosure>
                             {({ open }) => (
                               /* Use the `open` state to conditionally change the direction of an icon. */
                               <>
                                 <Disclosure.Button className="flex items-center gap-2 py-1">
                                   <p className="underline text-tertiary">
-                                    {item.title}
+                                    {index + 1}. {item.title}
                                   </p>
                                   <FiChevronRight
                                     className={
