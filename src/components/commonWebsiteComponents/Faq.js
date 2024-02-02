@@ -5,6 +5,8 @@ import TitleText from '../australia/common/TitleText';
 import SectionParagraph from '../common/countryHomePage/SectionParagraph';
 import { Disclosure } from '@headlessui/react';
 
+import { FiChevronRight } from 'react-icons/fi';
+
 const Faq = ({ faqData }) => {
   return (
     <div>
@@ -29,31 +31,43 @@ const Faq = ({ faqData }) => {
                       return (
                         <div className="rounded-sm cursor-pointer " key={index}>
                           <Disclosure>
-                            <Disclosure.Button className="py-1">
-                              <p className="underline text-tertiary">
-                                {item.title}
-                              </p>
-                            </Disclosure.Button>
-                            <Disclosure.Panel className="text-gray-500">
-                              <p className="pb-2">{item.des}</p>
-                              {item?.applyNow ? (
-                                <div className="flex items-center justify-center gap-3 mx-auto my-5">
-                                  <div className="w-10 h-[1.3px] bg-gray-300 block my-3" />
-                                  {item?.applyNow}
-                                  <div className="w-10 h-[1.3px] bg-gray-300 block my-3" />
-                                </div>
-                              ) : null}
-                              {item?.extraContent
-                                ? item?.extraContent?.map((content, index) => (
-                                    <SectionParagraph
-                                      text={content.text}
-                                      href={content.href}
-                                      linkText={content.linkText}
-                                      key={index}
-                                    />
-                                  ))
-                                : null}
-                            </Disclosure.Panel>
+                            {({ open }) => (
+                              /* Use the `open` state to conditionally change the direction of an icon. */
+                              <>
+                                <Disclosure.Button className="flex items-center gap-2 py-1">
+                                  <p className="underline text-tertiary">
+                                    {item.title}
+                                  </p>
+                                  <FiChevronRight
+                                    className={
+                                      open ? 'rotate-90 transform' : ''
+                                    }
+                                  />{' '}
+                                </Disclosure.Button>
+                                <Disclosure.Panel className="text-gray-500">
+                                  <p className="pb-2">{item.des}</p>
+                                  {item?.applyNow ? (
+                                    <div className="flex items-center justify-center gap-3 mx-auto my-5">
+                                      <div className="w-10 h-[1.3px] bg-gray-300 block my-3" />
+                                      {item?.applyNow}
+                                      <div className="w-10 h-[1.3px] bg-gray-300 block my-3" />
+                                    </div>
+                                  ) : null}
+                                  {item?.extraContent
+                                    ? item?.extraContent?.map(
+                                        (content, index) => (
+                                          <SectionParagraph
+                                            text={content.text}
+                                            href={content.href}
+                                            linkText={content.linkText}
+                                            key={index}
+                                          />
+                                        )
+                                      )
+                                    : null}
+                                </Disclosure.Panel>
+                              </>
+                            )}
                           </Disclosure>
                         </div>
                       );
