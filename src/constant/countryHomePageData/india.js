@@ -723,5 +723,187 @@ export const learnMoreSectionDataIndia = {
         'Can I apply for an entry visa if I want to return to India with my parents who are Indian passport holders but do not have a valid US visa?',
       des: `Yes, you can apply for an entry visa if you want to return to India with your parents who are Indian passport holders but do not have a valid US visa. However, you need to provide a self-attested letter from your parents along with your visa application stating their reason for not having a valid US visa.`,
     },
+    {
+      id: 52,
+      title:
+        'Can I travel to India with my current visa if I am going for a different purpose than what my visa is for?',
+      des: `No, you cannot travel to India with your current visa if you are going for a different purpose than what your visa is for. You need to apply for a new visa that matches your purpose of visit. The immigration authorities may deny your entry if your visa does not match your purpose of visit.`,
+    },
+    {
+      id: 53,
+      title: 'What are Indian Entry Points to use my Indian eVisa?',
+      des: `For US citizens, hopping on an Indian adventure with an eVisa, knowing your entry points is key! You have a wide range of 28 designated airports to choose from, scattered across various Indian cities. Popular options include: Delhi, Mumbai, Goa, Chennai, and Bengaluru. `,
+      extraContent: [
+        {
+          text: `<strong>For those arriving by cruise ship, five dedicated seaports welcome you: Cochin, Goa, Mangalore, Mumbai, and Chennai.</strong>`,
+          text: `<strong>Remember:</strong>`,
+          text: `Double-check the official list of entry points before finalizing your travel plans.`,
+          text: `Keep in mind the limited seaport options if you're considering a cruise vacation.`,
+        },
+      ],
+    },
+    {
+      id: 54,
+      title:
+        'Can I travel to India with a Refugee Travel Document instead of a Passport?',
+      des: `No, you cannot travel to India with a Refugee Travel Document instead of a Passport. You need to have a valid Passport to apply for an Indian visa. If you have a Refugee Travel Document, you should contact the nearest Indian consulate to avoid any problems.`,
+    },
+    {
+      id: 55,
+      title: 'Do I need to have a Vaccine when traveling to India? ',
+      des: `Vaccine requirements are set by the Government and may vary depending on the situation. Some governments may ask for proof of yellow fever vaccination if you are coming from a country with yellow fever risk. It is your duty to check with the relevant government’s regulations and verify them by yourself.`,
+    },
+    {
+      id: 56,
+      title: 'Where can I get more information if I have more questions? ',
+      des: `If you have any specific questions related to Indian eVisa for US citizens, you can call our representatives or fill the query form here to get a callback. You can also check the FAQs mentioned here and explore the Blog section.`,
+    },
+    {
+      id: 57,
+      title:
+        'How long does it take and how much does it cost to get an Indian eVisa?',
+      des: `If you are getting the Indian eVisa through e-Visa.com, the time and cost will depend on the type of Visa and the processing time. If you want the Visa urgently, the cost will be higher than the regular Visa. You can choose from the following options while applying for Indian Visa for the US citizens:`,
+      extraContent: [
+        {
+          text: `<strong>Regular:</strong> This is the most affordable option and the standard processing time is 5 days. US Applicants can choose this option if they are not in a hurry. The fee including service charges is 86$.`,
+        },
+        {
+          text: `<strong>Faster:</strong> This option is more expensive than the regular Visa and the processing time is 3 days. The fee including service charges is <strong>116$</strong>.`,
+        },
+        {
+          text: `<strong>Immediate:</strong> This option is also known as super rush processing Visa and the processing time is 2 days. The fee including service charges is <strong>151$</strong>.`,
+        },
+      ],
+    },
+    {
+      id: 58,
+      title:
+        'What should I do if I made a mistake while filling the application form online? ',
+      des: `If you made a mistake in your application, contact our representatives. They will be available to help you 24X7 through messages, chat, or online queries. If you have already submitted the applications, you cannot make any changes and you will have to apply again for the Indian Visa. While applying through an eVisa portal at online visa services providers like e-Visa.com, we will not charge any service fee again.`,
+      extraContent: [
+        {
+          text: `<strong>Ready to go with our Free of Charge and seamless online visa services? Apply today!</strong>`,
+        },
+      ],
+      applyNow: (
+        <CustomButton link="/" btnText="https://visacollect.com">
+          <FaArrowRightLong />
+        </CustomButton>
+      ),
+    },
+    {
+      id: 59,
+      title: 'How can I apply for an Indian visa online as a UK citizen?',
+      des: `You can apply for an Indian visa online through the official portal India Visa Online or through a trusted service provider like e-Visa.com. You will need to fill out an online application form, upload a digital photo and a scanned copy of your passport, and pay the visa fee online. You will receive an electronic travel authorization (ETA) by email, which you need to print and present at the immigration check post in India.`,
+    },
+    {
+      id: 60,
+      title: 'What documents do I need to submit for an Indian visa online?',
+      extraContent: [
+        {
+          text: `<strong>You need to submit the following five documents for an Indian visa online as per India’s online visa services:</strong>`,
+        },
+        {
+          text: `<strong>#1.</strong> A valid passport with at least six months of validity and two blank pages`,
+        },
+        {
+          text: `<strong>#2.</strong> A recent digital photo that meets the photo requirements for an Indian visa`,
+        },
+        {
+          text: `<strong>#3.</strong> A scanned copy of the passport’s bio page and the last page (if applicable)`,
+        },
+        {
+          text: `<strong>#4.</strong> A proof of full primary vaccination schedule of COVID-19 vaccination or a negative COVID-19 RT-PCR test report* (conducted within 72 hours before the journey)`,
+        },
+        {
+          text: `<strong>#5.</strong> A yellow fever vaccination certificate (if arriving from a country with a risk of yellow fever transmission)`,
+        },
+      ],
+    },
+    {
+      id: 61,
+      title: 'What are the photo requirements for an Indian visa online?',
+      extraContent: [
+        {
+          text: `<strong>According to most of the online visa services, the photo for an Indian visa online should meet the following requirements:</strong>`,
+        },
+        { text: `<strong>Format:</strong> JPEG` },
+        {
+          text: `<strong>Size:</strong>  Minimum 10 KB, Maximum 300 KB`,
+        },
+        {
+          text: `<strong>Dimensions:</strong> Between 900 x 1200 pixels and 2250 x 3000 pixels (in a 3:4 aspect ratio)`,
+        },
+        {
+          text: `<strong>Face:</strong> Full face, front view, eyes open, without spectacles, no shadow, no border`,
+        },
+        { text: `<strong>Background:</strong> Plain light-coloured or white` },
+        { text: `<strong>Age:</strong> Not older than six months` },
+      ],
+    },
+    {
+      id: 62,
+      title:
+        'How much does an Indian visa online cost and how long does it take to process?',
+      extraContent: [
+        {
+          text: `<strong>The cost and processing time of an Indian visa online depend on the type and duration of the visa and the urgency of the application. The following are the options available for UK citizens:</strong>`,
+        },
+        {
+          text: `<strong>E Tourist Visa:</strong> Valid for 30 days, 365 days, or 5 years, with single, double, or multiple entries. The cost ranges from £19.75 to £63.20, depending on the duration and season. The processing time is 3 to 5 business days for normal service, 1 to 3 days for urgent service, and 24 hours for super urgent service.`,
+        },
+        {
+          text: `<strong>Business e Visa:</strong> Valid for 12 months, with multiple entries. The cost is £79 for normal service, £118.50 for urgent service, and £158 for super urgent service. The processing time is the same as the tourist e-Visa.`,
+        },
+        {
+          text: `<strong>Medical e Visa:</strong> Valid for 60 days, with triple entries. The cost is £79 for normal service, £118.50 for urgent service, and £158 for super urgent service. The processing time is the same as the tourist e-Visa.`,
+        },
+        {
+          text: `<strong>Medical Attendant e Visa:</strong> Valid for 60 days, with triple entries. The cost and processing time are the same as the medical e Visa. Up to two attendants can accompany a patient with a medical e-Visa.`,
+        },
+        {
+          text: `<strong>Ready to go with our Free of Charge and seamless online visa services? Apply today!</strong>`,
+        },
+      ],
+      applyNow: (
+        <CustomButton link="/" btnText="https://visacollect.com">
+          <FaArrowRightLong />
+        </CustomButton>
+      ),
+    },
+    {
+      id: 63,
+      title:
+        'Do I need to get vaccinated for COVID-19 or any other disease to travel to India?',
+      extraContent: [
+        {
+          text: `It is not mandatory to get vaccinated for COVID-19 or any other disease to travel to India, but it is highly recommended for your own safety and convenience. If you are fully vaccinated for COVID-19 pandemic, you do not need to submit a negative COVID-19 test report or quarantine on arrival in India. `,
+        },
+        {
+          text: `However, you need to carry your vaccination certificate and follow the COVID-19 appropriate behaviour in India. If you are not vaccinated for the pandemic, you need to submit a negative COVID-19 test report and follow the guidelines issued by the Indian government for international arrivals. You may also need to get vaccinated for yellow fever if you are arriving from a country with a risk of yellow fever transmission.`,
+        },
+        {
+          text: `<strong>Note:</strong> You should check the entry requirements for India before your travel and consult your doctor for any other vaccinations or medications you may need.`,
+        },
+      ],
+    },
+    {
+      id: 64,
+      title:
+        'What should I do if I make a mistake in my online application form for an Indian visa?',
+      des: `If you make a mistake in your online application form for an Indian visa, you should contact the Indian mission or the service provider you applied through as soon as possible. They may be able to help you correct the mistake or cancel the application and refund the fee. However, if you have already submitted the application and received the ETA (eVOA), you cannot make any changes and you will have to apply again for a new visa. In that case, you will have to pay the visa fee again and wait for the processing time.
+`,
+    },
+    {
+      id: 65,
+      title:
+        'Where can I find more information or assistance regarding the electronic Indian visa online?',
+      des: `If you have any specific queries or issues regarding the Indian online visa services, you can contact the Indian mission or the embassy in your country or the service provider like you applied through. `,
+      extraContent: [
+        {
+          text: `<strong>Remember:</strong> You can also visit the official portal or the eVisa.com website for more information and guidance. You can also check the FAQs and the blog sections for useful tips and updates.`,
+        },
+      ],
+    },
   ],
 };
