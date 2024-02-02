@@ -52,7 +52,9 @@ const Page = () => {
 
       <Faq faqData={learnMoreSectionDataOman?.faqData} />
       {/* Remember: For the most accurate and up-to-date information, it's best to check the official website. */}
-      <PageReview applyLink={learnMoreSectionDataOman?.applyNowLink} />
+      <RelatedArticlesSlider
+        relatedArticles={learnMoreSectionDataOman.relatedArticles}
+      />
       <RelatedArticlesSlider />
     </div>
   );

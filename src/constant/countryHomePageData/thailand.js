@@ -211,4 +211,41 @@ export const learnMoreSectionDataThailand = {
       des: 'To apply for the Thailand Health Declaration (T.8 form), you will need to provide your personal details, such as name, contact number, email address, flight number, and other necessary information. You will also need to check if you have any symptoms of COVID-19, such as fever, cough, shortness of breath, etc.',
     },
   ],
+  relatedArticles: [
+    {
+      title: 'UK to Thailand',
+      text: 'Discover the simplicity of securing your UK to Thailand eVisa with ease for a seamless travel experience.',
+      linkHref: '/uk',
+      linkText: 'Apply now',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'USA to Thailand',
+      text: 'Unlock the door to your Thailandn dream from the USA with a stress-free eVisa process.',
+      linkHref: '/usa',
+      linkText: 'Apply now',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'Malaysia to Thailand',
+      text: 'Begin your journey from Malaysia to Thailand effortlessly with our eVisa process.',
+      linkHref: '/malaysia',
+      linkText: 'Apply now',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'Article',
+      text: 'Thailand: Where Adventure, Wildlife, and Stunning Landscapes Await.',
+      linkHref: '/thailand-adventure',
+      linkText: 'Read More',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'Article',
+      text: 'Discovering Thailand: From Coral Reefs to Red Deserts, a Journey Awaits.',
+      linkHref: '/discovering-thailand',
+      linkText: 'Read More',
+      img: 'https://dummyimage.com/720x400',
+    },
+  ],
 };

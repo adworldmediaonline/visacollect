@@ -218,4 +218,41 @@ export const learnMoreSectionDataOman = {
       des: `If you realize an error in your answers, don't worry. Contact our customer support team promptly, and we'll help you rectify the situation. Remember, our expert team thoroughly reviews each application, ensuring that any necessary adjustments are made before submission. You can trust us to guide you through the correction process seamlessly.`,
     },
   ],
+  relatedArticles: [
+    {
+      title: 'UK to Oman',
+      text: 'Discover the simplicity of securing your UK to Oman eVisa with ease for a seamless travel experience.',
+      linkHref: '/uk',
+      linkText: 'Apply now',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'USA to Oman',
+      text: 'Unlock the door to your Omann dream from the USA with a stress-free eVisa process.',
+      linkHref: '/usa',
+      linkText: 'Apply now',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'Malaysia to Oman',
+      text: 'Begin your journey from Malaysia to Oman effortlessly with our eVisa process.',
+      linkHref: '/malaysia',
+      linkText: 'Apply now',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'Article',
+      text: 'Oman: Where Adventure, Wildlife, and Stunning Landscapes Await.',
+      linkHref: '/oman-adventure',
+      linkText: 'Read More',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'Article',
+      text: 'Discovering Oman: From Coral Reefs to Red Deserts, a Journey Awaits.',
+      linkHref: '/discovering-oman',
+      linkText: 'Read More',
+      img: 'https://dummyimage.com/720x400',
+    },
+  ],
 };

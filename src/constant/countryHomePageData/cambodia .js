@@ -1,6 +1,3 @@
-import { FaArrowRightLong } from 'react-icons/fa6';
-import { visaInfo } from '../images';
-import CustomButton from '@/components/common/CustomButton';
 export const learnMoreSectionDataCambodia = {
   pageTitle:
     '<strong>Cambodia Visa:</strong> Entry requirements and travel information for Cambodia',
@@ -278,6 +275,43 @@ export const learnMoreSectionDataCambodia = {
       id: 13,
       title: `How can I get continuous support from e-Visa?`,
       des: `Our customer service agents are available 24/7 to provide continuous support. Feel free to reach out to them for any further assistance.`,
+    },
+  ],
+  relatedArticles: [
+    {
+      title: 'UK to Cambodia',
+      text: 'Discover the simplicity of securing your UK to Cambodia eVisa with ease for a seamless travel experience.',
+      linkHref: '/uk',
+      linkText: 'Apply now',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'USA to Cambodia',
+      text: 'Unlock the door to your Cambodian dream from the USA with a stress-free eVisa process.',
+      linkHref: '/usa',
+      linkText: 'Apply now',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'Malaysia to Cambodia',
+      text: 'Begin your journey from Malaysia to Cambodia effortlessly with our eVisa process.',
+      linkHref: '/malaysia',
+      linkText: 'Apply now',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'Article',
+      text: 'Cambodia: Where Adventure, Wildlife, and Stunning Landscapes Await.',
+      linkHref: '/cambodia-adventure',
+      linkText: 'Read More',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'Article',
+      text: 'Discovering Cambodia: From Coral Reefs to Red Deserts, a Journey Awaits.',
+      linkHref: '/discovering-cambodia',
+      linkText: 'Read More',
+      img: 'https://dummyimage.com/720x400',
     },
   ],
 };
