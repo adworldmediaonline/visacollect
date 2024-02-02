@@ -190,4 +190,41 @@ export const learnMoreSectionDataEgypt = {
       des: `We've all been there! If you spot an error after submitting your application, reach out to our customer support team ASAP. They'll do their best to help, but if the application's already been reviewed and sent to the government, changes might be tricky.`,
     },
   ],
+  relatedArticles: [
+    {
+      title: 'UK to Egypt',
+      text: 'Discover the simplicity of securing your UK to Egypt eVisa with ease for a seamless travel experience.',
+      linkHref: '/uk',
+      linkText: 'Apply now',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'USA to Egypt',
+      text: 'Unlock the door to your Egyptn dream from the USA with a stress-free eVisa process.',
+      linkHref: '/usa',
+      linkText: 'Apply now',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'Malaysia to Egypt',
+      text: 'Begin your journey from Malaysia to Egypt effortlessly with our eVisa process.',
+      linkHref: '/malaysia',
+      linkText: 'Apply now',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'Article',
+      text: 'Egypt: Where Adventure, Wildlife, and Stunning Landscapes Await.',
+      linkHref: '/egypt-adventure',
+      linkText: 'Read More',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'Article',
+      text: 'Discovering Egypt: From Coral Reefs to Red Deserts, a Journey Awaits.',
+      linkHref: '/discovering-egypt',
+      linkText: 'Read More',
+      img: 'https://dummyimage.com/720x400',
+    },
+  ],
 };

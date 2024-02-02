@@ -53,7 +53,9 @@ const Page = () => {
       <Faq faqData={learnMoreSectionDataCambodia?.faqData} />
       {/* Remember: For the most accurate and up-to-date information, it's best to check the official website. */}
       <PageReview applyLink={learnMoreSectionDataCambodia?.applyNowLink} />
-      <RelatedArticlesSlider />
+      <RelatedArticlesSlider
+        relatedArticles={learnMoreSectionDataCambodia.relatedArticles}
+      />
     </div>
   );
 };

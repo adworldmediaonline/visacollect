@@ -279,4 +279,41 @@ export const learnMoreSectionDataTurkey = {
       ],
     },
   ],
+  relatedArticles: [
+    {
+      title: 'UK to Turkey',
+      text: 'Discover the simplicity of securing your UK to Turkey eVisa with ease for a seamless travel experience.',
+      linkHref: '/uk',
+      linkText: 'Apply now',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'USA to Turkey',
+      text: 'Unlock the door to your Turkeyn dream from the USA with a stress-free eVisa process.',
+      linkHref: '/usa',
+      linkText: 'Apply now',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'Malaysia to Turkey',
+      text: 'Begin your journey from Malaysia to Turkey effortlessly with our eVisa process.',
+      linkHref: '/malaysia',
+      linkText: 'Apply now',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'Article',
+      text: 'Turkey: Where Adventure, Wildlife, and Stunning Landscapes Await.',
+      linkHref: '/turkey-adventure',
+      linkText: 'Read More',
+      img: 'https://dummyimage.com/720x400',
+    },
+    {
+      title: 'Article',
+      text: 'Discovering Turkey: From Coral Reefs to Red Deserts, a Journey Awaits.',
+      linkHref: '/discovering-turkey',
+      linkText: 'Read More',
+      img: 'https://dummyimage.com/720x400',
+    },
+  ],
 };

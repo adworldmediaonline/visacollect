@@ -53,7 +53,9 @@ const Page = () => {
       <Faq faqData={learnMoreSectionDataJapan?.faqData} />
       {/* Remember: For the most accurate and up-to-date information, it's best to check the official website. */}
       <PageReview applyLink={learnMoreSectionDataJapan?.applyNowLink} />
-      <RelatedArticlesSlider />
+      <RelatedArticlesSlider
+        relatedArticles={learnMoreSectionDataJapan.relatedArticles}
+      />
     </div>
   );
 };
