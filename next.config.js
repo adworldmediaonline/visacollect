@@ -8,6 +8,14 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/in',
+        destination: `https://e-visa-delta.vercel.app/`,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

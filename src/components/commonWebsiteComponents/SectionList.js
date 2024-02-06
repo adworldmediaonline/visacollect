@@ -1,3 +1,5 @@
+import { roboto } from '@/constant/fonts';
+
 export default function SectionList({ list }) {
   return (
     <>
@@ -9,7 +11,10 @@ export default function SectionList({ list }) {
         {list?.listItems?.map((item, index) => (
           <>
             <li className="py-1 text-left" key={index}>
-              <div dangerouslySetInnerHTML={{ __html: `${item ?? ''}` }} />
+              <div
+                className={roboto.className}
+                dangerouslySetInnerHTML={{ __html: `${item ?? ''}` }}
+              />
             </li>
           </>
         ))}
