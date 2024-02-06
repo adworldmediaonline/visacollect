@@ -1,6 +1,6 @@
-"use client";
-import React, { useRef } from "react";
-import Link from "next/link";
+'use client';
+import React, { useRef } from 'react';
+import Link from 'next/link';
 
 const Banner = () => {
   const ref = useRef(null);
@@ -11,7 +11,7 @@ const Banner = () => {
       <div
         className=" bg-cover bg-no-repeat bg-right-bottom h-80 mt-20"
         style={{
-          backgroundImage: ' url("/assets/images/india/home/banner.png")',
+          backgroundImage: ' url("/assets/images/in/home/banner.png")',
         }}
       >
         <div className="text-white h-full bg-gradient-to-r from-black/80 via-black/50 to-transparent">
@@ -20,7 +20,7 @@ const Banner = () => {
               <h2 className="md:text-5xl italic text-primary drop-shadow-lg text-xl font-extrabold ">
                 Welcome to India
               </h2>
-              {/* <Link href="https://indianvisaonline.gov.in/">
+              {/* <Link href="https://innvisaonline.gov.in/">
                 <h3 className="md:text-5xl text-2xl font-extrabold text-primary">
                   Indianvisaonline.gov.in
                 </h3>

@@ -11,7 +11,7 @@ const BannerPage = ({ heading, buttonTitle }) => {
       <div
         className=" bg-cover bg-no-repeat bg-right-bottom"
         style={{
-          backgroundImage: ' url("/assets/images/india/home/banner.png")',
+          backgroundImage: ' url("/assets/images/in/home/banner.png")',
         }}
       >
         <div className="text-white h-full bg-gradient-to-r from-black/80 via-black/50 to-transparent">

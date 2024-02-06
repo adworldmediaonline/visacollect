@@ -15,7 +15,7 @@ import {
   businessIndividualRadio,
   businessIndividualsSchema,
 } from '@/constant/srilankaConstant';
-import SingleFileUpload from '@/components/india/SingleFileUpload';
+import SingleFileUpload from '@/components/in/SingleFileUpload';
 import usePost from '@/hooks/usePost';
 import apiEndpoint from '@/services/apiEndpoint';
 import StepProcess from '@/components/srilanka/common/StepProcess';

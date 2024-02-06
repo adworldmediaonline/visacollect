@@ -10,9 +10,9 @@ const OurPopularDestination = () => {
   const data = [
     {
       id: 1,
-      imgSrc: '/assets/images/main/india-desti.png',
+      imgSrc: '/assets/images/main/in-desti.png',
       title: 'India',
-      link: '/india',
+      link: '/in',
     },
     {
       id: 2,

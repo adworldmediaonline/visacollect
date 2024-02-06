@@ -33,8 +33,7 @@ const Footer = () => {
       <div
         className="pb-6 bg-right-bottom bg-no-repeat bg-cover"
         style={{
-          backgroundImage:
-            ' url("/assets/images/india/common/bannerfooter.png")',
+          backgroundImage: ' url("/assets/images/in/common/bannerfooter.png")',
         }}
       >
         <div className="container ">
@@ -44,7 +43,7 @@ const Footer = () => {
                 <Link href="/">
                   <div>
                     <Image
-                      src="/assets/images/india/common/logo-white.png"
+                      src="/assets/images/in/common/logo-white.png"
                       width="240"
                       height="140"
                       alt="logo-white"

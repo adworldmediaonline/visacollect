@@ -4,7 +4,7 @@ import CustomButton from '@/components/common/CustomButton';
 export const learnMoreSectionDataIndia = {
   pageTitle: '<strong>India Visa:</strong>  - Apply Online Now!',
   pageName: 'India',
-  applyNowLink: '/india/visa/step-one',
+  applyNowLink: '/in/visa/step-one',
   otherLinks: [
     {
       linkName: 'Easy as a walkabout: The India visa options',
@@ -97,7 +97,7 @@ export const learnMoreSectionDataIndia = {
           text: 'There are also other e-Visa types such as e-Conference Visa, e-Journalist Visa, e-Research Visa, etc. You can find more details about them on our website.',
         },
         {
-          href: '/india/visa/step-one',
+          href: '/in/visa/step-one',
           linkText: 'Apply today!',
           text: '<strong>Want to Apply for Free of Charge and seamless online visa services?</strong> <span class="link">Apply today!</span>',
         },
@@ -130,9 +130,9 @@ export const learnMoreSectionDataIndia = {
           text: `<strong>Applying for an Indian e-Visa is easy and convenient. You just need to follow these steps:</strong>`,
         },
         {
-          href: '/india/visa/step-one',
-          linkText: 'https://visacollect.com/india/visa/step-one',
-          text: `<strong>Step - 1:</strong> Visit our website: <span class="link">https://visacollect.com/india/visa/step-one</span>, and click on the ‘Apply Now’ button or visit Indian eVisa Portal for online visa services.`,
+          href: '/in/visa/step-one',
+          linkText: 'https://visacollect.com/in/visa/step-one',
+          text: `<strong>Step - 1:</strong> Visit our website: <span class="link">https://visacollect.com/in/visa/step-one</span>, and click on the ‘Apply Now’ button or visit Indian eVisa Portal for online visa services.`,
         },
         {
           text: `<strong>Step - 2:</strong> Select the type of e-Visa you want to apply for and enter your nationality and date of arrival in India.`,
@@ -172,7 +172,7 @@ export const learnMoreSectionDataIndia = {
           text: '<strong>#2: Return or Onward Journey:</strong> You need to secure your flight tickets to meet Indian immigration requirements. You also need to choose your port of entry into India and plan your arrival smoothly. As per India’s portal of online visa services, you can enter India through any of the 28 designated airports or 5 designated seaports that are listed on the <span class="link">e-Visa website</span>. You can exit from any of the Indian Immigration Check Posts (ICPs).',
         },
         {
-          href: '/india/visa/step-one',
+          href: '/in/visa/step-one',
           linkText: 'India Visa Apply Online Now.',
           text: 'Ready to visit this magnificent country with ancient cultural heritage and modern tapestry? Click on - <span class="link">India Visa Apply Online Now</span>.',
         },
@@ -242,7 +242,7 @@ export const learnMoreSectionDataIndia = {
           text: '<strong>Step-5:</strong> Download and print the e-Visa and carry it with you when you travel to India. You will need to present it to the immigration officer along with your passport and return or onward ticket.',
         },
         {
-          href: '/india/visa/step',
+          href: '/in/visa/step',
           linkText: 'Apply today!',
           text: 'Ready to apply for your Indian Online eVisa with our Free of Charge and Seamless online visa services? <span class="link">Apply today!</span>',
         },
@@ -931,7 +931,7 @@ export const learnMoreSectionDataIndia = {
     {
       title: 'Article',
       text: 'India: Where Adventure, Wildlife, and Stunning Landscapes Await.',
-      linkHref: '/india-adventure',
+      linkHref: '/in-adventure',
       linkText: 'Read More',
       img: 'https://dummyimage.com/720x400',
     },

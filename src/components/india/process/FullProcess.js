@@ -7,25 +7,25 @@ const FullProcess = () => {
   const data = [
     {
       id: 1,
-      icon: '/assets/images/india/process/icon1.png',
+      icon: '/assets/images/in/process/icon1.png',
       title: 'Apply online',
       sub: 'Upload Photo and Passport Page',
     },
     {
       id: 2,
-      icon: '/assets/images/india/process/icon2.png',
+      icon: '/assets/images/in/process/icon2.png',
       title: 'Pay eVisa fee online',
       sub: 'Using Credit / Debit card / Payment Wallet',
     },
     {
       id: 3,
-      icon: '/assets/images/india/process/icon3.png',
+      icon: '/assets/images/in/process/icon3.png',
       title: 'Receive ETA Online',
       sub: 'Electronic Travel Authorization/ETA Will be sent to your e-mail',
     },
     {
       id: 4,
-      icon: '/assets/images/india/process/icon4.png',
+      icon: '/assets/images/in/process/icon4.png',
       title: 'Fly To India',
       sub: 'Print ETA and present at Immigration Check Post where eVisa will be stamped on passport.',
     },

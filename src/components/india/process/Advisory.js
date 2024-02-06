@@ -84,7 +84,7 @@ const Advisory = () => {
         <div className="flex col-span-1 space-x-4">
           <div>
             <Image
-              src="/assets/images/india/process/iconre.png"
+              src="/assets/images/in/process/iconre.png"
               width={30}
               height={30}
               alt="iconre"
@@ -126,7 +126,7 @@ const Advisory = () => {
                   }`}
                 >
                   <img
-                    src="/assets/images/india/process/circleicon.png"
+                    src="/assets/images/in/process/circleicon.png"
                     alt=""
                     className="md:w-5 md:h-5 "
                   />

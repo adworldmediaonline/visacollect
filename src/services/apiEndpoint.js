@@ -88,7 +88,7 @@ const apiEndpoint = {
   MOROCCO_VISA_APPLICATION_PEOPLE: '/moroccovisa/moroccoVisaApplicationPeople',
 
   // payment routes
-  INDIA_VISA_PAYMENT: '/visa/indiaVisa',
+  INDIA_VISA_PAYMENT: '/visa/inVisa',
 };
 
 export default apiEndpoint;
