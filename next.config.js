@@ -9,12 +9,21 @@ const nextConfig = {
     ],
   },
   async rewrites() {
-    return [
-      {
-        source: '/in',
-        destination: `https://e-visa-delta.vercel.app/`,
-      },
-    ];
+    //   return [
+    //     {
+    //       source: '/in',
+    //       destination: `https://e-visa-delta.vercel.app/`,
+    //     },
+    //   ];
+    // },
+    return {
+      beforeFiles: [
+        {
+          source: '/in',
+          destination: `https://e-visa-delta.vercel.app`,
+        },
+      ],
+    };
   },
 };
 
