@@ -38,7 +38,7 @@ const Header = ({ bgcolor }) => {
     <div className={`header bg-white shadow-md ${scrolled ? 'bg-white' : ''}`}>
       <nav className="container navbar ">
         <div className="flex items-center w-full md:justify-between md:space-x-12">
-          <Link href="/" className="logo flex space-x-4">
+          <Link href="/" className="flex space-x-4 logo">
             {scrolled ? (
               <>
                 <Image
@@ -46,13 +46,6 @@ const Header = ({ bgcolor }) => {
                   width={500}
                   height={500}
                   className="w-36"
-                  alt="logo"
-                />
-                <Image
-                  src="/assets/images/india/common/logo-ackrolix.png"
-                  width={500}
-                  height={500}
-                  className="w-28"
                   alt="logo"
                 />
               </>
@@ -64,13 +57,6 @@ const Header = ({ bgcolor }) => {
                   height={500}
                   className="w-36"
                   alt="logo2"
-                />
-                <Image
-                  src="/assets/images/india/common/logo-ackrolix.png"
-                  width={500}
-                  height={500}
-                  className="w-28"
-                  alt="logo"
                 />
               </>
             )}
