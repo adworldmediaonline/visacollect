@@ -1,5 +1,5 @@
 'use client';
-import BannerPage from '@/components/in/common/BannerPage';
+import BannerPage from '@/components/india/common/BannerPage';
 import { useFormContext } from '@/context/formContext';
 import usePostPayment from '@/hooks/usePostPayment';
 import useUpdate from '@/hooks/useUpdate';
