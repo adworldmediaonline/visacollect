@@ -18,7 +18,7 @@ export default function Page() {
         validity=" Valid for 1 year"
         entries="Multiple Entries"
         price="$126.67"
-        link="/australia/application"
+        link="/in/au/application"
         pageTitle={learnMoreSectionDataAustralia?.pageTitle}
         pageName={learnMoreSectionDataAustralia?.pageName}
       />
