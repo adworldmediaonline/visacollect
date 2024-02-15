@@ -21,17 +21,21 @@ const nextConfig = {
   //     beforeFiles: [
   //       {
   //         // source: '/in',
-  //         source: '/in{/}?',
-  //         destination: `https://e-visa-delta.vercel.app`,
-  //       },
-  //       {
-  //         // source: '/in',
-  //         source: '/in/visa/step-one{/}?',
-  //         destination: `https://e-visa-delta.vercel.app/visa/step-one`,
+  //         source: '/in/au',
+  //         destination: `/in/au-Indian-tourist-visa-Australian-citizens`,
   //       },
   //     ],
   //   };
   // },
+  async redirects() {
+    return [
+      {
+        source: '/in/au/',
+        destination: '/in/au-Indian-tourist-visa-Australian-citizens',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
