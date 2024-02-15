@@ -8,13 +8,13 @@ import Footer from '@/components/australia/common/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Apply For Australia Visa Online | E-visa',
+  title: 'Apply Indian Tourist Visa For Australian Citizens | Visa Collect',
   description:
-    'Apply for Australia visa online effortlessly with E-visa through our user-friendly platform. Let our team simplify the journey to your dream destination.',
+    'Looking to visit India as an Australian citizen? Apply for Indian tourist visa for Australian citizen With ease and convenience. Lets us help you with the process. Apply now ',
   metadataBase: new URL('https://visacollect.com'),
 
   alternates: {
-    canonical: '/apply-for-sri-lanka-visa/',
+    canonical: '/in/au-Indian-tourist-visa-Australian-citizens',
   },
   keywords:
     'australia visa,apply for australian visa,australia tourist visa,visitor visa australia,australia tourist visa application,australian visa application,australia visa requirements,australia visa application online,australian visa application form,apply for australia visa online,apply e visa for australia',
