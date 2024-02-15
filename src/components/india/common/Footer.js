@@ -41,7 +41,7 @@ const Footer = () => {
           <div className="pt-16">
             <div className="grid justify-start gap-6 pt-8 pb-12 md:grid-cols-12 md:px-0 md:pt-0">
               <div className="col-span-5 space-y-4">
-                <Link href="/">
+                <Link href="/in">
                   <div>
                     <Image
                       src="/assets/images/india/common/logo-white.png"
@@ -97,28 +97,28 @@ const Footer = () => {
                         Quick Links
                       </h2>
                       <ul>
-                        <Link href="/">
+                        <Link href="/in">
                           <li className="mt-2 text-base text-white hover:text-primary">
                             <span>Home</span>
                           </li>
                         </Link>
-                        <Link href="/">
+                        <Link href="/in/about-us">
                           <li className="mt-2 text-base text-white hover:text-primary">
                             <span>About Us</span>
                           </li>
                         </Link>
 
-                        <Link href="/visa/step-one">
+                        <Link href="/in/visa/step-one">
                           <li className="mt-2 text-base text-white hover:text-primary">
                             <span>Apply VISA</span>
                           </li>
                         </Link>
-                        <Link href="/">
+                        {/* <Link href="/">
                           <li className="mt-2 text-base text-white hover:text-primary">
                             <span>Ongoing Application</span>
                           </li>
-                        </Link>
-                        <Link href="/">
+                        </Link> */}
+                        <Link href="/in/contact-us">
                           <li className="mt-2 text-base text-white hover:text-primary">
                             <span>Contact Us</span>
                           </li>
@@ -134,22 +134,22 @@ const Footer = () => {
                     Apply For Indian VISA
                   </h2>
                   <ul>
-                    <Link href="/visa/step-one">
+                    <Link href="/in/visa/step-one">
                       <li className="mt-2 text-base text-white hover:text-primary">
                         <span> Indian eVisa Online</span>
                       </li>
                     </Link>
-                    <Link href="/visa/step-one">
+                    <Link href="/in/visa/step-one">
                       <li className="mt-2 text-base text-white hover:text-primary">
                         <span>Indian Tourist eVisa</span>
                       </li>
                     </Link>
-                    <Link href="/visa/step-one">
+                    <Link href="/in/visa/step-one">
                       <li className="mt-2 text-base text-white hover:text-primary">
                         <span>Indian Medical eVisa</span>
                       </li>
                     </Link>
-                    <Link href="/visa/step-one">
+                    <Link href="/in/visa/step-one">
                       <li className="mt-2 text-base text-white hover:text-primary">
                         <span> Indian Business eVisa</span>
                       </li>
@@ -163,22 +163,22 @@ const Footer = () => {
                     Support
                   </h2>
                   <ul>
-                    <Link href="/terms-and-conditions">
+                    <Link href="/in/terms-and-conditions">
                       <li className="mt-2 text-base text-white hover:text-primary">
                         <span> Terms & Conditions</span>
                       </li>
                     </Link>
-                    <Link href="/privacy-policy">
+                    <Link href="/in/privacy-policy">
                       <li className="mt-2 text-base text-white hover:text-primary">
                         <span>Privacy Policy</span>
                       </li>
                     </Link>
-                    <Link href="/cookie-policy">
+                    <Link href="/in/cookie-policy">
                       <li className="mt-2 text-base text-white hover:text-primary">
                         <span>Cookies Policy</span>
                       </li>
                     </Link>
-                    <Link href="/cancellation-and-refund-policy">
+                    <Link href="/in/cancellation-and-refund-policy">
                       <li className="mt-2 text-base text-white hover:text-primary">
                         <span>Cancellation and Refund Policy</span>
                       </li>
