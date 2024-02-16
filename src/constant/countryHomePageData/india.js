@@ -4,7 +4,7 @@ import CustomButton from '@/components/common/CustomButton';
 export const learnMoreSectionDataIndia = {
   pageTitle: '<strong>India Visa:</strong>  - Apply Online Now!',
   pageName: 'India',
-  applyNowLink: '/india/visa/step-one',
+  applyNowLink: '/in/visa/step-one',
   otherLinks: [
     {
       linkName: 'Easy as a walkabout: The India visa options',

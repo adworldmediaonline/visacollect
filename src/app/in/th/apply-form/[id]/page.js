@@ -24,7 +24,7 @@ export default function Page({ params }) {
     apiEndpoint.THAILAND_VISA_APPLICATION,
     id,
     'form',
-    '/thailand/step-two',
+    '/in/th/step-two',
     getQuery.refetch,
     'thailandVisaApplication'
   );
@@ -39,7 +39,7 @@ export default function Page({ params }) {
   }
 
   if (getQuery.error) {
-    return router.push('/thailand/apply-form');
+    return router.push('/in/th/apply-form');
   }
 
   if (getQuery.isSuccess) {
