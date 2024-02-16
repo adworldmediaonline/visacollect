@@ -27,7 +27,7 @@ export default function Page({ params }) {
   }
 
   if (getQuery.error) {
-    return router.push('/thailand/apply-form');
+    return router.push('/in/th/apply-form');
   }
 
   if (getQuery.isSuccess) {
@@ -322,7 +322,7 @@ export default function Page({ params }) {
 
         <div className="flex items-center justify-center py-8 space-x-5 text-center">
           <Link
-            href={`/thailand/apply-form/${thailandVisaApplicationData?._id}`}
+            href={`/in/th/apply-form/${thailandVisaApplicationData?._id}`}
             className="items-center gap-3 px-8 py-3 font-semibold border-2 rounded-lg cursor-pointer w-fit border-primaryMain text-primaryMain "
           >
             Edit

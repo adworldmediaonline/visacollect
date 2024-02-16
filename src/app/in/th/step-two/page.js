@@ -52,7 +52,7 @@ export default function Page() {
   }
 
   if (getQuery.error) {
-    return router.push('/thailand/apply-form');
+    return router.push('/in/th/apply-form');
   }
 
   if (getQuery.isSuccess) {
@@ -406,7 +406,7 @@ export default function Page() {
                                     className={`p-4 flex space-x-5 items-center`}
                                   >
                                     <Link
-                                      href={`/thailand/step-two/${person?._id}`}
+                                      href={`/in/th/step-two/${person?._id}`}
                                     >
                                       <CiEdit size={24} />
                                     </Link>
@@ -485,8 +485,8 @@ export default function Page() {
                   <div className="py-8 text-center">
                     {thailandVisaApplicationData?.persons?.length > 0 ? (
                       <Link
-                        href={`/thailand/review/${thailandVisaApplicationData?._id}`}
-                        className="items-center gap-3 px-12 py-3 rounde-full font-semibold border-2 rounded-lg cursor-pointer w-fit bg-primaryMain text-white "
+                        href={`/in/th/review/${thailandVisaApplicationData?._id}`}
+                        className="items-center gap-3 px-12 py-3 font-semibold text-white border-2 rounded-lg cursor-pointer rounde-full w-fit bg-primaryMain "
                       >
                         Continue
                       </Link>

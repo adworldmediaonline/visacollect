@@ -5,7 +5,7 @@ export const learnMoreSectionDataThailand = {
   pageTitle:
     '<strong>Thailand Visa:</strong> Entry requirements and travel information for Srilanka',
   pageName: 'Thailand',
-  applyNowLink: '',
+  applyNowLink: '/in/th/apply-form',
   otherLinks: [
     {
       linkName: 'Easy as a walkabout: The Thailand visa options',

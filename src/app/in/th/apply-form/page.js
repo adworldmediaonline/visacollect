@@ -13,7 +13,7 @@ export default function Page() {
   const postMutation = usePost(
     apiEndpoint.THAILAND_VISA_APPLICATION,
     1,
-    '/thailand/step-two',
+    '/in/th/step-two',
     true,
     'thailandVisaApplication'
   );
