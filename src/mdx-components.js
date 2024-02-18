@@ -49,7 +49,9 @@ export function useMDXComponents(components) {
         {children}
       </h6>
     ),
-    p: ({ children }) => <p style={{ margin: '0px!important' }}>{children}</p>,
+    p: ({ children }) => (
+      <p style={{ margin: '0px 0px 0.8rem 0px!important' }}>{children}</p>
+    ),
     img: props => (
       <Image
         sizes="100vw"

@@ -10,6 +10,8 @@ import RelatedArticlesSlider from '@/components/commonWebsiteComponents/RelatedA
 import { learnMoreSectionDataUs } from '@/constant/countryHomePageData/us';
 import Us from '../../homePagesBlog/us.mdx';
 import HomePagBlogContainer from '@/components/HomePagBlogContainer';
+import FaqWithMDX from '@/components/commonWebsiteComponents/FaqWithMDX';
+import { usFaq } from '@/app/faqMdx/usFaq/usFaq';
 export default function Page() {
   return (
     <div>
@@ -49,7 +51,12 @@ export default function Page() {
         <Divider />
       </div>
 
-      <Faq faqData={learnMoreSectionDataUs?.faqData} />
+      <div className="flex justify-center">
+        <FaqWithMDX
+          faqData={usFaq}
+          titleText="India Tourist e-Visa Application Frequently Asked Questions (FAQs)"
+        />
+      </div>
       <PageReview applyLink="#" />
       {/* <RelatedArticlesSlider
         relatedArticles={learnMoreSectionDataUs?.relatedArticles}
