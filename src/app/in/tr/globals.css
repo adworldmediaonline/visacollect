@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+body{
+  overflow-x: hidden;
+}
+
+.container
+
+{
+  width: 90%;
+  margin:0px auto;
+}
+
+.Secheading::after
+{
+  background-color: #0068E5;
+  content:"";
+  height: 3px;
+  width: 60%;
+  display: flex;
+
+}
+
+
+.head-footer::after
+{
+  background-color: #0068E5;
+  content:"";
+  height: 2px;
+  width: 30%;
+  margin: 5px 0px 0px 3px;
+  display: flex;
+}
+
+@media screen and (min-width: 480px) {
+
+  .Secheading-center::after
+  {
+    background-color: #0068E5;
+    content:"";
+    height: 2px;
+    width: 30%;
+    justify-content: start;
+    margin-left:0px;
+
+  
+  }
+}
+
+
+.Secheading-center::after
+{
+  background-color: #0068E5;
+  content:"";
+  height: 2px;
+  width: 30%;
+  margin:auto;
+  display: flex;
+
+}
+
+.footer-menu li 
+{
+  font-weight: 300;
+}
+
+.header-menu li
+{
+  font-weight: 400;
+}
+/* 
+
+.css-13cymwt-control
+{
+  padding: 10px;
+  border-radius: 0px;
+  border: none; 
+}
+
+.css-13cymwt-control:hover
+{
+  padding: 10px;
+
+} */
+
+.text-primary
+{
+  color:#0068E5;
+}
+
+.nav-menu
+{
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  left: 0; 
+  z-index: 0;
+  /* top:13%; */
+}
+
+
+
+
+
+.mobile-nav
+{
+
+  @apply bg-[#fafafa] p-4 rounded-xl border md:bg-transparent md:p-0 md:rounded-none md:border-none
+}
+
+
+.form-input{
+  @apply col-span-8 md:w-[70%] w-[100%] rounded-md border border-[#e0e0e0] bg-white py-2 px-2 text-base font-[400] text-[gray] outline-none focus:border-[#6A64F1] focus:shadow-md  flex-row
+}
+
+.form-input-main-div
+{
+  @apply md:flex justify-between my-4 
+}
+
+.form-input-main-div-test
+{
+  @apply my-4
+}
+
+.form-input-test
+{
+  @apply w-[70%]
+}
+
+
+
+.select-input{
+  @apply col-span-8 w-full md:w-[70%] border rounded-md px-1 py-[10px]
+ }
+
+ .form-select
+ {
+  &__placeholder{
+    margin: 0.125rem auto;
+    width: 100%;
+    height: 300px;
+  } 
+
+ }
+
+
+.review-form
+{
+  gap:calc(20px);
+}
+
+/* Form Section */
+.main-form-section
+{
+  @apply md:grid grid-cols-12 gap-4 py-2 items-start
+}
+
+.new-form-input
+{
+  @apply border border-gray-300 py-[10px] px-1 rounded-lg outline-none ring-0 focus:ring-blue-200 focus:ring-1 w-full
+}
+
+
+.side-icon
+{
+  @apply items-start float-right md:mt-0 -mt-6 text-primary
+}
+
+.label-section
+{
+  @apply col-span-3 
+}
+
+.mark-section
+{
+  @apply  relative col-span-1 order-3
+}
+
+.tooltip-content
+{
+  @apply absolute -top-12  w-[230px] right-0 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 
+}
+

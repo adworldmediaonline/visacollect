@@ -5,14 +5,13 @@ import { getAllCountries } from '@/lib/getAllCountries';
 import HomePageTitle from '../common/countryHomePage/HomePageTitle';
 
 export const Banner = ({
-  name,
-  type,
   validity,
   entries,
   price,
   link,
   pageTitle,
   pageName,
+  pageTitleDescription,
 }) => {
   return (
     <div>
@@ -21,6 +20,7 @@ export const Banner = ({
           <p className="py-8">Home &gt; {pageName}</p>
         </div>
         <HomePageTitle pageTitle={pageTitle} />
+        <p className="mt-1 text-base">{pageTitleDescription ?? ''}</p>
         <div className="mt-8">
           <div className="flex flex-col gap-4 md:flex-row xl">
             <div className="flex flex-shrink-0 gap-3 md:basis-96">
