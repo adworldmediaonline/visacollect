@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
+import nextMDX from '@next/mdx';
+import remarkGfm from 'remark-gfm';
+import { rehype } from 'rehype';
 const nextConfig = {
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   trailingSlash: true,
   images: {
     remotePatterns: [
@@ -9,7 +13,7 @@ const nextConfig = {
       },
     ],
   },
-  // async rewrites() {
+
   //   //   return [
   //   //     {
   //   //       source: '/in',
@@ -37,5 +41,11 @@ const nextConfig = {
     ];
   },
 };
-
-module.exports = nextConfig;
+const withMDX = nextMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [],
+  },
+});
+export default withMDX(nextConfig);

@@ -5,7 +5,7 @@ export const learnMoreSectionDataTurkey = {
   pageTitle:
     '<strong>Turkey Visa:</strong> Entry requirements and travel information for Turkey',
   pageName: 'Turkey',
-  applyNowLink: '/turkey/application',
+  applyNowLink: '/in/tr/application',
   otherLinks: [
     {
       linkName: 'Easy as a walkabout: The Turkey visa options',
