@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { amiri, lobster, roboto } from './app/layout';
 
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
@@ -11,8 +12,9 @@ export function useMDXComponents(components) {
     // Allows customizing built-in components, e.g. to add styling.
     h2: ({ children }) => (
       <h2
-        className="text-2xl font-medium text-primary md:text-3xl"
-        style={{ margin: '2rem 0rem 1rem 0rem!important' }}
+        className={`text-2xl
+         text-primary font-medium md:text-3xl`}
+        style={{ margin: '2rem 0rem .5rem 0rem!important' }}
       >
         {children}
       </h2>
@@ -50,7 +52,16 @@ export function useMDXComponents(components) {
       </h6>
     ),
     p: ({ children }) => (
-      <p style={{ margin: '0px 0px 0.8rem 0px!important' }}>{children}</p>
+      <p
+        // className={roboto.className}
+        style={{
+          margin: '0px 0px 0.8rem 0px!important',
+          // fontSize: '1.10rem',
+          fontWeight: 'lighter',
+        }}
+      >
+        {children}
+      </p>
     ),
     img: props => (
       <Image
