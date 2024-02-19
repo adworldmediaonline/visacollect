@@ -1,14 +1,28 @@
-import { Inter, Poppins } from 'next/font/google';
+import { Inter, Poppins, Roboto, Lobster, Amiri } from 'next/font/google';
 import { ToastContainer } from 'react-toastify';
 import { FormProvider } from '@/context/formContext';
 import ReactQueryProvider from '@/components/ReactQueryProvider';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
+import Header from '@/components/main/Header';
+import Footer from '@/components/main/Footer';
 // import Head from 'next/head';
 // import HeadClient from './HeadClient';
 
 const inter = Inter({ subsets: ['latin'] });
+export const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['300'],
+});
+export const amiri = Amiri({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
+export const lobster = Lobster({
+  subsets: ['latin'],
+  weight: ['400'],
+});
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
@@ -46,7 +60,9 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.className} antialiased`}>
         <FormProvider>
           <ReactQueryProvider>
+            <Header />
             <div>{children}</div>
+            <Footer />
             <ToastContainer />
           </ReactQueryProvider>
         </FormProvider>

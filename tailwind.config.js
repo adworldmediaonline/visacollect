@@ -7,6 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      typography: theme => ({
+        DEFAULT: {
+          css: {
+            margin: '0px',
+          },
+        },
+      }),
+
       colors: {
         // primaryMain: '#0068E5',
         // primary: '#0068E5',

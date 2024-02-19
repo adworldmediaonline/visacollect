@@ -1,18 +1,55 @@
-import ProcessingStep from '@/components/commonWebsiteComponents/ProcessingStep';
 import React from 'react';
 import { Banner } from '@/components/commonWebsiteComponents/Banner';
-import Faq from '@/components/commonWebsiteComponents/Faq';
-import LearnMore from '@/components/commonWebsiteComponents/LearnMore';
-import Link from 'next/link';
 import Divider from '@/components/common/Divider';
 import PageReview from './_homePage/PageReview';
 import RelatedArticlesSlider from '@/components/commonWebsiteComponents/RelatedArticlesSlider';
 import { learnMoreSectionDataUs } from '@/constant/countryHomePageData/us';
 import Us from '../../homePagesBlog/us.mdx';
-import HomePagBlogContainer from '@/components/HomePagBlogContainer';
 import FaqWithMDX from '@/components/commonWebsiteComponents/FaqWithMDX';
 import { usFaq } from '@/app/faqMdx/usFaq/usFaq';
-export default function Page() {
+import PageWrapper from '@/app/blog/components/PageWrapper';
+import MainWrapper from '@/app/blog/components/MainWrapper';
+import AsideWrapper from '@/app/blog/components/AsideWrapper';
+import AsideBlogCard from '@/app/blog/components/AsideBlogCard';
+
+const relatedArticles = [
+  {
+    title: 'UK to Australia',
+    text: 'Discover the simplicity of securing your UK to Australia eVisa with ease for a seamless travel experience.',
+    linkHref: '/uk',
+    linkText: 'Apply now',
+    img: 'https://dummyimage.com/720x400',
+  },
+  {
+    title: 'USA to Australia',
+    text: 'Unlock the door to your Australian dream from the USA with a stress-free eVisa process.',
+    linkHref: '/usa',
+    linkText: 'Apply now',
+    img: 'https://dummyimage.com/720x400',
+  },
+  {
+    title: 'Malaysia to Australia',
+    text: 'Begin your journey from Malaysia to Australia effortlessly with our eVisa process.',
+    linkHref: '/malaysia',
+    linkText: 'Apply now',
+    img: 'https://dummyimage.com/720x400',
+  },
+  {
+    title: 'Article',
+    text: 'Australia: Where Adventure, Wildlife, and Stunning Landscapes Await.',
+    linkHref: '/australia-adventure',
+    linkText: 'Read More',
+    img: 'https://dummyimage.com/720x400',
+  },
+  {
+    title: 'Article',
+    text: 'Discovering Australia: From Coral Reefs to Red Deserts, a Journey Awaits.',
+    linkHref: '/discovering-australia',
+    linkText: 'Read More',
+    img: 'https://dummyimage.com/720x400',
+  },
+];
+export default async function Page() {
   return (
     <div>
       <Banner
@@ -25,28 +62,14 @@ export default function Page() {
         pageName={learnMoreSectionDataUs?.pageName}
       />
       <div className="w-full h-[0.5px] bg-gray-200"></div>
-      <div className="flex flex-col md:flex-row">
-        <main className="flex-1 py-2 [&_strong]:text-tertiary [&_p]:font-normal [&_p]:text-[#343a40] [&_li]:text-[#343a40]">
-          <HomePagBlogContainer>
-            <Us />
-          </HomePagBlogContainer>
-        </main>
-        <aside className="basis-[300px] py-5 md:py-12 space-y-4">
-          <div className="container">
-            {' '}
-            <div>Other links:</div>
-            <ul className="flex flex-col gap-3">
-              {learnMoreSectionDataUs?.otherLinks?.map((link, index) => (
-                <li key={index}>
-                  <Link className="underline text-primary" href={link.path}>
-                    {link.linkName}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </aside>
-      </div>
+      <PageWrapper>
+        <MainWrapper>
+          <Us />
+        </MainWrapper>
+        <AsideWrapper>
+          <AsideBlogCard slug="test" title="hello" />
+        </AsideWrapper>
+      </PageWrapper>
       <div className="mt-16">
         <Divider />
       </div>
@@ -58,9 +81,7 @@ export default function Page() {
         />
       </div>
       <PageReview applyLink="#" />
-      {/* <RelatedArticlesSlider
-        relatedArticles={learnMoreSectionDataUs?.relatedArticles}
-      /> */}
+      <RelatedArticlesSlider relatedArticles={relatedArticles} />
     </div>
   );
 }

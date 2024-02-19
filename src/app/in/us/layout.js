@@ -24,13 +24,5 @@ export const metadata = {
   },
 };
 export default function RootLayout({ children }) {
-  return (
-    <>
-      <Navbar />
-
-      {children}
-
-      <Footer />
-    </>
-  );
+  return <>{children}</>;
 }
