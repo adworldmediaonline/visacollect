@@ -2,6 +2,9 @@ import { visaInfo } from '../images';
 
 export const learnMoreSectionDataAustralia = {
   pageTitle: 'Indian Tourist Visa for Australian Citizens',
+  mainHomePageTitle:
+    '<strong>Australia Visa:</strong> Entry requirements and travel information for Australia',
+  mainPageLink: '/au/application',
   pageName: 'Australia',
   otherLinks: [
     {
@@ -260,18 +263,19 @@ export const learnMoreSectionDataAustralia = {
   faqData: [
     {
       id: 1,
-      title: 'What is an Indian Tourist Visa?',
-      des: 'An Indian Tourist Visa allows foreign nationals to enter India for tourism, visiting friends and family, short-term study, or medical treatment for up to 3 months.',
+      title: 'How long does it take for ETA Australia to be approved?',
+      des: 'Typically, our applicants can receive their approved ETA Visa in a few days. Check your data thoroughly before submission to speed up this process.',
     },
     {
       id: 2,
-      title: 'Who needs an Indian Tourist Visa?',
-      des: 'Foreign nationals traveling to India for tourism, visiting friends and family, or short-term study require an e Visa.',
+      title:
+        'How can I get a Visa for work, education, permanent residence, or any other purpose?',
+      des: 'You will require a consultation session with a registered Australia Migration Officer who will discuss with you all the requirements as specified by the Department of Home Affairs - you can choose your purpose of travel and book a consultation session on the app form.',
     },
     {
       id: 3,
-      title: 'How do I apply for an Indian Tourist e Visa from Australia?',
-      des: 'You can apply online through the user-friendly platform of visacollect.com. Simply fill out the application form, upload the required documents, and make the payment.',
+      title: "Why can't I find my nationality on the list?",
+      des: "If you can't find your nationality on the list, the reason may be that your nationality is not eligible for ETA Australia. Please contact our support team.",
     },
   ],
   relatedArticles: [
