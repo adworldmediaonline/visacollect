@@ -29,12 +29,12 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  robots: {
-    index: false,
-    googleBot: {
-      index: false,
-    },
-  },
+  // robots: {
+  //   index: false,
+  //   googleBot: {
+  //     index: false,
+  //   },
+  // },
   title: '24X7 Online Visa Services | Get Your Visa Apply Today',
   description:
     'Plan your stress-free travel with our 24/7 online visa services. Enjoy quick and reliable visa processing at any time. Apply Visa Today.',

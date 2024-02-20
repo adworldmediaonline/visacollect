@@ -2,9 +2,9 @@ import Link from 'next/link';
 import React from 'react';
 import { FaArrowRightLong } from 'react-icons/fa6';
 
-export default function BlogCard({ title, text, linkHref, linkText, img }) {
+export default function BlogCard({ title, description, slug, linkText, img }) {
   return (
-    <Link href={`${linkHref}`}>
+    <Link href={`${slug}`}>
       <div className="p-4">
         <div className="h-full overflow-hidden border-2 border-gray-200 rounded-lg border-opacity-60">
           <img
@@ -16,10 +16,10 @@ export default function BlogCard({ title, text, linkHref, linkText, img }) {
             <h3 className="mb-3 text-lg font-medium text-gray-900 title-font">
               {title}
             </h3>
-            <p className="mb-3 leading-relaxed">{text}</p>
+            <p className="mb-3 leading-relaxed">{description}</p>
             <div className="flex flex-wrap items-center ">
               <Link
-                href={linkHref}
+                href={slug}
                 className="inline-flex items-center text-primary md:mb-2 lg:mb-0"
               >
                 {linkText}
