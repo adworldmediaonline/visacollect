@@ -283,7 +283,7 @@ export default function Page({ params }) {
         </div>
         {/* table end  */}
         {/* your applicants info end here */}
-        <div className="px-10 py-5 border rounded-lg border-primaryMain bg-primaryMain/10">
+        <div className="px-10 py-5 border rounded-lg border-primary bg-secondary/10">
           <div className="flex items-center justify-between pb-5 text-black">
             <p className="text-2xl font-semibold">
               {' '}
@@ -323,13 +323,13 @@ export default function Page({ params }) {
         <div className="flex items-center justify-center py-8 space-x-5 text-center">
           <Link
             href={`/in/th/apply-form/${thailandVisaApplicationData?._id}`}
-            className="items-center gap-3 px-8 py-3 font-semibold border-2 rounded-lg cursor-pointer w-fit border-primaryMain text-primaryMain "
+            className="items-center gap-3 px-8 py-3 font-semibold border-2 rounded-lg cursor-pointer w-fit border-primary text-primary "
           >
             Edit
           </Link>
 
           <button
-            className="items-center gap-3 px-12 py-3 font-semibold border-2 rounded-full cursor-pointer w-fit border-primaryMain text-primaryMain"
+            className="items-center gap-3 px-12 py-3 font-semibold border-2 rounded-full cursor-pointer w-fit border-primary text-primary"
             type="submit"
           >
             Continue

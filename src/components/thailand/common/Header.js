@@ -134,7 +134,7 @@ const Header = ({ bgcolor }) => {
             {/* for mobile end */}
 
             <Link href="#">
-              <button className="bg-primaryMain text-white rounded-lg transition duration-200 hover:bg-[#1e1e1e] hover:text-white px-4 py-2 font-medium text-md md:block hidden">
+              <button className="bg-secondary text-white rounded-lg transition duration-200 hover:bg-[#1e1e1e] hover:text-white px-4 py-2 font-medium text-md md:block hidden">
                 Contact Us
               </button>
             </Link>

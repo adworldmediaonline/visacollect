@@ -104,7 +104,7 @@ const Page = () => {
                   <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
-                    <div className="px-10 py-5 border rounded-lg border-primary bg-primary/20">
+                    <div className="px-10 py-5 border rounded-lg border-primary bg-secondary/20">
                       <div className="flex items-center justify-between pb-5 text-black">
                         <p> Number Of Entries</p>
                         <p>
@@ -389,7 +389,7 @@ const Page = () => {
                     </div>
                   ) : null}
                   <button
-                    className={`cursor-pointer  items-center gap-3 border-2  font-semibold bg-primary text-white w-fit px-12 py-3 rounded-full ${
+                    className={`cursor-pointer  items-center gap-3 border-2  font-semibold bg-secondary text-white w-fit px-12 py-3 rounded-full ${
                       !isValid ? 'cursor-not-allowed opacity-50' : ''
                     }`}
                     disabled={!isValid}

@@ -220,7 +220,7 @@ const StepSix = () => {
                 <div className="py-8">
                   <div>
                     <h2 className="text-3xl font-semibold">Upload Documents</h2>
-                    <hr className="h-1 text-primary bg-primary w-36" />
+                    <hr className="h-1 text-primary bg-secondary w-36" />
                   </div>
 
                   <div className="space-y-2 divide-y-2 divide-primary">

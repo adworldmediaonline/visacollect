@@ -1,26 +1,26 @@
-import React from "react";
+import React from 'react';
 
 export default function Features() {
   const smallIcon = [
     {
       id: 1,
-      imgSrc: "/assets/images/main/happy.png",
-      title: "10k+ Happy Customers",
+      imgSrc: '/assets/images/main/happy.png',
+      title: '10k+ Happy Customers',
     },
     {
       id: 2,
-      imgSrc: "/assets/images/main/time.png",
-      title: "99% On Time Delivery",
+      imgSrc: '/assets/images/main/time.png',
+      title: '99% On Time Delivery',
     },
     {
       id: 3,
-      imgSrc: "/assets/images/main/experience.png",
-      title: "5+ Years of Experience",
+      imgSrc: '/assets/images/main/experience.png',
+      title: '5+ Years of Experience',
     },
     {
       id: 4,
-      imgSrc: "/assets/images/main/rating.png",
-      title: "Ratings By Customers",
+      imgSrc: '/assets/images/main/rating.png',
+      title: 'Ratings By Customers',
     },
   ];
   return (
@@ -33,7 +33,7 @@ export default function Features() {
         {smallIcon.map((e, i) => (
           <div
             key={i}
-            className="text-white flex flex-col justify-center py-8 items-center space-y-2 bg-black/50 rounded-md border-2 border-primaryMain/80 hover:brightness-150  shadow-md  hover:drop-shadow-2xl  hover:shadow-lg hover:-translate-y-4 duration-200 "
+            className="text-white flex flex-col justify-center py-8 items-center space-y-2 bg-black/50 rounded-md border-2 border-primary/80 hover:brightness-150  shadow-md  hover:drop-shadow-2xl  hover:shadow-lg hover:-translate-y-4 duration-200 "
           >
             <img src={e.imgSrc} className="w-16 h-[3.5rem]" />
             <h5 className="font-semibold text-center ">{e.title}</h5>
@@ -42,4 +42,4 @@ export default function Features() {
       </div>
     </div>
   );
-};
+}

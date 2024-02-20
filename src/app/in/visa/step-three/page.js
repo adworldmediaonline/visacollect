@@ -111,7 +111,7 @@ const StepThree = () => {
                     <h2 className="text-3xl font-semibold">
                       Applicant&apos;s Address Details
                     </h2>
-                    <hr className="h-1 text-primary bg-primary w-36" />
+                    <hr className="h-1 text-primary bg-secondary w-36" />
                   </div>
                   {/* Present Address
                   code start here */}
@@ -454,7 +454,7 @@ const StepThree = () => {
                       </div>
                     </div>
 
-                    <div className="flex-col justify-between hidden col-span-4 px-4 py-6 border-2 md:flex bg-primary/10 border-primary/60 rounded-xl">
+                    <div className="flex-col justify-between hidden col-span-4 px-4 py-6 border-2 md:flex bg-secondary/10 border-primary/60 rounded-xl">
                       <div>
                         <h2 className="py-2 sidetext ">
                           Applicant’s permanent address (with postal/zip code)
@@ -491,7 +491,7 @@ const StepThree = () => {
                 <div>
                   <div>
                     <h2 className="text-3xl font-semibold">Family Details</h2>
-                    <hr className="h-1 text-primary bg-primary w-36" />
+                    <hr className="h-1 text-primary bg-secondary w-36" />
                   </div>
                   <div className="pt-5 text-2xl font-semibold text-primary">
                     Father’s Details
@@ -899,7 +899,7 @@ const StepThree = () => {
                       </div>
                     </div>
 
-                    <div className="flex-col justify-between hidden col-span-4 px-4 py-6 border-2 md:flex bg-primary/10 border-primary/60 rounded-xl">
+                    <div className="flex-col justify-between hidden col-span-4 px-4 py-6 border-2 md:flex bg-secondary/10 border-primary/60 rounded-xl">
                       <div>
                         <h2 className="py-4 sidetext ">
                           Applicant’s father name
@@ -1261,7 +1261,7 @@ const StepThree = () => {
                       </div>
                     </div>
 
-                    <div className="flex-col justify-between hidden col-span-4 px-4 py-6 border-2 md:flex bg-primary/10 border-primary/60 rounded-xl">
+                    <div className="flex-col justify-between hidden col-span-4 px-4 py-6 border-2 md:flex bg-secondary/10 border-primary/60 rounded-xl">
                       <div>
                         <h2 className="py-4 sidetext ">
                           Applicant’s Marital Status
@@ -1701,7 +1701,7 @@ const StepThree = () => {
                       </div>
                     </div>
 
-                    <div className="flex-col justify-between hidden col-span-4 px-4 py-6 border-2 md:flex bg-primary/10 border-primary/60 rounded-xl">
+                    <div className="flex-col justify-between hidden col-span-4 px-4 py-6 border-2 md:flex bg-secondary/10 border-primary/60 rounded-xl">
                       <div>
                         <h2 className="py-4 sidetext ">
                           Please select your present occupation

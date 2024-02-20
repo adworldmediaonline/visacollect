@@ -4,8 +4,8 @@ import UnderlineTextCenter from '../australia/common/UnderlineTextCenter';
 import Divider from '../common/Divider';
 import Image from 'next/image';
 import { learnMoreSectionData } from '@/constant/data';
-import SectionHeading from '@/app/australia/_homePage/SectionHeading';
-import SectionParagraph from '@/app/australia/_homePage/SectionParagraph';
+// import SectionHeading from '@/app/australia/_homePage/SectionHeading';
+// import SectionParagraph from '@/app/australia/_homePage/SectionParagraph';
 import SectionList from './SectionList';
 
 const LearnMore = ({ learnMoreSectionData }) => {
@@ -24,9 +24,9 @@ const LearnMore = ({ learnMoreSectionData }) => {
               className={`${section?.image ? 'flex flex-col gap-5  ' : ''}`}
             >
               <div>
-                <SectionHeading heading={section.title} />
+                {/* <SectionHeading heading={section.title} /> */}
                 <Divider />
-                {section?.paragraphs?.map((paragraph, index) => (
+                {/* {section?.paragraphs?.map((paragraph, index) => (
                   <SectionParagraph
                     text={paragraph.text}
                     href={paragraph.href ?? ''}
@@ -34,7 +34,7 @@ const LearnMore = ({ learnMoreSectionData }) => {
                     linkText={paragraph.linkText}
                     key={index}
                   />
-                ))}
+                ))} */}
 
                 {section?.lists?.map((list, index) => (
                   <div key={index}>

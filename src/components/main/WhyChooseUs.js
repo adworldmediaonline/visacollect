@@ -44,10 +44,10 @@ export default function WhyChooseUs() {
           {dataList.map((e, i) => (
             <div key={i} className="flex space-x-2">
               <span className="mt-1">
-                <FaCheckCircle size="20" className="text-primaryMain" />
+                <FaCheckCircle size="20" className="text-primary" />
               </span>
               <div>
-                <h2 className="text-xl font-semibold text-primaryMain">
+                <h2 className="text-xl font-semibold text-primary">
                   {e.title}
                 </h2>
                 <small>{e.pera}</small>

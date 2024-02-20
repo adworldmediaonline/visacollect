@@ -307,7 +307,7 @@ export default function Page({ params }) {
                       </div>
                     ) : null}
                     <button
-                      className="inline-flex items-center justify-center gap-3 px-8 py-2 text-xl font-semibold border rounded-lg cursor-pointer text-primaryMain border-primaryMain"
+                      className="inline-flex items-center justify-center gap-3 px-8 py-2 text-xl font-semibold border rounded-lg cursor-pointer text-primary border-primary"
                       disabled={!isValid}
                       type="submit"
                     >
@@ -450,7 +450,7 @@ export default function Page({ params }) {
                   </div>
                   {/* table end  */}
 
-                  <div className="px-10 py-5 border rounded-lg border-primaryMain bg-primaryMain/10">
+                  <div className="px-10 py-5 border rounded-lg border-primary bg-secondary/10">
                     <div className="flex items-center justify-between pb-5 text-black">
                       <p className="text-2xl font-semibold">
                         {' '}
@@ -491,7 +491,7 @@ export default function Page({ params }) {
                     {thailandVisaApplicationData?.persons?.length > 0 ? (
                       <Link
                         href={`/thailand/review/${thailandVisaApplicationData?._id}`}
-                        className="items-center gap-3 px-12 py-3 rounded-full font-semibold border-2 rounded-lg cursor-pointer w-fit border-primaryMain text-primaryMain "
+                        className="items-center gap-3 px-12 py-3 rounded-full font-semibold border-2 rounded-lg cursor-pointer w-fit border-primary text-primary "
                       >
                         Continue
                       </Link>

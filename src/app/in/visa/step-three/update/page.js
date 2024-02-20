@@ -65,7 +65,7 @@ export default function Step3Update() {
                     <h2 className="text-3xl font-semibold">
                       Applicant&apos;s Address Details
                     </h2>
-                    <hr className="h-1 text-primary bg-primary w-36" />
+                    <hr className="h-1 text-primary bg-secondary w-36" />
                   </div>
                   {/* Present Address
                   code start here */}
@@ -315,7 +315,7 @@ export default function Step3Update() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-col justify-between col-span-4 px-4 py-6 border-2 bg-primary/10 border-primary/60 rounded-xl">
+                    <div className="flex flex-col justify-between col-span-4 px-4 py-6 border-2 bg-secondary/10 border-primary/60 rounded-xl">
                       <div>
                         <h2 className="py-2 sidetext ">
                           Applicant’s permanent address (with postal/zip code)
@@ -350,7 +350,7 @@ export default function Step3Update() {
                 <div>
                   <div>
                     <h2 className="text-3xl font-semibold">Family Details</h2>
-                    <hr className="h-1 text-primary bg-primary w-36" />
+                    <hr className="h-1 text-primary bg-secondary w-36" />
                   </div>
                   <div className="pt-5 text-2xl font-semibold text-primary">
                     Father’s Details
@@ -675,7 +675,7 @@ export default function Step3Update() {
                         {/* father mothers details code end here */}
                       </div>
                     </div>
-                    <div className="flex flex-col justify-between col-span-4 px-4 py-6 border-2 bg-primary/10 border-primary/60 rounded-xl">
+                    <div className="flex flex-col justify-between col-span-4 px-4 py-6 border-2 bg-secondary/10 border-primary/60 rounded-xl">
                       <div>
                         <h2 className="py-4 sidetext ">
                           Applicant’s father name
@@ -981,7 +981,7 @@ export default function Step3Update() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-col justify-between col-span-4 px-4 py-6 border-2 bg-primary/10 border-primary/60 rounded-xl">
+                    <div className="flex flex-col justify-between col-span-4 px-4 py-6 border-2 bg-secondary/10 border-primary/60 rounded-xl">
                       <div>
                         <h2 className="py-4 sidetext ">
                           Applicant’s Marital Status
@@ -1349,7 +1349,7 @@ export default function Step3Update() {
                         {/* profession occupation code end here */}
                       </div>
                     </div>
-                    <div className="flex flex-col justify-between col-span-4 px-4 py-6 border-2 bg-primary/10 border-primary/60 rounded-xl">
+                    <div className="flex flex-col justify-between col-span-4 px-4 py-6 border-2 bg-secondary/10 border-primary/60 rounded-xl">
                       <div>
                         <h2 className="py-4 sidetext ">
                           If others, please specify

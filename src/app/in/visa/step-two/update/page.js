@@ -65,7 +65,7 @@ export default function StepTwoUpdate() {
               <Form onSubmit={handleSubmit} className="container py-16">
                 <div>
                   <h2 className="text-3xl font-semibold">Applicant Details</h2>
-                  <hr className="h-1 text-primary bg-primary w-36" />
+                  <hr className="h-1 text-primary bg-secondary w-36" />
                 </div>
                 <div className="grid grid-cols-12 gap-8 ">
                   <div className="col-span-8">
@@ -453,7 +453,7 @@ export default function StepTwoUpdate() {
                   </div>
 
                   {/* col span code end here */}
-                  <div className="col-span-4 px-4 py-6 border-2 bg-primary/10 border-primary/60 rounded-xl">
+                  <div className="col-span-4 px-4 py-6 border-2 bg-secondary/10 border-primary/60 rounded-xl">
                     <h2 className="py-5 sidetext ">
                       First name (Exactly as in passport)
                     </h2>
@@ -775,7 +775,7 @@ export default function StepTwoUpdate() {
                       </div>
                     </div>
                   </div>
-                  <div className="col-span-4 px-4 py-6 border-2 bg-primary/10 border-primary/60 rounded-xl">
+                  <div className="col-span-4 px-4 py-6 border-2 bg-secondary/10 border-primary/60 rounded-xl">
                     <h2 className="py-5 sidetext ">
                       Applicant’s Passport Number
                     </h2>

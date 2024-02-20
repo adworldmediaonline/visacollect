@@ -1,54 +1,54 @@
-import React from "react";
-import { FaCheck } from "react-icons/fa";
-import { BiMailSend } from "react-icons/bi";
+import React from 'react';
+import { FaCheck } from 'react-icons/fa';
+import { BiMailSend } from 'react-icons/bi';
 
 const ApplySectionUrgentHelp = () => {
   const travelInfoData = [
     {
       id: 1,
-      title: "Contact Us",
+      title: 'Contact Us',
     },
     {
       id: 2,
-      title: "Urgent Travel",
+      title: 'Urgent Travel',
     },
     {
       id: 3,
-      title: "eTourist Travel",
+      title: 'eTourist Travel',
     },
     {
       id: 1,
-      title: "Emergency Travel",
+      title: 'Emergency Travel',
     },
     {
       id: 2,
-      title: "eBusiness Travel",
+      title: 'eBusiness Travel',
     },
     {
       id: 3,
-      title: "Travel to Delhi",
+      title: 'Travel to Delhi',
     },
     {
       id: 3,
-      title: "Indian Tourism",
+      title: 'Indian Tourism',
     },
   ];
   const cardData = [
     {
       id: 1,
-      imgSrc: "/assets/images/india/common/paypal.png",
+      imgSrc: '/assets/images/india/common/paypal.png',
     },
     {
       id: 2,
-      imgSrc: "/assets/images/india/common/mastercard-secured.png",
+      imgSrc: '/assets/images/india/common/mastercard-secured.png',
     },
     {
       id: 3,
-      imgSrc: "/assets/images/india/common/varified.png",
+      imgSrc: '/assets/images/india/common/varified.png',
     },
     {
       id: 4,
-      imgSrc: "/assets/images/india/common/mastercard.png",
+      imgSrc: '/assets/images/india/common/mastercard.png',
     },
   ];
   return (

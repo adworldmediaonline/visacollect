@@ -62,7 +62,7 @@ export const Banner = ({
                 Traveling for
               </label>
               {/* Button 1 */}
-              <button className="px-4 py-2 mr-2 text-sm font-normal text-white rounded-full bg-primary ">
+              <button className="px-4 py-2 mr-2 text-sm font-normal text-white rounded-full bg-secondary ">
                 All
               </button>
 
@@ -79,7 +79,7 @@ export const Banner = ({
           </div>
         </div>
 
-        <div className="flex flex-col gap-8 p-4 mt-5 text-lg text-black border-t border-b border-l-8 border-r rounded-lg md:items-center md:flex-row border-primaryMain">
+        <div className="flex flex-col gap-8 p-4 mt-5 text-lg text-black border-t border-b border-l-8 border-r rounded-lg md:items-center md:flex-row border-primary">
           <div className="flex flex-col items-start">
             <span className="font-bold">Visa</span>
             <span className="text-sm font-normal text-red-500">
@@ -93,7 +93,7 @@ export const Banner = ({
           </p>
           <div className="md:ml-auto">
             <Link href={link}>
-              <button className="w-full px-16 py-3 text-xl font-semibold text-white duration-150 ease-in-out rounded-full bg-primary hover:scale-105">
+              <button className="w-full px-16 py-3 text-xl font-semibold text-white duration-150 ease-in-out rounded-full bg-secondary hover:scale-105">
                 Apply Now
               </button>
             </Link>

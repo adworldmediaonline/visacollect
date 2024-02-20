@@ -99,7 +99,7 @@ const StepFive = () => {
                     <h2 className="text-3xl font-semibold">
                       Details of Visa Sought
                     </h2>
-                    <hr className="h-1 text-primary bg-primary w-36" />
+                    <hr className="h-1 text-primary bg-secondary w-36" />
                   </div>
                   <div>
                     {step5data.map((e, i) => (

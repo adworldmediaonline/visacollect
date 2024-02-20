@@ -12,7 +12,7 @@ body {
 }
 
 .Secheading::after {
-  background-color: #0068E5;
+  background-color: #0068e5;
   content: '';
   height: 3px;
   width: 60%;
@@ -20,7 +20,7 @@ body {
 }
 
 .head-footer::after {
-  background-color: #0068E5;
+  background-color: #0068e5;
   content: '';
   height: 2px;
   width: 30%;
@@ -47,7 +47,7 @@ body {
 
 @media screen and (min-width: 480px) {
   .Secheading-center::after {
-    background-color: #0068E5;
+    background-color: #0068e5;
     content: '';
     height: 2px;
     width: 30%;
@@ -57,7 +57,7 @@ body {
 }
 
 .Secheading-center::after {
-  background-color: #0068E5;
+  background-color: #0068e5;
   content: '';
   height: 2px;
   width: 30%;
@@ -86,10 +86,6 @@ body {
   padding: 10px;
 
 } */
-
-.text-primary {
-  color: #0068E5;
-}
 
 .nav-menu {
   height: 100vh;

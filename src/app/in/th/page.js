@@ -27,7 +27,7 @@ const Page = () => {
       /> */}
       <div className="w-full h-[0.5px] bg-gray-200"></div>
       <div className="flex flex-col md:flex-row">
-        <main className="flex-1 py-2 [&_strong]:text-tertiary [&_p]:font-normal [&_p]:text-[#343a40] [&_li]:text-[#343a40] [&_.link]:text-primaryMain [&_.email-link]:text-primaryMain">
+        <main className="flex-1 py-2 [&_strong]:text-tertiary [&_p]:font-normal [&_p]:text-[#343a40] [&_li]:text-[#343a40] [&_.link]:text-primary [&_.email-link]:text-primary">
           <LearnMore learnMoreSectionData={learnMoreSectionDataThailand} />
         </main>
         <aside className="basis-[300px] py-5 md:py-12 space-y-4">

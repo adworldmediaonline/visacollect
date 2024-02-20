@@ -13,7 +13,7 @@ export function useMDXComponents(components) {
     h2: ({ children }) => (
       <h2
         className={`text-2xl
-         text-primary font-medium md:text-3xl`}
+         text-primary font-semibold md:text-3xl`}
         style={{ margin: '2rem 0rem .5rem 0rem!important' }}
       >
         {children}
@@ -21,7 +21,7 @@ export function useMDXComponents(components) {
     ),
     h3: ({ children }) => (
       <h3
-        className="text-2xl font-medium text-primary md:text-3xl"
+        className="text-2xl font-semibold text-primary md:text-3xl"
         style={{ margin: '2rem 0rem 1rem 0rem!important' }}
       >
         {children}
@@ -29,7 +29,7 @@ export function useMDXComponents(components) {
     ),
     h4: ({ children }) => (
       <h4
-        className="text-2xl font-medium text-primary md:text-3xl"
+        className="text-2xl font-semibold text-primary md:text-3xl"
         style={{ margin: '2rem 0rem 1rem 0rem!important' }}
       >
         {children}
@@ -37,7 +37,7 @@ export function useMDXComponents(components) {
     ),
     h5: ({ children }) => (
       <h5
-        className="text-2xl font-medium text-primary md:text-3xl"
+        className="text-2xl font-semibold text-primary md:text-3xl"
         style={{ margin: '2rem 0rem 1rem 0rem!important' }}
       >
         {children}
@@ -45,7 +45,7 @@ export function useMDXComponents(components) {
     ),
     h6: ({ children }) => (
       <h6
-        className="text-2xl font-medium text-primary md:text-3xl"
+        className="text-2xl font-semibold text-primary md:text-3xl"
         style={{ margin: '2rem 0rem 1rem 0rem!important' }}
       >
         {children}
@@ -53,11 +53,10 @@ export function useMDXComponents(components) {
     ),
     p: ({ children }) => (
       <p
-        // className={roboto.className}
+        className="text-lg font-normal leading-loose"
         style={{
           margin: '0px 0px 0.8rem 0px!important',
           // fontSize: '1.10rem',
-          fontWeight: 'lighter',
         }}
       >
         {children}

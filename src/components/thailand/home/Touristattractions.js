@@ -15,7 +15,7 @@ const Touristattractions = () => {
           <h3 className="Secheading md:text-[37px] text-[30px] font-semibold pb-4">
             To obtain the E-VISA Thailand eligible citizen must:
           </h3>
-          <hr className="h-[3px] bg-primaryMain w-48 mb-4" />
+          <hr className="h-[3px] bg-secondary w-48 mb-4" />
           <p className="text-justify tracking-tighter">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry&apos;s standard dummy
@@ -44,7 +44,7 @@ const Touristattractions = () => {
           <h3 className="Secheading md:text-[37px] text-[30px] font-semibold pb-4">
             ETA Thailand Application
           </h3>
-          <hr className="h-[3px] bg-primaryMain w-48 mb-4" />
+          <hr className="h-[3px] bg-secondary w-48 mb-4" />
           <p className="text-justify tracking-tighter">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry&apos;s standard dummy
