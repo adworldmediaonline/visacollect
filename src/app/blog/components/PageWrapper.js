@@ -1,5 +1,9 @@
-export default function PageWrapper({ children }) {
+import { cn } from '@/lib/cn';
+
+export default function PageWrapper({ children, className }) {
   return (
-    <div className="flex flex-col mb-10 mt-28 md:flex-row">{children}</div>
+    <div className={cn('flex flex-col  md:flex-row', className)}>
+      {children}
+    </div>
   );
 }

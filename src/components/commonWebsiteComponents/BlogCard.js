@@ -13,10 +13,10 @@ export default function BlogCard({ title, description, slug, linkText, img }) {
             alt="blog"
           />
           <div className="p-6">
-            <h3 className="mb-3 text-lg font-medium text-gray-900 title-font">
+            <h3 className="mb-3 text-lg font-medium text-gray-900 title-font line-clamp-3">
               {title}
             </h3>
-            <p className="mb-3 leading-relaxed">{description}</p>
+            <p className="mb-3 leading-relaxed line-clamp-3">{description}</p>
             <div className="flex flex-wrap items-center ">
               <Link
                 href={slug}
