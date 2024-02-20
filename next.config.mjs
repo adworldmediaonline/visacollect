@@ -14,23 +14,6 @@ const nextConfig = {
     ],
   },
 
-  //   //   return [
-  //   //     {
-  //   //       source: '/in',
-  //   //       destination: `https://e-visa-delta.vercel.app/`,
-  //   //     },
-  //   //   ];
-  //   // },
-  //   return {
-  //     beforeFiles: [
-  //       {
-  //         // source: '/in',
-  //         source: '/in/au',
-  //         destination: `/in/au-Indian-tourist-visa-Australian-citizens`,
-  //       },
-  //     ],
-  //   };
-  // },
   async redirects() {
     return [
       {
