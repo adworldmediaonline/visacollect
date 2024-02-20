@@ -9,6 +9,44 @@ import PageReview from '@/components/common/countryHomePage/PageReview';
 import { learnMoreSectionDataIndia } from '@/constant/countryHomePageData/india';
 import Header from '@/components/india/common/Header';
 import Footer from '@/components/india/common/Footer';
+import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
+
+const blogs = [
+  {
+    title:
+      'Everything You Need to Know to Stress-Free Travel Planning for Any Trip',
+    description:
+      'Discover the simplicity of securing your UK to Australia eVisa with ease for a seamless travel experience.',
+    slug: '/blog/tips-for-stress-free-travel',
+    linkText: 'Read More',
+    img: 'https://dummyimage.com/720x400',
+  },
+  {
+    title: 'Happiest City Index - Best Cities to Travel in 2024',
+    description:
+      'Experience joy in the top cities of 2024! Discover the Happiest City Index for the best travel destinations. Happiness awaits in every corner.',
+    slug: '/blog/best-cities-to-travel-in-2024',
+    linkText: 'Read More',
+    img: 'https://dummyimage.com/720x400',
+  },
+  {
+    title:
+      'Top Best Free Game-Changing Social Media Tools and Strategies For Travel Agents',
+    description:
+      'Experience joy in the top cities of 2024! Discover the Happiest City Index for the best travel destinations. Happiness awaits in every corner.',
+    slug: '/blog/strategies-for-travel-agents',
+    linkText: 'Read More',
+    img: 'https://dummyimage.com/720x400',
+  },
+  {
+    title: 'How to Use Social Media to Attract More Clients as a Travel Agent',
+    description:
+      'Experience joy in the top cities of 2024! Discover the Happiest City Index for the best travel destinations. Happiness awaits in every corner.',
+    slug: '/blog/social-media-travel-agents-for-visa',
+    linkText: 'Read More',
+    img: 'https://dummyimage.com/720x400',
+  },
+];
 
 const Page = () => {
   return (
@@ -57,9 +95,8 @@ const Page = () => {
         <Faq faqData={learnMoreSectionDataIndia?.faqData} />
         {/* Remember: For the most accurate and up-to-date information, it's best to check the official website. */}
         <PageReview applyLink={learnMoreSectionDataIndia?.applyNowLink} />
-        <RelatedArticlesSlider
-          relatedArticles={learnMoreSectionDataIndia.relatedArticles}
-        />
+
+        <BlogSlider blogs={blogs} />
       </div>
       <Footer />
     </>
