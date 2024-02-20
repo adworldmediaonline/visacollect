@@ -55,7 +55,7 @@ const HowItWorks = () => {
                     className="w-20 h-20 mx-auto rounded-lg "
                   />
                 </div>
-                <h2 className="pt-3 mx-auto text-lg font-semibold text-center text-primaryMain w-52">
+                <h2 className="pt-3 mx-auto text-lg font-semibold text-center text-primary w-52">
                   {item.name}
                 </h2>
                 <p className="px-5 py-4 pb-4 text-center text-black/80 group-hover:text-black ">

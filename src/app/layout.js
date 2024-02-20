@@ -1,4 +1,11 @@
-import { Inter, Poppins, Roboto, Lobster, Amiri } from 'next/font/google';
+import {
+  Inter,
+  Poppins,
+  Roboto,
+  Lobster,
+  Amiri,
+  Be_Vietnam_Pro,
+} from 'next/font/google';
 import { ToastContainer } from 'react-toastify';
 import { FormProvider } from '@/context/formContext';
 import ReactQueryProvider from '@/components/ReactQueryProvider';
@@ -7,10 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
 import Header from '@/components/main/Header';
 import Footer from '@/components/main/Footer';
-// import Head from 'next/head';
-// import HeadClient from './HeadClient';
 
-const inter = Inter({ subsets: ['latin'] });
 export const roboto = Roboto({
   subsets: ['latin'],
   weight: ['300'],
@@ -26,6 +30,10 @@ export const lobster = Lobster({
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
+});
+const beVietnamPro = Be_Vietnam_Pro({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
 });
 
 export const metadata = {
@@ -56,8 +64,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <HeadClient /> */}
-      <body className={`${poppins.className} antialiased`}>
+      <body className={`${beVietnamPro.className} antialiased`}>
         <FormProvider>
           <ReactQueryProvider>
             <Header />

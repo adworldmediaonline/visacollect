@@ -66,9 +66,10 @@ export default async function Page() {
           <Us />
         </MainWrapper>
         <AsideWrapper>
+          <h2 className="mb-3 text-2xl text-secondary">Popular Articles</h2>
           <ul className="flex flex-col gap-3">
             {blogs?.map(blog => (
-              <li key={blog.title}>
+              <li key={blog.title} className="pb-3 border-b-[1.5px]">
                 <AsideBlogCard slug={blog.slug} title={blog.title} />
               </li>
             ))}

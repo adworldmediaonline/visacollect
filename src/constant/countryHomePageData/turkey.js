@@ -4,6 +4,8 @@ import CustomButton from '@/components/common/CustomButton';
 export const learnMoreSectionDataTurkey = {
   pageTitle:
     '<strong>Turkey Visa:</strong> Entry requirements and travel information for Turkey',
+  mainPageTitle:
+    '<strong>Turkey Visa:</strong> Entry requirements and travel information for Turkey',
   pageName: 'Turkey',
   applyNowLink: '/in/tr/application',
   otherLinks: [

@@ -87,7 +87,7 @@ const StepSeven = () => {
 
           {/* <div className="px-4 pt-5">
             <h2 className="text-3xl font-semibold">Detail</h2>
-            <hr className="w-full h-1 text-primary bg-primary" />
+            <hr className="w-full h-1 text-primary bg-secondary" />
             <div className="space-y-2 divide-y-[1px] pt-5">
               <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                 <h2 className="py-1 text-sm font-semibold text-secondary">
@@ -230,7 +230,7 @@ const StepSeven = () => {
 
           <div className="px-4 pt-5">
             <h2 className="text-3xl font-semibold">Applicant Detail</h2>
-            <hr className="w-full h-1 text-primary bg-primary" />
+            <hr className="w-full h-1 text-primary bg-secondary" />
             <div className="space-y-2 divide-y-[1px] pt-5">
               <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                 <h2 className="py-1 text-sm font-semibold text-secondary">
@@ -372,7 +372,7 @@ const StepSeven = () => {
 
           <div className="px-4 pt-10 ">
             <h2 className="text-3xl font-semibold">Passport Details</h2>
-            <hr className="w-full h-1 text-primary bg-primary" />
+            <hr className="w-full h-1 text-primary bg-secondary" />
             <div className="space-y-2 divide-y-[1px] pt-5">
               <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                 <h2 className="py-1 text-sm font-semibold text-secondary">
@@ -465,7 +465,7 @@ const StepSeven = () => {
             <h2 className="text-3xl font-semibold">
               Applicant&apos;s Address Details
             </h2>
-            <hr className="w-full h-1 text-primary bg-primary" />
+            <hr className="w-full h-1 text-primary bg-secondary" />
             <div className="space-y-2 divide-y-[1px] pt-5">
               <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                 <h2 className="py-1 text-sm font-semibold text-secondary">
@@ -564,7 +564,7 @@ const StepSeven = () => {
 
           <div className="px-4 pt-10">
             <h2 className="text-3xl font-semibold">Father’s Details</h2>
-            <hr className="w-full h-1 text-primary bg-primary" />
+            <hr className="w-full h-1 text-primary bg-secondary" />
             <div className="space-y-2 divide-y-[1px] pt-5">
               <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                 <h2 className="py-1 text-sm font-semibold text-secondary">
@@ -610,7 +610,7 @@ const StepSeven = () => {
           </div>
           <div className="px-4 pt-10">
             <h2 className="text-3xl font-semibold">Mother’s Details</h2>
-            <hr className="w-full h-1 text-primary bg-primary" />
+            <hr className="w-full h-1 text-primary bg-secondary" />
             <div className="space-y-2 divide-y-[1px] pt-5">
               <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                 <h2 className="py-1 text-sm font-semibold text-secondary">
@@ -656,7 +656,7 @@ const StepSeven = () => {
           </div>
           <div className="px-4 pt-10">
             <h2 className="text-3xl font-semibold">Spouse Details</h2>
-            <hr className="w-full h-1 text-primary bg-primary" />
+            <hr className="w-full h-1 text-primary bg-secondary" />
             <div className="space-y-2 divide-y-[1px] pt-5">
               <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                 <h2 className="py-1 text-sm font-semibold text-secondary">
@@ -739,7 +739,7 @@ const StepSeven = () => {
             <h2 className="text-3xl font-semibold">
               Profession/Occupation Details of Applicant
             </h2>
-            <hr className="w-full h-1 text-primary bg-primary" />
+            <hr className="w-full h-1 text-primary bg-secondary" />
             <div className="space-y-2 divide-y-[1px] pt-5">
               <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                 <h2 className="py-1 text-sm font-semibold text-secondary">
@@ -851,7 +851,7 @@ const StepSeven = () => {
           </div>
           <div className="px-4 pt-10">
             <h2 className="text-3xl font-semibold">Details of Visa Sought</h2>
-            <hr className="w-full h-1 text-primary bg-primary" />
+            <hr className="w-full h-1 text-primary bg-secondary" />
             <div className="space-y-2 divide-y-[1px] pt-5">
               <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                 <h2 className="py-1 text-sm font-semibold text-secondary">
@@ -978,7 +978,7 @@ const StepSeven = () => {
               <h2 className="text-3xl font-semibold">
                 Previous Visa/Currently valid Visa Details
               </h2>
-              <hr className="w-full h-1 text-primary bg-primary" />
+              <hr className="w-full h-1 text-primary bg-secondary" />
 
               <div className="space-y-2 divide-y-[1px] pt-5">
                 <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
@@ -1069,7 +1069,7 @@ const StepSeven = () => {
                   (SHORT TERM MEDICAL TREATMENT OF SELF)
                 </span>
               </h2>
-              <hr className="w-full h-1 text-primary bg-primary" />
+              <hr className="w-full h-1 text-primary bg-secondary" />
               <div className="space-y-2 divide-y-[1px] pt-5">
                 <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                   <h2 className="py-1 text-sm font-semibold text-secondary">
@@ -1135,7 +1135,7 @@ const StepSeven = () => {
                   ATTACHED ORGANIZATIONS AND PSUS)
                 </span>
               </h2>
-              <hr className="w-full h-1 text-primary bg-primary" />
+              <hr className="w-full h-1 text-primary bg-secondary" />
               <div className="space-y-2 divide-y-[1px] pt-5">
                 <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                   <h2 className="py-1 text-sm font-semibold text-secondary">
@@ -1248,7 +1248,7 @@ const StepSeven = () => {
                   (TO ACCOMPANY PATIENT TRAVELLING TO INDIA ON EMEDICAL VISA)
                 </span>
               </h2>
-              <hr className="w-full h-1 text-primary bg-primary" />
+              <hr className="w-full h-1 text-primary bg-secondary" />
               <div className="space-y-2 divide-y-[1px] pt-5">
                 <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                   <h2 className="py-1 text-sm font-semibold text-secondary">
@@ -1323,7 +1323,7 @@ const StepSeven = () => {
                 Details of Purpose
                 <span className="text-lg">(CONDUCTING TOURS)</span>
               </h2>
-              <hr className="w-full h-1 text-primary bg-primary" />
+              <hr className="w-full h-1 text-primary bg-secondary" />
               <div className="space-y-2 divide-y-[1px] pt-5">
                 <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                   <h2 className="py-1 text-sm font-semibold text-secondary">
@@ -1396,7 +1396,7 @@ const StepSeven = () => {
                         ({step1Data?.eBusinessVisa})
                       </span>
                     </h2>
-                    <hr className="w-full h-1 text-primary bg-primary" />
+                    <hr className="w-full h-1 text-primary bg-secondary" />
                     <div className="pt-5 text-2xl font-semibold text-primary">
                       Detials of the Applicants Company
                     </div>
@@ -1549,7 +1549,7 @@ const StepSeven = () => {
 
           <div className="px-4 pt-10">
             <h2 className="text-3xl font-semibold">Other Information</h2>
-            <hr className="w-full h-1 text-primary bg-primary" />
+            <hr className="w-full h-1 text-primary bg-secondary" />
             <div className="space-y-2 divide-y-[1px] pt-5">
               <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                 <h2 className="py-1 text-sm font-semibold text-secondary">
@@ -1570,7 +1570,7 @@ const StepSeven = () => {
             <h2 className="text-3xl font-semibold">
               SAARC Country Visit Details{' '}
             </h2>
-            <hr className="w-full h-1 text-primary bg-primary" />
+            <hr className="w-full h-1 text-primary bg-secondary" />
             <div className="space-y-2 divide-y-[1px] pt-5">
               <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                 <h2 className="py-1 text-sm font-semibold text-secondary">
@@ -1618,7 +1618,7 @@ const StepSeven = () => {
 
           <div className="px-4 pt-10">
             <h2 className="text-3xl font-semibold">Reference </h2>
-            <hr className="w-full h-1 text-primary bg-primary" />
+            <hr className="w-full h-1 text-primary bg-secondary" />
             <div className="space-y-2 divide-y-[1px] pt-5">
               <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                 <h2 className="py-1 text-sm font-semibold text-secondary">
@@ -1675,7 +1675,7 @@ const StepSeven = () => {
             <h2 className="text-3xl font-semibold">
               Additional Question Details{' '}
             </h2>
-            <hr className="w-full h-1 text-primary bg-primary" />
+            <hr className="w-full h-1 text-primary bg-secondary" />
             <div className="space-y-2 divide-y-[1px] pt-5">
               <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
                 <h2 className="py-1 text-sm font-semibold text-secondary">

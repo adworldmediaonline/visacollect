@@ -187,7 +187,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <hr className="h-[1px] bg-primary border-primary" />
+            <hr className="h-[1px] bg-secondary border-primary" />
             <div className="px-5 py-5 text-base text-center text-white md:px-0">
               <p>
                 {' '}

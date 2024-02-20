@@ -66,7 +66,7 @@ const NewsAndUpdates = () => {
                   </p>
                   <a
                     href={e.link}
-                    className="inline-flex items-center px-5 py-3 text-sm font-medium text-center text-white rounded-lg bg-gradient-btn focus:ring-4 bg-primary"
+                    className="inline-flex items-center px-5 py-3 text-sm font-medium text-center text-white rounded-lg bg-gradient-btn focus:ring-4 bg-secondary"
                   >
                     Know more
                     <svg

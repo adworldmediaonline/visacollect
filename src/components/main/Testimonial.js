@@ -105,10 +105,10 @@ function Testimonial() {
         className="absolute bottom-0 w-full"
       />
       <div className="-space-y-4 md:absolute top-16 left-32">
-        <h2 className="pb-8 text-2xl font-extrabold text-center md:text-5xl text-primaryMain md:pb-0">
+        <h2 className="pb-8 text-2xl font-extrabold text-center md:text-5xl text-primary md:pb-0">
           customers’ stories
         </h2>
-        <h2 className="font-extrabold text-5xl md:block hidden transform scale-y-[-1] bg-gradient-to-b from-primaryMain via-blue-500 to-blue-300 text-transparent bg-clip-text">
+        <h2 className="font-extrabold text-5xl md:block hidden transform scale-y-[-1] bg-gradient-to-b from-primary via-blue-500 to-blue-300 text-transparent bg-clip-text">
           customers’ stories
         </h2>
       </div>
@@ -144,13 +144,13 @@ function Testimonial() {
           <button onClick={() => customeSlider.current.slickPrev()}>
             <IoIosArrowBack
               size={40}
-              className="p-2 bg-white border rounded-full text-primaryMain border-primaryMtext-primaryMain"
+              className="p-2 bg-white border rounded-full text-primary border-primaryMtext-primary"
             />
           </button>
           <button onClick={() => customeSlider.current.slickNext()}>
             <IoIosArrowForward
               size={40}
-              className="p-2 bg-white border rounded-full text-primaryMain border-primaryMtext-primaryMain"
+              className="p-2 bg-white border rounded-full text-primary border-primaryMtext-primary"
             />
           </button>
         </div>

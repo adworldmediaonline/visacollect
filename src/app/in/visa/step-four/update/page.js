@@ -185,7 +185,7 @@ const StepFour = () => {
                       <h2 className="text-3xl font-semibold">
                         Details of Visa Sought
                       </h2>
-                      <hr className="h-1 text-primary bg-primary w-36" />
+                      <hr className="h-1 text-primary bg-secondary w-36" />
                     </div>
                     <div className="grid grid-cols-12 gap-8 ">
                       <div className="col-span-8">
@@ -500,7 +500,7 @@ const StepFour = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-col justify-center col-span-4 px-4 pt-10 border-2 bg-primary/10 border-primary/60 rounded-xl">
+                      <div className="flex flex-col justify-center col-span-4 px-4 pt-10 border-2 bg-secondary/10 border-primary/60 rounded-xl">
                         <h2 className="py-5 sidetext ">
                           If you intend to visit Protected/Restricted/
                           Cantonment areas, you would require prior permission
@@ -515,7 +515,7 @@ const StepFour = () => {
                       <h2 className="text-3xl font-semibold">
                         Previous Visa/Currently valid Visa Details
                       </h2>
-                      <hr className="h-1 text-primary bg-primary w-36" />
+                      <hr className="h-1 text-primary bg-secondary w-36" />
                     </div>
                     <div className="grid grid-cols-12 gap-8 ">
                       <div className="col-span-8">
@@ -743,7 +743,7 @@ const StepFour = () => {
                         </div>
                       </div>
                       {values.visitedIndiaBefore === 'yes' && (
-                        <div className="flex flex-col justify-between col-span-4 px-4 py-6 border-2 bg-primary/10 border-primary/60 rounded-xl">
+                        <div className="flex flex-col justify-between col-span-4 px-4 py-6 border-2 bg-secondary/10 border-primary/60 rounded-xl">
                           <div>
                             <h2 className="py-5 sidetext ">
                               If yes please give details
@@ -796,7 +796,7 @@ const StepFour = () => {
                             ({visaServiceSelectedValue})
                           </span>
                         </h2>
-                        <hr className="h-1 text-primary bg-primary w-36" />
+                        <hr className="h-1 text-primary bg-secondary w-36" />
                       </div>
 
                       <div className="grid grid-cols-12 gap-8 ">
@@ -940,7 +940,7 @@ const StepFour = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="flex flex-col justify-end col-span-4 px-4 py-6 border-2 bg-primary/10 border-primary/60 rounded-xl">
+                        <div className="flex flex-col justify-end col-span-4 px-4 py-6 border-2 bg-secondary/10 border-primary/60 rounded-xl">
                           <h2 className="py-6 sidetext ">No. of entries</h2>
                           <h2 className="py-4 sidetext ">
                             Port of arrival in India
@@ -968,7 +968,7 @@ const StepFour = () => {
                             ({visaServiceSelectedValue} )
                           </span>
                         </h2>
-                        <hr className="h-1 text-primary bg-primary w-36" />
+                        <hr className="h-1 text-primary bg-secondary w-36" />
                       </div>
 
                       <div className="grid grid-cols-12 gap-8 ">
@@ -1220,7 +1220,7 @@ const StepFour = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="flex flex-col justify-end col-span-4 px-4 py-6 border-2 bg-primary/10 border-primary/60 rounded-xl">
+                        <div className="flex flex-col justify-end col-span-4 px-4 py-6 border-2 bg-secondary/10 border-primary/60 rounded-xl">
                           <h2 className="py-6 sidetext ">No. of entries</h2>
                           <h2 className="py-4 sidetext ">
                             Port of arrival in India
@@ -1241,7 +1241,7 @@ const StepFour = () => {
                         <h2 className="text-3xl font-semibold">
                           Details of Purpose ({visaServiceSelectedValue})
                         </h2>
-                        <hr className="h-1 text-primary bg-primary w-36" />
+                        <hr className="h-1 text-primary bg-secondary w-36" />
                       </div>
 
                       <div className="grid grid-cols-12 gap-8 ">
@@ -1352,7 +1352,7 @@ const StepFour = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="flex flex-col justify-end col-span-4 px-4 py-6 border-2 bg-primary/10 border-primary/60 rounded-xl">
+                        <div className="flex flex-col justify-end col-span-4 px-4 py-6 border-2 bg-secondary/10 border-primary/60 rounded-xl">
                           <h2 className="py-6 sidetext ">No. of entries</h2>
                           <h2 className="py-4 sidetext ">
                             Port of arrival in India
@@ -1377,7 +1377,7 @@ const StepFour = () => {
                             ({visaServiceSelectedValue})
                           </span>
                         </h2>
-                        <hr className="h-1 text-primary bg-primary w-36" />
+                        <hr className="h-1 text-primary bg-secondary w-36" />
                       </div>
 
                       <div className="grid grid-cols-12 gap-8 ">
@@ -1544,7 +1544,7 @@ const StepFour = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="flex flex-col justify-end col-span-4 px-4 py-6 border-2 bg-primary/10 border-primary/60 rounded-xl">
+                        <div className="flex flex-col justify-end col-span-4 px-4 py-6 border-2 bg-secondary/10 border-primary/60 rounded-xl">
                           <h2 className="py-6 sidetext ">No. of entries</h2>
                           <h2 className="py-4 sidetext ">
                             Port of arrival in India
@@ -1568,7 +1568,7 @@ const StepFour = () => {
                             ({visaServiceSelectedValue})
                           </span>
                         </h2>
-                        <hr className="h-1 text-primary bg-primary w-36" />
+                        <hr className="h-1 text-primary bg-secondary w-36" />
                       </div>
 
                       <div className="grid grid-cols-12 gap-8 ">
@@ -1768,7 +1768,7 @@ const StepFour = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="flex flex-col justify-end col-span-4 px-4 py-6 border-2 bg-primary/10 border-primary/60 rounded-xl">
+                        <div className="flex flex-col justify-end col-span-4 px-4 py-6 border-2 bg-secondary/10 border-primary/60 rounded-xl">
                           <h2 className="py-6 sidetext ">No. of entries</h2>
                           <h2 className="py-4 sidetext ">
                             Port of arrival in India
@@ -1788,7 +1788,7 @@ const StepFour = () => {
                       <h2 className="text-3xl font-semibold">
                         Other Information
                       </h2>
-                      <hr className="h-1 text-primary bg-primary w-36" />
+                      <hr className="h-1 text-primary bg-secondary w-36" />
                     </div>
                     <div className="grid grid-cols-12 gap-8 ">
                       <div className="col-span-8">
@@ -1849,7 +1849,7 @@ const StepFour = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-col justify-center col-span-4 px-4 py-6 border-2 bg-primary/10 border-primary/60 rounded-xl">
+                      <div className="flex flex-col justify-center col-span-4 px-4 py-6 border-2 bg-secondary/10 border-primary/60 rounded-xl">
                         <h2 className="sidetext">
                           If information furnished is found to be incorrect at
                           the time of entry or anything during stay in India,
@@ -1864,7 +1864,7 @@ const StepFour = () => {
                       <h2 className="text-3xl font-semibold">
                         SAARC Country Visit Details{' '}
                       </h2>
-                      <hr className="h-1 text-primary bg-primary w-36" />
+                      <hr className="h-1 text-primary bg-secondary w-36" />
                     </div>
                     <div className="grid grid-cols-12 gap-8 ">
                       <div className="col-span-8">
@@ -2048,7 +2048,7 @@ const StepFour = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-span-4 px-4 py-3 border-2 bg-primary/10 border-primary/60 rounded-xl">
+                      <div className="col-span-4 px-4 py-3 border-2 bg-secondary/10 border-primary/60 rounded-xl">
                         <h2 className="sidetext py- ">
                           Have you visited “South Asian Association for Regional
                           Cooperation” (SAARC) countries (expect your own
@@ -2063,7 +2063,7 @@ const StepFour = () => {
                   <div>
                     <div>
                       <h2 className="text-3xl font-semibold">Reference</h2>
-                      <hr className="h-1 text-primary bg-primary w-36" />
+                      <hr className="h-1 text-primary bg-secondary w-36" />
                     </div>
 
                     <div className="grid grid-cols-12 gap-8 ">
@@ -2168,7 +2168,7 @@ const StepFour = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-col justify-between col-span-4 px-4 py-6 border-2 bg-primary/10 border-primary/60 rounded-xl">
+                      <div className="flex flex-col justify-between col-span-4 px-4 py-6 border-2 bg-secondary/10 border-primary/60 rounded-xl">
                         <div>
                           <h2 className="py-4 sidetext">
                             Reference Name and Address in India

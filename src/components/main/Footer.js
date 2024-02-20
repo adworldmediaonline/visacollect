@@ -72,7 +72,7 @@ const Footer = () => {
                   </div>
                   <ul>
                     <Link href="#">
-                      <li className="flex items-center mt-2 space-x-2 text-base hover:text-primaryMain">
+                      <li className="flex items-center mt-2 space-x-2 text-base hover:text-primary">
                         <IoIosMail className="w-6 h-6 p-1 text-black bg-white rounded-full" />{' '}
                         <span className="text-white">
                           india-travelservices.com
@@ -80,7 +80,7 @@ const Footer = () => {
                       </li>
                     </Link>
                     {/* <Link href="#">
-                      <li className="flex items-center mt-2 space-x-2 text-base hover:text-primaryMain">
+                      <li className="flex items-center mt-2 space-x-2 text-base hover:text-primary">
                         <FaPhoneAlt className="w-6 h-6 p-1 text-black bg-white rounded-full" />{" "}
                         <span className="text-white">+91-9876543219</span>
                       </li>
@@ -92,33 +92,33 @@ const Footer = () => {
                 <div className="space-y-6 md:flex md:space-x-28 md:space-y-0">
                   <div>
                     <div className="space-y-6">
-                      <h2 className="text-xl font-semibold text-white underline capitalize underline-offset-8 decoration-primaryMain">
+                      <h2 className="text-xl font-semibold text-white underline capitalize underline-offset-8 decoration-primary">
                         Quick Links
                       </h2>
                       <ul>
                         <Link href="/">
-                          <li className="mt-2 text-base text-white hover:text-primaryMain">
+                          <li className="mt-2 text-base text-white hover:text-primary">
                             <span>Home</span>
                           </li>
                         </Link>
                         <Link href="/">
-                          <li className="mt-2 text-base text-white hover:text-primaryMain">
+                          <li className="mt-2 text-base text-white hover:text-primary">
                             <span>About Us</span>
                           </li>
                         </Link>
 
                         <Link href="/visa/step-one">
-                          <li className="mt-2 text-base text-white hover:text-primaryMain">
+                          <li className="mt-2 text-base text-white hover:text-primary">
                             <span>Apply VISA</span>
                           </li>
                         </Link>
                         <Link href="/">
-                          <li className="mt-2 text-base text-white hover:text-primaryMain">
+                          <li className="mt-2 text-base text-white hover:text-primary">
                             <span>Ongoing Application</span>
                           </li>
                         </Link>
                         <Link href="/">
-                          <li className="mt-2 text-base text-white hover:text-primaryMain">
+                          <li className="mt-2 text-base text-white hover:text-primary">
                             <span>Contact Us</span>
                           </li>
                         </Link>
@@ -129,27 +129,27 @@ const Footer = () => {
               </div>
               <div className="flex justify-center col-span-3">
                 <div className="space-y-6">
-                  <h2 className="text-xl font-semibold text-white underline capitalize underline-offset-8 decoration-primaryMain">
+                  <h2 className="text-xl font-semibold text-white underline capitalize underline-offset-8 decoration-primary">
                     Apply For Indian VISA
                   </h2>
                   <ul>
                     <Link href="/visa/step-one">
-                      <li className="mt-2 text-base text-white hover:text-primaryMain">
+                      <li className="mt-2 text-base text-white hover:text-primary">
                         <span> Indian eVisa Online</span>
                       </li>
                     </Link>
                     <Link href="/visa/step-one">
-                      <li className="mt-2 text-base text-white hover:text-primaryMain">
+                      <li className="mt-2 text-base text-white hover:text-primary">
                         <span>Indian Tourist eVisa</span>
                       </li>
                     </Link>
                     <Link href="/visa/step-one">
-                      <li className="mt-2 text-base text-white hover:text-primaryMain">
+                      <li className="mt-2 text-base text-white hover:text-primary">
                         <span>Indian Medical eVisa</span>
                       </li>
                     </Link>
                     <Link href="/visa/step-one">
-                      <li className="mt-2 text-base text-white hover:text-primaryMain">
+                      <li className="mt-2 text-base text-white hover:text-primary">
                         <span> Indian Business eVisa</span>
                       </li>
                     </Link>
@@ -158,22 +158,22 @@ const Footer = () => {
               </div>
               <div className="flex justify-end col-span-2 ">
                 <div className="space-y-6">
-                  <h2 className="text-xl font-semibold text-white underline capitalize underline-offset-8 decoration-primaryMain">
+                  <h2 className="text-xl font-semibold text-white underline capitalize underline-offset-8 decoration-primary">
                     Support
                   </h2>
                   <ul>
                     <Link href="/termsAndConditions">
-                      <li className="mt-2 text-base text-white hover:text-primaryMain">
+                      <li className="mt-2 text-base text-white hover:text-primary">
                         <span> Terms & Conditions</span>
                       </li>
                     </Link>
                     <Link href="/privacyPolicy">
-                      <li className="mt-2 text-base text-white hover:text-primaryMain">
+                      <li className="mt-2 text-base text-white hover:text-primary">
                         <span>Privacy Policy</span>
                       </li>
                     </Link>
                     <Link href="/cancellation">
-                      <li className="mt-2 text-base text-white hover:text-primaryMain">
+                      <li className="mt-2 text-base text-white hover:text-primary">
                         <span>Cancellation</span>
                       </li>
                     </Link>
@@ -181,7 +181,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <hr className="h-[1px] bg-primaryMain border-primaryMain" />
+            <hr className="h-[1px] bg-secondary border-primary" />
             <div className="px-5 py-5 text-base text-center text-white md:px-0">
               <p>
                 {' '}

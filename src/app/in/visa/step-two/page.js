@@ -103,7 +103,7 @@ const StepTwo = () => {
               <Form onSubmit={handleSubmit} className="container pt-4 pb-16">
                 <div>
                   <h2 className="text-3xl font-semibold">Applicant Details</h2>
-                  <hr className="h-1 text-primary bg-primary w-36" />
+                  <hr className="h-1 text-primary bg-secondary w-36" />
                 </div>
                 <div className="grid-cols-12 gap-8 md:grid ">
                   <div className="col-span-8">
@@ -644,7 +644,7 @@ const StepTwo = () => {
                   </div>
 
                   {/* col span code end here */}
-                  <div className="hidden col-span-4 px-4 py-6 border-2 bg-primary/10 border-primary/60 rounded-xl md:block">
+                  <div className="hidden col-span-4 px-4 py-6 border-2 bg-secondary/10 border-primary/60 rounded-xl md:block">
                     <h2 className="py-4 sidetext ">
                       First name (Exactly as in passport)
                     </h2>
@@ -1059,7 +1059,7 @@ const StepTwo = () => {
                     </div>
                   </div>
 
-                  <div className="hidden col-span-4 px-4 py-6 border-2 bg-primary/10 border-primary/60 rounded-xl md:block">
+                  <div className="hidden col-span-4 px-4 py-6 border-2 bg-secondary/10 border-primary/60 rounded-xl md:block">
                     <h2 className="py-5 sidetext ">
                       Applicant’s Passport Number
                     </h2>

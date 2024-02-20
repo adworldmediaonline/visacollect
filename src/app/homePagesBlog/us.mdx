@@ -3,7 +3,7 @@ export const LinkButton = ({ text, href }) => (
   <div className="flex justify-center items-center">
     <Link
       href={href}
-      className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-primary hover:scale-105"
+      className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
     >
       {text}
     </Link>
@@ -11,7 +11,7 @@ export const LinkButton = ({ text, href }) => (
 );
 
 export const LinkText = ({ text, href }) => (
-  <Link className="text-primary font-semibold text-lg" href={href}>
+  <Link className="text-secondary font-semibold text-lg" href={href}>
     {text}
   </Link>
 );

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const ApplySectionContentSection = () => {
   return (
@@ -11,16 +11,16 @@ const ApplySectionContentSection = () => {
           Welcome to India:-
         </h2>
         <p className="text-justify leading-relaxed tracking-wide">
-          India Travel services is a unit of Ackrolix Innovations Pvt Ltd
-          India is a country that attracts millions of tourists and job seekers
-          every year and is considered one of the most popular tourist
-          destinations in the world. These visitors are attracted to its natural
-          beauty and cultural heritage. The country has many historic sites like
-          the Taj Mahal, Golden Temple, Red Fort, etc and a leading software
-          developmet hub where comapanies like Ackrolix Innovations Private
-          Limited are making waves. With so much to offer, it’s no surprise that
-          tourism is one of the main sources of revenue for the country! Tourism
-          in India has been seen as a major tool to bring about socio-economic
+          India Travel services is a unit of Ackrolix Innovations Pvt Ltd India
+          is a country that attracts millions of tourists and job seekers every
+          year and is considered one of the most popular tourist destinations in
+          the world. These visitors are attracted to its natural beauty and
+          cultural heritage. The country has many historic sites like the Taj
+          Mahal, Golden Temple, Red Fort, etc and a leading software developmet
+          hub where comapanies like Ackrolix Innovations Private Limited are
+          making waves. With so much to offer, it’s no surprise that tourism is
+          one of the main sources of revenue for the country! Tourism in India
+          has been seen as a major tool to bring about socio-economic
           development to the people of the country. India’s tourism industry has
           grown steadily in recent years. Not only this, India Tourism industry
           also provides employment opportunities to several people from all

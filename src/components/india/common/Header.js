@@ -120,7 +120,7 @@ const Header = ({ bgcolor }) => {
             {/* for mobile end */}
 
             <Link href="#">
-              <div className="hidden px-8 py-2 ml-3 text-base text-white rounded-full drop-shadow-2xl md:flex bg-primary">
+              <div className="hidden px-8 py-2 ml-3 text-base text-white rounded-full drop-shadow-2xl md:flex bg-secondary">
                 Contact Us
               </div>
             </Link>

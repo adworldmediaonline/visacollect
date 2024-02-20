@@ -109,12 +109,12 @@ export const CountriesMap = () => {
                 alt="banner"
               />
               <div className="absolute bottom-0 z-10 flex items-end justify-end w-full h-full bg-black/40">
-                <h2 className="w-full py-2 text-lg font-semibold text-center text-white uppercase bg-primary/60">
+                <h2 className="w-full py-2 text-lg font-semibold text-center text-white uppercase bg-secondary/60">
                   {e?.title}
                 </h2>
               </div>
             </div>
-            <div className="px-5 py-4 text-center space-y-3 border-primary border-[1px] rounded-b-2xl border-b-2 group-hover:bg-primaryMain group-hover:text-white text-primaryMain">
+            <div className="px-5 py-4 text-center space-y-3 border-primary border-[1px] rounded-b-2xl border-b-2 group-hover:bg-secondary group-hover:text-white text-primary">
               <Link
                 href={e.link}
                 className="flex items-center justify-center space-x-2 font-semibold"

@@ -109,7 +109,7 @@ const OurServices = () => {
             <button onClick={() => customeSlider.current.slickPrev()}>
               <IoIosArrowBack
                 size={40}
-                className="p-2 text-white border rounded-full border-primaryMain bg-primaryMain "
+                className="p-2 text-white border rounded-full border-primary bg-secondary "
               />
             </button>
           </div>
@@ -144,7 +144,7 @@ const OurServices = () => {
             <button onClick={() => customeSlider.current.slickNext()}>
               <IoIosArrowForward
                 size={40}
-                className="p-2 text-white border rounded-full bg-primaryMain border-primaryMain"
+                className="p-2 text-white border rounded-full bg-secondary border-primary"
               />
             </button>
           </div>

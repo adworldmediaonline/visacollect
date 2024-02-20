@@ -16,14 +16,11 @@ module.exports = {
       }),
 
       colors: {
-        // primaryMain: '#0068E5',
-        // primary: '#0068E5',
-        // primaryMain: '#3057b0',
-        // primary: '#3057b0',
-        primaryMain: '#23489f',
-        primary: '#23489f',
-        secondary: '#1e1e1e',
+        primary: '#0C2D57',
+        // secondary: '#FC6736',
+        secondary: '#D63484',
         tertiary: '#595b66',
+        crystal: '#F8F4EC',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

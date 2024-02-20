@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Quicklooksrilanka = () => {
   return (
@@ -19,7 +19,7 @@ const Quicklooksrilanka = () => {
             <h3 className="md:text-[37px] text-[30px] font-semibold">
               E-VISA Thailand
             </h3>
-            <hr className="h-[3px] bg-primaryMain w-48" />
+            <hr className="h-[3px] bg-secondary w-48" />
           </div>
           <p className="text-justify tracking-tighter">
             Lorem Ipsum is simply dummy text of the printing and typesetting
