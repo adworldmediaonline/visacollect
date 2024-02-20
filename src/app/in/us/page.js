@@ -11,41 +11,16 @@ import PageWrapper from '@/app/blog/components/PageWrapper';
 import MainWrapper from '@/app/blog/components/MainWrapper';
 import AsideWrapper from '@/app/blog/components/AsideWrapper';
 import AsideBlogCard from '@/app/blog/components/AsideBlogCard';
+import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
 
-const relatedArticles = [
+const blogs = [
   {
-    title: 'UK to Australia',
-    text: 'Discover the simplicity of securing your UK to Australia eVisa with ease for a seamless travel experience.',
-    linkHref: '/uk',
+    title:
+      'Everything You Need to Know to Stress-Free Travel Planning for Any Trip',
+    description:
+      'Discover the simplicity of securing your UK to Australia eVisa with ease for a seamless travel experience.',
+    slug: '/uk',
     linkText: 'Apply now',
-    img: 'https://dummyimage.com/720x400',
-  },
-  {
-    title: 'USA to Australia',
-    text: 'Unlock the door to your Australian dream from the USA with a stress-free eVisa process.',
-    linkHref: '/usa',
-    linkText: 'Apply now',
-    img: 'https://dummyimage.com/720x400',
-  },
-  {
-    title: 'Malaysia to Australia',
-    text: 'Begin your journey from Malaysia to Australia effortlessly with our eVisa process.',
-    linkHref: '/malaysia',
-    linkText: 'Apply now',
-    img: 'https://dummyimage.com/720x400',
-  },
-  {
-    title: 'Article',
-    text: 'Australia: Where Adventure, Wildlife, and Stunning Landscapes Await.',
-    linkHref: '/australia-adventure',
-    linkText: 'Read More',
-    img: 'https://dummyimage.com/720x400',
-  },
-  {
-    title: 'Article',
-    text: 'Discovering Australia: From Coral Reefs to Red Deserts, a Journey Awaits.',
-    linkHref: '/discovering-australia',
-    linkText: 'Read More',
     img: 'https://dummyimage.com/720x400',
   },
 ];
@@ -67,7 +42,13 @@ export default async function Page() {
           <Us />
         </MainWrapper>
         <AsideWrapper>
-          <AsideBlogCard slug="test" title="hello" />
+          <ul className="flex flex-col gap-3">
+            {blogs?.map((blog, index) => (
+              <li key={blog.title}>
+                <AsideBlogCard slug={blog.slug} title={blog.title} />
+              </li>
+            ))}
+          </ul>
         </AsideWrapper>
       </PageWrapper>
       <div className="mt-16">
@@ -80,8 +61,8 @@ export default async function Page() {
           titleText="India Tourist e-Visa Application Frequently Asked Questions (FAQs)"
         />
       </div>
-      <PageReview applyLink="#" />
-      <RelatedArticlesSlider relatedArticles={relatedArticles} />
+      <PageReview applyLink="/in/visa/step-one" />
+      <BlogSlider blogs={blogs} />
     </div>
   );
 }
