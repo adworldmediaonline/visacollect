@@ -81,7 +81,7 @@ export const Banner = ({
             You need a Visa to travel to Australia if you have a passport from
             United States.
           </p>
-          <div className="md:ml-auto">
+          <div className="md:ml-auto shrink-0">
             <LinkButton href={link} className="px-10 py-4 text-base shrink-0">
               Apply Now
             </LinkButton>
