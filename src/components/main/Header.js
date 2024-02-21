@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import LinkButton from '../ui/link-button';
 const Header = ({ bgcolor }) => {
   // setting mobile nav
   const [click, setClick] = useState(false);
@@ -166,17 +167,14 @@ const Header = ({ bgcolor }) => {
             </li>
             {/* for mobile end */}
 
-            <Link href="#">
-              <li className="btnBlue relative hidden text-sm font-semibold cursor-pointer group dropdown drop-shadow-2xl md:flex my-3 nav-desk px-4 py-1">
-                Contact Us
-              </li>
-            </Link>
+            <LinkButton className="nav-desk">Contact Us</LinkButton>
 
             {/* for mobile start */}
             <li className="block md:hidden">
-              <Link href="#" className="btnBlue">
+              {/* <Link href="#" className="btnBlue">
                 Contact Us
-              </Link>
+              </Link> */}
+              <LinkButton>Contact Us</LinkButton>
             </li>
             {/* for mobile end */}
           </ul>
