@@ -65,7 +65,7 @@ export function useMDXComponents(components) {
       <Image
         priority
         placeholder="blur"
-        className="rounded-lg"
+        className="rounded-lg shadow"
         sizes="100vw"
         style={{ width: '100%', height: 'auto' }}
         {...props}

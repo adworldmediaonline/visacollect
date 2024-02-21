@@ -6,7 +6,7 @@ export default function BlogCardSmall({ description = 'test', slug = '#' }) {
   return (
     <Link href={slug}>
       <div className="flex flex-col items-center justify-center h-full text-center sm:flex-row sm:justify-start sm:text-left">
-        <div className="relative flex-shrink-0 mb-4 overflow-hidden rounded-lg w-28 h-28 sm:mb-0">
+        <div className="relative flex-shrink-0 w-24 h-24 mb-4 overflow-hidden transition ease-in-out rounded-lg shadow-md sm:mb-0 hover:-translate-y-1 ">
           {' '}
           <Image
             priority
@@ -17,7 +17,7 @@ export default function BlogCardSmall({ description = 'test', slug = '#' }) {
           />
         </div>
 
-        <div className="flex-grow sm:pl-8">
+        <div className="flex-grow sm:pl-4">
           <p className="line-clamp-3">{description}</p>
         </div>
       </div>

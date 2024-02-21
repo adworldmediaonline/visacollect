@@ -1,16 +1,18 @@
-import { Banner } from '@/components/commonWebsiteComponents/Banner';
 import React from 'react';
-import Faq from '@/components/commonWebsiteComponents/Faq';
-import LearnMore from '@/components/commonWebsiteComponents/LearnMore';
-import Link from 'next/link';
-import RelatedArticlesSlider from '@/components/commonWebsiteComponents/RelatedArticlesSlider';
+import { Banner } from '@/components/commonWebsiteComponents/Banner';
 import Divider from '@/components/common/Divider';
-import PageReview from '@/components/common/countryHomePage/PageReview';
-import { learnMoreSectionDataIndia } from '@/constant/countryHomePageData/india';
-import Header from '@/components/india/common/Header';
-import Footer from '@/components/india/common/Footer';
+import PageReview from './_homePage/PageReview';
+import { learnMoreSectionDataUs } from '@/constant/countryHomePageData/us';
+import IndiaHomePage from '../mainDirectoryHomePages/india.mdx';
+// import FaqWithMDX from '@/components/commonWebsiteComponents/FaqWithMDX';
+// import { usFaq } from '@/app/faqMdx/usFaq/usFaq';
+import PageWrapper from '@/app/blog/components/PageWrapper';
+import MainWrapper from '@/app/blog/components/MainWrapper';
+import AsideWrapper from '@/app/blog/components/AsideWrapper';
+import AsideBlogCard from '@/app/blog/components/AsideBlogCard';
 import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
-
+import Faq from '@/components/commonWebsiteComponents/Faq';
+import { learnMoreSectionDataIndia } from '@/constant/countryHomePageData/india';
 const blogs = [
   {
     title:
@@ -47,60 +49,41 @@ const blogs = [
     img: 'https://dummyimage.com/720x400',
   },
 ];
-
-const Page = () => {
+export default async function Page() {
   return (
-    <>
-      <Header />
-      <div>
-        <Banner
-          name="India"
-          type="visatype"
-          validity=" Valid for 1 year"
-          entries="Multiple Entries"
-          price="$126.67"
-          link="/in/visa/step-one"
-          pageTitle={learnMoreSectionDataIndia?.pageTitle}
-          pageName={learnMoreSectionDataIndia?.pageName}
-        />
-        {/* <ProcessingStep
-        processingData={processingData1}
-        link="/australia/application"
-      /> */}
-        <div className="w-full h-[0.5px] bg-gray-200"></div>
-        <div className="flex flex-col md:flex-row">
-          <main className="flex-1 py-2 [&_strong]:text-tertiary [&_p]:font-normal [&_p]:text-[#343a40] [&_li]:text-[#343a40] [&_.link]:text-primary [&_.email-link]:text-primary">
-            <LearnMore learnMoreSectionData={learnMoreSectionDataIndia} />
-          </main>
-          <aside className="basis-[300px] py-5 md:py-12 space-y-4">
-            <div className="container">
-              {' '}
-              <div>Other links:</div>
-              <ul className="flex flex-col gap-3">
-                {learnMoreSectionDataIndia?.otherLinks?.map((link, index) => (
-                  <li key={index}>
-                    <Link className="underline text-primary" href={link.path}>
-                      {link.linkName}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </aside>
-        </div>
-        <div className="mt-16">
-          <Divider />
-        </div>
-
-        <Faq faqData={learnMoreSectionDataIndia?.faqData} />
-        {/* Remember: For the most accurate and up-to-date information, it's best to check the official website. */}
-        <PageReview applyLink={learnMoreSectionDataIndia?.applyNowLink} />
-
-        <BlogSlider blogs={blogs} />
+    <div>
+      <Banner
+        validity=" Valid for 1 year"
+        entries="Multiple Entries"
+        price="$126.67"
+        link="/in/visa/step-one"
+        pageTitle={learnMoreSectionDataIndia?.pageTitle}
+        pageName={learnMoreSectionDataIndia?.pageName}
+      />
+      <div className="w-full h-[0.5px] bg-gray-200"></div>
+      <PageWrapper className="mt-10 mb-10">
+        <MainWrapper>
+          <IndiaHomePage />
+        </MainWrapper>
+        <AsideWrapper>
+          <ul className="flex flex-col gap-3">
+            {blogs?.map(blog => (
+              <li key={blog.title}>
+                <AsideBlogCard slug={blog.slug} title={blog.title} />
+              </li>
+            ))}
+          </ul>
+        </AsideWrapper>
+      </PageWrapper>
+      <div className="mt-16">
+        <Divider />
       </div>
-      <Footer />
-    </>
-  );
-};
 
-export default Page;
+      <div>
+        <Faq faqData={learnMoreSectionDataIndia?.faqData} />
+      </div>
+      <PageReview applyLink="/in/visa/step-one" />
+      <BlogSlider blogs={blogs} />
+    </div>
+  );
+}
