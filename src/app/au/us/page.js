@@ -3,7 +3,7 @@ import { Banner } from '@/components/commonWebsiteComponents/Banner';
 import Divider from '@/components/common/Divider';
 import PageReview from './_homePage/PageReview';
 import { learnMoreSectionDataUs } from '@/constant/countryHomePageData/us';
-import Us from '../../homePagesBlog/us.mdx';
+import Us from '../../subDirectoryHomePages/us.mdx';
 import FaqWithMDX from '@/components/commonWebsiteComponents/FaqWithMDX';
 import { usFaq } from '@/app/faqMdx/usFaq/usFaq';
 import PageWrapper from '@/app/blog/components/PageWrapper';

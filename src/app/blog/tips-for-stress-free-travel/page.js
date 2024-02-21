@@ -1,13 +1,5 @@
-import Image from 'next/image';
 import StressFreeGB from '../../generalCommonBlog/tips-for-stress-free-travel.mdx';
-import AsideBlogCard from '../components/AsideBlogCard';
-import AsideWrapper from '../components/AsideWrapper';
-import BlogContentHero from '../components/BlogContentHero';
-import MainWrapper from '../components/MainWrapper';
-import PageWrapper from '../components/PageWrapper';
-import { stressFreeTravel } from '@/constant/images';
-import AsideWrapperTitle from '../components/AsideWrapperTitle';
-import BlogCardSmall from '../components/BlogCardSmall';
+import BlogPreview from '../components/BlogPreview';
 const blogs = [
   {
     title:
@@ -46,23 +38,12 @@ const blogs = [
 ];
 export default function Page() {
   return (
-    <PageWrapper className="mt-10 mb-10">
-      <MainWrapper>
-        <StressFreeGB />
-      </MainWrapper>
-      <AsideWrapper>
-        <AsideWrapperTitle>Popular Articles</AsideWrapperTitle>
-        <div className="flex flex-col gap-3">
-          {blogs?.slice(0, 3)?.map(blog => (
-            <BlogCardSmall
-              key={blog.title}
-              description={blog.description}
-              slug={blog.slug}
-            />
-          ))}
-          s
-        </div>
-      </AsideWrapper>
-    </PageWrapper>
+    <>
+      <BlogPreview
+        blogs={blogs}
+        asideTitle="Popular Articles"
+        blogPage={<StressFreeGB />}
+      />
+    </>
   );
 }
