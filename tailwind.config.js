@@ -19,6 +19,7 @@ module.exports = {
         primary: '#0C2D57',
         // secondary: '#FC6736',
         secondary: '#D63484',
+        'secondary-light': '#ff5bae',
         tertiary: '#595b66',
         crystal: '#F8F4EC',
       },

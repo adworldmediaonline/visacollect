@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { FaInfoCircle } from 'react-icons/fa';
 import { getAllCountries } from '@/lib/getAllCountries';
 import HomePageTitle from '../common/countryHomePage/HomePageTitle';
+import LinkButton from '../ui/link-button';
+import Button from '../ui/button';
 
 export const Banner = ({
   validity,
@@ -62,19 +64,7 @@ export const Banner = ({
                 Traveling for
               </label>
               {/* Button 1 */}
-              <button className="px-4 py-2 mr-2 text-sm font-normal text-white rounded-full bg-secondary ">
-                All
-              </button>
-
-              {/* Button 2 */}
-              <button className="px-4 py-2 mr-2 text-sm font-normal text-black bg-gray-100 rounded-full ">
-                Tourism
-              </button>
-
-              {/* Button 3 */}
-              <button className="px-4 py-2 text-sm font-normal text-black bg-gray-100 rounded-full ">
-                Business
-              </button>
+              <Button>All</Button>
             </div>
           </div>
         </div>
@@ -92,11 +82,9 @@ export const Banner = ({
             United States.
           </p>
           <div className="md:ml-auto">
-            <Link href={link}>
-              <button className="w-full px-16 py-3 text-xl font-semibold text-white duration-150 ease-in-out rounded-full bg-secondary hover:scale-105">
-                Apply Now
-              </button>
-            </Link>
+            <LinkButton href={link} className="px-10 py-4 text-base shrink-0">
+              Apply Now
+            </LinkButton>
           </div>
         </div>
 

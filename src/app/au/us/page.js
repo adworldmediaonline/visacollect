@@ -65,7 +65,7 @@ export default async function Page() {
         <MainWrapper>
           <Us />
         </MainWrapper>
-        <AsideWrapper>
+        <AsideWrapper className="sticky top-0">
           <ul className="flex flex-col gap-3">
             {blogs?.map(blog => (
               <li key={blog.title}>
