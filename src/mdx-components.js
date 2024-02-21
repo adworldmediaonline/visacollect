@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { amiri, lobster, roboto } from './app/layout';
 
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
@@ -64,6 +63,9 @@ export function useMDXComponents(components) {
     ),
     img: props => (
       <Image
+        priority
+        placeholder="blur"
+        className="rounded-lg"
         sizes="100vw"
         style={{ width: '100%', height: 'auto' }}
         {...props}
