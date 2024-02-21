@@ -119,15 +119,6 @@ body {
   font-size: 0.8rem !important;
 }
 
-/* .nav-item a:hover{
-  color:#F6B803;
-} */
-
-/* .header .navbar img {
-  width: 205px;
-  height: auto;
-} */
-
 .header .nav-menu {
   display: flex;
 }
@@ -202,9 +193,6 @@ body {
     margin: 0.1rem 0;
   }
 
-  /* .header .navbar img {
-      width: 150px;
-  } */
   .dropdown-menu {
     visibility: hidden;
   }

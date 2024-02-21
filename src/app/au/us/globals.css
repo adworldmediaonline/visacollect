@@ -6,11 +6,6 @@ body {
   overflow-x: hidden;
 }
 
-.container {
-  width: 90%;
-  margin: 0px auto;
-}
-
 .Secheading::after {
   background-color: #0068e5;
   content: '';
@@ -72,20 +67,6 @@ body {
 .header-menu li {
   font-weight: 400;
 }
-/*
-
-.css-13cymwt-control
-{
-  padding: 10px;
-  border-radius: 0px;
-  border: none;
-}
-
-.css-13cymwt-control:hover
-{
-  padding: 10px;
-
-} */
 
 .nav-menu {
   height: 100vh;
@@ -94,7 +75,6 @@ body {
   background-color: white;
   left: 0;
   z-index: 0;
-  /* top:13%; */
 }
 
 .mobile-nav {

@@ -16,13 +16,6 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .shadow-card {
   width: 100%;
   display: flex;
@@ -32,38 +25,6 @@ body {
   background: #fff;
   box-shadow: 0 2px 11px 0 rgba(0, 0, 0, 0.21);
   transition: all 0.3s ease-in-out;
-}
-@media (min-width: 1600px) {
-  .container {
-    max-width: 1600px;
-  }
-}
-@media (min-width: 1900px) {
-  .container {
-    max-width: 1900px;
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1180px;
-  }
-}
-.container-fluid {
-  padding-right: 15px;
-  padding-left: 15px;
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 /* Navbar --start*/
@@ -110,12 +71,6 @@ body {
 .hamburgerMainVisa {
   display: none;
 }
-/* .dropdown-menu {
-  visibility: visible;
-}
-.dropdown-mobile {
-  display: none;
-} */
 
 @media screen and (max-width: 940px) {
   .nav-itemMainVisa a {

@@ -2,10 +2,6 @@ body {
   overflow-x: hidden;
 }
 
-.container {
-  width: 90%;
-  margin: 0px auto;
-}
 /* Form Section */
 .main-form-section {
   @apply items-start grid-cols-12 gap-4 py-2 md:grid;

@@ -2,36 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
-body{
+body {
   overflow-x: hidden;
 }
 
-.container
-
-{
-  width: 90%;
-  margin:0px auto;
-}
-
-.Secheading::after
-{
-  background-color: #0068E5;
-  content:"";
+.Secheading::after {
+  background-color: #0068e5;
+  content: '';
   height: 3px;
   width: 60%;
   display: flex;
-
 }
 
-
-.head-footer::after
-{
-  background-color: #0068E5;
-  content:"";
+.head-footer::after {
+  background-color: #0068e5;
+  content: '';
   height: 2px;
   width: 30%;
   margin: 5px 0px 0px 3px;
@@ -39,153 +24,103 @@ body{
 }
 
 @media screen and (min-width: 480px) {
-
-  .Secheading-center::after
-  {
-    background-color: #0068E5;
-    content:"";
+  .Secheading-center::after {
+    background-color: #0068e5;
+    content: '';
     height: 2px;
     width: 30%;
     justify-content: start;
-    margin-left:0px;
-
-  
+    margin-left: 0px;
   }
 }
 
-
-.Secheading-center::after
-{
-  background-color: #0068E5;
-  content:"";
+.Secheading-center::after {
+  background-color: #0068e5;
+  content: '';
   height: 2px;
   width: 30%;
-  margin:auto;
+  margin: auto;
   display: flex;
-
 }
 
-.footer-menu li 
-{
+.footer-menu li {
   font-weight: 300;
 }
 
-.header-menu li
-{
+.header-menu li {
   font-weight: 400;
 }
-/* 
 
-.css-13cymwt-control
-{
-  padding: 10px;
-  border-radius: 0px;
-  border: none; 
+.text-primary {
+  color: #0068e5;
 }
 
-.css-13cymwt-control:hover
-{
-  padding: 10px;
-
-} */
-
-.text-primary
-{
-  color:#0068E5;
-}
-
-.nav-menu
-{
+.nav-menu {
   height: 100vh;
   position: fixed;
   width: 100%;
   background-color: white;
-  left: 0; 
+  left: 0;
   z-index: 0;
-  /* top:13%; */
 }
 
-
-
-
-
-.mobile-nav
-{
-
-  @apply bg-[#fafafa] p-4 rounded-xl border md:bg-transparent md:p-0 md:rounded-none md:border-none
+.mobile-nav {
+  @apply bg-[#fafafa] p-4 rounded-xl border md:bg-transparent md:p-0 md:rounded-none md:border-none;
 }
 
-
-.form-input{
-  @apply col-span-8 md:w-[70%] w-[100%] rounded-md border border-[#e0e0e0] bg-white py-2 px-2 text-base font-[400] text-[gray] outline-none focus:border-[#6A64F1] focus:shadow-md  flex-row
+.form-input {
+  @apply col-span-8 md:w-[70%] w-[100%] rounded-md border border-[#e0e0e0] bg-white py-2 px-2 text-base font-[400] text-[gray] outline-none focus:border-[#6A64F1] focus:shadow-md  flex-row;
 }
 
-.form-input-main-div
-{
-  @apply md:flex justify-between my-4 
+.form-input-main-div {
+  @apply justify-between my-4 md:flex;
 }
 
-.form-input-main-div-test
-{
-  @apply my-4
+.form-input-main-div-test {
+  @apply my-4;
 }
 
-.form-input-test
-{
-  @apply w-[70%]
+.form-input-test {
+  @apply w-[70%];
 }
 
+.select-input {
+  @apply col-span-8 w-full md:w-[70%] border rounded-md px-1 py-[10px];
+}
 
-
-.select-input{
-  @apply col-span-8 w-full md:w-[70%] border rounded-md px-1 py-[10px]
- }
-
- .form-select
- {
-  &__placeholder{
+.form-select {
+  &__placeholder {
     margin: 0.125rem auto;
     width: 100%;
     height: 300px;
-  } 
+  }
+}
 
- }
-
-
-.review-form
-{
-  gap:calc(20px);
+.review-form {
+  gap: calc(20px);
 }
 
 /* Form Section */
-.main-form-section
-{
-  @apply md:grid grid-cols-12 gap-4 py-2 items-start
+.main-form-section {
+  @apply items-start grid-cols-12 gap-4 py-2 md:grid;
 }
 
-.new-form-input
-{
-  @apply border border-gray-300 py-[10px] px-1 rounded-lg outline-none ring-0 focus:ring-blue-200 focus:ring-1 w-full
+.new-form-input {
+  @apply border border-gray-300 py-[10px] px-1 rounded-lg outline-none ring-0 focus:ring-blue-200 focus:ring-1 w-full;
 }
 
-
-.side-icon
-{
-  @apply items-start float-right md:mt-0 -mt-6 text-primary
+.side-icon {
+  @apply items-start float-right -mt-6 md:mt-0 text-primary;
 }
 
-.label-section
-{
-  @apply col-span-3 
+.label-section {
+  @apply col-span-3;
 }
 
-.mark-section
-{
-  @apply  relative col-span-1 order-3
+.mark-section {
+  @apply relative order-3 col-span-1;
 }
 
-.tooltip-content
-{
-  @apply absolute -top-12  w-[230px] right-0 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 
+.tooltip-content {
+  @apply absolute -top-12  w-[230px] right-0 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100;
 }
-
