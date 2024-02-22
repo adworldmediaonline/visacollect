@@ -14,12 +14,13 @@ export const Banner = ({
   pageTitle,
   pageName,
   pageTitleDescription,
+  breadcrumb,
 }) => {
   return (
     <div>
       <div className="container py-16">
         <div>
-          <p className="py-8">Home &gt; {pageName}</p>
+          <p className="py-8">Home &gt; {breadcrumb ?? ''}</p>
         </div>
         <HomePageTitle pageTitle={pageTitle} />
         <p className="mt-1 text-base">{pageTitleDescription ?? ''}</p>
