@@ -27,10 +27,7 @@ export const lobster = Lobster({
   subsets: ['latin'],
   weight: ['400'],
 });
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-});
+
 const beVietnamPro = Be_Vietnam_Pro({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800'],

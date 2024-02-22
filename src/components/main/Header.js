@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import LinkButton from '../ui/link-button';
+import Logo from '../Logo';
 const Header = ({ bgcolor }) => {
   // setting mobile nav
   const [click, setClick] = useState(false);
@@ -41,23 +42,11 @@ const Header = ({ bgcolor }) => {
           <Link href="/" className="space-x-4">
             {scrolled ? (
               <>
-                <Image
-                  src="/assets/images/main/logo.png"
-                  width={500}
-                  height={500}
-                  className="w-36"
-                  alt="logo"
-                />
+                <Logo />
               </>
             ) : (
               <>
-                <Image
-                  src="/assets/images/main/logo.png"
-                  width={400}
-                  height={400}
-                  className="w-36"
-                  alt="logo2"
-                />
+                <Logo />
               </>
             )}
           </Link>

@@ -71,7 +71,7 @@ export default async function Page({ params }) {
       <div className="w-full h-[0.5px] bg-gray-200"></div>
       <PageWrapper className="mt-10 mb-10">
         <MainWrapper>{targetedCountry?.countryPage ?? ''}</MainWrapper>
-        <AsideWrapper className="sticky top-0">
+        <AsideWrapper className="sticky top-24">
           <ul className="flex flex-col gap-3">
             {blogs?.map(blog => (
               <li key={blog.title}>
