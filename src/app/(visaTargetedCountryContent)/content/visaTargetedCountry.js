@@ -1,12 +1,16 @@
 import IndianVisaForAustralia from './indianVisa/australia.mdx';
 import TurkeyVisaForAustralia from './turkeyVisa/australia.mdx';
+import ThailandVisaForAustralia from './thailandVisa/australia.mdx';
 import IndianVisaForUK from './indianVisa/uk.mdx';
 import TurkeyVisaForUK from './turkeyVisa/uk.mdx';
+import ThailandVisaForUK from './thailandVisa/uk.mdx';
 import IndianVisaForCanada from './indianVisa/canada.mdx';
 import TurkeyVisaForCanada from './turkeyVisa/canada.mdx';
+import ThailandVisaForCanada from './thailandVisa/canada.mdx';
 import IndianVisaForUAE from './indianVisa/uae.mdx';
 import IndianVisaForUS from './indianVisa/us.mdx';
 import TurkeyVisaForUS from './turkeyVisa/us.mdx';
+import ThailandVisaForUS from './thailandVisa/us.mdx';
 import IndianVisaForSingapore from './indianVisa/singapore.mdx';
 import IndianVisaForThailand from './indianVisa/thailand.mdx';
 import { australiaFaq } from './targetedCountrySubPagesFaq/australia/indianVisa/australiaFaq';
@@ -17,6 +21,10 @@ import { turkeyAustraliaFaq } from './targetedCountrySubPagesFaq/australia/turke
 import { turkeyUkFaq } from './targetedCountrySubPagesFaq/ukFaq/turkeyVisa/ukFaq';
 import { turkeyVisaCanadaFaq } from './targetedCountrySubPagesFaq/canadaFaq/turkeyVisa/canadaFaq';
 import { turkeyVisaUsFaq } from './targetedCountrySubPagesFaq/usFaq/turkeyVisa/turkeyVisaUsFaq';
+import { thailandVisaAustraliaFaq } from './targetedCountrySubPagesFaq/australia/thailandVisa/thailandVisaAustraliaFaq';
+import { thailandVisaCanadaFaq } from './targetedCountrySubPagesFaq/canadaFaq/thailandVisa/thailandVisaCanadaFaq';
+import { thailandVisaUKFaq } from './targetedCountrySubPagesFaq/ukFaq/thailandVisa/thailandVisaUkFaq';
+import { thailandVisaUsFaq } from './targetedCountrySubPagesFaq/usFaq/thailandVisa/thailandVisaUsFaq';
 
 export const visaPromotedInAustralia = [
   {
@@ -48,6 +56,22 @@ export const visaPromotedInAustralia = [
       faqTitle: `Some FAQs for Australian Travellers Travelling to Turkey`,
     },
   },
+  {
+    id: 3,
+    visa: 'Thailand Visa',
+    targetedCountry: {
+      name: 'Australia',
+      code: 'AU',
+      slug: 'thailand-visa-for-australian-citizens',
+      countryPage: <ThailandVisaForAustralia />,
+      pageTitle:
+        'Australia to Thailand: Apply for Thailand eVisa Fast with VisaCollect',
+      pageTitleDescription:
+        'Enjoy the beauty and diversity of Thailand with VisaCollect’s convenient and secure eVisa service.',
+      faq: thailandVisaAustraliaFaq,
+      faqTitle: `Some FAQs for Aussies Travelling to Thailand from Australia`,
+    },
+  },
 ];
 
 export const visaPromotedInUk = [
@@ -75,6 +99,20 @@ export const visaPromotedInUk = [
       faqTitle: 'FAQs for Turkish e-Visas for UK Citizens',
       pageTitle: `UK to Turkey: Apply for Turkey e Visa Now at Speed with VisaCollect`,
       pageTitleDescription: `Apply your most awaited Turkey Visa-Easy & Fast-with visacollect now!`,
+    },
+  },
+  {
+    id: 3,
+    visa: 'Thailand Visa',
+    targetedCountry: {
+      name: 'United Kingdom',
+      code: 'UK',
+      slug: 'thailand-visa-for-uk-citizens',
+      countryPage: <ThailandVisaForUK />,
+      faq: thailandVisaUKFaq,
+      faqTitle: 'Some UK to Thailand e Visa FAQs ',
+      pageTitle: `UK to Thailand: Apply for Your Thailand eVisa Now!`,
+      pageTitleDescription: `Obtain your Thailand e-Visa with VisaCollect's Easy & Fast Process Today!`,
     },
   },
 ];
@@ -110,6 +148,22 @@ export const visaPromotedInCanada = [
         'Explore Turkey from north to south and east to west with visaCollect’s fast and secure Visa Services!',
     },
   },
+  {
+    id: 3,
+    visa: 'Thailand Visa',
+    targetedCountry: {
+      name: 'Canada',
+      code: 'CA',
+      slug: 'thailand-visa-for-canadian-citizens',
+      countryPage: <ThailandVisaForCanada />,
+      faq: thailandVisaCanadaFaq,
+      faqTitle: `Some FAQs for Canadian Travelers Traveling to Thailand`,
+      pageTitle:
+        'Canada to Thailand: Apply for Thailand eVisa with VisaCollect at Speed',
+      pageTitleDescription:
+        'Discover the wonders of Thailand with VisaCollect’s fast and easy eVisa service.',
+    },
+  },
 ];
 export const visaPromotedInUs = [
   {
@@ -136,6 +190,20 @@ export const visaPromotedInUs = [
       faq: turkeyVisaUsFaq,
       pageTitle: `USA to Turkey: Apply for Turkey eVOA for US Citizens at High Velocity`,
       pageTitleDescription: `Introducing the Turkish eVisa with VisaCollect’s fast & hassle-free visa services.`,
+    },
+  },
+  {
+    id: 3,
+    visa: 'Thailand Visa',
+    targetedCountry: {
+      name: 'United States',
+      code: 'US',
+      slug: 'thailand-tourist-visa-us-citizens',
+      countryPage: <ThailandVisaForUS />,
+      faq: thailandVisaUsFaq,
+      faqTitle: `USA to Thailand Frequently Asked Questions (FAQs)`,
+      pageTitle: `US to Thailand: Apply Thailand e Visa for US Citizens`,
+      pageTitleDescription: `Get Your Thailand e-Visa in 3 Easy-Steps with VisaCollect Now!`,
     },
   },
 ];
