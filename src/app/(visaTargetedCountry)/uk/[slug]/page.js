@@ -57,7 +57,7 @@ export default async function Page({ params }) {
   if (!promotedVisa) notFound();
 
   const { targetedCountry } = promotedVisa;
-  console.log(targetedCountry);
+
   return (
     <div>
       <Banner
@@ -89,7 +89,7 @@ export default async function Page({ params }) {
       <div className="flex justify-center">
         <FaqWithMDX
           faqData={targetedCountry?.faq}
-          titleText="India Tourist e-Visa Application Frequently Asked Questions (FAQs)"
+          titleText={targetedCountry?.faqTitle ?? 'FAQ'}
         />
       </div>
       <PageReview applyLink="/in/visa/step-one" />

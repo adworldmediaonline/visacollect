@@ -1,14 +1,22 @@
 import IndianVisaForAustralia from './indianVisa/australia.mdx';
+import TurkeyVisaForAustralia from './turkeyVisa/australia.mdx';
 import IndianVisaForUK from './indianVisa/uk.mdx';
+import TurkeyVisaForUK from './turkeyVisa/uk.mdx';
 import IndianVisaForCanada from './indianVisa/canada.mdx';
+import TurkeyVisaForCanada from './turkeyVisa/canada.mdx';
 import IndianVisaForUAE from './indianVisa/uae.mdx';
 import IndianVisaForUS from './indianVisa/us.mdx';
+import TurkeyVisaForUS from './turkeyVisa/us.mdx';
 import IndianVisaForSingapore from './indianVisa/singapore.mdx';
 import IndianVisaForThailand from './indianVisa/thailand.mdx';
 import { australiaFaq } from './targetedCountrySubPagesFaq/australia/indianVisa/australiaFaq';
 import { ukFaq } from './targetedCountrySubPagesFaq/ukFaq/indianVisa/ukFaq';
 import { usFaq } from './targetedCountrySubPagesFaq/usFaq/indianVisa/usFaq';
 import { canadaFaq } from './targetedCountrySubPagesFaq/canadaFaq/indianVisa/canadaFaq';
+import { turkeyAustraliaFaq } from './targetedCountrySubPagesFaq/australia/turkeyVisa/australiaFaq';
+import { turkeyUkFaq } from './targetedCountrySubPagesFaq/ukFaq/turkeyVisa/ukFaq';
+import { turkeyVisaCanadaFaq } from './targetedCountrySubPagesFaq/canadaFaq/turkeyVisa/canadaFaq';
+import { turkeyVisaUsFaq } from './targetedCountrySubPagesFaq/usFaq/turkeyVisa/turkeyVisaUsFaq';
 
 export const visaPromotedInAustralia = [
   {
@@ -24,11 +32,27 @@ export const visaPromotedInAustralia = [
       faq: australiaFaq,
     },
   },
+  {
+    id: 2,
+    visa: 'Turkey Visa',
+    targetedCountry: {
+      name: 'Australia',
+      code: 'AU',
+      slug: 'turkey-visa-for-australian-citizens',
+      countryPage: <TurkeyVisaForAustralia />,
+      pageTitle:
+        'Australia to Turkey: Apply for Your Turkish visa for Australian citizens',
+      pageTitleDescription:
+        'Hop on your favourite flight to Turkey with VisaCollect’s Speedy eVisa services now.',
+      faq: turkeyAustraliaFaq,
+      faqTitle: `Some FAQs for Australian Travellers Travelling to Turkey`,
+    },
+  },
 ];
 
 export const visaPromotedInUk = [
   {
-    id: 2,
+    id: 1,
     visa: 'Indian Visa',
     targetedCountry: {
       name: 'United Kingdom',
@@ -39,10 +63,24 @@ export const visaPromotedInUk = [
       pageTitle: `India Tourist Visa for the UK Citizens Traveling to India`,
     },
   },
+  {
+    id: 2,
+    visa: 'Turkey Visa',
+    targetedCountry: {
+      name: 'United Kingdom',
+      code: 'UK',
+      slug: 'turkey-evisa-for-uk-citizens',
+      countryPage: <TurkeyVisaForUK />,
+      faq: turkeyUkFaq,
+      faqTitle: 'FAQs for Turkish e-Visas for UK Citizens',
+      pageTitle: `UK to Turkey: Apply for Turkey e Visa Now at Speed with VisaCollect`,
+      pageTitleDescription: `Apply your most awaited Turkey Visa-Easy & Fast-with visacollect now!`,
+    },
+  },
 ];
 export const visaPromotedInCanada = [
   {
-    id: 3,
+    id: 1,
     visa: 'Indian Visa',
     targetedCountry: {
       name: 'Canada',
@@ -56,10 +94,26 @@ export const visaPromotedInCanada = [
         'Explore the land of wonders and uncover the unseen with VisaCollect.',
     },
   },
+  {
+    id: 2,
+    visa: 'Turkey Visa',
+    targetedCountry: {
+      name: 'Canada',
+      code: 'CA',
+      slug: 'turkish-visa-for-canadian-citizens',
+      countryPage: <TurkeyVisaForCanada />,
+      faq: turkeyVisaCanadaFaq,
+      faqTitle: `Some FAQs to Further Ease Your Turkish eVisa Application Process`,
+      pageTitle:
+        'Canada to Turkey: Apply for Turkey eVISA for Canadian Citizens',
+      pageTitleDescription:
+        'Explore Turkey from north to south and east to west with visaCollect’s fast and secure Visa Services!',
+    },
+  },
 ];
 export const visaPromotedInUs = [
   {
-    id: 4,
+    id: 1,
     visa: 'Indian Visa',
     targetedCountry: {
       name: 'United States',
@@ -69,6 +123,19 @@ export const visaPromotedInUs = [
       faq: usFaq,
       pageTitle: `Indian Tourist Visa for American Citizens`,
       pageTitleDescription: `Explore India with our seamless online visa services!`,
+    },
+  },
+  {
+    id: 2,
+    visa: 'Turkey Visa',
+    targetedCountry: {
+      name: 'United States',
+      code: 'US',
+      slug: 'turkey-visa-for-us-citizens',
+      countryPage: <TurkeyVisaForUS />,
+      faq: turkeyVisaUsFaq,
+      pageTitle: `USA to Turkey: Apply for Turkey eVOA for US Citizens at High Velocity`,
+      pageTitleDescription: `Introducing the Turkish eVisa with VisaCollect’s fast & hassle-free visa services.`,
     },
   },
 ];
