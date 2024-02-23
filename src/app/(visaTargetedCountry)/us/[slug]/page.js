@@ -56,7 +56,7 @@ export default async function Page({ params }) {
   if (!promotedVisa) notFound();
 
   const { targetedCountry } = promotedVisa;
-  console.log(targetedCountry);
+
   return (
     <div>
       <Banner

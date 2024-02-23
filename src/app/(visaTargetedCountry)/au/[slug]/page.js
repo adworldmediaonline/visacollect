@@ -88,7 +88,7 @@ export default async function Page({ params }) {
       <div className="flex justify-center">
         <FaqWithMDX
           faqData={targetedCountry?.faq}
-          titleText="India Tourist e-Visa Application Frequently Asked Questions (FAQs)"
+          titleText={targetedCountry?.faqTitle}
         />
       </div>
       <PageReview applyLink="/in/visa/step-one" />
