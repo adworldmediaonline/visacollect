@@ -1,36 +1,34 @@
-import Footer from "@/components/main/Footer";
-import Header from "@/components/main/Header";
-import React from "react";
+import Footer from '@/components/main/Footer';
+import Header from '@/components/main/Header';
+import React from 'react';
 
 const page = () => {
-    return (
-        <div>
-            <Header />
-            <div className="bg-white lg:pt-24 lg:py-10 lg:px-0 px-4 md:pt-28 md:pb-0 pt-28  pb-12 container">
-                <div className=" mx-auto">
-                    <h1 className="text-4xl lg:py-6 font-semibold mb-3">Cancellation:</h1>
-                    <p className="text-base my-2 text-justify font-medium leading-relaxed">
-                        Our organisation understands the need for flexibility. If a
-                        cancellation is necessary, clients are asked to notify us
-                        immediately. However, we maintains the right to keep a portion
-                        of the advance payment for administrative purposes.
-                    </p>
-                </div>
-
-                <div className=" mx-auto mt-7">
-                    <h3 className="font-bold text-lg mt-2">Refund Policy:</h3>
-                    <p className="text-base my-2 text-justify mb-5 font-medium leading-relaxed">
-                        Our company is committed to providing high-quality services and does not
-                        offer refunds. Clients are eligible for a refund based on the amount
-                        of the supplied service in the unusual event of dissatisfaction with
-                        our service
-                    </p>
-                </div>
-            </div>
-            <Footer />
+  return (
+    <div>
+      <Header />
+      <div className="container px-4 pb-12 bg-white lg:pt-24 lg:py-10 lg:px-0 md:pt-28 md:pb-0 pt-28">
+        <div className="mx-auto ">
+          <h1 className="mb-3 text-4xl font-semibold lg:py-6">Cancellation:</h1>
+          <p className="my-2 text-base font-medium leading-relaxed text-justify">
+            Our organisation understands the need for flexibility. If a
+            cancellation is necessary, clients are asked to notify us
+            immediately. However, we maintains the right to keep a portion of
+            the advance payment for administrative purposes.
+          </p>
         </div>
 
-    );
+        <div className="mx-auto  mt-7">
+          <h3 className="mt-2 text-lg font-bold">Refund Policy:</h3>
+          <p className="my-2 mb-5 text-base font-medium leading-relaxed text-justify">
+            Our company is committed to providing high-quality services and does
+            not offer refunds. Clients are eligible for a refund based on the
+            amount of the supplied service in the unusual event of
+            dissatisfaction with our service
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default page;

@@ -1,11 +1,4 @@
-import {
-  Inter,
-  Poppins,
-  Roboto,
-  Lobster,
-  Amiri,
-  Be_Vietnam_Pro,
-} from 'next/font/google';
+import { Be_Vietnam_Pro } from 'next/font/google';
 import { ToastContainer } from 'react-toastify';
 import { FormProvider } from '@/context/formContext';
 import ReactQueryProvider from '@/components/ReactQueryProvider';
@@ -14,19 +7,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
 import Header from '@/components/main/Header';
 import Footer from '@/components/main/Footer';
-
-export const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['300'],
-});
-export const amiri = Amiri({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-});
-export const lobster = Lobster({
-  subsets: ['latin'],
-  weight: ['400'],
-});
 
 const beVietnamPro = Be_Vietnam_Pro({
   subsets: ['latin'],

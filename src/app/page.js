@@ -21,7 +21,6 @@ export default function Home() {
       <OurServices />
       <Testimonial />
       <ContactForm />
-      <Footer />
     </div>
   );
 }
