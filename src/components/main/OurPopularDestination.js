@@ -59,7 +59,7 @@ const OurPopularDestination = () => {
   ];
 
   return (
-    <div className="py-12 space-y-12 md:py-12 bg-sky-50">
+    <div className="py-12 space-y-12 md:py-12">
       {/* title start  */}
       <div className="max-w-3xl mx-auto text-center">
         <HeadingSection title="We Process Visas for" />

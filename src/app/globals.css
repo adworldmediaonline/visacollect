@@ -2,18 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
 * {
   scroll-behavior: smooth;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
 }
 
 .shadow-card {
@@ -118,6 +108,10 @@ body {
   }
   .btnBlack {
     @apply px-8 py-2 mb-2 font-semibold text-white transition-all duration-500 rounded-md hover:-translate-y-1 hover:bg-secondary;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#1998C7] to-[#007FAE] bg-clip-text;
   }
 }
 
