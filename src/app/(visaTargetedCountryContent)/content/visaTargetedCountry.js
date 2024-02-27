@@ -55,13 +55,14 @@ export const visaPromotedInAustralia = [
                 metadataBase: new URL("https://visacollect.com"),
 
                 alternates: {
-                    canonical: "/indian-tourist-visa-for-australian-citizens",
+                    canonical:
+                        "/au/indian-tourist-visa-for-australian-citizens",
                 },
                 keywords:
                     "india tourist visa for australian citizens, indian visa for australian citizens, indian tourist visa for australian citizens, indian visa fees for australian citizens, indian tourist visa fees for australian citizens",
 
                 openGraph: {
-                    url: "/indian-tourist-visa-for-australian-citizens",
+                    url: "/au/indian-tourist-visa-for-australian-citizens",
                 },
             },
         },
@@ -92,13 +93,13 @@ export const visaPromotedInAustralia = [
                 metadataBase: new URL("https://visacollect.com"),
 
                 alternates: {
-                    canonical: "/turkey-visa-for-australian-citizens",
+                    canonical: "/au/turkey-visa-for-australian-citizens",
                 },
                 keywords: `turkey visa for australian citizens, turkey visa requirements for australian citizens, visa to turkey from australia, turkey visa for australians
 , turkish visa for australian citizens`,
 
                 openGraph: {
-                    url: "/turkey-visa-for-australian-citizens",
+                    url: "/au/turkey-visa-for-australian-citizens",
                 },
             },
         },
@@ -130,12 +131,12 @@ right place to learn about the important things you need to know before travelin
                 metadataBase: new URL("https://visacollect.com"),
 
                 alternates: {
-                    canonical: "/thailand-visa-for-australian-citizens",
+                    canonical: "/au/thailand-visa-for-australian-citizens",
                 },
                 keywords: `thailand visa for australian citizens, thailand entry requirements for australian citizens, thailand visa australian citizen, thailand visa for australian permanent residents, thailand visa on arrival for australian citizens`,
 
                 openGraph: {
-                    url: "/thailand-visa-for-australian-citizens",
+                    url: "/au/thailand-visa-for-australian-citizens",
                 },
             },
         },
@@ -166,12 +167,12 @@ export const visaPromotedInUk = [
                 metadataBase: new URL("https://visacollect.com"),
 
                 alternates: {
-                    canonical: "/apply-for-india-visa-from-uk",
+                    canonical: "/uk/apply-for-india-visa-from-uk",
                 },
-                keywords: `e visa india for british citizen, apply for india visa from uk, how can i get a quick visa to india from uk, `,
+                keywords: `e visa india for british citizen, apply for india visa from uk, how can i get a quick visa to india from uk, Apply for Your India eVisa from the UK , India Tourist Visa for UK citizens`,
 
                 openGraph: {
-                    url: "/apply-for-india-visa-from-uk",
+                    url: "/uk/apply-for-india-visa-from-uk",
                 },
             },
         },
@@ -188,6 +189,27 @@ export const visaPromotedInUk = [
             faqTitle: "FAQs for Turkish e-Visas for UK Citizens",
             pageTitle: `UK to Turkey: Apply for Turkey e Visa Now at Speed with VisaCollect`,
             pageTitleDescription: `Apply your most awaited Turkey Visa-Easy & Fast-with visacollect now!`,
+            metadata: {
+                // robots: {
+                //   index: false,
+                //   googleBot: {
+                //     index: false,
+                //   },
+                // },
+                title: "Turkey E-Visa for UK Citizens - Visa Collect",
+                description: `"Apply for a Turkey E-Visa for UK citizens in just a few simple steps:
+Visit the website, Visa Collect, Fill out the Application form. Make the Payment and Receive E-Visa"`,
+                metadataBase: new URL("https://visacollect.com"),
+
+                alternates: {
+                    canonical: "/uk/apply-for-india-visa-from-uk",
+                },
+                keywords: `turkey visa for uk citizens, visa to turkey from uk, turkey visa on arrival for uk citizens, turkey e visa for uk citizens, turkish visa for uk nationals, turkish visa for uk citizens`,
+
+                openGraph: {
+                    url: "/uk/apply-for-india-visa-from-uk",
+                },
+            },
         },
     },
     {
@@ -202,6 +224,27 @@ export const visaPromotedInUk = [
             faqTitle: "Some UK to Thailand e Visa FAQs ",
             pageTitle: `UK to Thailand: Apply for Your Thailand eVisa Now!`,
             pageTitleDescription: `Obtain your Thailand e-Visa with VisaCollect's Easy & Fast Process Today!`,
+            metadata: {
+                // robots: {
+                //   index: false,
+                //   googleBot: {
+                //     index: false,
+                //   },
+                // },
+                title: "Turkey E-Visa for UK Citizens - Visa Collect",
+                description: `"Apply for a Turkey E-Visa for UK citizens in just a few simple steps:
+Visit the website, Visa Collect, Fill out the Application form. Make the Payment and Receive E-Visa"`,
+                metadataBase: new URL("https://visacollect.com"),
+
+                alternates: {
+                    canonical: "/uk/apply-for-india-visa-from-uk",
+                },
+                keywords: `turkey visa for uk citizens, visa to turkey from uk, turkey visa on arrival for uk citizens, turkey e visa for uk citizens, turkish visa for uk nationals, turkish visa for uk citizens`,
+
+                openGraph: {
+                    url: "/uk/apply-for-india-visa-from-uk",
+                },
+            },
         },
     },
     {
@@ -216,6 +259,27 @@ export const visaPromotedInUk = [
             faqTitle: "Some UK to Thailand e Visa FAQs ",
             pageTitle: `UK to Thailand: Apply for Your Thailand eVisa Now!`,
             pageTitleDescription: `Obtain your Thailand e-Visa with VisaCollect's Easy & Fast Process Today!`,
+            metadata: {
+                // robots: {
+                //   index: false,
+                //   googleBot: {
+                //     index: false,
+                //   },
+                // },
+                title: "Turkey E-Visa for UK Citizens - Visa Collect",
+                description: `"Apply for a Turkey E-Visa for UK citizens in just a few simple steps:
+Visit the website, Visa Collect, Fill out the Application form. Make the Payment and Receive E-Visa"`,
+                metadataBase: new URL("https://visacollect.com"),
+
+                alternates: {
+                    canonical: "/uk/apply-for-india-visa-from-uk",
+                },
+                keywords: `turkey visa for uk citizens, visa to turkey from uk, turkey visa on arrival for uk citizens, turkey e visa for uk citizens, turkish visa for uk nationals, turkish visa for uk citizens`,
+
+                openGraph: {
+                    url: "/uk/apply-for-india-visa-from-uk",
+                },
+            },
         },
     },
 ];
