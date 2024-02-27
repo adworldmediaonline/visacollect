@@ -13,6 +13,8 @@ import TurkeyVisaForUS from './turkeyVisa/us.mdx';
 import ThailandVisaForUS from './thailandVisa/us.mdx';
 import IndianVisaForSingapore from './indianVisa/singapore.mdx';
 import IndianVisaForThailand from './indianVisa/thailand.mdx';
+import AustraliaVisaForIndia from './australiaVisa/india.mdx';
+import AustraliaVisaForUk from './australiaVisa/uk.mdx';
 import { australiaFaq } from './targetedCountrySubPagesFaq/australia/indianVisa/australiaFaq';
 import { ukFaq } from './targetedCountrySubPagesFaq/ukFaq/indianVisa/ukFaq';
 import { usFaq } from './targetedCountrySubPagesFaq/usFaq/indianVisa/usFaq';
@@ -25,6 +27,8 @@ import { thailandVisaAustraliaFaq } from './targetedCountrySubPagesFaq/australia
 import { thailandVisaCanadaFaq } from './targetedCountrySubPagesFaq/canadaFaq/thailandVisa/thailandVisaCanadaFaq';
 import { thailandVisaUKFaq } from './targetedCountrySubPagesFaq/ukFaq/thailandVisa/thailandVisaUkFaq';
 import { thailandVisaUsFaq } from './targetedCountrySubPagesFaq/usFaq/thailandVisa/thailandVisaUsFaq';
+import { australiaVisaIndiaFaq } from './targetedCountrySubPagesFaq/india/australiaVisa/australiaVisaIndiaFaq';
+import { australiaVisaUkFaq } from './targetedCountrySubPagesFaq/ukFaq/australiaVisa/ukFaq';
 
 export const visaPromotedInAustralia = [
   {
@@ -110,6 +114,20 @@ export const visaPromotedInUk = [
       slug: 'thailand-visa-for-uk-citizens',
       countryPage: <ThailandVisaForUK />,
       faq: thailandVisaUKFaq,
+      faqTitle: 'Some UK to Thailand e Visa FAQs ',
+      pageTitle: `UK to Thailand: Apply for Your Thailand eVisa Now!`,
+      pageTitleDescription: `Obtain your Thailand e-Visa with VisaCollect's Easy & Fast Process Today!`,
+    },
+  },
+  {
+    id: 4,
+    visa: 'Australia Visa',
+    targetedCountry: {
+      name: 'United Kingdom',
+      code: 'UK',
+      slug: 'australian-visa-for-uk-citizens',
+      countryPage: <AustraliaVisaForUk />,
+      faq: australiaVisaUkFaq,
       faqTitle: 'Some UK to Thailand e Visa FAQs ',
       pageTitle: `UK to Thailand: Apply for Your Thailand eVisa Now!`,
       pageTitleDescription: `Obtain your Thailand e-Visa with VisaCollect's Easy & Fast Process Today!`,
@@ -209,7 +227,7 @@ export const visaPromotedInUs = [
 ];
 export const visaPromotedInThailand = [
   {
-    id: 5,
+    id: 1,
     visa: 'Indian Visa',
     targetedCountry: {
       name: 'Thailand',
@@ -220,9 +238,27 @@ export const visaPromotedInThailand = [
     },
   },
 ];
+export const visaPromotedInIndia = [
+  {
+    id: 1,
+    visa: 'Australia Visa',
+    targetedCountry: {
+      name: 'India',
+      code: 'IN',
+      slug: 'australia-visa-apply-from-india',
+      countryPage: <AustraliaVisaForIndia />,
+      faq: australiaVisaIndiaFaq,
+      faqTitle: '',
+      pageTitle:
+        'India to Australia: Apply for Australian ETA or eVisa - fast & Secure - with VisaCollect',
+      pageTitleDescription:
+        'Visit your favorite place in Australia with VisaCollect’s Fast and Secure Visa Services In the Country!',
+    },
+  },
+];
 export const visaPromotedInUAE = [
   {
-    id: 6,
+    id: 1,
     visa: 'Indian Visa',
     targetedCountry: {
       name: 'United Arab Emirates',
@@ -238,7 +274,7 @@ export const visaPromotedInUAE = [
 
 export const visaPromotedInSingapore = [
   {
-    id: 7,
+    id: 1,
     visa: 'Indian Visa',
     targetedCountry: {
       name: 'Singapore',
