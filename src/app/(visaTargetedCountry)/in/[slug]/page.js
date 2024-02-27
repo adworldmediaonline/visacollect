@@ -47,6 +47,34 @@ const blogs = [
     img: 'https://dummyimage.com/720x400',
   },
 ];
+
+export async function generateMetadata({ params }) {
+  try {
+    const slug = params.slug;
+    const promotedVisa = visaPromotedInIndia?.find(
+      visa => visa.targetedCountry.slug === slug
+    );
+
+    if (!promotedVisa) notFound();
+
+    const { targetedCountry } = promotedVisa;
+    return {
+      ...(targetedCountry?.metadata
+        ? targetedCountry.metadata
+        : {
+            title: 'Not Found',
+            description: 'The page you are looking for does not exist',
+          }),
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      title: 'Not Found',
+      description: 'The page you are looking for does not exist',
+    };
+  }
+}
+
 export default async function Page({ params }) {
   const slug = params.slug;
   const promotedVisa = visaPromotedInIndia?.find(
