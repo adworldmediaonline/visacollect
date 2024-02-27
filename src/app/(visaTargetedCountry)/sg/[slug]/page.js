@@ -9,7 +9,7 @@ import AsideBlogCard from '@/app/(blogContent)/blog/components/AsideBlogCard';
 import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
 import PageReview from '@/app/components/homePage/PageReview';
 import { notFound } from 'next/navigation';
-import { visaPromotedInIndia } from '@/app/(visaTargetedCountryContent)/content/visaTargetedCountry';
+import { visaPromotedInSingapore } from '@/app/(visaTargetedCountryContent)/content/visaTargetedCountry';
 
 const blogs = [
   {
@@ -51,7 +51,7 @@ const blogs = [
 export async function generateMetadata({ params }) {
   try {
     const slug = params.slug;
-    const promotedVisa = visaPromotedInIndia?.find(
+    const promotedVisa = visaPromotedInSingapore?.find(
       visa => visa.targetedCountry.slug === slug
     );
 
@@ -68,6 +68,7 @@ export async function generateMetadata({ params }) {
     };
   } catch (error) {
     console.log(error);
+
     return {
       title: 'Not Found',
       description: 'The page you are looking for does not exist',
@@ -77,7 +78,7 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
   const slug = params.slug;
-  const promotedVisa = visaPromotedInIndia?.find(
+  const promotedVisa = visaPromotedInSingapore?.find(
     visa => visa.targetedCountry.slug === slug
   );
 
