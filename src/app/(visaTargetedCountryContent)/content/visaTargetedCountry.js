@@ -42,6 +42,29 @@ export const visaPromotedInAustralia = [
       pageTitle: 'Indian Tourist Visa for Australian Citizens',
       // pageTitleDescription: '',
       faq: australiaFaq,
+      metadata: {
+        // robots: {
+        //   index: false,
+        //   googleBot: {
+        //     index: false,
+        //   },
+        // },
+        title:
+          'Apply Indian tourist visa for Australian citizens | Visa Collect',
+        description:
+          'Looking to visit India as an Australian citizen? Apply for your Indian tourist visa for Australian citizen with ease and convenience. Let us help you with the process. Apply now!                                ',
+        metadataBase: new URL('https://visacollect.com'),
+
+        alternates: {
+          canonical: '/indian-tourist-visa-for-australian-citizens',
+        },
+        keywords:
+          'india tourist visa for australian citizens, indian visa for australian citizens, indian tourist visa for australian citizens, indian visa fees for australian citizens, indian tourist visa fees for australian citizens',
+
+        openGraph: {
+          url: '/indian-tourist-visa-for-australian-citizens',
+        },
+      },
     },
   },
   {
@@ -57,7 +80,28 @@ export const visaPromotedInAustralia = [
       pageTitleDescription:
         'Hop on your favourite flight to Turkey with VisaCollect’s Speedy eVisa services now.',
       faq: turkeyAustraliaFaq,
-      faqTitle: `Some FAQs for Australian Travellers Travelling to Turkey`,
+      faqTitle: `Some FAQs for Australian Travelers Traveling to Turkey`,
+      metadata: {
+        // robots: {
+        //   index: false,
+        //   googleBot: {
+        //     index: false,
+        //   },
+        // },
+        title: 'Turkey Visa for Australian Citizens | Visa collect',
+        description: `If you are looking for a Turkey visa for Australian citizens,here's a general guide for Australian citizens applying for a Turkey visa.`,
+        metadataBase: new URL('https://visacollect.com'),
+
+        alternates: {
+          canonical: '/turkey-visa-for-australian-citizens',
+        },
+        keywords: `turkey visa for australian citizens, turkey visa requirements for australian citizens, visa to turkey from australia, turkey visa for australians
+, turkish visa for australian citizens`,
+
+        openGraph: {
+          url: '/turkey-visa-for-australian-citizens',
+        },
+      },
     },
   },
   {
@@ -74,6 +118,27 @@ export const visaPromotedInAustralia = [
         'Enjoy the beauty and diversity of Thailand with VisaCollect’s convenient and secure eVisa service.',
       faq: thailandVisaAustraliaFaq,
       faqTitle: `Some FAQs for Aussies Travelling to Thailand from Australia`,
+      metadata: {
+        // robots: {
+        //   index: false,
+        //   googleBot: {
+        //     index: false,
+        //   },
+        // },
+        title: 'Thailand Visa for Australian Citizens at Visa Collect',
+        description: `If you want a Thailand visa for Australian citizens, this is the
+right place to learn about the important things you need to know before traveling.`,
+        metadataBase: new URL('https://visacollect.com'),
+
+        alternates: {
+          canonical: '/thailand-visa-for-australian-citizens',
+        },
+        keywords: `thailand visa for australian citizens, thailand entry requirements for australian citizens, thailand visa australian citizen, thailand visa for australian permanent residents, thailand visa on arrival for australian citizens`,
+
+        openGraph: {
+          url: '/thailand-visa-for-australian-citizens',
+        },
+      },
     },
   },
 ];
