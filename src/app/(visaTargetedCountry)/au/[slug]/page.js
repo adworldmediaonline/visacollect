@@ -59,8 +59,7 @@ export async function generateMetadata({ params }) {
 
     const { targetedCountry } = promotedVisa;
     return {
-      title: 'testing',
-      description: 'The page you are looking for does not exist',
+      ...targetedCountry?.metadata,
     };
   } catch (error) {
     console.log(error);
