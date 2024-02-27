@@ -2,14 +2,14 @@ import React from 'react';
 import { Banner } from '@/components/commonWebsiteComponents/Banner';
 import Divider from '@/components/common/Divider';
 import FaqWithMDX from '@/components/commonWebsiteComponents/FaqWithMDX';
-import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
-import PageReview from '@/app/components/homePage/PageReview';
-import { visaPromotedInAustralia } from '@/app/(visaTargetedCountryContent)/content/visaTargetedCountry';
 import PageWrapper from '@/app/(blogContent)/blog/components/PageWrapper';
 import MainWrapper from '@/app/(blogContent)/blog/components/MainWrapper';
 import AsideWrapper from '@/app/(blogContent)/blog/components/AsideWrapper';
 import AsideBlogCard from '@/app/(blogContent)/blog/components/AsideBlogCard';
+import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
+import PageReview from '@/app/components/homePage/PageReview';
 import { notFound } from 'next/navigation';
+import { visaPromotedInIndia } from '@/app/(visaTargetedCountryContent)/content/visaTargetedCountry';
 
 const blogs = [
   {
@@ -47,33 +47,9 @@ const blogs = [
     img: 'https://dummyimage.com/720x400',
   },
 ];
-
-export async function generateMetadata({ params }) {
-  try {
-    const slug = params.slug;
-    const promotedVisa = visaPromotedInAustralia?.find(
-      visa => visa.targetedCountry.slug === slug
-    );
-
-    if (!promotedVisa) notFound();
-
-    const { targetedCountry } = promotedVisa;
-    return {
-      title: 'testing',
-      description: 'The page you are looking for does not exist',
-    };
-  } catch (error) {
-    console.log(error);
-    return {
-      title: 'Not Found',
-      description: 'The page you are looking for does not exist',
-    };
-  }
-}
-
 export default async function Page({ params }) {
   const slug = params.slug;
-  const promotedVisa = visaPromotedInAustralia?.find(
+  const promotedVisa = visaPromotedInIndia?.find(
     visa => visa.targetedCountry.slug === slug
   );
 
