@@ -62,8 +62,8 @@ export async function generateMetadata({ params }) {
       ...(targetedCountry?.metadata
         ? targetedCountry.metadata
         : {
-            title: 'Not Found',
-            description: 'The page you are looking for does not exist',
+            title: 'Title is missing!',
+            description: 'Description is missing!',
           }),
     };
   } catch (error) {
@@ -116,7 +116,7 @@ export default async function Page({ params }) {
       <div className="flex justify-center">
         <FaqWithMDX
           faqData={targetedCountry?.faq}
-          titleText="India Tourist e-Visa Application Frequently Asked Questions (FAQs)"
+          titleText={targetedCountry?.faqTitle}
         />
       </div>
       <PageReview applyLink="/in/visa/step-one" />
