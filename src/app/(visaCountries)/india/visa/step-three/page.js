@@ -43,7 +43,7 @@ const StepThree = () => {
   const postMutation = usePost(
     apiEndpoint.VISA_ADD_STEP3,
     3,
-    '/in/visa/step-four',
+    '/india/visa/step-four',
     false,
     'getAllStepsDataStep4'
   );
@@ -72,15 +72,15 @@ const StepThree = () => {
   }
 
   if (getAllStepsDataError) {
-    return router.push('/in/visa/step-one');
+    return router.push('/india/visa/step-one');
   }
 
   if (getAllStepsDataIsSuccess) {
     if (!getAllStepsData?.data?.step2Data) {
-      return router.push('/in/visa/step-two');
+      return router.push('/india/visa/step-two');
     }
     if (getAllStepsData?.data?.step3Data) {
-      return router.push('/in/visa/step-three/update');
+      return router.push('/india/visa/step-three/update');
     }
 
     return (
@@ -1736,7 +1736,7 @@ const StepThree = () => {
                       An error occurred: {postMutation.error.message}
                     </div>
                   ) : null}
-                  <Link href="/in/visa/step-two/update">
+                  <Link href="/india/visa/step-two/update">
                     <button className="formbtnBorder" type="button">
                       Back
                     </button>

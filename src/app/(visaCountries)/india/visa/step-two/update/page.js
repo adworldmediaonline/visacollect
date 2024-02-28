@@ -38,7 +38,7 @@ export default function StepTwoUpdate() {
     apiEndpoint.UPDATE_VISA_ADD_STEP2,
     getAllStepsData?.data?.step2Data?._id,
     2,
-    '/in/visa/step-three',
+    '/india/visa/step-three',
     refetch
   );
 
@@ -812,7 +812,7 @@ export default function StepTwoUpdate() {
                       An error occurred: {updateMutation.error.message}
                     </div>
                   ) : null}
-                  <Link href="/in/visa/step-one/update">
+                  <Link href="/india/visa/step-one/update">
                     <button className="formbtnBorder" type="button">
                       Back
                     </button>

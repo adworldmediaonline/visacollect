@@ -75,12 +75,12 @@ const StepEight = () => {
   }
 
   if (error) {
-    return router.push('/in/visa/step-one');
+    return router.push('/india/visa/step-one');
   }
 
   if (getAllStepsDataIsSuccess) {
     if (!getAllStepsData?.data?.step6Data) {
-      return router.push('/in/visa/step-six');
+      return router.push('/india/visa/step-six');
     }
 
     // const makePayment = async () => {

@@ -54,7 +54,7 @@ export default async function Page() {
         validity=" Valid for 1 year"
         entries="Multiple Entries"
         price="$126.67"
-        link="/au/application"
+        link="/thailand/application"
         pageTitle={learnMoreSectionDataThailand?.mainHomePageTitle ?? ''}
         pageName={learnMoreSectionDataThailand?.pageName}
       />
@@ -80,7 +80,7 @@ export default async function Page() {
       <div className="flex justify-center">
         <Faq faqData={learnMoreSectionDataThailand?.faqData} />
       </div>
-      <PageReview applyLink="/au/application" />
+      <PageReview applyLink="/thailand/application" />
       <BlogSlider blogs={blogs} />
     </div>
   );

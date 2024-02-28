@@ -52,14 +52,14 @@ const StepFour = () => {
   const postMutation = usePost(
     apiEndpoint.VISA_ADD_STEP4,
     4,
-    '/in/visa/step-five'
+    '/india/visa/step-five'
   );
 
   const updateMutation = useUpdate(
     apiEndpoint.UPDATE_VISA_ADD_STEP4,
     getAllStepsData?.data?.step4Data?._id,
     4,
-    '/in/visa/step-five',
+    '/india/visa/step-five',
     getAllStepsDataRefetch
   );
 
@@ -2204,7 +2204,7 @@ const StepFour = () => {
                         An error occurred: {updateMutation.error.message}
                       </div>
                     ) : null}
-                    <Link href="/in/visa/step-three/update">
+                    <Link href="/india/visa/step-three/update">
                       <button className="formbtnBorder">Back</button>
                     </Link>
                     <button
