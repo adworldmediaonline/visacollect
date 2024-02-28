@@ -1,19 +1,19 @@
 export const metadata = {
-  title: 'Apply For Australia Visa Online | E-visa',
-  description:
-    'Apply for Australia visa online effortlessly with E-visa through our user-friendly platform. Let our team simplify the journey to your dream destination.',
-  metadataBase: new URL('https://visacollect.com'),
+    title: "Apply Thailand Visa Online | E-visa",
+    description:
+        "Planning a trip to Thailand? Save time and energy – apply Thailand visa online in just a few clicks! Enjoy a seamless experience with E-vise.",
+    metadataBase: new URL("https://visacollect.com"),
 
-  alternates: {
-    canonical: '/apply-for-sri-lanka-visa/',
-  },
-  keywords:
-    'australia visa,apply for australian visa,australia tourist visa,visitor visa australia,australia tourist visa application,australian visa application,australia visa requirements,australia visa application online,australian visa application form,apply for australia visa online,apply e visa for australia',
+    alternates: {
+        canonical: "/thailand/",
+    },
+    keywords:
+        "apply thailand visa online, thailand e visa on arrival, e visa for thailand, apply e visa for thailand, thailand visa online, thailand tourist visa, thailand visa on arrival, thailand visa",
 
-  openGraph: {
-    url: '/',
-  },
+    openGraph: {
+        url: "/thailand/",
+    },
 };
 export default function RootLayout({ children }) {
-  return <>{children}</>;
+    return <>{children}</>;
 }

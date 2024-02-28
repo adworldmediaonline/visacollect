@@ -19,7 +19,7 @@ export const metadata = {
         "australia visa,apply for australian visa,australia tourist visa,visitor visa australia,australia tourist visa application,australian visa application,australia visa requirements,australia visa application online,australian visa application form,apply for australia visa online,apply e visa for australia",
 
     openGraph: {
-        url: "/australia",
+        url: "/australia/",
     },
 };
 export default function RootLayout({ children }) {
