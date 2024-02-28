@@ -1,15 +1,16 @@
 import React from 'react';
 import Divider from '@/components/common/Divider';
 import PageReview from './_homePage/PageReview';
-import AuHomePage from '../mainDirectoryHomePages/australia.mdx';
+import TurkeyHomePage from '../mainDirectoryHomePages/turkey.mdx';
 import PageWrapper from '@/app/(blogContent)/blog/components/PageWrapper';
 import MainWrapper from '@/app/(blogContent)/blog/components/MainWrapper';
 import AsideWrapper from '@/app/(blogContent)/blog/components/AsideWrapper';
 import AsideBlogCard from '@/app/(blogContent)/blog/components/AsideBlogCard';
 import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
 import Faq from '@/components/commonWebsiteComponents/Faq';
-import { learnMoreSectionDataAustralia } from '@/constant/countryHomePageData/australia';
+import { learnMoreSectionDataTurkey } from '@/constant/countryHomePageData/turkey';
 import Banner2 from '@/components/ui/Banner2';
+
 const blogs = [
   {
     title:
@@ -50,17 +51,19 @@ export default async function Page() {
   return (
     <div>
       <Banner2
+        name="Turkey"
+        type="visatype"
         validity=" Valid for 1 year"
         entries="Multiple Entries"
         price="$126.67"
-        link="/australia/application"
-        pageTitle={learnMoreSectionDataAustralia?.mainHomePageTitle}
-        pageName={learnMoreSectionDataAustralia?.pageName}
+        link="/tr/application"
+        pageTitle={learnMoreSectionDataTurkey?.mainPageTitle}
+        pageName={learnMoreSectionDataTurkey?.pageName}
       />
       <div className="w-full h-[0.5px] bg-gray-200"></div>
       <PageWrapper className="mt-10 mb-10">
         <MainWrapper>
-          <AuHomePage />
+          <TurkeyHomePage />
         </MainWrapper>
         <AsideWrapper>
           <ul className="flex flex-col gap-3">
@@ -76,10 +79,10 @@ export default async function Page() {
         <Divider />
       </div>
 
-      <div className="flex justify-center">
-        <Faq faqData={learnMoreSectionDataAustralia?.faqData} />
+      <div>
+        <Faq faqData={learnMoreSectionDataTurkey?.faqData} />
       </div>
-      <PageReview applyLink="/australia/application" />
+      <PageReview applyLink="/tr/application" />
       <BlogSlider blogs={blogs} />
     </div>
   );

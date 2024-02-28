@@ -1,15 +1,16 @@
 import React from 'react';
+import { Banner } from '@/components/commonWebsiteComponents/Banner';
 import Divider from '@/components/common/Divider';
-import PageReview from './_homePage/PageReview';
-import AuHomePage from '../mainDirectoryHomePages/australia.mdx';
+import FaqWithMDX from '@/components/commonWebsiteComponents/FaqWithMDX';
 import PageWrapper from '@/app/(blogContent)/blog/components/PageWrapper';
 import MainWrapper from '@/app/(blogContent)/blog/components/MainWrapper';
 import AsideWrapper from '@/app/(blogContent)/blog/components/AsideWrapper';
 import AsideBlogCard from '@/app/(blogContent)/blog/components/AsideBlogCard';
 import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
-import Faq from '@/components/commonWebsiteComponents/Faq';
-import { learnMoreSectionDataAustralia } from '@/constant/countryHomePageData/australia';
-import Banner2 from '@/components/ui/Banner2';
+import PageReview from '@/app/components/homePage/PageReview';
+import { notFound } from 'next/navigation';
+import { visaPromotedInThailand } from '@/app/(visaTargetedCountryContent)/content/visaTargetedCountry';
+
 const blogs = [
   {
     title:
@@ -46,23 +47,59 @@ const blogs = [
     img: 'https://dummyimage.com/720x400',
   },
 ];
-export default async function Page() {
+
+export async function generateMetadata({ params }) {
+  try {
+    const slug = params.slug;
+    const promotedVisa = visaPromotedInThailand?.find(
+      visa => visa.targetedCountry.slug === slug
+    );
+
+    if (!promotedVisa) notFound();
+
+    const { targetedCountry } = promotedVisa;
+    return {
+      ...(targetedCountry?.metadata
+        ? targetedCountry.metadata
+        : {
+            title: 'Title is missing!',
+            description: 'Description is missing!',
+          }),
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      title: 'Not Found',
+      description: 'The page you are looking for does not exist',
+    };
+  }
+}
+
+export default async function Page({ params }) {
+  const slug = params.slug;
+  const promotedVisa = visaPromotedInThailand?.find(
+    visa => visa.targetedCountry.slug === slug
+  );
+
+  if (!promotedVisa) notFound();
+
+  const { targetedCountry } = promotedVisa;
+
   return (
     <div>
-      <Banner2
+      <Banner
         validity=" Valid for 1 year"
         entries="Multiple Entries"
         price="$126.67"
-        link="/australia/application"
-        pageTitle={learnMoreSectionDataAustralia?.mainHomePageTitle}
-        pageName={learnMoreSectionDataAustralia?.pageName}
+        link="/in/au-Indian-tourist-visa-Australian-citizens/application"
+        pageTitle={targetedCountry?.pageTitle ?? ''}
+        pageTitleDescription={targetedCountry?.pageTitleDescription ?? ''}
+        breadcrumb={`${targetedCountry?.code} > ${targetedCountry?.slug}`}
       />
       <div className="w-full h-[0.5px] bg-gray-200"></div>
       <PageWrapper className="mt-10 mb-10">
-        <MainWrapper>
-          <AuHomePage />
-        </MainWrapper>
-        <AsideWrapper>
+        <MainWrapper>{targetedCountry?.countryPage ?? ''}</MainWrapper>
+        <AsideWrapper className="sticky top-24">
           <ul className="flex flex-col gap-3">
             {blogs?.map(blog => (
               <li key={blog.title}>
@@ -77,9 +114,12 @@ export default async function Page() {
       </div>
 
       <div className="flex justify-center">
-        <Faq faqData={learnMoreSectionDataAustralia?.faqData} />
+        <FaqWithMDX
+          faqData={targetedCountry?.faq}
+          titleText={targetedCountry?.faqTitle}
+        />
       </div>
-      <PageReview applyLink="/australia/application" />
+      <PageReview applyLink="/in/visa/step-one" />
       <BlogSlider blogs={blogs} />
     </div>
   );

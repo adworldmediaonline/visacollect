@@ -1,15 +1,17 @@
 import React from 'react';
+import { Banner } from '@/components/commonWebsiteComponents/Banner';
 import Divider from '@/components/common/Divider';
 import PageReview from './_homePage/PageReview';
-import AuHomePage from '../mainDirectoryHomePages/australia.mdx';
-import PageWrapper from '@/app/(blogContent)/blog/components/PageWrapper';
-import MainWrapper from '@/app/(blogContent)/blog/components/MainWrapper';
-import AsideWrapper from '@/app/(blogContent)/blog/components/AsideWrapper';
-import AsideBlogCard from '@/app/(blogContent)/blog/components/AsideBlogCard';
+import { learnMoreSectionDataUs } from '@/constant/countryHomePageData/us';
+import Us from '../../subDirectoryHomePages/us.mdx';
+import FaqWithMDX from '@/components/commonWebsiteComponents/FaqWithMDX';
+import { usFaq } from '@/app/faqMdx/usFaq/usFaq';
+import PageWrapper from '@/app/blog/components/PageWrapper';
+import MainWrapper from '@/app/blog/components/MainWrapper';
+import AsideWrapper from '@/app/blog/components/AsideWrapper';
+import AsideBlogCard from '@/app/blog/components/AsideBlogCard';
 import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
-import Faq from '@/components/commonWebsiteComponents/Faq';
-import { learnMoreSectionDataAustralia } from '@/constant/countryHomePageData/australia';
-import Banner2 from '@/components/ui/Banner2';
+
 const blogs = [
   {
     title:
@@ -49,18 +51,19 @@ const blogs = [
 export default async function Page() {
   return (
     <div>
-      <Banner2
+      <Banner
         validity=" Valid for 1 year"
         entries="Multiple Entries"
         price="$126.67"
-        link="/australia/application"
-        pageTitle={learnMoreSectionDataAustralia?.mainHomePageTitle}
-        pageName={learnMoreSectionDataAustralia?.pageName}
+        link="/in/au-Indian-tourist-visa-Australian-citizens/application"
+        pageTitle={learnMoreSectionDataUs?.pageTitle}
+        pageTitleDescription={learnMoreSectionDataUs?.pageTitleDescription}
+        pageName={learnMoreSectionDataUs?.pageName}
       />
       <div className="w-full h-[0.5px] bg-gray-200"></div>
       <PageWrapper className="mt-10 mb-10">
         <MainWrapper>
-          <AuHomePage />
+          <Us />
         </MainWrapper>
         <AsideWrapper>
           <ul className="flex flex-col gap-3">
@@ -77,9 +80,12 @@ export default async function Page() {
       </div>
 
       <div className="flex justify-center">
-        <Faq faqData={learnMoreSectionDataAustralia?.faqData} />
+        <FaqWithMDX
+          faqData={usFaq}
+          titleText="India Tourist e-Visa Application Frequently Asked Questions (FAQs)"
+        />
       </div>
-      <PageReview applyLink="/australia/application" />
+      <PageReview applyLink="/in/visa/step-one" />
       <BlogSlider blogs={blogs} />
     </div>
   );
