@@ -596,6 +596,25 @@ export const visaPromotedInUAE = [
             faq: [],
             pageTitle: `UAE to India: Apply for Your Indian eVisa to UAE Today at Speed with VisaCollect`,
             pageTitleDescription: `Plan your visit to India with VisaCollect’s Fast and Reliable eVisa Services In UAE`,
+            metadata: {
+                // robots: {
+                //   index: false,
+                //   googleBot: {
+                //     index: false,
+                //   },
+                // },
+                title: `India Tourist Visa for UAE Residents | Tourist eVisa`,
+                description: `Get your India tourist visa for UAE residents online at Visa Collect. And explore the rich culture, diverse landscapes of India.`,
+                metadataBase: new URL("https://visacollect.com"),
+
+                alternates: {
+                    canonical: `/ae/apply-for-india-visa-from-uae`,
+                },
+                keywords: `india tourist visa for uae residents, india visa for uae residents, indian visa for emirati, indian visa for emiratis citizens, india e visa for emirati citizens`,
+                openGraph: {
+                    url: "/ae/apply-for-india-visa-from-uae",
+                },
+            },
         },
     },
 ];
@@ -610,6 +629,25 @@ export const visaPromotedInSingapore = [
             slug: "evisa-india-for-singapore-citizens",
             countryPage: <IndianVisaForSingapore />,
             faq: [],
+            metadata: {
+                // robots: {
+                //   index: false,
+                //   googleBot: {
+                //     index: false,
+                //   },
+                // },
+                title: `Indian visa for Singapore Citizens| Visa Collect`,
+                description: `If you are applying for a Indian visa for Singapore citizens. Don't forget to verify if the procedure for applying for a visa has any new requirements.`,
+                metadataBase: new URL("https://visacollect.com"),
+
+                alternates: {
+                    canonical: `/sg/evisa-india-for-singapore-citizens`,
+                },
+                keywords: `indian visa for singapore citizens, india visa for singapore citizens, apply for indian visa for singapore citizens, india visa processing time singapore, india e visa fee for singaporean`,
+                openGraph: {
+                    url: `/sg/evisa-india-for-singapore-citizens`,
+                },
+            },
         },
     },
     {
@@ -624,6 +662,25 @@ export const visaPromotedInSingapore = [
             faqTitle: `Some FAQs for Singaporeans applying for an ETA or eVisa to Australia`,
             pageTitle: `Singapore to Australia: Apply for Australia eVisa for the Citizens of Singapore`,
             pageTitleDescription: `Discover Sydney’s Beautiful Beaches or Explore Melbourne with VisaCollect’s Speedy Visa Services. `,
+            metadata: {
+                // robots: {
+                //   index: false,
+                //   googleBot: {
+                //     index: false,
+                //   },
+                // },
+                title: `Tourist Visa Australia from Singapore | Visa Collect`,
+                description: `Tourist Visa Australia from Singapore: The conditions for obtaining a visa are simple and convenient for Singapore travelers.`,
+                metadataBase: new URL("https://visacollect.com"),
+
+                alternates: {
+                    canonical: `/sg/australia-visa-for-singapore-citizens`,
+                },
+                keywords: `australian visa requirements for singapore citizens, tourist visa australia from singapore, australia visa processing time singapore, australia eta visa singapore, australia visa application from singapore`,
+                openGraph: {
+                    url: `/sg/australia-visa-for-singapore-citizens`,
+                },
+            },
         },
     },
 ];
