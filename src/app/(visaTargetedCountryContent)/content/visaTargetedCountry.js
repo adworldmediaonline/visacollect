@@ -410,6 +410,26 @@ export const visaPromotedInUs = [
             faq: usFaq,
             pageTitle: `Indian Tourist Visa for American Citizens`,
             pageTitleDescription: `Explore India with our seamless online visa services!`,
+            metadata: {
+                // robots: {
+                //   index: false,
+                //   googleBot: {
+                //     index: false,
+                //   },
+                // },
+                title: `Indian Visa Online - Apply for e-visa India`,
+                description: `US citizens can apply for e-visa India easily with the help of Visacollect. Submit your application with required documents at Visa Collect Application`,
+                metadataBase: new URL("https://visacollect.com"),
+
+                alternates: {
+                    canonical: `/us/indian-visa-for-us-citizens`,
+                },
+                keywords: `india visa online, indian visa online application, apply for evisa india, apply for indian visa, india e tourist visa`,
+
+                openGraph: {
+                    url: "/us/indian-visa-for-us-citizens/",
+                },
+            },
         },
     },
     {
@@ -423,6 +443,26 @@ export const visaPromotedInUs = [
             faq: turkeyVisaUsFaq,
             pageTitle: `USA to Turkey: Apply for Turkey eVOA for US Citizens at High Velocity`,
             pageTitleDescription: `Introducing the Turkish eVisa with VisaCollect’s fast & hassle-free visa services.`,
+            metadata: {
+                // robots: {
+                //   index: false,
+                //   googleBot: {
+                //     index: false,
+                //   },
+                // },
+                title: `Apply for Turkey Visa for US Citizens`,
+                description: `Turkey Visa for US Citizens: All US citizens are required to have a valid visa in order to visit Turkey,Whether planning a vacation or a business trip.`,
+                metadataBase: new URL("https://visacollect.com"),
+
+                alternates: {
+                    canonical: `/us/turkey-visa-for-us-citizens`,
+                },
+                keywords: `turkey visa for us citizens, visa to turkey from usa, turkey visa on arrival for us citizens, turkey e visa for us citizens, turkey tourist visa for us citizens `,
+
+                openGraph: {
+                    url: "/us/turkey-visa-for-us-citizens",
+                },
+            },
         },
     },
     {
@@ -437,6 +477,26 @@ export const visaPromotedInUs = [
             faqTitle: `USA to Thailand Frequently Asked Questions (FAQs)`,
             pageTitle: `US to Thailand: Apply Thailand e Visa for US Citizens`,
             pageTitleDescription: `Get Your Thailand e-Visa in 3 Easy-Steps with VisaCollect Now!`,
+            metadata: {
+                // robots: {
+                //   index: false,
+                //   googleBot: {
+                //     index: false,
+                //   },
+                // },
+                title: `Apply Thailand Tourist Visa For US Citizens | Visa Collect`,
+                description: `Thailand Tourist Visa US Citizens:  American citizens can enter Thailand as a tourist for up to 30 days without needing a pre-approved Thai visa.`,
+                metadataBase: new URL("https://visacollect.com"),
+
+                alternates: {
+                    canonical: `/us/thailand-tourist-visa-us-citizens`,
+                },
+                keywords: `thailand visa for us citizens, thailand entry requirements for us citizens, thailand visa requirements for us citizens, thailand visa requirements for american citizens, thailand visa for american citizens, thailand tourist visa for us citizens, thailand tourist visa us citizens `,
+
+                openGraph: {
+                    url: "/us/thailand-tourist-visa-us-citizens",
+                },
+            },
         },
     },
     {
@@ -464,6 +524,26 @@ export const visaPromotedInThailand = [
             slug: "apply-indian-visa-from-thailand",
             countryPage: <IndianVisaForThailand />,
             faq: [],
+            metadata: {
+                // robots: {
+                //   index: false,
+                //   googleBot: {
+                //     index: false,
+                //   },
+                // },
+                title: `Apply for an Indian visa from Thailand | Visa Collect`,
+                description: `Applying for your Indian visa from Thailand is a straightforward process, designed to make your travel preparations convenient and efficient.`,
+                metadataBase: new URL("https://visacollect.com"),
+
+                alternates: {
+                    canonical: `/th/apply-indian-visa-from-thailand`,
+                },
+                keywords: `indian e visa for thai citizens, india visa fee for thai citizens, indian visa from thailand, indian visa online thailand, visa on arrival for thai citizens in india`,
+
+                openGraph: {
+                    url: "/th/apply-indian-visa-from-thailand",
+                },
+            },
         },
     },
 ];
@@ -482,6 +562,25 @@ export const visaPromotedInIndia = [
                 "India to Australia: Apply for Australian ETA or eVisa - fast & Secure - with VisaCollect",
             pageTitleDescription:
                 "Visit your favorite place in Australia with VisaCollect’s Fast and Secure Visa Services In the Country!",
+            metadata: {
+                // robots: {
+                //   index: false,
+                //   googleBot: {
+                //     index: false,
+                //   },
+                // },
+                title: `Australia visa apply from India | Australia Visa`,
+                description: `Indian citizens can apply for an Australia visa from India for several purposes. The common categories include business visas, family/friends visas, and tourist visas.`,
+                metadataBase: new URL("https://visacollect.com"),
+
+                alternates: {
+                    canonical: `/in/australia-visa-apply-from-india`,
+                },
+                keywords: `australia visa apply from india, Australian visa requirements for indian, australia work permit for indian, australian work visa for indian, australia work permit visa fees in india, australia work visa cost for indian, australia work visa requirements for indian citizens`,
+                openGraph: {
+                    url: "/in/australia-visa-apply-from-india",
+                },
+            },
         },
     },
 ];
