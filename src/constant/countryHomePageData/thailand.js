@@ -4,6 +4,8 @@ import CustomButton from '@/components/common/CustomButton';
 export const learnMoreSectionDataThailand = {
   pageTitle:
     '<strong>Thailand Visa:</strong> Entry requirements and travel information for Srilanka',
+  mainHomePageTitle:
+    'Thailand Visa Entry requirements and travel information for Srilanka',
   pageName: 'Thailand',
   applyNowLink: '/in/th/apply-form',
   otherLinks: [
