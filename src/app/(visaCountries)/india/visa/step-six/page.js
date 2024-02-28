@@ -37,7 +37,7 @@ const StepSix = () => {
   const postMutation = usePost(
     apiEndpoint.VISA_ADD_STEP6,
     6,
-    '/in/visa/step-seven',
+    '/india/visa/step-seven',
     false,
     'getAllStepsDataStep7'
   );
@@ -55,7 +55,7 @@ const StepSix = () => {
     state.formId,
     'Payment status updated successfully',
     // '/',
-    '/in/visa/step-seven',
+    '/india/visa/step-seven',
     false
   );
 
@@ -76,12 +76,12 @@ const StepSix = () => {
   }
 
   if (error) {
-    return router.push('/in/visa/step-one');
+    return router.push('/india/visa/step-one');
   }
 
   if (getAllStepsDataIsSuccess) {
     if (!getAllStepsData?.data?.step5Data) {
-      return router.push('/in/visa/step-five');
+      return router.push('/india/visa/step-five');
     }
 
     return (
@@ -311,7 +311,7 @@ const StepSix = () => {
                   </div>
                 </div>
                 <div className="space-x-4 space-y-4 text-center md:space-y-0">
-                  <Link href="/in/visa/step-five/update">
+                  <Link href="/india/visa/step-five/update">
                     <button className="formbtnBorder">Back</button>
                   </Link>
                   <button

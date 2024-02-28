@@ -43,7 +43,7 @@ const StepTwo = () => {
   const postMutation = usePost(
     apiEndpoint.VISA_ADD_STEP2,
     2,
-    '/in/visa/step-three',
+    '/india/visa/step-three',
     false,
     'getAllStepsDataStep3'
   );
@@ -63,7 +63,7 @@ const StepTwo = () => {
   };
 
   if (error) {
-    return router.push('/in/visa/step-one');
+    return router.push('/india/visa/step-one');
   }
 
   if (isPending) {
@@ -1091,7 +1091,7 @@ const StepTwo = () => {
                       An error occurred: {postMutation.error.message}
                     </div>
                   ) : null}
-                  <Link href="/in/visa/step-one/update">
+                  <Link href="/india/visa/step-one/update">
                     <button className="formbtnBorder" type="button">
                       Back
                     </button>

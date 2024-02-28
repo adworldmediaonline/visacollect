@@ -56,7 +56,7 @@ export default async function Page() {
         validity=" Valid for 1 year"
         entries="Multiple Entries"
         price="$126.67"
-        link="/tr/application"
+        link="/turkey/application"
         pageTitle={learnMoreSectionDataTurkey?.mainPageTitle}
         pageName={learnMoreSectionDataTurkey?.pageName}
       />
@@ -82,7 +82,7 @@ export default async function Page() {
       <div>
         <Faq faqData={learnMoreSectionDataTurkey?.faqData} />
       </div>
-      <PageReview applyLink="/tr/application" />
+      <PageReview applyLink="/turkey/application" />
       <BlogSlider blogs={blogs} />
     </div>
   );

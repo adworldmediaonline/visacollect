@@ -39,7 +39,7 @@ export default function StepOneUpdate() {
     apiEndpoint.UPDATE_VISA_ADD_STEP1,
     state.formId,
     1,
-    '/in/visa/step-two',
+    '/india/visa/step-two',
     refetch
   );
 

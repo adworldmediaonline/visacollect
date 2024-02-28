@@ -83,7 +83,7 @@ export default async function Page() {
       <div>
         <Faq faqData={learnMoreSectionDataSriLanka?.faqData} />
       </div>
-      <PageReview applyLink="/tr/application" />
+      <PageReview applyLink="/srilanka/slvisa/tourist-eta/apply-individual" />
       <BlogSlider blogs={blogs} />
     </div>
   );

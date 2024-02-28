@@ -21,7 +21,7 @@ const StepOne = () => {
   const postMutation = usePost(
     apiEndpoint.VISA_ADD_STEP1,
     1,
-    '/in/visa/step-two',
+    '/india/visa/step-two',
     true
   );
 

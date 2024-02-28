@@ -31,7 +31,7 @@ export default function Step5Update() {
     apiEndpoint.UPDATE_VISA_ADD_STEP5,
     getAllStepsData?.data?.step5Data?._id,
     5,
-    '/in/visa/step-six',
+    '/india/visa/step-six',
     refetch
   );
 
@@ -137,7 +137,7 @@ export default function Step5Update() {
                 </div>
 
                 <div className="space-x-4 text-center">
-                  <Link href="/in/visa/step-four/update">
+                  <Link href="/india/visa/step-four/update">
                     <button className="formbtnBorder" type="button">
                       Back
                     </button>

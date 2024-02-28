@@ -31,7 +31,7 @@ const StepSeven = () => {
       getAllStepsData.data;
 
     if (!step6Data) {
-      return router.push('/in/visa/step-six');
+      return router.push('/india/visa/step-six');
     }
 
     return (
@@ -1804,12 +1804,12 @@ const StepSeven = () => {
           </div>
 
           <div className="pt-5 mt-4 space-x-4 space-y-4 text-center md:space-y-0">
-            <Link href="/in/visa/step-one/update">
+            <Link href="/india/visa/step-one/update">
               <button className="formbtnBorder" type="button">
                 Modify
               </button>
             </Link>
-            <Link href="/in/visa/step-eight">
+            <Link href="/india/visa/step-eight">
               <button
                 type="submit"
                 className="inline-flex gap-3 cursor-pointer md:items-center formbtn "
@@ -1836,7 +1836,7 @@ const StepSeven = () => {
   }
 
   if (error) {
-    return router.push('/in/visa/step-one');
+    return router.push('/india/visa/step-one');
   }
 };
 

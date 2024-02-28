@@ -15,7 +15,7 @@ const Page = () => {
   const postMutation = usePost(
     apiEndpoint.TURKEY_VISA_APPLICATION,
     1,
-    '/tr/application/payment',
+    '/turkey/application/payment',
     true,
     'turkeyVisaApplication'
   );

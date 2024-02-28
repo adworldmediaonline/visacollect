@@ -53,7 +53,7 @@ export default async function Page() {
         validity=" Valid for 1 year"
         entries="Multiple Entries"
         price="$126.67"
-        link="/in/visa/step-one"
+        link="/india/visa/step-one"
         pageTitle={learnMoreSectionDataIndia?.pageTitle}
         pageName={learnMoreSectionDataIndia?.pageName}
       />
@@ -79,7 +79,7 @@ export default async function Page() {
       <div>
         <Faq faqData={learnMoreSectionDataIndia?.faqData} />
       </div>
-      <PageReview applyLink="/in/visa/step-one" />
+      <PageReview applyLink="/india/visa/step-one" />
       <BlogSlider blogs={blogs} />
     </div>
   );
