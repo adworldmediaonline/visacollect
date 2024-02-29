@@ -76,7 +76,7 @@ export const learnMoreSectionDataSriLanka = {
       ],
       applyNow: (
         <CustomButton
-          link="/srilanka/slvisa/tourist-eta/apply-individual"
+          link="/sl/slvisa/tourist-eta/apply-individual"
           btnText="Apply for Sri Lanka Visa Now!"
         >
           <FaArrowRightLong />
@@ -135,7 +135,7 @@ export const learnMoreSectionDataSriLanka = {
       ],
       applyNow: (
         <CustomButton
-          link="/srilanka/slvisa/tourist-eta/apply-individual"
+          link="/sl/slvisa/tourist-eta/apply-individual"
           btnText="Apply for Sri Lanka Visa Now!"
         >
           <FaArrowRightLong />

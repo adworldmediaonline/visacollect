@@ -41,19 +41,19 @@ const Formmainsection = ({ title, para, button, stripeText }) => {
               <div className="group-hover:block dropdown-menu absolute hidden transition-all  duration-300 translate-y-2 h-auto top-4 md:-left-10 ">
                 <div className="top-0 bg-white p-2 shadow-lg shadow-black/30 text-[#655B5A] w-60 flex flex-col ">
                   <Link
-                    href="/srilanka/slvisa/tourist-eta/apply-individual"
+                    href="/sl/slvisa/tourist-eta/apply-individual"
                     className=" hover:bg-black hover:text-white text-sm   px-4 py-3"
                   >
                     Apply for an individual
                   </Link>
                   <Link
-                    href="/srilanka/slvisa/tourist-eta/apply-in-group"
+                    href="/sl/slvisa/tourist-eta/apply-in-group"
                     className=" hover:bg-black hover:text-white text-sm py-3    px-4"
                   >
                     Apply for a group
                   </Link>
                   <Link
-                    href="/srilanka/slvisa/tourist-eta/apply-for-third-party"
+                    href="/sl/slvisa/tourist-eta/apply-for-third-party"
                     className=" hover:bg-black hover:text-white text-sm   px-4 py-3"
                   >
                     Apply for a third party
@@ -70,19 +70,19 @@ const Formmainsection = ({ title, para, button, stripeText }) => {
               <div className="group-hover:block dropdown-menu absolute hidden transition-all  duration-300 translate-y-2 h-auto top-4 md:-left-10 ">
                 <div className="top-0 bg-white p-2 shadow-lg shadow-black/30 text-[#655B5A] w-60 flex flex-col ">
                   <Link
-                    href="/srilanka/slvisa/business-purpose-eta/apply-individual"
+                    href="/sl/slvisa/business-purpose-eta/apply-individual"
                     className=" hover:bg-black hover:text-white text-sm   px-4 py-3"
                   >
                     Apply for an individual
                   </Link>
                   <Link
-                    href="/srilanka/slvisa/business-purpose-eta/apply-in-group"
+                    href="/sl/slvisa/business-purpose-eta/apply-in-group"
                     className=" hover:bg-black hover:text-white text-sm py-3    px-4"
                   >
                     Apply for a group
                   </Link>
                   <Link
-                    href="/srilanka/slvisa/business-purpose-eta/apply-for-third-party"
+                    href="/sl/slvisa/business-purpose-eta/apply-for-third-party"
                     className=" hover:bg-black hover:text-white text-sm   px-4 py-3"
                   >
                     Apply for a third party
