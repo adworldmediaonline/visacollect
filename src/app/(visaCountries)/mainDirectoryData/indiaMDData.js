@@ -23,7 +23,19 @@ export const indiaMDData = {
   faq: indiaMDHomePageFaq,
   blogs: [
     {
-      metadata: null,
+      metadata: {
+        title: `Top Things to do in India For Fun`,
+        description: `Unlock the essence of India with our curated list of the top things to do in India! Dive into a world of cultural wonders and thrilling adventures.`,
+        metadataBase: new URL('https://visacollect.com'),
+
+        alternates: {
+          canonical: `${indiaMDBlogBase}/top-things-to-do-in-india-for-fun`,
+        },
+
+        openGraph: {
+          url: `${indiaMDBlogBase}/top-things-to-do-in-india-for-fun`,
+        },
+      },
       slug: 'top-things-to-do-in-india-for-fun',
       content: <TopThingsToDoInIndiaForFunAustraliaCitizens />,
       img: topThingsToDoInIndiaForFunAustraliaCitizensImg,

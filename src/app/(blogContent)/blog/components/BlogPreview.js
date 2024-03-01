@@ -3,19 +3,28 @@ import MainWrapper from '../components/MainWrapper';
 import PageWrapper from '../components/PageWrapper';
 import AsideWrapperTitle from '../components/AsideWrapperTitle';
 import BlogCardSmall from '../components/BlogCardSmall';
+import BlogHeroImage from '../../BlogContentHero';
+import { imageNotFound } from '@/app/(visaCountries)/mainDirectoryHomePagesBlog/images/blogImages';
 
-export default function BlogPreview({ blogs, asideTitle, blogPage }) {
+export default function BlogPreview({
+  asideTitle,
+  img,
+  content,
+  relatedBlogs,
+}) {
   return (
     <PageWrapper className="mt-10 mb-10">
-      <MainWrapper>{blogPage}</MainWrapper>
+      <MainWrapper>
+        <BlogHeroImage src={img ? img : imageNotFound} />
+        {content}
+      </MainWrapper>
       <AsideWrapper>
         <AsideWrapperTitle>{asideTitle}</AsideWrapperTitle>
         <div className="flex flex-col gap-3">
-          {blogs?.slice(0, 3)?.map(blog => (
+          {relatedBlogs?.slice(0, 3)?.map((blog, index) => (
             <BlogCardSmall
-              key={blog.title}
-              description={blog.description}
-              slug={blog.slug}
+              key={blog?.metadata?.title ? blog.metadata.title : index}
+              {...blog}
             />
           ))}
         </div>
