@@ -1,3 +1,4 @@
+import { imageNotFound } from '@/app/(visaCountries)/mainDirectoryHomePagesBlog/images/blogImages';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -10,7 +11,7 @@ export default function BlogCard({ metadata, href, linkText, img, slug }) {
         <div className="h-full overflow-hidden border-2 border-gray-200 rounded-lg border-opacity-60">
           <Image
             className="object-cover object-center w-full lg:h-48 md:h-36"
-            src={img}
+            src={img ? img : imageNotFound}
             alt="blog"
           />
           <div className="p-6">

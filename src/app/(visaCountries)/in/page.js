@@ -7,7 +7,6 @@ import AsideWrapper from '@/app/(blogContent)/blog/components/AsideWrapper';
 import AsideBlogCard from '@/app/(blogContent)/blog/components/AsideBlogCard';
 import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
 import Faq from '@/components/commonWebsiteComponents/Faq';
-import { learnMoreSectionDataIndia } from '@/constant/countryHomePageData/india';
 import Banner2 from '@/components/ui/Banner2';
 import { indiaMDData } from '../mainDirectoryData/indiaMDData';
 
