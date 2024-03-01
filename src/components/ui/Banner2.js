@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { FaInfoCircle } from 'react-icons/fa';
 import { getAllCountries } from '@/lib/getAllCountries';
 import HomePageTitle from '../common/countryHomePage/HomePageTitle';
@@ -12,7 +11,6 @@ export default function Banner2({
   price,
   link,
   pageTitle,
-  pageName,
   pageTitleDescription,
   breadcrumb,
 }) {
