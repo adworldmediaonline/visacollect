@@ -84,7 +84,7 @@ const BlogSlider = ({ blogs }) => {
           </div>
           <div className="w-[100%]">
             <Slider {...settings} ref={customSlider} className="mx-auto ">
-              {blogs?.map((blog, index) => (
+              {JSON.parse(blogs)?.map((blog, index) => (
                 <div className="px-4 py-1 group" key={index}>
                   <BlogCard {...blog} />
                 </div>

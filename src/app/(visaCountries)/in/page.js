@@ -10,7 +10,7 @@ import Faq from '@/components/commonWebsiteComponents/Faq';
 import Banner2 from '@/components/ui/Banner2';
 import { indiaMDData } from '../mainDirectoryData/indiaMDData';
 
-export default async function Page() {
+export default function Page() {
   return (
     <div>
       <Banner2
@@ -45,7 +45,7 @@ export default async function Page() {
         <Faq faqData={indiaMDData?.faq ?? []} />
       </div>
       <PageReview applyLink="/in/visa/step-one" />
-      <BlogSlider blogs={indiaMDData?.blogs ?? []} />
+      <BlogSlider blogs={JSON.stringify(indiaMDData?.blogs) ?? []} />
     </div>
   );
 }

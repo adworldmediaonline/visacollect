@@ -1,5 +1,6 @@
 import BlogPreview from '@/app/(blogContent)/blog/components/BlogPreview';
 import { indiaMDData } from '@/app/(visaCountries)/mainDirectoryData/indiaMDData';
+import { notFound } from 'next/navigation';
 
 export async function generateMetadata({ params }) {
   try {
