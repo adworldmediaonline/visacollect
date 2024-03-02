@@ -7,28 +7,27 @@ import AsideWrapper from '@/app/(blogContent)/blog/components/AsideWrapper';
 import AsideBlogCard from '@/app/(blogContent)/blog/components/AsideBlogCard';
 import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
 import Faq from '@/components/commonWebsiteComponents/Faq';
-
 import Banner2 from '@/components/ui/Banner2';
-import { australiaMDData } from '../mainDirectoryData/australiaMDData';
+import { indiaMDData } from '@/app/(visaCountries)/mainDirectoryData/indiaMDData';
 
-export default async function Page() {
+export default function Page() {
   return (
     <div>
       <Banner2
         validity=" Valid for 1 year"
         entries="Multiple Entries"
         price="$126.67"
-        link={australiaMDData?.applyNow}
-        pageTitle={australiaMDData?.pageTitle}
-        breadcrumb={australiaMDData?.breadcrumb}
+        link={indiaMDData?.applyNow}
+        pageTitle={indiaMDData?.pageTitle}
+        breadcrumb={indiaMDData?.breadcrumb}
       />
       <div className="w-full h-[0.5px] bg-gray-200"></div>
       <PageWrapper className="mt-10 mb-10">
-        <MainWrapper>{australiaMDData?.pageContent}</MainWrapper>
+        <MainWrapper>{indiaMDData?.pageContent}</MainWrapper>
         <AsideWrapper>
           <ul className="flex flex-col gap-3">
-            {australiaMDData?.blogs?.map(blog => (
-              <li key={blog.title}>
+            {indiaMDData?.blogs?.map(blog => (
+              <li key={blog?.title}>
                 <AsideBlogCard
                   slug={blog?.href}
                   title={blog?.metadata?.title ?? 'Title not found'}
@@ -43,10 +42,10 @@ export default async function Page() {
       </div>
 
       <div>
-        <Faq faqData={australiaMDData?.faq ?? []} />
+        <Faq faqData={indiaMDData?.faq ?? []} />
       </div>
-      <PageReview applyLink={australiaMDData?.applyNow} />
-      <BlogSlider blogs={JSON.stringify(australiaMDData?.blogs) ?? []} />
+      <PageReview applyLink="/in/visa/step-one" />
+      <BlogSlider blogs={JSON.stringify(indiaMDData?.blogs) ?? []} />
     </div>
   );
 }

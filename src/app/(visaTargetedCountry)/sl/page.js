@@ -8,7 +8,7 @@ import AsideBlogCard from '@/app/(blogContent)/blog/components/AsideBlogCard';
 import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
 import Faq from '@/components/commonWebsiteComponents/Faq';
 import Banner2 from '@/components/ui/Banner2';
-import { srilankaMDData } from '../mainDirectoryData/srilankaMDData';
+import { srilankaMDData } from '@/app/(visaCountries)/mainDirectoryData/srilankaMDData';
 
 export default async function Page() {
   return (

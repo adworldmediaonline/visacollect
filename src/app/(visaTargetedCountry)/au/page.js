@@ -7,27 +7,28 @@ import AsideWrapper from '@/app/(blogContent)/blog/components/AsideWrapper';
 import AsideBlogCard from '@/app/(blogContent)/blog/components/AsideBlogCard';
 import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
 import Faq from '@/components/commonWebsiteComponents/Faq';
-import Banner2 from '@/components/ui/Banner2';
-import { indiaMDData } from '../mainDirectoryData/indiaMDData';
 
-export default function Page() {
+import Banner2 from '@/components/ui/Banner2';
+import { australiaMDData } from '@/app/(visaCountries)/mainDirectoryData/australiaMDData';
+
+export default async function Page() {
   return (
     <div>
       <Banner2
         validity=" Valid for 1 year"
         entries="Multiple Entries"
         price="$126.67"
-        link={indiaMDData?.applyNow}
-        pageTitle={indiaMDData?.pageTitle}
-        breadcrumb={indiaMDData?.breadcrumb}
+        link={australiaMDData?.applyNow}
+        pageTitle={australiaMDData?.pageTitle}
+        breadcrumb={australiaMDData?.breadcrumb}
       />
       <div className="w-full h-[0.5px] bg-gray-200"></div>
       <PageWrapper className="mt-10 mb-10">
-        <MainWrapper>{indiaMDData?.pageContent}</MainWrapper>
+        <MainWrapper>{australiaMDData?.pageContent}</MainWrapper>
         <AsideWrapper>
           <ul className="flex flex-col gap-3">
-            {indiaMDData?.blogs?.map(blog => (
-              <li key={blog?.title}>
+            {australiaMDData?.blogs?.map(blog => (
+              <li key={blog.title}>
                 <AsideBlogCard
                   slug={blog?.href}
                   title={blog?.metadata?.title ?? 'Title not found'}
@@ -42,10 +43,10 @@ export default function Page() {
       </div>
 
       <div>
-        <Faq faqData={indiaMDData?.faq ?? []} />
+        <Faq faqData={australiaMDData?.faq ?? []} />
       </div>
-      <PageReview applyLink="/in/visa/step-one" />
-      <BlogSlider blogs={JSON.stringify(indiaMDData?.blogs) ?? []} />
+      <PageReview applyLink={australiaMDData?.applyNow} />
+      <BlogSlider blogs={JSON.stringify(australiaMDData?.blogs) ?? []} />
     </div>
   );
 }

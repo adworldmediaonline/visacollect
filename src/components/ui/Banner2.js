@@ -56,15 +56,6 @@ export default function Banner2({
                 </select>
               </div>
             </div>
-
-            {/* Business Tourism Buttons */}
-            <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700">
-                Traveling for
-              </label>
-              {/* Button 1 */}
-              <Button>All</Button>
-            </div>
           </div>
         </div>
 

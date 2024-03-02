@@ -9,7 +9,7 @@ import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
 import Faq from '@/components/commonWebsiteComponents/Faq';
 
 import Banner2 from '@/components/ui/Banner2';
-import { thailandMDData } from '../mainDirectoryData/thailandMDData';
+import { thailandMDData } from '@/app/(visaCountries)/mainDirectoryData/thailandMDData';
 
 export default async function Page() {
   return (
