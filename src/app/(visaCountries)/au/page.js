@@ -20,6 +20,7 @@ export default async function Page() {
         price="$126.67"
         link={australiaMDData?.applyNow}
         pageTitle={australiaMDData?.pageTitle}
+        breadcrumb={australiaMDData?.breadcrumb}
       />
       <div className="w-full h-[0.5px] bg-gray-200"></div>
       <PageWrapper className="mt-10 mb-10">
@@ -45,7 +46,7 @@ export default async function Page() {
         <Faq faqData={australiaMDData?.faq ?? []} />
       </div>
       <PageReview applyLink={australiaMDData?.applyNow} />
-      <BlogSlider blogs={australiaMDData?.blogs ?? []} />
+      <BlogSlider blogs={JSON.stringify(australiaMDData?.blogs) ?? []} />
     </div>
   );
 }

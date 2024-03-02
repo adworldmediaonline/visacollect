@@ -5,7 +5,7 @@ export { default as ApplyIndiaTouristVisaForCanadianCitizens } from './canada/ap
 export { default as IndianVisaForEmiratisCitizens } from './uae/indian-visa-for-emiratis-citizens.mdx';
 export { default as ApplyIndiaEVisaFromUK } from './uk/apply-india-eVisa-from-uk.mdx';
 export { default as IndianTouristVisaForUKCitizens } from './uk/indian-tourist-visa-for-uk-citizens.mdx';
-export { default as HowToGetYourIndiaVisaForUSCitizens } from './us/how-to-get-your-india-visa-for-us-citizens.mdx';
+export { default as HowToGetYourIndiaTouristVisaForUSCitizens } from './us/how-to-get-your-india-tourist-visa-for-us-citizens.mdx';
 export { default as StepsToApplyYourIndiaEVisaFromUSA } from './us/steps-to-apply-your-india-e-visa-from-usa.mdx';
 
 // australia visa
