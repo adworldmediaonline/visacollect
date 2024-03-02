@@ -1,3 +1,3 @@
 import visaInfo from '../../public/assets/images/australia/visaInfo.jpeg';
-// import stressFreeTravel from '../../public/assets/images/blog/stress-free-travel-webp.webp';
-export { visaInfo };
+import homePagesBanner from '../../public/assets/images/homePage/home-page-banner.webp';
+export { visaInfo, homePagesBanner };
