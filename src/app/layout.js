@@ -41,11 +41,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${beVietnamPro.className} antialiased`}>
+      <body
+        className={`${beVietnamPro.className} antialiased flex flex-col min-h-screen`}
+      >
         <FormProvider>
           <ReactQueryProvider>
             <Header />
-            <div>{children}</div>
+            <div className="flex-1">{children}</div>
             <Footer />
             <ToastContainer />
           </ReactQueryProvider>
