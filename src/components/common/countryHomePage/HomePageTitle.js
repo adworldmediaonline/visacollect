@@ -1,7 +1,9 @@
-export default function HomePageTitle({ pageTitle }) {
+import { cn } from '@/lib/cn';
+
+export default function HomePageTitle({ pageTitle, className }) {
   return (
     <h1
-      className="text-xl font-light md:text-4xl"
+      className={cn('text-xl font-light md:text-4xl', className)}
       dangerouslySetInnerHTML={{ __html: `${pageTitle}` }}
     ></h1>
   );

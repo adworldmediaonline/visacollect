@@ -1,10 +1,8 @@
 import React from 'react';
 import { IoIosMail } from 'react-icons/io';
-import { FaPhoneAlt } from 'react-icons/fa';
 import { FaFacebookF, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import Link from 'next/link';
-import Image from 'next/image';
 import Logo from '../Logo';
 const Footer = () => {
   const data = [
@@ -30,7 +28,7 @@ const Footer = () => {
     },
   ];
   return (
-    <footer className="shadow-lg">
+    <footer className="mt-auto shadow-lg">
       <div className="pb-6 bg-right-bottom bg-no-repeat bg-cover">
         <div className="container">
           <div className="pt-16">
@@ -96,17 +94,7 @@ const Footer = () => {
                           </li>
                         </Link>
 
-                        <Link href="/visa/step-one">
-                          <li className="mt-2 text-base hover:text-primary">
-                            <span>Apply VISA</span>
-                          </li>
-                        </Link>
-                        <Link href="/">
-                          <li className="mt-2 text-base hover:text-primary">
-                            <span>Ongoing Application</span>
-                          </li>
-                        </Link>
-                        <Link href="/">
+                        <Link href="/contact-us">
                           <li className="mt-2 text-base hover:text-primary">
                             <span>Contact Us</span>
                           </li>
@@ -119,27 +107,12 @@ const Footer = () => {
               <div className="flex justify-center col-span-3">
                 <div className="space-y-6">
                   <h2 className="text-xl font-semibold underline capitalize underline-offset-8 decoration-primary">
-                    Apply For Indian VISA
+                    VisaCollect
                   </h2>
                   <ul>
-                    <Link href="/visa/step-one">
+                    <Link href="/">
                       <li className="mt-2 text-base hover:text-primary">
-                        <span> Indian eVisa Online</span>
-                      </li>
-                    </Link>
-                    <Link href="/visa/step-one">
-                      <li className="mt-2 text-base hover:text-primary">
-                        <span>Indian Tourist eVisa</span>
-                      </li>
-                    </Link>
-                    <Link href="/visa/step-one">
-                      <li className="mt-2 text-base hover:text-primary">
-                        <span>Indian Medical eVisa</span>
-                      </li>
-                    </Link>
-                    <Link href="/visa/step-one">
-                      <li className="mt-2 text-base hover:text-primary">
-                        <span> Indian Business eVisa</span>
+                        <span> Apply</span>
                       </li>
                     </Link>
                   </ul>
@@ -175,8 +148,8 @@ const Footer = () => {
               <p>
                 {' '}
                 Copyright © {new Date().getFullYear()} |
-                <span className="px-2 font-semibold">E-Visa</span>| All Rights
-                Reserved
+                <span className="px-2 font-semibold">visacollect.com</span>| All
+                Rights Reserved
               </p>
             </div>
           </div>
