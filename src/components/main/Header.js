@@ -82,7 +82,7 @@ const Header = ({ bgcolor }) => {
             {/* for mobile start */}
             <li className="block md:hidden">
               <Link
-                href="/visa/step-one"
+                href="/about-us"
                 className="flex items-center px-2 py-4 mx-4 space-x-2 font-semibold border-b border-b-secondary"
               >
                 <span className="w-2 h-2 bg-black"></span>
