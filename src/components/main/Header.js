@@ -74,7 +74,7 @@ const Header = ({ bgcolor }) => {
               </Link>
             </li>
             {/* for mobile end */}
-            <Link href="/visa/step-one">
+            <Link href="/about-us">
               <li className="relative hidden text-sm font-semibold cursor-pointer group dropdown drop-shadow-2xl md:flex nav-itemMainVisa nav-desk hover:text-primary">
                 About Us
               </li>
