@@ -74,7 +74,7 @@ const Header = ({ bgcolor }) => {
               </Link>
             </li>
             {/* for mobile end */}
-            <Link href="/visa/step-one">
+            <Link href="/about-us">
               <li className="relative hidden text-sm font-semibold cursor-pointer group dropdown drop-shadow-2xl md:flex nav-itemMainVisa nav-desk hover:text-primary">
                 About Us
               </li>
@@ -82,48 +82,15 @@ const Header = ({ bgcolor }) => {
             {/* for mobile start */}
             <li className="block md:hidden">
               <Link
-                href="/visa/step-one"
+                href="/about-us"
                 className="flex items-center px-2 py-4 mx-4 space-x-2 font-semibold border-b border-b-secondary"
               >
                 <span className="w-2 h-2 bg-black"></span>
                 <p>About Us</p>
               </Link>
             </li>
-            {/* for mobile end */}
-            <Link href="#">
-              <li className="relative hidden text-sm font-semibold cursor-pointer group dropdown drop-shadow-2xl md:flex nav-itemMainVisa nav-desk hover:text-primary">
-                Apply Visa
-              </li>
-            </Link>
-            {/* for mobile start */}
-            <li className="block md:hidden">
-              <Link
-                href="#"
-                className="flex items-center px-2 py-4 mx-4 space-x-2 font-semibold border-b border-b-secondary"
-              >
-                <span className="w-2 h-2 bg-black"></span>
-                <p>Apply Visa</p>
-              </Link>
-            </li>
-            {/* for mobile end */}
-            <Link href="#">
-              <li className="relative hidden text-sm font-semibold cursor-pointer group dropdown drop-shadow-2xl md:flex nav-itemMainVisa nav-desk hover:text-primary">
-                Passport
-              </li>
-            </Link>
-            {/* for mobile start */}
-            <li className="block md:hidden">
-              <Link
-                href="#"
-                className="flex items-center px-2 py-4 mx-4 space-x-2 font-semibold border-b border-b-secondary"
-              >
-                <span className="w-2 h-2 bg-black"></span>
-                <p>Passport</p>
-              </Link>
-            </li>
-            {/* for mobile end */}
 
-            <Link href="#">
+            <Link href="/blog">
               <li className="relative hidden text-sm font-semibold cursor-pointer group dropdown drop-shadow-2xl md:flex nav-itemMainVisa nav-desk hover:text-primary">
                 Blogs
               </li>
@@ -131,38 +98,18 @@ const Header = ({ bgcolor }) => {
             {/* for mobile start */}
             <li className="block md:hidden">
               <Link
-                href="#"
+                href="/blog"
                 className="flex items-center px-2 py-4 mx-4 space-x-2 font-semibold border-b border-b-secondary"
               >
                 <span className="w-2 h-2 bg-black"></span>
                 <p>Blogs</p>
               </Link>
             </li>
-            {/* for mobile end */}
-            <Link href="#">
-              <li className="relative hidden text-sm font-semibold cursor-pointer group dropdown drop-shadow-2xl md:flex nav-itemMainVisa nav-desk hover:text-primary">
-                iVisa Plus
-              </li>
-            </Link>
-            {/* for mobile start */}
-            <li className="block md:hidden">
-              <Link
-                href="#"
-                className="flex items-center px-2 py-4 mx-4 space-x-2 font-semibold border-b border-b-secondary"
-              >
-                <span className="w-2 h-2 bg-black"></span>
-                <p>iVisa Plus</p>
-              </Link>
-            </li>
-            {/* for mobile end */}
 
             <LinkButton className="nav-desk">Contact Us</LinkButton>
 
             {/* for mobile start */}
             <li className="block md:hidden">
-              {/* <Link href="#" className="btnBlue">
-                Contact Us
-              </Link> */}
               <LinkButton>Contact Us</LinkButton>
             </li>
             {/* for mobile end */}

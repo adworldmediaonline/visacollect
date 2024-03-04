@@ -1,11 +1,6 @@
-import Footer from '@/components/main/Footer';
-import Header from '@/components/main/Header';
-import React from 'react';
-
 const TermsAndCondition = () => {
   return (
     <div>
-      <Header />
       <div className="container px-4 pb-12 bg-white lg:pt-24 lg:py-10 lg:px-0 md:pt-28 md:pb-0 pt-28">
         <div className="mx-auto ">
           <h1 className="mb-3 text-4xl font-semibold lg:py-6">
@@ -20,7 +15,7 @@ const TermsAndCondition = () => {
           </p>
         </div>
 
-        <div className="mx-auto  mt-7">
+        <div className="mx-auto mt-7">
           <h3 className="mt-2 text-lg font-bold">
             Responsible Use and Conduct
           </h3>
@@ -45,7 +40,7 @@ const TermsAndCondition = () => {
           </p>
         </div>
 
-        <div className="mx-auto  mt-7">
+        <div className="mx-auto mt-7">
           <h3 className="mt-2 text-lg font-bold">Privacy</h3>
           <p className="my-2 text-base font-medium leading-relaxed text-justify">
             Your privacy is important to us. Please refer to our privacy policy
@@ -53,7 +48,7 @@ const TermsAndCondition = () => {
           </p>
         </div>
 
-        <div className="mx-auto  mt-7">
+        <div className="mx-auto mt-7">
           <h3 className="mt-2 text-lg font-bold">
             Limitation of Warranties and Liability
           </h3>
@@ -65,7 +60,7 @@ const TermsAndCondition = () => {
           </p>
         </div>
 
-        <div className="mx-auto  mt-7">
+        <div className="mx-auto mt-7">
           <h3 className="mt-2 text-lg font-bold">Copyrights and Trademarks</h3>
           <p className="my-2 text-base font-medium leading-relaxed text-justify">
             All content and materials on Visa Services are protected by
@@ -74,7 +69,7 @@ const TermsAndCondition = () => {
           </p>
         </div>
 
-        <div className="mx-auto  mt-7">
+        <div className="mx-auto mt-7">
           <h3 className="mt-2 text-lg font-bold">Governing Law</h3>
           <p className="my-2 text-base font-medium leading-relaxed text-justify">
             By accessing our website, you agree to follow our country&apos;s
@@ -84,7 +79,7 @@ const TermsAndCondition = () => {
           </p>
         </div>
 
-        <div className="mx-auto  mt-7">
+        <div className="mx-auto mt-7">
           <h3 className="mt-2 text-lg font-bold">Termination of Use</h3>
           <p className="my-2 text-base font-medium leading-relaxed text-justify">
             We may suspend or terminate your access to our website and
@@ -92,14 +87,14 @@ const TermsAndCondition = () => {
           </p>
         </div>
 
-        <div className="mx-auto  mt-7">
+        <div className="mx-auto mt-7">
           <h3 className="mt-2 text-lg font-bold">Guarantee</h3>
           <p className="my-2 text-base font-medium leading-relaxed text-justify">
             We don&apos;t provide any warranties or guarantees of any kind.
           </p>
         </div>
 
-        <div className="mx-auto  mt-7">
+        <div className="mx-auto mt-7">
           <h3 className="mt-2 text-lg font-bold">Contact Information</h3>
           <p className="my-2 text-base font-medium leading-relaxed text-justify">
             If you have any questions or comments about our Terms of Service,

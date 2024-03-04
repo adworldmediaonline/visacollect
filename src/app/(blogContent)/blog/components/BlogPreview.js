@@ -15,7 +15,10 @@ export default function BlogPreview({
   return (
     <PageWrapper className="mt-10 mb-10">
       <MainWrapper>
-        <BlogHeroImage src={img ? img : imageNotFound} />
+        <BlogHeroImage
+          className="relative mt-14"
+          src={img ? img : imageNotFound}
+        />
         {content}
       </MainWrapper>
       <AsideWrapper>

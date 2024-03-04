@@ -1,11 +1,6 @@
-import Footer from '@/components/main/Footer';
-import Header from '@/components/main/Header';
-import React from 'react';
-
 const page = () => {
   return (
     <div>
-      <Header />
       <div className="container px-4 pb-12 bg-white lg:pt-24 lg:py-10 lg:px-0 md:pt-28 md:pb-0 pt-28">
         <div className="mx-auto ">
           <h1 className="mb-3 text-4xl font-semibold lg:py-6">Cancellation:</h1>
@@ -17,7 +12,7 @@ const page = () => {
           </p>
         </div>
 
-        <div className="mx-auto  mt-7">
+        <div className="mx-auto mt-7">
           <h3 className="mt-2 text-lg font-bold">Refund Policy:</h3>
           <p className="my-2 mb-5 text-base font-medium leading-relaxed text-justify">
             Our company is committed to providing high-quality services and does

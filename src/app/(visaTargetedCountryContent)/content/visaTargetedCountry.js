@@ -34,6 +34,25 @@ import { australiaVisaUkFaq } from './targetedCountrySubPagesFaq/ukFaq/australia
 import { australiaVisaUsFaq } from './targetedCountrySubPagesFaq/usFaq/australiaVisa/australiaVisaUsFaq';
 import { australiaVisaSingaporeFaq } from './targetedCountrySubPagesFaq/singapore/australiaVisa/australiaVisaSingaporeFaq';
 
+function setRelatedBlogs(visas, baseUrl) {
+  const relatedBlogs = [];
+  for (const visa of visas) {
+    relatedBlogs.push({
+      metadata: visa.targetedCountry.metadata,
+      href: `/${baseUrl}/${visa.targetedCountry.slug}`,
+      slug: visa.targetedCountry.slug,
+    });
+  }
+  return relatedBlogs;
+}
+
+function finalPromotedVisaAfterRelatedBlogs(visas, baseUrl) {
+  visas.forEach(visa => {
+    visa.targetedCountry.relatedBlogs = setRelatedBlogs(visas, baseUrl);
+  });
+}
+
+// visa promoted in australia
 export const visaPromotedInAustralia = [
   {
     id: 1,
@@ -44,19 +63,12 @@ export const visaPromotedInAustralia = [
       slug: 'indian-tourist-visa-for-australian-citizens',
       countryPage: <IndianVisaForAustralia />,
       pageTitle: 'Indian Tourist Visa for Australian Citizens',
-      // pageTitleDescription: '',
       faq: australiaFaq,
       metadata: {
-        // robots: {
-        //   index: false,
-        //   googleBot: {
-        //     index: false,
-        //   },
-        // },
         title:
           'Apply Indian tourist visa for Australian citizens | Visa Collect',
         description:
-          'Looking to visit India as an Australian citizen? Apply for your Indian tourist visa for Australian citizen with ease and convenience. Let us help you with the process. Apply now!                                ',
+          'Looking to visit India as an Australian citizen? Apply for your Indian tourist visa for Australian citizen with ease and convenience. Let us help you with the process. Apply now!',
         metadataBase: new URL('https://visacollect.com'),
 
         alternates: {
@@ -85,13 +97,8 @@ export const visaPromotedInAustralia = [
         'Hop on your favourite flight to Turkey with VisaCollect’s Speedy eVisa services now.',
       faq: turkeyAustraliaFaq,
       faqTitle: `Some FAQs for Australian Travelers Traveling to Turkey`,
+
       metadata: {
-        // robots: {
-        //   index: false,
-        //   googleBot: {
-        //     index: false,
-        //   },
-        // },
         title: 'Turkey Visa for Australian Citizens | Visa collect',
         description: `If you are looking for a Turkey visa for Australian citizens,here's a general guide for Australian citizens applying for a Turkey visa.`,
         metadataBase: new URL('https://visacollect.com'),
@@ -122,13 +129,8 @@ export const visaPromotedInAustralia = [
         'Enjoy the beauty and diversity of Thailand with VisaCollect’s convenient and secure eVisa service.',
       faq: thailandVisaAustraliaFaq,
       faqTitle: `Some FAQs for Aussies Travelling to Thailand from Australia`,
+
       metadata: {
-        // robots: {
-        //   index: false,
-        //   googleBot: {
-        //     index: false,
-        //   },
-        // },
         title: 'Thailand Visa for Australian Citizens at Visa Collect',
         description: `If you want a Thailand visa for Australian citizens, this is the
 right place to learn about the important things you need to know before traveling.`,
@@ -147,6 +149,7 @@ right place to learn about the important things you need to know before travelin
   },
 ];
 
+// visa promoted in uk
 export const visaPromotedInUk = [
   {
     id: 1,
@@ -159,12 +162,6 @@ export const visaPromotedInUk = [
       faq: ukFaq,
       pageTitle: `India Tourist Visa for the UK Citizens Traveling to India`,
       metadata: {
-        // robots: {
-        //   index: false,
-        //   googleBot: {
-        //     index: false,
-        //   },
-        // },
         title: 'India Visa - Apply for India Visa from UK',
         description:
           'As you apply for India visa from UK, you are opening the doors to a world of experiences that await. So, Begin your Indian adventure with confidence!',
@@ -194,12 +191,6 @@ export const visaPromotedInUk = [
       pageTitle: `UK to Turkey: Apply for Turkey e Visa Now at Speed with VisaCollect`,
       pageTitleDescription: `Apply your most awaited Turkey Visa-Easy & Fast-with visacollect now!`,
       metadata: {
-        // robots: {
-        //   index: false,
-        //   googleBot: {
-        //     index: false,
-        //   },
-        // },
         title: 'Turkey E-Visa for UK Citizens - Visa Collect',
         description: `"Apply for a Turkey E-Visa for UK citizens in just a few simple steps:
 Visit the website, Visa Collect, Fill out the Application form. Make the Payment and Receive E-Visa"`,
@@ -229,12 +220,6 @@ Visit the website, Visa Collect, Fill out the Application form. Make the Payment
       pageTitle: `UK to Thailand: Apply for Your Thailand eVisa Now!`,
       pageTitleDescription: `Obtain your Thailand e-Visa with VisaCollect's Easy & Fast Process Today!`,
       metadata: {
-        // robots: {
-        //   index: false,
-        //   googleBot: {
-        //     index: false,
-        //   },
-        // },
         title: 'Travel to Thailand | Thailand Visa for UK Citizens',
         description: `Thailand Visa for UK Citizens: Before you travel, you must obtain
 a visa if you plan to stay longer (for employment, study, or other purposes).`,
@@ -264,12 +249,6 @@ a visa if you plan to stay longer (for employment, study, or other purposes).`,
       pageTitle: `UK to Australia: Australian  eVisa for the Citizens of the United Kingdom (UK)`,
       pageTitleDescription: `Say Hello to Australia or Explore the Beautiful Beaches of Sydney with VisaCollect’s Fast & Secure Visa Application Process! `,
       metadata: {
-        // robots: {
-        //   index: false,
-        //   googleBot: {
-        //     index: false,
-        //   },
-        // },
         title: `Australia visa for UK Citizens | Visa Collect`,
         description: `Visit Visa Collect if you want to apply for the Australia visa for UK
 citizens. You may be eligible for an UK Electronic Travel Authority (ETA).`,
@@ -287,6 +266,7 @@ citizens. You may be eligible for an UK Electronic Travel Authority (ETA).`,
     },
   },
 ];
+
 export const visaPromotedInCanada = [
   {
     id: 1,
@@ -338,12 +318,6 @@ export const visaPromotedInCanada = [
       pageTitleDescription:
         'Explore Turkey from north to south and east to west with visaCollect’s fast and secure Visa Services!',
       metadata: {
-        // robots: {
-        //   index: false,
-        //   googleBot: {
-        //     index: false,
-        //   },
-        // },
         title: `Turkish Visa for Canadian Citizens | Turkey eVisa for Canadians`,
         description: `If you are applying for a Turkish visa for Canadian citizens,
 ensure your passport is valid for at least 150 days beyond the date you plan to enter Turkey.`,
@@ -375,12 +349,6 @@ ensure your passport is valid for at least 150 days beyond the date you plan to 
       pageTitleDescription:
         'Discover the wonders of Thailand with VisaCollect’s fast and easy eVisa service.',
       metadata: {
-        // robots: {
-        //   index: false,
-        //   googleBot: {
-        //     index: false,
-        //   },
-        // },
         title: `Apply for a Thailand Visa for Canadian Citizens`,
         description: `If you are Applying for a Thailand Visa for Canadian Citizens
 You should know that Visa Collect is the fastest and easiest way to obtain a visa online.`,
@@ -398,6 +366,7 @@ You should know that Visa Collect is the fastest and easiest way to obtain a vis
     },
   },
 ];
+
 export const visaPromotedInUs = [
   {
     id: 1,
@@ -514,6 +483,7 @@ export const visaPromotedInUs = [
     },
   },
 ];
+
 export const visaPromotedInThailand = [
   {
     id: 1,
@@ -684,3 +654,12 @@ export const visaPromotedInSingapore = [
     },
   },
 ];
+
+finalPromotedVisaAfterRelatedBlogs(visaPromotedInAustralia, 'au');
+finalPromotedVisaAfterRelatedBlogs(visaPromotedInUk, 'uk');
+finalPromotedVisaAfterRelatedBlogs(visaPromotedInCanada, 'ca');
+finalPromotedVisaAfterRelatedBlogs(visaPromotedInUs, 'us');
+finalPromotedVisaAfterRelatedBlogs(visaPromotedInThailand, 'th');
+finalPromotedVisaAfterRelatedBlogs(visaPromotedInIndia, 'in');
+finalPromotedVisaAfterRelatedBlogs(visaPromotedInUAE, 'ae');
+finalPromotedVisaAfterRelatedBlogs(visaPromotedInSingapore, 'sg');

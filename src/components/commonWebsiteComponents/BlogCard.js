@@ -4,7 +4,13 @@ import Link from 'next/link';
 import React from 'react';
 import { FaArrowRightLong } from 'react-icons/fa6';
 
-export default function BlogCard({ metadata, href, linkText, img, slug }) {
+export default function BlogCard({
+  metadata,
+  href,
+  linkText = 'Read More',
+  img,
+  slug,
+}) {
   return (
     <Link href={`${href}`}>
       <div className="p-4">

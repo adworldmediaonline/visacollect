@@ -11,43 +11,6 @@ import PageReview from '@/app/components/homePage/PageReview';
 import { notFound } from 'next/navigation';
 import { visaPromotedInUs } from '@/app/(visaTargetedCountryContent)/content/visaTargetedCountry';
 
-const blogs = [
-  {
-    title:
-      'Everything You Need to Know to Stress-Free Travel Planning for Any Trip',
-    description:
-      'Discover the simplicity of securing your UK to Australia eVisa with ease for a seamless travel experience.',
-    slug: '/blog/tips-for-stress-free-travel',
-    linkText: 'Read More',
-    img: 'https://dummyimage.com/720x400',
-  },
-  {
-    title: 'Happiest City Index - Best Cities to Travel in 2024',
-    description:
-      'Experience joy in the top cities of 2024! Discover the Happiest City Index for the best travel destinations. Happiness awaits in every corner.',
-    slug: '/blog/best-cities-to-travel-in-2024',
-    linkText: 'Read More',
-    img: 'https://dummyimage.com/720x400',
-  },
-  {
-    title:
-      'Top Best Free Game-Changing Social Media Tools and Strategies For Travel Agents',
-    description:
-      'Experience joy in the top cities of 2024! Discover the Happiest City Index for the best travel destinations. Happiness awaits in every corner.',
-    slug: '/blog/strategies-for-travel-agents',
-    linkText: 'Read More',
-    img: 'https://dummyimage.com/720x400',
-  },
-  {
-    title: 'How to Use Social Media to Attract More Clients as a Travel Agent',
-    description:
-      'Experience joy in the top cities of 2024! Discover the Happiest City Index for the best travel destinations. Happiness awaits in every corner.',
-    slug: '/blog/social-media-travel-agents-for-visa',
-    linkText: 'Read More',
-    img: 'https://dummyimage.com/720x400',
-  },
-];
-
 export async function generateMetadata({ params }) {
   try {
     const slug = params.slug;
@@ -85,6 +48,9 @@ export default async function Page({ params }) {
 
   const { targetedCountry } = promotedVisa;
 
+  const blogs = targetedCountry?.relatedBlogs.filter(
+    blog => blog.slug !== slug
+  );
   return (
     <div>
       <Banner
@@ -102,8 +68,8 @@ export default async function Page({ params }) {
         <AsideWrapper className="sticky top-24">
           <ul className="flex flex-col gap-3">
             {blogs?.map(blog => (
-              <li key={blog.title}>
-                <AsideBlogCard slug={blog.slug} title={blog.title} />
+              <li key={blog.metadata.title}>
+                <AsideBlogCard slug={blog.href} title={blog.metadata.title} />
               </li>
             ))}
           </ul>
@@ -120,7 +86,7 @@ export default async function Page({ params }) {
         />
       </div>
       <PageReview applyLink="/in/visa/step-one" />
-      <BlogSlider blogs={blogs} />
+      <BlogSlider blogs={JSON.stringify(blogs) ?? []} />
     </div>
   );
 }
