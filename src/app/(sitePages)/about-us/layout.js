@@ -1,5 +1,3 @@
-import "./global.css";
-
 export const metadata = {
     // robots: {
     //   index: false,
@@ -7,19 +5,19 @@ export const metadata = {
     //     index: false,
     //   },
     // },
-    title: "Blogs | Visa Collect",
+    title: "About us | visa collect",
     description:
-        "Stay updated with visa collect Get all the information you need about the latest visa requirements, immigration news, and visa application tips to make your travel dreams a reality.",
+        "Welcome to Visa Collect, your trusted partner for visa solutions worldwide. Learn more about our team, values, and dedication to excellence, checkout for more information about the visa services.",
     metadataBase: new URL("https://visacollect.com"),
 
     alternates: {
-        canonical: "/blog",
+        canonical: "/about-us",
     },
     keywords:
         "visa application, apply for visa, online visa application, visa services, apply visa online, online visa, online visa services, e visa services, apply for e visa, Online visa services apply Today",
 
     openGraph: {
-        url: "/blog",
+        url: "/about-us",
     },
 };
 export default function RootLayout({ children }) {
