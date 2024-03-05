@@ -36,60 +36,55 @@ export const CountriesMap = () => {
       title: 'Thailand',
       link: '/thailand',
     },
-    {
-      id: 6,
-      imgSrc: '/assets/images/main/cambodia.jpg',
-      title: 'Cambodia',
-      link: '/cambodia',
-    },
-    {
-      id: 7,
-      imgSrc: '/assets/images/main/oman.jpg',
-      title: 'Oman',
-      link: '/oman',
-    },
-    {
-      id: 8,
-      imgSrc: '/assets/images/main/egypt.jpg',
-      title: 'Egypt',
-      link: '/egypt',
-    },
-    {
-      id: 9,
-      imgSrc: '/assets/images/main/singapore.jpg',
-      title: 'Singapore',
-      link: '/singapore',
-    },
-    {
-      id: 10,
-      imgSrc: '/assets/images/main/malaysia.jpg',
-      title: 'Malaysia',
-      link: '/malaysia',
-    },
-    {
-      id: 11,
-      imgSrc: '/assets/images/main/indonesia.jpg',
-      title: 'Indonesia',
-      link: '/indonesia',
-    },
     // {
-    //     id: 12,
-    //     imgSrc: '/assets/images/main/hongkong.jpg',
-    //     title: 'Hongkong',
-    //     link: '/hongkong',
+    //   id: 6,
+    //   imgSrc: '/assets/images/main/cambodia.jpg',
+    //   title: 'Cambodia',
+    //   link: '/cambodia',
     // },
-    {
-      id: 13,
-      imgSrc: '/assets/images/main/morocco.jpg',
-      title: 'Morocco',
-      link: '/morocco',
-    },
-    {
-      id: 14,
-      imgSrc: '/assets/images/main/japan.jpg',
-      title: 'Japan',
-      link: '/japan',
-    },
+    // {
+    //   id: 7,
+    //   imgSrc: '/assets/images/main/oman.jpg',
+    //   title: 'Oman',
+    //   link: '/oman',
+    // },
+    // {
+    //   id: 8,
+    //   imgSrc: '/assets/images/main/egypt.jpg',
+    //   title: 'Egypt',
+    //   link: '/egypt',
+    // },
+    // {
+    //   id: 9,
+    //   imgSrc: '/assets/images/main/singapore.jpg',
+    //   title: 'Singapore',
+    //   link: '/singapore',
+    // },
+    // {
+    //   id: 10,
+    //   imgSrc: '/assets/images/main/malaysia.jpg',
+    //   title: 'Malaysia',
+    //   link: '/malaysia',
+    // },
+    // {
+    //   id: 11,
+    //   imgSrc: '/assets/images/main/indonesia.jpg',
+    //   title: 'Indonesia',
+    //   link: '/indonesia',
+    // },
+
+    // {
+    //   id: 13,
+    //   imgSrc: '/assets/images/main/morocco.jpg',
+    //   title: 'Morocco',
+    //   link: '/morocco',
+    // },
+    // {
+    //   id: 14,
+    //   imgSrc: '/assets/images/main/japan.jpg',
+    //   title: 'Japan',
+    //   link: '/japan',
+    // },
   ];
 
   return (
