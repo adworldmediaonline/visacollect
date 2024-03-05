@@ -148,8 +148,12 @@ const Footer = () => {
               <p>
                 {' '}
                 Copyright © {new Date().getFullYear()} |
-                <span className="px-2 font-semibold">visacollect.com</span>| All
-                Rights Reserved
+                <Link href="/">
+                  <span className="px-2 font-semibold text-primary">
+                    visacollect.com
+                  </span>
+                </Link>
+                | All Rights Reserved
               </p>
             </div>
           </div>

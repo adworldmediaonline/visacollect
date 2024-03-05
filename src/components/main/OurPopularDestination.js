@@ -6,7 +6,7 @@ import Image from 'next/image';
 import HeadingSection from './HeadingSection';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 
-const OurPopularDestination = () => {
+const OurPopularDestination = ({ visitAllCountry }) => {
   const data = [
     {
       id: 1,
@@ -43,27 +43,27 @@ const OurPopularDestination = () => {
       link: '/th',
       comingSoon: false,
     },
-    {
-      id: 6,
-      imgSrc: '/assets/images/main/cambodia.jpg',
-      title: 'Cambodia',
-      link: '/cambodia',
-      comingSoon: true,
-    },
-    {
-      id: 7,
-      imgSrc: '/assets/images/main/oman.jpg',
-      title: 'Oman',
-      link: '/oman',
-      comingSoon: true,
-    },
-    {
-      id: 8,
-      imgSrc: '/assets/images/main/egypt.jpg',
-      title: 'Egypt',
-      link: '/egypt',
-      comingSoon: true,
-    },
+    // {
+    //   id: 6,
+    //   imgSrc: '/assets/images/main/cambodia.jpg',
+    //   title: 'Cambodia',
+    //   link: '/cambodia',
+    //   comingSoon: true,
+    // },
+    // {
+    //   id: 7,
+    //   imgSrc: '/assets/images/main/oman.jpg',
+    //   title: 'Oman',
+    //   link: '/oman',
+    //   comingSoon: true,
+    // },
+    // {
+    //   id: 8,
+    //   imgSrc: '/assets/images/main/egypt.jpg',
+    //   title: 'Egypt',
+    //   link: '/egypt',
+    //   comingSoon: true,
+    // },
   ];
 
   return (
@@ -108,13 +108,15 @@ const OurPopularDestination = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-center">
-          <Link href="/all-countries">
-            <button className="flex px-12 py-2 mx-auto text-center btnBlue ">
-              Visit All Destinations
-            </button>
-          </Link>
-        </div>
+        {visitAllCountry && (
+          <div className="flex justify-center">
+            <Link href="/all-countries">
+              <button className="flex px-12 py-2 mx-auto text-center btnBlue ">
+                Visit All Destinations
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
