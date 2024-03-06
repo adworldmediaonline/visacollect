@@ -65,7 +65,7 @@ function Page() {
   }
 
   if (getQuery.error) {
-    return router.push('/oman/step-one');
+    return router.push('/om/step-one');
   }
 
   if (getQuery.isSuccess) {
@@ -508,7 +508,7 @@ function Page() {
                             </td>
 
                             <td className="flex justify-center space-x-3">
-                              <Link href={`/oman/step-two/${people?._id}`}>
+                              <Link href={`/om/step-two/${people?._id}`}>
                                 <FaEdit className="text-primary" size={30} />
                               </Link>
 

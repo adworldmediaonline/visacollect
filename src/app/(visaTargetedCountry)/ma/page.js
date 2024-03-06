@@ -1,63 +1,53 @@
-import { Banner } from '@/components/commonWebsiteComponents/Banner';
 import React from 'react';
-import Faq from '@/components/commonWebsiteComponents/Faq';
-import LearnMore from '@/components/commonWebsiteComponents/LearnMore';
-import Link from 'next/link';
-import RelatedArticlesSlider from '@/components/commonWebsiteComponents/RelatedArticlesSlider';
 import Divider from '@/components/common/Divider';
-import PageReview from '@/components/common/countryHomePage/PageReview';
-import { learnMoreSectionDataMorocco } from '@/constant/countryHomePageData/morocco';
+import PageReview from './_homePage/PageReview';
+import PageWrapper from '@/app/(blogContent)/blog/components/PageWrapper';
+import MainWrapper from '@/app/(blogContent)/blog/components/MainWrapper';
+import AsideWrapper from '@/app/(blogContent)/blog/components/AsideWrapper';
+import AsideBlogCard from '@/app/(blogContent)/blog/components/AsideBlogCard';
+import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
+import Faq from '@/components/commonWebsiteComponents/Faq';
+import Banner2 from '@/components/ui/Banner2';
+import { morroccoMDData } from '@/app/(visaCountries)/mainDirectoryData/morroccoMDData';
 
-const Page = () => {
+export default function Page() {
   return (
     <div>
-      <Banner
-        name="Morocco"
-        type="visatype"
+      <Banner2
         validity=" Valid for 1 year"
         entries="Multiple Entries"
         price="$126.67"
-        link="/morocco/step-one"
-        pageTitle={learnMoreSectionDataMorocco?.pageTitle}
-        pageName={learnMoreSectionDataMorocco?.pageName}
+        link={morroccoMDData?.applyNow}
+        pageTitle={morroccoMDData?.pageTitle}
+        breadcrumb={morroccoMDData?.breadcrumb}
       />
-      {/* <ProcessingStep
-        processingData={processingData1}
-        link="/australia/application"
-      /> */}
       <div className="w-full h-[0.5px] bg-gray-200"></div>
-      <div className="flex flex-col md:flex-row">
-        <main className="flex-1 py-2 [&_strong]:text-tertiary [&_p]:font-normal [&_p]:text-[#343a40] [&_li]:text-[#343a40] [&_.link]:text-primaryMain [&_.email-link]:text-primaryMain">
-          <LearnMore learnMoreSectionData={learnMoreSectionDataMorocco} />
-        </main>
-        <aside className="basis-[300px] py-5 md:py-12 space-y-4">
-          <div className="container">
-            {' '}
-            <div>Other links:</div>
-            <ul className="flex flex-col gap-3">
-              {learnMoreSectionDataMorocco?.otherLinks?.map((link, index) => (
-                <li key={index}>
-                  <Link className="underline text-primary" href={link.path}>
-                    {link.linkName}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </aside>
-      </div>
+      <PageWrapper className="mt-10 mb-10">
+        <MainWrapper>{morroccoMDData?.pageContent}</MainWrapper>
+        <AsideWrapper>
+          <ul className="flex flex-col gap-3">
+            {morroccoMDData?.blogs?.map(blog => (
+              <li key={blog?.title}>
+                <AsideBlogCard
+                  slug={blog?.href}
+                  title={blog?.metadata?.title ?? 'Title not found'}
+                />
+              </li>
+            ))}
+          </ul>
+        </AsideWrapper>
+      </PageWrapper>
       <div className="mt-16">
         <Divider />
       </div>
 
-      <Faq faqData={learnMoreSectionDataMorocco?.faqData} />
-      {/* Remember: For the most accurate and up-to-date information, it's best to check the official website. */}
-      <PageReview applyLink={learnMoreSectionDataMorocco?.applyNowLink} />
-      <RelatedArticlesSlider
-        relatedArticles={learnMoreSectionDataMorocco.relatedArticles}
-      />
+      <div>
+        <Faq faqData={morroccoMDData?.faq ?? []} />
+      </div>
+      <PageReview applyLink={morroccoMDData?.applyNow} />
+      {morroccoMDData?.blogs.length > 0 ? (
+        <BlogSlider blogs={JSON.stringify(morroccoMDData?.blogs) ?? []} />
+      ) : null}
     </div>
   );
-};
-
-export default Page;
+}

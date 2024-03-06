@@ -28,7 +28,7 @@ const Page = ({ params }) => {
     apiEndpoint.MALAYSIA_VISA_APPLICATION,
     id,
     'form updated successfully',
-    '/malaysia/step-two',
+    '/my/step-two',
     getQuery.refetch,
     'malaysiaVisaApplication'
   );
@@ -43,7 +43,7 @@ const Page = ({ params }) => {
   }
 
   if (getQuery.error) {
-    return router.push('/malaysia/step-one');
+    return router.push('/my/step-one');
   }
 
   if (getQuery.isSuccess) {

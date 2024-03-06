@@ -41,7 +41,7 @@ const Page = () => {
   }
 
   if (getQuery.error) {
-    return router.push('/egypt/step-one');
+    return router.push('/eg/step-one');
   }
 
   if (getQuery.isSuccess) {

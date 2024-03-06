@@ -53,7 +53,7 @@ const Page = () => {
   }
 
   if (getQuery.error) {
-    return router.push('/malaysia/step-one');
+    return router.push('/my/step-one');
   }
 
   if (getQuery.isSuccess) {
@@ -411,7 +411,7 @@ const Page = () => {
                             </td>
 
                             <td className="flex justify-center space-x-3">
-                              <Link href={`/malaysia/step-two/${people?._id}`}>
+                              <Link href={`/my/step-two/${people?._id}`}>
                                 <FaEdit className="text-primary" size={30} />
                               </Link>
 

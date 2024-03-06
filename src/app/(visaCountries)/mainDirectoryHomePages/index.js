@@ -4,3 +4,7 @@ export { default as SrilankaHomePage } from '../mainDirectoryHomePages/srilanka.
 export { default as ThailandHomePage } from '../mainDirectoryHomePages/thailand.mdx';
 export { default as TurkeyHomePage } from '../mainDirectoryHomePages/turkey.mdx';
 export { default as MalaysiaHomePage } from '../mainDirectoryHomePages/malaysia.mdx';
+export { default as OmanHomePage } from '../mainDirectoryHomePages/oman.mdx';
+export { default as EgyptHomePage } from '../mainDirectoryHomePages/egypt.mdx';
+export { default as CambodiaHomePage } from '../mainDirectoryHomePages/cambodia.mdx';
+export { default as MorroccoHomePage } from '../mainDirectoryHomePages/morrocco.mdx';
