@@ -66,6 +66,7 @@ export const visaPromotedInAustralia = [
         id: 1,
         visa: "Indian Visa",
         targetedCountry: {
+            applyNow: "/in",
             name: "Australia",
             code: "AU",
             slug: "indian-tourist-visa-for-australian-citizens",
@@ -91,10 +92,12 @@ export const visaPromotedInAustralia = [
             },
         },
     },
+
     {
         id: 2,
         visa: "Turkey Visa",
         targetedCountry: {
+            applyNow: "/tr",
             name: "Australia",
             code: "AU",
             slug: "turkey-visa-for-australian-citizens",
@@ -123,10 +126,12 @@ export const visaPromotedInAustralia = [
             },
         },
     },
+
     {
         id: 3,
         visa: "Thailand Visa",
         targetedCountry: {
+            applyNow: "/th",
             name: "Australia",
             code: "AU",
             slug: "thailand-visa-for-australian-citizens",
@@ -163,6 +168,7 @@ export const visaPromotedInUk = [
         id: 1,
         visa: "Indian Visa",
         targetedCountry: {
+            applyNow: "/in",
             name: "United Kingdom",
             code: "UK",
             slug: "apply-for-india-visa-from-uk",
@@ -186,10 +192,12 @@ export const visaPromotedInUk = [
             },
         },
     },
+
     {
         id: 2,
         visa: "Turkey Visa",
         targetedCountry: {
+            applyNow: "/tr",
             name: "United Kingdom",
             code: "UK",
             slug: "turkey-evisa-for-uk-citizens",
@@ -215,10 +223,12 @@ Visit the website, Visa Collect, Fill out the Application form. Make the Payment
             },
         },
     },
+
     {
         id: 3,
         visa: "Thailand Visa",
         targetedCountry: {
+            applyNow: "/th",
             name: "United Kingdom",
             code: "UK",
             slug: "thailand-visa-for-uk-citizens",
@@ -244,10 +254,12 @@ a visa if you plan to stay longer (for employment, study, or other purposes).`,
             },
         },
     },
+
     {
         id: 4,
         visa: "Australia Visa",
         targetedCountry: {
+            applyNow: "/au",
             name: "United Kingdom",
             code: "UK",
             slug: "australian-visa-for-uk-citizens",
@@ -277,6 +289,7 @@ citizens. You may be eligible for an UK Electronic Travel Authority (ETA).`,
         id: 5,
         visa: "Srilanka Visa",
         targetedCountry: {
+            applyNow: "/lk",
             name: "United Kingdom",
             code: "UK",
             slug: "sri-lanka-visa-for-uk-citizens",
@@ -308,6 +321,7 @@ export const visaPromotedInCanada = [
         id: 1,
         visa: "Indian Visa",
         targetedCountry: {
+            applyNow: "/in",
             name: "Canada",
             code: "CA",
             slug: "india-evisa-for-canadian-citizens",
@@ -339,10 +353,12 @@ export const visaPromotedInCanada = [
             },
         },
     },
+
     {
         id: 2,
         visa: "Turkey Visa",
         targetedCountry: {
+            applyNow: "/tr",
             name: "Canada",
             code: "CA",
             slug: "turkish-visa-for-canadian-citizens",
@@ -370,10 +386,12 @@ ensure your passport is valid for at least 150 days beyond the date you plan to 
             },
         },
     },
+
     {
         id: 3,
         visa: "Thailand Visa",
         targetedCountry: {
+            applyNow: "/th",
             name: "Canada",
             code: "CA",
             slug: "thailand-visa-for-canadian-citizens",
@@ -405,6 +423,7 @@ You should know that Visa Collect is the fastest and easiest way to obtain a vis
         id: 4,
         visa: "Srilanka Visa",
         targetedCountry: {
+            applyNow: "/lk",
             name: "Canada",
             code: "CA",
             slug: "sri-lanka-visa-for-canadian-citizens",
@@ -438,6 +457,7 @@ export const visaPromotedInUs = [
         id: 1,
         visa: "Indian Visa",
         targetedCountry: {
+            applyNow: "/in",
             name: "United States",
             code: "US",
             slug: "indian-visa-for-us-citizens",
@@ -467,10 +487,12 @@ export const visaPromotedInUs = [
             },
         },
     },
+
     {
         id: 2,
         visa: "Turkey Visa",
         targetedCountry: {
+            applyNow: "/tr",
             name: "United States",
             code: "US",
             slug: "turkey-visa-for-us-citizens",
@@ -500,10 +522,12 @@ export const visaPromotedInUs = [
             },
         },
     },
+
     {
         id: 3,
         visa: "Thailand Visa",
         targetedCountry: {
+            applyNow: "/th",
             name: "United States",
             code: "US",
             slug: "thailand-tourist-visa-us-citizens",
@@ -534,10 +558,12 @@ export const visaPromotedInUs = [
             },
         },
     },
+
     {
         id: 4,
         visa: "Australia Visa",
         targetedCountry: {
+            applyNow: "/au",
             name: "United States",
             code: "US",
             slug: "australia-visa-for-us-citizens",
@@ -553,6 +579,7 @@ export const visaPromotedInUs = [
         id: 4,
         visa: "Srilanka Visa",
         targetedCountry: {
+            applyNow: "/lk",
             name: "United States",
             code: "US",
             slug: "sri-lanka-tourist-visa-for-us-citizens",
@@ -561,20 +588,7 @@ export const visaPromotedInUs = [
             faqTitle: `USA to Sri Lanka Frequently Asked Questions (FAQs)`,
             pageTitle: `US to Sri Lanka: Apply Sri Lanka eVisa for US Citizens`,
             pageTitleDescription: `Introducing the Sri Lanka eVisa with VisaCollect’s fast & hassle-free visa services.`,
-            metadata: {
-                title: `Apply Sri lanka tourist visa for US citizens | Visa Collect`,
-                description: `Looking to visit Sri lanka as an US citizen? Apply for your Sri lanka tourist visa for US citizen with ease and convenience. Let us help you with the process. Apply now!`,
-                metadataBase: new URL("https://visacollect.com"),
-
-                alternates: {
-                    canonical: `/us/sri-lanka-tourist-visa-for-us-citizens`,
-                },
-                keywords: `sri lanka visa for us citizens, sri lanka tourist visa for us citizens, sri lanka visa requirements for us citizens, sri lanka visa for us passport holders, sri lanka entry requirements for us citizens`,
-
-                openGraph: {
-                    url: "/us/sri-lanka-tourist-visa-for-us-citizens",
-                },
-            },
+            metadata: null,
         },
     },
 ];
@@ -584,6 +598,7 @@ export const visaPromotedInThailand = [
         id: 1,
         visa: "Indian Visa",
         targetedCountry: {
+            applyNow: "/in",
             name: "Thailand",
             code: "TH",
             slug: "apply-indian-visa-from-thailand",
@@ -617,6 +632,7 @@ export const visaPromotedInIndia = [
         id: 1,
         visa: "Australia Visa",
         targetedCountry: {
+            applyNow: "/au",
             name: "India",
             code: "IN",
             slug: "australia-visa-apply-from-india",
@@ -646,6 +662,7 @@ export const visaPromotedInIndia = [
         id: 2,
         visa: "Srilanka Visa",
         targetedCountry: {
+            applyNow: "/lk",
             name: "India",
             code: "IN",
             slug: "sri-lanka-visa-for-indian-citizens",
@@ -676,6 +693,7 @@ export const visaPromotedInUAE = [
         id: 1,
         visa: "Indian Visa",
         targetedCountry: {
+            applyNow: "/in",
             name: "United Arab Emirates",
             code: "AE",
             slug: "apply-for-india-visa-from-uae",
@@ -711,6 +729,7 @@ export const visaPromotedInSingapore = [
         id: 1,
         visa: "Indian Visa",
         targetedCountry: {
+            applyNow: "/in",
             name: "Singapore",
             code: "SG",
             slug: "evisa-india-for-singapore-citizens",
@@ -731,10 +750,12 @@ export const visaPromotedInSingapore = [
             },
         },
     },
+
     {
         id: 2,
         visa: "Australia Visa",
         targetedCountry: {
+            applyNow: "/au",
             name: "Singapore",
             code: "SG",
             slug: "australia-visa-for-singapore-citizens",

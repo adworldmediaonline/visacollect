@@ -3,3 +3,4 @@ export { default as AustraliaHomePage } from '../mainDirectoryHomePages/australi
 export { default as SrilankaHomePage } from '../mainDirectoryHomePages/srilanka.mdx';
 export { default as ThailandHomePage } from '../mainDirectoryHomePages/thailand.mdx';
 export { default as TurkeyHomePage } from '../mainDirectoryHomePages/turkey.mdx';
+export { default as MalaysiaHomePage } from '../mainDirectoryHomePages/malaysia.mdx';

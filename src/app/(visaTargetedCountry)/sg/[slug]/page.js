@@ -58,7 +58,7 @@ export default async function Page({ params }) {
         validity=" Valid for 1 year"
         entries="Multiple Entries"
         price="$126.67"
-        link="/in/au-Indian-tourist-visa-Australian-citizens/application"
+        link={targetedCountry?.applyNow ?? '#'}
         pageTitle={targetedCountry?.pageTitle ?? ''}
         pageTitleDescription={targetedCountry?.pageTitleDescription ?? ''}
         breadcrumb={`${targetedCountry?.code} > ${targetedCountry?.slug}`}
