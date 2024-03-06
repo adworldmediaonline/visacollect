@@ -73,10 +73,7 @@ const Page = ({ params }) => {
 
     return (
       <div>
-        <Formmainsection
-          title="Lorem Ipsum is simply dummy text of the printing"
-          para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-        />
+        <Formmainsection />
         <div className="container">
           <div className="  md:py-8 py-20 md;px-0 px-3 ">
             <StepProcess
@@ -447,7 +444,7 @@ const Page = ({ params }) => {
             </div>
 
             <div className="py-8 text-left">
-              <button className="inline-flex items-center gap-3 px-12 py-3 rounded-full text-white bg-green-700 cursor-pointer formbtn">
+              <button className="inline-flex items-center gap-3 px-12 py-3 text-white bg-green-700 rounded-full cursor-pointer formbtn">
                 Proceed to Pay
               </button>
 

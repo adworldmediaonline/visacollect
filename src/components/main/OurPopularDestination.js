@@ -49,20 +49,34 @@ const OurPopularDestination = ({ visitAllCountry }) => {
       link: '/kh',
       comingSoon: false,
     },
-    // {
-    //   id: 7,
-    //   imgSrc: '/assets/images/main/oman.jpg',
-    //   title: 'Oman',
-    //   link: '/oman',
-    //   comingSoon: true,
-    // },
-    // {
-    //   id: 8,
-    //   imgSrc: '/assets/images/main/egypt.jpg',
-    //   title: 'Egypt',
-    //   link: '/egypt',
-    //   comingSoon: true,
-    // },
+    {
+      id: 7,
+      imgSrc: '/assets/images/main/oman.jpg',
+      title: 'Oman',
+      link: '/om',
+      comingSoon: false,
+    },
+    {
+      id: 8,
+      imgSrc: '/assets/images/main/egypt.jpg',
+      title: 'Egypt',
+      link: '/eg',
+      comingSoon: false,
+    },
+    {
+      id: 9,
+      imgSrc: '/assets/images/main/morocco.jpg',
+      title: 'Morrocco',
+      link: '/ma',
+      comingSoon: false,
+    },
+    {
+      id: 10,
+      imgSrc: '/assets/images/main/malaysia.jpg',
+      title: 'Malaysia',
+      link: '/my',
+      comingSoon: false,
+    },
   ];
 
   return (
