@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-const Mainsection = ({ title, para, button, linkPath,img }) => {
+const Mainsection = ({ title, para, button, linkPath, img }) => {
   return (
     <div>
       <div
@@ -16,9 +16,9 @@ const Mainsection = ({ title, para, button, linkPath,img }) => {
           <div className="space-y-3">
             <h2 className="text-white md:text-[55px] text-[40px] font-bold leading-[1.2] md:w-[70%]">
               {' '}
-              {title}
+              {title ?? ''}
             </h2>
-            <p className="text-white md:w-[70%] py-2">{para}</p>
+            <p className="text-white md:w-[70%] py-2">{para ?? ''}</p>
             <div className="pt-3">
               <Link
                 href={linkPath}
@@ -30,7 +30,6 @@ const Mainsection = ({ title, para, button, linkPath,img }) => {
           </div>
         </div>
       </div>
-     
     </div>
   );
 };

@@ -16,9 +16,9 @@ const Mainsection = ({ title, para, button, stripeText, linkPath, img }) => {
           <div className="space-y-3">
             <h2 className="text-white md:text-[55px] text-[40px] font-bold leading-[1.2] md:w-[70%]">
               {' '}
-              {title}
+              {title ?? ''}
             </h2>
-            <p className="text-white md:w-[70%] py-2">{para}</p>
+            <p className="text-white md:w-[70%] py-2">{para ?? ''}</p>
             <div className="pt-3">
               <Link
                 href={linkPath}
@@ -30,8 +30,8 @@ const Mainsection = ({ title, para, button, stripeText, linkPath, img }) => {
           </div>
         </div>
       </div>
-      <div className="bg-black/50 md:h-12 h-full -mt-8 justify-center flex flex-col md:-mt-12">
-        <p className="text-white container">
+      <div className="flex flex-col justify-center h-full -mt-8 bg-black/50 md:h-12 md:-mt-12">
+        <p className="container text-white">
           <marquee>{stripeText}</marquee>
         </p>
       </div>
