@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import { AiOutlineLeft } from 'react-icons/ai';
 import Link from 'next/link';
 import Image from 'next/image';
 import HeadingSection from './HeadingSection';
@@ -19,7 +18,7 @@ const OurPopularDestination = ({ visitAllCountry }) => {
       id: 2,
       imgSrc: '/assets/images/main/srilanka.jpg',
       title: 'Srilanka',
-      link: '/sl',
+      link: '/lk',
       comingSoon: false,
     },
     {
@@ -43,13 +42,13 @@ const OurPopularDestination = ({ visitAllCountry }) => {
       link: '/th',
       comingSoon: false,
     },
-    // {
-    //   id: 6,
-    //   imgSrc: '/assets/images/main/cambodia.jpg',
-    //   title: 'Cambodia',
-    //   link: '/cambodia',
-    //   comingSoon: true,
-    // },
+    {
+      id: 6,
+      imgSrc: '/assets/images/main/cambodia.jpg',
+      title: 'Cambodia',
+      link: '/kh',
+      comingSoon: false,
+    },
     // {
     //   id: 7,
     //   imgSrc: '/assets/images/main/oman.jpg',

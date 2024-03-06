@@ -17,6 +17,10 @@ import AustraliaVisaForIndia from './australiaVisa/india.mdx';
 import AustraliaVisaForUk from './australiaVisa/uk.mdx';
 import AustraliaVisaForUS from './australiaVisa/us.mdx';
 import AustraliaVisaForSingapore from './australiaVisa/singapore.mdx';
+import SrilankaVisaForCanada from './srilankaVisa/canada.mdx';
+import SrilankaVisaForIndia from './srilankaVisa/india.mdx';
+import SrilankaVisaForUk from './srilankaVisa/uk.mdx';
+import SrilankaVisaForUS from './srilankaVisa/us.mdx';
 import { australiaFaq } from './targetedCountrySubPagesFaq/australia/indianVisa/australiaFaq';
 import { ukFaq } from './targetedCountrySubPagesFaq/ukFaq/indianVisa/ukFaq';
 import { usFaq } from './targetedCountrySubPagesFaq/usFaq/indianVisa/usFaq';
@@ -33,6 +37,10 @@ import { australiaVisaIndiaFaq } from './targetedCountrySubPagesFaq/india/austra
 import { australiaVisaUkFaq } from './targetedCountrySubPagesFaq/ukFaq/australiaVisa/ukFaq';
 import { australiaVisaUsFaq } from './targetedCountrySubPagesFaq/usFaq/australiaVisa/australiaVisaUsFaq';
 import { australiaVisaSingaporeFaq } from './targetedCountrySubPagesFaq/singapore/australiaVisa/australiaVisaSingaporeFaq';
+import { srilankaVisaUkFaq } from './targetedCountrySubPagesFaq/ukFaq/srilankaVisa/ukFaq';
+import { srilankaVisaCanadaFaq } from './targetedCountrySubPagesFaq/canadaFaq/srilankaVisa/canadaFaq';
+import { srilankaVisaIndiaFaq } from './targetedCountrySubPagesFaq/india/srilankaVisa/indiaFaq';
+import { srilankaVisaUsFaq } from './targetedCountrySubPagesFaq/usFaq/srilankaVisa/usFaq';
 
 function setRelatedBlogs(visas, baseUrl) {
   const relatedBlogs = [];
@@ -265,6 +273,35 @@ citizens. You may be eligible for an UK Electronic Travel Authority (ETA).`,
       },
     },
   },
+  {
+    id: 5,
+    visa: 'Srilanka Visa',
+    targetedCountry: {
+      name: 'United Kingdom',
+      code: 'UK',
+      slug: 'sri-lanka-visa-for-uk-citizens',
+      countryPage: <SrilankaVisaForUk />,
+      faq: srilankaVisaUkFaq,
+      faqTitle: 'Some UK to Sri Lanka e Visa FAQs',
+      pageTitle: `UK to Sri Lanka: Apply Sri Lanka eVisa for UK Citizens`,
+      pageTitleDescription: `Apply your most awaited Turkey Visa-Easy & Fast-with Visacollect now!`,
+      metadata: {
+        title: `Australia visa for UK Citizens | Visa Collect`,
+        description: `Visit Visa Collect if you want to apply for the Australia visa for UK
+citizens. You may be eligible for an UK Electronic Travel Authority (ETA).`,
+        metadataBase: new URL('https://visacollect.com'),
+
+        alternates: {
+          canonical: '/uk/sri-lanka-visa-for-uk-citizens',
+        },
+        keywords: `australia tourist visa for uk citizens, australia visa application uk, australia visit visa from uk, holiday visa for australia from uk, uk visa for australian citizens`,
+
+        openGraph: {
+          url: '/uk/sri-lanka-visa-for-uk-citizens',
+        },
+      },
+    },
+  },
 ];
 
 export const visaPromotedInCanada = [
@@ -361,6 +398,37 @@ You should know that Visa Collect is the fastest and easiest way to obtain a vis
 
         openGraph: {
           url: '/ca/thailand-visa-for-canadian-citizens',
+        },
+      },
+    },
+  },
+  {
+    id: 4,
+    visa: 'Srilanka Visa',
+    targetedCountry: {
+      name: 'Canada',
+      code: 'CA',
+      slug: 'sri-lanka-visa-for-canadian-citizens',
+      countryPage: <SrilankaVisaForCanada />,
+      faq: srilankaVisaCanadaFaq,
+      faqTitle: `Some FAQs to Further Ease Your Sri Lanka eVisa Application Process`,
+      pageTitle:
+        'Canada to Sri Lanka: Apply for Thailand eVisa with VisaCollect at Speed',
+      pageTitleDescription:
+        'Discover the wonders of Sri Lanka with VisaCollect’s fast and easy eVisa service.',
+      metadata: {
+        title: `Apply for a Thailand Visa for Canadian Citizens`,
+        description: `If you are Applying for a Thailand Visa for Canadian Citizens
+You should know that Visa Collect is the fastest and easiest way to obtain a visa online.`,
+        metadataBase: new URL('https://visacollect.com'),
+
+        alternates: {
+          canonical: `/ca/sri-lanka-visa-for-canadian-citizens`,
+        },
+        keywords: `thailand visa for canadian citizens, visa for thailand from canada, tourist visa for thailand from canada, thai tourist visa canada, thailand tourist visa canada`,
+
+        openGraph: {
+          url: '/ca/sri-lanka-visa-for-canadian-citizens',
         },
       },
     },
@@ -480,6 +548,22 @@ export const visaPromotedInUs = [
       faqTitle: `FAQs for Australian eVisa to American Citizens`,
       pageTitle: `Australian eVisa for the Citizens of the United States of America (USA): Apply Visa Now!`,
       pageTitleDescription: `eVisa Application for the American citizens travelling to Australia is now a few clicks away!  `,
+      metadata: null,
+    },
+  },
+  {
+    id: 4,
+    visa: 'Srilanka Visa',
+    targetedCountry: {
+      name: 'United States',
+      code: 'US',
+      slug: 'sri-lanka-tourist-visa-for-us-citizens',
+      countryPage: <SrilankaVisaForUS />,
+      faq: srilankaVisaUsFaq,
+      faqTitle: `USA to Sri Lanka Frequently Asked Questions (FAQs)`,
+      pageTitle: `US to Sri Lanka: Apply Sri Lanka eVisa for US Citizens`,
+      pageTitleDescription: `Introducing the Sri Lanka eVisa with VisaCollect’s fast & hassle-free visa services.`,
+      metadata: null,
     },
   },
 ];
@@ -533,12 +617,6 @@ export const visaPromotedInIndia = [
       pageTitleDescription:
         'Visit your favorite place in Australia with VisaCollect’s Fast and Secure Visa Services In the Country!',
       metadata: {
-        // robots: {
-        //   index: false,
-        //   googleBot: {
-        //     index: false,
-        //   },
-        // },
         title: `Australia visa apply from India | Australia Visa`,
         description: `Indian citizens can apply for an Australia visa from India for several purposes. The common categories include business visas, family/friends visas, and tourist visas.`,
         metadataBase: new URL('https://visacollect.com'),
@@ -549,6 +627,34 @@ export const visaPromotedInIndia = [
         keywords: `australia visa apply from india, Australian visa requirements for indian, australia work permit for indian, australian work visa for indian, australia work permit visa fees in india, australia work visa cost for indian, australia work visa requirements for indian citizens`,
         openGraph: {
           url: '/in/australia-visa-apply-from-india',
+        },
+      },
+    },
+  },
+  {
+    id: 2,
+    visa: 'Srilanka Visa',
+    targetedCountry: {
+      name: 'India',
+      code: 'IN',
+      slug: 'sri-lanka-visa-for-indian-citizens',
+      countryPage: <SrilankaVisaForIndia />,
+      faq: srilankaVisaIndiaFaq,
+      faqTitle: 'FAQs for Sri Lanka e-Visas for Indian Citizens',
+      pageTitle:
+        'India to Sri Lanka: Apply for Sri Lanka Visa or eVisa - fast & Secure - with VisaCollect',
+      pageTitleDescription: null,
+      metadata: {
+        title: `Australia visa apply from India | Australia Visa`,
+        description: `Indian citizens can apply for an Australia visa from India for several purposes. The common categories include business visas, family/friends visas, and tourist visas.`,
+        metadataBase: new URL('https://visacollect.com'),
+
+        alternates: {
+          canonical: `/in/sri-lanka-visa-for-indian-citizens`,
+        },
+        keywords: `australia visa apply from india, Australian visa requirements for indian, australia work permit for indian, australian work visa for indian, australia work permit visa fees in india, australia work visa cost for indian, australia work visa requirements for indian citizens`,
+        openGraph: {
+          url: '/in/sri-lanka-visa-for-indian-citizens',
         },
       },
     },
@@ -600,12 +706,6 @@ export const visaPromotedInSingapore = [
       countryPage: <IndianVisaForSingapore />,
       faq: [],
       metadata: {
-        // robots: {
-        //   index: false,
-        //   googleBot: {
-        //     index: false,
-        //   },
-        // },
         title: `Indian visa for Singapore Citizens| Visa Collect`,
         description: `If you are applying for a Indian visa for Singapore citizens. Don't forget to verify if the procedure for applying for a visa has any new requirements.`,
         metadataBase: new URL('https://visacollect.com'),

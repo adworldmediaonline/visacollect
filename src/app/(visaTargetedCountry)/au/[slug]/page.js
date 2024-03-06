@@ -69,8 +69,8 @@ export default async function Page({ params }) {
         <AsideWrapper className="sticky top-24">
           <ul className="flex flex-col gap-3">
             {blogs?.map(blog => (
-              <li key={blog.metadata.title}>
-                <AsideBlogCard slug={blog.href} title={blog.metadata.title} />
+              <li key={blog?.metadata?.title}>
+                <AsideBlogCard slug={blog?.href} title={blog?.metadata.title} />
               </li>
             ))}
           </ul>
