@@ -1,14 +1,9 @@
 'use client';
-import React, { useState } from 'react';
-import Select from 'react-select';
-import { Disclosure } from '@headlessui/react';
-import { FaAngleDown } from 'react-icons/fa6';
 import Link from 'next/link';
+import React, { useState } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
 
 const Formmainsection = ({ title, para, button, stripeText }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
-
   return (
     <div>
       <div
@@ -24,15 +19,15 @@ const Formmainsection = ({ title, para, button, stripeText }) => {
           <div className="items-center">
             <h2 className="text-white md:text-[55px] text-[40px] font-bold leading-[1.2] md:w-[70%]">
               {' '}
-              {title ?? ''}
+              {title ? title : ''}
             </h2>
-            <p className="text-white md:w-[70%] py-2">{para ?? ''}</p>
+            <p className="text-white md:w-[70%] py-2">{para ? para : ''}</p>
           </div>
         </div>
       </div>
       <div className="bg-black/80 border-t-2 borer-white/70 md:h-20 h-full justify-center flex flex-col items-center -mt-[64px] md:-mt-20">
         <div className="w-full ">
-          <div className="container flex justify-between w-full  rounded-2xl md:px-10">
+          <div className="container flex justify-between w-full rounded-2xl md:px-10">
             <div className="relative items-center hidden text-lg font-semibold text-white cursor-pointer group dropdown drop-shadow-2xl md:flex">
               Tourist ETA
               <span>
@@ -42,19 +37,19 @@ const Formmainsection = ({ title, para, button, stripeText }) => {
                 <div className="top-0 bg-white p-2 shadow-lg shadow-black/30 text-[#655B5A] w-60 flex flex-col ">
                   <Link
                     href="/sl/slvisa/tourist-eta/apply-individual"
-                    className="px-4 py-3 text-sm  hover:bg-black hover:text-white"
+                    className="px-4 py-3 text-sm hover:bg-black hover:text-white"
                   >
                     Apply for an individual
                   </Link>
                   <Link
                     href="/sl/slvisa/tourist-eta/apply-in-group"
-                    className="px-4 py-3 text-sm  hover:bg-black hover:text-white"
+                    className="px-4 py-3 text-sm hover:bg-black hover:text-white"
                   >
                     Apply for a group
                   </Link>
                   <Link
                     href="/sl/slvisa/tourist-eta/apply-for-third-party"
-                    className="px-4 py-3 text-sm  hover:bg-black hover:text-white"
+                    className="px-4 py-3 text-sm hover:bg-black hover:text-white"
                   >
                     Apply for a third party
                   </Link>
@@ -71,19 +66,19 @@ const Formmainsection = ({ title, para, button, stripeText }) => {
                 <div className="top-0 bg-white p-2 shadow-lg shadow-black/30 text-[#655B5A] w-60 flex flex-col ">
                   <Link
                     href="/sl/slvisa/business-purpose-eta/apply-individual"
-                    className="px-4 py-3 text-sm  hover:bg-black hover:text-white"
+                    className="px-4 py-3 text-sm hover:bg-black hover:text-white"
                   >
                     Apply for an individual
                   </Link>
                   <Link
                     href="/sl/slvisa/business-purpose-eta/apply-in-group"
-                    className="px-4 py-3 text-sm  hover:bg-black hover:text-white"
+                    className="px-4 py-3 text-sm hover:bg-black hover:text-white"
                   >
                     Apply for a group
                   </Link>
                   <Link
                     href="/sl/slvisa/business-purpose-eta/apply-for-third-party"
-                    className="px-4 py-3 text-sm  hover:bg-black hover:text-white"
+                    className="px-4 py-3 text-sm hover:bg-black hover:text-white"
                   >
                     Apply for a third party
                   </Link>
@@ -100,19 +95,19 @@ const Formmainsection = ({ title, para, button, stripeText }) => {
                 <div className="top-0 bg-white p-2 shadow-lg shadow-black/30 text-[#655B5A] w-60 flex flex-col ">
                   <Link
                     href="/srilanka"
-                    className="px-4 py-3 text-sm  hover:bg-black hover:text-white"
+                    className="px-4 py-3 text-sm hover:bg-black hover:text-white"
                   >
                     Apply for an individual
                   </Link>
                   <Link
                     href="/srilanka"
-                    className="px-4 py-3 text-sm  hover:bg-black hover:text-white"
+                    className="px-4 py-3 text-sm hover:bg-black hover:text-white"
                   >
                     Apply for a group
                   </Link>
                   <Link
                     href="/srilanka"
-                    className="px-4 py-3 text-sm  hover:bg-black hover:text-white"
+                    className="px-4 py-3 text-sm hover:bg-black hover:text-white"
                   >
                     Apply for a third party
                   </Link>
