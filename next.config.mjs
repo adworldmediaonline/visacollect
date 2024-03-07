@@ -2,7 +2,6 @@
 import nextMDX from '@next/mdx';
 import remarkGfm from 'remark-gfm';
 import { rehype } from 'rehype';
-import withBundleAnalyzer from '@next/bundle-analyzer'; // Import the function
 
 const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
@@ -24,8 +23,4 @@ const withMDX = nextMDX({
   },
 });
 
-export default process.env.ANALYZE === 'true'
-  ? withBundleAnalyzer(withMDX(nextConfig))
-  : withMDX(nextConfig);
-
-// export default withBundleAnalyzer(withMDX(nextConfig));
+export default withMDX(nextConfig);

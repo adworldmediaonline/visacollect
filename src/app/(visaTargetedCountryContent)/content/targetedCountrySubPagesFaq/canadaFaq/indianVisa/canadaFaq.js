@@ -1,4 +1,4 @@
-export const caFaq = [
+export const canadaFaq = [
   {
     id: 1,
     title: 'How much does India Visa costs?',
