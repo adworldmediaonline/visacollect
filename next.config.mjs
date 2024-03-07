@@ -14,6 +14,70 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/india/',
+        destination: '/in',
+        permanent: true,
+      },
+      {
+        source: '/srilanka/',
+        destination: '/lk',
+        permanent: true,
+      },
+      {
+        source: '/thailand/',
+        destination: '/th',
+        permanent: true,
+      },
+      {
+        source: '/australia/application/',
+        destination: '/au/application',
+        permanent: true,
+      },
+      {
+        source: '/turkey/',
+        destination: '/tr',
+        permanent: true,
+      },
+      {
+        source: '/my/application/',
+        destination: '/my/step-one',
+        permanent: true,
+      },
+      {
+        source: '/sl/slvisa/tourist-eta/apply-for-third-party/',
+        destination: '/lk/slvisa/tourist-eta/apply-for-third-party/',
+        permanent: true,
+      },
+      {
+        source: '/sl/slvisa/tourist-eta/apply-individual/',
+        destination: '/lk/slvisa/tourist-eta/apply-individual/',
+        permanent: true,
+      },
+      {
+        source: '/sl/slvisa/tourist-eta/apply-in-group/',
+        destination: '/lk/slvisa/tourist-eta/apply-in-group/',
+        permanent: true,
+      },
+      {
+        source: '/sl/slvisa/business-purpose-eta/apply-individual/',
+        destination: '/lk/slvisa/business-purpose-eta/apply-individual/',
+        permanent: true,
+      },
+      {
+        source: '/sl/slvisa/business-purpose-eta/apply-in-group/',
+        destination: '/lk/slvisa/business-purpose-eta/apply-in-group/',
+        permanent: true,
+      },
+      {
+        source: '/sl/slvisa/business-purpose-eta/apply-for-third-party/',
+        destination: '/lk/slvisa/business-purpose-eta/apply-for-third-party/',
+        permanent: true,
+      },
+    ];
+  },
 };
 const withMDX = nextMDX({
   extension: /\.mdx?$/,

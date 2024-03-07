@@ -8,7 +8,7 @@ export async function generateMetadata({ params }) {
     const blogData = australiaMDData?.blogs?.find(blog => blog.slug === slug);
 
     if (!blogData) notFound();
-
+    console.log(blogData);
     return {
       ...(blogData?.metadata
         ? blogData.metadata
