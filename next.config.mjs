@@ -2,6 +2,8 @@
 import nextMDX from '@next/mdx';
 import remarkGfm from 'remark-gfm';
 import { rehype } from 'rehype';
+import withBundleAnalyzer from '@next/bundle-analyzer'; // Import the function
+
 const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   trailingSlash: true,
@@ -13,16 +15,6 @@ const nextConfig = {
       },
     ],
   },
-
-  async redirects() {
-    return [
-      {
-        source: '/in/au/',
-        destination: '/in/au-Indian-tourist-visa-Australian-citizens',
-        permanent: true,
-      },
-    ];
-  },
 };
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
@@ -31,4 +23,9 @@ const withMDX = nextMDX({
     rehypePlugins: [],
   },
 });
-export default withMDX(nextConfig);
+
+export default process.env.ANALYZE === 'true'
+  ? withBundleAnalyzer(withMDX(nextConfig))
+  : withMDX(nextConfig);
+
+// export default withBundleAnalyzer(withMDX(nextConfig));
