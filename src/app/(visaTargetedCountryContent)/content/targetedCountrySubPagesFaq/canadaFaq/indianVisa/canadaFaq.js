@@ -1,7 +1,7 @@
-export const caFaq = [
+export const canadaFaq = [
   {
     id: 1,
-    title: 'How much does India Visa costs?',
+    title: 'How much does India Visa costs? ',
     content:
       'The cost of an India visa depends on the type of visa and your nationality. For Canadian citizens, the fee for an e-Tourist Visa is $53.97 CAD or ₹3318.93 INR | $107.94 CAD or ₹6637.85, plus a 2.5% bank charge. For a regular tourist visa, the fee is $100 CAD or ₹6149.57 INR, plus a service charge of $7.40 CAD or ₹455.07 INR. You can pay the visa fee online using your credit or debit card. |',
   },

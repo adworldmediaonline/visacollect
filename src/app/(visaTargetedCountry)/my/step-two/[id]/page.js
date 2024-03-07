@@ -32,7 +32,7 @@ const Page = ({ params }) => {
     apiEndpoint.MALAYSIA_VISA_APPLICATION_PEOPLE,
     params?.id,
     'form',
-    '/malaysia/step-two',
+    '/my/step-two',
     getQuery.refetch,
     'malaysiaVisaApplication'
   );
@@ -55,7 +55,7 @@ const Page = ({ params }) => {
   }
 
   if (getQuery.error) {
-    return router.push('/malaysia/step-two');
+    return router.push('/my/step-two');
   }
 
   if (getQuery.isSuccess) {
@@ -420,9 +420,7 @@ const Page = ({ params }) => {
                               </td>
 
                               <td className="flex justify-center space-x-3">
-                                <Link
-                                  href={`/malaysia/step-two/${people?._id}`}
-                                >
+                                <Link href={`/my/step-two/${people?._id}`}>
                                   <FaEdit className="text-primary" size={30} />
                                 </Link>
 

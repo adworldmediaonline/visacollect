@@ -4,6 +4,7 @@ import { getAllCountries } from '@/lib/getAllCountries';
 import HomePageTitle from '../common/countryHomePage/HomePageTitle';
 import LinkButton from './link-button';
 import Button from './button';
+import BannerInlineForm2 from './banner-inline-form-2';
 
 export default function Banner2({
   validity,
@@ -24,37 +25,8 @@ export default function Banner2({
         <p className="mt-1 text-base">{pageTitleDescription ?? ''}</p>
         <div className="mt-8">
           <div className="flex flex-col gap-4 md:flex-row xl">
-            <div className="flex flex-shrink-0 gap-3 md:basis-96">
-              {/* Passport Select */}
-              <div className="flex-1 mb-4">
-                <label
-                  htmlFor="passportSelect"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Passport
-                </label>
-                <select id="passportSelect" className="text-sm new-form-input">
-                  <option value="">select</option>
-                  {getAllCountries()}
-                </select>
-              </div>
-
-              {/* Destination Select */}
-              <div className="flex-1 mb-4">
-                <label
-                  htmlFor="destinationSelect"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Destination
-                </label>
-                <select
-                  id="destinationSelect"
-                  className="text-sm new-form-input"
-                >
-                  <option value="">select</option>
-                  {getAllCountries()}
-                </select>
-              </div>
+            <div className="flex flex-shrink-0 gap-3 md:basis-200">
+              <BannerInlineForm2 />
             </div>
           </div>
         </div>

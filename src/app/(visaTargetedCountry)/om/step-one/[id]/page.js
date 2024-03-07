@@ -35,7 +35,7 @@ const Page = ({ params }) => {
     apiEndpoint.OMAN_VISA_APPLICATION,
     id,
     'form updated successfully',
-    '/oman/step-two',
+    '/om/step-two',
     getQuery.refetch,
     'omanVisaApplication'
   );
@@ -50,7 +50,7 @@ const Page = ({ params }) => {
   }
 
   if (getQuery.error) {
-    return router.push('/oman/step-one');
+    return router.push('/om/step-one');
   }
 
   if (getQuery.isSuccess) {

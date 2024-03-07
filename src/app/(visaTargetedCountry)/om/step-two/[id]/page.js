@@ -44,7 +44,7 @@ function Page({ params }) {
     apiEndpoint.OMAN_VISA_APPLICATION_PEOPLE,
     params?.id,
     'form',
-    '/oman/step-two',
+    '/om/step-two',
     getQuery.refetch,
     'omanVisaApplication'
   );
@@ -67,7 +67,7 @@ function Page({ params }) {
   }
 
   if (getQuery.error) {
-    return router.push('/oman/step-two');
+    return router.push('/om/step-two');
   }
 
   if (getQuery.isSuccess) {
@@ -549,7 +549,7 @@ function Page({ params }) {
                               </td>
 
                               <td className="flex justify-center space-x-3">
-                                <Link href={`/oman/step-two/${people?._id}`}>
+                                <Link href={`/om/step-two/${people?._id}`}>
                                   <FaEdit className="text-primary" size={30} />
                                 </Link>
 

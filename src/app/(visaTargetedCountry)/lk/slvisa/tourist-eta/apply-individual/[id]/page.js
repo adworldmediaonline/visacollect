@@ -69,10 +69,7 @@ export default function Page({ params }) {
 
     return (
       <div>
-        <Formmainsection
-          title="Lorem Ipsum is simply dummy text of the printing"
-          para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-        />
+        <Formmainsection />
 
         <div className="container  md:py-8 py-20 md;px-0 px-3 ">
           <div className="flex items-center justify-center pt-8 space-x-6">

@@ -27,7 +27,7 @@ const Page = ({ params }) => {
   }
 
   if (getQuery.error) {
-    return router.push('/oman/step-two');
+    return router.push('/om/step-two');
   }
 
   if (getQuery.isSuccess) {
@@ -41,7 +41,7 @@ const Page = ({ params }) => {
         <div className=" flex justify-between items-center bg-[#0068E5] py-4 px-4 rounded-t-lg my-10">
           <h2 className="text-lg font-semibold text-white ">Order Summary</h2>
           <Link
-            href={`/oman/step-one/${omanApplicationData?._id}`}
+            href={`/om/step-one/${omanApplicationData?._id}`}
             className="px-10 py-2 bg-white rounded-lg text-primary"
           >
             Edit

@@ -3,6 +3,21 @@ import { Country } from 'country-state-city';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
+const whereIAmGoingCountry = [
+  {
+    name: 'india',
+    isoCode: 'in',
+  },
+  { name: 'australia', isoCode: 'au' },
+  { name: 'srilanka', isoCode: 'lk' },
+  { name: 'thailand', isoCode: 'th' },
+  { name: 'turkey', isoCode: 'tr' },
+  { name: 'malysia', isoCode: 'my' },
+  { name: 'oman', isoCode: 'om' },
+  { name: 'egypt', isoCode: 'eg' },
+  { name: 'cambodia', isoCode: 'kh' },
+  { name: 'morrocco', isoCode: 'ma' },
+];
 export default function BannerInlineForm() {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -66,12 +81,12 @@ export default function BannerInlineForm() {
               onChange={handleChange}
             >
               <option value="">Select</option>
-              {Country?.getAllCountries()?.map(country => (
+              {whereIAmGoingCountry?.map(country => (
                 <option
                   key={country.isoCode}
                   value={country.isoCode.toLowerCase()}
                 >
-                  {country.name} - {country.isoCode}
+                  {country.name} - {country.isoCode.toUpperCase()}
                 </option>
               ))}
             </select>

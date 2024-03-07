@@ -1,4 +1,4 @@
-import { IndiaHomePage } from '../mainDirectoryHomePages';
+import { CambodiaHomePage } from '../mainDirectoryHomePages';
 import { khMDHomePageFaq } from '../mainDirectoryHomePagesFaq/khMDHomePageFaq';
 
 // MD => mainDirectory
@@ -8,7 +8,7 @@ export const khMDData = {
   pageTitle:
     'Cambodia Visa Entry requirements and travel information for Cambodia',
   pageDescription: null,
-  pageContent: <IndiaHomePage />,
+  pageContent: <CambodiaHomePage />,
   applyNow: '/kh/application',
   faq: khMDHomePageFaq,
   blogs: [],
