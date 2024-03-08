@@ -28,7 +28,7 @@ const Page = ({ params }) => {
   }
 
   if (getQuery.error) {
-    return router.push('/japan/step-two');
+    return router.push('/jp/step-two');
   }
 
   if (getQuery.isSuccess) {
@@ -43,7 +43,7 @@ const Page = ({ params }) => {
         <div className=" flex justify-between items-center bg-[#0068E5] py-4 px-4 rounded-t-lg my-10">
           <h2 className="text-lg font-semibold text-white ">Order Summary</h2>
           <Link
-            href={`/japan/step-one/${japanApplicationData?._id}`}
+            href={`/jp/step-one/${japanApplicationData?._id}`}
             className="px-10 py-2 bg-white rounded-lg text-primary"
           >
             Edit

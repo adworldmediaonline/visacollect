@@ -5,7 +5,7 @@ import Heading from '@/components/australia/common/Heading';
 import { getAllCountries } from '@/lib/getAllCountries';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import Link from 'next/link';
-import { malaysiaSchema } from '@/constant/malaysiaSchema';
+import { singaporeSchema } from '@/constant/singaporeSchema';
 import usePost from '@/hooks/usePost';
 import { ImSpinner2 } from 'react-icons/im';
 import apiEndpoint from '@/services/apiEndpoint';
@@ -19,18 +19,18 @@ const Page = ({ params }) => {
   const { id } = params;
   const router = useRouter();
   const getQuery = useQueryGet(
-    apiEndpoint.MALAYSIA_VISA_APPLICATION,
+    apiEndpoint.SINGAPORE_VISA_APPLICATION,
     id,
-    'malaysiaVisaApplication'
+    'singaporeVisaApplication'
   );
 
   const updateMutation = useUpdate(
-    apiEndpoint.MALAYSIA_VISA_APPLICATION,
+    apiEndpoint.SINGAPORE_VISA_APPLICATION,
     id,
     'form updated successfully',
-    '/my/step-two',
+    '/sg/step-two',
     getQuery.refetch,
-    'malaysiaVisaApplication'
+    'singaporeVisaApplication'
   );
 
   if (getQuery.isPending) {
@@ -43,7 +43,7 @@ const Page = ({ params }) => {
   }
 
   if (getQuery.error) {
-    return router.push('/my/step-one');
+    return router.push('/sg/step-one');
   }
 
   if (getQuery.isSuccess) {
@@ -55,7 +55,7 @@ const Page = ({ params }) => {
           createdAt,
           updatedAt,
           peoples,
-          ...malaysiaVisaApplicationData
+          ...singaporeVisaApplicationData
         },
       },
     } = getQuery;
@@ -66,8 +66,8 @@ const Page = ({ params }) => {
 
           <div>
             <Formik
-              initialValues={malaysiaVisaApplicationData}
-              validationSchema={malaysiaSchema.yupSchema}
+              initialValues={singaporeVisaApplicationData}
+              validationSchema={singaporeSchema.yupSchema}
               validateOnChange={true}
               validateOnMount={true}
               onSubmit={(values, { setSubmitting, resetForm }) => {

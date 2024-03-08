@@ -17,6 +17,9 @@ const whereIAmGoingCountry = [
   { name: 'egypt', isoCode: 'eg' },
   { name: 'cambodia', isoCode: 'kh' },
   { name: 'morrocco', isoCode: 'ma' },
+  { name: 'japan', isoCode: 'jp' },
+  { name: 'singapore', isoCode: 'sg' },
+  { name: 'indonesia', isoCode: 'id' },
 ];
 export default function BannerInlineForm2() {
   const router = useRouter();

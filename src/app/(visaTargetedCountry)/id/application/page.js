@@ -17,7 +17,7 @@ function Page() {
   const postMutation = usePost(
     apiEndpoint.INDONESIA_VISA_APPLICATION,
     1,
-    '/indonesia/payment',
+    '/id/payment',
     true,
     'indonesiaVisaApplication'
   );

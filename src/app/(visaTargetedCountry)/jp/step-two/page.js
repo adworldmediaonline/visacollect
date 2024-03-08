@@ -53,7 +53,7 @@ const Page = () => {
   }
 
   if (getQuery.error) {
-    return router.push('/japan/step-one');
+    return router.push('/jp/step-one');
   }
 
   if (getQuery.isSuccess) {
@@ -334,7 +334,7 @@ const Page = () => {
                       </div>
                     ) : null}
                     <button
-                      className={`cursor-pointer w-fit items-center gap-3  rounded-lg font-semibold text-white bg-primaryMain px-8 py-3 ${
+                      className={`text-white bg-gradient-to-r from-[#1998C7] to-[#007FAE]  hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2   focus:outline-none ${
                         !isValid ? 'cursor-not-allowed opacity-50' : ''
                       }`}
                       disabled={!isValid}
@@ -411,7 +411,7 @@ const Page = () => {
                             </td>
 
                             <td className="flex justify-center space-x-3">
-                              <Link href={`/japan/step-two/${people?._id}`}>
+                              <Link href={`/jp/step-two/${people?._id}`}>
                                 <FaEdit className="text-primary" size={30} />
                               </Link>
 
@@ -447,7 +447,7 @@ const Page = () => {
                   </table>
                   {japanVisaApplicationData?.peoples?.length > 0 ? (
                     <Link
-                      href={`/japan/payment/${japanVisaApplicationData?._id}`}
+                      href={`/jp/payment/${japanVisaApplicationData?._id}`}
                       className="items-center gap-3 px-12 py-3 font-semibold text-white rounded-full cursor-pointer w-fit bg-primaryMain"
                     >
                       Next

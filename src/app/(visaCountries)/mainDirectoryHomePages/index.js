@@ -8,3 +8,6 @@ export { default as OmanHomePage } from '../mainDirectoryHomePages/oman.mdx';
 export { default as EgyptHomePage } from '../mainDirectoryHomePages/egypt.mdx';
 export { default as CambodiaHomePage } from '../mainDirectoryHomePages/cambodia.mdx';
 export { default as MorroccoHomePage } from '../mainDirectoryHomePages/morrocco.mdx';
+export { default as JapanHomePage } from '../mainDirectoryHomePages/japan.mdx';
+export { default as IndonesiaHomePage } from '../mainDirectoryHomePages/indonesia.mdx';
+export { default as SingaporeHomePage } from '../mainDirectoryHomePages/singapore.mdx';

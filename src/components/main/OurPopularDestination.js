@@ -77,6 +77,27 @@ const OurPopularDestination = ({ visitAllCountry }) => {
       link: '/my',
       comingSoon: false,
     },
+    {
+      id: 11,
+      imgSrc: '/assets/images/main/japan.jpg',
+      title: 'Japan',
+      link: '/jp',
+      comingSoon: false,
+    },
+    {
+      id: 12,
+      imgSrc: '/assets/images/main/singapore.jpg',
+      title: 'Singapore',
+      link: '/sg',
+      comingSoon: false,
+    },
+    {
+      id: 13,
+      imgSrc: '/assets/images/main/indonesia.jpg',
+      title: 'Indonesia',
+      link: '/id',
+      comingSoon: false,
+    },
   ];
 
   return (
