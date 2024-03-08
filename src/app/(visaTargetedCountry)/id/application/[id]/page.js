@@ -28,7 +28,7 @@ function Page({ params }) {
     apiEndpoint.INDONESIA_VISA_APPLICATION,
     id,
     'form',
-    '/indonesia/payment',
+    '/id/payment',
     getQuery.refetch,
     'indonesiaVisaApplication'
   );
@@ -43,7 +43,7 @@ function Page({ params }) {
   }
 
   if (getQuery.error) {
-    return router.push('/indonesia/payment');
+    return router.push('/id/payment');
   }
 
   if (getQuery.isSuccess) {
@@ -896,7 +896,7 @@ function Page({ params }) {
                       </div>
                     ) : null}
                     <button
-                      className={`cursor-pointer w-fit items-center gap-3  rounded-full font-semibold text-white bg-primaryMain px-12 py-3 ${
+                      className={`text-white bg-gradient-to-r from-[#1998C7] to-[#007FAE]  hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2   focus:outline-none ${
                         !isValid ? 'cursor-not-allowed opacity-50' : ''
                       }`}
                       disabled={!isValid}

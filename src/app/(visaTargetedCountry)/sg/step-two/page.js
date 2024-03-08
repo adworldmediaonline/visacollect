@@ -8,7 +8,7 @@ import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import { MdDeleteOutline } from 'react-icons/md';
 import { FaEdit } from 'react-icons/fa';
 import Link from 'next/link';
-import { malaysiaSchema } from '@/constant/malaysiaSchema';
+import { singaporeSchema } from '@/constant/singaporeSchema';
 import { ImSpinner2 } from 'react-icons/im';
 import usePost from '@/hooks/usePost';
 import { useFormContext } from '@/context/formContext';
@@ -22,23 +22,23 @@ const Page = () => {
   const { state } = useFormContext();
   const router = useRouter();
   const getQuery = useQueryGet(
-    apiEndpoint.MALAYSIA_VISA_APPLICATION,
+    apiEndpoint.SINGAPORE_VISA_APPLICATION,
     state.formId,
-    'malaysiaVisaApplication'
+    'singaporeVisaApplication'
   );
 
   const postMutation = usePost(
-    apiEndpoint.MALAYSIA_VISA_APPLICATION_PEOPLE,
+    apiEndpoint.SINGAPORE_VISA_APPLICATION_PEOPLE,
     'add person',
     false,
     false,
-    'malaysiaVisaApplication'
+    'singaporeVisaApplication'
   );
 
   const deleteMutation = useDelete(
-    apiEndpoint.MALAYSIA_VISA_APPLICATION_PEOPLE,
+    apiEndpoint.SINGAPORE_VISA_APPLICATION_PEOPLE,
     getQuery.refetch,
-    'malaysiaVisaApplication',
+    'singaporeVisaApplication',
     'person deleted successfully',
     false
   );
@@ -53,33 +53,33 @@ const Page = () => {
   }
 
   if (getQuery.error) {
-    return router.push('/my/step-one');
+    return router.push('/sg/step-one');
   }
 
   if (getQuery.isSuccess) {
     const {
       data: {
-        data: { __v, createdAt, updatedAt, ...malaysiaVisaApplicationData },
+        data: { __v, createdAt, updatedAt, ...singaporeVisaApplicationData },
       },
     } = getQuery;
     return (
       <div>
         <div className="container  md:py-8 py-20 md;px-0 px-3 ">
-          <Heading formHead="Apply Now for Malaysia Application" />
+          <Heading formHead="Apply Now for Singapore Application" />
 
           <div>
             <Formik
-              initialValues={malaysiaSchema.personInitialValues}
-              validationSchema={malaysiaSchema.personYupSchema}
+              initialValues={singaporeSchema.personInitialValues}
+              validationSchema={singaporeSchema.personYupSchema}
               validateOnChange={true}
               validateOnMount={true}
               onSubmit={(values, { setSubmitting, resetForm }) => {
                 postMutation.mutate({
                   ...values,
-                  formId: malaysiaVisaApplicationData._id,
+                  formId: singaporeVisaApplicationData._id,
                 });
                 setSubmitting(false);
-                resetForm();
+                // resetForm();
               }}
             >
               {({ values, isValid, setFieldValue }) => (
@@ -380,8 +380,8 @@ const Page = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {malaysiaVisaApplicationData?.peoples?.length > 0 ? (
-                        malaysiaVisaApplicationData?.peoples?.map(people => (
+                      {singaporeVisaApplicationData?.peoples?.length > 0 ? (
+                        singaporeVisaApplicationData?.peoples?.map(people => (
                           <tr key={people._id}>
                             <td className="px-3 py-2">
                               <div className="order-2 col-span-8 text-center">
@@ -411,7 +411,7 @@ const Page = () => {
                             </td>
 
                             <td className="flex justify-center space-x-3">
-                              <Link href={`/my/step-two/${people?._id}`}>
+                              <Link href={`/sg/step-two/${people?._id}`}>
                                 <FaEdit className="text-primary" size={30} />
                               </Link>
 
@@ -445,9 +445,9 @@ const Page = () => {
                       ) : null}
                     </tbody>
                   </table>
-                  {malaysiaVisaApplicationData?.peoples?.length > 0 ? (
+                  {singaporeVisaApplicationData?.peoples?.length > 0 ? (
                     <Link
-                      href={`/malaysia/payment/${malaysiaVisaApplicationData?._id}`}
+                      href={`/sg/payment/${singaporeVisaApplicationData?._id}`}
                       className="items-center gap-3 px-12 py-3 font-semibold text-white rounded-full cursor-pointer w-fit bg-primaryMain"
                     >
                       Next

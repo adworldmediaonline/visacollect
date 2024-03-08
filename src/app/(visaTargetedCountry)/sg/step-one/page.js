@@ -5,21 +5,20 @@ import Heading from '@/components/australia/common/Heading';
 import { getAllCountries } from '@/lib/getAllCountries';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import Link from 'next/link';
-
+import { singaporeSchema } from '@/constant/singaporeSchema';
 import usePost from '@/hooks/usePost';
 import { ImSpinner2 } from 'react-icons/im';
 import apiEndpoint from '@/services/apiEndpoint';
 import { addDays } from 'date-fns';
 import CustomReactPhoneNumberInput from '@/components/common/CustomReactPhoneNumberInput';
-import { japanSchema } from '@/constant/japanConstant';
 
 const Page = () => {
   const postMutation = usePost(
-    apiEndpoint.JAPAN_VISA_APPLICATION,
+    apiEndpoint.SINGAPORE_VISA_APPLICATION,
     1,
-    '/jp/step-two',
+    '/sg/step-two',
     true,
-    'japanVisaApplication'
+    'singaporeVisaApplication'
   );
   return (
     <div>
@@ -28,8 +27,8 @@ const Page = () => {
 
         <div>
           <Formik
-            initialValues={japanSchema.initialValues}
-            validationSchema={japanSchema.yupSchema}
+            initialValues={singaporeSchema.initialValues}
+            validationSchema={singaporeSchema.yupSchema}
             validateOnChange={true}
             validateOnMount={true}
             onSubmit={(values, { setSubmitting, resetForm }) => {

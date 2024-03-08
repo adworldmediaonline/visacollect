@@ -28,7 +28,7 @@ const Page = ({ params }) => {
     apiEndpoint.JAPAN_VISA_APPLICATION,
     id,
     'form updated successfully',
-    '/japan/step-two',
+    '/jp/step-two',
     getQuery.refetch,
     'japanVisaApplication'
   );
@@ -43,7 +43,7 @@ const Page = ({ params }) => {
   }
 
   if (getQuery.error) {
-    return router.push('/japan/step-one');
+    return router.push('/jp/step-one');
   }
 
   if (getQuery.isSuccess) {
@@ -260,7 +260,7 @@ const Page = ({ params }) => {
                       </div>
                     ) : null}
                     <button
-                      className={`cursor-pointer w-fit items-center gap-3  rounded-full font-semibold text-white bg-primaryMain px-12 py-3 ${
+                      className={`text-white bg-gradient-to-r from-[#1998C7] to-[#007FAE]  hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2   focus:outline-none ${
                         !isValid ? 'cursor-not-allowed opacity-50' : ''
                       }`}
                       disabled={!isValid}

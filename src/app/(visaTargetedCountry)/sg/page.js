@@ -8,7 +8,7 @@ import AsideBlogCard from '@/app/(blogContent)/blog/components/AsideBlogCard';
 import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
 import Faq from '@/components/commonWebsiteComponents/Faq';
 import Banner2 from '@/components/ui/Banner2';
-import { indonesiaMDData } from '@/app/(visaCountries)/mainDirectoryData/indonesiaMDData';
+import { singaporeMDData } from '@/app/(visaCountries)/mainDirectoryData/singaporeMDData';
 
 export default function Page() {
   return (
@@ -17,16 +17,16 @@ export default function Page() {
         validity=" Valid for 1 year"
         entries="Multiple Entries"
         price="$126.67"
-        link={indonesiaMDData?.applyNow}
-        pageTitle={indonesiaMDData?.pageTitle}
-        breadcrumb={indonesiaMDData?.breadcrumb}
+        link={singaporeMDData?.applyNow}
+        pageTitle={singaporeMDData?.pageTitle}
+        breadcrumb={singaporeMDData?.breadcrumb}
       />
       <div className="w-full h-[0.5px] bg-gray-200"></div>
       <PageWrapper className="mt-10 mb-10">
-        <MainWrapper>{indonesiaMDData?.pageContent}</MainWrapper>
+        <MainWrapper>{singaporeMDData?.pageContent}</MainWrapper>
         <AsideWrapper>
           <ul className="flex flex-col gap-3">
-            {indonesiaMDData?.blogs?.map(blog => (
+            {singaporeMDData?.blogs?.map(blog => (
               <li key={blog?.title}>
                 <AsideBlogCard
                   slug={blog?.href}
@@ -42,11 +42,11 @@ export default function Page() {
       </div>
 
       <div>
-        <Faq faqData={indonesiaMDData?.faq ?? []} />
+        <Faq faqData={singaporeMDData?.faq ?? []} />
       </div>
-      <PageReview applyLink={indonesiaMDData?.applyNow} />
-      {indonesiaMDData?.blogs.length > 0 ? (
-        <BlogSlider blogs={JSON.stringify(indonesiaMDData?.blogs) ?? []} />
+      <PageReview applyLink={singaporeMDData?.applyNow} />
+      {singaporeMDData?.blogs.length > 0 ? (
+        <BlogSlider blogs={JSON.stringify(singaporeMDData?.blogs) ?? []} />
       ) : null}
     </div>
   );
