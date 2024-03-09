@@ -7,9 +7,9 @@ import Footer from "@/components/australia/common/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-    title: "Apply For Australia Visa Online | E-visa",
+    title: "Apply Australia Visa Online | Visa collect",
     description:
-        "Apply for Australia visa online effortlessly with E-visa through our user-friendly platform. Let our team simplify the journey to your dream destination.",
+        "Effortlessly apply for your Australia visa online through Visa Collect. Streamline your travel plans with our convenient application process.",
     metadataBase: new URL("https://visacollect.com"),
 
     alternates: {
