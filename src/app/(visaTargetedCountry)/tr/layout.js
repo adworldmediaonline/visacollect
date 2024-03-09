@@ -2,19 +2,19 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export const metadata = {
-    title: "Turkey Visa Online | E-visa",
+    title: "Apply Turkey Visa Online | Visa collect",
     description:
-        "Explore Turkey hassle-free! Get your Turkey visa online through our easy application process. Quick approvals and support from our E-visa experts.",
+        "Effortlessly apply for your Turkey visa online through Visa Collect. Streamline your travel plans with our convenient application process.",
     metadataBase: new URL("https://visacollect.com"),
 
     alternates: {
-        canonical: "/turkey/",
+        canonical: "/tr/",
     },
     keywords:
         "turkey visa,e visa turkey,turkey visa online,turkey visa application,turkey visa requirements,apply for turkish visa,turkey visa application form,turkey e visa application,turkey visa application form online",
 
     openGraph: {
-        url: "/turkey/",
+        url: "/tr/",
     },
 };
 

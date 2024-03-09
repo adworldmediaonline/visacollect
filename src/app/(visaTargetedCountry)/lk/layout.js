@@ -1,19 +1,19 @@
 import "react-datepicker/dist/react-datepicker.css";
 
 export const metadata = {
-    title: "Apply For Sri Lanka Visa | E-visa",
+    title: "Apply Sri Lanka Visa Online | Visa collect",
     description:
-        "Simplify your travel plans with E-visa - the easiest way to apply for Sri Lanka visa. Quick, reliable, and stress-free application process awaits you",
+        "Effortlessly apply for your Sri Lanka visa online through Visa Collect. Streamline your travel plans with our convenient application process.",
     metadataBase: new URL("https://visacollect.com"),
 
     alternates: {
-        canonical: "/srilanka/",
+        canonical: "/lk/",
     },
     keywords:
         "sri lanka visa,sri lanka tourist visa,sri lanka visa online,sri lanka e visa,apply for sri lanka visa,sri lanka eta online",
 
     openGraph: {
-        url: "/srilanka/",
+        url: "/lk/",
     },
 };
 
