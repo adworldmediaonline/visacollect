@@ -17,7 +17,6 @@ export default function Home() {
       <OurPopularDestination visitAllCountry={true} />
       <WhyChooseUs />
       <HowItWorks />
-      <Features />
       <OurServices />
       <Testimonial />
       <ContactForm />

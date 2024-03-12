@@ -9,7 +9,8 @@ export default function usePost(
   step,
   routeUrl,
   isDispatch = false,
-  queryKey
+  queryKey,
+  otherMessage
 ) {
   const queryClient = useQueryClient();
   const { dispatch } = useFormContext();
@@ -27,10 +28,15 @@ export default function usePost(
         });
       }
 
-      toast.success(`step ${step} completed successfully`, {
-        position: toast.POSITION.BOTTOM_RIGHT,
-        autoClose: 1000,
-      });
+      toast.success(
+        `${
+          otherMessage ? otherMessage : `step ${step} completed successfully`
+        }`,
+        {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          autoClose: 1000,
+        }
+      );
 
       queryClient.invalidateQueries({ queryKey: [queryKey] });
       if (routeUrl) {
