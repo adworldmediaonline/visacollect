@@ -78,7 +78,7 @@ const ApplySectionUrgentHelp = () => {
           <span>
             <BiMailSend size={30} className="font-bold text-green-700" />
           </span>
-          <span className="text-sm">info@india-travelservices.com</span>
+          <span className="text-sm">info@visacollect.com</span>
         </div>
         <div className="flex flex-col space-y-4 flex-wrap text-center justify-center gap-4 py-4">
           {cardData.map((e, i) => (

@@ -77,8 +77,8 @@ export const learnMoreSectionDataCambodia = {
       paragraphs: [
         {
           href: `/`,
-          linkText: `india-travelservices.com!`,
-          text: `Hassle-free Begin your journey to Cambodia by obtaining your eVisa through e-Visa via <span class="link">india-travelservices.com!</span> The Ministry of Foreign Affairs and International Cooperation introduced the e-visa in April 2006 to boost tourism and facilitate visits to Cambodia. With the new e-visa, travelers can enjoy a stay of up to three months without the need to obtain a visa upon arrival at Cambodian airports or consulates abroad.`,
+          linkText: `info@visacollect.com!`,
+          text: `Hassle-free Begin your journey to Cambodia by obtaining your eVisa through e-Visa via <span class="link">info@visacollect.com!</span> The Ministry of Foreign Affairs and International Cooperation introduced the e-visa in April 2006 to boost tourism and facilitate visits to Cambodia. With the new e-visa, travelers can enjoy a stay of up to three months without the need to obtain a visa upon arrival at Cambodian airports or consulates abroad.`,
         },
       ],
     },
