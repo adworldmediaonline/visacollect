@@ -76,6 +76,26 @@ const nextConfig = {
         destination: '/lk/slvisa/business-purpose-eta/apply-for-third-party/',
         permanent: true,
       },
+      {
+        source: '/australia/',
+        destination: '/au/',
+        permanent: true,
+      },
+      {
+        source: '/in/au-Indian-tourist-visa-Australian-citizens/',
+        destination: '/au/indian-tourist-visa-for-australian-citizens/',
+        permanent: true,
+      },
+      {
+        source: '/turkey/application/',
+        destination: '/tr/application/',
+        permanent: true,
+      },
+      {
+        source: '/visa/step-one/',
+        destination: '/in/visa/step-one/',
+        permanent: true,
+      },
     ];
   },
 };
