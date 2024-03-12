@@ -9,22 +9,22 @@ const Footer = () => {
     {
       id: 1,
       icon: <FaFacebookF />,
-      href: '#',
+      href: 'https://www.facebook.com/profile.php?id=61556564781995&mibextid=ZbWKwL',
     },
     {
       id: 2,
       icon: <FaInstagram />,
-      href: '#',
+      href: 'https://www.instagram.com/visacollect_?igsh=MW11MDB4ODh2cnJ1Zw==',
     },
     {
       id: 3,
       icon: <FaLinkedin />,
-      href: '#',
+      href: 'https://www.linkedin.com/in/visa-collect-9283752b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     },
     {
       id: 4,
       icon: <FaXTwitter />,
-      href: '#',
+      href: 'https://twitter.com/visacollect/status/1766133015472918531?t=GhAmEX38Z3kNq00LbhKW6g&s=08',
     },
   ];
   return (
@@ -60,10 +60,10 @@ const Footer = () => {
                     </ul>
                   </div>
                   <ul>
-                    <Link href="#">
+                    <Link href="mailto:info@visacollect.com">
                       <li className="flex items-center mt-2 space-x-2 text-base hover:text-primary">
                         <IoIosMail className="w-6 h-6 p-1 text-black bg-white rounded-full" />{' '}
-                        <span>india-travelservices.com</span>
+                        <span>info@visacollect.com</span>
                       </li>
                     </Link>
                     {/* <Link href="#">

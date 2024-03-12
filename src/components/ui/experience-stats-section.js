@@ -1,23 +1,27 @@
+'use client';
 import ExperienceStatsItem from './experience-stats-item';
 import { FaStar } from 'react-icons/fa6';
 
 const statistics = [
   {
     id: 1,
-    number: '10k+',
+    number: 10,
+    numberText: 'k+',
     title: 'Happy Customers',
   },
   {
     id: 2,
     imgSrc: '/assets/images/main/time.png',
     title: 'On Time Delivery',
-    number: '99%',
+    number: 99,
+    numberText: '%',
   },
   {
     id: 3,
     imgSrc: '/assets/images/main/experience.png',
     title: 'Years of Experience',
-    number: '5+',
+    number: 5,
+    numberText: '+',
   },
   {
     id: 4,
@@ -35,6 +39,7 @@ export default function ExperienceStatsSection() {
               key={index}
               text={stats.title}
               number={stats.number}
+              numberText={stats.numberText}
               icon={stats.icon}
             />
           ))}

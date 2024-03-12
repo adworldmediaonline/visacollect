@@ -71,12 +71,10 @@ const Footer = () => {
                     </ul>
                   </div> */}
                   <ul>
-                    <Link href="#">
+                    <Link href="mailto:info@visacollect.com">
                       <li className="flex items-center mt-2 space-x-2 text-base hover:text-primary">
                         <IoIosMail className="w-6 h-6 p-1 text-black bg-white rounded-full" />{' '}
-                        <span className="text-white">
-                          india-travelservices.com
-                        </span>
+                        <span className="text-white">info@visacollect.com</span>
                       </li>
                     </Link>
                     {/* <Link href="#">
