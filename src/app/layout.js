@@ -1,4 +1,5 @@
 import { GoogleTagManager } from '@next/third-parties/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { Be_Vietnam_Pro } from 'next/font/google';
 import { ToastContainer } from 'react-toastify';
@@ -55,6 +56,7 @@ export default function RootLayout({ children }) {
           </ReactQueryProvider>
         </FormProvider>
         <GoogleTagManager gtmId="G-FRMR0BTRLH" />
+        <GoogleAnalytics gaId="G-FRMR0BTRLH" />
       </body>
     </html>
   );
