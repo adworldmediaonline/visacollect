@@ -1,3 +1,5 @@
+import { GoogleTagManager } from '@next/third-parties/google';
+
 import { Be_Vietnam_Pro } from 'next/font/google';
 import { ToastContainer } from 'react-toastify';
 import { FormProvider } from '@/context/formContext';
@@ -52,6 +54,7 @@ export default function RootLayout({ children }) {
             <ToastContainer />
           </ReactQueryProvider>
         </FormProvider>
+        <GoogleTagManager gtmId="G-FRMR0BTRLH" />
       </body>
     </html>
   );
