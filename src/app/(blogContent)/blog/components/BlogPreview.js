@@ -12,6 +12,8 @@ export default function BlogPreview({
   content,
   relatedBlogs,
 }) {
+  console.log(content);
+
   return (
     <PageWrapper className="mt-10 mb-10">
       <MainWrapper>

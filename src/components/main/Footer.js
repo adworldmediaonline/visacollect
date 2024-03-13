@@ -24,7 +24,7 @@ const Footer = () => {
     {
       id: 4,
       icon: <FaXTwitter />,
-      href: 'https://twitter.com/visacollect/status/1766133015472918531?t=GhAmEX38Z3kNq00LbhKW6g&s=08',
+      href: 'https://twitter.com/visacollect',
     },
   ];
   return (
