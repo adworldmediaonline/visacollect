@@ -1,6 +1,8 @@
 import React from 'react';
 import HeadingSection from './HeadingSection';
 import { FaCheckCircle } from 'react-icons/fa';
+import Image from 'next/image';
+import { whyChooseUsBanner } from '@/constant/images';
 
 export default function WhyChooseUs() {
   const dataList = [
@@ -28,9 +30,10 @@ export default function WhyChooseUs() {
   return (
     <div className="grid-cols-12 bg-white md:grid">
       <div className="col-span-5">
-        <img
-          src="/assets/images/main/whyChooseUs.png"
-          className="brightness-50 "
+        <Image
+          src={whyChooseUsBanner}
+          className="brightness-50"
+          alt="Online visa services apply Today-Visa Collect"
         />
       </div>
       <div className="flex flex-col justify-center px-8 py-8 space-y-8 md:col-span-6 md:py-0">
