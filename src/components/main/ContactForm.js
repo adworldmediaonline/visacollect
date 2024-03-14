@@ -1,7 +1,8 @@
+import Image from 'next/image';
 import React from 'react';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { IoIosMail, IoMdPerson, IoPerson } from 'react-icons/io';
-
+import contactUsImg from '/public/assets/images/main/formGirl.png';
 function ContactForm() {
   return (
     <div className="bg-white">
@@ -12,9 +13,10 @@ function ContactForm() {
         }}
       >
         <div className="justify-center hidden bg-center bg-cover first-letter:w-full md:flex ">
-          <img
-            src="/assets/images/main/formGirl.png"
+          <Image
+            src={contactUsImg}
             className="w-[80%] mx-auto"
+            alt="Form Girl - Visa collect"
           />
         </div>
         <div className="flex items-center w-full pr-20">

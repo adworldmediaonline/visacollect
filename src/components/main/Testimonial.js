@@ -4,7 +4,9 @@ import { IoIosArrowBack, IoIosArrowForward, IoIosStar } from 'react-icons/io';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
+import Image from 'next/image';
+import testimonialBannerImg from '/public/assets/images/main/testimonialImg.png';
+import testimonialWaveImg from '/public/assets/images/main/waves.png';
 function Testimonial() {
   const customeSlider = useRef();
   const testimonial = [
@@ -100,9 +102,10 @@ function Testimonial() {
   };
   return (
     <div className="relative py-12 testimonialBg">
-      <img
-        src="/assets/images/main/waves.png"
+      <Image
+        src={testimonialWaveImg}
         className="absolute bottom-0 w-full"
+        alt="Testimonials - Visa Collect"
       />
       <div className="-space-y-4 md:absolute top-16 left-32">
         <h2 className="pb-8 text-2xl font-extrabold text-center md:text-5xl text-primary md:pb-0">
@@ -118,9 +121,10 @@ function Testimonial() {
             <div key={i}>
               <div className="items-center grid-cols-12 gap-20 md:grid">
                 <div className="order-2 col-span-4 pb-12">
-                  <img
-                    src="/assets/images/main/testimonialImg.png"
+                  <Image
+                    src={testimonialBannerImg}
                     className="md:w-80 w-52"
+                    alt="Testimonials - Visa Collect"
                   />
                 </div>
                 <div className="col-span-8 space-y-4 text-white md:pt-20">

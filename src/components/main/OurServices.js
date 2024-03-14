@@ -14,18 +14,21 @@ const OurServices = () => {
       image: '/assets/images/main/ourServiceIcon3.png',
       name: 'Multiple Payment Options',
       desc: 'Choose the payment method that suits you best. We accept various options, such as credit cards, PayPal, and bank transfers.',
+      altText: 'Our Services Icon 3 - Visa Collect',
     },
     {
       id: 2,
       image: '/assets/images/main/ourServiceIcon1.png',
       name: 'Simplified Visa Application Process',
       desc: 'Apply for your visa online with e-Visa. It’s simple, fast, and convenient. Just fill out a form, upload your documents, and submit your order.',
+      altText: 'Our Services Icon 1 - Visa Collect',
     },
     {
       id: 3,
       image: '/assets/images/main/ourServiceIcon2.png',
       name: 'Urgent eVisa Processing',
       desc: 'Need your visa in a hurry? We can help you get it as soon as possible. We offer expedited processing for urgent cases, such as last-minute trips or emergencies.',
+      altText: 'Our Services Icon 2 - Visa Collect',
     },
 
     {
@@ -33,6 +36,7 @@ const OurServices = () => {
       image: '/assets/images/main/ourServiceIcon1.png',
       name: 'Trusted Travel Reviews and Guidance',
       desc: 'Get the best travel tips and advice from e-Visa. We offer honest and reliable reviews and guidance for various destinations, attractions, and activities. We help you plan your trip and make the most of your travel experience.',
+      altText: 'Our Services Icon 1 - Visa Collect',
     },
   ];
 

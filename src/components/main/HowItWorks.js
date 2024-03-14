@@ -1,36 +1,42 @@
 'use client';
 import React, { useRef } from 'react';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import HeadingSection from './HeadingSection';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import Image from 'next/image';
+import onlineApplication from '/public/assets/images/main/online-application.png';
+import makePaymentIcon from '/public/assets/images/main/makePayment.png';
+import receiveVisaIcon from '/public/assets/images/main/receiveVisa.png';
 const HowItWorks = () => {
   const customeSlider = useRef();
   const testimonial = [
     {
       id: 1,
-      image: '/assets/images/main/online-application.png',
+      image: onlineApplication,
       name: 'Fill Out Online Application',
       desc: 'Fill out a simple form and avoid errors with our smart system.',
+      altText: 'Online Application icon - Visa Collect',
     },
     {
       id: 2,
-      image: '/assets/images/main/makePayment.png',
+      image: makePaymentIcon,
       name: 'Share Your Documents Securely',
       desc: 'Skip the consulate queue and let us handle the paperwork for you.',
+      altText: 'Share Your Documents icon - Visa Collect',
     },
     {
       id: 3,
-      image: '/assets/images/main/receiveVisa.png',
+      image: makePaymentIcon,
       name: 'Make Payment Easily Online',
       desc: 'Select a convenient and secure payment option and complete your order.',
+      altText: 'Make Payment icon - Visa Collect',
     },
     {
       id: 4,
-      image: '/assets/images/main/receiveVisa.png',
+      image: receiveVisaIcon,
       name: 'Receive eVisa Letter On Time',
       desc: 'Track your status online and get ready for your trip.',
+      altText: 'receive Visa Icon - Visa Collect',
     },
   ];
 
@@ -49,9 +55,11 @@ const HowItWorks = () => {
             <div className="py-4 group md:mx-5 md:py-10" key={e}>
               <div className="py-10 text-center bg-white shadow-md hover:drop-shadow-xs hover:shadow-lg rounded-xl">
                 <div className="flex justify-center w-full duration-1000 rounded-full duration">
-                  <img
+                  <Image
                     src={item.image}
-                    alt=""
+                    alt={item.altText}
+                    width={20}
+                    height={20}
                     className="w-20 h-20 mx-auto rounded-lg "
                   />
                 </div>
