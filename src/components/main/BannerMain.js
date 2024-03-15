@@ -17,7 +17,7 @@ const BannerMain = () => {
           src={homePagesBanner}
           className="object-cover w-full h-full"
         />
-        <div className="container absolute top-0 mt-32">
+        <div className="container absolute top-0 px-5 mt-32">
           <div className="flex flex-col justify-center">
             <div className="flex flex-col justify-center space-y-3">
               <h1 className="text-white text-center md:text-[55px] text-[40px] font-bold leading-[1.2]">
