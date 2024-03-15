@@ -2,8 +2,8 @@ import { cn } from '@/lib/cn';
 
 export default function BlogContentHero({ className, children }) {
   return (
-    <div className={cn('mt-20', className)}>
-      <div className="aspect-video">{children}</div>
+    <div className={cn('', className)}>
+      <div className="relative max-w-[612px] overflow-hidden">{children}</div>
     </div>
   );
 }
