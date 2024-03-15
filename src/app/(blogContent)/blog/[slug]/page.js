@@ -30,11 +30,16 @@ export async function generateMetadata({ params }) {
   }
 }
 export default async function Page({ params }) {
-  const { content } = await getPageContent(params.slug);
+  const { meta, content } = await getPageContent(params.slug);
   if (!content) notFound();
   return (
     <div className="mt-10">
-      <BlogPreview2 blogs={JSON.stringify([]) ?? []} content={content} />
+      <BlogPreview2
+        blogs={JSON.stringify([]) ?? []}
+        content={content}
+        meta={meta}
+        cta
+      />
     </div>
   );
 }

@@ -41,7 +41,7 @@ export default function ContactUs() {
   });
   return (
     <div>
-      <section className="relative text-gray-600 body-font">
+      <section className="relative text-gray-600">
         <div className="container flex flex-wrap px-5 py-24 mx-auto sm:flex-nowrap">
           <div className="relative flex items-end justify-start p-10 overflow-hidden bg-gray-300 rounded-lg lg:w-2/3 md:w-1/2 sm:mr-10">
             <iframe
