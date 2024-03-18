@@ -22,6 +22,14 @@ const whereIAmGoingCountry = [
   { name: 'singapore', isoCode: 'sg' },
   { name: 'indonesia', isoCode: 'id' },
 ];
+const whereIAmFromCountry = [
+  { name: 'australia', isoCode: 'au' },
+  { name: 'singapore', isoCode: 'sg' },
+  { name: 'united kingdom', isoCode: 'uk' },
+  { name: 'united states', isoCode: 'us' },
+  { name: 'United Arab Emirates', isoCode: 'ae' },
+  { name: 'Singapore', isoCode: 'sg' },
+];
 export default function BannerInlineForm() {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -66,9 +74,12 @@ export default function BannerInlineForm() {
               onChange={handleChange}
             >
               <option value="">Select</option>
-              {Country?.getAllCountries()?.map(country => (
-                <option key={country.isoCode} value={country.isoCode}>
-                  {country.name} - {country.isoCode}
+              {whereIAmFromCountry?.map(country => (
+                <option
+                  key={country.isoCode}
+                  value={country.isoCode.toLowerCase()}
+                >
+                  {country.name} - {country.isoCode.toUpperCase()}
                 </option>
               ))}
             </select>
