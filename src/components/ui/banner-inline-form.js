@@ -1,4 +1,5 @@
 'use client';
+import { whereIAmFromWhereIAmGoingData } from '@/lib/whereIAmFromWhereIAmGoingData';
 import { Country } from 'country-state-city';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -35,7 +36,13 @@ export default function BannerInlineForm() {
 
   useEffect(() => {
     if (formData.whereIAmFrom && formData.whereIAmGoing) {
-      router.push(`/${formData.whereIAmGoing.toLowerCase()}`);
+      const whereIAmFrom = formData?.whereIAmFrom.toLowerCase() ?? '';
+      const whereIAmGoing = formData?.whereIAmGoing.toLowerCase() ?? '';
+      const whereIAmFromData = whereIAmFromWhereIAmGoingData[whereIAmFrom];
+      const whereIAmGoingData =
+        whereIAmFromData?.whereIAmGoing?.to?.[whereIAmGoing];
+      router.push(whereIAmGoingData?.slug ?? '/');
+      console.log(whereIAmGoingData);
     }
   }, [formData]);
 
