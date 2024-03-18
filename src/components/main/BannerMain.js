@@ -8,7 +8,7 @@ import { homePagesBanner } from '@/constant/images';
 const BannerMain = () => {
   return (
     <div className="relative w-full pt-32">
-      <div className="relative h-[700px] overflow-hidden -translate-y-28">
+      <div className="relative h-[1000px] sm:h-[800px] md:h-[700px] overflow-hidden -translate-y-28">
         <div className="absolute inset-0 bg-gradient-to-br from-black/80 "></div>
         <Image
           alt="Apply for Visa - Stress free travel"

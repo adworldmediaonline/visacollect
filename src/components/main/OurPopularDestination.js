@@ -118,11 +118,12 @@ const OurPopularDestination = ({ visitAllCountry }) => {
   const [popularDestinations, setPopularDestinations] = useState(data);
   const [loadMore, setLoadMore] = useState(1);
   const [defaultPopularDestinations, setDefaultPopularDestinations] =
-    useState(8);
+    useState(4);
   const currentPopularDestinations = popularDestinations.slice(
     0,
     defaultPopularDestinations * loadMore
   );
+
   return (
     <div className="py-12 space-y-12 md:py-12">
       {/* title start  */}
@@ -167,13 +168,15 @@ const OurPopularDestination = ({ visitAllCountry }) => {
         </div>
         <div className="flex justify-center">
           {' '}
-          <button
-            onClick={() => setLoadMore(prevLoadMore => prevLoadMore + 1)}
-            type="button"
-            className="text-white bg-gradient-to-r from-[#1998C7] to-[#007FAE]  hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2   focus:outline-none"
-          >
-            Load More
-          </button>
+          {currentPopularDestinations.length !== popularDestinations.length ? (
+            <button
+              onClick={() => setLoadMore(prevLoadMore => prevLoadMore + 1)}
+              type="button"
+              className="text-white bg-gradient-to-r from-[#1998C7] to-[#007FAE]  hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2   focus:outline-none"
+            >
+              Load More
+            </button>
+          ) : null}
         </div>
       </div>
     </div>

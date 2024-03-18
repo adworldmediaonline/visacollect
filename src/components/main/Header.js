@@ -106,12 +106,12 @@ const Header = ({ bgcolor }) => {
               </Link>
             </li>
 
-            <LinkButton className="nav-desk" href="/contact-us">
+            <LinkButton className="hidden nav-desk md:block" href="/contact-us">
               Contact Us
             </LinkButton>
 
             {/* for mobile start */}
-            <li className="block md:hidden">
+            <li className="block px-2 pt-5 md:pt-0 md:hidden">
               <LinkButton href="/contact-us">Contact Us</LinkButton>
             </li>
             {/* for mobile end */}
