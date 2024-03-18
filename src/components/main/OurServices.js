@@ -137,12 +137,6 @@ const OurServices = () => {
                 </div>
               ))}
             </Slider>
-
-            <div className="flex justify-center">
-              <button className="px-12 py-2 btnBlue">
-                Check Requirements Now
-              </button>
-            </div>
           </div>
           <div className="absolute z-10 hidden text-center -right-8 md:block">
             <button onClick={() => customeSlider.current.slickNext()}>

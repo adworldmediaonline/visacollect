@@ -50,10 +50,10 @@ const HowItWorks = () => {
       </div>
 
       <div className="container">
-        <div className="grid-cols-3 md:grid">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
           {testimonial.map((item, e) => (
-            <div className="py-4 group md:mx-5 md:py-10" key={e}>
-              <div className="py-10 text-center bg-white shadow-md hover:drop-shadow-xs hover:shadow-lg rounded-xl">
+            <div className="flex flex-col py-4 group md:mx-5 md:py-10" key={e}>
+              <div className="h-full py-10 text-center bg-white shadow-md hover:drop-shadow-xs hover:shadow-lg rounded-xl">
                 <div className="flex justify-center w-full duration-1000 rounded-full duration">
                   <Image
                     src={item.image}
@@ -72,11 +72,6 @@ const HowItWorks = () => {
               </div>
             </div>
           ))}
-        </div>
-        <div>
-          <button className="flex px-8 py-2 mx-auto btnBlue">
-            Ready? Let’s Get Started
-          </button>
         </div>
       </div>
     </div>
