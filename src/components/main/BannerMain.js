@@ -1,9 +1,7 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import BannerInlineForm from '../ui/banner-inline-form';
 import ExperienceStatsSection from '../ui/experience-stats-section';
-import HighlightedText from '../ui/highlighted-text';
 import Image from 'next/image';
 import { homePagesBanner } from '@/constant/images';
 
@@ -17,9 +15,9 @@ const BannerMain = () => {
           src={homePagesBanner}
           className="object-cover w-full h-full"
         />
-        <div className="container absolute top-0 px-5 mt-32">
+        <div className="container absolute top-0 w-full px-5 mt-32 -translate-x-1/2 left-1/2">
           <div className="flex flex-col justify-center">
-            <div className="flex flex-col justify-center space-y-3">
+            <div className="flex flex-col justify-center max-w-5xl mx-auto space-y-3">
               <h1 className="text-white text-center md:text-[55px] text-[40px] font-bold leading-[1.2]">
                 24x7 online visa services started anytime, anywhere.
               </h1>
