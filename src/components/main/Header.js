@@ -33,7 +33,7 @@ const Header = ({ bgcolor }) => {
 
   return (
     <div
-      className={`headerMainVisa bg-white shadow-md ${
+      className={`headerMainVisa bg-white shadow-sm ${
         scrolled ? 'bg-white' : ''
       }`}
     >
