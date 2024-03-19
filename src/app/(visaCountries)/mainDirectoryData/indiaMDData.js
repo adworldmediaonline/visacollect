@@ -47,8 +47,11 @@ export const indiaMDData = {
         },
       },
       slug: 'top-things-to-do-in-india-for-fun',
+      pageTitle: 'Australia to India: Top 30 Things To Do In India for Fun!',
       content: <TopThingsToDoInIndiaForFunAustraliaCitizens />,
       img: topThingsToDoInIndiaForFunAustraliaCitizensImg,
+      imgUrl:
+        '/assets/images/blog/indiaVisa/top-things-to-do-in-india-for-fun.webp',
       linkText: 'Read more',
       href: `${indiaMDBlogBase}/top-things-to-do-in-india-for-fun`,
     },
@@ -66,9 +69,13 @@ export const indiaMDData = {
           url: `${indiaMDBlogBase}/best-things-to-do-in-india-for-australia-citizens`,
         },
       },
+      pageTitle:
+        '10 Best Things to Do In India for People Travelling from Sydney, Australia',
       slug: 'best-things-to-do-in-india-for-australia-citizens',
       content: <BestThingsToDoInIndiaForAustraliaCitizens />,
       img: bestThingsToDoInIndiaForAustraliaCitizensImg,
+      imgUrl:
+        '/assets/images/blog/indiaVisa/best-things-to-do-in-india-for-australia-citizens.webp',
       linkText: 'Read more',
       href: `${indiaMDBlogBase}/best-things-to-do-in-india-for-australia-citizens`,
     },
@@ -86,9 +93,13 @@ export const indiaMDData = {
           url: `${indiaMDBlogBase}/apply-india-tourist-visa-for-canadian-citizens`,
         },
       },
+      pageTitle:
+        'Canada to India Complete Visa Guide: Apply India Tourist Visa for Canadian Citizens',
       slug: 'apply-india-tourist-visa-for-canadian-citizens',
       content: <ApplyIndiaTouristVisaForCanadianCitizens />,
       img: applyIndiaTouristVisaForCanadianCitizensImg,
+      imgUrl:
+        '/assets/images/blog/indiaVisa/apply-india-tourist-visa-for-canadian-citizens.webp',
       linkText: 'Read more',
       href: `${indiaMDBlogBase}/apply-india-tourist-visa-for-canadian-citizens`,
     },
@@ -106,9 +117,13 @@ export const indiaMDData = {
           url: `${indiaMDBlogBase}/indian-visa-for-emiratis-citizens`,
         },
       },
+      pageTitle:
+        'UAE to India: Apply for Your India tourist visa for Emirati Citizens',
       slug: 'indian-visa-for-emiratis-citizens',
       content: <IndianVisaForEmiratisCitizens />,
       img: indianVisaForEmiratisCitizensImg,
+      imgUrl:
+        '/assets/images/blog/indiaVisa/indian-visa-for-emiratis-citizens.webp',
       linkText: 'Read more',
       href: `${indiaMDBlogBase}/indian-visa-for-emiratis-citizens`,
     },
@@ -126,9 +141,12 @@ export const indiaMDData = {
           url: `${indiaMDBlogBase}/apply-india-eVisa-from-uk`,
         },
       },
+      pageTitle:
+        'Apply India Tourist Visa for UK Citizens: A Complete Guide to Apply India e Visa from UK',
       slug: 'apply-india-eVisa-from-uk',
       content: <ApplyIndiaEVisaFromUK />,
       img: applyIndiaEvisaFromUKImg,
+      imgUrl: '/assets/images/blog/indiaVisa/apply-india-eVisa-from-uk.webp',
       linkText: 'Read more',
       href: `${indiaMDBlogBase}/apply-india-eVisa-from-uk`,
     },
@@ -146,9 +164,13 @@ export const indiaMDData = {
           url: `${indiaMDBlogBase}/indian-tourist-visa-for-uk-citizens`,
         },
       },
+      pageTitle:
+        'How to Get Indian Tourist Visa for UK Citizens with Easy Steps',
       slug: 'indian-tourist-visa-for-uk-citizens',
       content: <IndianTouristVisaForUKCitizens />,
       img: indianTouristVisaForUkCitizensImg,
+      imgUrl:
+        '/assets/images/blog/indiaVisa/indian-tourist-visa-for-uk-citizens.webp',
       linkText: 'Read more',
       href: `${indiaMDBlogBase}/indian-tourist-visa-for-uk-citizens`,
     },
@@ -166,9 +188,12 @@ export const indiaMDData = {
           url: `${indiaMDBlogBase}/how-to-get-your-india-tourist-visa-for-us-citizens`,
         },
       },
+      pageTitle: `Here's How to Get a Tourist Visa to Visit India for US Citizens - 2024`,
       slug: 'how-to-get-your-india-tourist-visa-for-us-citizens',
       content: <HowToGetYourIndiaTouristVisaForUSCitizens />,
       img: howToGetYourIndiaTouristVisaForUsCitizensImg,
+      imgUrl:
+        '/assets/images/blog/indiaVisa/how-to-get-your-india-tourist-visa-for-us-citizens.webp',
       linkText: 'Read more',
       href: `${indiaMDBlogBase}/how-to-get-your-india-tourist-visa-for-us-citizens`,
     },
@@ -186,9 +211,13 @@ export const indiaMDData = {
           url: `${indiaMDBlogBase}/steps-to-apply-your-india-e-visa-from-usa`,
         },
       },
+      pageTitle:
+        'Apply for your India e-Visa from USA in 3 easy steps with VisaCollect',
       slug: 'steps-to-apply-your-india-e-visa-from-usa',
       content: <StepsToApplyYourIndiaEVisaFromUSA />,
       img: stepsToApplyYourIndiaEvisaFromUsaImg,
+      imgUrl:
+        '/assets/images/blog/indiaVisa/steps-to-apply-your-india-e-visa-from-usa.webp',
       linkText: 'Read more',
       href: `${indiaMDBlogBase}/steps-to-apply-your-india-e-visa-from-usa`,
     },
