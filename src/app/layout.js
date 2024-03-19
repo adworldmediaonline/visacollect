@@ -62,64 +62,62 @@ export default function RootLayout({ children }) {
         <Script
           id="structured-data"
           type="application/ld+json"
-          dangerouslySetInnerHTML={
-            ({
-              __html: JSON.stringify([
-                {
-                  '@context': 'https://schema.org/',
-                  '@type': 'WebSite',
-                  name: 'Visa Collect',
-                  url: 'https://visacollect.com/',
-                  potentialAction: {
-                    '@type': 'SearchAction',
-                    target: '{search_term_string}',
-                    'query-input': 'required name=search_term_string',
-                  },
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                '@context': 'https://schema.org/',
+                '@type': 'WebSite',
+                name: 'Visa Collect',
+                url: 'https://visacollect.com/',
+                potentialAction: {
+                  '@type': 'SearchAction',
+                  target: '{search_term_string}',
+                  'query-input': 'required name=search_term_string',
                 },
-              ]),
-            },
-            {
-              '@context': 'https://schema.org',
-              '@type': 'TouristInformationCenter',
-              name: 'Visa Collect',
-              image: 'https://visacollect.com/',
-              '@id': '',
-              url: 'https://visacollect.com/',
-              telephone: '‎+91 82914 35253',
-              address: {
-                '@type': 'PostalAddress',
-                streetAddress:
-                  'Plot No. 136, 3rd Floor, Rider House, Sector 44',
-                addressLocality: 'Gurugram',
-                postalCode: '122003',
-                addressCountry: 'IN',
               },
-              geo: {
-                '@type': 'GeoCoordinates',
-                latitude: 28.4514829,
-                longitude: 77.0751763,
-              },
-              openingHoursSpecification: {
-                '@type': 'OpeningHoursSpecification',
-                dayOfWeek: [
-                  'Monday',
-                  'Tuesday',
-                  'Wednesday',
-                  'Thursday',
-                  'Friday',
-                  'Saturday',
+              {
+                '@context': 'https://schema.org',
+                '@type': 'TouristInformationCenter',
+                name: 'Visa Collect',
+                image: 'https://visacollect.com/',
+                '@id': '',
+                url: 'https://visacollect.com/',
+                telephone: '‎+91 82914 35253',
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress:
+                    'Plot No. 136, 3rd Floor, Rider House, Sector 44',
+                  addressLocality: 'Gurugram',
+                  postalCode: '122003',
+                  addressCountry: 'IN',
+                },
+                geo: {
+                  '@type': 'GeoCoordinates',
+                  latitude: 28.4514829,
+                  longitude: 77.0751763,
+                },
+                openingHoursSpecification: {
+                  '@type': 'OpeningHoursSpecification',
+                  dayOfWeek: [
+                    'Monday',
+                    'Tuesday',
+                    'Wednesday',
+                    'Thursday',
+                    'Friday',
+                    'Saturday',
+                  ],
+                  opens: '09:00',
+                  closes: '18:00',
+                },
+                sameAs: [
+                  'https://www.facebook.com/people/Visa-Collect/61556054082156/?mibextid=ZbWKwL',
+                  'https://twitter.com/visacollect',
+                  'https://www.instagram.com/visacollect/?igsh=MXFjbzFpZDJlNHZmaw%3D%3D',
+                  'https://www.linkedin.com/in/visa-collect-9283752b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
                 ],
-                opens: '09:00',
-                closes: '18:00',
               },
-              sameAs: [
-                'https://www.facebook.com/people/Visa-Collect/61556054082156/?mibextid=ZbWKwL',
-                'https://twitter.com/visacollect',
-                'https://www.instagram.com/visacollect/?igsh=MXFjbzFpZDJlNHZmaw%3D%3D',
-                'https://www.linkedin.com/in/visa-collect-9283752b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
-              ],
-            })
-          }
+            ]),
+          }}
         />
       </body>
     </html>
