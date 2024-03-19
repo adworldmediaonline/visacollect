@@ -5,6 +5,7 @@ import { srilankaMDHomePageFaq } from '../mainDirectoryHomePagesFaq/srilankaMDHo
 const srilankaMDBlogBase = '/sl/blog';
 export const srilankaMDData = {
   breadcrumb: 'LK',
+  code: 'lk',
   pageTitle:
     'Srilanka Visa Entry requirements and travel information for Srilanka',
   pageDescription: null,

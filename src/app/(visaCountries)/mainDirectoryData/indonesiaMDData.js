@@ -5,6 +5,7 @@ import { indonesiaMDHomePageFaq } from '../mainDirectoryHomePagesFaq/indonesiaMD
 const indonesiaMDBlogBase = '/id/blog';
 export const indonesiaMDData = {
   breadcrumb: 'ID',
+  code: 'id',
   pageTitle:
     'Indonesia Visa Entry requirements and travel information for Indonesia',
   pageDescription: null,

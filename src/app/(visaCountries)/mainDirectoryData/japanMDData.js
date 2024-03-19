@@ -5,6 +5,7 @@ import { japanMDHomePageFaq } from '../mainDirectoryHomePagesFaq/japanMDHomePage
 const japanMDBlogBase = '/jp/blog';
 export const japanMDData = {
   breadcrumb: 'JP',
+  code: 'jp',
   pageTitle: 'Japan Visa Entry requirements and travel information for Japan',
   pageDescription: null,
   pageContent: <JapanHomePage />,

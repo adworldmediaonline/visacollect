@@ -15,6 +15,7 @@ import { australiaMDHomePageFaq } from '../mainDirectoryHomePagesFaq/australiaMD
 const australiaMDBlogBase = '/au/blog';
 export const australiaMDData = {
   breadcrumb: 'AU',
+  code: 'au',
   pageTitle:
     'Australia Visa Entry requirements and travel information for Australia',
   pageDescription: null,

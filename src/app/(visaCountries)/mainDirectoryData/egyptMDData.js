@@ -5,6 +5,7 @@ import { egyptMDHomePageFaq } from '../mainDirectoryHomePagesFaq/egyptMDHomePage
 const egyptMDBlogBase = '/om/blog';
 export const egyptMDData = {
   breadcrumb: 'EG',
+  code: 'eg',
   pageTitle: 'Egypt Visa Entry requirements and travel information for Egypt',
   pageDescription: null,
   pageContent: <EgyptHomePage />,

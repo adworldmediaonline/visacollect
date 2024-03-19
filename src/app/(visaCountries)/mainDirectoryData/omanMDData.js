@@ -5,6 +5,7 @@ import { omanMDHomePageFaq } from '../mainDirectoryHomePagesFaq/omanMDHomePageFa
 const omanMDBlogBase = '/om/blog';
 export const omanMDData = {
   breadcrumb: 'OM',
+  code: 'om',
   pageTitle: 'Oman Visa Entry requirements and travel information for Oman',
   pageDescription: null,
   pageContent: <OmanHomePage />,

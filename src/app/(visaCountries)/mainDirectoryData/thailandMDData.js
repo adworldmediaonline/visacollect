@@ -17,6 +17,7 @@ import { thailandMDHomePageFaq } from '../mainDirectoryHomePagesFaq/thailandMDHo
 const thailandMDBlogBase = '/th/blog';
 export const thailandMDData = {
   breadcrumb: 'TH',
+  code: 'th',
   pageTitle:
     'Thailand Visa Entry requirements and travel information for Thailand',
   pageDescription: null,

@@ -5,6 +5,7 @@ import { turkeyMDHomePageFaq } from '../mainDirectoryHomePagesFaq/turkeyMDHomePa
 const turkeyMDBlogBase = '/tr/blog';
 export const turkeyMDData = {
   breadcrumb: 'TR',
+  code: 'tr',
   pageTitle: 'Turkey Visa Entry requirements and travel information for Turkey',
   pageDescription: null,
   pageContent: <TurkeyHomePage />,
