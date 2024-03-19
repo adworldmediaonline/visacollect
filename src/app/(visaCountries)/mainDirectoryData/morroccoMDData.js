@@ -5,6 +5,7 @@ import { morroccoMDHomePageFaq } from '../mainDirectoryHomePagesFaq/morroccoMDHo
 const morroccoMDBlogBase = '/ma/blog';
 export const morroccoMDData = {
   breadcrumb: 'MA',
+  code: 'ma',
   pageTitle:
     'Morocco Visa Entry requirements and travel information for Morocco',
   pageDescription: null,

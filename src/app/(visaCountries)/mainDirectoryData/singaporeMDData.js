@@ -5,6 +5,7 @@ import { singaporeMDHomePageFaq } from '../mainDirectoryHomePagesFaq/singaporeMD
 const singaporeMDBlogBase = '/sg/blog';
 export const singaporeMDData = {
   breadcrumb: 'SG',
+  code: 'sg',
   pageTitle:
     'Singapore Visa Entry requirements and travel information for Singapore',
   pageDescription: null,

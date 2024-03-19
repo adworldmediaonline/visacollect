@@ -25,6 +25,7 @@ import { indiaMDHomePageFaq } from '../mainDirectoryHomePagesFaq/indiaMDHomePage
 const indiaMDBlogBase = '/in/blog';
 export const indiaMDData = {
   breadcrumb: 'IN',
+  code: 'in',
   pageTitle: 'India Visa: - Apply Online Now!',
   pageDescription: null,
   pageContent: <IndiaHomePage />,
