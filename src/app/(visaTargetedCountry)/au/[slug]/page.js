@@ -51,7 +51,7 @@ export default async function Page({ params }) {
   const blogs = targetedCountry?.relatedBlogs.filter(
     blog => blog.slug !== slug
   );
-
+  console.log(blogs);
   return (
     <div>
       <Banner
