@@ -37,6 +37,9 @@ export const australiaMDData = {
           url: `${australiaMDBlogBase}/australia-visa-requirements-for-singapore-citizens`,
         },
       },
+      pageTitle:
+        'Singapore to Australia: Apply for Australia eVisa for the Citizens of Singapore',
+      imgUrl: '',
       slug: 'australia-visa-requirements-for-singapore-citizens',
       content: <AustraliaVisaRequirementsForSingaporeCitizens />,
       img: australiaVisaRequirementsForSingaporeCitizensImg,
