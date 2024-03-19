@@ -32,8 +32,37 @@ export default function Page({ params }) {
   const relatedBlogs = australiaMDData?.blogs?.filter(
     blog => blog.slug !== slug
   );
-
+  console.log(relatedBlogs);
   if (!blogData) notFound();
+  // const jsonLd = {
+  //   '@context': 'https://schema.org',
+  //   '@type': 'Blog',
+  //   mainEntity: [
+  //     {
+  //       '@type': 'WebPage',
+  //       '@id': `${base_url}/blog/${meta.slug}/`,
+  //     },
+  //   ],
+  //   headline: meta.pageTitle,
+  //   description: meta.description,
+  //   image: `${base_url}${meta.img}`,
+  //   author: {
+  //     '@type': 'Organization',
+  //     name: '',
+  //   },
+
+  //   publisher: {
+  //     '@type': 'Organization',
+  //     name: 'Visa Collect',
+  //     logo: {
+  //       '@type': 'ImageObject',
+  //       url: 'https://visacollect.com/',
+  //     },
+  //   },
+  //   image: '',
+  //   datePublished: '2024-03-15',
+  //   dateModified: '2024-03-15',
+  // };
   return (
     <>
       <BlogPreview
