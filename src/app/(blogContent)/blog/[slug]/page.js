@@ -59,7 +59,7 @@ export default async function Page({ params }) {
         url: 'https://visacollect.com/',
       },
     },
-    image: '',
+
     datePublished: '2024-03-15',
     dateModified: '2024-03-15',
   };
