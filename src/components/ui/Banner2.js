@@ -5,6 +5,7 @@ import HomePageTitle from '../common/countryHomePage/HomePageTitle';
 import LinkButton from './link-button';
 import Button from './button';
 import BannerInlineForm2 from './banner-inline-form-2';
+import Breadcrumb from '../Breadcrumbs';
 
 export default function Banner2({
   validity,
@@ -17,10 +18,18 @@ export default function Banner2({
 }) {
   return (
     <div>
-      <div className="container py-16">
-        <div>
-          <p className="py-8">Home &gt; {breadcrumb ?? ''}</p>
-        </div>
+      <div className="mt-24">
+        <Breadcrumb
+          homeElement={'Home'}
+          separator={<span> &gt; </span>}
+          activeClasses="text-amber-500"
+          // containerClasses="flex py-5 bg-gradient-to-r from-purple-600 to-blue-600"
+          containerClasses="flex py-0 text-sm"
+          listClasses="hover:underline mx-2"
+          capitalizeLinks
+        />
+      </div>
+      <div className="container pt-8 pb-16">
         <HomePageTitle pageTitle={pageTitle} />
         <p className="mt-1 text-base">{pageTitleDescription ?? ''}</p>
         <div className="mt-8">

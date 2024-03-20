@@ -2,6 +2,7 @@ import { getPostBySlug } from '@/lib/mdx';
 import BlogPreview2 from '../components/BlogPreview2';
 import { notFound } from 'next/navigation';
 import Script from 'next/script';
+import Breadcrumb from '@/components/Breadcrumbs';
 const base_url = 'https://visacollect.com';
 const getPageContent = async slug => {
   const { meta, content } = await getPostBySlug(slug);
@@ -65,6 +66,17 @@ export default async function Page({ params }) {
   };
   return (
     <div className="mt-10">
+      <div className="mt-24">
+        <Breadcrumb
+          homeElement={'Home'}
+          separator={<span> &gt; </span>}
+          activeClasses="text-amber-500"
+          // containerClasses="flex py-5 bg-gradient-to-r from-purple-600 to-blue-600"
+          containerClasses="flex py-0 text-sm"
+          listClasses="hover:underline mx-2"
+          capitalizeLinks
+        />
+      </div>
       <BlogPreview2
         blogs={JSON.stringify([]) ?? []}
         content={content}

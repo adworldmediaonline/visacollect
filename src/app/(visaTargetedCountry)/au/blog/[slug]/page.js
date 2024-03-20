@@ -33,7 +33,7 @@ export default function Page({ params }) {
   const relatedBlogs = australiaMDData?.blogs?.filter(
     blog => blog.slug !== slug
   );
-  console.log(relatedBlogs);
+
   if (!blogData) notFound();
   const jsonLd = {
     '@context': 'https://schema.org',

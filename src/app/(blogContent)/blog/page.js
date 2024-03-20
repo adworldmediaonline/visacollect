@@ -30,7 +30,6 @@ import BlogCard from './components/BlogCard';
 
 export default async function BlogPage() {
   const posts = await getAllPostsMeta();
-  console.log(posts);
 
   return (
     <>
