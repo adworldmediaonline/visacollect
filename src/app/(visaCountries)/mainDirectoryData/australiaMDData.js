@@ -39,7 +39,8 @@ export const australiaMDData = {
       },
       pageTitle:
         'Singapore to Australia: Apply for Australia eVisa for the Citizens of Singapore',
-      imgUrl: '',
+      imgUrl:
+        '/assets/images/blog/australiaVisa/australia-visa-requirements-for-singapore-citizens.webp',
       slug: 'australia-visa-requirements-for-singapore-citizens',
       content: <AustraliaVisaRequirementsForSingaporeCitizens />,
       img: australiaVisaRequirementsForSingaporeCitizensImg,
@@ -60,6 +61,10 @@ export const australiaMDData = {
           url: `${australiaMDBlogBase}/australian-eta-for-uk-citizens`,
         },
       },
+      pageTitle:
+        'UK to Australia: Australian eVisa for the Citizens of the United Kingdom (UK)',
+      imgUrl:
+        '/assets/images/blog/australiaVisa/australian-eta-for-uk-citizens.webp',
       slug: 'australian-eta-for-uk-citizens',
       content: <AustralianEtaForUKCitizens />,
       img: australianEtaForUkCitizensImg,
@@ -80,6 +85,9 @@ export const australiaMDData = {
           url: `${australiaMDBlogBase}/australia-visa-for-us-citizens`,
         },
       },
+      pageTitle: 'Australia visa for US citizens',
+      imgUrl:
+        '/assets/images/blog/australiaVisa/australia-visa-for-us-citizens.webp',
       slug: 'australia-visa-for-us-citizens',
       content: <AustraliaVisaForUSCitizens />,
       img: australiaVisaForUsCitizensImg,

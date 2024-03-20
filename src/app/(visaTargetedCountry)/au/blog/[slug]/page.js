@@ -1,14 +1,15 @@
 import BlogPreview from '@/app/(blogContent)/blog/components/BlogPreview';
 import { australiaMDData } from '@/app/(visaCountries)/mainDirectoryData/australiaMDData';
 import { notFound } from 'next/navigation';
-
+import Script from 'next/script';
+const base_url = 'https://visacollect.com';
 export async function generateMetadata({ params }) {
   try {
     const slug = params.slug;
     const blogData = australiaMDData?.blogs?.find(blog => blog.slug === slug);
 
     if (!blogData) notFound();
-    console.log(blogData);
+
     return {
       ...(blogData?.metadata
         ? blogData.metadata
@@ -34,41 +35,46 @@ export default function Page({ params }) {
   );
   console.log(relatedBlogs);
   if (!blogData) notFound();
-  // const jsonLd = {
-  //   '@context': 'https://schema.org',
-  //   '@type': 'Blog',
-  //   mainEntity: [
-  //     {
-  //       '@type': 'WebPage',
-  //       '@id': `${base_url}/blog/${meta.slug}/`,
-  //     },
-  //   ],
-  //   headline: meta.pageTitle,
-  //   description: meta.description,
-  //   image: `${base_url}${meta.img}`,
-  //   author: {
-  //     '@type': 'Organization',
-  //     name: '',
-  //   },
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    mainEntity: [
+      {
+        '@type': 'WebPage',
+        '@id': `${base_url}/in/blog/${blogData.slug}/`,
+      },
+    ],
+    headline: blogData.pageTitle,
+    description: blogData.metadata.description,
+    image: `${base_url}${blogData.imgUrl}`,
+    author: {
+      '@type': 'Organization',
+      name: '',
+    },
 
-  //   publisher: {
-  //     '@type': 'Organization',
-  //     name: 'Visa Collect',
-  //     logo: {
-  //       '@type': 'ImageObject',
-  //       url: 'https://visacollect.com/',
-  //     },
-  //   },
-  //   image: '',
-  //   datePublished: '2024-03-15',
-  //   dateModified: '2024-03-15',
-  // };
+    publisher: {
+      '@type': 'Organization',
+      name: 'Visa Collect',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://visacollect.com/',
+      },
+    },
+
+    datePublished: '2024-03-15',
+    dateModified: '2024-03-15',
+  };
   return (
     <>
       <BlogPreview
         {...blogData}
         asideTitle="Popular Articles"
         relatedBlogs={relatedBlogs}
+      />
+      <Script
+        id="blog-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
     </>
   );
