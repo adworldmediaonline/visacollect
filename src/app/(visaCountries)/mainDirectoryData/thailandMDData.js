@@ -39,6 +39,9 @@ export const thailandMDData = {
           url: `${thailandMDBlogBase}/1-year-multi-entry-non-immigrant-visa`,
         },
       },
+      pageTitle: 'Thai 1-Year Non-Immigrant Visa for UK Citizens',
+      imgUrl:
+        '/assets/images/blog/thailandVisa/1-year-multi-entry-non-immigrant-visa.webp.webp',
       slug: '1-year-multi-entry-non-immigrant-visa',
       content: <OneYearMultiEntryNonImmigrantVisaUkToThailand />,
       img: oneYearMultiEntryNonImmigrantVisaUkToThailandImg,
@@ -59,6 +62,9 @@ export const thailandMDData = {
           url: `${thailandMDBlogBase}/complete-thailand-visa-guide-for-uk-citizens`,
         },
       },
+      pageTitle: 'Complete Quick Thailand Visa Guide for UK Citizens',
+      imgUrl:
+        '/assets/images/blog/thailandVisa/complete-thailand-visa-guide-for-uk-citizens.webp',
       slug: 'complete-thailand-visa-guide-for-uk-citizens',
       content: <CompleteThailandVisaGuideForUkCitizens />,
       img: completeThailandVisaGuideForUkCitizensImg,
@@ -79,6 +85,9 @@ export const thailandMDData = {
           url: `${thailandMDBlogBase}/how-to-apply-for-thailand-visa-from-uk`,
         },
       },
+      pageTitle: `How to Apply for Thailand's E-Visa Stickerless`,
+      imgUrl:
+        '/assets/images/blog/thailandVisa/how-to-apply-for-thailand-visa-from-uk.webp',
       slug: 'how-to-apply-for-thailand-visa-from-uk',
       content: <HowToApplyForThailandVisaFromUk />,
       img: howToApplyForThailandVisaFromUkImg,
@@ -99,6 +108,9 @@ export const thailandMDData = {
           url: `${thailandMDBlogBase}/travel-to-thailand-from-uk`,
         },
       },
+      pageTitle: `Travel to Thailand from the UK with VisaCollect's Easy Steps`,
+      imgUrl:
+        '/assets/images/blog/thailandVisa/travel-to-thailand-from-uk.webp',
       slug: 'travel-to-thailand-from-uk',
       content: <TravelToThailandFromUk />,
       img: travelToThailandFromUkImg,
