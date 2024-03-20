@@ -18,7 +18,7 @@ export default function BlogPreview2({
   return (
     <>
       <div className="container">
-        <BlogPreview2PageHero className="mt-32 mb-10">
+        <BlogPreview2PageHero className="mt-8 mb-10">
           <h1 className="text-3xl font-semibold text-primary">
             {meta?.pageTitle}
           </h1>

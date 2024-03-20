@@ -1,5 +1,6 @@
 import { cn } from '@/lib/cn';
 import HomePageTitle from '../common/countryHomePage/HomePageTitle';
+import Breadcrumb from '../Breadcrumbs';
 
 export default function Banner3({
   breadcrumb,
@@ -9,10 +10,18 @@ export default function Banner3({
 }) {
   return (
     <div>
-      <div className={cn('container py-16', className)}>
-        <div>
-          <p className="py-8">Home &gt; {breadcrumb ?? ''}</p>
-        </div>
+      <div className="mt-24">
+        <Breadcrumb
+          homeElement={'Home'}
+          separator={<span> &gt; </span>}
+          activeClasses="text-amber-500"
+          // containerClasses="flex py-5 bg-gradient-to-r from-purple-600 to-blue-600"
+          containerClasses="flex py-0 text-sm"
+          listClasses="hover:underline mx-2"
+          capitalizeLinks
+        />
+      </div>
+      <div className={cn('container pt-8 pb-16', className)}>
         <HomePageTitle pageTitle={pageTitle ?? ''} />
         <p className="mt-1 text-base">{pageTitleDescription ?? ''}</p>
       </div>

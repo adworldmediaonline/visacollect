@@ -9,7 +9,7 @@ const Footer = () => {
     {
       id: 1,
       icon: <FaFacebookF />,
-      href: 'https://www.facebook.com/profile.php?id=61556564781995&mibextid=ZbWKwL',
+      href: 'https://www.facebook.com/profile.php?id=61556054082156&mibextid=ZbWKwL',
     },
     {
       id: 2,

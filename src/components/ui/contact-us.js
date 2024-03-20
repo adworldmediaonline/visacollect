@@ -42,7 +42,7 @@ export default function ContactUs() {
   return (
     <div>
       <section className="relative text-gray-600">
-        <div className="container flex flex-wrap px-5 py-24 mx-auto sm:flex-nowrap">
+        <div className="container flex flex-wrap pt-10 pb-24 mx-auto sm:flex-nowrap">
           <div className="relative flex items-end justify-start p-10 overflow-hidden bg-gray-300 rounded-lg lg:w-2/3 md:w-1/2 sm:mr-10">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.931445110928!2d77.0751763!3d28.4514829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d18eb0c8b6705%3A0x1b7e0905e02039ab!2sRider%20House%2C%20Sector%2044%2C%20Gurugram%2C%20Haryana%20122003!5e0!3m2!1sen!2sin!4v1710238760248!5m2!1sen!2sin"
