@@ -36,7 +36,7 @@ export default function BlogPreview2({
             </AsideWrapper>
           )}
           {cta && (
-            <AsideWrapper className="w-full order-1 mt-24 md:mt-0 md:order-0 md:basis-[300px] bg-primary/10">
+            <AsideWrapper className="w-full order-1 mt-24 md:mt-0 md:-order-1 md:basis-[300px] bg-primary/10">
               <ContactUs2 />
             </AsideWrapper>
           )}
