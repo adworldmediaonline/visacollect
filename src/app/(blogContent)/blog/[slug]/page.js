@@ -34,7 +34,7 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params }) {
   const { meta, content } = await getPageContent(params.slug);
   if (!content) notFound();
-  console.log(meta);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
