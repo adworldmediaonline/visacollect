@@ -3,8 +3,6 @@ import MainWrapper from './MainWrapper';
 import PageWrapper from './PageWrapper';
 import AsideWrapperTitle from './AsideWrapperTitle';
 import BlogCardSmall from './BlogCardSmall';
-import BlogHeroImage from '../../BlogContentHero';
-import { imageNotFound } from '@/app/(visaCountries)/mainDirectoryHomePagesBlog/images/blogImages';
 import ContactUs2 from '@/components/ui/contact-us-2';
 import BlogPreview2PageHero from './BlogPreview2PageHero';
 
@@ -38,7 +36,7 @@ export default function BlogPreview2({
             </AsideWrapper>
           )}
           {cta && (
-            <AsideWrapper className="basis-[300px] bg-primary/10">
+            <AsideWrapper className="w-full order-1 mt-24 md:mt-0 md:order-0 md:basis-[300px] bg-primary/10">
               <ContactUs2 />
             </AsideWrapper>
           )}
