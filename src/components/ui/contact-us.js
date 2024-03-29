@@ -5,22 +5,7 @@ import * as Yup from "yup";
 import Button from "./button";
 import usePost from "@/hooks/usePost";
 import Link from "next/link";
-export const metadata = {
-    title: "24X7 Online Visa Services | Get Your Visa Apply Today",
-    description:
-        "Plan your stress-free travel with our 24/7 online visa services. Enjoy quick and reliable visa processing at any time. Apply Visa Today.",
-    metadataBase: new URL("https://visacollect.com"),
 
-    alternates: {
-        canonical: "/",
-    },
-    keywords:
-        "visa application, apply for visa, online visa application, visa services, apply visa online, online visa, online visa services, e visa services, apply for e visa, Online visa services apply Today",
-
-    openGraph: {
-        url: "/",
-    },
-};
 export default function ContactUs() {
     const postMutation = usePost(
         "https://visacollect.com/api/contact",
