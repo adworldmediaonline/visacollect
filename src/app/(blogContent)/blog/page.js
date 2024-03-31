@@ -8,6 +8,10 @@ import path from 'path';
 import Link from 'next/link';
 import { getAllPostsMeta } from '@/lib/mdx';
 import BlogCard from './components/BlogCard';
+import { australiaMDData } from '@/app/(visaCountries)/mainDirectoryData/australiaMDData';
+import { indiaMDData } from '@/app/(visaCountries)/mainDirectoryData/indiaMDData';
+import { thailandMDData } from '@/app/(visaCountries)/mainDirectoryData/thailandMDData';
+import FilterBlogs from './filter-blogs';
 
 // function fetchAllBlogFiles() {
 //   const blogDirectory = path.join(
@@ -30,6 +34,16 @@ import BlogCard from './components/BlogCard';
 
 export default async function BlogPage() {
   const posts = await getAllPostsMeta();
+  // const mainDirectoryData = [
+  //   australiaMDData,
+  //   indiaMDData,
+  //   thailandMDData,
+  // ].flatMap(mdData => {
+  //   return mdData.blogs.map(blog => ({
+  //     url: `${baseUrl}/${mdData.code.toLowerCase()}/blog/${blog.slug}`,
+  //     lastModified: new Date().toISOString(),
+  //   }));
+  // });
 
   return (
     <>
@@ -41,11 +55,12 @@ export default async function BlogPage() {
             className="font-bold text-primary"
           />
           {/* <div className="w-16 h-1 mb-20 bg-primary"></div> */}
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {posts?.map(post => (
+          {/* <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"> */}
+          <FilterBlogs defaultValue="generalBlogs" defaultPosts={posts} />
+          {/* {posts?.map(post => (
               <BlogCard imgSrc="" post={post} key={post.slug} />
-            ))}
-          </div>
+            ))} */}
+          {/* </div> */}
         </MainWrapper>
       </PageWrapper>
     </>
