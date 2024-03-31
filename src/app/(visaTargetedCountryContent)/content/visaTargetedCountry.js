@@ -45,6 +45,10 @@ import { srilankaVisaCanadaFaq } from './targetedCountrySubPagesFaq/canadaFaq/sr
 import { srilankaVisaIndiaFaq } from './targetedCountrySubPagesFaq/india/srilankaVisa/indiaFaq';
 import { srilankaVisaUsFaq } from './targetedCountrySubPagesFaq/usFaq/srilankaVisa/usFaq';
 import { canadaFaq } from './targetedCountrySubPagesFaq/canadaFaq/indianVisa/canadaFaq';
+import { southAfricaFaq } from './targetedCountrySubPagesFaq/southAfrica/indianVisa/southAfricaFaq';
+import { kenyaFaq } from './targetedCountrySubPagesFaq/kenya/indianVisa/kenyaFaq';
+import { netherlandsFaq } from './targetedCountrySubPagesFaq/netherlands/indianVisa/netherlandsFaq';
+import { nigeriaFaq } from './targetedCountrySubPagesFaq/nigeria/indianVisa/nigeriaFaq';
 
 function setRelatedBlogs(visas, baseUrl) {
   const relatedBlogs = [];
@@ -819,7 +823,8 @@ export const visaPromotedInSouthAfrica = [
       code: 'ZA',
       slug: 'india-e-visa-for-south-african-citizens',
       countryPage: <IndianVisaForSouthAfrica />,
-      faq: [],
+      pageTitle: 'Kickstart Your Indian Adventure From South Africa',
+      faq: southAfricaFaq,
       metadata: {
         title: ``,
         description: ``,
@@ -846,7 +851,8 @@ export const visaPromotedInKenya = [
       code: 'KE',
       slug: 'india-visa-for-kenya-citizens',
       countryPage: <IndianVisaForKenya />,
-      faq: [],
+      pageTitle: 'Start Your Journey from Kenya to India',
+      faq: kenyaFaq,
       metadata: {
         title: ``,
         description: ``,
@@ -873,7 +879,8 @@ export const visaPromotedInNetherlands = [
       code: 'NL',
       slug: 'indian-tourist-visa-for-netherlands-citizens',
       countryPage: <IndianVisaForNetherlands />,
-      faq: [],
+      pageTitle: 'From Netherlands to the Heart of India',
+      faq: netherlandsFaq,
       metadata: {
         title: ``,
         description: ``,
@@ -900,7 +907,9 @@ export const visaPromotedInNigerian = [
       code: 'NG',
       slug: 'indian-visa-for-nigerian-citizens',
       countryPage: <IndianVisaForNigeria />,
-      faq: [],
+      pageTitle:
+        'Nigeria To India- Kickstart Your Visa Application Process Today',
+      faq: nigeriaFaq,
       metadata: {
         title: ``,
         description: ``,
