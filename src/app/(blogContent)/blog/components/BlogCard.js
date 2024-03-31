@@ -10,7 +10,7 @@ export default function BlogCard({ post, href }) {
           <Image
             fill
             class="rounded-t-lg"
-            src={post.img}
+            src={post?.imgUrl ? post?.imgUrl : post.img}
             alt=""
             className="object-cover"
           />
