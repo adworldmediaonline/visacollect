@@ -65,18 +65,20 @@ export default async function Page({ params }) {
       <div className="w-full h-[0.5px] bg-gray-200"></div>
       <PageWrapper className="mt-10 mb-10">
         <MainWrapper>{targetedCountry?.countryPage ?? ''}</MainWrapper>
-        <AsideWrapper className="sticky top-24">
-          <ul className="flex flex-col gap-3">
-            {blogs?.map(blog => (
-              <li key={blog?.metadata?.title}>
-                <AsideBlogCard
-                  slug={blog?.href}
-                  title={blog?.metadata?.title}
-                />
-              </li>
-            ))}
-          </ul>
-        </AsideWrapper>
+        {blogs?.length > 0 && (
+          <AsideWrapper className="sticky top-24">
+            <ul className="flex flex-col gap-3">
+              {blogs?.map(blog => (
+                <li key={blog?.metadata?.title}>
+                  <AsideBlogCard
+                    slug={blog?.href}
+                    title={blog?.metadata?.title}
+                  />
+                </li>
+              ))}
+            </ul>
+          </AsideWrapper>
+        )}
       </PageWrapper>
       <div className="mt-16">
         <Divider />
@@ -89,7 +91,7 @@ export default async function Page({ params }) {
         />
       </div>
       <PageReview applyLink="/in/visa/step-one" />
-      <BlogSlider blogs={JSON.stringify(blogs) ?? []} />
+      {blogs?.length > 0 && <BlogSlider blogs={JSON.stringify(blogs) ?? []} />}
     </div>
   );
 }
