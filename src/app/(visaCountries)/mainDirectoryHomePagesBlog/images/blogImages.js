@@ -14,7 +14,7 @@ import oneYearMultiEntryNonImmigrantVisaUkToThailandImg from '/public/assets/ima
 import completeThailandVisaGuideForUkCitizensImg from '/public/assets/images/blog/thailandVisa/complete-thailand-visa-guide-for-uk-citizens.webp';
 import howToApplyForThailandVisaFromUkImg from '/public/assets/images/blog/thailandVisa/how-to-apply-for-thailand-visa-from-uk.webp';
 import travelToThailandFromUkImg from '/public/assets/images/blog/thailandVisa/travel-to-thailand-from-uk.webp';
-
+import sriLankanVisaRequirementsForCanadianCitizens from '/public/assets/images/srilanka/blog/sri-lankan-visa-requirements-for-canadian-citizens.webp';
 export {
   imageNotFound,
   topThingsToDoInIndiaForFunAustraliaCitizensImg,
@@ -32,4 +32,5 @@ export {
   completeThailandVisaGuideForUkCitizensImg,
   howToApplyForThailandVisaFromUkImg,
   travelToThailandFromUkImg,
+  sriLankanVisaRequirementsForCanadianCitizens,
 };
