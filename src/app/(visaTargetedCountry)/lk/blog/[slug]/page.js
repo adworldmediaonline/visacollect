@@ -1,5 +1,6 @@
 import BlogPreview from '@/app/(blogContent)/blog/components/BlogPreview';
-import { indiaMDData } from '@/app/(visaCountries)/mainDirectoryData/indiaMDData';
+import { srilankaMDData } from '@/app/(visaCountries)/mainDirectoryData/srilankaMDData';
+
 import {
   getPostBySlug,
   rootDirectoryDestinations,
@@ -19,7 +20,7 @@ const base_url = 'https://visacollect.com';
 export async function generateMetadata({ params }) {
   try {
     const slug = params.slug;
-    const blogData = indiaMDData?.blogs?.find(blog => blog.slug === slug);
+    const blogData = srilankaMDData?.blogs?.find(blog => blog.slug === slug);
 
     if (!blogData) notFound();
 
@@ -42,8 +43,10 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
   const slug = params.slug;
-  const blogData = indiaMDData?.blogs?.find(blog => blog.slug === slug);
-  const relatedBlogs = indiaMDData?.blogs?.filter(blog => blog.slug !== slug);
+  const blogData = srilankaMDData?.blogs?.find(blog => blog.slug === slug);
+  const relatedBlogs = srilankaMDData?.blogs?.filter(
+    blog => blog.slug !== slug
+  );
 
   // testing blog
   // console.log(params.slug);
