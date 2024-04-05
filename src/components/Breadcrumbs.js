@@ -37,7 +37,9 @@ const Breadcrumb = ({
               return (
                 <React.Fragment key={index}>
                   <li className={itemClasses}>
-                    <Link href={href}>{itemLink}</Link>
+                    <Link href={href.endsWith('/blog') ? '/blog' : href}>
+                      {itemLink}
+                    </Link>
                   </li>
                   {pathNames.length !== index + 1 && separator}
                 </React.Fragment>
