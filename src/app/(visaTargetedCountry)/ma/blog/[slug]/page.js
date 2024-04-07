@@ -1,5 +1,5 @@
 import BlogPreview from '@/app/(blogContent)/blog/components/BlogPreview';
-import { indiaMDData } from '@/app/(visaCountries)/mainDirectoryData/indiaMDData';
+import { morroccoMDData } from '@/app/(visaCountries)/mainDirectoryData/morroccoMDData';
 import { notFound } from 'next/navigation';
 import Script from 'next/script';
 const base_url = 'https://visacollect.com';
@@ -7,7 +7,7 @@ const base_url = 'https://visacollect.com';
 export async function generateMetadata({ params }) {
   try {
     const slug = params.slug;
-    const blogData = indiaMDData?.blogs?.find(blog => blog.slug === slug);
+    const blogData = morroccoMDData?.blogs?.find(blog => blog.slug === slug);
 
     if (!blogData) notFound();
 
@@ -30,8 +30,16 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
   const slug = params.slug;
-  const blogData = indiaMDData?.blogs?.find(blog => blog.slug === slug);
-  const relatedBlogs = indiaMDData?.blogs?.filter(blog => blog.slug !== slug);
+  const blogData = morroccoMDData?.blogs?.find(blog => blog.slug === slug);
+  const relatedBlogs = morroccoMDData?.blogs?.filter(
+    blog => blog.slug !== slug
+  );
+
+  // testing blog
+  // console.log(params.slug);
+  // const { meta, content } = await getPageContent(params.slug);
+  // console.log(meta);
+  // testing blog end
 
   if (!blogData) notFound();
 

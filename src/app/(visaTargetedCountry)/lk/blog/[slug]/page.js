@@ -1,21 +1,9 @@
 import BlogPreview from '@/app/(blogContent)/blog/components/BlogPreview';
 import { srilankaMDData } from '@/app/(visaCountries)/mainDirectoryData/srilankaMDData';
 
-import {
-  getPostBySlug,
-  rootDirectoryDestinations,
-} from '@/lib/mainDirectoryBlogsMdx';
 import { notFound } from 'next/navigation';
 import Script from 'next/script';
 const base_url = 'https://visacollect.com';
-
-// const getPageContent = async slug => {
-//   const { meta, content } = await getPostBySlug(
-//     slug,
-//     rootDirectoryDestinations
-//   );
-//   return { meta, content };
-// };
 
 export async function generateMetadata({ params }) {
   try {
@@ -47,12 +35,6 @@ export default async function Page({ params }) {
   const relatedBlogs = srilankaMDData?.blogs?.filter(
     blog => blog.slug !== slug
   );
-
-  // testing blog
-  // console.log(params.slug);
-  // const { meta, content } = await getPageContent(params.slug);
-  // console.log(meta);
-  // testing blog end
 
   if (!blogData) notFound();
 
