@@ -5,10 +5,18 @@ import BlogCard from './components/BlogCard';
 import { australiaMDData } from '@/app/(visaCountries)/mainDirectoryData/australiaMDData';
 import { indiaMDData } from '@/app/(visaCountries)/mainDirectoryData/indiaMDData';
 import { thailandMDData } from '@/app/(visaCountries)/mainDirectoryData/thailandMDData';
+import { morroccoMDData } from '@/app/(visaCountries)/mainDirectoryData/morroccoMDData';
+import { turkeyMDData } from '@/app/(visaCountries)/mainDirectoryData/turkeyMDData';
 
 export default function FilterBlogs({ defaultValue, defaultPosts }) {
   const [filter, setFilter] = useState(defaultValue);
-  const mainDirectoryDataBlogs = [australiaMDData, indiaMDData, thailandMDData];
+  const mainDirectoryDataBlogs = [
+    australiaMDData,
+    indiaMDData,
+    thailandMDData,
+    morroccoMDData,
+    turkeyMDData,
+  ];
 
   const filterBlogs =
     mainDirectoryDataBlogs.find(country => country.code === filter) ?? [];

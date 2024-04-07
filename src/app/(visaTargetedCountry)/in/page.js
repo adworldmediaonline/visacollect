@@ -10,7 +10,7 @@ import Faq from '@/components/commonWebsiteComponents/Faq';
 import Banner2 from '@/components/ui/Banner2';
 import { indiaMDData } from '@/app/(visaCountries)/mainDirectoryData/indiaMDData';
 
-export default function Page() {
+export default async function Page() {
   return (
     <div>
       <Banner2
