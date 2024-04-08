@@ -1,5 +1,8 @@
 import { TurkeyHomePage } from '../mainDirectoryHomePages';
-import { indiaEVisaApplyOnline } from '../mainDirectoryHomePagesBlog/images/blogImages';
+import {
+  howToGetTurkeyVisa,
+  indiaEVisaApplyOnline,
+} from '../mainDirectoryHomePagesBlog/images/blogImages';
 import { HowToGetATurkeyVisaAfterARefusal } from '../mainDirectoryHomePagesBlog/turkey';
 import { turkeyMDHomePageFaq } from '../mainDirectoryHomePagesFaq/turkeyMDHomePageFaq';
 
@@ -31,9 +34,10 @@ export const turkeyMDData = {
       slug: 'how-to-get-a-turkey-visa-after-a-refusal',
       pageTitle: 'How to Get a Turkey Visa After a Refusal',
       content: <HowToGetATurkeyVisaAfterARefusal />,
-      img: indiaEVisaApplyOnline,
+      img: howToGetTurkeyVisa,
       alt: 'Your Complete Guide to Obtaining a Visa in Morocco | Visacollect',
-      imgUrl: '/assets/images/generalBlog/india-evisa-apply-online.webp',
+      imgUrl:
+        '/assets/images/blog/turkeyVisa/how-to-get-a-turkey-visa-after-a-refusal.webp',
       linkText: 'Read more',
       href: `${turkeyMDBlogBase}/how-to-get-a-turkey-visa-after-a-refusal`,
     },

@@ -1,5 +1,8 @@
 import { MorroccoHomePage } from '../mainDirectoryHomePages';
-import { indiaEVisaApplyOnline } from '../mainDirectoryHomePagesBlog/images/blogImages';
+import {
+  moroccoVisaEligibilityImg,
+  yourCompleteGuideImg,
+} from '../mainDirectoryHomePagesBlog/images/blogImages';
 import { MoroccoVisaEligibilityApplicationAndRequirements } from '../mainDirectoryHomePagesBlog/morocco';
 import { morroccoMDHomePageFaq } from '../mainDirectoryHomePagesFaq/morroccoMDHomePageFaq';
 
@@ -33,9 +36,10 @@ export const morroccoMDData = {
       pageTitle:
         'Morocco E-Visa Guide: Eligibility, Application Procedures and Requirements',
       content: <MoroccoVisaEligibilityApplicationAndRequirements />,
-      img: indiaEVisaApplyOnline,
+      img: moroccoVisaEligibilityImg,
       alt: 'Your Complete Guide to Obtaining a Visa in Morocco | Visacollect',
-      imgUrl: '/assets/images/generalBlog/india-evisa-apply-online.webp',
+      imgUrl:
+        '/assets/images/blog/moroccoVisa/morocco-visa-eligibility-application-and-requirements.webp',
       linkText: 'Read more',
       href: `${morroccoMDBlogBase}/morocco-visa-eligibility-application-and-requirements`,
     },
@@ -57,9 +61,10 @@ export const morroccoMDData = {
       pageTitle:
         'Your Complete Guide to Applying for a Morocco E-Visa: Easy Steps to Take for a Rememberable Trip',
       content: <MoroccoVisaEligibilityApplicationAndRequirements />,
-      img: indiaEVisaApplyOnline,
+      img: yourCompleteGuideImg,
       alt: 'Your Complete Guide to Obtaining a Visa in Morocco | Visacollect',
-      imgUrl: '/assets/images/generalBlog/india-evisa-apply-online.webp',
+      imgUrl:
+        '/assets/images/blog/moroccoVisa/your-complete-guide-to-obtaining-a-visa-in-morocco.webp',
       linkText: 'Read more',
       href: `${morroccoMDBlogBase}/your-complete-guide-to-obtaining-a-visa-in-morocco`,
     },

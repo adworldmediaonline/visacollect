@@ -17,8 +17,13 @@ import travelToThailandFromUkImg from '/public/assets/images/blog/thailandVisa/t
 import sriLankanVisaRequirementsForCanadianCitizens from '/public/assets/images/srilanka/blog/sri-lankan-visa-requirements-for-canadian-citizens.webp';
 
 import indiaEVisaApplyOnline from '/public/assets/images/generalBlog/india-evisa-apply-online.webp';
-
+import moroccoVisaEligibilityImg from '/public/assets/images/blog/moroccoVisa/morocco-visa-eligibility-application-and-requirements.webp';
+import yourCompleteGuideImg from '/public/assets/images/blog/moroccoVisa/your-complete-guide-to-obtaining-a-visa-in-morocco.webp';
+import howToGetTurkeyVisa from '/public/assets/images/blog/turkeyVisa/how-to-get-a-turkey-visa-after-a-refusal.webp';
 export {
+  moroccoVisaEligibilityImg,
+  yourCompleteGuideImg,
+  howToGetTurkeyVisa,
   imageNotFound,
   topThingsToDoInIndiaForFunAustraliaCitizensImg,
   bestThingsToDoInIndiaForAustraliaCitizensImg,

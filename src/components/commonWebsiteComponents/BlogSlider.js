@@ -9,11 +9,11 @@ import BlogCard from './BlogCard';
 const BlogSlider = ({ blogs }) => {
   const customSlider = useRef();
   const settings = {
-    className: 'center',
     slidesToShow: 3,
-    focusOnSelect: true,
+    slidesToScroll: 3,
+    initialSlide: 0,
     dots: false,
-    infinite: true,
+    infinite: false,
     arrows: false,
     loop: true,
     autoplay: true,
@@ -23,16 +23,13 @@ const BlogSlider = ({ blogs }) => {
     accessibility: true,
     cssEase: 'ease-out',
     swipeToSlide: true,
-    pouseonhover: true,
-    // nextArrow: <SampleNextArrow />,
-    // prevArrow: <SamplePrevArrow />,
 
     responsive: [
       {
         breakpoint: 1080,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
           infinite: true,
           arrows: true,
         },
@@ -41,7 +38,7 @@ const BlogSlider = ({ blogs }) => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
           infinite: true,
           arrows: false,
         },
