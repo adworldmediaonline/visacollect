@@ -1,4 +1,14 @@
 import Link from "next/link";
+export const LinkButton = ({ text, href }) => (
+    <div className="flex justify-center items-center">
+        <Link
+            href={href}
+            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+        >
+            {text}
+        </Link>
+    </div>
+);
 
 export const LinkText = ({ text, href }) => (
     <Link className="text-primary font-semibold text-lg" href={href}>
@@ -66,7 +76,7 @@ Discover the advantages of applying through <LinkText href="/" text="visacollect
 
 ### What are the documents required to Apply for a VISA to Indonesia?
 
-According to the official Indonesia eVISA website, the necessary documents for an Indonesia eVISA application include:
+According to the official Indonesia eVISA website, the necessary documents for an <LinkText text="Indonesia eVISA application" href="/id/application/"/> include:
 
 -   A valid passport with a minimum of six months validity from the date of entry.
 -   Confirmed travel itinerary, including accommodation details and return flight tickets.

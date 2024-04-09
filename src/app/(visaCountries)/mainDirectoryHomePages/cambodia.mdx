@@ -1,3 +1,21 @@
+import Link from "next/link";
+export const LinkButton = ({ text, href }) => (
+    <div className="flex justify-center items-center">
+        <Link
+            href={href}
+            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+        >
+            {text}
+        </Link>
+    </div>
+);
+
+export const LinkText = ({ text, href }) => (
+    <Link className="text-primary font-semibold text-lg" href={href}>
+        {text}
+    </Link>
+);
+
 ## Explore the Beauty of Cambodia with Ease!
 
 Hassle-free Begin your journey to Cambodia by obtaining your eVisa through Cambodia via info@visacollect.com! The Ministry of Foreign Affairs and International Cooperation introduced the e-visa in April 2006 to boost tourism and facilitate visits to Cambodia. With the new e-visa, travelers can enjoy a stay of up to three months without the need to obtain a visa upon arrival at Cambodian airports or consulates abroad.
@@ -14,7 +32,7 @@ The Cambodia e-visa is an official document that grants authorization for travel
 
 ## Eligibility for Cambodia Tourist Visa
 
-Most countries need to apply for a Cambodia e-Visa, with only a few exceptions. Connect with our Visacollect experts to verify your eligibility and apply instantly.
+Most countries need to <LinkText text="apply for a Cambodia e-Visa" href="/kh/application/"/> , with only a few exceptions. Connect with our Visacollect experts to verify your eligibility and apply instantly.
 
 ## Validity and Duration
 
@@ -65,4 +83,4 @@ Valid passport, applicant photo, proof of accommodation, and means of payment. e
 -   Super rush processing takes approximately 4 days.
 -   Enter only through designated ports: Phnom Penh and Sihanoukville International Airports.
 
-Hop on on your Cambodia adventure with confidence! Apply for your eVisa through e-Visa today and enjoy a stress-free journey.
+Hop on on your Cambodia adventure with confidence! <LinkText text="Apply for your eVisa" href="/"/> through Visacollect today and enjoy a stress-free journey.

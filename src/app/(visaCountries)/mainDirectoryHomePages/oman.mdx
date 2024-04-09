@@ -1,3 +1,21 @@
+import Link from "next/link";
+export const LinkButton = ({ text, href }) => (
+    <div className="flex justify-center items-center">
+        <Link
+            href={href}
+            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+        >
+            {text}
+        </Link>
+    </div>
+);
+
+export const LinkText = ({ text, href }) => (
+    <Link className="text-primary font-semibold text-lg" href={href}>
+        {text}
+    </Link>
+);
+
 ## Discover Hassle-Free Travel to Oman with Visacollect!
 
 Are you a GCC resident eager to explore Oman?
@@ -77,7 +95,8 @@ Await processing, receive your Oman Visa for GCC Residents, and prepare for an e
 
 ## Ready to embark on your adventure?
 
-Apply now with Visacollect – Your Trusted Partner for Effortless Travel!
+<LinkText text="Apply now with Visacollect" href="/" /> – Your Trusted Partner for
+Effortless Travel!
 
 We are dedicated to providing a hassle-free and transparent experience. If you have any questions or need further assistance, feel free to contact our 24/7 customer support. Your satisfaction is our priority!
 

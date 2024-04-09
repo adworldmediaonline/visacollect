@@ -1,3 +1,21 @@
+import Link from "next/link";
+export const LinkButton = ({ text, href }) => (
+    <div className="flex justify-center items-center">
+        <Link
+            href={href}
+            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+        >
+            {text}
+        </Link>
+    </div>
+);
+
+export const LinkText = ({ text, href }) => (
+    <Link className="text-primary font-semibold text-lg" href={href}>
+        {text}
+    </Link>
+);
+
 ## Japan eVISA: Your Gateway to a Land of Ancient Wonders and Modern Art & Culture
 
 Japan, a Pacific island nation, is a remarkable destination that combines ancient traditions and modern lifestyle. Whether you are drawn to the dynamic metropolis of Tokyo, with its state-of-the-art technology, soaring skyscrapers, and colorful pop culture, or to the peaceful landscapes of Kyoto, with its historical and cultural heritage, you will find something to suit your taste in Japan.
@@ -10,7 +28,7 @@ Japan’s gastronomic scene is another attraction. With a diversity of regional 
 
 Moreover, Japan’s people are renowned for their hospitality and courtesy, making it a friendly destination for travelers.
 
-So, don’t wait any longer and apply for your visa today and get ready to discover the amazing contrasts and wonders that only Japan can offer!
+So, don’t wait any longer and <LinkText text="apply for your visa today" href="/"/> and get ready to discover the amazing contrasts and wonders that only Japan can offer!
 
 ### What Is Japan eVisa?
 
