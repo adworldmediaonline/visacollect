@@ -1,3 +1,21 @@
+import Link from "next/link";
+export const LinkButton = ({ text, href }) => (
+    <div className="flex justify-center items-center">
+        <Link
+            href={href}
+            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+        >
+            {text}
+        </Link>
+    </div>
+);
+
+export const LinkText = ({ text, href }) => (
+    <Link className="text-primary font-semibold text-lg" href={href}>
+        {text}
+    </Link>
+);
+
 ## Explore the Beauty of Cambodia with Ease!
 
 Hassle-free Begin your journey to Cambodia by obtaining your eVisa through Cambodia via info@visacollect.com! The Ministry of Foreign Affairs and International Cooperation introduced the e-visa in April 2006 to boost tourism and facilitate visits to Cambodia. With the new e-visa, travelers can enjoy a stay of up to three months without the need to obtain a visa upon arrival at Cambodian airports or consulates abroad.

@@ -1,9 +1,19 @@
-import Link from 'next/link';
+import Link from "next/link";
+export const LinkButton = ({ text, href }) => (
+    <div className="flex justify-center items-center">
+        <Link
+            href={href}
+            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+        >
+            {text}
+        </Link>
+    </div>
+);
 
 export const LinkText = ({ text, href }) => (
-  <Link className="text-primary font-semibold text-lg" href={href}>
-    {text}
-  </Link>
+    <Link className="text-primary font-semibold text-lg" href={href}>
+        {text}
+    </Link>
 );
 
 ## Morocco: A Blend of Rich Heritage and Timeless Beauty
@@ -36,8 +46,8 @@ The cost of a Morocco e-Visa is fixed at USD 15. According to the official websi
 
 The processing time for a Morocco eVISA depends on the type of visa and individual circumstances. On average, the following processing times can be expected:
 
-- Tourist eVISA to Morocco: 3 to 7 business days
-- Business eVISA to Morocco: 5 to 10 business days
+-   Tourist eVISA to Morocco: 3 to 7 business days
+-   Business eVISA to Morocco: 5 to 10 business days
 
 ## How to Apply for Morocco eVISA Online?
 
@@ -57,10 +67,10 @@ Remember: For certain types of visas, additional steps or appointments may be re
 
 Discover the advantages of applying through <LinkText href="/" text="visacollect"/>
 
-- Simplicity: Choose between online application or app submission.
-- Expert Assistance: Rely on our visa experts for guidance at every step.
-- Government Approval: Rest assured that your application is in compliance with Moroccan regulations.
-- Transparent Communication: Stay informed throughout the application process.
+-   Simplicity: Choose between online application or app submission.
+-   Expert Assistance: Rely on our visa experts for guidance at every step.
+-   Government Approval: Rest assured that your application is in compliance with Moroccan regulations.
+-   Transparent Communication: Stay informed throughout the application process.
 
 ## What are the documents required to Apply for eVisa to Morocco?
 
