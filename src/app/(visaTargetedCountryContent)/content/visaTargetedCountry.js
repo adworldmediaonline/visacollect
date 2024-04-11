@@ -826,14 +826,14 @@ export const visaPromotedInSouthAfrica = [
             pageTitle: "Kickstart Your Indian Adventure From South Africa",
             faq: southAfricaFaq,
             metadata: {
-                title: ``,
-                description: ``,
+                title: `India e-Visa for South African Citizens | Visacollect`,
+                description: `Looking India visa for South African citizen? Apply your India e-visa for South African citizens with ease and convenience. Let us help you with the process. Apply Now`,
                 metadataBase: new URL("https://visacollect.com"),
 
                 alternates: {
                     canonical: `/za/india-e-visa-for-south-african-citizens`,
                 },
-                keywords: ``,
+                keywords: `India e-Visa for South African Citizens, Indian Visa for South African Citizens ,India tourist e-Visa for South African Citizens, Indian tourist Visa for South African Citizens`,
                 openGraph: {
                     url: `/za/india-e-visa-for-south-african-citizens`,
                 },
@@ -854,14 +854,14 @@ export const visaPromotedInKenya = [
             pageTitle: "Start Your Journey from Kenya to India",
             faq: kenyaFaq,
             metadata: {
-                title: ``,
-                description: ``,
+                title: `Indian Visa for Kenyan Citizens | Visacollect`,
+                description: `Looking India visa for Kenya citizen? Apply your India e-visa for kenya citizens with ease and convenience. Let us help you with the process. Apply Now`,
                 metadataBase: new URL("https://visacollect.com"),
 
                 alternates: {
                     canonical: `/ke/india-visa-for-kenya-citizens`,
                 },
-                keywords: ``,
+                keywords: `India e-Visa for Kenyan Citizens, Indian Visa for Kenyan Citizens, India tourist e-Visa for Kenyan Citizens, Indian tourist Visa for Kenyan Citizens`,
                 openGraph: {
                     url: `/ke/india-visa-for-kenya-citizens`,
                 },
@@ -882,14 +882,14 @@ export const visaPromotedInNetherlands = [
             pageTitle: "From Netherlands to the Heart of India",
             faq: netherlandsFaq,
             metadata: {
-                title: ``,
-                description: ``,
+                title: `Indian Tourist Visa for Dutch Citizens | eVisa Requirements from the Netherlands`,
+                description: `Looking Indian Tourist visa for Dutch citizen? Apply your India e-visa for Netherlands citizens with ease and convenience. Let us help you with the process. Apply Now`,
                 metadataBase: new URL("https://visacollect.com"),
 
                 alternates: {
                     canonical: `/nl/indian-tourist-visa-for-netherlands-citizens`,
                 },
-                keywords: ``,
+                keywords: `India e-Visa for Dutch Citizens, Indian Visa for Dutch Citizens, India tourist e-Visa for Dutch Citizens, Indian tourist Visa for Dutch Citizens, India e-Visa for Netherland Citizens, Indian Visa for Netherland Citizens, India tourist e-Visa for Netherland Citizens, Indian tourist Visa for Netherland Citizens`,
                 openGraph: {
                     url: `/nl/indian-tourist-visa-for-netherlands-citizens`,
                 },
@@ -911,14 +911,14 @@ export const visaPromotedInNigerian = [
                 "Nigeria To India- Kickstart Your Visa Application Process Today",
             faq: nigeriaFaq,
             metadata: {
-                title: ``,
-                description: ``,
+                title: `India e-Visa for Nigerien Citizens | Visacollect`,
+                description: `Looking India visa for Nigerien citizen? Apply your India e-visa for Nigerien citizens with ease and convenience. Let us help you with the process. Apply Now`,
                 metadataBase: new URL("https://visacollect.com"),
 
                 alternates: {
                     canonical: `/ng/indian-visa-for-nigerian-citizens`,
                 },
-                keywords: ``,
+                keywords: `India e-Visa for Nigerien Citizens, Indian Visa for Nigerien Citizens, India tourist e-Visa for Nigerien Citizens, Indian tourist Visa for Nigerien Citizens`,
                 openGraph: {
                     url: `/ng/indian-visa-for-nigerian-citizens`,
                 },
