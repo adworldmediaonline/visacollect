@@ -1,4 +1,14 @@
 import Link from "next/link";
+export const LinkButton = ({ text, href }) => (
+    <div className="flex justify-center items-center">
+        <Link
+            href={href}
+            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+        >
+            {text}
+        </Link>
+    </div>
+);
 export const LinkText = ({ text, href }) => (
     <Link
         className="inline-flex items-center justify-center gap-1 text-lg font-semibold text-primary"
@@ -40,7 +50,7 @@ To apply for an <LinkText href="/au" text="Australian e-Visitor visa" />, you ne
 
 -   Email address: This will be necessary to receive your e-Visitor via email.
 
-**Note:** If you want to get more information about the Australian e-Visa for the United Kingdom citizens, click here.
+## Note: If you want to get more information about the Australian e-Visa for the United Kingdom citizens, click here.
 
 ## How to Get the Australian eVisa
 
@@ -54,17 +64,17 @@ To apply for an ETA online, apply here. You must be outside Australia and intend
 
 -   You will have to wait for your Australia e-Visitor via email inbox according to the processing time you selected. You can contact us if you find any issues while applying. It is important that the details provided for your e-Visitor application match your passport details.
 
-**Frequently Asked Questions for Australian eVisa**
+## Frequently Asked Questions for Australian eVisa
 
-**1. What is the Australia eVisitor for UK citizens?**
+### 1. What is the Australia eVisitor for UK citizens?
 
 Think of it as a fast online visa you get on your phone or computer instead of going to an embassy. It lets you visit Australia for tourism or business for up to 90 days at a time.
 
-**2. Do I need one?**
+### 2. Do I need one?
 
 Yes, all UK citizens need an eVisitor to visit Australia.
 
-**3. What do I need to apply?**
+### 3. What do I need to apply?
 
 -   Valid passport (good for at least 6 months after arriving)
 
@@ -74,18 +84,18 @@ Yes, all UK citizens need an eVisitor to visit Australia.
 
 -   Email address
 
-**4. How do I apply?**
+### 4. How do I apply?
 
 It's all online! Just fill out a quick form, pay the fee, and upload any needed documents. Choose how fast you need it (standard, rush, super rush) and you'll get your eVisitor emailed to you.
 
-**5. How long does it last?**
+### 5. How long does it last?
 
 Your eVisitor is valid for 12 months and lets you visit Australia multiple times, but each stay can't be longer than 90 days. It's for tourism and business, not work or long-term studies.
 
-**6. Can I extend my eVisitor? **
+### 6. Can I extend my eVisitor?
 
 No, it's not extendable. If you want to stay longer, you need a different visa.
 
-**7. What if I have other questions?**
+### 7. What if I have other questions?
 
 Check our website or contact us!
