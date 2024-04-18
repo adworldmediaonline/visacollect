@@ -1,11 +1,21 @@
-import Link from 'next/link';
+import Link from "next/link";
+export const LinkButton = ({ text, href }) => (
+    <div className="flex justify-center items-center">
+        <Link
+            href={href}
+            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+        >
+            {text}
+        </Link>
+    </div>
+);
 export const LinkText = ({ text, href }) => (
-  <Link
-    className="inline-flex items-center justify-center gap-1 text-lg font-semibold text-primary"
-    href={href}
-  >
-    {text}
-  </Link>
+    <Link
+        className="inline-flex items-center justify-center gap-1 text-lg font-semibold text-primary"
+        href={href}
+    >
+        {text}
+    </Link>
 );
 
 Getting the right travel papers is the first step in starting a trip to see Turkey's beautiful scenery and rich culture. Applying for a <LinkText text=" Turkey visa online" href="/tr/"/> through the e-visa system is what most people do. Many people who apply for e-visas are approved, but sometimes they are turned down, leaving travellers unsure of what to do next. This guide will show you how to reapply for a Turkey visa after being turned down the first time, so you can keep your trip plans on track.
@@ -14,11 +24,11 @@ Getting the right travel papers is the first step in starting a trip to see Turk
 
 Before you renew, it's important to know the most common reasons why your Turkey visa application was turned down. Here are some of them:
 
-- Not enough or wrong details on the application form.
-- Based on past travels, place of origin, or age, there is a chance that the person is overstaying.
-- The e-visa does not cover the reason for the trip.
-- The passport was not good for the required 150 days at the time of entry.
-- The old visa is still good.
+-   Not enough or wrong details on the application form.
+-   Based on past travels, place of origin, or age, there is a chance that the person is overstaying.
+-   The e-visa does not cover the reason for the trip.
+-   The passport was not good for the required 150 days at the time of entry.
+-   The old visa is still good.
 
 Finding out the exact reason your visa was denied can greatly improve your chances of being approved the next time you apply.
 

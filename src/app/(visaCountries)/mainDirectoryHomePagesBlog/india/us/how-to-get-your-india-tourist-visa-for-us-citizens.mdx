@@ -1,4 +1,14 @@
 import Link from "next/link";
+export const LinkButton = ({ text, href }) => (
+    <div className="flex justify-center items-center">
+        <Link
+            href={href}
+            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+        >
+            {text}
+        </Link>
+    </div>
+);
 export const LinkText = ({ text, href }) => (
     <Link
         className="inline-flex items-center justify-center gap-1 text-lg font-semibold text-primary"
@@ -16,7 +26,7 @@ In this article, we will discuss how to apply for eVisa India, why US citizens s
 
 So, whether you are looking for a spiritual journey, an adventure, or a relaxing getaway, India has unlimited experiences for everyone, from anywhere.
 
-Read on to find out more about this amazing country and how to make the most of your trip, plus how you can easily apply for Indian visa from USA.
+Read on to find out more about this amazing country and how to make the most of your trip, plus how you can easily <LinkText text="apply for Indian visa" href="/in"/> from USA.
 
 ## What Is an Indian Tourist Visa?
 
@@ -24,9 +34,9 @@ US citizens can apply for India tourist visa online through the Indian governmen
 
 ## How to Apply for eVisa India?
 
-To <LinkText text="Apply" href="/in"/> for an Indian tourist visa, US citizens must complete the online application form and submit it along with the required documents, including a copy of the passport's biographical page, a passport-sized photograph, and proof of return travel. The application fee can be paid online using a credit or debit card. The processing time for the e-visa application is up to 72 hours.
+To Apply for an Indian tourist visa, US citizens must complete the online application form and submit it along with the required documents, including a copy of the passport's biographical page, a passport-sized photograph, and proof of return travel. The application fee can be paid online using a credit or debit card. The processing time for the e-visa application is up to 72 hours.
 
-**Here's how you can easily apply for Indian visa from USA:**
+### Here's how you can easily apply for Indian visa from USA:
 
 **Step-1: Prepare Your Documents:** Gather the required documents, which include a copy of your passport’s biographical page, a passport-sized photograph, and proof of return travel.
 
@@ -70,7 +80,7 @@ So, if you're excited to visit India, you can <LinkText text="apply for an India
 
 Enjoy your wonderful trip to India!
 
-**FAQs for US Citizens Planning Their Indian Trip from USA**
+## FAQs for US Citizens Planning Their Indian Trip from USA
 
 #### 1. What additional requirements do I need to be aware of as a US Citizen going to India?
 
