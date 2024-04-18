@@ -1,4 +1,14 @@
 import Link from "next/link";
+export const LinkButton = ({ text, href }) => (
+    <div className="flex justify-center items-center">
+        <Link
+            href={href}
+            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+        >
+            {text}
+        </Link>
+    </div>
+);
 export const LinkText = ({ text, href }) => (
     <Link
         className="inline-flex items-center justify-center gap-1 text-lg font-semibold text-primary"
@@ -33,17 +43,25 @@ In short, the India e-Visa is an official document granting entry and travel wit
 
 ### Types of Indian Visas for UK Citizens
 
-The Indian visa for UK citizens includes**:**
+## The Indian visa for UK citizens includes:
 
-**1.India Tourist E-visa:** for those who want multiple entries to India for tourissm and is valid for one year from the date of issue.
+### 1.India Tourist E-visa:
 
-**2.India Business E-visa:** for those who want to engage in business activities, such as trade, meetings, exhibitions, or conferences.
+for those who want multiple entries to India for tourissm and is valid for one year from the date of issue.
 
-**3.India Medical E-visa:** for those who want to seek medical treatment in India, such as surgery, consultation, or therapy.
+### 2.India Business E-visa:
 
-**4.India Medical Attendant E-visa:** for those who want to accompany a patient who has a medical e-visa.
+for those who want to engage in business activities, such as trade, meetings, exhibitions, or conferences.
 
-**What is the validity of the India e-Visa for the UK Travellers?**
+### 3.India Medical E-visa:
+
+for those who want to seek medical treatment in India, such as surgery, consultation, or therapy.
+
+### 4.India Medical Attendant E-visa:
+
+for those who want to accompany a patient who has a medical e-visa.
+
+## What is the validity of the India e-Visa for the UK Travellers?
 
 The India Tourist E-visa is valid for one year from the date of issuance, allowing multiple entries with a maximum stay of 180 days per entry.
 
@@ -67,7 +85,7 @@ To be eligible for an India e-visa, you must meet the following criteria*:*
 
 4.Flight ticket
 
-**Photo Requirements for UK Citizens Applying for an India E-visa**
+## Photo Requirements for UK Citizens Applying for an India E-visa
 
 -   Height and width of the photo must be equal.
 -   Complete face with front view and open eyes.

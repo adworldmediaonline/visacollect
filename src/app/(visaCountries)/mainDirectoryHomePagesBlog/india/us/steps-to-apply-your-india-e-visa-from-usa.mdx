@@ -1,4 +1,14 @@
 import Link from "next/link";
+export const LinkButton = ({ text, href }) => (
+    <div className="flex justify-center items-center">
+        <Link
+            href={href}
+            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+        >
+            {text}
+        </Link>
+    </div>
+);
 export const LinkText = ({ text, href }) => (
     <Link
         className="inline-flex items-center justify-center gap-1 text-lg font-semibold text-primary"
@@ -131,6 +141,6 @@ These places offer a unique perspective on India's beauty and charm, and visitin
 
 **Note:** Conditions may change due to weather and local events, so it's always wise to research current information before planning a trip to India. It is best to visit these places between September and March.
 
-India is a country that will surprise you, delight you, and inspire you. It is a country that will make you fall in love with its people, places, and culture. If you are a US citizen who wants to experience the magic of India, don't wait any longer. Apply for your e Visa India today and get ready for the trip of a lifetime. India awaits you with open arms and a warm welcome.
+India is a country that will surprise you, delight you, and inspire you. It is a country that will make you fall in love with its people, places, and culture. If you are a US citizen who wants to experience the magic of India, don't wait any longer.<LinkText text=" Apply for your e Visa" href="/" /> India today and get ready for the trip of a lifetime. India awaits you with open arms and a warm welcome.
 
 Namaste! 🙏

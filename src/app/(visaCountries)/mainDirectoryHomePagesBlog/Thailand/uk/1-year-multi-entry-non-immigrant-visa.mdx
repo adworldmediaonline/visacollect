@@ -1,4 +1,14 @@
 import Link from "next/link";
+export const LinkButton = ({ text, href }) => (
+    <div className="flex justify-center items-center">
+        <Link
+            href={href}
+            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+        >
+            {text}
+        </Link>
+    </div>
+);
 export const LinkText = ({ text, href }) => (
     <Link
         className="inline-flex items-center justify-center gap-1 text-lg font-semibold text-primary"
@@ -112,28 +122,28 @@ So, apply for your Thai 1-Year Non-Immigrant Visa today and get ready for the me
 
 **Thailand awaits you!**
 
-**Some FAQs for UK Travelers to Thailand**
+## Some FAQs for UK Travelers to Thailand
 
-**1. How much does a visa cost for Thailand from the UK?**
+### 1. How much does a visa cost for Thailand from the UK?
 
 The cost of a visa for Thailand from the UK depends on the type of visa you choose. For a travel to Thailand visa, the fee is £40, plus a service charge of £20. For a tourist visa, the fee is £25, plus a service charge of £10. For a special tourist visa (STV), the fee is £60, plus a service charge of £15. You can pay the visa fee online using your credit or debit card.
 
-**2. How much does a Thai 1-Year Non-Immigrant Visa for UK Citizens?**
+### 2. How much does a Thai 1-Year Non-Immigrant Visa for UK Citizens?
 
 The fee for a Thai 1-Year Non-Immigrant Visa for UK Citizens varies depending on the type of visa and your nationality. For UK citizens, the fee ranges from £25 to £300, plus a service charge of £10 to £15. You can pay the visa fee online using your credit or debit card.
 
-**3. Can I apply for a Thai 1-Year Non-Immigrant Visa on arrival in Thailand?**
+### 3. Can I apply for a Thai 1-Year Non-Immigrant Visa on arrival in Thailand?
 
 No, you cannot apply for a Thai 1-Year Non-Immigrant Visa on arrival in Thailand. You must apply for this visa in advance, either online or at a Thai embassy or consulate.
 
-**4. What is needed to apply for a Thai 1-Year Non-Immigrant Visa?**
+### 4. What is needed to apply for a Thai 1-Year Non-Immigrant Visa?
 
 To apply for a Thai 1-Year Non-Immigrant Visa, you will need a valid UK passport, a recent photo, an email address, a credit or debit card, and some additional documents depending on the type of visa and your purpose of travel. You can find the details of the required documents on the official website of the Thai e-Visa portal.
 
-**5. How long does it take to process a Thailand non-immigrant Visa?**
+### 5. How long does it take to process a Thailand non-immigrant Visa?
 
 The processing time for a Thai 1-Year Non-Immigrant Visa depends on the type of visa and the workload of the Thai embassy or consulate. It usually takes 2 to 10 business days, but it can take even longer. It is advised to apply for this visa at least one month (but not more than three months) before your trip.
 
-**6. Are there any travel restrictions for UK citizens?**
+### 6. Are there any travel restrictions for UK citizens?
 
 Due to the COVID-19 pandemic, there are some travel restrictions for the UK citizens traveling to Thailand. You will need to apply for a certificate of entry (COE) from the Thai embassy or consulate, and provide a negative COVID-19 test result taken within 72 hours before departure. You will also need to have a health certificate and a health insurance that covers COVID-19 treatment for at least £79,434.00. Upon arrival, you will need to undergo a health screening and a mandatory quarantine for 10 days at a government-approved facility. You can find more information on the official website of the <LinkText text="Thai embassy in London" href="#"/>.

@@ -1,4 +1,14 @@
 import Link from "next/link";
+export const LinkButton = ({ text, href }) => (
+    <div className="flex justify-center items-center">
+        <Link
+            href={href}
+            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+        >
+            {text}
+        </Link>
+    </div>
+);
 export const LinkText = ({ text, href }) => (
     <Link
         className="inline-flex items-center justify-center gap-1 text-lg font-semibold text-primary"
@@ -26,9 +36,13 @@ Apply →
 
 There are two main types of India tourist visa available for UK citizens: regular visa and e visa.
 
-**1. Visa Type:** A regular visa is a sticker visa that is affixed to your passport by the Indian embassy or consulate. You need to apply for a regular visa in person or by post, and it may take several weeks to process.
+### 1. regular visa:
 
-**2. Visa Type:** An e visa is an electronic visa that is issued online and sent to your email. You need to apply for an e visa online, and it may take only a few days to process. You can print out your e visa and present it at the immigration checkpoint along with your passport.
+A regular visa is a sticker visa that is affixed to your passport by the Indian embassy or consulate. You need to apply for a regular visa in person or by post, and it may take several weeks to process.
+
+### 2. e visa:
+
+An e visa is an electronic visa that is issued online and sent to your email. You need to apply for an e visa online, and it may take only a few days to process. You can print out your e visa and present it at the immigration checkpoint along with your passport.
 
 **Note:** The e visa is more convenient, faster, and cheaper than the regular visa.
 
@@ -46,7 +60,7 @@ Therefore, you need to choose the type of visa that suits your travel plans and 
 
 ### Eligibility for India e Visa
 
-To be eligible for India e visa, you need to meet the following criteria**:**
+To be eligible for <LinkText text="India e visa" href="/in" /> , you need to meet the following criteria**:**
 
 -   You must be a UK citizen with a valid passport.
 -   Your passport must have at least six months of validity from the date of arrival in India.
@@ -113,7 +127,7 @@ You may also need to provide additional documents depending on your purpose and 
 
 **Note:** You need to present these documents at the immigration checkpoint when you arrive in India. You may also be asked to provide biometric data, such as fingerprints and facial scan, as part of the security screening.
 
-**Preparing for India Tourist Visa Interview as a UK Citizen**
+#### Preparing for India Tourist Visa Interview as a UK Citizen
 
 If you are applying for a regular visa, you may need to attend an interview at the Indian embassy or consulate in the UK. The interview is usually a brief and formal process, where the visa officer will ask you some questions about your travel plans, your background, and your purpose of visit. The interview is meant to verify your identity, your eligibility, and your intention to visit India.
 
@@ -167,7 +181,7 @@ If you are ready to embark on an unforgettable journey to India, you need to app
 
 VisaCollect is a trusted and reliable service provider that offers a hassle-free and secure process to obtain your India e visa.
 
-With VisaCollect, you can**:**
+With <LinkText text="VisaCollect" href="/" /> , you can**:**
 
 1.Apply for your India e visa from the comfort of your home or office, without any need to visit the embassy or consulate.
 
@@ -189,19 +203,19 @@ Apply for your India e visa now, and get ready for the adventure of a lifetime!
 
 **Apply today! →**
 
-**Some FAQs for UK Travellers Travelling to India**
+## Some FAQs for UK Travellers Travelling to India
 
 Here are some of the frequently asked questions for UK citizens travelling to India may have**:**
 
-**1.India tourist visa fee: How much does India Visa cost from the UK?**
+### 1.India tourist visa fee: How much does India Visa cost from the UK?
 
 The India visa fee depends on the type of visa you choose. The e visa fee for UK citizens is £64 USD, plus a bank charge of 2.5%. The regular visa fee varies depending on the duration and number of entries, and ranges from £112 to £472, plus a service charge of £7.44.
 
-**2.Can I apply for India e Visa on arrival from UK?**
+### 2.Can I apply for India e Visa on arrival from UK?
 
 No, you cannot apply for India e visa on arrival from UK. You need to apply for India e visa online at least four days before your date of travel, and receive your e visa in your email before you depart. You cannot apply for India e visa at the airport or the border.
 
-**3.What documents are needed to apply for India e Visa?**
+### 3.What documents are needed to apply for India e Visa?
 
 To apply for India e visa, you need to have the following documents**:**
 
@@ -213,11 +227,11 @@ To apply for India e visa, you need to have the following documents**:**
 
 You may also need to provide additional documents depending on your purpose and duration of visit, such as a travel itinerary, a letter of invitation from your host in India, or a medical certificate.
 
-**4.How long does it take to process the India Visa?**
+### 4.How long does it take to process the India Visa?
 
 The processing time for India visa depends on the type of visa you choose and the volume of applications. The e visa usually takes 2 to 4 business days to process, while the regular visa may take several weeks. You should apply for your visa well in advance of your travel date, and check your status online or by email.
 
-**5.Are there any travel restrictions like Covid19 for the UK citizens?**
+### 5.Are there any travel restrictions like Covid19 for the UK citizens?
 
 Yes, there are some travel restrictions and guidelines for the UK citizens due to the Covid19 pandemic. You should check the latest information and updates from the official sources, such as the Indian government website, the UK government website, and the World Health Organization website, before you plan your trip.
 
@@ -229,7 +243,7 @@ Some of the current requirements and precautions are**:**
 -   Following the quarantine rules and the state-specific guidelines, depending on your destination and test result.
 -   Wearing a mask, maintaining social distance, and following the hygiene and safety protocols during your stay in India.
 
-**6.What are the requirements for children travelling to India from UK?**
+### 6.What are the requirements for children travelling to India from UK?
 
 The requirements for children travelling to India from UK are similar to those for adults, with some exceptions**:**
 
@@ -241,7 +255,7 @@ The requirements for children travelling to India from UK are similar to those f
 
 4.Children travelling alone or with someone other than their parents or guardians need to have a notarized authorization letter and a copy of their parents' or guardians' passports.
 
-**7.What are the basic passport requirements for the UK citizens?**
+### 7.What are the basic passport requirements for the UK citizens?
 
 The basic passport requirements for the UK citizens are**:**
 
@@ -249,10 +263,10 @@ The basic passport requirements for the UK citizens are**:**
 -   Passport must have at least two blank pages for stamping.
 -   Passport must not be damaged, torn, or altered in any way.
 
-**8.My India e Visa is denied. What Should I do?**
+### 8.My India e Visa is denied. What Should I do?
 
 If your India e visa is denied, you will receive an email with the reason for the rejection and the possibility of appeal. You can either accept the decision and apply for a regular visa, or challenge the decision and request a review. You can also contact the customer support team of VisaCollect, who can assist you with the process and provide you with the best advice.
 
-**9.How long is my India e Visa valid for UK citizens?**
+### 9.How long is my India e Visa valid for UK citizens?
 
 The India e visa is valid for one year from the date of issue, or until your passport expires, whichever is earlier. You can enter India multiple times within the validity period of your e visa, but you cannot stay more than 90 days at a time.
