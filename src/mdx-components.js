@@ -9,6 +9,15 @@ import Link from 'next/link';
 export function useMDXComponents(components) {
   return {
     // Allows customizing built-in components, e.g. to add styling.
+    h1: ({ children }) => (
+      <h1
+        className={`text-2xl
+         text-primary font-semibold md:text-4xl mt-11`}
+        style={{ margin: '2rem 0rem .5rem 0rem!important' }}
+      >
+        {children}
+      </h1>
+    ),
     h2: ({ children }) => (
       <h2
         className={`text-2xl
