@@ -20,10 +20,7 @@ export default function AboutUs() {
                         that makes it easy to start your trip with just a few
                         clicks through our online visa services.
                     </p>
-                    <h2 className="text-primary">
-                        Are there any queries you&apos;d like us to address?
-                    </h2>
-                    <h3 className="text-primary">Why Choose VisaCollect?</h3>
+                    <h2 className="text-primary">Why Choose VisaCollect?</h2>
                     <p>
                         Avoid worrying about long lines or complicated papers
                         when you use VisaCollect. VisaCollect’s online visa
@@ -31,9 +28,9 @@ export default function AboutUs() {
                         visa application process. We focus on what's most
                         important: restoring peace of mind and saving time
                     </p>{" "}
-                    <h4 className="text-primary">
+                    <h3 className="text-primary">
                         What makes VisaCollect unique?
-                    </h4>
+                    </h3>
                     <p>
                         {" "}
                         Tired of navigating through complex visa procedures?
@@ -43,14 +40,14 @@ export default function AboutUs() {
                         your time and peace of mind, which is why we’ve
                         streamlined every step of the process.
                     </p>
-                    <h5 className="text-primary">Our Promise</h5>
+                    <h4 className="text-primary">Our Promise</h4>
                     <p>
                         You must have an easy time using our e-visa services.
                         VisaCollect makes sure you're ready to go on your trip
                         with confidence by giving you access to clear payment
                         options and detailed information on visa requirements.
                     </p>
-                    <h6 className="text-primary">Real and Popular</h6>
+                    <h5 className="text-primary">Real and Popular</h5>
                     <p>
                         VisaCollect is a trustworthy source for your travel
                         documents requirements, providing up-to-date and correct
