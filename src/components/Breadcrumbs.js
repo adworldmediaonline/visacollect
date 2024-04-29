@@ -15,6 +15,7 @@ const Breadcrumb = ({
 }) => {
   const paths = usePathname();
   const pathNames = paths.split('/').filter(path => path);
+  const lastPathIndex = pathNames.length - 1;
 
   return (
     <>
@@ -28,7 +29,9 @@ const Breadcrumb = ({
             {pathNames.map((link, index) => {
               let href = `/${pathNames.slice(0, index + 1).join('/')}`;
               let itemClasses =
-                paths === href
+                index === lastPathIndex
+                  ? listClasses
+                  : paths === href
                   ? `${listClasses} ${activeClasses}`
                   : listClasses;
               let itemLink = capitalizeLinks
@@ -37,9 +40,13 @@ const Breadcrumb = ({
               return (
                 <React.Fragment key={index}>
                   <li className={itemClasses}>
-                    <Link href={href.endsWith('/blog') ? '/blog' : href}>
-                      {itemLink}
-                    </Link>
+                    {index === lastPathIndex ? (
+                      <span>{itemLink}</span>
+                    ) : (
+                      <Link href={href.endsWith('/blog') ? '/blog' : href}>
+                        {itemLink}
+                      </Link>
+                    )}
                   </li>
                   {pathNames.length !== index + 1 && separator}
                 </React.Fragment>
