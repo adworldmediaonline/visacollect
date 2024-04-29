@@ -73,7 +73,7 @@ export default async function Page({ params }) {
           activeClasses="text-amber-500"
           // containerClasses="flex py-5 bg-gradient-to-r from-purple-600 to-blue-600"
           containerClasses="flex py-0 text-sm"
-          listClasses="hover:underline mx-2"
+          listClasses="mx-2"
           capitalizeLinks
         />
       </div>
