@@ -39,29 +39,5 @@ export const srilankaMDData = {
       linkText: 'Read more',
       href: `${srilankaMDBlogBase}/sri-lankan-visa-requirements-for-canadian-citizens`,
     },
-    {
-      metadata: {
-        title: `Sri Lanka Visa Requirements for Canadian Citizens`,
-        description: ``,
-        metadataBase: new URL('https://visacollect.com'),
-
-        alternates: {
-          canonical: `${srilankaMDBlogBase}/sri-lankan-visa-requirements-for-canadian-citizens`,
-        },
-
-        openGraph: {
-          url: `${srilankaMDBlogBase}/sri-lankan-visa-requirements-for-canadian-citizens`,
-        },
-      },
-      slug: 'sri-lankan-visa-requirements-for-canadian-citizens',
-      pageTitle: '',
-      content: <SriLankanVisaRequirementsForCanadianCitizens />,
-      img: sriLankanVisaRequirementsForCanadianCitizens,
-      alt: '',
-      imgUrl:
-        '/assets/images/srilanka/blog/sri-lankan-visa-requirements-for-canadian-citizens.webp',
-      linkText: 'Read more',
-      href: `${srilankaMDBlogBase}/sri-lankan-visa-requirements-for-canadian-citizens`,
-    },
   ],
 };
