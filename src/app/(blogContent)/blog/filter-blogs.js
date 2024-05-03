@@ -26,6 +26,7 @@ export default function FilterBlogs({ defaultValue, defaultPosts }) {
   const handleFilter = countryCode => {
     setFilter(countryCode);
   };
+  console.log(filterBlogs);
   return (
     <>
       <div className="flex flex-wrap justify-center mb-8">
