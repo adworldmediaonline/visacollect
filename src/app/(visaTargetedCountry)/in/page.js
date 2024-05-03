@@ -9,6 +9,7 @@ import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
 import Faq from '@/components/commonWebsiteComponents/Faq';
 import Banner2 from '@/components/ui/Banner2';
 import { indiaMDData } from '@/app/(visaCountries)/mainDirectoryData/indiaMDData';
+import { visaPromotedInIndia } from '@/app/(visaTargetedCountryContent)/content/visaTargetedCountry';
 
 export default async function Page() {
   return (
@@ -24,18 +25,25 @@ export default async function Page() {
       <div className="w-full h-[0.5px] bg-gray-200"></div>
       <PageWrapper className="mt-10 mb-10">
         <MainWrapper>{indiaMDData?.pageContent}</MainWrapper>
-        <AsideWrapper>
-          <ul className="flex flex-col gap-3">
-            {indiaMDData?.blogs?.map(blog => (
-              <li key={blog?.title}>
-                <AsideBlogCard
-                  slug={blog?.href}
-                  title={blog?.metadata?.title ?? 'Title not found'}
-                />
-              </li>
-            ))}
-          </ul>
-        </AsideWrapper>
+        {visaPromotedInIndia?.length > 0 ? (
+          <AsideWrapper>
+            <ul className="flex flex-col gap-3">
+              {visaPromotedInIndia?.map(promotedVisa => (
+                <li key={promotedVisa?.visa}>
+                  <AsideBlogCard
+                    slug={`/${promotedVisa?.targetedCountry?.code.toLowerCase()}/${
+                      promotedVisa?.targetedCountry?.slug
+                    }`}
+                    title={
+                      promotedVisa?.targetedCountry?.metadata?.title ??
+                      'Title not found'
+                    }
+                  />
+                </li>
+              ))}
+            </ul>
+          </AsideWrapper>
+        ) : null}
       </PageWrapper>
       <div className="mt-16">
         <Divider />

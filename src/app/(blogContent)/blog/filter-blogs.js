@@ -7,6 +7,7 @@ import { indiaMDData } from '@/app/(visaCountries)/mainDirectoryData/indiaMDData
 import { thailandMDData } from '@/app/(visaCountries)/mainDirectoryData/thailandMDData';
 import { morroccoMDData } from '@/app/(visaCountries)/mainDirectoryData/morroccoMDData';
 import { turkeyMDData } from '@/app/(visaCountries)/mainDirectoryData/turkeyMDData';
+import { srilankaMDData } from '@/app/(visaCountries)/mainDirectoryData/srilankaMDData';
 
 export default function FilterBlogs({ defaultValue, defaultPosts }) {
   const [filter, setFilter] = useState(defaultValue);
@@ -16,6 +17,7 @@ export default function FilterBlogs({ defaultValue, defaultPosts }) {
     thailandMDData,
     morroccoMDData,
     turkeyMDData,
+    srilankaMDData,
   ];
 
   const filterBlogs =
