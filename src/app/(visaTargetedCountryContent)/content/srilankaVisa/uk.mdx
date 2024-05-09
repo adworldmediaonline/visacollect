@@ -1,3 +1,21 @@
+import Link from "next/link";
+export const LinkButton = ({ text, href }) => (
+    <div className="flex justify-center items-center">
+        <Link
+            href={href}
+            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+        >
+            {text}
+        </Link>
+    </div>
+);
+
+export const LinkText = ({ text, href }) => (
+    <Link className="text-secondary font-semibold text-lg" href={href}>
+        {text}
+    </Link>
+);
+
 ## Apply for Sri Lanka eVisa and Hop on Your Most Awaited Journey to Sri Lanka Today!
 
 If you are a British citizen and you want to visit Sri Lanka, you need to apply for an online visa (ETA) before your trip. This is a simple and convenient process that will allow you to enter Sri Lanka for tourism, business, or transit purposes. This article will guide you through the steps and requirements of applying for a Sri Lanka visa for UK citizens.
@@ -6,9 +24,9 @@ If you are a British citizen and you want to visit Sri Lanka, you need to apply 
 
 To apply for a Sri Lanka visa for UK citizens, you need to have the following:
 
-- A UK passport that is valid for at least 6 months from the date of arrival in Sri Lanka.
-- A valid debit or credit card to pay the visa fee.
-- A regular email address to receive the visa confirmation.
+-   A UK passport that is valid for at least 6 months from the date of arrival in Sri Lanka.
+-   A valid debit or credit card to pay the visa fee.
+-   A regular email address to receive the visa confirmation.
 
 ## How long is the Sri Lanka visa valid for UK citizens?
 
@@ -31,6 +49,6 @@ The cost of a Sri Lanka visa for UK citizens depends on two factors: the type of
 
 The government fee is the same for all types of visa. The service fee varies according to the service level you choose:
 
-- Normal: This is the standard service that will process your visa in 3 business days.
-- Urgent: This is the expedited service that will process your visa in 24 hours.
-- Super urgent: This is the emergency service that will process your visa in 5 business hours.
+-   Normal: This is the standard service that will process your visa in 3 business days.
+-   Urgent: This is the expedited service that will process your visa in 24 hours.
+-   Super urgent: This is the emergency service that will process your visa in 5 business hours.
