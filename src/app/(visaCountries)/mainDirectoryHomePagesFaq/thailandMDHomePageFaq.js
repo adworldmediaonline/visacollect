@@ -1,47 +1,52 @@
 export const thailandMDHomePageFaq = [
-  {
-    id: 1,
-    title: 'Encounter an error while applying for your Thailand Tourist Visa?',
-    des: 'No worries! Our dedicated customer support team is ready to assist you promptly with the Thailand e Visa on arrival (eVOA). If any issues arise during the application process, we are here to guide you through and resolve them swiftly.',
-  },
-  {
-    id: 2,
-    title:
-      'What to do if your Thailand Tourist Visa application faces cancellation or rejection? ',
-    des: `You can reapply immediately or choose to appeal the rejection. In case of rejection, await a letter from the Embassy of Thailand explaining the grounds for refusal for your Thailand visa application form. This insight will help you confidently reapply, addressing any previous issues.`,
-  },
-  {
-    id: 3,
-    title: 'Extended stay in Thailand on your mind?',
-    des: `If your granted 60-day tourist visa isn't enough, visit any Immigration Office in Thailand to request an extension for an additional 30 days. Ensure you make this request before the original permit expires to avoid a fine of 500 Baht for each extra day stayed. Careful attention to dates is crucial to prevent any complications during your stay.`,
-  },
-  {
-    id: 4,
-    title: 'What is the Thai Health Declaration (T.8 form)?',
-    des: 'The Thai Health Declaration (T.8 form) is a document that is required to be filled in by all travelers entering Thailand. It is part of the initiative by the Thai government or Thai authorities to monitor travelers entering Thailand and to contain the spread of the COVID-191',
-  },
-  {
-    id: 5,
-    title:
-      'Which countries must get the Thailand Health Declaration (T.8 form)?',
-    des: 'All travelers entering Thailand, regardless of their nationality or visa status, must get the Thailand Health Declaration (T.8 form)',
-  },
-  {
-    id: 6,
-    title:
-      'What is the cost to obtain the Thailand Health Declaration (T.8 form)?',
-    des: 'There is no cost to obtain the Thailand Health Declaration (T.8 form). It is free of charge and can be accessed online or obtained from the airlines.',
-  },
-  {
-    id: 7,
-    title:
-      'How many times can I use my Thailand Health Declaration (T.8 form)?',
-    des: 'The Thailand Health Declaration (T.8 form) is valid for one entry only. If you leave Thailand and wish to re-enter, you will need to fill in a new form.',
-  },
-  {
-    id: 8,
-    title:
-      'What do I need to apply for the Thailand Health Declaration (T.8 form)?',
-    des: 'To apply for the Thailand Health Declaration (T.8 form), you will need to provide your personal details, such as name, contact number, email address, flight number, and other necessary information. You will also need to check if you have any symptoms of COVID-19, such as fever, cough, shortness of breath, etc.',
-  },
+    {
+        id: 1,
+        title: "How long before my trip should I apply for a Thailand visa?",
+        des: "To allow for processing time and any unexpected delays, you should apply for your Thailand visa at least 4 to 6 weeks before you plan to journey.",
+    },
+    {
+        id: 2,
+        title: "Can I get a visa for Thailand even though I have a crime record?",
+        des: "People who have certain types of crime records may have trouble getting a Thailand visa. If you need special advice based on your own situation, you should talk to the Royal Thai Embassy or Consulate.",
+    },
+    {
+        id: 3,
+        title: "Can I only stay in Thailand for a certain amount of time with a tourist visa?",
+        des: `Tourist cards usually let you stay for up to 60 days at a time. It's possible to get more time, but only if the Thai immigration officials agree.`,
+    },
+    {
+        id: 4,
+        title: "Is it possible to get a Thailand visa while I'm already there?",
+        des: "No, most visa applications need to be sent from outside of Thailand. But you can apply for some types of visas, like visa extensions, while you are in the country.",
+    },
+    {
+        id: 5,
+        title: "Do kids need their own different visas to enter Thailand?",
+        des: "Yes, even if they are in a parent's passport, children (even babies and young children) need their own visa to enter Thailand.",
+    },
+    {
+        id: 6,
+        title: "If I make a mistake on my Thailand visa application form online, what should I do?",
+        des: "Before sending in your application, it's very important to check all of the information again. If there are mistakes or errors, they could cause delays or even be turned down. Get help from VisaCollect's support team to figure out how to fix any mistakes.",
+    },
+    {
+        id: 7,
+        title: "If I have a Thailand visa, can I go to other countries?",
+        des: "You may or may not be able to visit other countries while you are in Thailand depending on the terms of your visa. For more information, talk to the Royal Thai Embassy or Consulate.",
+    },
+    {
+        id: 8,
+        title: "Are there any specific health needs to get a visa for Thailand?",
+        des: "A Thailand visa doesn't have any health standards, but if you have certain health problems or have recently been to certain areas, they may be taken into account during the application process.",
+    },
+    {
+        id: 9,
+        title: "If I work for myself, can I still apply for Thailand visa?",
+        des: "People who work for themselves can apply for Thailand visa. But they might need to show more proof to back their application, like papers proving they are a business or financial statements.",
+    },
+    {
+        id: 10,
+        title: "Can I apply for Thailand visa that lets me enter the country more than once?",
+        des: "You can get multiple-entry visas for some types of visas, like work visas. These visas let you enter Thailand more than once within a certain time frame, which is helpful for people who move a lot.",
+    },
 ];
