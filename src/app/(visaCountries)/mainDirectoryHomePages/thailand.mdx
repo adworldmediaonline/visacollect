@@ -1,4 +1,22 @@
-## Save Time and Energy on Your Thai Visa Application with VisaCollect!
+import Link from "next/link";
+export const LinkButton = ({ text, href }) => (
+    <div className="flex justify-center items-center">
+        <Link
+            href={href}
+            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+        >
+            {text}
+        </Link>
+    </div>
+);
+
+export const LinkText = ({ text, href }) => (
+    <Link className="text-secondary font-semibold text-lg" href={href}>
+        {text}
+    </Link>
+);
+
+# Save Time and Energy on Your Thai Visa Application with VisaCollect!
 
 With VisaCollect, Thailand visa application is easy and doesn't cause any problems. No more waiting in long lines or filling out a lot of hard paperwork. Just go to the online platform, fill out your information, and send in your application. VisaCollect speeds up the whole process and makes sure it is done correctly and quickly at every step. This easy-to-use platform makes your trip easier and makes getting a visa for Thailand a breeze, whether you're travelling for work or pleasure.
 
