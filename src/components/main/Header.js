@@ -58,7 +58,7 @@ const Header = ({ bgcolor }) => {
                 : 'nav-menuMainVisa'
             }
           >
-            <Link href="/">
+            <Link href="/" onClick={closeMenu}>
               <li className="relative hidden text-sm font-semibold cursor-pointer group dropdown drop-shadow-2xl md:flex nav-itemMainVisa nav-desk hover:text-primary">
                 Home
               </li>
@@ -67,6 +67,7 @@ const Header = ({ bgcolor }) => {
             <li className="block md:hidden">
               <Link
                 href="/"
+                onClick={closeMenu}
                 className="flex items-center px-2 py-4 mx-4 space-x-2 font-semibold border-b border-b-secondary"
               >
                 <span className="w-2 h-2 bg-black"></span>
@@ -74,7 +75,7 @@ const Header = ({ bgcolor }) => {
               </Link>
             </li>
             {/* for mobile end */}
-            <Link href="/about-us">
+            <Link href="/about-us" onClick={closeMenu}>
               <li className="relative hidden text-sm font-semibold cursor-pointer group dropdown drop-shadow-2xl md:flex nav-itemMainVisa nav-desk hover:text-primary">
                 About Us
               </li>
@@ -83,6 +84,7 @@ const Header = ({ bgcolor }) => {
             <li className="block md:hidden">
               <Link
                 href="/about-us"
+                onClick={closeMenu}
                 className="flex items-center px-2 py-4 mx-4 space-x-2 font-semibold border-b border-b-secondary"
               >
                 <span className="w-2 h-2 bg-black"></span>
@@ -90,7 +92,7 @@ const Header = ({ bgcolor }) => {
               </Link>
             </li>
 
-            <Link href="/blog">
+            <Link href="/blog" onClick={closeMenu}>
               <li className="relative hidden text-sm font-semibold cursor-pointer group dropdown drop-shadow-2xl md:flex nav-itemMainVisa nav-desk hover:text-primary">
                 Blogs
               </li>
@@ -99,6 +101,7 @@ const Header = ({ bgcolor }) => {
             <li className="block md:hidden">
               <Link
                 href="/blog"
+                onClick={closeMenu}
                 className="flex items-center px-2 py-4 mx-4 space-x-2 font-semibold border-b border-b-secondary"
               >
                 <span className="w-2 h-2 bg-black"></span>
@@ -106,13 +109,19 @@ const Header = ({ bgcolor }) => {
               </Link>
             </li>
 
-            <LinkButton className="hidden nav-desk md:block" href="/contact-us">
+            <LinkButton
+              className="hidden nav-desk md:block"
+              href="/contact-us"
+              onClick={closeMenu}
+            >
               Contact Us
             </LinkButton>
 
             {/* for mobile start */}
             <li className="block px-2 pt-5 md:pt-0 md:hidden">
-              <LinkButton href="/contact-us">Contact Us</LinkButton>
+              <LinkButton href="/contact-us" onClick={closeMenu}>
+                Contact Us
+              </LinkButton>
             </li>
             {/* for mobile end */}
           </ul>
