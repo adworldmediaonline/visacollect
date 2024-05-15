@@ -97,26 +97,3 @@ export default async function Page({ params }) {
         </div>
     );
 }
-
-export const metadata = {
-    // robots: {
-    //   index: false,
-    //   googleBot: {
-    //     index: false,
-    //   },
-    // },
-    title: "Apply UAE Visa Online - Visa Collect",
-    description:
-        "Get guaranteed approval on your UAE visa with Visa Collect, apply for UAE visa online and experience a quick, secure, and hassle-free application process.",
-    metadataBase: new URL("https://visacollect.com"),
-
-    alternates: {
-        canonical: "/ae",
-    },
-    keywords:
-        "visa application, apply for visa, online visa application, visa services, apply visa online, online visa, online visa services, e visa services, apply for e visa, Online visa services apply Today",
-
-    openGraph: {
-        url: "/ae",
-    },
-};
