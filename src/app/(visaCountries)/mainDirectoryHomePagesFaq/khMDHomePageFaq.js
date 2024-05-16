@@ -1,67 +1,52 @@
 export const khMDHomePageFaq = [
-  {
-    id: 1,
-    title: 'How can I reach the e-Visa customer service team?',
-    des: `Our customer service team is available 24/7 to address any questions or concerns you may have about our services.`,
-  },
-  {
-    id: 2,
-    title: `How long does it take to apply for a Cambodian Business eVisa?`,
-    des: `The application process for a Cambodia Business eVisa takes approximately 15 minutes using our simplified online form.`,
-  },
-  {
-    id: 3,
-    title: `When should I apply for the Cambodia Business eVisa?`,
-    des: `We recommend applying at least 7 days in advance to avoid any potential delays in processing.`,
-  },
-  {
-    id: 4,
-    title: `What is the duration of stay allowed with the Cambodia Business eVisa?`,
-    des: `The single-entry Cambodia Business eVisa allows a stay of up to 30 days in the country.`,
-  },
-  {
-    id: 5,
-    title: `What are the passport requirements for the Cambodia Business eVisa?`,
-    des: `Your passport must remain valid for at least 6 months from your intended arrival in Cambodia to apply for this visa.`,
-  },
-  {
-    id: 6,
-    title: `What should I do if my application encounters an error?`,
-    des: `If an error appears during your application, our expert team is ready to assist you in resolving the issue promptly.`,
-  },
-  {
-    id: 7,
-    title: `What if my Cambodia eVisa application is cancelled or rejected?`,
-    des: `Rejections may occur due to missing information or documentation. Applying through iVisa ensures a thorough review in advance, minimizing the risk of rejection.`,
-  },
-  {
-    id: 8,
-    title: `Is it necessary to print my Cambodia visa?`,
-    des: `Yes, it is crucial to print your visa. Present the printed copy at the immigration checkpoint when entering Cambodia.`,
-  },
-  {
-    id: 9,
-    title: `How can I check my application status or contact iVisa's customer support if I haven't received an email?`,
-    des: `Check your application status online or contact our customer support team for prompt assistance.`,
-  },
-  {
-    id: 10,
-    title: `Can I get a refund if I no longer need my visa?`,
-    des: `Unfortunately, once the visa fee is accepted, it cannot be refunded.`,
-  },
-  {
-    id: 11,
-    title: `Who can I talk to if I have more questions?`,
-    des: `Our customer service agents are available 24/7 to address any additional questions or concerns you may have. Feel free to chat with them at any time.`,
-  },
-  {
-    id: 12,
-    title: `How do processing times work at e-Visa?`,
-    des: `Our processing times are estimated based on the average duration it takes government authorities to process visa applications, from receiving correct information until you receive your visa.`,
-  },
-  {
-    id: 13,
-    title: `How can I get continuous support from e-Visa?`,
-    des: `Our customer service agents are available 24/7 to provide continuous support. Feel free to reach out to them for any further assistance.`,
-  },
+    {
+        id: 1,
+        title: "What payment options are acceptable for Cambodia's e-visa application fee?",
+        des: "VisaCollect makes it easy for you to pay the application fee by accepting several payment options, such as bank transfers, PayPal, and credit/debit cards.",
+    },
+    {
+        id: 2,
+        title: "Can I apply for a Cambodia e-visa if I have a criminal history?",
+        des: "Those who have a criminal history ought to reveal this information when applying. Additional documentation may be needed, and approval is contingent to the judgement of the Cambodian authorities.",
+    },
+    {
+        id: 3,
+        title: "Is having travel insurance a must for an e-visa to Cambodia?",
+        des: "Travel insurance is strongly advised in order to cover any medical emergencies and trip disruptions, even though it is not required in order to obtain a Cambodia e-visa.",
+    },
+    {
+        id: 4,
+        title: "In what ways may I monitor the progress of my Cambodian eVisa application?",
+        des: "By utilising the application reference number you were given at the time of submission, you can use the VisaCollect platform to track the progress of your application.",
+    },
+    {
+        id: 5,
+        title: "If there is a mistake on my Cambodia e-visa, what should I do?",
+        des: "Get in touch with VisaCollect right away if you discover a mistake on your passport. You can make changes prior to your trip, but it's important to double-check everything as soon as you receive it.",
+    },
+    {
+        id: 6,
+        title: "Can minors apply online for an e-visa to Cambodia?",
+        des: "Yes, minors are able to apply online for an e-visa to Cambodia. Additional documentation, such as birth certificates and consent letters, must be provided by parents or legal guardians.",
+    },
+    {
+        id: 7,
+        title: "Which immunisations are advised prior to visiting Cambodia?",
+        des: "Although not necessary, vaccinations against typhoid, hepatitis A, hepatitis B, and basic vaccines like tetanus and MMR should be renewed prior to travelling to Cambodia.",
+    },
+    {
+        id: 8,
+        title: "Can a tourist visa allow me to work in Cambodia?",
+        des: "No, you cannot work in Cambodia on a tourist visa. You must apply for the appropriate work visa or permission if you intend to work.",
+    },
+    {
+        id: 9,
+        title: "If my application for a Cambodia e-visa is denied, what should I do?",
+        des: "You will receive notification if your application is denied for any reason. You can fix the problems and submit another application, or you can ask VisaCollect's support staff for more advice.",
+    },
+    {
+        id: 10,
+        title: "Are there any warnings or limits on travel to Cambodia?",
+        des: "Before you go, find out if the governments of Cambodia or your own nation have issued any advisories or restrictions on travel. This covers data on natural disasters, political crises, and health and safety.",
+    },
 ];
