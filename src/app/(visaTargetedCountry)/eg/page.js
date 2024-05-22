@@ -37,6 +37,7 @@ export default async function Page() {
           </ul>
         </AsideWrapper>
       </PageWrapper>
+      <PageReview applyLink={egyptMDData?.applyNow} />
       <div className="mt-16">
         <Divider />
       </div>
@@ -44,7 +45,6 @@ export default async function Page() {
       <div>
         <Faq faqData={egyptMDData?.faq ?? []} />
       </div>
-      <PageReview applyLink={egyptMDData?.applyNow} />
       {egyptMDData?.blogs?.length > 0 ? (
         <BlogSlider blogs={JSON.stringify(egyptMDData?.blogs) ?? []} />
       ) : null}
