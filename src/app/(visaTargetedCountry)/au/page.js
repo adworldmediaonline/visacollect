@@ -63,6 +63,7 @@ export default async function Page() {
           </AsideWrapper>
         ) : null}
       </PageWrapper>
+      <PageReview applyLink={australiaMDData?.applyNow ?? ''} />
       <div className="mt-16">
         <Divider />
       </div>
@@ -70,7 +71,6 @@ export default async function Page() {
       <div>
         <Faq faqData={australiaMDData?.faq ?? []} />
       </div>
-      <PageReview applyLink={australiaMDData?.applyNow ?? ''} />
       <BlogSlider
         blogs={
           JSON.stringify(australiaMDData?.blogs ?? []) ?? JSON.stringify([])
