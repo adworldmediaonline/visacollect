@@ -81,11 +81,13 @@ const BlogSlider = ({ blogs }) => {
           </div>
           <div className="w-[100%]">
             <Slider {...settings} ref={customSlider} className="mx-auto ">
-              {JSON.parse(blogs)?.map((blog, index) => (
-                <div className="px-4 py-1 group" key={index}>
-                  <BlogCard {...blog} />
-                </div>
-              ))}
+              {JSON.parse(blogs)?.length > 0
+                ? JSON.parse(blogs).map((blog, index) => (
+                    <div className="px-4 py-1 group" key={index}>
+                      <BlogCard {...blog} />
+                    </div>
+                  ))
+                : null}
             </Slider>
           </div>
           <div className="absolute z-10 hidden text-center -right-8 md:block">
