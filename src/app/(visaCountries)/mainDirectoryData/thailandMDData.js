@@ -4,6 +4,7 @@ import {
     HowToApplyForThailandVisaFromUk,
     OneYearMultiEntryNonImmigrantVisaUkToThailand,
     TravelToThailandFromUk,
+    TravelTrip15,
 } from "../mainDirectoryHomePagesBlog/Thailand";
 import {
     completeThailandVisaGuideForUkCitizensImg,
@@ -12,7 +13,7 @@ import {
     travelToThailandFromUkImg,
 } from "../mainDirectoryHomePagesBlog/images/blogImages";
 import { thailandMDHomePageFaq } from "../mainDirectoryHomePagesFaq/thailandMDHomePageFaq";
-
+import thailandTripImg from "../../../../public/assets/images/blog/thailandVisa/thailand-trip-15-things-thailand-is-famous-for.webp";
 // MD => mainDirectory
 const thailandMDBlogBase = "/th/blog";
 export const thailandMDData = {
@@ -116,6 +117,29 @@ export const thailandMDData = {
             img: travelToThailandFromUkImg,
             linkText: "Read more",
             href: `${thailandMDBlogBase}/travel-to-thailand-from-uk`,
+        },
+        {
+            metadata: {
+                title: `Thailand Trip: 15 Things Thailand Is Famous For?`,
+                description: `Discover the wonders of Thailand with our guide to the 15 things Thailand is famous for. From stunning beaches and rich culture to delicious cuisine and bustling markets.`,
+                metadataBase: new URL("https://visacollect.com"),
+
+                alternates: {
+                    canonical: `${thailandMDBlogBase}/thailand-trip-15-things-thailand-is-famous-for`,
+                },
+
+                openGraph: {
+                    url: `${thailandMDBlogBase}/thailand-trip-15-things-thailand-is-famous-for`,
+                },
+            },
+            pageTitle: `What is Thailand Known For? Discover 15 Famous Attractions and Experiences`,
+            alt: "Thailand Trip: 15 Things Thailand Is Famous For | Visa Collect",
+            imgUrl: "/assets/images/blog/thailandVisa/thailand-trip-15-things-thailand-is-famous-for.webp",
+            slug: "thailand-trip-15-things-thailand-is-famous-for",
+            content: <TravelTrip15 />,
+            img: thailandTripImg,
+            linkText: "Read more",
+            href: `${thailandMDBlogBase}/thailand-trip-15-things-thailand-is-famous-for`,
         },
     ],
 };
