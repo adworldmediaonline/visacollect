@@ -35,7 +35,7 @@ export async function POST(req) {
         <table>
           <tr>
             <th>Full Name</th>
-            <td>${data?.fullName}</td>
+            <td>${data?.name}</td>
           </tr>
           <tr>
             <th>Email</th>
