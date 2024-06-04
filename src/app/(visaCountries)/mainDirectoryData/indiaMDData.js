@@ -36,7 +36,7 @@ export const indiaMDData = {
             metadata: {
                 title: `Top Fun Things to do in India | VisaCollect`,
                 description: `Looking for the fun things to do in India? Unlock the essence of India with our curated list of the top things to do in India! Dive into a world of cultural wonders and thrilling adventures.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `${indiaMDBlogBase}/top-things-to-do-in-india-for-fun`,
@@ -60,7 +60,7 @@ export const indiaMDData = {
             metadata: {
                 title: `Best Things To Do In India For Australia Citizens`,
                 description: `Explore the top activities and attractions awaiting Australian travelers in India!  Find your perfect itinerary for an unforgettable Indian adventure.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `${indiaMDBlogBase}/best-things-to-do-in-india-for-australia-citizens`,
@@ -84,7 +84,7 @@ export const indiaMDData = {
             metadata: {
                 title: `Apply India Tourist Visa For Canadian Citizens`,
                 description: `Explore the straightforward process of obtaining a tourist visa to India for Canadian citizens. Find out the list of necessary documents.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `${indiaMDBlogBase}/apply-india-tourist-visa-for-canadian-citizens`,
@@ -108,7 +108,7 @@ export const indiaMDData = {
             metadata: {
                 title: `Indian Visa For Emiratis Citizens`,
                 description: `Explore the top options available for Emirati citizens seeking an Indian visa. From e-visa applications to embassy submissions.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `${indiaMDBlogBase}/indian-visa-for-emiratis-citizens`,
@@ -132,7 +132,7 @@ export const indiaMDData = {
             metadata: {
                 title: `Apply India eVisa From UK`,
                 description: `Seeking to apply for an India eVisa from the UK? Explore the step-by-step guide, eligibility criteria, and valuable insights to ensure a smooth process. `,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `${indiaMDBlogBase}/apply-india-eVisa-from-uk`,
@@ -156,7 +156,7 @@ export const indiaMDData = {
             metadata: {
                 title: `Indian tourist visa for uk Citizens`,
                 description: `Experience the wonders of India as a UK citizen with a hassle-free indian tourist visa process. From application guidelines to meeting all eligibility criteria`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `${indiaMDBlogBase}/indian-tourist-visa-for-uk-citizens`,
@@ -180,7 +180,7 @@ export const indiaMDData = {
             metadata: {
                 title: `How to get your India Tourist Visa for US Citizens`,
                 description: `Looking to get your India Tourist visa as a US citizen? This guide has all the information you need to successfully apply for your Indian visa.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `${indiaMDBlogBase}/how-to-get-your-india-tourist-visa-for-us-citizens`,
@@ -203,7 +203,7 @@ export const indiaMDData = {
             metadata: {
                 title: `Steps to apply your india e-visa from usa`,
                 description: `Learn how to effortlessly obtain your India e-Visa from the USA with our easy-to-follow application guide. Start your journey Smoothly.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `${indiaMDBlogBase}/steps-to-apply-your-india-e-visa-from-usa`,

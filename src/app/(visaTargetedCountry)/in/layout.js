@@ -2,7 +2,7 @@ export const metadata = {
     title: "India Visa Apply Online Now | Visa collect",
     description:
         "Get your India visa online now with Visa Collect and experience quick, secure, and hassle-free application process.",
-    metadataBase: "https://visacollect.com",
+    metadataBase: "https://www.visacollect.com",
     alternates: {
         canonical: `/in/`,
     },

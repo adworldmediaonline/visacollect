@@ -3,7 +3,7 @@ import { thailandMDData } from "@/app/(visaCountries)/mainDirectoryData/thailand
 
 import { notFound } from "next/navigation";
 import Script from "next/script";
-const base_url = "https://visacollect.com";
+const base_url = "https://www.visacollect.com";
 export async function generateMetadata({ params }) {
     try {
         const slug = params.slug;
@@ -60,7 +60,7 @@ export default function Page({ params }) {
             name: "Visa Collect",
             logo: {
                 "@type": "ImageObject",
-                url: "https://visacollect.com/",
+                url: "https://www.visacollect.com/",
             },
         },
 

@@ -8,7 +8,7 @@ export const metadata = {
     title: "About us | visa collect",
     description:
         "Welcome to Visa Collect, your trusted partner for visa solutions worldwide. Learn more about our team, values, and dedication to excellence, checkout for more information about the visa services.",
-    metadataBase: new URL("https://visacollect.com"),
+    metadataBase: new URL("https://www.visacollect.com"),
 
     alternates: {
         canonical: "/about-us",

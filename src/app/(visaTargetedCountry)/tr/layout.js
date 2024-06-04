@@ -5,7 +5,7 @@ export const metadata = {
     title: "Apply Turkey Visa Online | Visa collect",
     description:
         "Effortlessly apply for your Turkey visa online through Visa Collect. Streamline your travel plans with our convenient application process.",
-    metadataBase: new URL("https://visacollect.com"),
+    metadataBase: new URL("https://www.visacollect.com"),
 
     alternates: {
         canonical: "/tr/",

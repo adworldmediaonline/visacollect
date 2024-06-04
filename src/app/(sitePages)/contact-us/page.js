@@ -4,7 +4,7 @@ export const metadata = {
     title: "Got Queries | Contact Us | Visa Collect",
     description:
         "Have questions? We're here to help! Find quick and easy ways to reach our friendly customer support team. Email us at info@visacollect.com.",
-    metadataBase: new URL("https://visacollect.com"),
+    metadataBase: new URL("https://www.visacollect.com"),
 
     alternates: {
         canonical: "/contact-us",

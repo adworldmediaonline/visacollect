@@ -2,7 +2,7 @@ export const metadata = {
     title: "Apply Indonesia Visa Online | Visa collect",
     description:
         "Effortlessly apply for your Indonesia visa online through Visa Collect. Streamline your travel plans with our convenient application process.",
-    metadataBase: "https://visacollect.com",
+    metadataBase: "https://www.visacollect.com",
     alternates: {
         canonical: `/id/`,
     },

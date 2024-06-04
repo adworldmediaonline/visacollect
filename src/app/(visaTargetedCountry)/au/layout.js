@@ -10,7 +10,7 @@ export const metadata = {
     title: "Apply Australia Visa Online | Visa collect",
     description:
         "Effortlessly apply for your Australia visa online through Visa Collect. Streamline your travel plans with our convenient application process.",
-    metadataBase: new URL("https://visacollect.com"),
+    metadataBase: new URL("https://www.visacollect.com"),
 
     alternates: {
         canonical: "/au/",

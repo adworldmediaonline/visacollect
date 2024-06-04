@@ -85,7 +85,7 @@ export const visaPromotedInAustralia = [
                 title: "Apply Indian tourist visa for Australian citizens | Visa Collect",
                 description:
                     "Looking to visit India as an Australian citizen? Apply for your Indian tourist visa for Australian citizen with ease and convenience. Let us help you with the process. Apply now!",
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical:
@@ -120,7 +120,7 @@ export const visaPromotedInAustralia = [
             metadata: {
                 title: "Turkey Visa for Australian Citizens | Visa collect",
                 description: `If you are looking for a Turkey visa for Australian citizens,here's a general guide for Australian citizens applying for a Turkey visa.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: "/au/turkey-visa-for-australian-citizens",
@@ -155,7 +155,7 @@ export const visaPromotedInAustralia = [
                 title: "Thailand Visa for Australian Citizens at Visa Collect",
                 description: `If you want a Thailand visa for Australian citizens, this is the
 right place to learn about the important things you need to know before traveling.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: "/au/thailand-visa-for-australian-citizens",
@@ -187,7 +187,7 @@ export const visaPromotedInUk = [
                 title: "India Visa - Apply for India Visa from UK",
                 description:
                     "As you apply for India visa from UK, you are opening the doors to a world of experiences that await. So, Begin your Indian adventure with confidence!",
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: "/uk/apply-for-india-visa-from-uk",
@@ -218,7 +218,7 @@ export const visaPromotedInUk = [
                 title: "Turkey E-Visa for UK Citizens - Visa Collect",
                 description: `"Apply for a Turkey E-Visa for UK citizens in just a few simple steps:
 Visit the website, Visa Collect, Fill out the Application form. Make the Payment and Receive E-Visa"`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: "/uk/turkey-evisa-for-uk-citizens",
@@ -249,7 +249,7 @@ Visit the website, Visa Collect, Fill out the Application form. Make the Payment
                 title: "Travel to Thailand | Thailand Visa for UK Citizens",
                 description: `Thailand Visa for UK Citizens: Before you travel, you must obtain
 a visa if you plan to stay longer (for employment, study, or other purposes).`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: "/uk/thailand-visa-for-uk-citizens",
@@ -280,7 +280,7 @@ a visa if you plan to stay longer (for employment, study, or other purposes).`,
                 title: `Australia visa for UK Citizens | Visa Collect`,
                 description: `Visit Visa Collect if you want to apply for the Australia visa for UK
 citizens. You may be eligible for an UK Electronic Travel Authority (ETA).`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: "/uk/australian-visa-for-uk-citizens",
@@ -309,7 +309,7 @@ citizens. You may be eligible for an UK Electronic Travel Authority (ETA).`,
             metadata: {
                 title: `Apply Sri lanka tourist visa for UK citizens | Visa Collect`,
                 description: `Looking to visit Sri lanka as an UK citizen? Apply for your Sri lanka tourist visa for UK citizen with ease and convenience. Let us help you with the process. Apply now!`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: "/uk/sri-lanka-visa-for-uk-citizens",
@@ -348,7 +348,7 @@ export const visaPromotedInCanada = [
                 // },
                 title: `Apply your Indian e-visa for Canadian citizens`,
                 description: `Applying for your India e-Visa as a Canadian citizen is a streamlined process designed to enhance your travel preparations.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: "/ca/india-evisa-for-canadian-citizens",
@@ -381,7 +381,7 @@ export const visaPromotedInCanada = [
                 title: `Turkish Visa for Canadian Citizens | Turkey eVisa for Canadians`,
                 description: `If you are applying for a Turkish visa for Canadian citizens,
 ensure your passport is valid for at least 150 days beyond the date you plan to enter Turkey.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/ca/turkish-visa-for-canadian-citizens`,
@@ -414,7 +414,7 @@ ensure your passport is valid for at least 150 days beyond the date you plan to 
                 title: `Apply for a Thailand Visa for Canadian Citizens`,
                 description: `If you are Applying for a Thailand Visa for Canadian Citizens
 You should know that Visa Collect is the fastest and easiest way to obtain a visa online.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/ca/thailand-visa-for-canadian-citizens`,
@@ -444,7 +444,7 @@ You should know that Visa Collect is the fastest and easiest way to obtain a vis
             metadata: {
                 title: `Sri Lanka Visa for Canadians citizens | Visa Collect`,
                 description: `Looking Sri lanka visa for Canadian citizen? Apply your Sri lanka tourist visa for Canadian citizens with ease and convenience. Let us help you with the process. APPLY NOW`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/ca/sri-lanka-visa-for-canadian-citizens`,
@@ -481,7 +481,7 @@ export const visaPromotedInUs = [
                 // },
                 title: `Indian Visa Online - Apply for e-visa India`,
                 description: `US citizens can apply for e-visa India easily with the help of Visacollect. Submit your application with required documents at Visa Collect Application`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/us/indian-visa-for-us-citizens`,
@@ -516,7 +516,7 @@ export const visaPromotedInUs = [
                 // },
                 title: `Apply for Turkey Visa for US Citizens`,
                 description: `Turkey Visa for US Citizens: All US citizens are required to have a valid visa in order to visit Turkey,Whether planning a vacation or a business trip.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/us/turkey-visa-for-us-citizens`,
@@ -552,7 +552,7 @@ export const visaPromotedInUs = [
                 // },
                 title: `Apply Thailand Tourist Visa For US Citizens | Visa Collect`,
                 description: `Thailand Tourist Visa US Citizens:  American citizens can enter Thailand as a tourist for up to 30 days without needing a pre-approved Thai visa.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/us/thailand-tourist-visa-us-citizens`,
@@ -604,7 +604,7 @@ export const visaPromotedInUs = [
                 // },
                 title: `Sri Lanka E-Visa for US Citizens | Visa Collect`,
                 description: `Effortlessly apply for your Sri Lanka visa online through Visa Collect. Streamline your travel plans with our convenient application process.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/us/sri-lanka-tourist-visa-for-us-citizens`,
@@ -639,7 +639,7 @@ export const visaPromotedInThailand = [
                 // },
                 title: `Apply for an Indian visa from Thailand | Visa Collect`,
                 description: `Applying for your Indian visa from Thailand is a straightforward process, designed to make your travel preparations convenient and efficient.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/th/apply-indian-visa-from-thailand`,
@@ -672,7 +672,7 @@ export const visaPromotedInIndia = [
             metadata: {
                 title: `Australia visa apply from India | Australia Visa`,
                 description: `Indian citizens can apply for an Australia visa from India for several purposes. The common categories include business visas, family/friends visas, and tourist visas.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/in/australia-visa-apply-from-india`,
@@ -701,7 +701,7 @@ export const visaPromotedInIndia = [
             metadata: {
                 title: `Apply Sri lanka tourist visa for Indian citizens | Visa Collect`,
                 description: `Looking to visit Sri lanka as an Indian citizen? Apply for your Sri lanka tourist visa for Indian citizen with ease and convenience. Let us help you with the process. Apply now!`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/in/sri-lanka-visa-for-indian-citizens`,
@@ -736,7 +736,7 @@ export const visaPromotedInUAE = [
                 // },
                 title: `India Tourist Visa for UAE Residents | Tourist eVisa`,
                 description: `Get your India tourist visa for UAE residents online at Visa Collect. And explore the rich culture, diverse landscapes of India.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/ae/apply-for-india-visa-from-uae`,
@@ -764,7 +764,7 @@ export const visaPromotedInSingapore = [
             metadata: {
                 title: `Indian visa for Singapore Citizens| Visa Collect`,
                 description: `If you are applying for a Indian visa for Singapore citizens. Don't forget to verify if the procedure for applying for a visa has any new requirements.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/sg/evisa-india-for-singapore-citizens`,
@@ -799,7 +799,7 @@ export const visaPromotedInSingapore = [
                 // },
                 title: `Tourist Visa Australia from Singapore | Visa Collect`,
                 description: `Tourist Visa Australia from Singapore: The conditions for obtaining a visa are simple and convenient for Singapore travelers.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/sg/australia-visa-for-singapore-citizens`,
@@ -827,7 +827,7 @@ export const visaPromotedInSouthAfrica = [
             metadata: {
                 title: `India e-Visa for South African Citizens | Visacollect`,
                 description: `Looking India visa for South African citizen? Apply your India e-visa for South African citizens with ease and convenience. Let us help you with the process. Apply Now`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/za/india-e-visa-for-south-african-citizens`,
@@ -855,7 +855,7 @@ export const visaPromotedInKenya = [
             metadata: {
                 title: `Indian Visa for Kenyan Citizens | Visacollect`,
                 description: `Looking India visa for Kenya citizen? Apply your India e-visa for kenya citizens with ease and convenience. Let us help you with the process. Apply Now`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/ke/india-visa-for-kenya-citizens`,
@@ -883,7 +883,7 @@ export const visaPromotedInNetherlands = [
             metadata: {
                 title: `Indian Tourist Visa for Dutch Citizens | eVisa Requirements from the Netherlands`,
                 description: `Looking Indian Tourist visa for Dutch citizen? Apply your India e-visa for Netherlands citizens with ease and convenience. Let us help you with the process. Apply Now`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/nl/indian-tourist-visa-for-netherlands-citizens`,
@@ -912,7 +912,7 @@ export const visaPromotedInNigerian = [
             metadata: {
                 title: `India e-Visa for Nigerien Citizens | Visacollect`,
                 description: `Looking India visa for Nigerien citizen? Apply your India e-visa for Nigerien citizens with ease and convenience. Let us help you with the process. Apply Now`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `/ng/indian-visa-for-nigerian-citizens`,

@@ -19,7 +19,7 @@ export const srilankaMDData = {
             metadata: {
                 title: `Sri Lanka Visa Requirements for Canadian Citizens`,
                 description: `Unlocking Sri Lanka for Canadians: This blog explains everything Canadians need to know about obtaining an ETA for a smooth trip to Sri Lanka. `,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `${srilankaMDBlogBase}/sri-lankan-visa-requirements-for-canadian-citizens`,
