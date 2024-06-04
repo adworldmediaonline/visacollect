@@ -2,7 +2,7 @@ export const metadata = {
     title: "Apply Japan Visa Online | Visa collect",
     description:
         "Effortlessly apply for your Japan visa online through Visa Collect. Streamline your travel plans with our convenient application process.",
-    metadataBase: "https://visacollect.com",
+    metadataBase: "https://www.visacollect.com",
     alternates: {
         canonical: `/jp/`,
     },

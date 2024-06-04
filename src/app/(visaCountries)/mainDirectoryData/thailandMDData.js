@@ -30,7 +30,7 @@ export const thailandMDData = {
             metadata: {
                 title: `1 Year Multi Entry Non Immigrant Visa`,
                 description: `Explore the benefits and requirements of a 1-year multi-entry non-immigrant visa, offering flexibility and convenience for frequent travelers .`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `${thailandMDBlogBase}/1-year-multi-entry-non-immigrant-visa`,
@@ -53,7 +53,7 @@ export const thailandMDData = {
             metadata: {
                 title: `Complete Thailand Visa Guide For UK Citizens`,
                 description: `Find everything UK citizens need to know about obtaining a visa for Thailand with our comprehensive guide. From application processes to requirements .`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `${thailandMDBlogBase}/complete-thailand-visa-guide-for-uk-citizens`,
@@ -76,7 +76,7 @@ export const thailandMDData = {
             metadata: {
                 title: `How To Apply For Thailand Visa From UK`,
                 description: `Learn how to apply for a Thailand visa from the UK ! Discover step-by-step instructions, requirements, and essential tips to make your application process smooth and successful.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `${thailandMDBlogBase}/how-to-apply-for-thailand-visa-from-uk`,
@@ -99,7 +99,7 @@ export const thailandMDData = {
             metadata: {
                 title: `Travel To Thailand From UK`,
                 description: `Embark on an exotic adventure from the UK to Thailand! Uncover every visa details, top attractions, and insider tips for an unforgettable Thai experience`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `${thailandMDBlogBase}/travel-to-thailand-from-uk`,
@@ -122,7 +122,7 @@ export const thailandMDData = {
             metadata: {
                 title: `Thailand Trip: 15 Things Thailand Is Famous For?`,
                 description: `Discover the wonders of Thailand with our guide to the 15 things Thailand is famous for. From stunning beaches and rich culture to delicious cuisine and bustling markets.`,
-                metadataBase: new URL("https://visacollect.com"),
+                metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
                     canonical: `${thailandMDBlogBase}/thailand-trip-15-things-thailand-is-famous-for`,

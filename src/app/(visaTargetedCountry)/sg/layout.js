@@ -2,7 +2,7 @@ export const metadata = {
     title: "Apply Singapore Visa Online | Visa collect",
     description:
         "Effortlessly apply for your Singapore visa online through Visa Collect. Streamline your travel plans with our convenient application process.",
-    metadataBase: "https://visacollect.com",
+    metadataBase: "https://www.visacollect.com",
     alternates: {
         canonical: `/sg/`,
     },

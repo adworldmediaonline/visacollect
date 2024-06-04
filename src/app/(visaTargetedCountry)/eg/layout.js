@@ -2,7 +2,7 @@ export const metadata = {
     title: "Apply Egypt Visa Online | Visa collect",
     description:
         "Effortlessly apply for your Egypt visa online through Visa Collect. Streamline your travel plans with our convenient application process.",
-    metadataBase: "https://visacollect.com",
+    metadataBase: "https://www.visacollect.com",
     alternates: {
         canonical: `/eg/`,
     },
