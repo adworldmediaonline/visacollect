@@ -20,7 +20,7 @@ export const metadata = {
         url: "/about-us",
     },
 };
-//
+
 export default function RootLayout({ children }) {
     return <>{children}</>;
 }
