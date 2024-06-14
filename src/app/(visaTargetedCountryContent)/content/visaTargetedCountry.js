@@ -579,7 +579,20 @@ export const visaPromotedInUs = [
             faqTitle: `FAQs for Australian eVisa to American Citizens`,
             pageTitle: `Australian eVisa for the Citizens of the United States of America (USA): Apply Visa Now!`,
             pageTitleDescription: `eVisa Application for the American citizens travelling to Australia is now a few clicks away!  `,
-            metadata: null,
+            metadata: {
+                title: `Sri Lanka E-Visa for US Citizens | Visa Collect`,
+                description: `Effortlessly apply for your Sri Lanka visa online through Visa Collect. Streamline your travel plans with our convenient application process.`,
+                metadataBase: new URL("https://www.visacollect.com"),
+
+                alternates: {
+                    canonical: `/us/sri-lanka-tourist-visa-for-us-citizens`,
+                },
+                keywords: `sri lanka visa for us citizens, sri lanka tourist visa for us citizens, sri lanka visa requirements for us citizens, sri lanka visa for us passport holders, sri lanka entry requirements for us citizens`,
+
+                openGraph: {
+                    url: "/us/sri-lanka-tourist-visa-for-us-citizens",
+                },
+            },
         },
     },
     {
