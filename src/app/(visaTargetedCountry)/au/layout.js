@@ -4,6 +4,7 @@ import { FormProvider } from "@/context/formContext";
 import ReactQueryProvider from "@/components/ReactQueryProvider";
 import Navbar from "@/components/australia/common/Navbar";
 import Footer from "@/components/australia/common/Footer";
+import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
