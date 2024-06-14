@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 export const metadata = {
     title: "Apply Oman Visa Online | Visa collect",
     description:
