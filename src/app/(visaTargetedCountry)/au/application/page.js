@@ -12,6 +12,26 @@ import { applicationSchema } from '@/constant/australiaConstant';
 import { getAllCountries } from '@/lib/getAllCountries';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 
+const portOfArrivalData = [
+  'Sydney Kingsford Smith International Airport (SYD)',
+  'Melbourne Tullamarine International Airport (MEL)',
+  'Brisbane International Airport (BNE)',
+  'Perth International Airport (PER)',
+  'Adelaide International Airport (ADL)',
+  'Gold Coast Airport (OOL)',
+  'Cairns International Airport (CNS)',
+  'Darwin International Airport (DRW)',
+  'Canberra International Airport (CBR)',
+  'Sydney (Port Jackson)',
+  'Melbourne (Port of Melbourne)',
+  'Brisbane (Port of Brisbane)',
+  'Perth/Fremantle (Port of Fremantle)',
+  'Adelaide (Port Adelaide)',
+  'Darwin (Port of Darwin)',
+  'Hobart (Port of Hobart)',
+  'Cairns (Port of Cairns)',
+];
+
 const Page = () => {
   const postMutation = usePost(
     apiEndpoint.AUSTRALIA_VISA_APPLICATION,
@@ -186,9 +206,14 @@ const Page = () => {
                       id="travelDetails.portOfArrival"
                     >
                       <option value="">Select</option>
-                      <option value="Tourism">Tourism</option>
-                      <option value="india">Business</option>
-                      <option value="australia">Transit</option>
+
+                      {portOfArrivalData.length > 0
+                        ? portOfArrivalData.map((port, index) => (
+                            <option key={index} value={port}>
+                              {port}
+                            </option>
+                          ))
+                        : null}
                     </Field>
 
                     <ErrorMessage name="travelDetails.portOfArrival">
