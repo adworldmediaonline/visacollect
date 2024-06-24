@@ -14,6 +14,7 @@ import {
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import { Tab } from '@headlessui/react';
 import { Fragment, useState } from 'react';
+import { BiArrowBack } from 'react-icons/bi';
 
 const portOfArrivalData = [
   'Sydney Kingsford Smith International Airport (SYD)',
@@ -168,6 +169,9 @@ const AustraliaApplicationPage = () => {
     console.log(e.target.value);
     setSelectedSubclass(e.target.value);
   };
+  const handleBack = () => {
+    setSelectedSubclass('');
+  };
   console.log(
     subclassCountryData.filter(item => item.name === selectedSubclass)
   );
@@ -178,7 +182,19 @@ const AustraliaApplicationPage = () => {
       <div className="container  md:py-8 py-20 md;px-0 px-3 ">
         {selectedSubclass ? (
           <>
-            <Heading formHead="eVisitor ETA Visa to Australia Application" />
+            <div className="flex justify-center">
+              <button
+                onClick={handleBack}
+                className="flex items-center justify-center gap-3 pt-16"
+              >
+                <BiArrowBack color="#000" size={16} /> <span>Go Back</span>
+              </button>
+            </div>
+            <Heading
+              formHead="eVisitor ETA Visa to Australia Application"
+              divClassName="pt-0"
+            />
+
             <div>
               <Formik
                 initialValues={applicationSchema.initialValues}
