@@ -6,3 +6,9 @@ export const getAllCountries = () =>
       {country?.name}
     </option>
   ));
+export const getAllCountriesForAustraliaVisa = ({ countryData }) =>
+  countryData[0]?.data?.map((country, index) => (
+    <option key={index} value={country.toLowerCase()}>
+      {country}
+    </option>
+  ));
