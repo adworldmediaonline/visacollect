@@ -23,6 +23,7 @@ import useUpdate from '@/hooks/useUpdate';
 import { addDays } from '@/lib/addDays';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import { minDateWithDate } from '@/lib/minDate';
+import { businessVisaTypes, touristVisaTypes } from '../page';
 
 export default function Page({ params }) {
   const router = useRouter();
@@ -45,7 +46,7 @@ export default function Page({ params }) {
     apiEndpoint.SL_VISA_TOURIST_INDIVIDUAL,
     params?.id,
     'form',
-    '/lk/slvisa/tourist-eta/apply-individual/review',
+    '/lk/apply-now/review',
     refetch,
     'touristIndividual'
   );
@@ -59,7 +60,7 @@ export default function Page({ params }) {
   }
 
   if (getTouristIndividualByIdError) {
-    return router.push('/lk/slvisa/tourist-eta/apply-individual');
+    return router.push('/lk/apply-now');
   }
 
   if (getTouristIndividualByIdIsSuccess) {
@@ -135,6 +136,89 @@ export default function Page({ params }) {
             >
               {({ values, isValid, handleSubmit, setFieldValue }) => (
                 <Form onSubmit={handleSubmit}>
+                  <div className="main-form-section">
+                    <div className="label-section">
+                      <label>Visa Type </label>
+                    </div>
+
+                    <div className="mark-section group">
+                      <BsQuestionCircleFill className=" side-icon" size={20} />
+                      <div className="tooltip-content">
+                        visa type is required
+                      </div>
+                    </div>
+
+                    <div className="order-2 col-span-8">
+                      <Field
+                        required
+                        component="select"
+                        id="visaType"
+                        name="visaType"
+                        // placeholder="Title"
+                        className="new-form-input "
+                      >
+                        <option value="">Select</option>
+                        <option value="tourist visa">Tourist Visa</option>
+                        <option value="business visa">BUSINESS VISA</option>
+                      </Field>
+
+                      <ErrorMessage name="visaType">
+                        {errorMsg => (
+                          <div style={{ color: 'red' }}>{errorMsg}</div>
+                        )}
+                      </ErrorMessage>
+                    </div>
+                  </div>
+
+                  <div className="main-form-section">
+                    <div className="label-section">
+                      <label>No. of Days Visa Required*</label>
+                    </div>
+
+                    <div className="mark-section group">
+                      <BsQuestionCircleFill className=" side-icon" size={20} />
+                      <div className="tooltip-content">
+                        Select your visa validity period.
+                      </div>
+                    </div>
+
+                    <div className="order-2 col-span-8">
+                      <Field
+                        required
+                        component="select"
+                        id="visaValidPeriodIndividualTourist"
+                        name="visaValidPeriodIndividualTourist"
+                        className="new-form-input "
+                      >
+                        <option value="">Select</option>
+                        {values.visaType === 'tourist visa' && (
+                          <>
+                            {touristVisaTypes.map((type, i) => (
+                              <option key={i} value={type}>
+                                {type}
+                              </option>
+                            ))}
+                          </>
+                        )}
+                        {values.visaType === 'business visa' && (
+                          <>
+                            {businessVisaTypes.map((type, i) => (
+                              <option key={i} value={type}>
+                                {type}
+                              </option>
+                            ))}
+                          </>
+                        )}
+                      </Field>
+
+                      <ErrorMessage name="visaValidPeriodIndividualTourist">
+                        {errorMsg => (
+                          <div style={{ color: 'red' }}>{errorMsg}</div>
+                        )}
+                      </ErrorMessage>
+                    </div>
+                  </div>
+
                   <div className="main-form-section">
                     <div className="label-section">
                       <label>Surname/Family Name* </label>
@@ -357,41 +441,7 @@ export default function Page({ params }) {
                       </ErrorMessage>
                     </div>
                   </div>
-                  <div className="main-form-section">
-                    <div className="label-section">
-                      <label>Are you fully vaccinated for COVID 19*</label>
-                    </div>
 
-                    <div className="mark-section group">
-                      <BsQuestionCircleFill className=" side-icon" size={20} />
-                      <div className="tooltip-content">
-                        Tourist who has fully vaccinated recommended dosage
-                        prior to your 14 days of arrival or COVID recovered
-                        applicant after completed one dose of vaccination with
-                        vaccination certificate.
-                      </div>
-                    </div>
-
-                    <div className="order-2 col-span-8">
-                      <Field
-                        required
-                        component="select"
-                        id="covidVaccinatedIndividualTourist"
-                        name="covidVaccinatedIndividualTourist"
-                        className="new-form-input "
-                      >
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                      </Field>
-
-                      <ErrorMessage name="covidVaccinatedIndividualTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                  </div>
                   <div className="main-form-section">
                     <div className="label-section">
                       <label>Occupation*</label>
@@ -571,6 +621,69 @@ export default function Page({ params }) {
                       </div>
 
                       <ErrorMessage name="passportImageIndividualTourist">
+                        {errorMsg => (
+                          <div style={{ color: 'red' }}>{errorMsg}</div>
+                        )}
+                      </ErrorMessage>
+                    </div>
+                    {/* upload file end  */}
+                  </div>
+
+                  <div className="main-form-section">
+                    <div className="label-section">
+                      <label>Passport size photo*</label>
+                    </div>
+
+                    <div className="mark-section group">
+                      <BsQuestionCircleFill className=" side-icon" size={20} />
+                      <div className="tooltip-content">
+                        Please upload passport size photo).
+                      </div>
+                    </div>
+
+                    {/* upload file start  */}
+                    <div className="order-2 col-span-8">
+                      <div className="flex items-center w-full h-full gap-8 p-2 mb-5 overflow-hidden border rounded-md">
+                        <div className="bg-gray-200 rounded-lg">
+                          <SingleFileUpload
+                            id="profilePicture"
+                            name="profilePicture"
+                            setFieldValue={setFieldValue}
+                            value={values.profilePicture}
+                            errorMessage={
+                              <ErrorMessage
+                                name="profilePicture"
+                                component="div"
+                              />
+                            }
+                            accept="image/png, image/jpeg"
+                          />
+
+                          <label
+                            htmlFor="profilePicture"
+                            className="relative flex items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center"
+                          >
+                            <LuImagePlus size={40} className="text-gray-500" />
+                          </label>
+                        </div>
+                        {values.profilePicture ? (
+                          <div className="flex items-center w-full">
+                            <Image
+                              src={URL.createObjectURL(values.profilePicture)}
+                              alt={`Uploaded Image`}
+                              width={100}
+                              height={100}
+                            />
+                          </div>
+                        ) : (
+                          <div className="text-sm">
+                            <p>Choose the Photo To Upload</p>
+                            <p>No file chosen yet</p>
+                          </div>
+                        )}
+                      </div>
+
+                      <ErrorMessage name="profilePicture">
                         {errorMsg => (
                           <div style={{ color: 'red' }}>{errorMsg}</div>
                         )}
@@ -773,37 +886,6 @@ export default function Page({ params }) {
 
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label>
-                        Where you have been during last 14 days before this
-                        trip?*{' '}
-                      </label>
-                    </div>
-
-                    <div className="mark-section group">
-                      <BsQuestionCircleFill className=" side-icon" size={20} />
-                      <div className="tooltip-content">
-                        Where you have been in since last 14 days.
-                      </div>
-                    </div>
-
-                    <div className="order-2 col-span-8">
-                      <Field
-                        type="text"
-                        id="whereHaveBeenIndividualTourist"
-                        name="whereHaveBeenIndividualTourist"
-                        // placeholder="Place"
-                        className="new-form-input "
-                      />
-
-                      <ErrorMessage name="whereHaveBeenIndividualTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                  </div>
-                  <div className="main-form-section">
-                    <div className="label-section">
                       <label>Attended Arrrival Date*</label>
                     </div>
 
@@ -902,98 +984,36 @@ export default function Page({ params }) {
                       </ErrorMessage>
                     </div>
                   </div>
+
                   <div className="main-form-section">
                     <div className="label-section">
-                      <label>No. of Days Visa Required*</label>
+                      <label>Port of entry in Sri Lanka</label>
                     </div>
 
-                    <div className="mark-section group">
-                      <BsQuestionCircleFill className=" side-icon" size={20} />
-                      <div className="tooltip-content">
-                        Select your visa validity period.
-                      </div>
-                    </div>
+                    <div className="mark-section group"></div>
 
                     <div className="order-2 col-span-8">
                       <Field
                         required
                         component="select"
-                        id="visaValidPeriodIndividualTourist"
-                        name="visaValidPeriodIndividualTourist"
+                        id="portOfDepartureIndividualTourist"
+                        name="portOfDepartureIndividualTourist"
+                        // placeholder="Title"
                         className="new-form-input "
                       >
                         <option value="">Select</option>
-                        <option value="option1">30 Days</option>
+                        <option value="Bandaranaike International Airport">
+                          Bandaranaike International Airport
+                        </option>
+                        <option value="Jaffna International Airport">
+                          Jaffna International Airport
+                        </option>
+                        <option value="Mattala Rajapaksa International Airport">
+                          Mattala Rajapaksa International Airport
+                        </option>
                       </Field>
 
-                      <ErrorMessage name="visaValidPeriodIndividualTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                  </div>
-                  <div className="main-form-section">
-                    <div className="label-section">
-                      <label>Port of departure*</label>
-                    </div>
-
-                    <div className="mark-section group"></div>
-
-                    <div className="order-2 col-span-8">
-                      <Field
-                        type="text"
-                        id="portOfDepartureIndividualTourist"
-                        name="portOfDepartureIndividualTourist"
-                        // placeholder="Port of Departure"
-                        className="new-form-input "
-                      />
                       <ErrorMessage name="portOfDepartureIndividualTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                  </div>
-                  <div className="main-form-section">
-                    <div className="label-section">
-                      <label>Arilne/Vessel*</label>
-                    </div>
-
-                    <div className="mark-section group"></div>
-
-                    <div className="order-2 col-span-8">
-                      <Field
-                        type="text"
-                        id="arilineVesselIndividualTourist"
-                        name="arilineVesselIndividualTourist"
-                        className="new-form-input "
-                      />
-
-                      <ErrorMessage name="arilineVesselIndividualTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                  </div>
-                  <div className="main-form-section">
-                    <div className="label-section">
-                      <label>Flight/Vessel Number*</label>
-                    </div>
-
-                    <div className="mark-section group"></div>
-
-                    <div className="order-2 col-span-8">
-                      <Field
-                        type="text"
-                        id="flightVesselNumberIndividualTourist"
-                        name="flightVesselNumberIndividualTourist"
-                        // placeholder="Passport Number"
-                        className="new-form-input "
-                      />
-
-                      <ErrorMessage name="flightVesselNumberIndividualTourist">
                         {errorMsg => (
                           <div style={{ color: 'red' }}>{errorMsg}</div>
                         )}
@@ -1298,28 +1318,6 @@ export default function Page({ params }) {
                         className="new-form-input "
                       />
                       <ErrorMessage name="mobileIndividualTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                  </div>
-                  <div className="main-form-section">
-                    <div className="label-section">
-                      <label>Fax Number*</label>
-                    </div>
-
-                    <div className="mark-section group"></div>
-
-                    <div className="order-2 col-span-8">
-                      <Field
-                        type="text"
-                        id="faxNumberIndividualTourist"
-                        name="faxNumberIndividualTourist"
-                        // placeholder="Port of Departure"
-                        className="new-form-input "
-                      />
-                      <ErrorMessage name="faxNumberIndividualTourist">
                         {errorMsg => (
                           <div style={{ color: 'red' }}>{errorMsg}</div>
                         )}

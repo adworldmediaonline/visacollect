@@ -56,8 +56,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/sl/slvisa/tourist-eta/apply-individual/',
-        destination: '/lk/slvisa/tourist-eta/apply-individual/',
+        source: '/sl/apply-now/',
+        destination: '/lk/apply-now/',
         permanent: true,
       },
       {

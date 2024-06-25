@@ -1,19 +1,19 @@
-import Link from "next/link";
+import Link from 'next/link';
 export const LinkButton = ({ text, href }) => (
-    <div className="flex justify-center items-center">
-        <Link
-            href={href}
-            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
-        >
-            {text}
-        </Link>
-    </div>
+  <div className="flex justify-center items-center">
+    <Link
+      href={href}
+      className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+    >
+      {text}
+    </Link>
+  </div>
 );
 
 export const LinkText = ({ text, href }) => (
-    <Link className="text-primary font-semibold text-lg" href={href}>
-        {text}
-    </Link>
+  <Link className="text-primary font-semibold text-lg" href={href}>
+    {text}
+  </Link>
 );
 
 ## Ready to begin your Sri Lanka adventure with our e Tourist Sri Lanka Visa?
@@ -99,14 +99,11 @@ Applying for the Sri Lanka Visa/STA is simple with . Complete our user-friendly 
 
 Visacollect offers three processing time options:
 
--   **Standard (3 days):** $74.99
--   **Rush (24 hours):** $144.99
--   **Super Rush (12 hours):** $213.99
+- **Standard (3 days):** $74.99
+- **Rush (24 hours):** $144.99
+- **Super Rush (12 hours):** $213.99
 
-<LinkText
-    text="Apply for Sri Lanka Visa Now!"
-    href="/lk/slvisa/tourist-eta/apply-individual/"
-/>
+<LinkText text="Apply for Sri Lanka Visa Now!" href="/lk/apply-now/" />
 ### Child Application
 
 Children travelling with their parents must have their own ETA. Parents can complete the application on their behalf, and if travelling without parents, a notarized authorization letter is required.
