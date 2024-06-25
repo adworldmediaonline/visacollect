@@ -24,11 +24,27 @@ import { minDate, minDateWithDate } from '@/lib/minDate';
 import { Country } from 'country-state-city';
 import { getAllCountries } from '@/lib/getAllCountries';
 
-const Page = () => {
+export const touristVisaTypes = [
+  '30 Days Single entry Visa',
+  'Standard Visitor Visa (6 months) each stay restricted up to 60 days',
+  '1 Year Multiple Entry Tourist Visa each stay restricted upto 90 days',
+  '2 Years Multiple Entry Visitor Visa - Tourist each stay restricted upto 180 days',
+  '5 Years Multiple entry visitor visa - Tourist each stay restricted upto 180 days',
+  '10 Years Mutiple Entry Visitor Visa-Tourist each stay restricted upto 180 days',
+];
+
+export const businessVisaTypes = [
+  'Standard Visitor Visa - Business (6 months) each stay restricted up to 60 days',
+  '1 Year Multiple Entry Business Visa each stay restricted upto 90 days',
+  '2 Years Multiple Entry Visitor Visa - Business each stay restricted upto 180 days',
+  '5 Years Multiple entry visitor visa - Business each stay restricted upto 180 days',
+  '10 Years Mutiple Entry Visitor Visa - Business each stay restricted upto 180 days',
+];
+export default function ApplyNowPage() {
   const postMutation = usePost(
     apiEndpoint.SL_VISA_TOURIST_INDIVIDUAL,
     1,
-    '/lk/slvisa/tourist-eta/apply-individual/review',
+    '/lk/apply-now/review',
     true,
     'touristIndividual'
   );
@@ -46,8 +62,8 @@ const Page = () => {
         />
 
         <Formheading
-          formHead="Travel Information - Tourist Purpose - Individual"
-          formPara="All information should be entered as per the applicant's passport"
+          formHead="Sri Lanka Tourist Visa "
+          formPara="Your Trip Details"
         />
 
         <div>
@@ -78,13 +94,85 @@ const Page = () => {
           >
             {({ values, setValues, isValid, handleSubmit, setFieldValue }) => (
               <Form onSubmit={handleSubmit}>
-                <p className="pb-5 text-lg font-semibold text-red-600">
-                  Important - Business ETA can be used only for the purpose of
-                  short term business matters. Any other purposes shall not be
-                  entertained through this scheme and please refrain from
-                  applying to avoid unnecessary hassles at the port of entry.{' '}
-                </p>
+                <div className="main-form-section">
+                  <div className="label-section">
+                    <label>Visa Type </label>
+                  </div>
 
+                  <div className="mark-section group">
+                    <BsQuestionCircleFill className=" side-icon" size={20} />
+                    <div className="tooltip-content">visa type is required</div>
+                  </div>
+
+                  <div className="order-2 col-span-8">
+                    <Field
+                      required
+                      component="select"
+                      id="visaType"
+                      name="visaType"
+                      // placeholder="Title"
+                      className="new-form-input "
+                    >
+                      <option value="">Select</option>
+                      <option value="tourist visa">Tourist Visa</option>
+                      <option value="business visa">BUSINESS VISA</option>
+                    </Field>
+
+                    <ErrorMessage name="visaType">
+                      {errorMsg => (
+                        <div style={{ color: 'red' }}>{errorMsg}</div>
+                      )}
+                    </ErrorMessage>
+                  </div>
+                </div>
+                <div className="main-form-section">
+                  <div className="label-section">
+                    <label>No. of Days Visa Required*</label>
+                  </div>
+
+                  <div className="mark-section group">
+                    <BsQuestionCircleFill className=" side-icon" size={20} />
+                    <div className="tooltip-content">
+                      Select your visa validity period.
+                    </div>
+                  </div>
+
+                  <div className="order-2 col-span-8">
+                    <Field
+                      required
+                      component="select"
+                      id="visaValidPeriodIndividualTourist"
+                      name="visaValidPeriodIndividualTourist"
+                      className="new-form-input "
+                    >
+                      <option value="">Select</option>
+                      {values.visaType === 'tourist visa' && (
+                        <>
+                          {touristVisaTypes.map((type, i) => (
+                            <option key={i} value={type}>
+                              {type}
+                            </option>
+                          ))}
+                        </>
+                      )}
+                      {values.visaType === 'business visa' && (
+                        <>
+                          {businessVisaTypes.map((type, i) => (
+                            <option key={i} value={type}>
+                              {type}
+                            </option>
+                          ))}
+                        </>
+                      )}
+                    </Field>
+
+                    <ErrorMessage name="visaValidPeriodIndividualTourist">
+                      {errorMsg => (
+                        <div style={{ color: 'red' }}>{errorMsg}</div>
+                      )}
+                    </ErrorMessage>
+                  </div>
+                </div>
                 <div className="main-form-section">
                   <div className="label-section">
                     <label>Surname/Family Name* </label>
@@ -299,41 +387,7 @@ const Page = () => {
                     </ErrorMessage>
                   </div>
                 </div>
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label>Are you fully vaccinated for COVID 19*</label>
-                  </div>
 
-                  <div className="mark-section group">
-                    <BsQuestionCircleFill className=" side-icon" size={20} />
-                    <div className="tooltip-content">
-                      Tourist who has fully vaccinated recommended dosage prior
-                      to your 14 days of arrival or COVID recovered applicant
-                      after completed one dose of vaccination with vaccination
-                      certificate.
-                    </div>
-                  </div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      required
-                      component="select"
-                      id="covidVaccinatedIndividualTourist"
-                      name="covidVaccinatedIndividualTourist"
-                      className="new-form-input "
-                    >
-                      <option value="">Select</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                    </Field>
-
-                    <ErrorMessage name="covidVaccinatedIndividualTourist">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
                 <div className="main-form-section">
                   <div className="label-section">
                     <label>Occupation*</label>
@@ -503,6 +557,128 @@ const Page = () => {
                     </ErrorMessage>
                   </div>
                   {/* upload file end  */}
+                </div>
+                <div className="main-form-section">
+                  <div className="label-section">
+                    <label>Passport size photo*</label>
+                  </div>
+
+                  <div className="mark-section group">
+                    <BsQuestionCircleFill className=" side-icon" size={20} />
+                    <div className="tooltip-content">
+                      Please upload passport size photo).
+                    </div>
+                  </div>
+
+                  <div className="order-2 col-span-8">
+                    <div className="flex items-center w-full h-full gap-8 p-2 mb-5 overflow-hidden border rounded-md">
+                      <div className="bg-gray-200 rounded-lg">
+                        <SingleFileUpload
+                          id="profilePicture"
+                          name="profilePicture"
+                          setFieldValue={setFieldValue}
+                          value={values.profilePicture}
+                          errorMessage={
+                            <ErrorMessage
+                              name="profilePicture"
+                              component="div"
+                            />
+                          }
+                          accept="image/png, image/jpeg"
+                        />
+
+                        <label
+                          htmlFor="profilePicture"
+                          className="relative flex items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center"
+                        >
+                          <LuImagePlus size={40} className="text-gray-500" />
+                        </label>
+                      </div>
+                      {values.profilePicture ? (
+                        <div className="flex items-center w-full">
+                          <Image
+                            src={URL.createObjectURL(values.profilePicture)}
+                            alt={`Uploaded Image`}
+                            width={100}
+                            height={100}
+                          />
+                        </div>
+                      ) : (
+                        <div className="text-sm">
+                          <p>Choose the Photo To Upload</p>
+                          <p>No file chosen yet</p>
+                        </div>
+                      )}
+                    </div>
+
+                    <ErrorMessage name="profilePicture">
+                      {errorMsg => (
+                        <div style={{ color: 'red' }}>{errorMsg}</div>
+                      )}
+                    </ErrorMessage>
+                  </div>
+                </div>
+                <div className="main-form-section">
+                  <div className="label-section">
+                    <label>Additional Documents*</label>
+                  </div>
+
+                  <div className="mark-section group">
+                    <BsQuestionCircleFill className=" side-icon" size={20} />
+                    <div className="tooltip-content">
+                      Please upload documents).
+                    </div>
+                  </div>
+
+                  <div className="order-2 col-span-8">
+                    <div className="flex items-center w-full h-full gap-8 p-2 mb-5 overflow-hidden border rounded-md">
+                      <div className="bg-gray-200 rounded-lg">
+                        <SingleFileUpload
+                          id="additionalDocuments"
+                          name="additionalDocuments"
+                          setFieldValue={setFieldValue}
+                          value={values.additionalDocuments}
+                          errorMessage={
+                            <ErrorMessage
+                              name="additionalDocuments"
+                              component="div"
+                            />
+                          }
+                          accept="image/png, image/jpeg"
+                        />
+
+                        <label
+                          htmlFor="additionalDocuments"
+                          className="relative flex items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center"
+                        >
+                          <LuImagePlus size={40} className="text-gray-500" />
+                        </label>
+                      </div>
+                      {values.additionalDocuments ? (
+                        <div className="flex items-center w-full">
+                          <Image
+                            src={URL.createObjectURL(
+                              values.additionalDocuments
+                            )}
+                            alt={`Uploaded Image`}
+                            width={100}
+                            height={100}
+                          />
+                        </div>
+                      ) : (
+                        <div className="text-sm">
+                          <p>Choose the Photo To Upload</p>
+                          <p>No file chosen yet</p>
+                        </div>
+                      )}
+                    </div>
+
+                    <ErrorMessage name="additionalDocuments">
+                      {errorMsg => (
+                        <div style={{ color: 'red' }}>{errorMsg}</div>
+                      )}
+                    </ErrorMessage>
+                  </div>
                 </div>
 
                 {/* CHILD INFORMATION ADDED START */}
@@ -690,35 +866,6 @@ const Page = () => {
 
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label>
-                      Where you have been during last 14 days before this trip?*{' '}
-                    </label>
-                  </div>
-
-                  <div className="mark-section group">
-                    <BsQuestionCircleFill className=" side-icon" size={20} />
-                    <div className="tooltip-content">
-                      Where you have been in since last 14 days.
-                    </div>
-                  </div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      type="text"
-                      id="whereHaveBeenIndividualTourist"
-                      name="whereHaveBeenIndividualTourist"
-                      className="new-form-input "
-                    />
-
-                    <ErrorMessage name="whereHaveBeenIndividualTourist">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
-                <div className="main-form-section">
-                  <div className="label-section">
                     <label>Attended Arrival Date*</label>
                   </div>
 
@@ -828,19 +975,32 @@ const Page = () => {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
-                    <label>Port of departure*</label>
+                    <label>Port of entry in Sri Lanka</label>
                   </div>
 
                   <div className="mark-section group"></div>
 
                   <div className="order-2 col-span-8">
                     <Field
-                      type="text"
+                      required
+                      component="select"
                       id="portOfDepartureIndividualTourist"
                       name="portOfDepartureIndividualTourist"
-                      // placeholder="Port of Departure"
+                      // placeholder="Title"
                       className="new-form-input "
-                    />
+                    >
+                      <option value="">Select</option>
+                      <option value="Bandaranaike International Airport">
+                        Bandaranaike International Airport
+                      </option>
+                      <option value="Jaffna International Airport">
+                        Jaffna International Airport
+                      </option>
+                      <option value="Mattala Rajapaksa International Airport">
+                        Mattala Rajapaksa International Airport
+                      </option>
+                    </Field>
+
                     <ErrorMessage name="portOfDepartureIndividualTourist">
                       {errorMsg => (
                         <div style={{ color: 'red' }}>{errorMsg}</div>
@@ -848,52 +1008,6 @@ const Page = () => {
                     </ErrorMessage>
                   </div>
                 </div>
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label>Arilne/Vessel*</label>
-                  </div>
-
-                  <div className="mark-section group"></div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      type="text"
-                      id="arilineVesselIndividualTourist"
-                      name="arilineVesselIndividualTourist"
-                      className="new-form-input "
-                    />
-
-                    <ErrorMessage name="arilineVesselIndividualTourist">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label>Flight/Vessel Number*</label>
-                  </div>
-
-                  <div className="mark-section group"></div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      type="text"
-                      id="flightVesselNumberIndividualTourist"
-                      name="flightVesselNumberIndividualTourist"
-                      // placeholder="Passport Number"
-                      className="new-form-input "
-                    />
-
-                    <ErrorMessage name="flightVesselNumberIndividualTourist">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
-
                 <Formsubhead subHead="Contact Details" />
 
                 <div className="main-form-section">
@@ -1196,28 +1310,6 @@ const Page = () => {
                     </ErrorMessage>
                   </div>
                 </div>
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label>Fax Number*</label>
-                  </div>
-
-                  <div className="mark-section group"></div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      type="text"
-                      id="faxNumberIndividualTourist"
-                      name="faxNumberIndividualTourist"
-                      // placeholder="Port of Departure"
-                      className="new-form-input "
-                    />
-                    <ErrorMessage name="faxNumberIndividualTourist">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
 
                 <Formsubhead subHead="Declaration Details" />
 
@@ -1282,6 +1374,4 @@ const Page = () => {
       </div>
     </div>
   );
-};
-
-export default Page;
+}

@@ -13,7 +13,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ImSpinner2 } from 'react-icons/im';
 
-const Page = () => {
+export default function ReviewPage() {
   const { state } = useFormContext();
   const router = useRouter();
   const {
@@ -41,7 +41,7 @@ const Page = () => {
   }
 
   if (getTouristIndividualByIdError) {
-    return router.push('/lk/slvisa/tourist-eta/apply-individual');
+    return router.push('/lk/apply-now');
   }
 
   if (getTouristIndividualByIdIsSuccess) {
@@ -116,7 +116,7 @@ const Page = () => {
                 Are you fully vaccinated for covid-19
               </h2>
               <p className="font-bold leading-relaxed tracking-wide text-justify ">
-                {touristIndividualData?.covidVaccinatedIndividualTourist}
+                {touristIndividualData?.visaDuration}
               </p>
             </div>
             <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
@@ -185,14 +185,6 @@ const Page = () => {
 
             <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
               <h2 className="py-1 text-sm font-semibold text-secondary">
-                Where you have been during last 14 days before this travel
-              </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify ">
-                {touristIndividualData?.whereHaveBeenIndividualTourist}
-              </p>
-            </div>
-            <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
-              <h2 className="py-1 text-sm font-semibold text-secondary">
                 Intended Arrival Date
               </h2>
               <p className="font-bold leading-relaxed tracking-wide text-justify ">
@@ -223,22 +215,6 @@ const Page = () => {
               </h2>
               <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.portOfDepartureIndividualTourist}
-              </p>
-            </div>
-            <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
-              <h2 className="py-1 text-sm font-semibold text-secondary">
-                Airline/Vessel
-              </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify ">
-                {touristIndividualData?.arilineVesselIndividualTourist}
-              </p>
-            </div>
-            <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
-              <h2 className="py-1 text-sm font-semibold text-secondary">
-                Flight/Vessel Number
-              </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify ">
-                {touristIndividualData?.flightVesselNumberIndividualTourist}
               </p>
             </div>
 
@@ -300,14 +276,6 @@ const Page = () => {
               </h2>
               <p className="font-bold leading-relaxed tracking-wide text-justify ">
                 {touristIndividualData?.mobileIndividualTourist}
-              </p>
-            </div>
-            <div className="grid pt-5 md:items-center md:justify-between md:grid-cols-2 md:space-x-20 md:pt-0 ">
-              <h2 className="py-1 text-sm font-semibold text-secondary">
-                Fax Number
-              </h2>
-              <p className="font-bold leading-relaxed tracking-wide text-justify ">
-                {touristIndividualData?.faxNumberIndividualTourist}
               </p>
             </div>
 
@@ -372,7 +340,7 @@ const Page = () => {
 
             <div className="py-8 text-center">
               <Link
-                href={`/lk/slvisa/tourist-eta/apply-individual/${touristIndividualData?._id}`}
+                href={`/lk/apply-now/${touristIndividualData?._id}`}
                 className="formbtn cursor-pointer inline-flex items-center gap-3 bg-[#0068E5] px-8 py-2"
               >
                 Edit Data
@@ -380,7 +348,7 @@ const Page = () => {
             </div>
 
             <div className="py-8 text-left">
-              <button className="inline-flex items-center gap-3 px-12 py-3 rounded-full text-white bg-green-700 cursor-pointer formbtn">
+              <button className="inline-flex items-center gap-3 px-12 py-3 text-white bg-green-700 rounded-full cursor-pointer formbtn">
                 Proceed to Pay
               </button>
 
@@ -394,6 +362,4 @@ const Page = () => {
       </div>
     );
   }
-};
-
-export default Page;
+}
