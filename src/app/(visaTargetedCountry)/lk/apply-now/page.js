@@ -446,6 +446,34 @@ export default function ApplyNowPage() {
                 </div>
                 <div className="main-form-section">
                   <div className="label-section">
+                    <label>Passport place of issue*</label>
+                  </div>
+
+                  <div className="mark-section group">
+                    <BsQuestionCircleFill className=" side-icon" size={20} />
+                    <div className="tooltip-content">
+                      Passport place of issue
+                    </div>
+                  </div>
+
+                  <div className="order-2 col-span-8">
+                    <Field
+                      type="text"
+                      id="passportPlaceOfIssue"
+                      name="passportPlaceOfIssue"
+                      // placeholder="Passport Number"
+                      className="new-form-input "
+                    />
+
+                    <ErrorMessage name="passportPlaceOfIssue">
+                      {errorMsg => (
+                        <div style={{ color: 'red' }}>{errorMsg}</div>
+                      )}
+                    </ErrorMessage>
+                  </div>
+                </div>
+                <div className="main-form-section">
+                  <div className="label-section">
                     <label>Issue Date*</label>
                   </div>
 
@@ -942,37 +970,7 @@ export default function ApplyNowPage() {
                     </ErrorMessage>
                   </div>
                 </div>
-                <div className="main-form-section">
-                  <div className="label-section">
-                    <label>No. of Days Visa Required*</label>
-                  </div>
 
-                  <div className="mark-section group">
-                    <BsQuestionCircleFill className=" side-icon" size={20} />
-                    <div className="tooltip-content">
-                      Select your visa validity period.
-                    </div>
-                  </div>
-
-                  <div className="order-2 col-span-8">
-                    <Field
-                      required
-                      component="select"
-                      id="visaValidPeriodIndividualTourist"
-                      name="visaValidPeriodIndividualTourist"
-                      className="new-form-input "
-                    >
-                      <option value="">Select</option>
-                      <option value="option1">30 Days</option>
-                    </Field>
-
-                    <ErrorMessage name="visaValidPeriodIndividualTourist">
-                      {errorMsg => (
-                        <div style={{ color: 'red' }}>{errorMsg}</div>
-                      )}
-                    </ErrorMessage>
-                  </div>
-                </div>
                 <div className="main-form-section">
                   <div className="label-section">
                     <label>Port of entry in Sri Lanka</label>
