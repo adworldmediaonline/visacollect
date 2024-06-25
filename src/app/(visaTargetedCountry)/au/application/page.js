@@ -738,7 +738,9 @@ const AustraliaApplicationPage = () => {
                           >
                             <option value="">Select</option>
                             {getAllCountriesForAustraliaVisa({
-                              countryData: z,
+                              countryData: subclassCountryData.filter(
+                                item => item.name === selectedSubclass
+                              ),
                             })}
                           </Field>
                           <ErrorMessage name="passportDetails.additionalCitizenship">
