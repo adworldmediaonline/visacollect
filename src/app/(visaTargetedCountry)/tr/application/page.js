@@ -11,6 +11,58 @@ import apiEndpoint from '@/services/apiEndpoint';
 import usePost from '@/hooks/usePost';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import { minDate } from '@/lib/minDate';
+
+const countries = [
+  'Afghanistan',
+  'Algeria',
+  'Antigua and Barbuda',
+  'Armenia',
+  'Australia',
+  'Bahamas',
+  'Bangladesh',
+  'Barbados',
+  'Bermuda',
+  'Bhutan',
+  'Cambodia',
+  'Cape Verde',
+  'China',
+  'Croatia',
+  'Dominica',
+  'Dominican Republic',
+  'East Timor',
+  'Egypt',
+  'Equatorial Guinea',
+  'Estonia',
+  'Fiji',
+  'Greek Cypriot Administration of Southern Cyprus',
+  'Grenada',
+  'Haiti',
+  'Hong Kong (BN(O))',
+  'India',
+  'Iraq',
+  'Jamaica',
+  'Latvia',
+  'Libya',
+  'Lithuania',
+  'Maldives',
+  'Mauritius',
+  'Mexico',
+  'Nepal',
+  'Pakistan',
+  'Palestine',
+  'Philippines',
+  'Saint Lucia',
+  'Saint Vincent and the Grenadines',
+  'Senegal',
+  'Solomon Islands',
+  'South Africa',
+  'Sri Lanka',
+  'Suriname',
+  'Taiwan',
+  'Vanuatu',
+  'Vietnam',
+  'Yemen',
+];
 const Page = () => {
   const postMutation = usePost(
     apiEndpoint.TURKEY_VISA_APPLICATION,
@@ -63,9 +115,9 @@ const Page = () => {
                       className="new-form-input "
                     >
                       <option value="">Select</option>
-                      {Country?.getAllCountries()?.map((country, index) => (
-                        <option key={index} value={country?.name}>
-                          {country?.name}
+                      {countries?.map((country, index) => (
+                        <option key={index} value={country.toLowerCase()}>
+                          {country}
                         </option>
                       ))}
                     </Field>
