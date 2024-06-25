@@ -25,6 +25,9 @@ export const touristIndividualsSchema = {
     passportNumberIndividualTourist: Yup.string().required(
       'Passport Number  is required'
     ),
+    passportPlaceOfIssue: Yup.string().required(
+      'Passport of issue  is required'
+    ),
     issueDateIndividualTourist: Yup.date().required('Issue Date  is required'),
     expiryDateIndividualTourist: Yup.date().required(
       'Expiry Date  is required'
@@ -171,6 +174,7 @@ export const touristIndividualsSchema = {
 
     occupationIndividualTourist: '',
     passportNumberIndividualTourist: '',
+    passportPlaceOfIssue: '',
     issueDateIndividualTourist: '',
     expiryDateIndividualTourist: '',
     passportImageIndividualTourist: '',

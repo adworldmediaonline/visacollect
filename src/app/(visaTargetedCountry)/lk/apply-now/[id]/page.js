@@ -498,6 +498,35 @@ export default function Page({ params }) {
                       </ErrorMessage>
                     </div>
                   </div>
+
+                  <div className="main-form-section">
+                    <div className="label-section">
+                      <label>Passport place of issue*</label>
+                    </div>
+
+                    <div className="mark-section group">
+                      <BsQuestionCircleFill className=" side-icon" size={20} />
+                      <div className="tooltip-content">
+                        Passport place of issue
+                      </div>
+                    </div>
+
+                    <div className="order-2 col-span-8">
+                      <Field
+                        type="text"
+                        id="passportPlaceOfIssue"
+                        name="passportPlaceOfIssue"
+                        // placeholder="Passport Number"
+                        className="new-form-input "
+                      />
+
+                      <ErrorMessage name="passportPlaceOfIssue">
+                        {errorMsg => (
+                          <div style={{ color: 'red' }}>{errorMsg}</div>
+                        )}
+                      </ErrorMessage>
+                    </div>
+                  </div>
                   <div className="main-form-section">
                     <div className="label-section">
                       <label>Issue Date*</label>
