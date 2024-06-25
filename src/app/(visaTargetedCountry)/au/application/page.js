@@ -246,7 +246,6 @@ const AustraliaApplicationPage = () => {
                           <option value="">Select</option>
                           <option value="Tourism">Tourism</option>
                           <option value="india">Business</option>
-                          <option value="australia">Transit</option>
                         </Field>
 
                         <ErrorMessage name="travelDetails.purposeOfStay">
