@@ -2,7 +2,9 @@ import * as Yup from 'yup';
 
 export const touristIndividualsSchema = {
   yupSchema: Yup.object().shape({
+    typeOfPassport: Yup.string().required(' Type Of Passport is required'),
     visaType: Yup.string().required(' visaType is required'),
+
     familyNameIndividualTourist: Yup.string().required(
       ' familyName is required'
     ),
@@ -32,89 +34,28 @@ export const touristIndividualsSchema = {
     expiryDateIndividualTourist: Yup.date().required(
       'Expiry Date  is required'
     ),
+    invitationLetter: Yup.array().when('visaType', {
+      is: 'business visa',
+      then: schema =>
+        schema
+          .min(1, 'invitation letter is required')
+          .of(Yup.mixed())
+          .required('invitation letter is required'),
+      otherwise: schema => schema,
+    }),
+    passportFrontImage: Yup.array()
+      .min(1, 'Passport front image is required')
+      .of(Yup.mixed())
+      .required('Passport front image is required'),
+    passportSizePhoto: Yup.array()
+      .min(1, 'Passport size photo front image is required')
+      .of(Yup.mixed())
+      .required('Passport size photo image is required'),
 
-    passportImageIndividualTourist: Yup.mixed()
-      .test('fileFormat', 'Only PNG and JPG files are allowed', value => {
-        if (!value) {
-          return true;
-        }
-
-        if (value instanceof File) {
-          return ['image/png', 'image/jpeg'].includes(value.type);
-        }
-
-        if (typeof value === 'string') {
-          return true;
-        }
-
-        return false;
-      })
-      .required('Please select a file or enter a URL'),
-    profilePicture: Yup.mixed()
-      .test('fileFormat', 'Only PNG and JPG files are allowed', value => {
-        if (!value) {
-          return true;
-        }
-
-        if (value instanceof File) {
-          return ['image/png', 'image/jpeg'].includes(value.type);
-        }
-
-        if (typeof value === 'string') {
-          return true;
-        }
-
-        return false;
-      })
-      .required('Please select a file or enter a URL'),
-    additionalDocuments: Yup.mixed()
-      .test('fileFormat', 'Only PNG and JPG files are allowed', value => {
-        if (!value) {
-          return true;
-        }
-
-        if (value instanceof File) {
-          return ['image/png', 'image/jpeg'].includes(value.type);
-        }
-
-        if (typeof value === 'string') {
-          return true;
-        }
-
-        return false;
-      })
-      .required('Please select a file or enter a URL'),
-
-    isChildInformationEnable: Yup.boolean().notRequired(),
-    childInformation: Yup.array().of(
-      Yup.object().shape({
-        surnameFamilyName: Yup.string().when('isChildInformationEnable', {
-          is: true,
-          then: schema => schema.required('Surname is required'),
-          otherwise: schema => schema.notRequired(),
-        }),
-        otherGivenNames: Yup.string().when('isChildInformationEnable', {
-          is: true,
-          then: schema => schema.required('otherGivenNames is required'),
-          otherwise: schema => schema.notRequired(),
-        }),
-        dateOfBirth: Yup.date().when('isChildInformationEnable', {
-          is: true,
-          then: schema => schema.required('date of birth is required'),
-          otherwise: schema => schema.notRequired(),
-        }),
-        gender: Yup.string().when('isChildInformationEnable', {
-          is: true,
-          then: schema => schema.required('gender is required'),
-          otherwise: schema => schema.notRequired(),
-        }),
-        relationship: Yup.string().when('isChildInformationEnable', {
-          is: true,
-          then: schema => schema.required('relationship is required'),
-          otherwise: schema => schema.notRequired(),
-        }),
-      })
-    ),
+    additionalDocuments: Yup.array()
+      .min(1, 'Passport size photo front image is required')
+      .of(Yup.mixed())
+      .required('Passport size photo image is required'),
 
     attendantArrivalDateIndividualTourist: Yup.date().required(
       'This Field is required'
@@ -177,25 +118,14 @@ export const touristIndividualsSchema = {
     passportPlaceOfIssue: '',
     issueDateIndividualTourist: '',
     expiryDateIndividualTourist: '',
-    passportImageIndividualTourist: '',
-    profilePicture: '',
-    additionalDocuments: '',
-    isChildInformationEnable: false,
-    childInformation: [
-      {
-        surnameFamilyName: '',
-        otherGivenNames: '',
-        dateOfBirth: '',
-        gender: '',
-        relationship: '',
-      },
-    ],
-
+    passportFrontImage: [],
+    invitationLetter: [],
+    passportSizePhoto: [],
+    additionalDocuments: [],
     attendantArrivalDateIndividualTourist: '',
     purposeOfVisitIndividualTourist: '',
     visaValidPeriodIndividualTourist: '',
     portOfDepartureIndividualTourist: '',
-
     addressLineOneIndividualTourist: '',
     addressLineTwoIndividualTourist: '',
     cityIndividualTourist: '',
@@ -207,7 +137,6 @@ export const touristIndividualsSchema = {
     alternateEmailIndividualTourist: '',
     telephoneIndividualTourist: '',
     mobileIndividualTourist: '',
-
     validResidenceIndividualTourist: '',
     validEtaOrExtensionIndividualTourist: '',
     multipleEntryVisaIndividualTourist: '',

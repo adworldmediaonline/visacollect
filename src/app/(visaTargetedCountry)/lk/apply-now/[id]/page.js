@@ -138,6 +138,40 @@ export default function Page({ params }) {
                 <Form onSubmit={handleSubmit}>
                   <div className="main-form-section">
                     <div className="label-section">
+                      <label>Type of passport </label>
+                    </div>
+
+                    <div className="mark-section group">
+                      <BsQuestionCircleFill className=" side-icon" size={20} />
+                      <div className="tooltip-content">
+                        type of passport is required
+                      </div>
+                    </div>
+
+                    <div className="order-2 col-span-8">
+                      <Field
+                        required
+                        component="select"
+                        id="typeOfPassport"
+                        name="typeOfPassport"
+                        // placeholder="Title"
+                        className="new-form-input "
+                      >
+                        <option value="">Select</option>
+                        <option value="Ordinary Passport - Issued to Citizens of a country">
+                          Ordinary Passport - Issued to Citizens of a country
+                        </option>
+                      </Field>
+
+                      <ErrorMessage name="typeOfPassport">
+                        {errorMsg => (
+                          <div style={{ color: 'red' }}>{errorMsg}</div>
+                        )}
+                      </ErrorMessage>
+                    </div>
+                  </div>
+                  <div className="main-form-section">
+                    <div className="label-section">
                       <label>Visa Type </label>
                     </div>
 

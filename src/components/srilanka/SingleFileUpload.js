@@ -1,5 +1,5 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
 
 const SingleFileUpload = ({
   name,
@@ -9,7 +9,7 @@ const SingleFileUpload = ({
   errorMessage,
   id,
 }) => {
-  const handleFileChange = (event) => {
+  const handleFileChange = event => {
     const file = event.target.files[0];
     setFieldValue(name, file);
   };
