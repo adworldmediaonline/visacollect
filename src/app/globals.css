@@ -271,9 +271,12 @@
 .main-form-section {
   @apply items-start grid-cols-12 gap-4 py-2 md:grid;
 }
+.input-group-new {
+  @apply flex flex-col gap-3;
+}
 
 .new-form-input {
-  @apply border border-gray-300 py-[10px] px-1 rounded-lg outline-none ring-0 focus:ring-blue-200 focus:ring-1 w-full;
+  @apply border border-gray-300 py-[20px] px-[10px] rounded-full outline-none ring-0 focus:ring-blue-200 focus:ring-1 w-full;
 }
 
 .side-icon {
