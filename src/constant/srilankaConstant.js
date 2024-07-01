@@ -4,22 +4,28 @@ export const touristIndividualsSchema = {
   yupSchema: Yup.object().shape({
     typeOfPassport: Yup.string().required(' Type Of Passport is required'),
     visaType: Yup.string().required(' visaType is required'),
-
+    visaValidPeriodIndividualTourist: Yup.string().required(
+      'This Field is required'
+    ),
+    titleIndividualTourist: Yup.string().required(' Title is required'),
     familyNameIndividualTourist: Yup.string().required(
       ' familyName is required'
     ),
     givenNameIndividualTourist: Yup.string().required(' GivenName is required'),
-    titleIndividualTourist: Yup.string().required(' Title is required'),
-    dateOfBirthIndividualTourist: Yup.date().required(
-      ' Date Of Birth is required'
-    ),
+
     genderIndividualTourist: Yup.string().required(' Gender is required'),
+    martialStatus: Yup.string().required(' Martial status is required'),
     nationalityIndividualTourist: Yup.string().required(
       ' Nationality is required'
     ),
+    dateOfBirthIndividualTourist: Yup.date().required(
+      ' Date Of Birth is required'
+    ),
+
     countryOfBirthIndividualTourist: Yup.string().required(
       ' Country of birth is required'
     ),
+    placeOfBirth: Yup.string().required(' place of birth is required'),
 
     occupationIndividualTourist: Yup.string().required(
       'Occupation is required'
@@ -63,9 +69,7 @@ export const touristIndividualsSchema = {
     purposeOfVisitIndividualTourist: Yup.string().required(
       'This Field is required'
     ),
-    visaValidPeriodIndividualTourist: Yup.string().required(
-      'This Field is required'
-    ),
+
     portOfDepartureIndividualTourist: Yup.string().required(
       'This Field is required'
     ),
@@ -104,14 +108,18 @@ export const touristIndividualsSchema = {
     multipleEntryVisaIndividualTourist: Yup.string().notRequired(),
   }),
   initialValues: {
+    typeOfPassport: '',
     visaType: '',
+    visaValidPeriodIndividualTourist: '',
+    titleIndividualTourist: '',
     familyNameIndividualTourist: '',
     givenNameIndividualTourist: '',
-    titleIndividualTourist: '',
-    dateOfBirthIndividualTourist: '',
     genderIndividualTourist: '',
+    martialStatus: '',
     nationalityIndividualTourist: '',
+    dateOfBirthIndividualTourist: '',
     countryOfBirthIndividualTourist: '',
+    placeOfBirth: '',
 
     occupationIndividualTourist: '',
     passportNumberIndividualTourist: '',
@@ -124,7 +132,7 @@ export const touristIndividualsSchema = {
     additionalDocuments: [],
     attendantArrivalDateIndividualTourist: '',
     purposeOfVisitIndividualTourist: '',
-    visaValidPeriodIndividualTourist: '',
+
     portOfDepartureIndividualTourist: '',
     addressLineOneIndividualTourist: '',
     addressLineTwoIndividualTourist: '',

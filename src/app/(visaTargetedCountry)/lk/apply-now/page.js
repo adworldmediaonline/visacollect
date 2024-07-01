@@ -21,23 +21,83 @@ import { Country } from 'country-state-city';
 import { getAllCountries } from '@/lib/getAllCountries';
 import DropzoneFileUpload from '@/components/DropzoneFileUpload';
 import SectionLabel from '@/components/formUi/SectionLabel';
-import InputGroupWrapper from '@/components/formUi/InputGroupWrapper';
+import CustomReactPhoneNumberInput from '@/components/common/CustomReactPhoneNumberInput';
+import CustomSelectField from '@/components/formUi/CustomSelectField';
+import CustomInputSelectWrapper from '@/components/formUi/CustomInputSelectWrapper';
+import CustomInputField from '@/components/formUi/CustomInputField';
 
 export const touristVisaTypes = [
-  '30 Days Single entry Visa',
-  'Standard Visitor Visa (6 months) each stay restricted up to 60 days',
-  '1 Year Multiple Entry Tourist Visa each stay restricted upto 90 days',
-  '2 Years Multiple Entry Visitor Visa - Tourist each stay restricted upto 180 days',
-  '5 Years Multiple entry visitor visa - Tourist each stay restricted upto 180 days',
-  '10 Years Mutiple Entry Visitor Visa-Tourist each stay restricted upto 180 days',
+  { label: '30 Days Single entry Visa', value: '30 Days Single entry Visa' },
+  {
+    label:
+      'Standard Visitor Visa (6 months) each stay restricted up to 60 days',
+    value:
+      'Standard Visitor Visa (6 months) each stay restricted up to 60 days',
+  },
+  {
+    label:
+      '1 Year Multiple Entry Tourist Visa each stay restricted upto 90 days',
+    value:
+      '1 Year Multiple Entry Tourist Visa each stay restricted upto 90 days',
+  },
+  {
+    label:
+      '2 Years Multiple Entry Visitor Visa - Tourist each stay restricted upto 180 days',
+    value:
+      '2 Years Multiple Entry Visitor Visa - Tourist each stay restricted upto 180 days',
+  },
+  {
+    label:
+      '5 Years Multiple entry visitor visa - Tourist each stay restricted upto 180 days',
+    value:
+      '5 Years Multiple entry visitor visa - Tourist each stay restricted upto 180 days',
+  },
+  {
+    label:
+      '10 Years Mutiple Entry Visitor Visa-Tourist each stay restricted upto 180 days',
+    value:
+      '10 Years Mutiple Entry Visitor Visa-Tourist each stay restricted upto 180 days',
+  },
 ];
 
 export const businessVisaTypes = [
-  'Standard Visitor Visa - Business (6 months) each stay restricted up to 60 days',
-  '1 Year Multiple Entry Business Visa each stay restricted upto 90 days',
-  '2 Years Multiple Entry Visitor Visa - Business each stay restricted upto 180 days',
-  '5 Years Multiple entry visitor visa - Business each stay restricted upto 180 days',
-  '10 Years Mutiple Entry Visitor Visa - Business each stay restricted upto 180 days',
+  {
+    label:
+      'Standard Visitor Visa - Business (6 months) each stay restricted up to 60 days',
+    value:
+      'Standard Visitor Visa - Business (6 months) each stay restricted up to 60 days',
+  },
+  {
+    label:
+      '1 Year Multiple Entry Business Visa each stay restricted upto 90 days',
+    value:
+      '1 Year Multiple Entry Business Visa each stay restricted upto 90 days',
+  },
+  {
+    label:
+      '2 Years Multiple Entry Visitor Visa - Business each stay restricted upto 180 days',
+    value:
+      '2 Years Multiple Entry Visitor Visa - Business each stay restricted upto 180 days',
+  },
+  {
+    label:
+      '5 Years Multiple entry visitor visa - Business each stay restricted upto 180 days',
+    value:
+      '5 Years Multiple entry visitor visa - Business each stay restricted upto 180 days',
+  },
+  {
+    label:
+      '10 Years Mutiple Entry Visitor Visa - Business each stay restricted upto 180 days',
+    value:
+      '10 Years Mutiple Entry Visitor Visa - Business each stay restricted upto 180 days',
+  },
+];
+
+const typeOfPassportData = [
+  {
+    label: 'Ordinary Passport - Issued to Citizens of a country',
+    value: 'Ordinary Passport - Issued to Citizens of a country',
+  },
 ];
 export default function ApplyNowPage() {
   const postMutation = usePost(
@@ -100,320 +160,148 @@ export default function ApplyNowPage() {
                 isValid,
                 handleSubmit,
                 setFieldValue,
+                errors,
+                touched,
+                setFieldTouched,
               }) => (
                 <Form onSubmit={handleSubmit}>
-                  <InputGroupWrapper>
+                  <CustomInputSelectWrapper>
+                    <CustomSelectField
+                      labelName="Type of passport"
+                      tooltipContent="type of passport is required"
+                      name="typeOfPassport"
+                      selectOptions={typeOfPassportData}
+                    />
+                    <CustomSelectField
+                      labelName="Visa Type"
+                      tooltipContent="Visa type is required"
+                      name="visaType"
+                      selectOptions={[
+                        { value: 'tourist visa', label: 'Tourist Visa' },
+                        { value: 'business visa', label: 'BUSINESS VISA' },
+                      ]}
+                    />
+                    <CustomSelectField
+                      labelName="No. of Days Visa Required"
+                      tooltipContent="Select your visa validity period."
+                      name="visaValidPeriodIndividualTourist"
+                      selectOptions={
+                        values.visaType === 'tourist visa'
+                          ? touristVisaTypes
+                          : values.visaType === 'business visa'
+                          ? businessVisaTypes
+                          : []
+                      }
+                      selectOptionsLabel={
+                        values.visaType === ''
+                          ? 'Please choose visa type first'
+                          : 'Select'
+                      }
+                    />
+                  </CustomInputSelectWrapper>
+
+                  <CustomInputSelectWrapper>
+                    <CustomSelectField
+                      labelName="Title"
+                      tooltipContent="Type of passport is required"
+                      name="titleIndividualTourist"
+                      selectOptions={[
+                        { value: 'Dr', label: 'DR' },
+                        { value: 'Master', label: 'MASTER' },
+                        { value: 'Miss', label: 'MISS' },
+                        { value: 'Mr', label: 'MR' },
+                        { value: 'Mrs', label: 'MRS' },
+                        { value: 'Ms', label: 'MS' },
+                        { value: 'Rev', label: 'REV' },
+                      ]}
+                    />
+
+                    <CustomInputField
+                      labelName="Surname/Family Name"
+                      tooltipContent="Enter your last name (surname) as it appears on your passport"
+                      name="familyNameIndividualTourist"
+                    />
+                    <CustomInputField
+                      labelName="Other/Given Names"
+                      tooltipContent=" Enter your given name as it appears on your passport"
+                      name="givenNameIndividualTourist"
+                    />
+                  </CustomInputSelectWrapper>
+
+                  <CustomInputSelectWrapper>
+                    <CustomSelectField
+                      labelName="Gender"
+                      tooltipContent="Please select your gender: Male or Female."
+                      name="genderIndividualTourist"
+                      selectOptions={[
+                        { value: 'Male', label: 'Male' },
+                        { value: 'Female', label: 'Female' },
+                      ]}
+                    />
+                    <CustomSelectField
+                      labelName="Martial Status"
+                      tooltipContent="Please select your martial status: Single, Married or Divorced."
+                      name="martialStatus"
+                      selectOptions={[
+                        { value: 'single', label: 'Single' },
+                        { value: 'married', label: 'Married' },
+                        { value: 'divorced', label: 'Divorced' },
+                      ]}
+                    />
+                    <CustomSelectField
+                      labelName="Nationality"
+                      tooltipContent="Your country of nationality is the country in which you have or can obtain a passport."
+                      name="nationalityIndividualTourist"
+                      selectOptions={Country?.getAllCountries()?.map(
+                        country => ({
+                          label: country.name,
+                          value: country.name,
+                        })
+                      )}
+                    />
+                  </CustomInputSelectWrapper>
+
+                  <CustomInputSelectWrapper>
                     <div className="input-group-new">
                       <SectionLabel
-                        labelName="Type of passport"
-                        tooltipContent="type of passport is required"
-                      />
-                      <div>
-                        <Field
-                          required
-                          component="select"
-                          id="typeOfPassport"
-                          name="typeOfPassport"
-                          // placeholder="Title"
-                          className="new-form-input "
-                        >
-                          <option value="">Select</option>
-                          <option value="Ordinary Passport - Issued to Citizens of a country">
-                            Ordinary Passport - Issued to Citizens of a country
-                          </option>
-                        </Field>
-
-                        <ErrorMessage name="typeOfPassport">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
-                          )}
-                        </ErrorMessage>
-                      </div>
-                    </div>
-                    <div className="input-group-new">
-                      <SectionLabel
-                        labelName="Visa Type"
-                        tooltipContent="Visa type is required"
+                        labelName="Date of Birth*"
+                        tooltipContent="Select your date of birth as it appears in your passport in the calendar provided below."
                       />
 
                       <div>
-                        <Field
-                          required
-                          component="select"
-                          id="visaType"
-                          name="visaType"
-                          className="new-form-input "
-                        >
-                          <option value="">Select</option>
-                          <option value="tourist visa">Tourist Visa</option>
-                          <option value="business visa">BUSINESS VISA</option>
-                        </Field>
-
-                        <ErrorMessage name="visaType">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
-                          )}
-                        </ErrorMessage>
-                      </div>
-                    </div>
-                    <div className="input-group-new">
-                      <SectionLabel
-                        labelName="No. of Days Visa Required"
-                        tooltipContent="Select your visa validity period."
-                      />
-
-                      <div>
-                        <Field
-                          required
-                          component="select"
-                          id="visaValidPeriodIndividualTourist"
-                          name="visaValidPeriodIndividualTourist"
-                          className="new-form-input "
-                        >
-                          <option value="">Select</option>
-                          {values.visaType === 'tourist visa' && (
-                            <>
-                              {touristVisaTypes.map((type, i) => (
-                                <option key={i} value={type}>
-                                  {type}
-                                </option>
-                              ))}
-                            </>
-                          )}
-                          {values.visaType === 'business visa' && (
-                            <>
-                              {businessVisaTypes.map((type, i) => (
-                                <option key={i} value={type}>
-                                  {type}
-                                </option>
-                              ))}
-                            </>
-                          )}
-                        </Field>
-
-                        <ErrorMessage name="visaValidPeriodIndividualTourist">
-                          {errorMsg => (
-                            <div style={{ color: 'red' }}>{errorMsg}</div>
-                          )}
-                        </ErrorMessage>
-                      </div>
-                    </div>
-                  </InputGroupWrapper>
-                  <div className="input-group-new">
-                    <div className="label-section">
-                      <label>Title*</label>
-                    </div>
-
-                    <div className="mark-section group">
-                      <BsQuestionCircleFill className=" side-icon" size={20} />
-                      <div className="tooltip-content">
-                        Select your preferred title based on your gender,
-                        marital status or professional designation.
+                        <ReactDatePickerInput
+                          className="new-form-input"
+                          name="dateOfBirthIndividualTourist"
+                          selected={values.dateOfBirthIndividualTourist}
+                          setFieldValue={setFieldValue}
+                          maxDate={new Date()}
+                        />
                       </div>
                     </div>
 
-                    <div>
-                      <Field
-                        required
-                        component="select"
-                        id="titleIndividualTourist"
-                        name="titleIndividualTourist"
-                        // placeholder="Title"
-                        className="new-form-input "
-                      >
-                        <option value="">Select</option>
-                        <option value="Dr">DR</option>
-                        <option value="Master">MASTER</option>
-                        <option value="Miss">MISS</option>
-                        <option value="Mr">MR</option>
-                        <option value="Mrs">MRS</option>
-                        <option value="Ms">MS</option>
-                        <option value="Rev">REV</option>
-                      </Field>
-
-                      <ErrorMessage name="titleIndividualTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                  </div>
-                  <div className="input-group-new">
-                    <div className="label-section">
-                      <label>Surname/Family Name* </label>
-                    </div>
-
-                    <div className="mark-section group">
-                      <BsQuestionCircleFill className=" side-icon" size={20} />
-                      <div className="tooltip-content">
-                        Enter your last name (surname) as it appears on your
-                        passport
-                      </div>
-                    </div>
-
-                    <div>
-                      <Field
-                        type="text"
-                        id="familyNameIndividualTourist"
-                        name="familyNameIndividualTourist"
-                        // placeholder="Surname"
-                        className="new-form-input"
-                      />
-
-                      <ErrorMessage name="familyNameIndividualTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                  </div>
-                  <div className="input-group-new">
-                    <div className="label-section">
-                      <label>Other/Given Names*</label>
-                    </div>
-
-                    <div className="mark-section group">
-                      <BsQuestionCircleFill className=" side-icon" size={20} />
-                      <div className="tooltip-content">
-                        Enter your given name as it appears on your passport
-                      </div>
-                    </div>
-
-                    <div>
-                      <Field
-                        type="text"
-                        id="givenNameIndividualTourist"
-                        name="givenNameIndividualTourist"
-                        // placeholder="Given Name"
-                        className="new-form-input "
-                      />
-
-                      <ErrorMessage name="givenNameIndividualTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                  </div>
-
-                  <div className="input-group-new">
-                    <div className="label-section">
-                      <label>Date of Birth*</label>
-                    </div>
-
-                    <div className="mark-section group">
-                      <BsQuestionCircleFill className=" side-icon" size={20} />
-                      <div className="tooltip-content">
-                        Select your date of birth as it appears in your passport
-                        in the calendar provided below.
-                      </div>
-                    </div>
-
-                    <div>
-                      <ReactDatePickerInput
-                        className="new-form-input"
-                        name="dateOfBirthIndividualTourist"
-                        selected={values.dateOfBirthIndividualTourist}
-                        setFieldValue={setFieldValue}
-                        maxDate={new Date()}
-                      />
-                    </div>
-                  </div>
-                  <div className="input-group-new">
-                    <div className="label-section">
-                      <label>Gender*</label>
-                    </div>
-
-                    <div className="mark-section group">
-                      <BsQuestionCircleFill className=" side-icon" size={20} />
-                      <div className="tooltip-content">
-                        Please select your gender: Male or Female.
-                      </div>
-                    </div>
-
-                    <div>
-                      <Field
-                        required
-                        component="select"
-                        id="genderIndividualTourist"
-                        name="genderIndividualTourist"
-                        className="new-form-input "
-                      >
-                        <option value="">Select</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                      </Field>
-
-                      <ErrorMessage name="genderIndividualTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                  </div>
-                  <div className="input-group-new">
-                    <div className="label-section">
-                      <label>Nationality*</label>
-                    </div>
-
-                    <div className="mark-section group">
-                      <BsQuestionCircleFill className=" side-icon" size={20} />
-                      <div className="tooltip-content">
-                        Your country of nationality is the country in which you
-                        have or can obtain a passport.
-                      </div>
-                    </div>
-
-                    <div>
-                      <Field
-                        required
-                        component="select"
-                        id="nationalityIndividualTourist"
-                        name="nationalityIndividualTourist"
-                        className="new-form-input "
-                      >
-                        <option value="">select</option>
-                        {getAllCountries()}
-                      </Field>
-
-                      <ErrorMessage name="nationalityIndividualTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                  </div>
-                  <div className="input-group-new">
-                    <div className="label-section">
-                      <label>Country of Birth*</label>
-                    </div>
-
-                    <div className="mark-section group">
-                      <BsQuestionCircleFill className=" side-icon" size={20} />
-                      <div className="tooltip-content">
-                        Select the country where you were born.
-                      </div>
-                    </div>
-
-                    <div>
-                      <Field
-                        required
-                        component="select"
-                        id="countryOfBirthIndividualTourist"
-                        name="countryOfBirthIndividualTourist"
-                        className="new-form-input "
-                      >
-                        <option value="">select</option>
-                        {getAllCountries()}
-                      </Field>
-
-                      <ErrorMessage name="countryOfBirthIndividualTourist">
-                        {errorMsg => (
-                          <div style={{ color: 'red' }}>{errorMsg}</div>
-                        )}
-                      </ErrorMessage>
-                    </div>
-                  </div>
+                    <CustomSelectField
+                      labelName="Country Of Birth"
+                      tooltipContent="Select the country where you were born."
+                      name="countryOfBirthIndividualTourist"
+                      selectOptions={Country?.getAllCountries()?.map(
+                        country => ({
+                          label: country.name,
+                          value: country.name,
+                        })
+                      )}
+                    />
+                    <CustomSelectField
+                      labelName="Place Of Birth"
+                      tooltipContent="Select the country where you were born."
+                      name="placeOfBirth"
+                      selectOptions={Country?.getAllCountries()?.map(
+                        country => ({
+                          label: country.name,
+                          value: country.name,
+                        })
+                      )}
+                    />
+                  </CustomInputSelectWrapper>
 
                   <div className="input-group-new">
                     <div className="label-section">
@@ -984,7 +872,7 @@ export default function ApplyNowPage() {
                     <div className="mark-section group"></div>
 
                     <div>
-                      <Field
+                      {/* <Field
                         type="text"
                         id="mobileIndividualTourist"
                         name="mobileIndividualTourist"
@@ -995,7 +883,14 @@ export default function ApplyNowPage() {
                         {errorMsg => (
                           <div style={{ color: 'red' }}>{errorMsg}</div>
                         )}
-                      </ErrorMessage>
+                      </ErrorMessage> */}
+                      <CustomReactPhoneNumberInput
+                        errors={errors}
+                        setFieldValue={setFieldValue}
+                        touched={touched}
+                        setFieldTouched={setFieldTouched}
+                        name="mobileIndividualTourist"
+                      />
                     </div>
                   </div>
 
