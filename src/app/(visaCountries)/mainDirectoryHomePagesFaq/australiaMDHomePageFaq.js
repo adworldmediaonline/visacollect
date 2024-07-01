@@ -7,12 +7,12 @@ export const australiaMDHomePageFaq = [
     {
         id: 2,
         title: "Can I extend my Australian visa while I'm in Australia?",
-        des: "You can request a visa extension; but, you have to do it before your present one expires and fulfil all the conditions.",
+        des: "You can request a visa extension; but you have to do it before your present one expires and fulfil all the conditions.",
     },
     {
         id: 3,
         title: "I'm passing through Australia; do I require a visa?",
-        des: "If you intend to stay in Australia for longer than eight hours or leave the airport transit lounge, most visitors do require a transit visa.",
+        des: "If you intend to stay in Australia for longer than eight hours or leave the airport transit lounge, most visitors do require a transit visa",
     },
     {
         id: 4,
@@ -22,7 +22,7 @@ export const australiaMDHomePageFaq = [
     {
         id: 5,
         title: "Can I work in Australia on a tourist visa?",
-        des: "No, once within Australia you cannot switch from a tourist to a work visa. A work visa must be applied for from your nation.",
+        des: "No, once within Australia you cannot switch from a tourist to a work visa. A work visa must be applied for from your nation",
     },
     {
         id: 6,
