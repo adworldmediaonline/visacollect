@@ -1,33 +1,32 @@
 export const srilankaMDHomePageFaq = [
-  {
-    id: 1,
-    title: 'How do I apply for an e Tourist Sri Lanka Visa?',
-    des: 'You can apply for an e Tourist Sri Lanka Visa online. Fill out the application form, submit the required documents, and pay the visa fee.',
-  },
-  {
-    id: 2,
-    title: 'What documents do I need to apply for an e Tourist Sri Lanka Visa?',
-    des: `Typically, you'll need a valid passport, a digital photo, and proof of onward travel. However, requirements may vary, so it's best to check the official website.`,
-  },
-  {
-    id: 3,
-    title: 'How long does it take to process an e Tourist Sri Lanka Visa?',
-    des: ' The processing time can vary, but it typically takes a few days.',
-  },
-  {
-    id: 4,
-    title: 'How long is the e Tourist Sri Lanka Visa valid for?',
-    des: 'The e Tourist Sri Lanka Visa is usually valid for 30 days from the date of arrival, but it can be extended.',
-  },
-  {
-    id: 5,
-    title: 'Can I work in Sri Lanka with an e Tourist Visa?',
-    des: 'No, the e Tourist Visa does not permit foreign nationals to work in Sri Lanka.',
-  },
-  {
-    id: 6,
-    title:
-      'What should I do if my e Tourist Sri Lanka Visa application is denied?',
-    des: 'If your application is denied, you can reapply after understanding the reasons for the denial and rectifying them.',
-  },
+    {
+        id: 1,
+        title: "What is the validity of a Sri Lanka Visa? ",
+        des: "Sri Lanka tourist visas typically allow for several entries with each stay lasting up to three months, and they are valid for 12 months from the date of issue.",
+    },
+    {
+        id: 2,
+        title: "Can I extend my Sri Lanka visa while I'm in Sri Lanka?",
+        des: `You can request a visa extension, but you have to do it before your present one expires and fulfill all the conditions`,
+    },
+    {
+        id: 3,
+        title: "I'm passing through Sri Lanka; do I require a visa?",
+        des: "If you intend to stay in Sri Lanka for longer than eight hours or leave the airport transit lounge, most visitors require a transit visa.",
+    },
+    {
+        id: 4,
+        title: "Does one need to get vaccinations to enter Sri Lanka?",
+        des: "Although vaccines are not usually needed to enter Sri Lanka, it is best to verify the most recent health warnings before leaving.",
+    },
+    {
+        id: 5,
+        title: "Can I work in Sri Lanka on a tourist visa?",
+        des: "No, once within Sri Lanka you cannot switch from a tourist to a work visa. A work visa must be applied for from your nation.",
+    },
+    {
+        id: 6,
+        title: "What happens if I overstay my Sri Lanka visa?",
+        des: "Depending on the situation, overstaying a visa can lead to incarceration, deportation, and a temporary restriction on returning to Sri Lanka.",
+    },
 ];
