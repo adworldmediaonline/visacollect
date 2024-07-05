@@ -1,43 +1,32 @@
 export const indiaMDHomePageFaq = [
     {
         id: 1,
-        title: "Can I extend my India Travel Visa while in India?",
-        des: "Visa extensions aren't usually possible, but they can be in certain situations, like medical issues. It is best to make sure you have the right type and length of visa before you go on vacation.",
+        title: "What is the validity of a India Visa?",
+        des: "India tourist visas typically allow for several entries with each stay lasting up to three months, and they are valid for 12 months from the date of issue.",
     },
     {
         id: 2,
-        title: "Do I need a transit visa to have a stay in an Indian airport?",
-        des: "You need a transit visa if you need to change flights or stay in India for more than 24 hours. If you only need to go through customs once every 24 hours and stay at the same airport, you don't need a visa.",
+        title: "Can I extend my India visa while I'm in India?",
+        des: "You can request a visa extension, but you have to do it before your present one expires and fulfill all the conditions.",
     },
     {
         id: 3,
-        title: " What do I do if my India visa application is turned down?",
-        des: "If you are denied a visa, you must either reapply or call the embassy or consulate to find out more about the refusal. Some applications might be able to be appealed or sent again with more information.",
+        title: "I'm passing through India; do I require a visa?",
+        des: "If you intend to stay in India for longer than eight hours or leave the airport transit lounge, most visitors require a transit visa..",
     },
     {
         id: 4,
-        title: "Are there special visas for people who want to go to conferences or research seminars?",
-        des: "Yes, people who are going to conferences, seminars, or workshops that the Indian government has approved can get a Conference Visa. For these, you need to get permission from the right Indian officials and an invitation from the organiser.",
+        title: "Does one need to get vaccinations to enter India?",
+        des: "Although vaccines are not usually needed to enter India, it is best to verify the most recent health warnings before leaving.",
     },
     {
         id: 5,
-        title: "How long does it take to process an Indian visa online application?",
-        des: "Process time varies, but it usually takes between 7 and 15 working days from the date of the application. This depends on the type of visa and the person's situation.",
+        title: "Can I work in India on a tourist visa?",
+        des: "No, once within India you cannot switch from a tourist to a work visa. A work visa must be applied for from your nation.",
     },
     {
         id: 6,
-        title: "How can I find out what's going on with my Indian visa online application online?",
-        des: "Applicants can check on the progress of their visa applications through the VisaCollect website. They just need to enter their application ID and any other information that was given to them when they sent in their application.",
-    },
-    {
-        id: 7,
-        title: " What do writers and other media workers need in order to get a visa?",
-
-        des: "Journalists and other people who work in the media cannot use a Tourist Visa to do work related to news in India. They need a journalist visa even if they are just visiting for fun. This visa needs extra checks and approvals as well.",
-    },
-    {
-        id: 8,
-        title: " Can I change my vacation visa to a different type of visa while I'm in India?",
-        des: "Usually, you can't change from one type of visa to another visa while you are in India. You need to make sure you get the right type of visa for your visit before you even get to the country.",
+        title: "What happens if I overstay my India visa?",
+        des: "Depending on the situation, overstaying a visa can lead to incarceration, deportation, and a temporary restriction on returning to India.",
     },
 ];
