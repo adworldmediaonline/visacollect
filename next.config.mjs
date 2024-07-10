@@ -37,7 +37,7 @@ const nextConfig = {
       },
       {
         source: '/australia/application/',
-        destination: '/au/application',
+        destination: '/au/apply-now',
         permanent: true,
       },
       {

@@ -53,7 +53,7 @@ const StepEight = () => {
   const makePaymentMutation = usePostPayment(
     `${apiEndpoint.INDIA_VISA_PAYMENT}/${formId}`,
     'payment added successfully',
-    // '/au/application/payment/success',
+    // '/au/apply-now/payment/success',
     false,
     'getAllStepsData'
   );

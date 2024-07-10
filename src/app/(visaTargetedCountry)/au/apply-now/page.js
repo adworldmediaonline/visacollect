@@ -7,14 +7,12 @@ import apiEndpoint from '@/services/apiEndpoint';
 import SubHeading from '@/components/australia/common/SubHeading';
 import Heading from '@/components/australia/common/Heading';
 import { applicationSchema } from '@/constant/australiaConstant';
-import {
-  getAllCountries,
-  getAllCountriesForAustraliaVisa,
-} from '@/lib/getAllCountries';
+import { getAllCountriesForAustraliaVisa } from '@/lib/getAllCountries';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import { Tab } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
+import { set } from 'date-fns';
 
 const portOfArrivalData = [
   'Sydney Kingsford Smith International Airport (SYD)',
@@ -124,7 +122,7 @@ const AustraliaApplicationPage = () => {
   const postMutation = usePost(
     apiEndpoint.AUSTRALIA_VISA_APPLICATION,
     1,
-    '/au/application/payment',
+    '/au/apply-now/payment',
     true,
     'australiaVisaApplication'
   );
@@ -172,10 +170,6 @@ const AustraliaApplicationPage = () => {
   const handleBack = () => {
     setSelectedSubclass('');
   };
-  console.log(
-    subclassCountryData.filter(item => item.name === selectedSubclass)
-  );
-  console.log(selectedSubclass);
 
   return (
     <div>
@@ -202,24 +196,24 @@ const AustraliaApplicationPage = () => {
                 validateOnChange={true}
                 validateOnMount={true}
                 onSubmit={(values, { setSubmitting, resetForm }) => {
-                  postMutation.mutate({
-                    ...values,
-                    travelInsurance: {
-                      ...values.travelInsurance,
-                      insuranceFee: calculateTotalPrice(
-                        values.travelInsurance.startDate,
-                        values.travelInsurance.returnDate
-                      ),
-                    },
-                  });
-                  setSubmitting(false);
-                  resetForm();
+                  console.log(values);
+                  // postMutation.mutate({
+                  //   ...values,
+                  //   travelInsurance: {
+                  //     ...values.travelInsurance,
+                  //     insuranceFee: calculateTotalPrice(
+                  //       values.travelInsurance.startDate,
+                  //       values.travelInsurance.returnDate
+                  //     ),
+                  //   },
+                  // });
+                  // setSubmitting(false);
+                  // resetForm();
                 }}
               >
-                {({ values, isValid, setFieldValue }) => (
+                {({ values, isValid, setFieldValue, handleChange }) => (
                   <Form>
                     <SubHeading subHead="TRAVEL DETAILS" />
-
                     <div className="main-form-section">
                       <div className="label-section">
                         <label>Purpose of stay: * </label>
@@ -351,9 +345,7 @@ const AustraliaApplicationPage = () => {
                         </ErrorMessage>
                       </div>
                     </div>
-
                     <SubHeading subHead="PERSONAL DETAILS" />
-
                     <div className="main-form-section">
                       <div className="label-section">
                         <label>Given Name: *</label>
@@ -542,7 +534,6 @@ const AustraliaApplicationPage = () => {
                         </ErrorMessage>
                       </div>
                     </div>
-
                     <div className="main-form-section">
                       <div className="label-section">
                         <label>Marital status: *</label>
@@ -601,9 +592,7 @@ const AustraliaApplicationPage = () => {
                         </ErrorMessage>
                       </div>
                     </div>
-
                     <SubHeading subHead="PASSPORT DETAILS" />
-
                     <div className="main-form-section">
                       <div className="label-section">
                         <label>Passport Number: * </label>
@@ -660,7 +649,6 @@ const AustraliaApplicationPage = () => {
                         </ErrorMessage>
                       </div>
                     </div>
-
                     <div className="main-form-section">
                       <div className="label-section">
                         <label>Passport date of issue: *</label>
@@ -696,13 +684,21 @@ const AustraliaApplicationPage = () => {
                         />
                       </div>
                     </div>
-
                     <div className="flex items-center gap-4 py-7">
                       <Field
                         type="checkbox"
                         className="w-6 h-6"
                         name="passportDetails.citizen"
                         id="passportDetails.citizen"
+                        onChange={e => {
+                          handleChange(e);
+                          if (!values.passportDetails.citizen) {
+                            setFieldValue(
+                              'passportDetails.additionalCitizenship',
+                              ''
+                            );
+                          }
+                        }}
                       />
                       <h2>I&lsquo;m a citizen of more than one country</h2>
                       <ErrorMessage name="passportDetails.citizen">
@@ -711,7 +707,6 @@ const AustraliaApplicationPage = () => {
                         )}
                       </ErrorMessage>
                     </div>
-
                     {values.passportDetails.citizen && (
                       <div className="main-form-section">
                         <div className="label-section">
@@ -751,7 +746,6 @@ const AustraliaApplicationPage = () => {
                         </div>
                       </div>
                     )}
-
                     <div className="flex flex-col gap-2 py-4">
                       <h2>
                         Have you ever obtained an Australian visa using your
@@ -766,6 +760,17 @@ const AustraliaApplicationPage = () => {
                             name="passportDetails.obtainedVisa"
                             id="passportDetailsObtainedVisaYes"
                             value="yes"
+                            onChange={e => {
+                              handleChange(e);
+                              if (
+                                values.passportDetails.obtainedVisa === 'no'
+                              ) {
+                                setFieldValue(
+                                  'passportDetails.visaGrantNumber',
+                                  ''
+                                );
+                              }
+                            }}
                           />
                           <h3>Yes</h3>
                         </div>
@@ -776,14 +781,274 @@ const AustraliaApplicationPage = () => {
                             name="passportDetails.obtainedVisa"
                             id="passportDetailsObtainedVisaNo"
                             value="no"
+                            onChange={e => {
+                              handleChange(e);
+                              if (
+                                values.passportDetails.obtainedVisa === 'no'
+                              ) {
+                                setFieldValue(
+                                  'passportDetails.visaGrantNumber',
+                                  ''
+                                );
+                              }
+                            }}
                           />
                           <h3>No</h3>
                         </div>
                       </div>
                     </div>
+                    {values.passportDetails.obtainedVisa === 'yes' && (
+                      <>
+                        <div className="main-form-section">
+                          <div className="label-section">
+                            <label>
+                              Australian visa grant number (if known)
+                            </label>
+                          </div>
 
+                          <div className="mark-section group">
+                            <BsQuestionCircleFill
+                              className=" side-icon"
+                              size={20}
+                            />
+                            <div className="tooltip-content">
+                              Australian visa grant number (if known)
+                            </div>
+                          </div>
+
+                          <div className="order-2 col-span-8">
+                            <Field
+                              required
+                              className="new-form-input"
+                              name="passportDetails.visaGrantNumber"
+                              id="passportDetails.visaGrantNumber"
+                            />
+
+                            <ErrorMessage name="passportDetails.visaGrantNumber">
+                              {errorMsg => (
+                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                              )}
+                            </ErrorMessage>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                    <SubHeading subHead="NATIONAL IDENTITY CARD" />
+                    <div className="flex flex-col gap-2 py-4">
+                      <h2>
+                        Does this applicant have a national identity card?
+                      </h2>
+
+                      <div className="flex gap-8">
+                        <div className="flex gap-4">
+                          <Field
+                            type="radio"
+                            className="w-6 h-6"
+                            name="nationalIdentityCard.hasNationalIdentityCard"
+                            id="nationalIdentityCardHasNationalIdentityCardYes"
+                            value="yes"
+                            onChange={e => {
+                              handleChange(e);
+                              if (
+                                values.nationalIdentityCard
+                                  .hasNationalIdentityCard === 'no'
+                              ) {
+                                setFieldValue(
+                                  'nationalIdentityCard.familyName',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'nationalIdentityCard.givenName',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'nationalIdentityCard.identificationNumber',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'nationalIdentityCard.countryOfIssue',
+                                  ''
+                                );
+                              }
+                            }}
+                          />
+                          <h3>Yes</h3>
+                        </div>
+                        <div className="flex gap-4">
+                          <Field
+                            type="radio"
+                            className="w-6 h-6"
+                            name="nationalIdentityCard.hasNationalIdentityCard"
+                            id="nationalIdentityCardHasNationalIdentityCardNo"
+                            value="no"
+                            onChange={e => {
+                              handleChange(e);
+                              if (
+                                values.nationalIdentityCard
+                                  .hasNationalIdentityCard === 'no'
+                              ) {
+                                setFieldValue(
+                                  'nationalIdentityCard.familyName',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'nationalIdentityCard.givenName',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'nationalIdentityCard.identificationNumber',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'nationalIdentityCard.countryOfIssue',
+                                  ''
+                                );
+                              }
+                            }}
+                          />
+                          <h3>No</h3>
+                        </div>
+                      </div>
+                    </div>
+                    {values.nationalIdentityCard.hasNationalIdentityCard ===
+                      'yes' && (
+                      <>
+                        <div className="main-form-section">
+                          <div className="label-section">
+                            <label>Family names</label>
+                          </div>
+
+                          <div className="mark-section group">
+                            <BsQuestionCircleFill
+                              className=" side-icon"
+                              size={20}
+                            />
+                            <div className="tooltip-content">
+                              Enter details exactly as shown on the national
+                              identity card. ​
+                            </div>
+                          </div>
+
+                          <div className="order-2 col-span-8">
+                            <Field
+                              required
+                              className="new-form-input"
+                              name="nationalIdentityCard.familyName"
+                              id="nationalIdentityCard.familyName"
+                            />
+
+                            <ErrorMessage name="nationalIdentityCard.familyName">
+                              {errorMsg => (
+                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                              )}
+                            </ErrorMessage>
+                          </div>
+                        </div>
+                        <div className="main-form-section">
+                          <div className="label-section">
+                            <label>Given names</label>
+                          </div>
+
+                          <div className="mark-section group">
+                            <BsQuestionCircleFill
+                              className="side-icon"
+                              size={20}
+                            />
+                            <div className="tooltip-content">
+                              Enter details exactly as shown on the national
+                              identity card. ​
+                            </div>
+                          </div>
+
+                          <div className="order-2 col-span-8">
+                            <Field
+                              required
+                              className="new-form-input"
+                              name="nationalIdentityCard.givenName"
+                              id="nationalIdentityCard.givenName"
+                            />
+
+                            <ErrorMessage name="nationalIdentityCard.givenName">
+                              {errorMsg => (
+                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                              )}
+                            </ErrorMessage>
+                          </div>
+                        </div>
+                        <div className="main-form-section">
+                          <div className="label-section">
+                            <label>Identification number</label>
+                          </div>
+
+                          <div className="mark-section group">
+                            <BsQuestionCircleFill
+                              className="side-icon"
+                              size={20}
+                            />
+                            <div className="tooltip-content">
+                              Enter details exactly as shown on the national
+                              identity card. ​
+                            </div>
+                          </div>
+
+                          <div className="order-2 col-span-8">
+                            <Field
+                              required
+                              className="new-form-input"
+                              name="nationalIdentityCard.identificationNumber"
+                              id="nationalIdentityCard.identificationNumber"
+                            />
+
+                            <ErrorMessage name="nationalIdentityCard.identificationNumber">
+                              {errorMsg => (
+                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                              )}
+                            </ErrorMessage>
+                          </div>
+                        </div>
+                        <div className="main-form-section">
+                          <div className="label-section">
+                            <label>Country of issue</label>
+                          </div>
+
+                          <div className="mark-section group">
+                            <BsQuestionCircleFill
+                              className=" side-icon"
+                              size={20}
+                            />
+                            <div className="tooltip-content">
+                              Enter details exactly as shown on the national
+                              identity card. ​
+                            </div>
+                          </div>
+
+                          <div className="order-2 col-span-8">
+                            <Field
+                              required
+                              component="select"
+                              className="new-form-input"
+                              name="nationalIdentityCard.countryOfIssue"
+                              id="nationalIdentityCard.countryOfIssue"
+                            >
+                              <option value="">Select</option>
+                              {getAllCountriesForAustraliaVisa({
+                                countryData: subclassCountryData.filter(
+                                  item => item.name === selectedSubclass
+                                ),
+                              })}
+                            </Field>
+
+                            <ErrorMessage name="nationalIdentityCard.countryOfIssue">
+                              {errorMsg => (
+                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                              )}
+                            </ErrorMessage>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                    {/* contact details code start here */}
                     <SubHeading subHead="CONTACT DETAILS" />
-
                     <div className="main-form-section">
                       <div className="label-section">
                         <label>Street address / name: *</label>
@@ -946,7 +1211,6 @@ const AustraliaApplicationPage = () => {
                         </ErrorMessage>
                       </div>
                     </div>
-
                     <div className="main-form-section">
                       <div className="label-section">
                         <label>Phone number: *</label>
@@ -969,7 +1233,227 @@ const AustraliaApplicationPage = () => {
                         </ErrorMessage>
                       </div>
                     </div>
+                    {/* postal address is the same as residence address */}
+                    <div className="flex flex-col gap-4 py-2">
+                      <h2>
+                        Is the postal address the same as the residential
+                        address?
+                      </h2>
 
+                      <div className="flex gap-8">
+                        <div className="flex gap-4">
+                          <Field
+                            type="radio"
+                            className="w-6 h-6"
+                            name="contactDetails.isPostalAddressSameAsResidentialAddress"
+                            id="contactDetailsIsPostalAddressSameAsResidentialAddressYes"
+                            value="yes"
+                          />
+                          <h3>Yes</h3>
+                        </div>
+                        <div className="flex gap-4">
+                          <Field
+                            type="radio"
+                            className="w-6 h-6"
+                            name="contactDetails.isPostalAddressSameAsResidentialAddress"
+                            id="contactDetailsIsPostalAddressSameAsResidentialAddressNo"
+                            value="no"
+                          />
+                          <h3>No</h3>
+                        </div>
+                      </div>
+                    </div>
+                    {values.contactDetails
+                      .isPostalAddressSameAsResidentialAddress === 'no' && (
+                      <>
+                        <div className="main-form-section">
+                          <div className="label-section">
+                            <label>Street address / name: *</label>
+                          </div>
+
+                          <div className="mark-section group"></div>
+
+                          <div className="order-2 col-span-8">
+                            <Field
+                              type="text"
+                              className="new-form-input"
+                              name="contactDetails.addressPostal"
+                              id="contactDetails.addressPostal"
+                            />
+
+                            <ErrorMessage name="contactDetails.addressPostal">
+                              {errorMsg => (
+                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                              )}
+                            </ErrorMessage>
+                          </div>
+                        </div>
+                        <div className="main-form-section">
+                          <div className="label-section">
+                            <label>House number / unit: *</label>
+                          </div>
+
+                          <div className="mark-section group"></div>
+
+                          <div className="order-2 col-span-8">
+                            <Field
+                              type="text"
+                              id="contactDetails.houseNumberPostal"
+                              name="contactDetails.houseNumberPostal"
+                              className="new-form-input "
+                            />
+
+                            <ErrorMessage name="contactDetails.houseNumberPostal">
+                              {errorMsg => (
+                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                              )}
+                            </ErrorMessage>
+                          </div>
+                        </div>
+                        <div className="main-form-section">
+                          <div className="label-section">
+                            <label>Apartment number / unit: *</label>
+                          </div>
+
+                          <div className="mark-section group"></div>
+
+                          <div className="order-2 col-span-8">
+                            <Field
+                              type="text"
+                              className="new-form-input"
+                              name="contactDetails.apartmentNumberPostal"
+                              id="contactDetails.apartmentNumberPostal"
+                            />
+
+                            <ErrorMessage name="contactDetails.apartmentNumberPostal">
+                              {errorMsg => (
+                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                              )}
+                            </ErrorMessage>
+                          </div>
+                        </div>
+                        <div className="main-form-section">
+                          <div className="label-section">
+                            <label>Zip code / postal code: *</label>
+                          </div>
+
+                          <div className="mark-section group"></div>
+
+                          <div className="order-2 col-span-8">
+                            <Field
+                              type="text"
+                              className="new-form-input"
+                              name="contactDetails.zipPostalCodePostal"
+                              id="contactDetails.zipPostalCodePostal"
+                            />
+
+                            <ErrorMessage name="contactDetails.zipPostalCodePostal">
+                              {errorMsg => (
+                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                              )}
+                            </ErrorMessage>
+                          </div>
+                        </div>
+                        <div className="main-form-section">
+                          <div className="label-section">
+                            <label>City/town: *</label>
+                          </div>
+
+                          <div className="mark-section group"></div>
+
+                          <div className="order-2 col-span-8">
+                            <Field
+                              type="text"
+                              className="new-form-input"
+                              name="contactDetails.cityTownPostal"
+                              id="contactDetails.cityTownPostal"
+                            />
+
+                            <ErrorMessage name="contactDetails.cityTownPostal">
+                              {errorMsg => (
+                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                              )}
+                            </ErrorMessage>
+                          </div>
+                        </div>
+                        <div className="main-form-section">
+                          <div className="label-section">
+                            <label>Province/state: *</label>
+                          </div>
+
+                          <div className="mark-section group"></div>
+
+                          <div className="order-2 col-span-8">
+                            <Field
+                              type="text"
+                              className="new-form-input"
+                              name="contactDetails.provinceStatePostal"
+                              id="contactDetails.provinceStatePostal"
+                            />
+
+                            <ErrorMessage name="contactDetails.provinceStatePostal">
+                              {errorMsg => (
+                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                              )}
+                            </ErrorMessage>
+                          </div>
+                        </div>
+                        <div className="main-form-section">
+                          <div className="label-section">
+                            <label>Country/territory: *</label>
+                          </div>
+
+                          <div className="mark-section group"></div>
+
+                          <div className="order-2 col-span-8">
+                            <Field
+                              required
+                              component="select"
+                              className="new-form-input"
+                              name="contactDetails.countryTerritoryPostal"
+                              id="contactDetails.countryTerritoryPostal"
+                            >
+                              <option value="">Select</option>
+                              {getAllCountriesForAustraliaVisa({
+                                countryData: subclassCountryData.filter(
+                                  item => item.name === selectedSubclass
+                                ),
+                              })}
+                            </Field>
+
+                            <ErrorMessage name="contactDetails.countryTerritoryPostal">
+                              {errorMsg => (
+                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                              )}
+                            </ErrorMessage>
+                          </div>
+                        </div>
+                        <div className="main-form-section">
+                          <div className="label-section">
+                            <label>Phone number: *</label>
+                          </div>
+
+                          <div className="mark-section group"></div>
+
+                          <div className="order-2 col-span-8">
+                            <Field
+                              type="text"
+                              className="new-form-input"
+                              name="contactDetails.phoneNumberPostal"
+                              id="contactDetails.phoneNumberPostal"
+                            />
+
+                            <ErrorMessage name="contactDetails.phoneNumberPostal">
+                              {errorMsg => (
+                                <div style={{ color: 'red' }}>{errorMsg}</div>
+                              )}
+                            </ErrorMessage>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                    {/* postal address is the same as residence address */}
+                    {/* contact details code end here */}
                     <SubHeading subHead="BACKGROUND QUESTIONS" />
                     <div className="flex flex-col gap-4 py-2">
                       <h2>
@@ -986,6 +1470,18 @@ const AustraliaApplicationPage = () => {
                             name="backgroundQuestions.criminalOffence"
                             id="backgroundQuestionsCriminalOffenceYes"
                             value="yes"
+                            onChange={e => {
+                              handleChange(e);
+                              if (
+                                values.backgroundQuestions.criminalOffence ===
+                                'no'
+                              ) {
+                                setFieldValue(
+                                  'backgroundQuestions.criminalOffenceDetails',
+                                  ''
+                                );
+                              }
+                            }}
                           />
                           <h3>Yes</h3>
                         </div>
@@ -996,6 +1492,18 @@ const AustraliaApplicationPage = () => {
                             name="backgroundQuestions.criminalOffence"
                             id="backgroundQuestionsCriminalOffenceNo"
                             value="no"
+                            onChange={e => {
+                              handleChange(e);
+                              if (
+                                values.backgroundQuestions.criminalOffence ===
+                                'no'
+                              ) {
+                                setFieldValue(
+                                  'backgroundQuestions.criminalOffenceDetails',
+                                  ''
+                                );
+                              }
+                            }}
                           />
                           <h3>No</h3>
                         </div>
@@ -1019,7 +1527,6 @@ const AustraliaApplicationPage = () => {
                         </ErrorMessage>
                       </div>
                     )}
-
                     <div className="flex flex-col gap-4 py-2">
                       <h2>
                         Have you ever been charged with any offence that is
@@ -1033,6 +1540,18 @@ const AustraliaApplicationPage = () => {
                             className="w-6 h-6"
                             name="backgroundQuestions.offenceCharge"
                             value="yes"
+                            onChange={e => {
+                              handleChange(e);
+                              if (
+                                values.backgroundQuestions.offenceCharge ===
+                                'no'
+                              ) {
+                                setFieldValue(
+                                  'backgroundQuestions.offenceChargeDetails',
+                                  ''
+                                );
+                              }
+                            }}
                           />
                           <h3>Yes</h3>
                         </div>
@@ -1042,12 +1561,23 @@ const AustraliaApplicationPage = () => {
                             className="w-6 h-6"
                             name="backgroundQuestions.offenceCharge"
                             value="no"
+                            onChange={e => {
+                              handleChange(e);
+                              if (
+                                values.backgroundQuestions.offenceCharge ===
+                                'no'
+                              ) {
+                                setFieldValue(
+                                  'backgroundQuestions.offenceChargeDetails',
+                                  ''
+                                );
+                              }
+                            }}
                           />
                           <h3>No</h3>
                         </div>
                       </div>
                     </div>
-
                     {values.backgroundQuestions.offenceCharge === 'yes' && (
                       <div className="py-4">
                         <p className="text-primary">
@@ -1065,20 +1595,32 @@ const AustraliaApplicationPage = () => {
                         </ErrorMessage>
                       </div>
                     )}
-
                     <SubHeading subHead="VAT INVOICE (OPTIONAL)" />
-
                     <div className="flex gap-4 pb-6">
                       <div>
                         <Field
                           type="checkbox"
                           className="w-6 h-6"
                           name="vatInvoice.needVatInvoice"
+                          onChange={e => {
+                            handleChange(e);
+                            if (!values.vatInvoice.needVatInvoice) {
+                              setFieldValue(
+                                'vatInvoice.taxIdentificationNumber',
+                                ''
+                              );
+
+                              setFieldValue('vatInvoice.companyName', '');
+                              setFieldValue('vatInvoice.companyCountry', '');
+                              setFieldValue('vatInvoice.companyCity', '');
+                              setFieldValue('vatInvoice.companyPostal', '');
+                              setFieldValue('vatInvoice.companyStreet', '');
+                            }
+                          }}
                         />
                       </div>
                       <h2 className="font-semibold">I need VAT invoice</h2>
                     </div>
-
                     {values.vatInvoice.needVatInvoice && (
                       <>
                         {' '}
@@ -1145,7 +1687,9 @@ const AustraliaApplicationPage = () => {
                             >
                               <option value="">Select</option>
                               {getAllCountriesForAustraliaVisa({
-                                countryData: z,
+                                countryData: subclassCountryData.filter(
+                                  item => item.name === selectedSubclass
+                                ),
                               })}
                             </Field>
 
@@ -1221,9 +1765,7 @@ const AustraliaApplicationPage = () => {
                         </div>
                       </>
                     )}
-
                     <SubHeading subHead="WOULD YOU LIKE TO ADD TRAVEL INSURANCE?" />
-
                     <div className="flex gap-8 md:-mt-5">
                       <div className="flex gap-4">
                         <Field
@@ -1231,6 +1773,19 @@ const AustraliaApplicationPage = () => {
                           className="w-6 h-6"
                           name="travelInsurance.isTravelInsurance"
                           value="yes"
+                          onChange={e => {
+                            handleChange(e);
+                            if (
+                              values.travelInsurance.isTravelInsurance === 'no'
+                            ) {
+                              setFieldValue('travelInsurance.startDate', '');
+                              setFieldValue('travelInsurance.returnDate', '');
+                              setFieldValue(
+                                'travelInsurance.travelInsuranceTermsAndConditions',
+                                false
+                              );
+                            }
+                          }}
                         />
                         <h3>Yes</h3>
                       </div>
@@ -1244,7 +1799,6 @@ const AustraliaApplicationPage = () => {
                         <h3>No</h3>
                       </div>
                     </div>
-
                     {values.travelInsurance.isTravelInsurance === 'yes' && (
                       <>
                         {' '}
@@ -1334,11 +1888,8 @@ const AustraliaApplicationPage = () => {
                         </ErrorMessage>
                       </>
                     )}
-
                     <SubHeading subHead="EXPRESS PROCESSING (OPTIONAL +10.00 EUR)" />
-
                     <hr className="w-full h-[0.15rem]  mt-4 bg-primary" />
-
                     <div className="flex gap-4 pt-12">
                       <div>
                         <Field
@@ -1370,7 +1921,6 @@ const AustraliaApplicationPage = () => {
                         </p>
                       </div>
                     </div>
-
                     <div className="py-8 text-center">
                       {postMutation.isError ? (
                         <div className="text-red-500">
