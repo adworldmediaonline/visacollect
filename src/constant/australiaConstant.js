@@ -40,6 +40,34 @@ export const applicationSchema = {
         otherwise: schema => schema.notRequired(),
       }),
       obtainedVisa: Yup.string().notRequired(),
+      visaGrantNumber: Yup.string().when('obtainedVisa', {
+        is: 'yes',
+        then: schema => schema.required('required'),
+        otherwise: schema => schema.notRequired(),
+      }),
+    }),
+    nationalIdentityCard: Yup.object().shape({
+      hasNationalIdentityCard: Yup.string().required('required'),
+      familyName: Yup.string().when('hasNationalIdentityCard', {
+        is: 'yes',
+        then: schema => schema.required('required'),
+        otherwise: schema => schema.notRequired(),
+      }),
+      givenName: Yup.string().when('hasNationalIdentityCard', {
+        is: 'yes',
+        then: schema => schema.required('required'),
+        otherwise: schema => schema.notRequired(),
+      }),
+      countryOfIssue: Yup.string().when('hasNationalIdentityCard', {
+        is: 'yes',
+        then: schema => schema.required('required'),
+        otherwise: schema => schema.notRequired(),
+      }),
+      identificationNumber: Yup.string().when('hasNationalIdentityCard', {
+        is: 'yes',
+        then: schema => schema.required('required'),
+        otherwise: schema => schema.notRequired(),
+      }),
     }),
     contactDetails: Yup.object().shape({
       address: Yup.string().required('Address is required'),
@@ -52,6 +80,78 @@ export const applicationSchema = {
       phoneNumber: Yup.string()
         .matches(/^[0-9]{10}$/, 'Mobile number must be a valid 10-digit number')
         .required('Mobile is required'),
+
+      isPostalAddressSameAsResidentialAddress: Yup.string().required(),
+      addressPostal: Yup.string().when(
+        'isPostalAddressSameAsResidentialAddress',
+        {
+          is: 'no',
+          then: schema => schema.required('Address is required'),
+          otherwise: schema => schema.notRequired(),
+        }
+      ),
+      houseNumberPostal: Yup.string().when(
+        'isPostalAddressSameAsResidentialAddress',
+        {
+          is: 'no',
+          then: schema => schema.required('House number is required'),
+          otherwise: schema => schema.notRequired(),
+        }
+      ),
+      apartmentNumberPostal: Yup.string().when(
+        'isPostalAddressSameAsResidentialAddress',
+        {
+          is: 'no',
+          then: schema => schema.required('Apartment number is required'),
+          otherwise: schema => schema.notRequired(),
+        }
+      ),
+      zipPostalCodePostal: Yup.string().when(
+        'isPostalAddressSameAsResidentialAddress',
+        {
+          is: 'no',
+          then: schema => schema.required('ZIP/Postal code is required'),
+          otherwise: schema => schema.notRequired(),
+        }
+      ),
+      cityTownPostal: Yup.string().when(
+        'isPostalAddressSameAsResidentialAddress',
+        {
+          is: 'no',
+          then: schema => schema.required('City/Town is required'),
+          otherwise: schema => schema.notRequired(),
+        }
+      ),
+      provinceStatePostal: Yup.string().when(
+        'isPostalAddressSameAsResidentialAddress',
+        {
+          is: 'no',
+          then: schema => schema.required('Province/State is required'),
+          otherwise: schema => schema.notRequired(),
+        }
+      ),
+      countryTerritoryPostal: Yup.string().when(
+        'isPostalAddressSameAsResidentialAddress',
+        {
+          is: 'no',
+          then: schema => schema.required('Country/Territory is required'),
+          otherwise: schema => schema.notRequired(),
+        }
+      ),
+      phoneNumberPostal: Yup.string().when(
+        'isPostalAddressSameAsResidentialAddress',
+        {
+          is: 'no',
+          then: schema =>
+            schema
+              .matches(
+                /^[0-9]{10}$/,
+                'Mobile number must be a valid 10-digit number'
+              )
+              .required('Mobile is required'),
+          otherwise: schema => schema.notRequired(),
+        }
+      ),
     }),
     backgroundQuestions: Yup.object().shape({
       criminalOffence: Yup.string().notRequired(),
@@ -153,6 +253,7 @@ export const applicationSchema = {
       cityOfBirth: '',
       maritalStatus: '',
       gender: '',
+      isPostalAddressSameAsResidentialAddress: '',
     },
     passportDetails: {
       passportNumber: '',
@@ -162,6 +263,14 @@ export const applicationSchema = {
       citizen: false,
       additionalCitizenship: '',
       obtainedVisa: 'no',
+      visaGrantNumber: '',
+    },
+    nationalIdentityCard: {
+      hasNationalIdentityCard: 'no',
+      familyName: '',
+      givenName: '',
+      countryOfIssue: '',
+      identificationNumber: '',
     },
     contactDetails: {
       address: '',
@@ -172,6 +281,15 @@ export const applicationSchema = {
       provinceState: '',
       countryTerritory: '',
       phoneNumber: '',
+      isPostalAddressSameAsResidentialAddress: '',
+      addressPostal: '',
+      houseNumberPostal: '',
+      apartmentNumberPostal: '',
+      zipPostalCodePostal: '',
+      cityTownPostal: '',
+      provinceStatePostal: '',
+      countryTerritoryPostal: '',
+      phoneNumberPostal: '',
     },
     backgroundQuestions: {
       criminalOffence: 'no',

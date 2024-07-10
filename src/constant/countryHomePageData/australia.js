@@ -4,7 +4,7 @@ export const learnMoreSectionDataAustralia = {
   pageTitle: 'Indian Tourist Visa for Australian Citizens',
   mainHomePageTitle:
     '<strong>Australia Visa:</strong> Entry requirements and travel information for Australia',
-  mainPageLink: '/au/application',
+  mainPageLink: '/au/apply-now',
   pageName: 'Australia',
   otherLinks: [
     {

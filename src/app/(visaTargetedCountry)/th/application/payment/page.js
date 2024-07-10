@@ -21,7 +21,7 @@ const Page = () => {
   const makePaymentMutation = usePostPayment(
     apiEndpoint.AUSTRALIA_VISA_APPLICATION_PAYMENT,
     'Payment completed successfully',
-    // '/au/application/payment/success',
+    // '/au/apply-now/payment/success',
     false,
     'australiaVisaApplication'
   );
@@ -36,7 +36,7 @@ const Page = () => {
   }
 
   if (getQuery.error) {
-    return router.push('/au/application');
+    return router.push('/au/apply-now');
   }
 
   if (getQuery.isSuccess) {

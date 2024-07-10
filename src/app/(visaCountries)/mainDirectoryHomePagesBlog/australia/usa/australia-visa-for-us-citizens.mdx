@@ -1,21 +1,21 @@
-import Link from "next/link";
+import Link from 'next/link';
 export const LinkButton = ({ text, href }) => (
-    <div className="flex justify-center items-center">
-        <Link
-            href={href}
-            className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
-        >
-            {text}
-        </Link>
-    </div>
+  <div className="flex justify-center items-center">
+    <Link
+      href={href}
+      className="items-center justify-center flex gap-2 px-5 py-2 text-base font-semibold text-white duration-150 ease-in-out rounded-full shrink-0 bg-secondary hover:scale-105"
+    >
+      {text}
+    </Link>
+  </div>
 );
 export const LinkText = ({ text, href }) => (
-    <Link
-        className="inline-flex items-center justify-center gap-1 text-lg font-semibold text-primary"
-        href={href}
-    >
-        {text}
-    </Link>
+  <Link
+    className="inline-flex items-center justify-center gap-1 text-lg font-semibold text-primary"
+    href={href}
+  >
+    {text}
+  </Link>
 );
 
 # Australia visa for US citizens
@@ -44,7 +44,7 @@ Travelling to Australia from the US is not too difficult, as the two countries s
 
 ### Documents Needed for Your Australian eVisa:
 
-<LinkButton href="/au/application/" text="Applying for an Australian ETA" /> is very
+<LinkButton href="/au/apply-now/" text="Applying for an Australian ETA" /> is very
 easy. Here's the list of documents you need to process your ETA application for Australia:
 
 **Valid passport:** The expiry date of your passport should be more than 6 months from your departure date.

@@ -16,7 +16,7 @@ const Page = () => {
   const postMutation = usePost(
     apiEndpoint.AUSTRALIA_VISA_APPLICATION,
     1,
-    '/au/application/payment',
+    '/au/apply-now/payment',
     true,
     'australiaVisaApplication'
   );
