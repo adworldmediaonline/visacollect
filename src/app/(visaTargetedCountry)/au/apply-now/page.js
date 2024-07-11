@@ -13,6 +13,7 @@ import { Tab } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 import { set } from 'date-fns';
+import DropzoneFileUpload from '@/components/DropzoneFileUpload';
 
 const portOfArrivalData = [
   'Sydney Kingsford Smith International Airport (SYD)',
@@ -1888,6 +1889,74 @@ const AustraliaApplicationPage = () => {
                         </ErrorMessage>
                       </>
                     )}
+
+                    {/* document uploads start  */}
+                    <SubHeading subHead="DOCUMENT UPLOADS" />
+                    <DropzoneFileUpload
+                      uploadLabel="Passport documents"
+                      fieldName="passportDocuments"
+                      labelSection="Passport Documents"
+                      tooltipContent="A valid passport with at least six months validity from the date you intend to enter Australia"
+                    />
+                    <DropzoneFileUpload
+                      uploadLabel="Passport Size Photo"
+                      fieldName="passportSizePhoto"
+                      labelSection="Passport Size Photo"
+                      tooltipContent="A valid passport with at least six months validity from the date you intend to enter Australia"
+                      multiple={true}
+                    />
+                    <DropzoneFileUpload
+                      uploadLabel="Bank Statement Pay Slips"
+                      fieldName="bankStatementPaySlips"
+                      labelSection="Bank Statement Pay Slips"
+                      tooltipContent="Upload your latest bank statement pay slips"
+                      multiple={true}
+                    />
+                    <DropzoneFileUpload
+                      uploadLabel="Business Card"
+                      fieldName="businessCard"
+                      labelSection="Business Card"
+                      tooltipContent="Upload your business card"
+                      multiple={true}
+                    />
+                    <DropzoneFileUpload
+                      uploadLabel="Invitation Letter"
+                      fieldName="invitationLetter"
+                      labelSection="Invitation Letter"
+                      tooltipContent="Upload your invitation letter"
+                      multiple={true}
+                    />
+                    <DropzoneFileUpload
+                      uploadLabel="Travel and Health Insurance"
+                      fieldName="travelAndHealthInsurance"
+                      labelSection="Travel and Health Insurance"
+                      tooltipContent="Upload your travel and health insurance documents"
+                      multiple={true}
+                    />
+                    <DropzoneFileUpload
+                      uploadLabel="Police Certificate"
+                      fieldName="policeCertificate"
+                      labelSection="Police Certificate"
+                      tooltipContent="Upload your police certificate"
+                      multiple={true}
+                    />
+                    <DropzoneFileUpload
+                      uploadLabel="Medical Certificate"
+                      fieldName="medicalCertificate"
+                      labelSection="Medical Certificate"
+                      tooltipContent="Upload your medical certificate"
+                      multiple={true}
+                    />
+                    <DropzoneFileUpload
+                      uploadLabel="Additional Documents"
+                      fieldName="additionalDocuments"
+                      labelSection="Additional Documents"
+                      tooltipContent="Upload any additional documents"
+                      multiple={true}
+                    />
+
+                    {/* document uploads end  */}
+
                     <SubHeading subHead="EXPRESS PROCESSING (OPTIONAL +10.00 EUR)" />
                     <hr className="w-full h-[0.15rem]  mt-4 bg-primary" />
                     <div className="flex gap-4 pt-12">
@@ -1898,6 +1967,7 @@ const AustraliaApplicationPage = () => {
                           name="termsAndConditions"
                         />
                       </div>
+
                       <div>
                         <h2 className="font-semibold">
                           I accept the
