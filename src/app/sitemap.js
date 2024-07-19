@@ -1,4 +1,7 @@
 import { getAllPostsMeta } from '@/lib/mdx';
+import { australiaMDData } from './(visaCountries)/mainDirectoryData/australiaMDData';
+import { indiaMDData } from './(visaCountries)/mainDirectoryData/indiaMDData';
+import { thailandMDData } from './(visaCountries)/mainDirectoryData/thailandMDData';
 import {
   visaPromotedInAustralia,
   visaPromotedInCanada,
@@ -9,9 +12,6 @@ import {
   visaPromotedInUk,
   visaPromotedInUs,
 } from './(visaTargetedCountryContent)/content/visaTargetedCountry';
-import { australiaMDData } from './(visaCountries)/mainDirectoryData/australiaMDData';
-import { indiaMDData } from './(visaCountries)/mainDirectoryData/indiaMDData';
-import { thailandMDData } from './(visaCountries)/mainDirectoryData/thailandMDData';
 //
 const baseUrl = 'https://www.visacollect.com';
 export default async function sitemap() {
@@ -24,7 +24,7 @@ export default async function sitemap() {
 
   // routes
   const routes = [
-    '',
+    '/',
     '/about-us',
     '/contact-us',
     '/blog',
