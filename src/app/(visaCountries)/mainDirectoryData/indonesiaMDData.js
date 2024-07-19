@@ -1,16 +1,15 @@
-import { IndonesiaHomePage } from '../mainDirectoryHomePages';
-import { indonesiaMDHomePageFaq } from '../mainDirectoryHomePagesFaq/indonesiaMDHomePageFaq';
+import { IndonesiaHomePage } from "../mainDirectoryHomePages";
+import { indonesiaMDHomePageFaq } from "../mainDirectoryHomePagesFaq/indonesiaMDHomePageFaq";
 
 // MD => mainDirectory
-const indonesiaMDBlogBase = '/id/blog';
+const indonesiaMDBlogBase = "/id/blog";
 export const indonesiaMDData = {
-  breadcrumb: 'ID',
-  code: 'id',
-  pageTitle:
-    'Indonesia Visa Entry requirements and travel information for Indonesia',
-  pageDescription: null,
-  pageContent: <IndonesiaHomePage />,
-  applyNow: '/id/application',
-  faq: indonesiaMDHomePageFaq,
-  blogs: [],
+    breadcrumb: "ID",
+    code: "id",
+    pageTitle: "Easy Travel: Apply Indonesia Visa Online with VisaCollect",
+    pageDescription: null,
+    pageContent: <IndonesiaHomePage />,
+    applyNow: "/id/application",
+    faq: indonesiaMDHomePageFaq,
+    blogs: [],
 };
