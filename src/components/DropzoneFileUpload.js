@@ -21,7 +21,7 @@ export default function DropzoneFileUpload({
     setFieldValue(fieldName, []);
   }
 
-  console.log(values[fieldName]);
+  // console.log(values[fieldName]);
 
   return (
     <>

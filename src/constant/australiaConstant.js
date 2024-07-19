@@ -231,6 +231,44 @@ export const applicationSchema = {
         }
       ),
     }),
+
+    passportDocuments: Yup.array()
+      .of(Yup.mixed())
+      .min(1)
+      .required('Passport is required'),
+    passportSizePhoto: Yup.array()
+      .of(Yup.mixed())
+      .min(1)
+      .required('Passport size photo is required'),
+    bankStatementPaySlips: Yup.array()
+      .of(Yup.mixed())
+      .min(1)
+      .required('Bank statement pay slips is required'),
+    businessCard: Yup.array()
+      .of(Yup.mixed())
+      .min(1)
+      .required('Business card is required'),
+    invitationLetter: Yup.array()
+      .of(Yup.mixed())
+      .min(1)
+      .required('Invitation letter is required'),
+    travelAndHealthInsurance: Yup.array()
+      .of(Yup.mixed())
+      .min(1)
+      .required('Travel and health insurance is required'),
+    policeCertificate: Yup.array()
+      .of(Yup.mixed())
+      .min(1)
+      .required('Police certificate is required'),
+    medicalCertificate: Yup.array()
+      .of(Yup.mixed())
+      .min(1)
+      .required('Medical certificate is required'),
+    additionalDocuments: Yup.array()
+      .of(Yup.mixed())
+      .min(1)
+      .required('Additional documents is required'),
+
     termsAndConditions: Yup.boolean().oneOf(
       [true],
       'Must accept terms and conditions'
@@ -313,6 +351,17 @@ export const applicationSchema = {
       insuranceFee: '',
       travelInsuranceTermsAndConditions: false,
     },
+
+    passportDocuments: [],
+    passportSizePhoto: [],
+    bankStatementPaySlips: [],
+    businessCard: [],
+    invitationLetter: [],
+    travelAndHealthInsurance: [],
+    policeCertificate: [],
+    medicalCertificate: [],
+    additionalDocuments: [],
+
     termsAndConditions: false,
   },
 };
