@@ -22,6 +22,7 @@ import howToGetTurkeyVisa from '/public/assets/images/blog/turkeyVisa/how-to-get
 import indiaEVisaApplyOnline from '/public/assets/images/generalBlog/india-evisa-apply-online.webp';
 
 import essentialTipsForIndianBusinessVisa from '/public/assets/images/blog/indiaVisa/essential-tips-for-indian-business-visa.webp';
+import listOf30BestNationalParksInIndiaForWildlifeEnthusiastsImg from '/public/assets/images/blog/indiaVisa/list-of-30-best-national-parks-in-india-for-wildlife-enthusiasts.webp';
 export {
   applyIndiaEvisaFromUKImg,
   applyIndiaTouristVisaForCanadianCitizensImg,
@@ -38,6 +39,7 @@ export {
   indiaEVisaApplyOnline,
   indianTouristVisaForUkCitizensImg,
   indianVisaForEmiratisCitizensImg,
+  listOf30BestNationalParksInIndiaForWildlifeEnthusiastsImg,
   moroccoVisaEligibilityImg,
   oneYearMultiEntryNonImmigrantVisaUkToThailandImg,
   sriLankanVisaRequirementsForCanadianCitizens,

@@ -1,12 +1,12 @@
-import AsideWrapper from '../components/AsideWrapper';
-import MainWrapper from '../components/MainWrapper';
-import PageWrapper from '../components/PageWrapper';
-import AsideWrapperTitle from '../components/AsideWrapperTitle';
-import BlogCardSmall from '../components/BlogCardSmall';
-import BlogHeroImage from '../../BlogContentHero';
 import { imageNotFound } from '@/app/(visaCountries)/mainDirectoryHomePagesBlog/images/blogImages';
 import BreadcrumbWrapper from '@/components/BreadcrumbWrapper';
 import ContactUs2 from '@/components/ui/contact-us-2';
+import BlogHeroImage from '../../BlogContentHero';
+import AsideWrapper from '../components/AsideWrapper';
+import AsideWrapperTitle from '../components/AsideWrapperTitle';
+import BlogCardSmall from '../components/BlogCardSmall';
+import MainWrapper from '../components/MainWrapper';
+import PageWrapper from '../components/PageWrapper';
 
 export default function BlogPreview({
   asideTitle,
@@ -22,7 +22,7 @@ export default function BlogPreview({
         <AsideWrapper className="order-1 w-full mt-10 md:mt-0 md:-order-1 bg-primary/10">
           <ContactUs2 />
         </AsideWrapper>
-        <MainWrapper containerClassName="px-10">
+        <MainWrapper containerClassName="px-10 [&_table]:overflow-x-auto [&_table]:table-auto">
           <BlogHeroImage
             className="relative mt-0"
             src={img ? img : imageNotFound}

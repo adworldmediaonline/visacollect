@@ -7,7 +7,7 @@ import {
   howToGetYourIndiaTouristVisaForUsCitizensImg,
   indianTouristVisaForUkCitizensImg,
   indianVisaForEmiratisCitizensImg,
-  stepsToApplyYourIndiaEvisaFromUsaImg,
+  listOf30BestNationalParksInIndiaForWildlifeEnthusiastsImg,
   topThingsToDoInIndiaForFunAustraliaCitizensImg,
 } from '../mainDirectoryHomePagesBlog/images/blogImages';
 import {
@@ -18,6 +18,7 @@ import {
   HowToGetYourIndiaTouristVisaForUSCitizens,
   IndianTouristVisaForUKCitizens,
   IndianVisaForEmiratisCitizens,
+  ListOf30BestNationalParksInIndiaForWildlifeEnthusiasts,
   StepsToApplyYourIndiaEVisaFromUSA,
   TopThingsToDoInIndiaForFunAustraliaCitizens,
 } from '../mainDirectoryHomePagesBlog/india';
@@ -224,7 +225,7 @@ export const indiaMDData = {
         'Apply for your India e-Visa from USA in 3 easy steps with VisaCollect',
       slug: 'steps-to-apply-your-india-e-visa-from-usa',
       content: <StepsToApplyYourIndiaEVisaFromUSA />,
-      img: stepsToApplyYourIndiaEvisaFromUsaImg,
+      img: listOf30BestNationalParksInIndiaForWildlifeEnthusiastsImg,
       alt: 'Steps to apply your india e-visa from usa | Visa Collect',
       imgUrl:
         '/assets/images/blog/indiaVisa/steps-to-apply-your-india-e-visa-from-usa.webp',
@@ -254,6 +255,30 @@ export const indiaMDData = {
         '/assets/images/blog/indiaVisa/essential-tips-for-indian-business-visa.webp',
       linkText: 'Read more',
       href: `${indiaMDBlogBase}/essential-tips-for-indian-business-visa`,
+    },
+    {
+      metadata: {
+        title: `List of 30 Best National Parks in India for Wildlife Enthusiasts`,
+        description: `India is a land of diverse landscapes and rich biodiversity. One of the best ways to experience this natural beauty is by visiting its numerous national parks. Here is the list of 30 Best National Parks in India to make your travel smooth and hassle-free.`,
+        metadataBase: new URL('https://www.visacollect.com'),
+
+        alternates: {
+          canonical: `${indiaMDBlogBase}/list-of-30-best-national-parks-in-india-for-wildlife-enthusiasts`,
+        },
+
+        openGraph: {
+          url: `${indiaMDBlogBase}/list-of-30-best-national-parks-in-india-for-wildlife-enthusiasts`,
+        },
+      },
+      pageTitle: 'Discover the Natural Wonders: 30 National Parks in India',
+      slug: 'list-of-30-best-national-parks-in-india-for-wildlife-enthusiasts',
+      content: <ListOf30BestNationalParksInIndiaForWildlifeEnthusiasts />,
+      img: listOf30BestNationalParksInIndiaForWildlifeEnthusiastsImg,
+      alt: 'Essential Tips for Indian Business Visa',
+      imgUrl:
+        '/assets/images/blog/indiaVisa/list-of-30-best-national-parks-in-india-for-wildlife-enthusiasts.webp',
+      linkText: 'Read more',
+      href: `${indiaMDBlogBase}/list-of-30-best-national-parks-in-india-for-wildlife-enthusiasts`,
     },
   ],
 };
