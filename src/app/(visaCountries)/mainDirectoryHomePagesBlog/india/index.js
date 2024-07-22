@@ -3,6 +3,7 @@ export { default as BestThingsToDoInIndiaForAustraliaCitizens } from './australi
 export { default as TopThingsToDoInIndiaForFunAustraliaCitizens } from './australia/top-things-to-do-in-india-for-fun.mdx';
 export { default as ApplyIndiaTouristVisaForCanadianCitizens } from './canada/apply-india-tourist-visa-for-canadian-citizens.mdx';
 export { default as EssentialTipsForIndianBusinessVisa } from './essential-tips-for-indian-business-visa.mdx';
+export { default as ListOf30BestNationalParksInIndiaForWildlifeEnthusiasts } from './list-of-30-best-national-parks-in-india-for-wildlife-enthusiasts.mdx';
 export { default as IndianVisaForEmiratisCitizens } from './uae/indian-visa-for-emiratis-citizens.mdx';
 export { default as ApplyIndiaEVisaFromUK } from './uk/apply-india-eVisa-from-uk.mdx';
 export { default as IndianTouristVisaForUKCitizens } from './uk/indian-tourist-visa-for-uk-citizens.mdx';
