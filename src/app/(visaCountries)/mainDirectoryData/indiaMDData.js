@@ -274,7 +274,7 @@ export const indiaMDData = {
       slug: 'list-of-30-best-national-parks-in-india-for-wildlife-enthusiasts',
       content: <ListOf30BestNationalParksInIndiaForWildlifeEnthusiasts />,
       img: listOf30BestNationalParksInIndiaForWildlifeEnthusiastsImg,
-      alt: 'Essential Tips for Indian Business Visa',
+      alt: 'List of 30 Best National Parks in India',
       imgUrl:
         '/assets/images/blog/indiaVisa/list-of-30-best-national-parks-in-india-for-wildlife-enthusiasts.webp',
       linkText: 'Read more',
