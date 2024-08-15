@@ -2,18 +2,17 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { BsQuestionCircleFill } from 'react-icons/bs';
 
-import usePost from '@/hooks/usePost';
-import apiEndpoint from '@/services/apiEndpoint';
-import SubHeading from '@/components/australia/common/SubHeading';
 import Heading from '@/components/australia/common/Heading';
-import { applicationSchema } from '@/constant/australiaConstant';
-import { getAllCountriesForAustraliaVisa } from '@/lib/getAllCountries';
+import SubHeading from '@/components/australia/common/SubHeading';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
+import DropzoneFileUpload from '@/components/DropzoneFileUpload';
+import { applicationSchema } from '@/constant/australiaConstant';
+import usePost2 from '@/hooks/usePost2';
+import { getAllCountriesForAustraliaVisa } from '@/lib/getAllCountries';
+import apiEndpoint from '@/services/apiEndpoint';
 import { Tab } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
-import { set } from 'date-fns';
-import DropzoneFileUpload from '@/components/DropzoneFileUpload';
 
 const portOfArrivalData = [
   'Sydney Kingsford Smith International Airport (SYD)',
@@ -120,13 +119,12 @@ const subclassCountryData = [
 ];
 
 const AustraliaApplicationPage = () => {
-  const postMutation = usePost(
-    apiEndpoint.AUSTRALIA_VISA_APPLICATION,
-    1,
-    '/au/apply-now/payment',
-    true,
-    'australiaVisaApplication'
-  );
+  const postMutation = usePost2({
+    apiEndpointUrl: apiEndpoint.AUSTRALIA_VISA_APPLICATION,
+    isDispatch: true,
+    queryKey: ['australiaVisaApplication'],
+    successMessage: 'application completed successfully',
+  });
 
   const [selectedSubclass, setSelectedSubclass] = useState('');
 
@@ -198,17 +196,41 @@ const AustraliaApplicationPage = () => {
                 validateOnMount={true}
                 onSubmit={(values, { setSubmitting, resetForm }) => {
                   console.log(values);
-                  // postMutation.mutate({
-                  //   ...values,
-                  //   travelInsurance: {
-                  //     ...values.travelInsurance,
-                  //     insuranceFee: calculateTotalPrice(
-                  //       values.travelInsurance.startDate,
-                  //       values.travelInsurance.returnDate
-                  //     ),
-                  //   },
-                  // });
-                  // setSubmitting(false);
+                  const formData = new FormData();
+                  Object.entries({
+                    ...values,
+
+                    travelInsurance: {
+                      ...values.travelInsurance,
+                      insuranceFee: calculateTotalPrice(
+                        values.travelInsurance.startDate,
+                        values.travelInsurance.returnDate
+                      ),
+                    },
+                  }).forEach(([key, value]) => {
+                    if (typeof value === 'string' || value instanceof Blob) {
+                      formData.append(key, value);
+                    } else if (Array.isArray(value)) {
+                      if (
+                        value.every(
+                          item =>
+                            item instanceof Blob || typeof item === 'string'
+                        )
+                      ) {
+                        value.forEach(item => formData.append(key, item));
+                      } else {
+                        formData.append(key, JSON.stringify(value));
+                      }
+                    } else {
+                      formData.append(key, JSON.stringify(value));
+                    }
+                  });
+
+                  // for (const pair of formData.entries()) {
+                  //   console.log(pair[0], pair[1]);
+                  // }
+                  postMutation.mutate(formData);
+                  setSubmitting(false);
                   // resetForm();
                 }}
               >
@@ -1249,6 +1271,47 @@ const AustraliaApplicationPage = () => {
                             name="contactDetails.isPostalAddressSameAsResidentialAddress"
                             id="contactDetailsIsPostalAddressSameAsResidentialAddressYes"
                             value="yes"
+                            onChange={e => {
+                              handleChange(e);
+                              if (
+                                values.contactDetails
+                                  .isPostalAddressSameAsResidentialAddress ===
+                                'no'
+                              ) {
+                                setFieldValue(
+                                  'contactDetails.addressPostal',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'contactDetails.apartmentNumberPostal',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'contactDetails.cityTownPostal',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'contactDetails.cityTownPostal',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'contactDetails.houseNumberPostal',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'contactDetails.phoneNumberPostal',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'contactDetails.provinceStatePostal',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'contactDetails.zipPostalCodePostal',
+                                  ''
+                                );
+                              }
+                            }}
                           />
                           <h3>Yes</h3>
                         </div>
@@ -1259,6 +1322,47 @@ const AustraliaApplicationPage = () => {
                             name="contactDetails.isPostalAddressSameAsResidentialAddress"
                             id="contactDetailsIsPostalAddressSameAsResidentialAddressNo"
                             value="no"
+                            onChange={e => {
+                              handleChange(e);
+                              if (
+                                values.contactDetails
+                                  .isPostalAddressSameAsResidentialAddress ===
+                                'no'
+                              ) {
+                                setFieldValue(
+                                  'contactDetails.addressPostal',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'contactDetails.apartmentNumberPostal',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'contactDetails.cityTownPostal',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'contactDetails.cityTownPostal',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'contactDetails.houseNumberPostal',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'contactDetails.phoneNumberPostal',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'contactDetails.provinceStatePostal',
+                                  ''
+                                );
+                                setFieldValue(
+                                  'contactDetails.zipPostalCodePostal',
+                                  ''
+                                );
+                              }
+                            }}
                           />
                           <h3>No</h3>
                         </div>
