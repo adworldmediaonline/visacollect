@@ -6,25 +6,24 @@ import { BsQuestionCircleFill } from 'react-icons/bs';
 import apiEndpoint from '@/services/apiEndpoint';
 import { ImSpinner2 } from 'react-icons/im';
 
-import Formmainsection from '@/components/srilanka/common/Formmainsection';
-import StepProcess from '@/components/srilanka/common/StepProcess';
+import CustomReactPhoneNumberInput from '@/components/common/CustomReactPhoneNumberInput';
+import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
+import DropzoneFileUpload from '@/components/DropzoneFileUpload';
+import CustomInputField from '@/components/formUi/CustomInputField';
+import CustomInputSelectWrapper from '@/components/formUi/CustomInputSelectWrapper';
+import CustomSelectField from '@/components/formUi/CustomSelectField';
+import SectionLabel from '@/components/formUi/SectionLabel';
 import Formheading from '@/components/srilanka/common/Formheading';
+import Formmainsection from '@/components/srilanka/common/Formmainsection';
+import Formsubhead from '@/components/srilanka/common/Formsubhead';
+import StepProcess from '@/components/srilanka/common/StepProcess';
 import {
   applyIndividualRadioData,
   touristIndividualsSchema,
 } from '@/constant/srilankaConstant';
 import usePost from '@/hooks/usePost';
-import Formsubhead from '@/components/srilanka/common/Formsubhead';
-import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import { minDate, minDateWithDate } from '@/lib/minDate';
 import { Country } from 'country-state-city';
-import { getAllCountries } from '@/lib/getAllCountries';
-import DropzoneFileUpload from '@/components/DropzoneFileUpload';
-import SectionLabel from '@/components/formUi/SectionLabel';
-import CustomReactPhoneNumberInput from '@/components/common/CustomReactPhoneNumberInput';
-import CustomSelectField from '@/components/formUi/CustomSelectField';
-import CustomInputSelectWrapper from '@/components/formUi/CustomInputSelectWrapper';
-import CustomInputField from '@/components/formUi/CustomInputField';
 
 export const touristVisaTypes = [
   { label: '30 Days Single entry Visa', value: '30 Days Single entry Visa' },
