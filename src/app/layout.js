@@ -22,9 +22,9 @@ export const metadata = {
   //     index: false,
   //   },
   // },
-  title: '24X7 Online Visa Services | Get Your Visa Apply Today',
+  title: '24X7 Online Visa Services | Get Your Visa Apply Today - Visa Collect',
   description:
-    'Plan your stress-free travel with our 24/7 online visa services. Enjoy quick and reliable visa processing at any time. Apply Visa Today.',
+    'Visa Collect - Plan your stress-free travel with our 24/7 online visa services. Enjoy quick and reliable visa processing at any time. Apply Visa Today',
   metadataBase: new URL('https://www.visacollect.com'),
 
   alternates: {

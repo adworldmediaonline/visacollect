@@ -541,7 +541,7 @@ export const visaPromotedInUs = [
             countryPage: <ThailandVisaForUS />,
             faq: thailandVisaUsFaq,
             faqTitle: `USA to Thailand Frequently Asked Questions (FAQs)`,
-            pageTitle: `US to Thailand: Apply Thailand e Visa for US Citizens`,
+            pageTitle: `Apply Thailand Visa for US Citizens Online - Visa Collect`,
             pageTitleDescription: `Get Your Thailand e-Visa in 3 Easy-Steps with VisaCollect Now!`,
             metadata: {
                 // robots: {
@@ -550,8 +550,8 @@ export const visaPromotedInUs = [
                 //     index: false,
                 //   },
                 // },
-                title: `Apply Thailand Tourist Visa For US Citizens | Visa Collect`,
-                description: `Thailand Tourist Visa US Citizens:  American citizens can enter Thailand as a tourist for up to 30 days without needing a pre-approved Thai visa.`,
+                title: `Apply for Thailand Visa For US Citizens - Visa Collect`,
+                description: `Thailand Visa for US Citizens. We offer hassle-free and quick processing of Thailand visa for US passport holders. APPLY NOW.`,
                 metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
