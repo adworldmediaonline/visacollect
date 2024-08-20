@@ -443,7 +443,7 @@ You should know that Visa Collect is the fastest and easiest way to obtain a vis
                 "Discover the wonders of Sri Lanka with VisaCollect’s fast and easy eVisa service.",
             metadata: {
                 title: `Sri Lanka Visa for Canadians citizens | Visa Collect`,
-                description: `Looking Sri lanka visa for Canadian citizen? Apply your Sri lanka tourist visa for Canadian citizens with ease and convenience. Let us help you with the process. APPLY NOW`,
+                description: `Looking for Sri Lanka visa for Canadian citizen? Apply your Sri Lanka visa for Canadian citizens with ease and convenience. We would like to help you with the process. APPLY NOW`,
                 metadataBase: new URL("https://www.visacollect.com"),
 
                 alternates: {
