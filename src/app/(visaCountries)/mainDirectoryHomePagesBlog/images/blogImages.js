@@ -23,6 +23,7 @@ import indiaEVisaApplyOnline from '/public/assets/images/generalBlog/india-evisa
 
 import essentialTipsForIndianBusinessVisa from '/public/assets/images/blog/indiaVisa/essential-tips-for-indian-business-visa.webp';
 import listOf30BestNationalParksInIndiaForWildlifeEnthusiastsImg from '/public/assets/images/blog/indiaVisa/list-of-30-best-national-parks-in-india-for-wildlife-enthusiasts.webp';
+import journeyToParadiseKashmirTravelGuideImg from '/public/assets/images/blog/indiaVisa/journey-to-paradise-the-ultimate-kashmir-travel-guide.mdx.webp';
 export {
   applyIndiaEvisaFromUKImg,
   applyIndiaTouristVisaForCanadianCitizensImg,
@@ -47,4 +48,5 @@ export {
   topThingsToDoInIndiaForFunAustraliaCitizensImg,
   travelToThailandFromUkImg,
   yourCompleteGuideImg,
+  journeyToParadiseKashmirTravelGuideImg,
 };

@@ -9,6 +9,7 @@ import {
   indianVisaForEmiratisCitizensImg,
   listOf30BestNationalParksInIndiaForWildlifeEnthusiastsImg,
   topThingsToDoInIndiaForFunAustraliaCitizensImg,
+  journeyToParadiseKashmirTravelGuideImg,
 } from '../mainDirectoryHomePagesBlog/images/blogImages';
 import {
   ApplyIndiaEVisaFromUK,
@@ -21,6 +22,7 @@ import {
   ListOf30BestNationalParksInIndiaForWildlifeEnthusiasts,
   StepsToApplyYourIndiaEVisaFromUSA,
   TopThingsToDoInIndiaForFunAustraliaCitizens,
+  JourneyToParadiseKashmirTravelGuide,
 } from '../mainDirectoryHomePagesBlog/india';
 import { indiaMDHomePageFaq } from '../mainDirectoryHomePagesFaq/indiaMDHomePageFaq';
 
@@ -279,6 +281,30 @@ export const indiaMDData = {
         '/assets/images/blog/indiaVisa/list-of-30-best-national-parks-in-india-for-wildlife-enthusiasts.webp',
       linkText: 'Read more',
       href: `${indiaMDBlogBase}/list-of-30-best-national-parks-in-india-for-wildlife-enthusiasts`,
+    },
+    {
+      metadata: {
+        title: `Journey to paradise - The ultimate Kashmir travel guide`,
+        description: `Discover the breathtaking beauty of Kashmir with our ultimate travel guide. Explore stunning landscapes, vibrant culture, and warm hospitality.`,
+        metadataBase: new URL('https://www.visacollect.com'),
+
+        alternates: {
+          canonical: `${indiaMDBlogBase}/journey-to-paradise-the-ultimate-kashmir-travel-guide`,
+        },
+
+        openGraph: {
+          url: `${indiaMDBlogBase}/journey-to-paradise-the-ultimate-kashmir-travel-guide`,
+        },
+      },
+      pageTitle: 'The ultimate Kashmir travel guide',
+      slug: 'journey-to-paradise-the-ultimate-kashmir-travel-guide',
+      content: <JourneyToParadiseKashmirTravelGuide />,
+      img: journeyToParadiseKashmirTravelGuideImg,
+      alt: 'Journey to paradise the ultimate kashmir travel guide',
+      imgUrl:
+        '/assets/images/blog/indiaVisa/journey-to-paradise-the-ultimate-kashmir-travel-guide.mdx.webp',
+      linkText: 'Read more',
+      href: `${indiaMDBlogBase}/journey-to-paradise-the-ultimate-kashmir-travel-guide`,
     },
   ],
 };
