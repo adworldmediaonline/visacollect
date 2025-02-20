@@ -41,40 +41,41 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="py-12 md:py-20 bg-sky-50">
-      <div className="container mx-auto text-center md:max-w-4xl">
-        <HeadingSection
-          sub="It’s simple, fast, and secure. Just fill out an online form, submit your documents, and get your visa delivered to your email."
-          title="How It Works?"
-        />
-      </div>
+    <section className="bg-white" aria-label="How It Works">
+      <div className="container py-12 space-y-8 md:py-20">
+        <div className="max-w-4xl mx-auto text-center">
+          <HeadingSection
+            sub="We make travel easy and hassle-free with our seamless online visa service. Whether you need an e tourist visa, a business visa, or a transit visa, we can help you get it in a few simple steps. No paperwork, no queues, no stress. Just apply, pay, and receive your visa and passport through mail."
+            title="How It Works"
+          />
+        </div>
 
-      <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-          {testimonial.map((item, e) => (
-            <div className="flex flex-col py-4 group md:mx-5 md:py-10" key={e}>
-              <div className="h-full py-10 text-center bg-white shadow-md hover:drop-shadow-xs hover:shadow-lg rounded-xl">
-                <div className="flex justify-center w-full duration-1000 rounded-full duration">
-                  <Image
-                    src={item.image}
-                    alt={item.altText}
-                    width={20}
-                    height={20}
-                    className="w-20 h-20 mx-auto rounded-lg "
-                  />
-                </div>
-                <h2 className="pt-3 mx-auto text-lg font-semibold text-center text-primary w-52">
-                  {item.name}
-                </h2>
-                <p className="px-5 py-4 pb-4 text-center text-black/80 group-hover:text-black ">
-                  {item.desc}
-                </p>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+          {testimonial.map((item, index) => (
+            <div
+              key={index}
+              className="p-6 space-y-4 text-center bg-white border hover:shadow-lg rounded-xl"
+              role="article"
+              aria-label={item.name}
+            >
+              <div className="flex justify-center">
+                <Image
+                  src={item.image}
+                  alt={item.altText}
+                  className="w-16 h-16"
+                  width={64}
+                  height={64}
+                />
               </div>
+              <h2 className="text-xl font-semibold text-gray-900">
+                {item.name}
+              </h2>
+              <p className="text-gray-800">{item.desc}</p>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

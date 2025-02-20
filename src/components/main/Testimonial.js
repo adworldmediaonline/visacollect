@@ -101,65 +101,70 @@ function Testimonial() {
     ],
   };
   return (
-    <div className="relative py-12 testimonialBg">
+    <section className="relative py-12 testimonialBg">
       <Image
         src={testimonialWaveImg}
         className="absolute bottom-0 w-full"
-        alt="Testimonials - Visa Collect"
+        alt="Testimonials background wave"
       />
       <div className="-space-y-4 md:absolute top-16 left-32">
-        <h2 className="pb-8 text-2xl font-extrabold text-center md:text-5xl text-primary md:pb-0">
-          customers’ stories
+        <h2 className="pb-8 text-2xl font-extrabold text-center md:text-5xl text-gray-900 md:pb-0">
+          Customers' Stories
         </h2>
-        <h2 className="font-extrabold text-5xl md:block hidden transform scale-y-[-1] bg-gradient-to-b from-primary via-blue-500 to-blue-300 text-transparent bg-clip-text">
-          customers’ stories
+        <h2 className="font-extrabold text-5xl md:block hidden transform scale-y-[-1] bg-gradient-to-b from-gray-900 via-gray-700 to-gray-500 text-transparent bg-clip-text">
+          Customers' Stories
         </h2>
       </div>
       <div className="container relative">
         <Slider {...settings} ref={customeSlider} className="mx-auto">
           {testimonial?.map((e, i) => (
-            <div key={i}>
+            <article key={i} className="testimonial-item">
               <div className="items-center grid-cols-12 gap-20 md:grid">
                 <div className="order-2 col-span-4 pb-12">
                   <Image
                     src={testimonialBannerImg}
                     className="md:w-80 w-52"
-                    alt="Testimonials - Visa Collect"
+                    alt={`Profile picture of ${e.name}`}
                   />
                 </div>
-                <div className="col-span-8 space-y-4 text-white md:pt-20">
+                <div className="col-span-8 space-y-4 text-gray-100 md:pt-20">
                   <h3 className="text-xl font-semibold">{e.name}</h3>
                   <p className="italic font-light">{e.desc}</p>
                   <div className="flex space-x-2">
-                    <IoIosStar className="text-yellow-500" />
-                    <IoIosStar className="text-yellow-500" />
-                    <IoIosStar className="text-yellow-500" />
-                    <IoIosStar className="text-yellow-500" />
-                    <IoIosStar className="text-yellow-500" />
+                    {[...Array(5)].map((_, index) => (
+                      <IoIosStar
+                        key={index}
+                        className="text-yellow-500"
+                        aria-hidden="true"
+                      />
+                    ))}
+                    <span className="sr-only">5 out of 5 stars</span>
                   </div>
-                  <h4 className="font-semibold">-Destination</h4>
+                  <h4 className="font-semibold text-gray-200">-Destination</h4>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </Slider>
-        {/* custome button  */}
+        {/* Navigation buttons */}
         <div className="absolute bottom-0 flex justify-center space-x-6 right-32">
-          <button onClick={() => customeSlider.current.slickPrev()}>
-            <IoIosArrowBack
-              size={40}
-              className="p-2 bg-white border rounded-full text-primary border-primaryMtext-primary"
-            />
+          <button
+            onClick={() => customeSlider.current.slickPrev()}
+            aria-label="Previous testimonial"
+            className="focus:outline-none focus:ring-2 focus:ring-primary p-2 bg-white border rounded-full text-primary"
+          >
+            <IoIosArrowBack size={40} aria-hidden="true" />
           </button>
-          <button onClick={() => customeSlider.current.slickNext()}>
-            <IoIosArrowForward
-              size={40}
-              className="p-2 bg-white border rounded-full text-primary border-primaryMtext-primary"
-            />
+          <button
+            onClick={() => customeSlider.current.slickNext()}
+            aria-label="Next testimonial"
+            className="focus:outline-none focus:ring-2 focus:ring-primary p-2 bg-white border rounded-full text-primary"
+          >
+            <IoIosArrowForward size={40} aria-hidden="true" />
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

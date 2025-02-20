@@ -152,13 +152,19 @@ const OurPopularDestination = ({ visitAllCountry }) => {
                   </h2>
                 </div>
               </div>
-              <div className="px-5 py-4 text-center space-y-3 border-primary border-[1px] rounded-b-2xl border-b-2 group-hover:bg-secondary group-hover:text-white text-primary">
+              <div className="px-5 py-4 text-center space-y-3 border-primary border-[1px] rounded-b-2xl border-b-2 group-hover:bg-secondary group-hover:text-white text-gray-900">
                 <Link
                   href={e.comingSoon ? '#' : e.link}
                   className="flex items-center justify-center space-x-2 font-semibold"
+                  aria-label={`Read more about ${e.title} visa`}
                 >
-                  <span>Read More</span>
-                  <span>
+                  <span className="text-gray-900 group-hover:text-white">
+                    Read More
+                  </span>
+                  <span
+                    className="text-gray-900 group-hover:text-white"
+                    aria-hidden="true"
+                  >
                     <FaLongArrowAltRight />
                   </span>
                 </Link>
