@@ -10,21 +10,25 @@ const Footer = () => {
       id: 1,
       icon: <FaFacebookF />,
       href: 'https://www.facebook.com/profile.php?id=61556054082156&mibextid=ZbWKwL',
+      name: 'Facebook',
     },
     {
       id: 2,
       icon: <FaInstagram />,
       href: 'https://www.instagram.com/visacollect?igsh=MXFjbzFpZDJlNHZmaw==',
+      name: 'Instagram',
     },
     {
       id: 3,
       icon: <FaLinkedin />,
       href: 'https://www.linkedin.com/in/visa-collect-9283752b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+      name: 'LinkedIn',
     },
     {
       id: 4,
       icon: <FaXTwitter />,
       href: 'https://twitter.com/visacollect',
+      name: 'Twitter',
     },
   ];
   return (
@@ -52,104 +56,129 @@ const Footer = () => {
                             href={e.href}
                             target="_blank"
                             className="w-8 p-2 duration-200 bg-white rounded-full hover:scale-110"
+                            aria-label={`Visit our ${e.name}`}
+                            rel="noopener noreferrer"
                           >
-                            {e.icon}
+                            <span aria-hidden="true">{e.icon}</span>
                           </Link>
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <ul>
-                    <Link href="mailto:info@visacollect.com">
-                      <li className="flex items-center mt-2 space-x-2 text-base hover:text-primary">
-                        <IoIosMail className="w-6 h-6 p-1 text-black bg-white rounded-full" />{' '}
+                  <ul className="space-y-2">
+                    <li>
+                      <Link
+                        href="mailto:info@visacollect.com"
+                        aria-label="Email us at info@visacollect.com"
+                        className="flex items-center space-x-2 text-base hover:text-gray-900 text-gray-800"
+                      >
+                        <IoIosMail
+                          className="w-6 h-6 p-1 text-black bg-white rounded-full"
+                          aria-hidden="true"
+                        />
                         <span>info@visacollect.com</span>
-                      </li>
-                    </Link>
-                    {/* <Link href="#">
-                      <li className="flex items-center mt-2 space-x-2 text-base hover:text-primary">
-                        <FaPhoneAlt className="w-6 h-6 p-1 text-black bg-white rounded-full" />{" "}
-                        <span className="text-white">+91-9876543219</span>
-                      </li>
-                    </Link> */}
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </div>
               <div className="flex justify-center col-span-2">
-                <div className="space-y-6 md:flex md:space-x-28 md:space-y-0">
-                  <div>
-                    <div className="space-y-6">
-                      <h3 className="text-xl font-semibold underline capitalize underline-offset-8 decoration-primary">
-                        Quick Links
-                      </h3>
-                      <ul>
-                        <Link href="/">
-                          <li className="mt-2 text-base hover:text-primary">
-                            <span>Home</span>
-                          </li>
-                        </Link>
-                        <Link href="/about-us">
-                          <li className="mt-2 text-base hover:text-primary">
-                            <span>About Us</span>
-                          </li>
-                        </Link>
-
-                        <Link href="/contact-us">
-                          <li className="mt-2 text-base hover:text-primary">
-                            <span>Contact Us</span>
-                          </li>
-                        </Link>
-                      </ul>
-                    </div>
-                  </div>
+                <div className="space-y-6">
+                  <h2 className="text-xl font-semibold underline capitalize underline-offset-8 decoration-gray-900">
+                    Quick Links
+                  </h2>
+                  <ul className="space-y-2">
+                    <li>
+                      <Link
+                        href="/"
+                        className="text-base hover:text-gray-900 text-gray-800"
+                        aria-label="Go to Home page"
+                      >
+                        Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/about-us"
+                        className="text-base hover:text-gray-900 text-gray-800"
+                        aria-label="Go to About Us page"
+                      >
+                        About Us
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/contact-us"
+                        className="text-base hover:text-gray-900 text-gray-800"
+                        aria-label="Go to Contact Us page"
+                      >
+                        Contact Us
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
               </div>
               <div className="flex justify-center col-span-3">
                 <div className="space-y-6">
-                  <h4 className="text-xl font-semibold underline capitalize underline-offset-8 decoration-primary">
+                  <h2 className="text-xl font-semibold underline capitalize underline-offset-8 decoration-gray-900">
                     VisaCollect
-                  </h4>
-                  <ul>
-                    <Link href="/">
-                      <li className="mt-2 text-base hover:text-primary">
-                        <span> Apply</span>
-                      </li>
-                    </Link>
+                  </h2>
+                  <ul className="space-y-2">
+                    <li>
+                      <Link
+                        href="/"
+                        className="text-base hover:text-gray-900 text-gray-800"
+                        aria-label="Apply for visa"
+                      >
+                        Apply for Visa
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-end col-span-2 ">
+              <div className="flex justify-end col-span-2">
                 <div className="space-y-6">
-                  <h5 className="text-xl font-semibold underline capitalize underline-offset-8 decoration-primary">
+                  <h2 className="text-xl font-semibold underline capitalize underline-offset-8 decoration-gray-900">
                     Support
-                  </h5>
-                  <ul>
-                    <Link href="/termsAndConditions">
-                      <li className="mt-2 text-base hover:text-primary">
-                        <span> Terms & Conditions</span>
-                      </li>
-                    </Link>
-                    <Link href="/privacyPolicy">
-                      <li className="mt-2 text-base hover:text-primary">
-                        <span>Privacy Policy</span>
-                      </li>
-                    </Link>
-                    <Link href="/cancellation">
-                      <li className="mt-2 text-base hover:text-primary">
-                        <span>Cancellation</span>
-                      </li>
-                    </Link>
+                  </h2>
+                  <ul className="space-y-2">
+                    <li>
+                      <Link
+                        href="/termsAndConditions"
+                        className="text-base hover:text-gray-900 text-gray-800"
+                        aria-label="Read our Terms and Conditions"
+                      >
+                        Terms & Conditions
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/privacyPolicy"
+                        className="text-base hover:text-gray-900 text-gray-800"
+                        aria-label="Read our Privacy Policy"
+                      >
+                        Privacy Policy
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/cancellation"
+                        className="text-base hover:text-gray-900 text-gray-800"
+                        aria-label="Read our Cancellation Policy"
+                      >
+                        Cancellation
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
-            <hr className="h-[1px] bg-secondary border-primary" />
-            <div className="px-5 py-5 text-base text-center md:px-0">
+            <hr className="h-[1px] bg-gray-300" />
+            <div className="px-5 py-5 text-base text-center text-gray-800 md:px-0">
               <p>
-                {' '}
                 Copyright © {new Date().getFullYear()} |
-                <Link href="/">
-                  <span className="px-2 font-semibold text-primary">
+                <Link href="/" aria-label="Go to Visacollect homepage">
+                  <span className="px-2 font-semibold text-gray-900">
                     visacollect.com
                   </span>
                 </Link>

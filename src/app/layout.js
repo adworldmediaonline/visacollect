@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
           <ReactQueryProvider>
             <Header />
             <div className="flex-1">{children}</div>
-            <Footer />
+            <Footer role="contentinfo" />
             <ToastContainer />
           </ReactQueryProvider>
         </FormProvider>

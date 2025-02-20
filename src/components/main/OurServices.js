@@ -20,7 +20,7 @@ const OurServices = () => {
       id: 2,
       image: '/assets/images/main/ourServiceIcon1.png',
       name: 'Simplified Visa Application Process',
-      desc: 'Apply for your visa online with e-Visa. It’s simple, fast, and convenient. Just fill out a form, upload your documents, and submit your order.',
+      desc: `Apply for your visa online with e-Visa. It's simple, fast, and convenient. Just fill out a form, upload your documents, and submit your order.`,
       altText: 'Our Services Icon 1 - Visa Collect',
     },
     {
@@ -30,7 +30,6 @@ const OurServices = () => {
       desc: 'Need your visa in a hurry? We can help you get it as soon as possible. We offer expedited processing for urgent cases, such as last-minute trips or emergencies.',
       altText: 'Our Services Icon 2 - Visa Collect',
     },
-
     {
       id: 4,
       image: '/assets/images/main/ourServiceIcon1.png',
@@ -55,7 +54,7 @@ const OurServices = () => {
     accessibility: true,
     cssEase: 'ease-out',
     swipeToSlide: true,
-    pouseonhover: true,
+    pauseOnHover: true,
     // nextArrow: <SampleNextArrow />,
     // prevArrow: <SamplePrevArrow />,
 
@@ -99,7 +98,7 @@ const OurServices = () => {
     ],
   };
   return (
-    <div className="bg-white">
+    <section className="bg-white" aria-label="Our Services">
       <div className="container py-12 space-y-8 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
           <HeadingSection
@@ -110,27 +109,45 @@ const OurServices = () => {
 
         <div className="relative flex items-center justify-between">
           <div className="absolute z-10 hidden text-center -left-8 md:block">
-            <button onClick={() => customeSlider.current.slickPrev()}>
+            <button
+              onClick={() => customeSlider.current.slickPrev()}
+              aria-label="Previous slide"
+              className="focus:outline-none focus:ring-2 focus:ring-primary"
+            >
               <IoIosArrowBack
                 size={40}
-                className="p-2 text-white border rounded-full border-primary bg-secondary "
+                className="p-2 text-white border rounded-full border-primary bg-secondary"
+                aria-hidden="true"
               />
             </button>
           </div>
-          <div className="w-[100%]">
-            <Slider {...settings} ref={customeSlider} className="mx-auto ">
-              {testimonial.map((item, e) => (
-                <div className="p-4 group" key={e}>
+          <div className="w-[100%]" role="region" aria-label="Services Slider">
+            <Slider {...settings} ref={customeSlider} className="mx-auto">
+              {testimonial.map((item, index) => (
+                <div
+                  className="p-4 group"
+                  key={index}
+                  role="group"
+                  aria-label={item.name}
+                >
                   <div className="p-6 space-y-4 bg-white border hover:drop-shadow-xs hover:shadow-lg rounded-xl md:h-96">
-                    <div className="w-full duration-1000 rounded-full duration">
+                    <div className="w-full duration-1000 rounded-full">
                       <img
                         src={item.image}
-                        alt=""
+                        alt={item.altText}
                         className="rounded-lg w-14 h-14"
                       />
                     </div>
-                    <h2 className="text-2xl font-semibold w-52">{item.name}</h2>
-                    <p className="text-black/80 group-hover:text-black ">
+                    <h2
+                      className="text-2xl font-semibold w-52 text-gray-900"
+                      tabIndex="0"
+                    >
+                      {item.name}
+                    </h2>
+                    <p
+                      className="text-gray-800 group-hover:text-gray-900"
+                      tabIndex="0"
+                    >
                       {item.desc}
                     </p>
                   </div>
@@ -139,16 +156,21 @@ const OurServices = () => {
             </Slider>
           </div>
           <div className="absolute z-10 hidden text-center -right-8 md:block">
-            <button onClick={() => customeSlider.current.slickNext()}>
+            <button
+              onClick={() => customeSlider.current.slickNext()}
+              aria-label="Next slide"
+              className="focus:outline-none focus:ring-2 focus:ring-primary"
+            >
               <IoIosArrowForward
                 size={40}
                 className="p-2 text-white border rounded-full bg-secondary border-primary"
+                aria-hidden="true"
               />
             </button>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
