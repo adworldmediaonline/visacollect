@@ -46,8 +46,8 @@ const Header = ({ bgcolor }) => {
           <ul
             className={
               click
-                ? 'nav-menuMainVisa flex gap-3 active md:space-y-0 space-y-0 py-5'
-                : 'nav-menuMainVisa flex gap-3'
+                ? 'nav-menuMainVisa active md:space-y-0 space-y-0 py-5'
+                : 'nav-menuMainVisa'
             }
           >
             <li className="relative hidden md:block">
