@@ -43,7 +43,7 @@ function Testimonial() {
   ];
   const settings = {
     className: 'center',
-    fade: true,
+    fade: false,
     slidesToShow: 1,
     focusOnSelect: true,
     dots: false,
@@ -51,21 +51,19 @@ function Testimonial() {
     arrows: false,
     loop: true,
     autoplay: true,
-    speed: 2000,
-
+    speed: 500,
+    autoplaySpeed: 5000,
     lazyLoad: true,
     accessibility: true,
-    cssEase: 'ease-out',
+    cssEase: 'linear',
     swipeToSlide: true,
-    pouseonhover: true,
-    // nextArrow: <SampleNextArrow />,
-    // prevArrow: <SamplePrevArrow />,
-
+    pauseOnHover: true,
+    waitForAnimate: false,
     responsive: [
       {
         breakpoint: 1080,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
           arrows: true,
@@ -74,7 +72,7 @@ function Testimonial() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
           arrows: false,
@@ -95,7 +93,7 @@ function Testimonial() {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: false,
-          speed: 1000,
+          speed: 300,
         },
       },
     ],
@@ -106,6 +104,10 @@ function Testimonial() {
         src={testimonialWaveImg}
         className="absolute bottom-0 w-full"
         alt="Testimonials background wave"
+        loading="lazy"
+        quality={75}
+        width={1920}
+        height={200}
       />
       <div className="-space-y-4 md:absolute top-16 left-32">
         <h2 className="pb-8 text-2xl font-extrabold text-center md:text-5xl text-gray-900 md:pb-0">
@@ -125,6 +127,10 @@ function Testimonial() {
                     src={testimonialBannerImg}
                     className="md:w-80 w-52"
                     alt={`Profile picture of ${e.name}`}
+                    loading="lazy"
+                    quality={75}
+                    width={320}
+                    height={320}
                   />
                 </div>
                 <div className="col-span-8 space-y-4 text-gray-100 md:pt-20">

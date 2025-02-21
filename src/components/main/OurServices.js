@@ -1,11 +1,19 @@
 'use client';
 import React, { useRef } from 'react';
-import Slider from 'react-slick';
+import dynamic from 'next/dynamic';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import HeadingSection from './HeadingSection';
-
+import Image from 'next/image';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+
+const Slider = dynamic(() => import('react-slick'), {
+  ssr: false,
+  loading: () => (
+    <div className="min-h-[400px] animate-pulse bg-gray-100 rounded-lg"></div>
+  ),
+});
+
 const OurServices = () => {
   const customeSlider = useRef();
   const testimonial = [
@@ -132,10 +140,14 @@ const OurServices = () => {
                 >
                   <div className="p-6 space-y-4 bg-white border hover:drop-shadow-xs hover:shadow-lg rounded-xl md:h-96">
                     <div className="w-full duration-1000 rounded-full">
-                      <img
+                      <Image
                         src={item.image}
                         alt={item.altText}
                         className="rounded-lg w-14 h-14"
+                        width={56}
+                        height={56}
+                        loading={index < 2 ? 'eager' : 'lazy'}
+                        quality={75}
                       />
                     </div>
                     <h2
