@@ -1,14 +1,9 @@
-// 'use client';
+'use client';
 
 import BannerInlineForm from '../ui/banner-inline-form';
-// import ExperienceStatsSection from '../ui/experience-stats-section';
-import dynamic from 'next/dynamic';
-const ExperienceStatsSection = dynamic(
-  () => import('../ui/experience-stats-section'),
-  { ssr: false }
-);
-
+import ExperienceStatsSection from '../ui/experience-stats-section';
 import Image from 'next/image';
+import { homePagesBanner } from '@/constant/images';
 
 const BannerMain = () => {
   return (
@@ -20,12 +15,10 @@ const BannerMain = () => {
         ></div>
         <Image
           alt="Apply for Visa - Stress free travel"
-          src="/assets/images/homePage/home-page-banner.webp"
+          src={homePagesBanner}
           className="object-cover w-full h-full"
-          priority
-          quality={75}
-          sizes="(max-width: 640px) 100vw, (max-width: 768px) 800px, 700px"
-          fill
+          priority={true}
+          loading="eager"
         />
         <div className="container absolute top-0 w-full px-5 mt-32 -translate-x-1/2 left-1/2">
           <div className="flex flex-col justify-center">

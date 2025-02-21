@@ -84,9 +84,9 @@ const Footer = () => {
               </div>
               <div className="flex justify-center col-span-2">
                 <div className="space-y-6">
-                  <h2 className="text-xl font-semibold underline capitalize underline-offset-8 decoration-gray-900">
+                  <h3 className="text-xl font-semibold underline capitalize underline-offset-8 decoration-gray-900">
                     Quick Links
-                  </h2>
+                  </h3>
                   <ul className="space-y-2">
                     <li>
                       <Link
@@ -120,9 +120,9 @@ const Footer = () => {
               </div>
               <div className="flex justify-center col-span-3">
                 <div className="space-y-6">
-                  <h2 className="text-xl font-semibold underline capitalize underline-offset-8 decoration-gray-900">
+                  <h4 className="text-xl font-semibold underline capitalize underline-offset-8 decoration-gray-900">
                     VisaCollect
-                  </h2>
+                  </h4>
                   <ul className="space-y-2">
                     <li>
                       <Link
@@ -138,9 +138,9 @@ const Footer = () => {
               </div>
               <div className="flex justify-end col-span-2">
                 <div className="space-y-6">
-                  <h2 className="text-xl font-semibold underline capitalize underline-offset-8 decoration-gray-900">
+                  <h5 className="text-xl font-semibold underline capitalize underline-offset-8 decoration-gray-900">
                     Support
-                  </h2>
+                  </h5>
                   <ul className="space-y-2">
                     <li>
                       <Link

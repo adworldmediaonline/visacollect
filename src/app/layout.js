@@ -1,14 +1,14 @@
 import Footer from '@/components/main/Footer';
 import Header from '@/components/main/Header';
-// import ReactQueryProvider from '@/components/ReactQueryProvider';
-// import { FormProvider } from '@/context/formContext';
+import ReactQueryProvider from '@/components/ReactQueryProvider';
+import { FormProvider } from '@/context/formContext';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import { Be_Vietnam_Pro } from 'next/font/google';
-// import Script from 'next/script';
+import Script from 'next/script';
 import 'react-datepicker/dist/react-datepicker.css';
 import { ToastContainer } from 'react-toastify';
-// import { Analytics } from '@vercel/analytics/react';
-// import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
@@ -50,17 +50,17 @@ export default function RootLayout({ children }) {
       <body
         className={`${beVietnamPro.className} antialiased flex flex-col min-h-screen`}
       >
-        {/* <FormProvider>
-          <ReactQueryProvider> */}
-        <Header />
-        <div className="flex-1">{children}</div>
-        <Footer role="contentinfo" />
-        <ToastContainer />
-        {/* </ReactQueryProvider>
-        </FormProvider> */}
+        <FormProvider>
+          <ReactQueryProvider>
+            <Header />
+            <div className="flex-1">{children}</div>
+            <Footer role="contentinfo" />
+            <ToastContainer />
+          </ReactQueryProvider>
+        </FormProvider>
         <GoogleTagManager gtmId="G-FRMR0BTRLH" />
         <GoogleAnalytics gaId="G-FRMR0BTRLH" />
-        {/* <Script
+        <Script
           id="structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -155,7 +155,7 @@ export default function RootLayout({ children }) {
           }}
         />
         <Analytics />
-        <SpeedInsights /> */}
+        <SpeedInsights />
       </body>
     </html>
   );
