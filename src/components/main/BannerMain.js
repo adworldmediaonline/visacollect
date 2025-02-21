@@ -1,9 +1,14 @@
-'use client';
+// 'use client';
 
 import BannerInlineForm from '../ui/banner-inline-form';
-import ExperienceStatsSection from '../ui/experience-stats-section';
+// import ExperienceStatsSection from '../ui/experience-stats-section';
+import dynamic from 'next/dynamic';
+const ExperienceStatsSection = dynamic(
+  () => import('../ui/experience-stats-section'),
+  { ssr: false }
+);
+
 import Image from 'next/image';
-import { homePagesBanner } from '@/constant/images';
 
 const BannerMain = () => {
   return (
@@ -15,13 +20,11 @@ const BannerMain = () => {
         ></div>
         <Image
           alt="Apply for Visa - Stress free travel"
-          src={homePagesBanner}
+          src="/assets/images/homePage/home-page-banner.webp"
           className="object-cover w-full h-full"
           priority
           quality={75}
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qQEBALkE6Oz5DRVlLT1NbWl5eYWJhSl9yX2JhYVv/2wBDARUXFx4aHRweHVtTQVNbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1v/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-          sizes="100vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 800px, 700px"
           fill
         />
         <div className="container absolute top-0 w-full px-5 mt-32 -translate-x-1/2 left-1/2">

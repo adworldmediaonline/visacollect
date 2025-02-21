@@ -5,8 +5,6 @@ import Image from 'next/image';
 import HeadingSection from './HeadingSection';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import { useState } from 'react';
-import Button from '../ui/button';
-import { cn } from '@/lib/cn';
 
 const data = [
   {
