@@ -34,9 +34,9 @@ export default function ExperienceStatsSection() {
     <div className="text-gray-600">
       <div className="container px-5 mx-auto mt-16">
         <div className="flex flex-wrap items-center -m-4 text-center">
-          {statistics?.map((stats, index) => (
+          {statistics?.map(stats => (
             <ExperienceStatsItem
-              key={index}
+              key={stats.id}
               text={stats.title}
               number={stats.number}
               numberText={stats.numberText}
