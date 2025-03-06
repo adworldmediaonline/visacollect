@@ -46,7 +46,8 @@ export const malaysiaMDData = {
     {
       metadata: {
         title: ` Best Time to Visit in Malaysia | Travel Tips to Visit in Malaysia`,
-        description: `Are you planning a memorable holiday in Malaysia? Get all the information about the best time to visit Malaysia, Famous places to visit in Malaysia, and travel tips for visiting Malaysia - Visa Collect`,
+        description: `Looking to visit Malaysia? Uncover the BEST time to go, from ideal weather to can't-miss festivals—your perfect getaway starts here!`,
+        excerpt: `Malaysia is a tropical paradise with something for everyone, but timing is key to experiencing it all! Whether you're chasing sun-soaked beaches, cultural festivals, or lush jungles, the right season can make all the difference. Let’s dive into the best times to visit Malaysia—so you can plan your dream vacation with confidence.`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {

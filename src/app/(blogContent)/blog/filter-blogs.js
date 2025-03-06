@@ -19,7 +19,7 @@ export default function FilterBlogs({ defaultValue, defaultPosts }) {
     morroccoMDData,
     turkeyMDData,
     srilankaMDData,
-    malaysiaMDData
+    malaysiaMDData,
   ];
 
   const filterBlogs =
