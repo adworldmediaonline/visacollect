@@ -25,8 +25,12 @@ export default function BlogCard({ post, href }) {
             {post?.pageTitle}
           </h5>
         </Link>
-        <p class="font-normal text-gray-700 mb-3 line-clamp-3">
-          {post?.metadata ? post?.metadata?.description : post?.description}
+        <p class="font-normal text-gray-700 mb-3 line-clamp-7">
+          {post?.metadata
+            ? post?.metadata?.excerpt
+              ? post?.metadata?.excerpt
+              : post?.metadata?.description
+            : post?.excerpt ?? post?.description}
         </p>
         <LinkButton
           href={href ? href : post.slug}

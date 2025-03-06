@@ -1,4 +1,3 @@
-'use client';
 import ExperienceStatsItem from './experience-stats-item';
 import { FaStar } from 'react-icons/fa6';
 

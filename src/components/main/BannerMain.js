@@ -1,5 +1,3 @@
-'use client';
-
 import BannerInlineForm from '../ui/banner-inline-form';
 import ExperienceStatsSection from '../ui/experience-stats-section';
 import Image from 'next/image';
@@ -17,8 +15,7 @@ const BannerMain = () => {
           alt="Apply for Visa - Stress free travel"
           src={homePagesBanner}
           className="object-cover w-full h-full"
-          priority={true}
-          loading="eager"
+          priority
         />
         <div className="container absolute top-0 w-full px-5 mt-32 -translate-x-1/2 left-1/2">
           <div className="flex flex-col justify-center">

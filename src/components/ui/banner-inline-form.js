@@ -1,6 +1,5 @@
 'use client';
 import { whereIAmFromWhereIAmGoingData } from '@/lib/whereIAmFromWhereIAmGoingData';
-import { Country } from 'country-state-city';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 

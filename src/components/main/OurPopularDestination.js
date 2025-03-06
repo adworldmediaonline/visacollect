@@ -5,8 +5,6 @@ import Image from 'next/image';
 import HeadingSection from './HeadingSection';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import { useState } from 'react';
-import Button from '../ui/button';
-import { cn } from '@/lib/cn';
 
 const data = [
   {
@@ -114,7 +112,7 @@ const data = [
     altText: `How to Apply for Indonesia Visa Online - Visa Collect`,
   },
 ];
-const OurPopularDestination = ({ visitAllCountry }) => {
+const OurPopularDestination = () => {
   const [popularDestinations, setPopularDestinations] = useState(data);
   const [loadMore, setLoadMore] = useState(1);
   const [defaultPopularDestinations, setDefaultPopularDestinations] =
