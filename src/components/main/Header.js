@@ -38,7 +38,7 @@ const Header = ({ bgcolor }) => {
       }`}
     >
       <nav className="container navbarMainVisa" aria-label="Main navigation">
-        <div className="flex items-center w-full md:justify-between md:space-x-12">
+        <div className="flex items-center w-full md:justify-between  md:space-x-12">
           <Link href="/" className="space-x-4" aria-label="Home">
             {scrolled ? <Logo /> : <Logo />}
           </Link>
@@ -46,8 +46,8 @@ const Header = ({ bgcolor }) => {
           <ul
             className={
               click
-                ? 'nav-menuMainVisa active md:space-y-0 space-y-0 py-5'
-                : 'nav-menuMainVisa'
+                ? 'nav-menuMainVisa active md:space-y-0 space-y-0 py-5 gap-4'
+                : 'nav-menuMainVisa gap-4'
             }
           >
             <li className="relative hidden md:block">
@@ -115,7 +115,7 @@ const Header = ({ bgcolor }) => {
 
             <li className="hidden nav-desk md:block">
               <LinkButton
-                className="text-gray-800 hover:text-gray-900"
+                className="text-white"
                 href="/contact-us"
                 onClick={closeMenu}
               >
@@ -128,7 +128,7 @@ const Header = ({ bgcolor }) => {
               <LinkButton
                 href="/contact-us"
                 onClick={closeMenu}
-                className="text-gray-800 hover:text-gray-900"
+                className="text-white hover:text-gray-900"
               >
                 Contact Us
               </LinkButton>
