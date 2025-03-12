@@ -2,8 +2,8 @@ import axios from 'axios';
 
 const axiosInstance = axios.create({
   // new account
-  // baseURL: 'https://b6zsgkcqfp.us-east-1.awsapprunner.com/',
-  baseURL: 'http://localhost:8090/',
+  baseURL: 'https://visa-backend-v2.vercel.app/',
+  // baseURL: 'http://localhost:8090/',
   timeout: 30000,
 });
 
