@@ -13,6 +13,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from '@/components/ui/sheet';
+import Logo from '@/components/Logo';
 
 interface HeaderTwoProps {
   bgcolor?: boolean;
@@ -41,7 +42,6 @@ export default function HeaderTwo({ bgcolor = false }: HeaderTwoProps) {
   ];
 
   const quickActions = [
-    { icon: Phone, label: '24/7 Support', value: '+1-800-VISA-NOW' },
     { icon: Mail, label: 'Email Us', value: 'info@visacollect.com' },
     { icon: Globe, label: '50+ Countries', value: 'Visa Services' },
   ];
@@ -56,17 +56,21 @@ export default function HeaderTwo({ bgcolor = false }: HeaderTwoProps) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="container mx-auto flex justify-between items-center text-sm">
-            <div className="flex items-center space-x-6">
+          <div className="container mx-auto flex justify-between items-center text-sm px-4">
+            <div className="flex items-center space-x-4 xl:space-x-6">
               {quickActions.map((action, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center space-x-2 hover:text-primary-200 transition-colors"
+                  className={`flex items-center space-x-1 xl:space-x-2 hover:text-primary-200 transition-colors ${
+                    index === 2 ? 'hidden xl:flex' : ''
+                  }`}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <action.icon className="w-4 h-4" />
-                  <span className="font-medium">{action.label}:</span>
-                  <span>{action.value}</span>
+                  <action.icon className="w-3 h-3 xl:w-4 xl:h-4" />
+                  <span className="font-medium text-xs xl:text-sm">
+                    {action.label}:
+                  </span>
+                  <span className="text-xs xl:text-sm">{action.value}</span>
                 </motion.div>
               ))}
             </div>
@@ -76,7 +80,9 @@ export default function HeaderTwo({ bgcolor = false }: HeaderTwoProps) {
                 whileHover={{ scale: 1.05 }}
               >
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span>Online Now - Instant Processing</span>
+                <span className="text-xs xl:text-sm font-medium">
+                  Online Now - Instant Processing
+                </span>
               </motion.div>
             </div>
           </div>
@@ -107,38 +113,15 @@ export default function HeaderTwo({ bgcolor = false }: HeaderTwoProps) {
               whileHover={{ scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
-              <Link href="/" className="flex items-center space-x-3">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-600 rounded-lg blur-sm opacity-30"></div>
-                  <div className="relative bg-gradient-to-r from-primary to-primary-600 p-2 rounded-lg">
-                    <svg
-                      className="w-8 h-8 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" />
-                    </svg>
-                  </div>
-                </div>
-                <div>
-                  <h1
-                    className={`text-2xl font-bold bg-gradient-to-r from-primary to-primary-700 bg-clip-text text-transparent ${
-                      !isScrolled && !bgcolor && isHomePage
-                        ? 'drop-shadow-lg'
-                        : ''
-                    }`}
-                  >
-                    VisaCollect
-                  </h1>
-                  <p
-                    className={`text-xs font-medium ${
-                      isScrolled || bgcolor || !isHomePage
-                        ? 'text-gray-600'
-                        : 'text-gray-300'
-                    }`}
-                  >
-                    Your Visa Experts
-                  </p>
+              <Link href="/" className="flex items-center">
+                <div
+                  className={`rounded-lg transition-all duration-300 ${
+                    !isScrolled && !bgcolor && isHomePage
+                      ? 'bg-white/90 backdrop-blur-sm p-2 shadow-lg'
+                      : 'p-1'
+                  }`}
+                >
+                  <Logo />
                 </div>
               </Link>
             </motion.div>
@@ -202,108 +185,109 @@ export default function HeaderTwo({ bgcolor = false }: HeaderTwoProps) {
                         exit={{ rotate: 90, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                       >
-                        {isMobileMenuOpen ? (
-                          <X
-                            className={`w-6 h-6 ${
-                              isScrolled || bgcolor || !isHomePage
-                                ? 'text-gray-700'
-                                : 'text-white'
-                            }`}
-                          />
-                        ) : (
-                          <Menu
-                            className={`w-6 h-6 ${
-                              isScrolled || bgcolor || !isHomePage
-                                ? 'text-gray-700'
-                                : 'text-white'
-                            }`}
-                          />
-                        )}
+                        <motion.div
+                          key={isMobileMenuOpen ? 'close' : 'menu'}
+                          initial={{ rotate: -90, opacity: 0 }}
+                          animate={{ rotate: 0, opacity: 1 }}
+                          exit={{ rotate: 90, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {isMobileMenuOpen ? (
+                            <X
+                              className={`w-6 h-6 ${
+                                isScrolled || bgcolor || !isHomePage
+                                  ? 'text-gray-700'
+                                  : 'text-white'
+                              }`}
+                            />
+                          ) : (
+                            <Menu
+                              className={`w-6 h-6 ${
+                                isScrolled || bgcolor || !isHomePage
+                                  ? 'text-gray-700'
+                                  : 'text-white'
+                              }`}
+                            />
+                          )}
+                        </motion.div>
                       </motion.div>
                     </AnimatePresence>
                   </Button>
                 </SheetTrigger>
                 <SheetContent
                   side="right"
-                  className="w-full sm:w-80 bg-white/95 backdrop-blur-lg border-l border-primary/20"
+                  className="w-full sm:w-80 bg-white/95 backdrop-blur-lg border-l border-primary/20 overflow-y-auto"
                 >
                   <SheetHeader className="space-y-4 pb-6">
                     <div className="flex items-center space-x-3">
-                      <div className="bg-gradient-to-r from-primary to-primary-600 p-2 rounded-lg">
-                        <svg
-                          className="w-6 h-6 text-white"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" />
-                        </svg>
-                      </div>
-                      <SheetTitle className="text-xl font-bold bg-gradient-to-r from-primary to-primary-700 bg-clip-text text-transparent">
-                        VisaCollect
+                      <SheetTitle className="text-xl font-bold">
+                        <Logo />
                       </SheetTitle>
                     </div>
                   </SheetHeader>
 
-                  <nav className="space-y-6">
-                    {navItems.map((item, index) => (
-                      <motion.div
-                        key={item.href}
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                      >
-                        <Link
-                          href={item.href}
-                          className="block py-3 px-4 rounded-xl font-medium text-gray-700 hover:text-primary hover:bg-primary/5 transition-all duration-300"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          {item.label}
-                        </Link>
-                      </motion.div>
-                    ))}
-
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4 }}
-                      className="pt-6 border-t border-primary/20"
-                    >
-                      <Button
-                        asChild
-                        className="w-full bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white py-3 rounded-full font-semibold shadow-lg"
-                      >
-                        <Link
-                          href="/contact-us"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          Contact Us
-                        </Link>
-                      </Button>
-                    </motion.div>
-
-                    {/* Mobile Quick Actions */}
-                    <div className="space-y-4 pt-6 border-t border-primary/20">
-                      {quickActions.map((action, index) => (
+                  <div className="h-full overflow-y-auto pb-20">
+                    <nav className="space-y-6">
+                      {navItems.map((item, index) => (
                         <motion.div
-                          key={index}
-                          className="flex items-center space-x-3 p-3 rounded-xl bg-primary/5 hover:bg-primary/10 transition-colors"
+                          key={item.href}
                           initial={{ opacity: 0, x: 20 }}
                           animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.5 + index * 0.1 }}
+                          transition={{ delay: index * 0.1 }}
                         >
-                          <action.icon className="w-5 h-5 text-primary" />
-                          <div>
-                            <p className="font-medium text-gray-900">
-                              {action.label}
-                            </p>
-                            <p className="text-sm text-gray-600">
-                              {action.value}
-                            </p>
-                          </div>
+                          <Link
+                            href={item.href}
+                            className="block py-3 px-4 rounded-xl font-medium text-gray-700 hover:text-primary hover:bg-primary/5 transition-all duration-300"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {item.label}
+                          </Link>
                         </motion.div>
                       ))}
-                    </div>
-                  </nav>
+
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 }}
+                        className="pt-6 border-t border-primary/20"
+                      >
+                        <Button
+                          asChild
+                          className="w-full bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white py-3 rounded-full font-semibold shadow-lg"
+                        >
+                          <Link
+                            href="/contact-us"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            Contact Us
+                          </Link>
+                        </Button>
+                      </motion.div>
+
+                      {/* Mobile Quick Actions */}
+                      <div className="space-y-4 pt-6 border-t border-primary/20">
+                        {quickActions.map((action, index) => (
+                          <motion.div
+                            key={index}
+                            className="flex items-center space-x-3 p-3 rounded-xl bg-primary/5 hover:bg-primary/10 transition-colors"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.5 + index * 0.1 }}
+                          >
+                            <action.icon className="w-5 h-5 text-primary flex-shrink-0" />
+                            <div className="min-w-0 flex-1">
+                              <p className="font-medium text-gray-900 text-sm">
+                                {action.label}
+                              </p>
+                              <p className="text-xs text-gray-600 break-all">
+                                {action.value}
+                              </p>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </nav>
+                  </div>
                 </SheetContent>
               </Sheet>
             </div>

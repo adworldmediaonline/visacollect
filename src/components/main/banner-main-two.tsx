@@ -234,11 +234,12 @@ export default function BannerMainTwo() {
               </Button>
 
               <Button
-                variant="outline"
                 asChild
-                className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 px-8 py-4 rounded-full text-lg font-semibold backdrop-blur-sm transition-all duration-300"
+                className="border-2 border-white/30 bg-transparent text-white hover:bg-white/10 hover:border-white/50 hover:text-white px-8 py-4 rounded-full text-lg font-semibold backdrop-blur-sm transition-all duration-300"
               >
-                <Link href="/about-us">Learn More</Link>
+                <Link href="/about-us" className="text-white hover:text-white">
+                  Learn More
+                </Link>
               </Button>
             </motion.div>
 
