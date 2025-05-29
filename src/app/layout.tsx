@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Footer from '@/components/main/Footer';
+import FooterTwo from '@/components/main/FooterTwo';
 
 import HeaderTwo from '@/components/main/header-two';
 import ReactQueryProvider from '@/components/ReactQueryProvider';
@@ -60,7 +60,7 @@ export default function RootLayout({
           <ReactQueryProvider>
             <HeaderTwo bgcolor={false} />
             <div className="flex-1">{children}</div>
-            <Footer />
+            <FooterTwo />
             <ToastContainer />
           </ReactQueryProvider>
         </FormProvider>
