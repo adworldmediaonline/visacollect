@@ -1,43 +1,54 @@
-import BannerMain from '@/components/main/BannerMain';
-import ContactForm from '@/components/main/ContactForm';
-
-import Header from '@/components/main/Header';
-import HowItWorks from '@/components/main/HowItWorks';
-import OurPopularDestination from '@/components/main/OurPopularDestination';
-// import OurServices from '@/components/main/OurServices';
-// import Testimonial from '@/components/main/Testimonial';
-import WhyChooseUs from '@/components/main/WhyChooseUs';
+import BannerMainTwo from '@/components/main/banner-main-two';
+import ContactFormTwo from '@/components/main/contact-form-two';
+import HeaderTwo from '@/components/main/header-two';
+import HowItWorksTwo from '@/components/main/how-it-works-two';
+import OurPopularDestinationTwo from '@/components/main/our-popular-destination-two';
+import WhyChooseUsTwo from '@/components/main/why-choose-us-two';
 import dynamic from 'next/dynamic';
 
-const Testimonial = dynamic(() => import('@/components/main/Testimonial'), {
-  loading: () => <p>Loading...</p>,
-  ssr: false,
-});
+const TestimonialTwo = dynamic(
+  () => import('@/components/main/testimonial-two'),
+  {
+    loading: () => (
+      <div className="flex justify-center items-center py-20">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    ),
+    ssr: false,
+  }
+);
 
-const OurServices = dynamic(() => import('@/components/main/OurServices'), {
-  loading: () => <p>Loading...</p>,
-  ssr: false,
-});
+const OurServicesTwo = dynamic(
+  () => import('@/components/main/our-services-two'),
+  {
+    loading: () => (
+      <div className="flex justify-center items-center py-20">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    ),
+    ssr: false,
+  }
+);
 
 export default function Home() {
   return (
-    <main>
+    <main className="min-h-screen">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-primary"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-primary focus:rounded-md focus:shadow-lg focus:top-4 focus:left-4"
       >
         Skip to main content
       </a>
-      <Header bgcolor={false} />
+      <HeaderTwo bgcolor={false} />
 
-      <div id="main-content" role="main">
-        <BannerMain />
-        <OurPopularDestination />
-        <WhyChooseUs />
-        <HowItWorks />
-        <OurServices />
-        <Testimonial />
-        <ContactForm />
+      <div id="main-content" role="main" className="overflow-x-hidden">
+        <BannerMainTwo />
+        <OurPopularDestinationTwo />
+        <WhyChooseUsTwo />
+        <HowItWorksTwo />
+        <OurServicesTwo />
+        <TestimonialTwo />
+        <ContactFormTwo />
       </div>
     </main>
   );

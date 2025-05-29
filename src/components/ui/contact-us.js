@@ -2,7 +2,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import Button from './button';
+import { Button } from './button';
 import usePost from '@/hooks/usePost';
 import Link from 'next/link';
 
