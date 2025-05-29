@@ -28,10 +28,11 @@ export default function Home() {
       >
         Skip to main content
       </a>
-      <Header role="banner" />
+      <Header bgcolor={false} />
+
       <div id="main-content" role="main">
         <BannerMain />
-        <OurPopularDestination visitAllCountry={true} />
+        <OurPopularDestination />
         <WhyChooseUs />
         <HowItWorks />
         <OurServices />

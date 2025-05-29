@@ -1,4 +1,6 @@
+import type { Metadata } from 'next';
 import Footer from '@/components/main/Footer';
+
 import Header from '@/components/main/Header';
 import ReactQueryProvider from '@/components/ReactQueryProvider';
 import { FormProvider } from '@/context/formContext';
@@ -18,7 +20,7 @@ const beVietnamPro = Be_Vietnam_Pro({
   weight: ['300', '400', '500', '600', '700', '800'],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   // robots: {
   //   index: false,
   //   googleBot: {
@@ -44,7 +46,11 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en">
       <body
@@ -52,9 +58,9 @@ export default function RootLayout({ children }) {
       >
         <FormProvider>
           <ReactQueryProvider>
-            <Header />
+            <Header bgcolor={false} />
             <div className="flex-1">{children}</div>
-            <Footer role="contentinfo" />
+            <Footer />
             <ToastContainer />
           </ReactQueryProvider>
         </FormProvider>
