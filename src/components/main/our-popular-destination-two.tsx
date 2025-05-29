@@ -187,12 +187,17 @@ export default function OurPopularDestinationTwo() {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-gradient-to-br from-slate-50 via-gray-50 to-primary/5 relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-40 left-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary/3 to-primary/3 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-10 w-32 h-32 bg-primary/8 rounded-full blur-3xl" />
+        <div className="absolute bottom-40 left-10 w-40 h-40 bg-primary/6 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary/4 to-primary/2 rounded-full blur-3xl" />
+
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="h-full w-full bg-[linear-gradient(rgba(25,152,199,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(25,152,199,0.1)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        </div>
       </div>
 
       <div className="container mx-auto px-4 relative">
