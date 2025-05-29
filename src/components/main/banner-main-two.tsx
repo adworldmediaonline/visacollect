@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import {
   Shield,
@@ -18,9 +19,41 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { whereIAmFromWhereIAmGoingData } from '@/lib/whereIAmFromWhereIAmGoingData';
+
+// Import country data
+const whereIAmFromCountry = [
+  { name: 'australia', isoCode: 'au' },
+  { name: 'singapore', isoCode: 'sg' },
+  { name: 'united kingdom', isoCode: 'uk' },
+  { name: 'united states', isoCode: 'us' },
+  { name: 'United Arab Emirates', isoCode: 'ae' },
+  { name: 'canada', isoCode: 'ca' },
+];
+
+const whereIAmGoingCountry = [
+  { name: 'india', isoCode: 'in' },
+  { name: 'australia', isoCode: 'au' },
+  { name: 'srilanka', isoCode: 'lk' },
+  { name: 'thailand', isoCode: 'th' },
+  { name: 'turkey', isoCode: 'tr' },
+  { name: 'malaysia', isoCode: 'my' },
+  { name: 'oman', isoCode: 'om' },
+  { name: 'egypt', isoCode: 'eg' },
+  { name: 'cambodia', isoCode: 'kh' },
+  { name: 'morocco', isoCode: 'ma' },
+  { name: 'japan', isoCode: 'jp' },
+  { name: 'singapore', isoCode: 'sg' },
+  { name: 'indonesia', isoCode: 'id' },
+];
 
 export default function BannerMainTwo() {
+  const router = useRouter();
   const [currentStat, setCurrentStat] = useState(0);
+  const [formData, setFormData] = useState({
+    whereIAmFrom: '',
+    whereIAmGoing: '',
+  });
 
   const stats = [
     {
@@ -64,6 +97,24 @@ export default function BannerMainTwo() {
     { x: '90%', y: '45%', delay: 2.5 },
   ];
 
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prevFormData => ({ ...prevFormData, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (formData.whereIAmFrom && formData.whereIAmGoing) {
+      const whereIAmFrom = formData?.whereIAmFrom.toLowerCase() ?? '';
+      const whereIAmGoing = formData?.whereIAmGoing.toLowerCase() ?? '';
+      const whereIAmFromData = whereIAmFromWhereIAmGoingData[whereIAmFrom];
+      const whereIAmGoingData =
+        whereIAmFromData?.whereIAmGoing?.to?.[whereIAmGoing];
+      router.push(whereIAmGoingData?.slug ?? '/all-countries');
+      console.log('Navigating to:', whereIAmGoingData);
+    }
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentStat(prev => (prev + 1) % stats.length);
@@ -72,7 +123,7 @@ export default function BannerMainTwo() {
   }, [stats.length]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 pt-32 lg:pt-24">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(25,152,199,0.1),transparent_50%)]"></div>
@@ -104,38 +155,17 @@ export default function BannerMainTwo() {
         </div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-20">
+      <div className="relative z-10 container mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            {/* Trust Badges */}
-            <motion.div
-              className="flex flex-wrap gap-3"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              {trustBadges.map((badge, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.05 }}
-                  className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2"
-                >
-                  <badge.icon className="w-4 h-4 text-primary-300" />
-                  <span className="text-white text-sm font-medium">
-                    {badge.text}
-                  </span>
-                </motion.div>
-              ))}
-            </motion.div>
-
             {/* Main Headline */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                 <span className="text-white">24x7 online</span>
                 <br />
                 <span className="text-white">visa services</span>
@@ -153,7 +183,7 @@ export default function BannerMainTwo() {
 
             {/* Subtitle */}
             <motion.p
-              className="text-xl text-gray-300 leading-relaxed max-w-2xl"
+              className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -161,6 +191,27 @@ export default function BannerMainTwo() {
               Fast and secure: Trust our secure online visa services platform to
               handle your sensitive information with care.
             </motion.p>
+
+            {/* Trust Badges - Redesigned */}
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-3 gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              {trustBadges.map((badge, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="flex items-center space-x-3 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 hover:border-primary/40 transition-all duration-300"
+                >
+                  <div className="p-2 bg-gradient-to-r from-primary/20 to-primary-600/20 rounded-lg">
+                    <badge.icon className="w-5 h-5 text-primary-300" />
+                  </div>
+                  <span className="text-white font-medium">{badge.text}</span>
+                </motion.div>
+              ))}
+            </motion.div>
 
             {/* CTA Buttons */}
             <motion.div
@@ -193,7 +244,7 @@ export default function BannerMainTwo() {
 
             {/* Dynamic Stats */}
             <motion.div
-              className="flex items-center space-x-8 pt-8"
+              className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -203,20 +254,25 @@ export default function BannerMainTwo() {
                 return (
                   <motion.div
                     key={index}
-                    className={`flex items-center space-x-3 ${
-                      currentStat === index ? 'scale-110' : 'scale-100'
-                    } transition-transform duration-300`}
+                    className={`flex flex-col items-center space-y-2 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 ${
+                      currentStat === index
+                        ? 'scale-105 bg-white/10'
+                        : 'scale-100'
+                    } transition-all duration-300`}
+                    whileHover={{ scale: 1.05 }}
                   >
                     <div
                       className={`p-3 rounded-full bg-gradient-to-r ${stat.color}`}
                     >
                       <Icon className="w-6 h-6 text-white" />
                     </div>
-                    <div>
-                      <p className="text-2xl font-bold text-white">
+                    <div className="text-center">
+                      <p className="text-xl md:text-2xl font-bold text-white">
                         {stat.number}
                       </p>
-                      <p className="text-sm text-gray-300">{stat.label}</p>
+                      <p className="text-xs md:text-sm text-gray-300">
+                        {stat.label}
+                      </p>
                     </div>
                   </motion.div>
                 );
@@ -236,8 +292,8 @@ export default function BannerMainTwo() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary-600/20 rounded-3xl blur-3xl"></div>
 
               {/* Main Form Card */}
-              <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8 shadow-2xl">
-                <div className="space-y-6">
+              <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-6 md:p-8 shadow-2xl">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Form Header */}
                   <div className="text-center space-y-3">
                     <div className="inline-flex items-center space-x-2 bg-primary/20 backdrop-blur-sm rounded-full px-4 py-2">
@@ -246,10 +302,10 @@ export default function BannerMainTwo() {
                         Quick Application
                       </span>
                     </div>
-                    <h2 className="text-2xl font-bold text-white">
+                    <h2 className="text-xl md:text-2xl font-bold text-white">
                       Start Your Visa Journey
                     </h2>
-                    <p className="text-gray-300">
+                    <p className="text-gray-300 text-sm md:text-base">
                       Select your destination and get started
                     </p>
                   </div>
@@ -257,55 +313,70 @@ export default function BannerMainTwo() {
                   {/* Form Fields */}
                   <div className="space-y-4">
                     <div className="space-y-2">
-                      <label className="text-white font-medium">
+                      <label className="text-white font-medium text-sm">
                         From Country
                       </label>
-                      <select className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all">
+                      <select
+                        name="whereIAmFrom"
+                        value={formData.whereIAmFrom}
+                        onChange={handleChange}
+                        className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all"
+                      >
                         <option value="" className="text-gray-900">
                           Select your country
                         </option>
-                        <option value="us" className="text-gray-900">
-                          United States
-                        </option>
-                        <option value="uk" className="text-gray-900">
-                          United Kingdom
-                        </option>
-                        <option value="ca" className="text-gray-900">
-                          Canada
-                        </option>
+                        {whereIAmFromCountry.map(country => (
+                          <option
+                            key={country.isoCode}
+                            value={country.isoCode.toLowerCase()}
+                            className="text-gray-900"
+                          >
+                            {country.name.charAt(0).toUpperCase() +
+                              country.name.slice(1)}
+                          </option>
+                        ))}
                       </select>
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-white font-medium">
+                      <label className="text-white font-medium text-sm">
                         To Destination
                       </label>
-                      <select className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all">
+                      <select
+                        name="whereIAmGoing"
+                        value={formData.whereIAmGoing}
+                        onChange={handleChange}
+                        className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all"
+                      >
                         <option value="" className="text-gray-900">
                           Select your destination
                         </option>
-                        <option value="in" className="text-gray-900">
-                          India
-                        </option>
-                        <option value="au" className="text-gray-900">
-                          Australia
-                        </option>
-                        <option value="th" className="text-gray-900">
-                          Thailand
-                        </option>
+                        {whereIAmGoingCountry.map(country => (
+                          <option
+                            key={country.isoCode}
+                            value={country.isoCode.toLowerCase()}
+                            className="text-gray-900"
+                          >
+                            {country.name.charAt(0).toUpperCase() +
+                              country.name.slice(1)}
+                          </option>
+                        ))}
                       </select>
                     </div>
 
-                    <Button className="w-full bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white py-4 rounded-xl text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 group">
+                    <Button
+                      type="submit"
+                      className="w-full bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white py-3 md:py-4 rounded-xl text-base md:text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 group"
+                    >
                       <span className="flex items-center justify-center">
                         Check Visa Requirements
-                        <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                       </span>
                     </Button>
                   </div>
 
                   {/* Features List */}
-                  <div className="pt-6 space-y-3">
+                  <div className="pt-4 space-y-3">
                     {[
                       'Free visa requirement check',
                       'Expert guidance throughout',
@@ -319,12 +390,14 @@ export default function BannerMainTwo() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1 + index * 0.1 }}
                       >
-                        <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                        <span className="text-gray-300">{feature}</span>
+                        <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-400 flex-shrink-0" />
+                        <span className="text-gray-300 text-sm md:text-base">
+                          {feature}
+                        </span>
                       </motion.div>
                     ))}
                   </div>
-                </div>
+                </form>
               </div>
             </div>
           </motion.div>
@@ -332,24 +405,30 @@ export default function BannerMainTwo() {
 
         {/* Bottom Trust Indicators */}
         <motion.div
-          className="mt-20 flex flex-wrap justify-center items-center gap-8"
+          className="mt-16 lg:mt-20 flex flex-wrap justify-center items-center gap-6 md:gap-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
           <div className="flex items-center space-x-2 text-gray-300">
-            <TrendingUp className="w-5 h-5 text-green-400" />
-            <span className="font-medium">99% Success Rate</span>
+            <TrendingUp className="w-4 h-4 md:w-5 md:h-5 text-green-400" />
+            <span className="font-medium text-sm md:text-base">
+              99% Success Rate
+            </span>
           </div>
-          <div className="w-px h-6 bg-white/20"></div>
+          <div className="w-px h-4 md:h-6 bg-white/20"></div>
           <div className="flex items-center space-x-2 text-gray-300">
-            <MapPin className="w-5 h-5 text-blue-400" />
-            <span className="font-medium">50+ Countries</span>
+            <MapPin className="w-4 h-4 md:w-5 md:h-5 text-blue-400" />
+            <span className="font-medium text-sm md:text-base">
+              50+ Countries
+            </span>
           </div>
-          <div className="w-px h-6 bg-white/20"></div>
+          <div className="w-px h-4 md:h-6 bg-white/20"></div>
           <div className="flex items-center space-x-2 text-gray-300">
-            <Users className="w-5 h-5 text-purple-400" />
-            <span className="font-medium">10,000+ Happy Customers</span>
+            <Users className="w-4 h-4 md:w-5 md:h-5 text-purple-400" />
+            <span className="font-medium text-sm md:text-base">
+              10,000+ Happy Customers
+            </span>
           </div>
         </motion.div>
       </div>

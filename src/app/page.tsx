@@ -1,6 +1,5 @@
 import BannerMainTwo from '@/components/main/banner-main-two';
 import ContactFormTwo from '@/components/main/contact-form-two';
-import HeaderTwo from '@/components/main/header-two';
 import HowItWorksTwo from '@/components/main/how-it-works-two';
 import OurPopularDestinationTwo from '@/components/main/our-popular-destination-two';
 import WhyChooseUsTwo from '@/components/main/why-choose-us-two';
@@ -39,7 +38,6 @@ export default function Home() {
       >
         Skip to main content
       </a>
-      <HeaderTwo bgcolor={false} />
 
       <div id="main-content" role="main" className="overflow-x-hidden">
         <BannerMainTwo />

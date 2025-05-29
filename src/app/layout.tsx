@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Footer from '@/components/main/Footer';
 
-import Header from '@/components/main/Header';
+import HeaderTwo from '@/components/main/header-two';
 import ReactQueryProvider from '@/components/ReactQueryProvider';
 import { FormProvider } from '@/context/formContext';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
@@ -58,7 +58,7 @@ export default function RootLayout({
       >
         <FormProvider>
           <ReactQueryProvider>
-            {/* <Header bgcolor={false} /> */}
+            <HeaderTwo bgcolor={false} />
             <div className="flex-1">{children}</div>
             <Footer />
             <ToastContainer />
