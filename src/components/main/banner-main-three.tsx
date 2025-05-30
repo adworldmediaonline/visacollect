@@ -155,7 +155,7 @@ export default function BannerMainThree() {
   };
 
   return (
-    <section className="relative min-h-[90vh] sm:min-h-[80vh] lg:min-h-[75vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 pt-40 pb-4 sm:pt-44 md:pt-48 lg:pt-32 xl:pt-28 2xl:pt-24">
+    <section className="relative min-h-[90vh] sm:min-h-[80vh] lg:min-h-[75vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 pt-28 pb-4 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-44 2xl:pt-48">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(25,152,199,0.1),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(147,51,234,0.1),transparent_50%)]" />

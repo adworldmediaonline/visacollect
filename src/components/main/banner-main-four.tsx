@@ -132,7 +132,7 @@ export default function BannerMainFour() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 pt-32 lg:pt-40">
       {/* Advanced Background Elements */}
       <div className="absolute inset-0">
         {/* Main gradient overlays */}

@@ -102,6 +102,35 @@
   }
 }
 /* Navbar--close */
+
+/* Header Performance Optimizations */
+header[class*='fixed'] {
+  will-change: transform, background-color, box-shadow;
+  transform: translateZ(0); /* Force hardware acceleration */
+  backface-visibility: hidden;
+}
+
+/* Fix mobile header spacing */
+@media (max-width: 1023px) {
+  header[class*='fixed'] {
+    margin-top: 0 !important;
+    top: 0 !important;
+  }
+}
+
+/* Optimize transitions for better performance */
+.header-transition {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth scroll optimization */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Account for fixed header */
+}
+
 @layer components {
   .btnBlue {
     @apply text-white rounded-md bg-secondary hover:bg-black;
