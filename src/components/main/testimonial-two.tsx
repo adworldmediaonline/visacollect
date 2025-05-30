@@ -135,15 +135,40 @@ export default function TestimonialTwo() {
     sliderRef.current?.slickNext();
   };
 
+  // Enhanced floating background elements
+  const floatingElements = [
+    { x: '8%', y: '12%', delay: 0, size: 'w-16 h-16' },
+    { x: '90%', y: '20%', delay: 0.8, size: 'w-12 h-12' },
+    { x: '12%', y: '78%', delay: 1.2, size: 'w-20 h-20' },
+    { x: '88%', y: '85%', delay: 1.8, size: 'w-8 h-8' },
+    { x: '45%', y: '8%', delay: 2.2, size: 'w-6 h-6' },
+    { x: '75%', y: '55%', delay: 2.6, size: 'w-14 h-14' },
+  ];
+
   return (
     <section
-      className="relative py-16 md:py-20 overflow-hidden"
+      className="relative py-16 md:py-20 overflow-hidden bg-gradient-to-br from-primary/95 via-primary to-primary-600"
       aria-label="Customer Testimonials"
     >
       {/* Enhanced Background */}
       <div className="absolute inset-0">
-        {/* Primary Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary to-primary-600" />
+        {/* Additional gradient overlays for more depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(0,0,0,0.2),transparent_50%)]" />
+
+        {/* Animated mesh gradient */}
+        <motion.div
+          className="absolute inset-0 opacity-20"
+          animate={{
+            background: [
+              'radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%)',
+              'radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 0%, transparent 50%)',
+              'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 50%)',
+              'radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%)',
+            ],
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+        />
 
         {/* Geometric Pattern */}
         <div className="absolute inset-0 opacity-10">
@@ -155,10 +180,27 @@ export default function TestimonialTwo() {
           />
         </div>
 
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-32 right-16 w-40 h-40 bg-white/7 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-white/4 rounded-full blur-2xl" />
+        {/* Enhanced floating elements */}
+        {floatingElements.map((element, index) => (
+          <motion.div
+            key={index}
+            className={`absolute ${element.size} rounded-full bg-white/10 opacity-30`}
+            style={{ left: element.x, top: element.y }}
+            animate={{
+              y: [0, -20, 0],
+              x: [0, 8, 0],
+              opacity: [0.2, 0.6, 0.2],
+              scale: [1, 1.2, 1],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 8 + Math.random() * 2,
+              delay: element.delay,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+          />
+        ))}
 
         {/* Animated Elements */}
         <div
@@ -199,13 +241,10 @@ export default function TestimonialTwo() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <Badge
-              variant="secondary"
-              className="mb-6 px-6 py-3 text-sm font-medium bg-white/20 text-white border-0 rounded-full shadow-lg backdrop-blur-sm"
-            >
-              <Quote className="w-4 h-4 mr-2" />
+            <div className="inline-flex items-center gap-2 px-6 py-3 text-sm bg-white/20 backdrop-blur-sm border-0 text-white font-medium hover:bg-white/25 transition-all duration-300 rounded-full shadow-lg mb-6">
+              <Quote className="w-4 h-4" />
               Testimonials
-            </Badge>
+            </div>
           </motion.div>
 
           <div className="space-y-6">
@@ -245,7 +284,7 @@ export default function TestimonialTwo() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-2xl px-4 py-3"
+                  className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/20"
                 >
                   <stat.icon className="w-5 h-5 text-white" />
                   <div className="text-left">
@@ -276,8 +315,11 @@ export default function TestimonialTwo() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <Card className="bg-white/98 backdrop-blur-sm border-0 shadow-2xl rounded-3xl overflow-hidden group hover:shadow-3xl transition-all duration-500">
-                      <CardContent className="p-0">
+                    <Card className="bg-white/98 backdrop-blur-sm border-0 shadow-3xl hover:shadow-4xl transition-all duration-500 rounded-3xl overflow-hidden group">
+                      {/* Glow Effect */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+
+                      <CardContent className="p-0 relative z-10">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 min-h-[420px]">
                           {/* Enhanced Image Section */}
                           <div className="lg:col-span-5 relative overflow-hidden">
@@ -288,16 +330,16 @@ export default function TestimonialTwo() {
                                 alt={`Profile picture of ${testimonial.name}`}
                                 fill
                               />
-                              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/30" />
+                              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-primary/40" />
 
                               {/* Floating Quote */}
-                              <div className="absolute top-6 right-6 w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                                <Quote className="w-8 h-8 text-white" />
+                              <div className="absolute top-6 right-6 w-16 h-16 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-xl border border-white/30">
+                                <Quote className="w-8 h-8 text-primary" />
                               </div>
 
                               {/* Customer Badge */}
                               <div className="absolute bottom-6 left-6 right-6">
-                                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-3 flex items-center gap-3">
+                                <div className="bg-white/95 backdrop-blur-sm rounded-xl p-3 flex items-center gap-3 shadow-xl border border-white/30">
                                   <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
                                     <CheckCircle className="w-5 h-5 text-white" />
                                   </div>
@@ -375,9 +417,9 @@ export default function TestimonialTwo() {
                                 {testimonial.name}
                               </h4>
                               <div className="flex items-center gap-2">
-                                <Badge className="bg-primary/10 text-primary border-0 font-medium">
+                                <div className="inline-flex items-center gap-1 px-3 py-1 text-xs bg-primary/90 backdrop-blur-sm border-0 text-white font-medium rounded-full shadow-lg">
                                   Verified Customer
-                                </Badge>
+                                </div>
                                 <span className="text-gray-500">•</span>
                                 <span className="text-gray-600 text-sm">
                                   Visa approved
@@ -401,7 +443,7 @@ export default function TestimonialTwo() {
                 onClick={handlePrevSlide}
                 variant="outline"
                 size="icon"
-                className="w-14 h-14 rounded-2xl bg-white/95 backdrop-blur-sm border-primary/20 shadow-xl hover:shadow-2xl hover:bg-white transition-all duration-300 group"
+                className="w-14 h-14 rounded-2xl bg-white/95 backdrop-blur-sm border-white/30 shadow-xl hover:shadow-2xl hover:bg-white transition-all duration-300 group"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
@@ -413,7 +455,7 @@ export default function TestimonialTwo() {
                 onClick={handleNextSlide}
                 variant="outline"
                 size="icon"
-                className="w-14 h-14 rounded-2xl bg-white/95 backdrop-blur-sm border-primary/20 shadow-xl hover:shadow-2xl hover:bg-white transition-all duration-300 group"
+                className="w-14 h-14 rounded-2xl bg-white/95 backdrop-blur-sm border-white/30 shadow-xl hover:shadow-2xl hover:bg-white transition-all duration-300 group"
                 aria-label="Next testimonial"
               >
                 <ChevronRight className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
