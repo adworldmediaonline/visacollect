@@ -1,5 +1,4 @@
 'use client';
-import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
@@ -17,6 +16,7 @@ import { whyChooseUsBanner } from '@/constant/images';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { MotionDiv, MotionSpan } from '../framerMotion/motion';
 
 interface DataItem {
   id: number;
@@ -121,7 +121,7 @@ export default function WhyChooseUsTwo() {
       <div className="container mx-auto px-4 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image Section */}
-          <motion.div
+          <MotionDiv
             variants={imageVariants}
             initial="hidden"
             whileInView="visible"
@@ -142,7 +142,7 @@ export default function WhyChooseUsTwo() {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="grid grid-cols-1 gap-4">
                   {floatingStats.map((stat, index) => (
-                    <motion.div
+                    <MotionDiv
                       key={index}
                       initial={{ opacity: 0, y: 20, scale: 0.8 }}
                       whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -176,7 +176,7 @@ export default function WhyChooseUsTwo() {
                           </div>
                         </CardContent>
                       </Card>
-                    </motion.div>
+                    </MotionDiv>
                   ))}
                 </div>
               </div>
@@ -187,7 +187,7 @@ export default function WhyChooseUsTwo() {
             </div>
 
             {/* Additional Floating Element */}
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, rotate: -10 }}
               whileInView={{ opacity: 1, rotate: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
@@ -209,11 +209,11 @@ export default function WhyChooseUsTwo() {
                   </span>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </MotionDiv>
+          </MotionDiv>
 
           {/* Content Section */}
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -222,7 +222,7 @@ export default function WhyChooseUsTwo() {
           >
             {/* Header */}
             <div className="space-y-6">
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -235,9 +235,9 @@ export default function WhyChooseUsTwo() {
                   <Award className="w-4 h-4 mr-2" />
                   Why Choose Us
                 </Badge>
-              </motion.div>
+              </MotionDiv>
 
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -247,11 +247,11 @@ export default function WhyChooseUsTwo() {
                   title="Why Choose Visacollect?"
                   sub="Wander in wonder, leave the paperwork blues to us."
                 />
-              </motion.div>
+              </MotionDiv>
             </div>
 
             {/* Features List */}
-            <motion.div
+            <MotionDiv
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -259,7 +259,7 @@ export default function WhyChooseUsTwo() {
               className="space-y-4"
             >
               {dataList.map((item, index) => (
-                <motion.div
+                <MotionDiv
                   key={item.id}
                   variants={itemVariants}
                   className="group"
@@ -303,12 +303,12 @@ export default function WhyChooseUsTwo() {
                       </motion.div>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </MotionDiv>
               ))}
-            </motion.div>
+            </MotionDiv>
 
             {/* Enhanced CTA Section */}
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -330,18 +330,18 @@ export default function WhyChooseUsTwo() {
                     className="group bg-gradient-to-r from-primary to-primary-600 hover:from-primary/90 hover:to-primary-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap"
                     aria-label="Apply for visa now"
                   >
-                    <motion.span
+                    <MotionSpan
                       className="flex items-center gap-2"
                       whileHover={{ x: 2 }}
                     >
                       Apply Now!
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </motion.span>
+                    </MotionSpan>
                   </Button>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </MotionDiv>
+          </MotionDiv>
         </div>
       </div>
     </section>

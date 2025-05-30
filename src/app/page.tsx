@@ -1,3 +1,5 @@
+import BannerMainFour from '@/components/main/banner-main-four';
+import BannerMainThree from '@/components/main/banner-main-three';
 import BannerMainTwo from '@/components/main/banner-main-two';
 import ContactFormTwo from '@/components/main/contact-form-two';
 import HowItWorksTwo from '@/components/main/how-it-works-two';
@@ -40,7 +42,7 @@ export default function Home() {
       </a>
 
       <div id="main-content" role="main" className="overflow-x-hidden">
-        <BannerMainTwo />
+        <BannerMainThree />
         <OurPopularDestinationTwo />
         <WhyChooseUsTwo />
         <HowItWorksTwo />

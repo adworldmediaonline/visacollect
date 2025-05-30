@@ -1,5 +1,3 @@
-'use client';
-import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
@@ -17,6 +15,7 @@ import { Button } from '@/components/ui/button';
 import onlineApplication from '/public/assets/images/main/online-application.png';
 import makePaymentIcon from '/public/assets/images/main/makePayment.png';
 import receiveVisaIcon from '/public/assets/images/main/receiveVisa.png';
+import { MotionDiv, MotionSpan } from '../framerMotion/motion';
 
 interface ProcessStep {
   id: number;
@@ -131,14 +130,14 @@ export default function HowItWorksTwo() {
 
       <div className="container mx-auto px-4 relative">
         {/* Header */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center mb-20"
         >
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -151,9 +150,9 @@ export default function HowItWorksTwo() {
               <ArrowRight className="w-4 h-4 mr-2" />
               Simple Process
             </Badge>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -163,14 +162,14 @@ export default function HowItWorksTwo() {
               title="How It Works"
               sub="We make travel easy and hassle-free with our seamless online visa service. Whether you need an e tourist visa, a business visa, or a transit visa, we can help you get it in a few simple steps. No paperwork, no queues, no stress. Just apply, pay, and receive your visa and passport through mail."
             />
-          </motion.div>
-        </motion.div>
+          </MotionDiv>
+        </MotionDiv>
 
         {/* Process Steps */}
         <div className="relative">
           {/* Connecting Lines - Desktop */}
           <div className="hidden lg:block absolute top-40 left-0 right-0 h-0.5 bg-gray-200">
-            <motion.div
+            <MotionDiv
               variants={lineVariants}
               initial="hidden"
               whileInView="visible"
@@ -179,7 +178,7 @@ export default function HowItWorksTwo() {
             />
           </div>
 
-          <motion.div
+          <MotionDiv
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -187,7 +186,7 @@ export default function HowItWorksTwo() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 pt-8"
           >
             {processSteps.map((step, index) => (
-              <motion.div
+              <MotionDiv
                 key={step.id}
                 variants={itemVariants}
                 className="relative group"
@@ -198,7 +197,7 @@ export default function HowItWorksTwo() {
 
                   {/* Step Number - Fixed positioning */}
                   <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-20">
-                    <motion.div
+                    <MotionDiv
                       className="w-12 h-12 bg-gradient-to-br from-primary to-primary-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-2xl"
                       whileHover={{
                         scale: 1.1,
@@ -207,13 +206,13 @@ export default function HowItWorksTwo() {
                       }}
                     >
                       {step.id}
-                    </motion.div>
+                    </MotionDiv>
                   </div>
 
                   <CardContent className="p-8 text-center space-y-6 relative z-10 pt-8">
                     {/* Icon Container with enhanced animation */}
                     <div className="relative">
-                      <motion.div
+                      <MotionDiv
                         className="w-24 h-24 mx-auto bg-gradient-to-br from-primary/10 to-primary/20 rounded-3xl flex items-center justify-center relative overflow-hidden"
                         whileHover={{
                           scale: 1.05,
@@ -223,15 +222,15 @@ export default function HowItWorksTwo() {
                         {/* Background Animation */}
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl transform rotate-45 group-hover:rotate-90 transition-transform duration-700" />
 
-                        <motion.div
+                        <MotionDiv
                           whileHover={{ rotate: 360 }}
                           transition={{ duration: 0.5 }}
                         >
                           <step.icon className="w-12 h-12 text-primary relative z-10" />
-                        </motion.div>
+                        </MotionDiv>
 
                         {/* Original Image as Floating Badge */}
-                        <motion.div
+                        <MotionDiv
                           className="absolute -bottom-3 -right-3"
                           whileHover={{ scale: 1.1 }}
                           transition={{ type: 'spring', stiffness: 400 }}
@@ -245,8 +244,8 @@ export default function HowItWorksTwo() {
                               height={32}
                             />
                           </div>
-                        </motion.div>
-                      </motion.div>
+                        </MotionDiv>
+                      </MotionDiv>
                     </div>
 
                     {/* Content */}
@@ -263,7 +262,7 @@ export default function HowItWorksTwo() {
                     <div className="pt-2">
                       <div className="flex justify-center">
                         <div className="w-12 h-1 bg-gray-200 rounded-full overflow-hidden">
-                          <motion.div
+                          <MotionDiv
                             className="h-full bg-gradient-to-r from-primary to-primary-600 rounded-full"
                             initial={{ width: 0 }}
                             whileInView={{ width: '100%' }}
@@ -282,13 +281,13 @@ export default function HowItWorksTwo() {
                     </div>
                   )}
                 </Card>
-              </motion.div>
+              </MotionDiv>
             ))}
-          </motion.div>
+          </MotionDiv>
         </div>
 
         {/* Enhanced Bottom CTA */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -311,17 +310,17 @@ export default function HowItWorksTwo() {
                 size="lg"
                 className="group bg-gradient-to-r from-primary to-primary-600 hover:from-primary/90 hover:to-primary-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                <motion.span
+                <MotionSpan
                   className="flex items-center gap-2"
                   whileHover={{ x: 2 }}
                 >
                   Start Your Application
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </motion.span>
+                </MotionSpan>
               </Button>
             </div>
           </div>
-        </motion.div>
+        </MotionDiv>
       </div>
     </section>
   );

@@ -14,6 +14,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
+import { Suspense } from 'react';
+import Loading from './loading';
 
 const beVietnamPro = Be_Vietnam_Pro({
   subsets: ['latin'],
@@ -58,9 +60,11 @@ export default function RootLayout({
       >
         <FormProvider>
           <ReactQueryProvider>
-            <HeaderTwo bgcolor={false} />
-            <div className="flex-1">{children}</div>
-            <FooterTwo />
+            <Suspense fallback={<Loading />}>
+              <HeaderTwo bgcolor={false} />
+              <div className="flex-1">{children}</div>
+              <FooterTwo />
+            </Suspense>
             <ToastContainer />
           </ReactQueryProvider>
         </FormProvider>
