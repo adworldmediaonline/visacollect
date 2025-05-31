@@ -1,19 +1,6 @@
-'use client';
 import React from 'react';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
-import {
-  Mail,
-  Phone,
-  MapPin,
-  ArrowRight,
-  Heart,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter,
-  ExternalLink,
-} from 'lucide-react';
+import { Mail, ArrowRight, Heart, ExternalLink } from 'lucide-react';
 import {
   FaFacebookF,
   FaInstagram,
@@ -98,28 +85,6 @@ const footerSections: FooterSection[] = [
 export default function FooterTwo() {
   const currentYear = new Date().getFullYear();
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
     <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
       {/* Background Decorations */}
@@ -141,28 +106,15 @@ export default function FooterTwo() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="pt-12 md:pt-16 pb-8"
-        >
+        <div className="pt-12 md:pt-16 pb-8">
           {/* Main Footer Content */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6">
             {/* Company Info Section - Takes full width on mobile, half on tablet, quarter on desktop */}
-            <motion.div
-              variants={itemVariants}
-              className="md:col-span-2 lg:col-span-1 space-y-6"
-            >
+            <div className="md:col-span-2 lg:col-span-1 space-y-6">
               <Link href="/" className="inline-block group">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: 'spring', stiffness: 400 }}
-                  className="w-32 sm:w-40 [&_img]:brightness-0 [&_img]:invert"
-                >
+                <div className="w-32 sm:w-40 [&_img]:brightness-0 [&_img]:invert hover:scale-105 transition-transform">
                   <Logo />
-                </motion.div>
+                </div>
               </Link>
 
               <div className="space-y-4">
@@ -174,11 +126,9 @@ export default function FooterTwo() {
 
                 {/* Contact Info */}
                 <div className="space-y-3">
-                  <motion.a
+                  <a
                     href="mailto:info@visacollect.com"
-                    className="flex items-center gap-3 text-gray-300 hover:text-primary transition-colors group w-fit"
-                    whileHover={{ x: 5 }}
-                    transition={{ type: 'spring', stiffness: 400 }}
+                    className="flex items-center gap-3 text-gray-300 hover:text-primary transition-colors group w-fit hover:translate-x-1"
                   >
                     <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors flex-shrink-0">
                       <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -186,7 +136,7 @@ export default function FooterTwo() {
                     <span className="font-medium text-sm sm:text-base">
                       info@visacollect.com
                     </span>
-                  </motion.a>
+                  </a>
                 </div>
 
                 {/* Social Links */}
@@ -195,63 +145,36 @@ export default function FooterTwo() {
                     Follow Us
                   </h4>
                   <div className="flex gap-3 flex-wrap">
-                    {socialLinks.map((social, index) => (
-                      <motion.a
+                    {socialLinks.map(social => (
+                      <a
                         key={social.id}
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-11 h-11 sm:w-12 sm:h-12 bg-gray-700 rounded-xl flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 group"
-                        whileHover={{
-                          scale: 1.1,
-                          rotate: 5,
-                        }}
-                        whileTap={{ scale: 0.95 }}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{
-                          duration: 0.5,
-                          delay: 0.6 + index * 0.1,
-                          type: 'spring',
-                          stiffness: 400,
-                        }}
-                        viewport={{ once: true }}
+                        className="w-11 h-11 sm:w-12 sm:h-12 bg-gray-700 rounded-xl flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 group hover:scale-110 hover:rotate-1"
                         aria-label={`Visit our ${social.name}`}
                       >
                         <div className="group-hover:scale-110 transition-transform">
                           {social.icon}
                         </div>
-                      </motion.a>
+                      </a>
                     ))}
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Footer Links Sections - Each takes equal space on desktop */}
-            {footerSections.map((section, sectionIndex) => (
-              <motion.div
-                key={section.title}
-                variants={itemVariants}
-                className="space-y-4 sm:space-y-6"
-              >
+            {footerSections.map(section => (
+              <div key={section.title} className="space-y-4 sm:space-y-6">
                 <h3 className="text-lg sm:text-xl font-bold text-white relative">
                   {section.title}
                   <div className="absolute -bottom-2 left-0 w-8 sm:w-12 h-0.5 bg-gradient-to-r from-primary to-primary-600" />
                 </h3>
 
                 <ul className="space-y-2 sm:space-y-3">
-                  {section.links.map((link, linkIndex) => (
-                    <motion.li
-                      key={link.label}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        duration: 0.5,
-                        delay: 0.8 + sectionIndex * 0.1 + linkIndex * 0.05,
-                      }}
-                      viewport={{ once: true }}
-                    >
+                  {section.links.map(link => (
+                    <li key={link.label}>
                       <Link
                         href={link.href}
                         className="text-gray-300 hover:text-primary transition-colors duration-300 flex items-center gap-2 group text-sm sm:text-base w-fit"
@@ -268,18 +191,15 @@ export default function FooterTwo() {
                           <ExternalLink className="w-3 h-3 opacity-60 flex-shrink-0" />
                         )}
                       </Link>
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* Newsletter Section */}
-          <motion.div
-            variants={itemVariants}
-            className="mt-12 sm:mt-16 p-6 sm:p-8 bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl sm:rounded-3xl border border-primary/20"
-          >
+          <div className="mt-12 sm:mt-16 p-6 sm:p-8 bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl sm:rounded-3xl border border-primary/20">
             <div className="text-center space-y-4">
               <h3 className="text-xl sm:text-2xl font-bold text-white">
                 Ready to Start Your Journey?
@@ -288,27 +208,20 @@ export default function FooterTwo() {
                 Get expert consultation and apply for your visa today. Our team
                 is here to make your travel dreams come true.
               </p>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="pt-2"
-              >
+              <div className="pt-2">
                 <Link
                   href="/"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-600 hover:from-primary/90 hover:to-primary-700 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-600 hover:from-primary/90 hover:to-primary-700 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base hover:scale-105"
                 >
                   Apply Now
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Bottom Section */}
-          <motion.div
-            variants={itemVariants}
-            className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-700"
-          >
+          <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-700">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
               <div className="flex flex-col sm:flex-row items-center gap-2 text-gray-400 text-sm sm:text-base text-center sm:text-left">
                 <span>Copyright © {currentYear}</span>
@@ -323,28 +236,16 @@ export default function FooterTwo() {
                 <span>All Rights Reserved</span>
               </div>
 
-              <motion.div
-                className="flex items-center gap-2 text-gray-400 text-sm sm:text-base"
-                whileHover={{ scale: 1.05 }}
-              >
+              <div className="flex items-center gap-2 text-gray-400 text-sm sm:text-base hover:scale-105 transition-transform">
                 <span>Made with</span>
-                <motion.div
-                  animate={{
-                    scale: [1, 1.2, 1],
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                  }}
-                >
+                <div className="animate-pulse">
                   <Heart className="w-4 h-4 text-red-500 fill-current" />
-                </motion.div>
+                </div>
                 <span>for travelers</span>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </footer>
   );

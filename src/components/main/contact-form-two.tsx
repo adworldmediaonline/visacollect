@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { Mail, Phone, User, Send, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -26,69 +25,22 @@ export default function ContactFormTwo() {
     },
   ];
 
-  // Simplified floating elements for better performance
-  const floatingElements = [
-    { x: '10%', y: '15%', delay: 0, size: 'w-3 h-3' },
-    { x: '90%', y: '25%', delay: 0.5, size: 'w-2 h-2' },
-    { x: '15%', y: '85%', delay: 1, size: 'w-4 h-4' },
-    { x: '85%', y: '75%', delay: 1.5, size: 'w-2 h-2' },
-  ];
-
   return (
     <section
       className="relative py-20 md:py-24 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"
       aria-label="Contact Form"
     >
-      {/* Optimized Background Elements */}
+      {/* Clean Background Elements */}
       <div className="absolute inset-0">
         {/* Simplified gradient overlays */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(25,152,199,0.1),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.08),transparent_50%)]" />
-
-        {/* Subtle animated gradient */}
-        <motion.div
-          className="absolute inset-0 opacity-10 will-change-transform"
-          animate={{
-            background: [
-              'radial-gradient(circle at 30% 50%, rgba(25,152,199,0.06) 0%, transparent 30%)',
-              'radial-gradient(circle at 70% 30%, rgba(25,152,199,0.06) 0%, transparent 30%)',
-              'radial-gradient(circle at 30% 50%, rgba(25,152,199,0.06) 0%, transparent 30%)',
-            ],
-          }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-        />
-
-        {/* Minimal floating elements */}
-        {floatingElements.map((element, index) => (
-          <motion.div
-            key={index}
-            className={`absolute ${element.size} rounded-full bg-primary/20 opacity-40 will-change-transform`}
-            style={{ left: element.x, top: element.y }}
-            animate={{
-              y: [0, -10, 0],
-              opacity: [0.4, 0.7, 0.4],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 4 + Math.random(),
-              delay: element.delay,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-        ))}
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
           {/* Illustration Section */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="relative order-2 lg:order-1"
-          >
+          <div className="relative order-2 lg:order-1">
             <div className="relative max-w-lg mx-auto">
               {/* Background Decoration */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-primary-600/15 rounded-3xl transform rotate-2 blur-lg opacity-50" />
@@ -106,40 +58,22 @@ export default function ContactFormTwo() {
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-primary/5 to-primary/10 rounded-3xl" />
 
                 {/* Fixed Floating Elements - Within bounds */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: 0.3 }}
-                  viewport={{ once: true }}
-                  className="absolute top-4 right-4 md:top-6 md:right-6"
-                >
-                  <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-primary to-primary-600 rounded-full flex items-center justify-center shadow-xl border border-white/20 will-change-transform">
+                <div className="absolute top-4 right-4 md:top-6 md:right-6">
+                  <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-primary to-primary-600 rounded-full flex items-center justify-center shadow-xl border border-white/20">
                     <Mail className="w-6 h-6 md:w-7 md:h-7 text-white" />
                   </div>
-                </motion.div>
+                </div>
 
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: 0.5 }}
-                  viewport={{ once: true }}
-                  className="absolute bottom-4 left-4 md:bottom-6 md:left-6"
-                >
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-xl border border-white/20 will-change-transform">
+                <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-xl border border-white/20">
                     <Phone className="w-5 h-5 md:w-6 md:h-6 text-white" />
                   </div>
-                </motion.div>
+                </div>
               </div>
             </div>
 
             {/* Contact Info Cards */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 max-w-lg mx-auto"
-            >
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 max-w-lg mx-auto">
               {contactInfo.map((info, index) => (
                 <Card
                   key={index}
@@ -156,56 +90,35 @@ export default function ContactFormTwo() {
                   </CardContent>
                 </Card>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Form Section */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="order-1 lg:order-2"
-          >
+          <div className="order-1 lg:order-2">
             <Card className="border-0 shadow-3xl bg-white/5 backdrop-blur-lg border border-white/10 hover:bg-white/8 transition-all duration-300 relative">
-              {/* Simplified glow effect */}
+              {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-600/10 rounded-xl opacity-30 blur-lg" />
 
               <CardHeader className="space-y-4 pb-8 relative z-10">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3 }}
-                  viewport={{ once: true }}
-                >
+                <div>
                   <div className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-primary/90 backdrop-blur-sm border-0 text-white font-medium hover:bg-primary transition-all duration-200 rounded-full shadow-lg w-fit">
                     <Send className="w-4 h-4" />
                     Get in Touch
                   </div>
-                </motion.div>
+                </div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  className="space-y-3"
-                >
+                <div className="space-y-3">
                   <CardTitle className="text-3xl md:text-4xl font-bold text-white">
                     Let's connect!
                   </CardTitle>
                   <p className="text-gray-300 leading-relaxed">
                     Learn the best travel secrets from our newsletter.
                   </p>
-                </motion.div>
+                </div>
               </CardHeader>
 
               <CardContent className="space-y-6 relative z-10">
-                <motion.form
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.2 }}
-                  viewport={{ once: true }}
+                <form
                   className="space-y-6"
                   aria-label="Newsletter subscription form"
                 >
@@ -280,7 +193,7 @@ export default function ContactFormTwo() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full h-12 bg-gradient-to-r from-primary to-primary-600 hover:from-primary/90 hover:to-primary-700 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl relative overflow-hidden group will-change-transform"
+                    className="w-full h-12 bg-gradient-to-r from-primary to-primary-600 hover:from-primary/90 hover:to-primary-700 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl relative overflow-hidden group"
                     aria-label="Subscribe to newsletter"
                   >
                     <span className="relative z-10 flex items-center justify-center">
@@ -295,10 +208,10 @@ export default function ContactFormTwo() {
                     By subscribing, you agree to receive our newsletter and
                     promotional emails. You can unsubscribe at any time.
                   </p>
-                </motion.form>
+                </form>
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

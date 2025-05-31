@@ -77,7 +77,7 @@ export default function OurServicesTwo() {
     autoplay: true,
     speed: 600,
     autoplaySpeed: 3000,
-    lazyLoad: true as const,
+    lazyLoad: 'ondemand' as const,
     accessibility: true,
     cssEase: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
     swipeToSlide: true,

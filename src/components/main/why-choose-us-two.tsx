@@ -1,17 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import {
-  CheckCircle,
-  Zap,
-  Shield,
-  Clock,
-  Users,
-  ArrowRight,
-  Star,
-  Award,
-} from 'lucide-react';
-import HeadingSection from './HeadingSection';
+import { CheckCircle, Zap, Shield, Users, ArrowRight } from 'lucide-react';
 import { whyChooseUsBanner } from '@/constant/images';
 import { Button } from '@/components/ui/button';
 
