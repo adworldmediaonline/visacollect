@@ -11,7 +11,7 @@ import usePost from '@/hooks/usePost';
 import apiEndpoint from '@/services/apiEndpoint';
 import { ImSpinner2 } from 'react-icons/im';
 import { addDays } from 'date-fns';
-import Button from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 
 function Page() {
   const postMutation = usePost(

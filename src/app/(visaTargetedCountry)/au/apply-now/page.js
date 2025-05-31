@@ -2147,7 +2147,7 @@ const AustraliaApplicationPage = () => {
 
 export default AustraliaApplicationPage;
 
-export const CountryDataTabs = ({ subclassCountryData }) => {
+const CountryDataTabs = ({ subclassCountryData }) => {
   return (
     <Tab.Group>
       <Tab.List className="flex flex-col max-w-xl mx-auto">

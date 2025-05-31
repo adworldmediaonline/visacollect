@@ -3,7 +3,7 @@ import { FaInfoCircle } from 'react-icons/fa';
 import { getAllCountries } from '@/lib/getAllCountries';
 import HomePageTitle from '../common/countryHomePage/HomePageTitle';
 import LinkButton from './link-button';
-import Button from './button';
+import { Button } from './button';
 import BannerInlineForm2 from './banner-inline-form-2';
 import Breadcrumb from '../Breadcrumbs';
 

@@ -23,7 +23,10 @@ import useUpdate from '@/hooks/useUpdate';
 import { addDays } from '@/lib/addDays';
 import ReactDatePickerInput from '@/components/common/ReactDatePickerInput';
 import { minDateWithDate } from '@/lib/minDate';
-import { businessVisaTypes, touristVisaTypes } from '../page';
+import {
+  businessVisaTypes,
+  touristVisaTypes,
+} from '@/constant/applyNowPagesData/applyNowPagesData';
 
 export default function Page({ params }) {
   const router = useRouter();
