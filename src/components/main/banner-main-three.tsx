@@ -105,11 +105,11 @@ export default function BannerMainThree() {
   useEffect(() => {
     const stepInterval = setInterval(() => {
       setCurrentStep(prev => (prev + 1) % steps.length);
-    }, 3000);
+    }, 2500); // Faster cycling
 
     const statInterval = setInterval(() => {
       setCurrentStat(prev => (prev + 1) % stats.length);
-    }, 3000);
+    }, 2500); // Faster cycling
 
     return () => {
       clearInterval(stepInterval);
@@ -139,59 +139,67 @@ export default function BannerMainThree() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
+        staggerChildren: 0.08, // Faster stagger
+        delayChildren: 0.1, // Reduced delay
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 }, // Reduced movement
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.4, ease: 'easeOut' }, // Faster duration
     },
   };
 
   return (
     <section className="relative min-h-[90vh] sm:min-h-[80vh] lg:min-h-[75vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 pt-28 pb-4 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-44 2xl:pt-48">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(25,152,199,0.1),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(147,51,234,0.1),transparent_50%)]" />
+      {/* Simplified Background Elements */}
+      <div className="absolute inset-0">
+        {/* Static gradient overlays - no animation */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(25,152,199,0.12),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(147,51,234,0.08),transparent_50%)]" />
+
+        {/* Simple grid pattern - no animation */}
+        <div className="absolute inset-0 opacity-3">
+          <div className="h-full w-full bg-[linear-gradient(rgba(25,152,199,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(25,152,199,0.2)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
+        </div>
+      </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-2 xl:gap-4 items-stretch min-h-[60vh] lg:min-h-[65vh]">
-          {/* Left Side - Content with Animated Background */}
+          {/* Left Side - Content */}
           <motion.div
             className="relative order-2 lg:order-1 flex items-center lg:rounded-l-3xl lg:rounded-r-none rounded-3xl overflow-hidden"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            {/* Animated Background */}
+            {/* Simplified Background */}
             <div className="absolute inset-0">
               <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-black/30 z-10" />
-              <div className="w-full h-full bg-gradient-to-br from-primary/12 to-purple-600/12" />
+              <div className="w-full h-full bg-gradient-to-br from-primary/10 to-purple-600/8" />
 
-              {/* Animated Travel Elements */}
+              {/* Reduced floating elements - only 4 simple dots */}
               <div className="absolute inset-0 overflow-hidden">
-                {[...Array(12)].map((_, i) => (
+                {[...Array(4)].map((_, i) => (
                   <motion.div
                     key={i}
-                    className="absolute w-1 h-1 bg-white/15 rounded-full"
+                    className="absolute w-1 h-1 bg-white/20 rounded-full will-change-transform"
                     style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
+                      left: `${20 + i * 20}%`,
+                      top: `${20 + i * 15}%`,
                     }}
                     animate={{
-                      opacity: [0.1, 0.6, 0.1],
-                      scale: [1, 1.2, 1],
+                      opacity: [0.2, 0.5, 0.2],
+                      scale: [1, 1.1, 1],
                     }}
                     transition={{
-                      duration: 4 + Math.random() * 2,
+                      duration: 2 + i * 0.5, // Shorter, staggered durations
                       repeat: Infinity,
-                      delay: Math.random() * 2,
+                      ease: 'easeInOut',
                     }}
                   />
                 ))}
@@ -202,13 +210,13 @@ export default function BannerMainThree() {
             <div className="relative z-20 p-4 sm:p-6 lg:p-6 xl:p-8 w-full space-y-3 sm:space-y-4">
               {/* Badge */}
               <motion.div variants={itemVariants}>
-                <Badge className="inline-flex items-center gap-2 bg-white/12 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all duration-300">
+                <Badge className="inline-flex items-center gap-2 bg-white/12 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all duration-200">
                   <Star className="w-4 h-4" />
                   Trusted by thousands worldwide
                 </Badge>
               </motion.div>
 
-              {/* Main Headline - Using existing content */}
+              {/* Main Headline */}
               <motion.div
                 variants={itemVariants}
                 className="space-y-2 sm:space-y-3"
@@ -234,7 +242,7 @@ export default function BannerMainThree() {
                 </p>
               </motion.div>
 
-              {/* Process Steps */}
+              {/* Process Steps - Simplified animation */}
               <motion.div
                 variants={itemVariants}
                 className="space-y-2 sm:space-y-3"
@@ -246,15 +254,16 @@ export default function BannerMainThree() {
                   {steps.map((step, index) => (
                     <motion.div
                       key={index}
-                      className={`flex items-center gap-2 p-2 rounded-lg transition-all duration-300 backdrop-blur-sm ${
+                      className={`flex items-center gap-2 p-2 rounded-lg transition-all duration-200 backdrop-blur-sm ${
                         currentStep === index
                           ? 'bg-primary/20 border border-primary/30'
                           : 'bg-white/8 border border-white/15'
                       }`}
                       whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.15 }} // Very fast hover
                     >
                       <div
-                        className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${
+                        className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-200 ${
                           currentStep === index
                             ? 'bg-primary text-white'
                             : 'bg-white/20 text-gray-300'
@@ -274,7 +283,7 @@ export default function BannerMainThree() {
                 </div>
               </motion.div>
 
-              {/* Stats - Using existing stats */}
+              {/* Stats - Simplified animation */}
               <motion.div variants={itemVariants}>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
                   {stats.map((stat, index) => {
@@ -282,15 +291,16 @@ export default function BannerMainThree() {
                     return (
                       <motion.div
                         key={index}
-                        className={`text-center space-y-1 p-2 rounded-lg backdrop-blur-sm transition-all duration-500 ${
+                        className={`text-center space-y-1 p-2 rounded-lg backdrop-blur-sm transition-all duration-300 ${
                           currentStat === index
                             ? 'bg-white/12 border border-white/25'
                             : 'bg-white/6 border border-white/10'
                         }`}
-                        whileHover={{ scale: 1.03 }}
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.15 }} // Very fast hover
                       >
                         <div
-                          className={`mx-auto w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/12 flex items-center justify-center transition-all duration-500 ${
+                          className={`mx-auto w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/12 flex items-center justify-center transition-all duration-300 ${
                             currentStat === index
                               ? 'bg-gradient-to-r ' + stat.color
                               : ''
@@ -310,7 +320,7 @@ export default function BannerMainThree() {
                 </div>
               </motion.div>
 
-              {/* Trust Features - Using existing trust badges */}
+              {/* Trust Features - Simplified hover */}
               <motion.div variants={itemVariants}>
                 <div className="grid grid-cols-1 gap-1">
                   {trustBadges.map((feature, index) => {
@@ -320,9 +330,10 @@ export default function BannerMainThree() {
                         key={index}
                         className="flex items-center gap-2 p-2 rounded-lg bg-white/6 backdrop-blur-sm"
                         whileHover={{
-                          x: 3,
+                          x: 2, // Reduced movement
                           backgroundColor: 'rgba(255,255,255,0.1)',
                         }}
+                        transition={{ duration: 0.15 }} // Very fast hover
                       >
                         <Icon className="w-3 h-3 sm:w-4 sm:h-4 text-primary-400 flex-shrink-0" />
                         <span className="text-xs sm:text-sm text-gray-300">
@@ -334,27 +345,27 @@ export default function BannerMainThree() {
                 </div>
               </motion.div>
 
-              {/* CTA Buttons - Using existing buttons */}
+              {/* CTA Buttons - Simplified hover */}
               <motion.div
                 variants={itemVariants}
                 className="flex flex-col sm:flex-row gap-3 pt-2"
               >
                 <Button
                   asChild
-                  className="group relative overflow-hidden bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold shadow-xl hover:shadow-primary/25 transition-all duration-300"
+                  className="group relative overflow-hidden bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold shadow-xl hover:shadow-primary/25 transition-all duration-200"
                 >
                   <Link href="/all-countries">
                     <span className="relative z-10 flex items-center justify-center">
                       Start Your Application
-                      <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-150" />
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
                   </Link>
                 </Button>
 
                 <Button
                   asChild
-                  className="border-2 border-white/30 bg-transparent text-white hover:bg-white/10 hover:border-white/50 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold backdrop-blur-sm transition-all duration-300"
+                  className="border-2 border-white/30 bg-transparent text-white hover:bg-white/10 hover:border-white/50 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold backdrop-blur-sm transition-all duration-200"
                 >
                   <Link
                     href="/about-us"
@@ -370,14 +381,14 @@ export default function BannerMainThree() {
           {/* Right Side - Application Form */}
           <motion.div
             className="relative order-1 lg:order-2 flex items-center lg:rounded-r-3xl lg:rounded-l-none rounded-3xl overflow-hidden"
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }} // Reduced movement
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.2 }} // Faster animation
           >
             <Card className="relative overflow-hidden bg-white/8 backdrop-blur-xl shadow-2xl w-full h-full flex flex-col border-0">
-              {/* Enhanced Card Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/12 to-purple-600/12 opacity-80" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/15 to-transparent" />
+              {/* Simplified Card Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-purple-600/8 opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
 
               <div className="relative z-10 p-4 sm:p-6 lg:p-6 xl:p-8 space-y-4 sm:space-y-5 flex-1 flex flex-col justify-center">
                 {/* Form Header */}
@@ -402,7 +413,7 @@ export default function BannerMainThree() {
                         name="whereIAmFrom"
                         value={formData.whereIAmFrom}
                         onChange={handleChange}
-                        className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-300 text-sm"
+                        className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm"
                         style={{ color: 'white' }}
                         required
                       >
@@ -442,7 +453,7 @@ export default function BannerMainThree() {
                         name="whereIAmGoing"
                         value={formData.whereIAmGoing}
                         onChange={handleChange}
-                        className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-300 disabled:opacity-50 text-sm"
+                        className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-200 disabled:opacity-50 text-sm"
                         style={{ color: 'white' }}
                         disabled={!formData.whereIAmFrom}
                         required
@@ -451,7 +462,6 @@ export default function BannerMainThree() {
                           value=""
                           style={{
                             color: '#1f2937',
-                            // backgroundColor: '#ffffff',
                           }}
                         >
                           {formData.whereIAmFrom
@@ -484,16 +494,16 @@ export default function BannerMainThree() {
                   {/* Submit Button */}
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-primary to-primary-600 hover:from-primary/90 hover:to-primary-700 text-white font-semibold py-3 sm:py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl group text-sm sm:text-base"
+                    className="w-full bg-gradient-to-r from-primary to-primary-600 hover:from-primary/90 hover:to-primary-700 text-white font-semibold py-3 sm:py-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl group text-sm sm:text-base"
                   >
                     <span className="flex items-center justify-center">
                       Start Your Application
-                      <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-150" />
                     </span>
                   </Button>
                 </form>
 
-                {/* Quick Features */}
+                {/* Quick Features - Simplified hover */}
                 <div className="pt-3 space-y-3 border-t border-white/15">
                   <h4 className="text-sm font-semibold text-white">
                     Why choose us?
@@ -509,9 +519,10 @@ export default function BannerMainThree() {
                         key={index}
                         className="flex items-center gap-2 p-2 rounded-lg bg-white/6 backdrop-blur-sm"
                         whileHover={{
-                          x: 2,
+                          x: 1, // Minimal movement
                           backgroundColor: 'rgba(255,255,255,0.1)',
                         }}
+                        transition={{ duration: 0.15 }} // Very fast hover
                       >
                         <CheckCircle className="w-3 h-3 text-green-400 flex-shrink-0" />
                         <span className="text-xs text-gray-300">{feature}</span>
@@ -528,7 +539,7 @@ export default function BannerMainThree() {
                   <Button
                     asChild
                     variant="outline"
-                    className="bg-white/8 backdrop-blur-sm border-white/25 text-white hover:bg-white/15 hover:border-white/40 text-xs px-4 py-2 hover:scale-105 transition-all duration-300"
+                    className="bg-white/8 backdrop-blur-sm border-white/25 text-white hover:bg-white/15 hover:border-white/40 text-xs px-4 py-2 hover:scale-105 transition-all duration-200"
                   >
                     <Link href="/contact-us">Get Free Consultation</Link>
                   </Button>
@@ -539,10 +550,10 @@ export default function BannerMainThree() {
         </div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-4 sm:left-10 w-16 h-16 sm:w-20 sm:h-20 bg-primary/10 rounded-full blur-xl animate-pulse" />
-      <div className="absolute bottom-20 right-4 sm:right-10 w-24 h-24 sm:w-32 sm:h-32 bg-purple-600/10 rounded-full blur-xl animate-pulse" />
-      <div className="absolute top-1/2 left-1/4 sm:left-1/3 w-12 h-12 sm:w-16 sm:h-16 bg-blue-600/10 rounded-full blur-xl animate-pulse" />
+      {/* Simplified Floating Elements */}
+      <div className="absolute top-20 left-4 sm:left-10 w-12 h-12 sm:w-16 sm:h-16 bg-primary/8 rounded-full blur-xl opacity-60" />
+      <div className="absolute bottom-20 right-4 sm:right-10 w-16 h-16 sm:w-20 sm:h-20 bg-purple-600/8 rounded-full blur-xl opacity-60" />
+      <div className="absolute top-1/2 left-1/4 sm:left-1/3 w-8 h-8 sm:w-12 sm:h-12 bg-blue-600/8 rounded-full blur-xl opacity-60" />
     </section>
   );
 }

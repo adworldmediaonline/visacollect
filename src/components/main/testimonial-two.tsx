@@ -80,8 +80,8 @@ export default function TestimonialTwo() {
     infinite: true,
     arrows: false,
     autoplay: true,
-    speed: 800,
-    autoplaySpeed: 4000,
+    speed: 600,
+    autoplaySpeed: 3000,
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
@@ -107,66 +107,48 @@ export default function TestimonialTwo() {
     ],
   };
 
-  const handlePrevSlide = () => {
-    sliderRef.current?.slickPrev();
-  };
-
-  const handleNextSlide = () => {
-    sliderRef.current?.slickNext();
-  };
-
-  // Enhanced floating background elements - matching other sections
+  // Simplified floating elements for better performance
   const floatingElements = [
-    { x: '8%', y: '15%', delay: 0, size: 'w-16 h-16' },
-    { x: '90%', y: '20%', delay: 0.8, size: 'w-12 h-12' },
-    { x: '12%', y: '78%', delay: 1.2, size: 'w-20 h-20' },
-    { x: '88%', y: '85%', delay: 1.8, size: 'w-8 h-8' },
-    { x: '45%', y: '8%', delay: 2.2, size: 'w-6 h-6' },
-    { x: '75%', y: '55%', delay: 2.6, size: 'w-14 h-14' },
+    { x: '10%', y: '15%', delay: 0, size: 'w-3 h-3' },
+    { x: '90%', y: '25%', delay: 0.5, size: 'w-2 h-2' },
+    { x: '15%', y: '85%', delay: 1, size: 'w-4 h-4' },
+    { x: '85%', y: '75%', delay: 1.5, size: 'w-2 h-2' },
   ];
 
   return (
-    <section className="relative py-16 md:py-20 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
-      {/* Advanced Background Elements - Matching Banner Style */}
+    <section className="relative py-20 md:py-24 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+      {/* Optimized Background Elements */}
       <div className="absolute inset-0">
-        {/* Main gradient overlays */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(25,152,199,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.1),transparent_50%)]" />
+        {/* Simplified gradient overlays */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(25,152,199,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.08),transparent_50%)]" />
 
-        {/* Animated mesh gradient */}
+        {/* Subtle animated gradient */}
         <motion.div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-10 will-change-transform"
           animate={{
             background: [
-              'radial-gradient(circle at 25% 50%, rgba(25,152,199,0.1) 0%, transparent 50%)',
-              'radial-gradient(circle at 75% 20%, rgba(25,152,199,0.1) 0%, transparent 50%)',
-              'radial-gradient(circle at 50% 80%, rgba(25,152,199,0.1) 0%, transparent 50%)',
-              'radial-gradient(circle at 25% 50%, rgba(25,152,199,0.1) 0%, transparent 50%)',
+              'radial-gradient(circle at 30% 50%, rgba(25,152,199,0.06) 0%, transparent 30%)',
+              'radial-gradient(circle at 70% 30%, rgba(25,152,199,0.06) 0%, transparent 30%)',
+              'radial-gradient(circle at 30% 50%, rgba(25,152,199,0.06) 0%, transparent 30%)',
             ],
           }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
         />
 
-        {/* Enhanced grid pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="h-full w-full bg-[linear-gradient(rgba(25,152,199,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(25,152,199,0.3)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
-        </div>
-
-        {/* Floating elements with varied sizes */}
+        {/* Minimal floating elements */}
         {floatingElements.map((element, index) => (
           <motion.div
             key={index}
-            className={`absolute ${element.size} rounded-full bg-gradient-to-r from-primary/20 to-primary-400/20 opacity-25`}
+            className={`absolute ${element.size} rounded-full bg-primary/20 opacity-40 will-change-transform`}
             style={{ left: element.x, top: element.y }}
             animate={{
-              y: [0, -25, 0],
-              x: [0, 12, 0],
-              opacity: [0.2, 0.7, 0.2],
-              scale: [1, 1.3, 1],
-              rotate: [0, 180, 360],
+              y: [0, -10, 0],
+              opacity: [0.4, 0.7, 0.4],
+              scale: [1, 1.1, 1],
             }}
             transition={{
-              duration: 7 + Math.random() * 2,
+              duration: 4 + Math.random(),
               delay: element.delay,
               repeat: Infinity,
               ease: 'easeInOut',
@@ -176,75 +158,68 @@ export default function TestimonialTwo() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Header - Matching Other Sections */}
+        {/* Header Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-6 py-3 text-sm bg-primary/90 backdrop-blur-sm border-0 text-white font-medium hover:bg-primary transition-all duration-300 rounded-full shadow-lg mb-6">
-            <Award className="w-4 h-4" />
-            Customer Reviews
-          </div>
-
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-            <span className="text-white">What Our </span>
-            <span className="bg-gradient-to-r from-primary-300 via-primary-400 to-primary-500 bg-clip-text text-transparent">
-              Customers Say
-            </span>
-          </h2>
-
-          <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-            Trusted by thousands of travelers worldwide for hassle-free visa
-            processing
-          </p>
-
-          {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center items-center gap-4 mt-8">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20 whitespace-nowrap">
-              <Users className="w-4 h-4 text-primary-300 flex-shrink-0" />
-              <span className="text-white font-medium text-sm">
-                50K+ Customers
-              </span>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-2 px-6 py-3 text-sm bg-primary/90 backdrop-blur-sm border-0 text-white font-medium hover:bg-primary transition-all duration-200 rounded-full shadow-lg mb-8">
+              <Award className="w-4 h-4" />
+              Customer Reviews
             </div>
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20 whitespace-nowrap">
-              <CheckCircle className="w-4 h-4 text-primary-300 flex-shrink-0" />
-              <span className="text-white font-medium text-sm">
-                99.9% Success
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <span className="text-white">What Our </span>
+              <span className="bg-gradient-to-r from-primary-300 via-primary-400 to-primary-500 bg-clip-text text-transparent">
+                Customers Say
               </span>
-            </div>
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20 whitespace-nowrap">
-              <Star className="w-4 h-4 text-primary-300 fill-current flex-shrink-0" />
-              <span className="text-white font-medium text-sm">
-                4.9/5 Rating
-              </span>
-            </div>
-          </div>
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+              Trusted by thousands of travelers worldwide for hassle-free visa
+              processing. See what our customers have to say about their
+              experience.
+            </p>
+          </motion.div>
         </motion.div>
 
-        {/* Glassmorphism Testimonials Slider */}
+        {/* Testimonials Slider */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          className="relative"
+          className="relative max-w-7xl mx-auto"
         >
           <Slider {...settings} ref={sliderRef}>
             {testimonials.map((testimonial, index) => (
               <div key={testimonial.id} className="px-4">
                 <motion.div
-                  className={`transition-all duration-500 ${
+                  className={`transition-all duration-300 will-change-transform ${
                     index === currentSlide % testimonials.length
                       ? 'scale-105 z-10'
                       : 'scale-95 opacity-70'
                   }`}
                 >
-                  <Card className="bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl hover:shadow-3xl hover:shadow-primary/25 transition-all duration-300 rounded-2xl overflow-hidden group hover:bg-white/15">
-                    {/* Glow Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-600/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+                  <Card className="bg-white/5 backdrop-blur-lg border border-white/10 shadow-2xl hover:shadow-3xl hover:shadow-primary/20 transition-all duration-300 rounded-2xl overflow-hidden group hover:bg-white/10">
+                    {/* Simplified glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
 
                     <CardContent className="p-8 relative z-10">
                       {/* Quote Icon */}
@@ -311,68 +286,51 @@ export default function TestimonialTwo() {
             ))}
           </Slider>
 
-          {/* Navigation Buttons - Matching Other Sections */}
-          <div className="flex justify-center gap-4 mt-12">
-            <Button
-              onClick={handlePrevSlide}
-              variant="outline"
-              size="lg"
-              className="bg-white/10 hover:bg-white/15 border-white/20 text-white hover:text-white shadow-lg backdrop-blur-sm"
-            >
-              <ChevronLeft className="w-5 h-5 mr-2" />
-              Previous
-            </Button>
-
-            <Button
-              onClick={handleNextSlide}
-              variant="outline"
-              size="lg"
-              className="bg-white/10 hover:bg-white/15 border-white/20 text-white hover:text-white shadow-lg backdrop-blur-sm"
-            >
-              Next
-              <ChevronRight className="w-5 h-5 ml-2" />
-            </Button>
-          </div>
-
           {/* Progress Indicators */}
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-2 mt-12">
             {testimonials.map((_, index) => (
-              <button
+              <motion.button
                 key={index}
                 onClick={() => sliderRef.current?.slickGoTo(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-3 h-3 rounded-full transition-all duration-200 will-change-transform ${
                   index === currentSlide % testimonials.length
                     ? 'bg-primary-300 scale-125'
                     : 'bg-white/40 hover:bg-white/70'
                 }`}
+                whileHover={{ scale: 1.15 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.1 }}
               />
             ))}
           </div>
         </motion.div>
 
-        {/* Bottom CTA - Matching Other Sections */}
+        {/* Bottom CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-20"
         >
-          <div className="relative overflow-hidden bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-8 shadow-2xl max-w-2xl mx-auto">
-            {/* Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary-600/20 rounded-2xl opacity-50 blur-xl"></div>
+          <div className="relative overflow-hidden bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl max-w-3xl mx-auto">
+            {/* Background glow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary-600/10 rounded-3xl opacity-50 blur-lg"></div>
 
-            <div className="relative z-10">
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Ready to Join Thousands of Satisfied Customers?
-              </h3>
-              <p className="text-gray-300 mb-6">
-                Start your visa application today and experience our
-                award-winning service
-              </p>
+            <div className="space-y-8 relative z-10">
+              <div className="space-y-4">
+                <h3 className="text-2xl md:text-3xl font-bold text-white">
+                  Ready to Join Thousands of Satisfied Customers?
+                </h3>
+                <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+                  Start your visa application today and experience our
+                  award-winning service. Join our happy customers worldwide.
+                </p>
+              </div>
+
               <Button
                 size="lg"
-                className="group bg-gradient-to-r from-primary to-primary-600 hover:from-primary/90 hover:to-primary-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl relative overflow-hidden"
+                className="group bg-gradient-to-r from-primary to-primary-600 hover:from-primary/90 hover:to-primary-700 text-white font-semibold px-10 py-5 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl relative overflow-hidden will-change-transform text-lg"
               >
                 <span className="relative z-10">Apply for Visa Now</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

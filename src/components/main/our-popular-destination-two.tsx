@@ -139,7 +139,7 @@ export default function OurPopularDestinationTwo() {
   const handleLoadMore = async () => {
     setIsLoading(true);
     // Simulate loading time for better UX
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise(resolve => setTimeout(resolve, 300)); // Reduced from 500ms
     setLoadMore(prevLoadMore => {
       const newLoadMore = prevLoadMore + 1;
       console.log('Loading more destinations:', {
@@ -166,107 +166,54 @@ export default function OurPopularDestinationTwo() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
+        staggerChildren: 0.08, // Faster stagger
+        delayChildren: 0.1, // Reduced delay
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    hidden: { opacity: 0, y: 20, scale: 0.98 }, // Reduced movement and scale
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
       transition: {
-        type: 'spring',
-        stiffness: 100,
-        damping: 15,
-        duration: 0.6,
+        duration: 0.4, // Much faster
+        ease: 'easeOut', // Simpler easing
       },
     },
   };
 
-  // Floating background elements
-  const floatingElements = [
-    { x: '10%', y: '15%', delay: 0, size: 'w-16 h-16' },
-    { x: '85%', y: '25%', delay: 0.5, size: 'w-20 h-20' },
-    { x: '15%', y: '75%', delay: 1, size: 'w-12 h-12' },
-    { x: '90%', y: '80%', delay: 1.5, size: 'w-24 h-24' },
-    { x: '50%', y: '10%', delay: 2, size: 'w-8 h-8' },
-    { x: '75%', y: '60%', delay: 2.5, size: 'w-14 h-14' },
-  ];
-
   return (
     <section className="relative py-12 md:py-16 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
-      {/* Advanced Background Elements - Matching Banner Style */}
+      {/* Clean Background - No patterns */}
       <div className="absolute inset-0">
-        {/* Main gradient overlays */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(25,152,199,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.1),transparent_50%)]" />
-
-        {/* Animated mesh gradient */}
-        <motion.div
-          className="absolute inset-0 opacity-30"
-          animate={{
-            background: [
-              'radial-gradient(circle at 20% 50%, rgba(25,152,199,0.1) 0%, transparent 50%)',
-              'radial-gradient(circle at 80% 20%, rgba(25,152,199,0.1) 0%, transparent 50%)',
-              'radial-gradient(circle at 40% 80%, rgba(25,152,199,0.1) 0%, transparent 50%)',
-              'radial-gradient(circle at 20% 50%, rgba(25,152,199,0.1) 0%, transparent 50%)',
-            ],
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-        />
-
-        {/* Enhanced grid pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="h-full w-full bg-[linear-gradient(rgba(25,152,199,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(25,152,199,0.3)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
-        </div>
-
-        {/* Floating elements with varied sizes */}
-        {floatingElements.map((element, index) => (
-          <motion.div
-            key={index}
-            className={`absolute ${element.size} rounded-full bg-gradient-to-r from-primary/20 to-primary-400/20 opacity-40`}
-            style={{ left: element.x, top: element.y }}
-            animate={{
-              y: [0, -30, 0],
-              x: [0, 15, 0],
-              opacity: [0.2, 0.6, 0.2],
-              scale: [1, 1.3, 1],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              duration: 8 + Math.random() * 2,
-              delay: element.delay,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-        ))}
+        {/* Simple gradient overlays only */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(25,152,199,0.12),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.08),transparent_50%)]" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Header - Enhanced with Banner Style */}
+        {/* Header - Optimized animations */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }} // Reduced movement
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }} // Faster
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center mb-12"
         >
           <div className="text-center mb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 text-sm bg-primary/90 backdrop-blur-sm border-0 text-white font-medium hover:bg-primary transition-all duration-300 rounded-full shadow-lg">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 text-sm bg-primary/90 backdrop-blur-sm border-0 text-white font-medium hover:bg-primary transition-all duration-200 rounded-full shadow-lg">
               <Plane className="w-4 h-4" />
               <span>Popular Destinations</span>
             </div>
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }} // Reduced movement
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }} // Faster
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
@@ -283,7 +230,7 @@ export default function OurPopularDestinationTwo() {
           </motion.div>
         </motion.div>
 
-        {/* Destinations Grid - Enhanced Design */}
+        {/* Destinations Grid - Optimized Design */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -296,13 +243,13 @@ export default function OurPopularDestinationTwo() {
             <motion.div
               key={destination.id}
               variants={itemVariants}
-              className="group"
-              whileHover={{ y: -8 }}
-              transition={{ duration: 0.3 }}
+              className="group will-change-transform" // Performance optimization
+              whileHover={{ y: -5 }} // Reduced movement
+              transition={{ duration: 0.2 }} // Very fast hover
             >
-              <Card className="relative overflow-hidden bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl group-hover:shadow-primary/25 transition-all duration-500 h-full">
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary-600/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+              <Card className="relative overflow-hidden bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl group-hover:shadow-primary/25 transition-all duration-300 h-full">
+                {/* Simplified Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/15 to-primary-600/15 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
 
                 <div className="relative overflow-hidden">
                   <div className="aspect-[4/3] relative">
@@ -310,15 +257,15 @@ export default function OurPopularDestinationTwo() {
                       src={destination.imgSrc}
                       width={400}
                       height={300}
-                      className="object-cover w-full h-full transition-all duration-700 group-hover:scale-110"
+                      className="object-cover w-full h-full transition-all duration-500 group-hover:scale-105" // Reduced scale and duration
                       alt={destination.altText}
                       loading="lazy"
                     />
 
-                    {/* Enhanced Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
+                    {/* Simplified Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300" />
 
-                    {/* Country Badge - Enhanced */}
+                    {/* Country Badge - Optimized */}
                     <div className="absolute bottom-4 left-4 right-4">
                       <Badge className="bg-white/90 backdrop-blur-md text-gray-900 border-0 px-3 py-1.5 font-semibold text-sm shadow-lg">
                         <MapPin className="w-4 h-4 mr-1.5 text-primary" />
@@ -326,7 +273,7 @@ export default function OurPopularDestinationTwo() {
                       </Badge>
                     </div>
 
-                    {/* Coming Soon Overlay - Enhanced */}
+                    {/* Coming Soon Overlay - Optimized */}
                     {destination.comingSoon && (
                       <div className="absolute inset-0 bg-gray-900/80 backdrop-blur-sm flex items-center justify-center">
                         <Badge className="bg-white/95 backdrop-blur-md text-gray-800 border-0 px-4 py-2 text-sm font-bold shadow-xl">
@@ -335,12 +282,12 @@ export default function OurPopularDestinationTwo() {
                       </div>
                     )}
 
-                    {/* Hover Effect Plane - Enhanced */}
+                    {/* Simplified Hover Effect Plane */}
                     <motion.div
                       className="absolute top-4 right-4 text-white/0 group-hover:text-white"
-                      initial={{ x: 20, opacity: 0, rotate: 0 }}
-                      whileHover={{ x: 0, opacity: 1, rotate: 12 }}
-                      transition={{ duration: 0.3 }}
+                      initial={{ x: 15, opacity: 0, rotate: 0 }} // Reduced movement
+                      whileHover={{ x: 0, opacity: 1, rotate: 8 }} // Reduced rotation
+                      transition={{ duration: 0.2 }} // Faster
                     >
                       <div className="p-2 bg-primary/20 backdrop-blur-sm rounded-full border border-white/20">
                         <Plane className="w-4 h-4" />
@@ -353,18 +300,18 @@ export default function OurPopularDestinationTwo() {
                   <div className="text-center">
                     <Link
                       href={destination.comingSoon ? '#' : destination.link}
-                      className={`group/link inline-flex items-center justify-center gap-2 font-semibold transition-all duration-300 relative overflow-hidden ${
+                      className={`group/link inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 relative overflow-hidden ${
                         destination.comingSoon
                           ? 'text-gray-400 cursor-not-allowed bg-gray-100/10 px-5 py-2.5 rounded-lg text-sm'
-                          : 'text-white bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105'
+                          : 'text-white bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-102' // Reduced scale
                       }`}
                       aria-label={`Read more about ${destination.title} visa`}
                     >
                       <span className="relative z-10">Apply for Visa</span>
                       {!destination.comingSoon && (
                         <>
-                          <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform relative z-10" />
-                          <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"></div>
+                          <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-150 relative z-10" />
+                          <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover/link:opacity-100 transition-opacity duration-200"></div>
                         </>
                       )}
                     </Link>
@@ -375,19 +322,19 @@ export default function OurPopularDestinationTwo() {
           ))}
         </motion.div>
 
-        {/* Load More Button - Enhanced Design */}
+        {/* Load More Button - Optimized Design */}
         {hasMoreDestinations && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }} // Reduced movement
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }} // Faster
             viewport={{ once: true }}
             className="flex flex-col items-center gap-4"
           >
             <Button
               onClick={handleLoadMore}
               disabled={isLoading}
-              className="group relative overflow-hidden bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold px-8 py-3 rounded-xl shadow-lg hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105 disabled:opacity-70 disabled:transform-none min-w-[240px]"
+              className="group relative overflow-hidden bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold px-8 py-3 rounded-xl shadow-lg hover:shadow-primary/25 transition-all duration-200 transform hover:scale-102 disabled:opacity-70 disabled:transform-none min-w-[240px]" // Faster transitions
             >
               <AnimatePresence mode="wait">
                 {isLoading ? (
@@ -396,6 +343,7 @@ export default function OurPopularDestinationTwo() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
+                    transition={{ duration: 0.15 }} // Faster
                     className="flex items-center gap-2"
                   >
                     <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -407,25 +355,26 @@ export default function OurPopularDestinationTwo() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
+                    transition={{ duration: 0.15 }} // Faster
                     className="flex items-center gap-2"
                   >
                     <Globe className="w-4 h-4" />
                     <span>Load More Destinations ({remainingCount})</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-150" />
                   </motion.div>
                 )}
               </AnimatePresence>
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
             </Button>
           </motion.div>
         )}
 
-        {/* All loaded message - Enhanced */}
+        {/* All loaded message - Optimized */}
         {!hasMoreDestinations && loadMore > 1 && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }} // Reduced scale
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }} // Faster
             className="text-center"
           >
             <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-lg border border-white/20 text-white px-6 py-3 rounded-lg font-semibold shadow-lg">
