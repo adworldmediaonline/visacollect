@@ -117,16 +117,16 @@ export default function BannerMainThree() {
   };
 
   return (
-    <section className="relative min-h-[90vh] sm:min-h-[80vh] lg:min-h-[75vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 pt-28 pb-4 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-44 2xl:pt-48">
+    <section className="relative min-h-[90vh] sm:min-h-[80vh] lg:min-h-[75vh] flex items-center overflow-hidden bg-white pt-28 pb-4 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-44 2xl:pt-48">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        {/* Static gradient overlays */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(25,152,199,0.12),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(147,51,234,0.08),transparent_50%)]" />
+        {/* Light gradient overlays */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(25,152,199,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(147,51,234,0.05),transparent_50%)]" />
 
         {/* Simple grid pattern */}
-        <div className="absolute inset-0 opacity-3">
-          <div className="h-full w-full bg-[linear-gradient(rgba(25,152,199,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(25,152,199,0.2)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
+        <div className="absolute inset-0 opacity-20">
+          <div className="h-full w-full bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
         </div>
       </div>
 
@@ -136,15 +136,15 @@ export default function BannerMainThree() {
           <div className="relative order-2 lg:order-1 flex items-center lg:rounded-l-3xl lg:rounded-r-none rounded-3xl overflow-hidden">
             {/* Background */}
             <div className="absolute inset-0">
-              <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-black/30 z-10" />
-              <div className="w-full h-full bg-gradient-to-br from-primary/10 to-purple-600/8" />
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-50/90 via-white/60 to-gray-50/90 z-10" />
+              <div className="w-full h-full bg-gradient-to-br from-primary/5 to-purple-600/3" />
 
               {/* Static floating elements */}
               <div className="absolute inset-0 overflow-hidden">
                 {[...Array(4)].map((_, i) => (
                   <div
                     key={i}
-                    className="absolute w-1 h-1 bg-white/20 rounded-full"
+                    className="absolute w-1 h-1 bg-primary/20 rounded-full"
                     style={{
                       left: `${20 + i * 20}%`,
                       top: `${20 + i * 15}%`,
@@ -158,7 +158,7 @@ export default function BannerMainThree() {
             <div className="relative z-20 p-4 sm:p-6 lg:p-6 xl:p-8 w-full space-y-3 sm:space-y-4">
               {/* Badge */}
               <div>
-                <Badge className="inline-flex items-center gap-2 bg-white/12 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all duration-200">
+                <Badge className="inline-flex items-center gap-2 bg-primary text-white hover:bg-primary/90 transition-all duration-200 border-0">
                   <Star className="w-4 h-4" />
                   Trusted by thousands worldwide
                 </Badge>
@@ -167,21 +167,21 @@ export default function BannerMainThree() {
               {/* Main Headline */}
               <div className="space-y-2 sm:space-y-3">
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
-                  <span className="text-white">24x7 online</span>
+                  <span className="text-gray-900">24x7 online</span>
                   <br />
-                  <span className="text-white">visa services</span>
+                  <span className="text-gray-900">visa services</span>
                   <br />
-                  <span className="text-white">started </span>
-                  <span className="bg-gradient-to-r from-primary-300 via-primary-400 to-primary-500 bg-clip-text text-transparent">
+                  <span className="text-gray-900">started </span>
+                  <span className="text-primary">
                     anytime,
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 bg-clip-text text-transparent">
+                  <span className="text-primary">
                     anywhere
                   </span>
                 </h1>
 
-                <p className="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed max-w-lg">
+                <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed max-w-lg">
                   Fast and secure: Trust our secure online visa services
                   platform to handle your sensitive information with care.
                 </p>
@@ -189,19 +189,19 @@ export default function BannerMainThree() {
 
               {/* Process Steps */}
               <div className="space-y-2 sm:space-y-3">
-                <h3 className="text-sm sm:text-base font-semibold text-white">
+                <h3 className="text-sm sm:text-base font-semibold text-gray-900">
                   How it works:
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {steps.map((step, index) => (
                     <div
                       key={index}
-                      className="flex items-center gap-2 p-2 rounded-lg bg-white/8 border border-white/15 backdrop-blur-sm"
+                      className="flex items-center gap-2 p-2 rounded-lg bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300"
                     >
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold bg-white/20 text-gray-300">
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold bg-gray-100 text-gray-700">
                         {index + 1}
                       </div>
-                      <span className="text-xs sm:text-sm font-medium text-gray-300">
+                      <span className="text-xs sm:text-sm font-medium text-gray-700">
                         {step}
                       </span>
                     </div>
@@ -217,16 +217,16 @@ export default function BannerMainThree() {
                     return (
                       <div
                         key={index}
-                        className="text-center space-y-1 p-2 rounded-lg backdrop-blur-sm bg-white/6 border border-white/10"
+                        className="text-center space-y-1 p-2 rounded-lg bg-white border border-gray-200 shadow-sm"
                       >
-                        <div className="mx-auto w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/12 flex items-center justify-center">
-                          <Icon className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+                        <div className="mx-auto w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-gray-100 flex items-center justify-center">
+                          <Icon className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
                         </div>
                         <div>
-                          <p className="text-sm sm:text-base font-bold text-white">
+                          <p className="text-sm sm:text-base font-bold text-gray-900">
                             {stat.number}
                           </p>
-                          <p className="text-xs text-gray-300">{stat.label}</p>
+                          <p className="text-xs text-gray-600">{stat.label}</p>
                         </div>
                       </div>
                     );
@@ -242,10 +242,10 @@ export default function BannerMainThree() {
                     return (
                       <div
                         key={index}
-                        className="flex items-center gap-2 p-2 rounded-lg bg-white/6 backdrop-blur-sm"
+                        className="flex items-center gap-2 p-2 rounded-lg bg-white border border-gray-200 shadow-sm"
                       >
-                        <Icon className="w-3 h-3 sm:w-4 sm:h-4 text-primary-400 flex-shrink-0" />
-                        <span className="text-xs sm:text-sm text-gray-300">
+                        <Icon className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
+                        <span className="text-xs sm:text-sm text-gray-700">
                           {feature.text}
                         </span>
                       </div>
@@ -258,7 +258,7 @@ export default function BannerMainThree() {
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <Button
                   asChild
-                  className="group relative overflow-hidden bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold shadow-xl hover:shadow-primary/25 transition-all duration-200"
+                  className="group relative overflow-hidden bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
                 >
                   <Link href="/all-countries">
                     <span className="relative z-10 flex items-center justify-center">
@@ -271,11 +271,11 @@ export default function BannerMainThree() {
 
                 <Button
                   asChild
-                  className="border-2 border-white/30 bg-transparent text-white hover:bg-white/10 hover:border-white/50 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold backdrop-blur-sm transition-all duration-200"
+                  className="border-2 border-gray-300 bg-transparent text-gray-700 hover:bg-gray-50 hover:border-gray-400 hover:text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold transition-all duration-200"
                 >
                   <Link
                     href="/about-us"
-                    className="text-white hover:text-white"
+                    className="text-gray-700 hover:text-gray-900"
                   >
                     Learn More
                   </Link>
@@ -286,18 +286,17 @@ export default function BannerMainThree() {
 
           {/* Right Side - Application Form */}
           <div className="relative order-1 lg:order-2 flex items-center lg:rounded-r-3xl lg:rounded-l-none rounded-3xl overflow-hidden">
-            <Card className="relative overflow-hidden bg-white/8 backdrop-blur-xl shadow-2xl w-full h-full flex flex-col border-0">
+            <Card className="relative overflow-hidden bg-white shadow-2xl w-full h-full flex flex-col border border-gray-200">
               {/* Card Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-purple-600/8 opacity-80" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-600/3 opacity-50" />
 
               <div className="relative z-10 p-4 sm:p-6 lg:p-6 xl:p-8 space-y-4 sm:space-y-5 flex-1 flex flex-col justify-center">
                 {/* Form Header */}
                 <div className="text-center space-y-3">
-                  <h2 className="text-xl sm:text-2xl lg:text-2xl xl:text-3xl font-bold text-white">
+                  <h2 className="text-xl sm:text-2xl lg:text-2xl xl:text-3xl font-bold text-primary">
                     Start Your Visa Journey
                   </h2>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-sm text-gray-600">
                     Select your destination and get started
                   </p>
                 </div>
@@ -306,7 +305,7 @@ export default function BannerMainThree() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-3">
                     <div className="space-y-2">
-                      <label className="block text-sm font-medium text-gray-200">
+                      <label className="block text-sm font-medium text-gray-700">
                         <MapPin className="inline w-4 h-4 mr-2" />
                         From Country
                       </label>
@@ -314,17 +313,10 @@ export default function BannerMainThree() {
                         name="whereIAmFrom"
                         value={formData.whereIAmFrom}
                         onChange={handleChange}
-                        className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm"
-                        style={{ color: 'white' }}
+                        className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm"
                         required
                       >
-                        <option
-                          value=""
-                          style={{
-                            color: '#000000 !important',
-                            backgroundColor: '#ffffff !important',
-                          }}
-                        >
+                        <option value="">
                           Select your country
                         </option>
                         {Object.keys(whereIAmFromWhereIAmGoingData).map(
@@ -332,10 +324,6 @@ export default function BannerMainThree() {
                             <option
                               key={country}
                               value={country}
-                              style={{
-                                color: '#000000 !important',
-                                backgroundColor: '#ffffff !important',
-                              }}
                             >
                               {countryNames[country] ||
                                 whereIAmFromWhereIAmGoingData[country].name}
@@ -346,7 +334,7 @@ export default function BannerMainThree() {
                     </div>
 
                     <div className="space-y-2">
-                      <label className="block text-sm font-medium text-gray-200">
+                      <label className="block text-sm font-medium text-gray-700">
                         <Globe className="inline w-4 h-4 mr-2" />
                         To Destination
                       </label>
@@ -354,17 +342,11 @@ export default function BannerMainThree() {
                         name="whereIAmGoing"
                         value={formData.whereIAmGoing}
                         onChange={handleChange}
-                        className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-200 disabled:opacity-50 text-sm"
-                        style={{ color: 'white' }}
+                        className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-200 disabled:opacity-50 text-sm"
                         disabled={!formData.whereIAmFrom}
                         required
                       >
-                        <option
-                          value=""
-                          style={{
-                            color: '#1f2937',
-                          }}
-                        >
+                        <option value="">
                           {formData.whereIAmFrom
                             ? 'Select destination'
                             : 'First select your country'}
@@ -379,10 +361,6 @@ export default function BannerMainThree() {
                             <option
                               key={destination}
                               value={destination}
-                              style={{
-                                color: '#1f2937',
-                                backgroundColor: '#ffffff',
-                              }}
                             >
                               {destinationNames[destination] ||
                                 whereIAmFromWhereIAmGoingData[
@@ -397,7 +375,7 @@ export default function BannerMainThree() {
                   {/* Submit Button */}
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-primary to-primary-600 hover:from-primary/90 hover:to-primary-700 text-white font-semibold py-3 sm:py-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl group text-sm sm:text-base"
+                    className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 sm:py-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl group text-sm sm:text-base"
                   >
                     <span className="flex items-center justify-center">
                       Start Your Application
@@ -407,8 +385,8 @@ export default function BannerMainThree() {
                 </form>
 
                 {/* Quick Features */}
-                <div className="pt-3 space-y-3 border-t border-white/15">
-                  <h4 className="text-sm font-semibold text-white">
+                <div className="pt-3 space-y-3 border-t border-gray-200">
+                  <h4 className="text-sm font-semibold text-gray-900">
                     Why choose us?
                   </h4>
                   <div className="grid grid-cols-1 gap-2">
@@ -420,24 +398,24 @@ export default function BannerMainThree() {
                     ].map((feature, index) => (
                       <div
                         key={index}
-                        className="flex items-center gap-2 p-2 rounded-lg bg-white/6 backdrop-blur-sm"
+                        className="flex items-center gap-2 p-2 rounded-lg bg-white border border-gray-200 shadow-sm"
                       >
-                        <CheckCircle className="w-3 h-3 text-green-400 flex-shrink-0" />
-                        <span className="text-xs text-gray-300">{feature}</span>
+                        <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0" />
+                        <span className="text-xs text-gray-700">{feature}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Bottom CTA */}
-                <div className="text-center pt-3 border-t border-white/15">
-                  <p className="text-xs text-gray-400 mb-2">
+                <div className="text-center pt-3 border-t border-gray-200">
+                  <p className="text-xs text-gray-500 mb-2">
                     Need help choosing? Talk to our experts
                   </p>
                   <Button
                     asChild
                     variant="outline"
-                    className="bg-white/8 backdrop-blur-sm border-white/25 text-white hover:bg-white/15 hover:border-white/40 text-xs px-4 py-2 hover:scale-105 transition-all duration-200"
+                    className="bg-white border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 text-xs px-4 py-2 hover:scale-105 transition-all duration-200"
                   >
                     <Link href="/contact-us">Get Free Consultation</Link>
                   </Button>
