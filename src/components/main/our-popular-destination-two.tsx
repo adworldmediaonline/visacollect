@@ -127,19 +127,19 @@ export default function OurPopularDestinationTwo() {
   const [popularDestinations] = useState<Destination[]>(data);
 
   return (
-    <section className="relative py-12 md:py-16 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <section className="relative py-12 md:py-16 overflow-hidden bg-white">
       {/* Clean Background */}
       <div className="absolute inset-0">
         {/* Simple gradient overlays only */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(25,152,199,0.12),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(25,152,199,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.05),transparent_50%)]" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-12">
           <div className="text-center mb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 text-sm bg-primary/90 backdrop-blur-sm border-0 text-white font-medium hover:bg-primary transition-all duration-200 rounded-full shadow-lg">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 text-sm bg-primary text-white font-medium hover:bg-primary/90 transition-all duration-200 rounded-full shadow-lg border-0">
               <Plane className="w-4 h-4" />
               <span>Popular Destinations</span>
             </div>
@@ -147,13 +147,13 @@ export default function OurPopularDestinationTwo() {
 
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
-              <span className="text-white">We Process</span>
+              <span className="text-gray-900">We Process</span>
               <br />
-              <span className="bg-gradient-to-r from-primary-300 via-primary-400 to-primary-500 bg-clip-text text-transparent">
+              <span className="text-primary">
                 Visas for
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
               Choose from our wide range of visa processing services for popular
               destinations worldwide
             </p>
@@ -164,7 +164,7 @@ export default function OurPopularDestinationTwo() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {popularDestinations?.map((destination, index) => (
             <div key={destination.id} className="group">
-              <Card className="relative overflow-hidden bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl group-hover:shadow-primary/25 transition-all duration-300 h-full">
+              <Card className="relative overflow-hidden bg-white border border-gray-200 shadow-lg group-hover:shadow-xl transition-all duration-300 h-full">
                 {/* Glow Effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/15 to-primary-600/15 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
 
@@ -184,7 +184,7 @@ export default function OurPopularDestinationTwo() {
 
                     {/* Country Badge */}
                     <div className="absolute bottom-4 left-4 right-4">
-                      <Badge className="bg-white/90 backdrop-blur-md text-gray-900 border-0 px-3 py-1.5 font-semibold text-sm shadow-lg">
+                      <Badge className="bg-white text-gray-900 border-0 px-3 py-1.5 font-semibold text-sm shadow-lg">
                         <MapPin className="w-4 h-4 mr-1.5 text-primary" />
                         {destination.title}
                       </Badge>
@@ -193,7 +193,7 @@ export default function OurPopularDestinationTwo() {
                     {/* Coming Soon Overlay */}
                     {destination.comingSoon && (
                       <div className="absolute inset-0 bg-gray-900/80 backdrop-blur-sm flex items-center justify-center">
-                        <Badge className="bg-white/95 backdrop-blur-md text-gray-800 border-0 px-4 py-2 text-sm font-bold shadow-xl">
+                        <Badge className="bg-white text-gray-800 border-0 px-4 py-2 text-sm font-bold shadow-xl">
                           Coming Soon
                         </Badge>
                       </div>
@@ -214,8 +214,8 @@ export default function OurPopularDestinationTwo() {
                       href={destination.comingSoon ? '#' : destination.link}
                       className={`group/link inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 relative overflow-hidden ${
                         destination.comingSoon
-                          ? 'text-gray-400 cursor-not-allowed bg-gray-100/10 px-5 py-2.5 rounded-lg text-sm'
-                          : 'text-white bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-102'
+                          ? 'text-gray-400 cursor-not-allowed bg-gray-100 px-5 py-2.5 rounded-lg text-sm'
+                          : 'text-white bg-primary hover:bg-primary/90 px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-102'
                       }`}
                       aria-label={`Read more about ${destination.title} visa`}
                     >
@@ -236,9 +236,9 @@ export default function OurPopularDestinationTwo() {
 
         {/* All destinations message */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-lg border border-white/20 text-white px-6 py-3 rounded-lg font-semibold shadow-lg">
-            <div className="p-1.5 bg-green-500/20 rounded-full">
-              <Globe className="w-4 h-4 text-green-400" />
+          <div className="inline-flex items-center gap-3 bg-white border border-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold shadow-lg">
+            <div className="p-1.5 bg-green-100 rounded-full">
+              <Globe className="w-4 h-4 text-green-600" />
             </div>
             <span>
               All {popularDestinations.length} destinations available!

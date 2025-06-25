@@ -69,29 +69,25 @@ export default function HeaderTwo({ bgcolor = false }: HeaderTwoProps) {
       : 'top-0'
   } ${
     isScrolled || !isHomePage
-      ? 'bg-white/95 backdrop-blur-lg shadow-2xl border-b border-primary/10'
+      ? 'bg-white shadow-lg border-b border-gray-200'
       : bgcolor
       ? 'bg-white/90 backdrop-blur-sm'
       : 'bg-white/5 backdrop-blur-sm'
   }`;
 
-  const navLinkClasses = `relative group px-4 py-2 font-medium transition-colors duration-200 ${
-    isScrolled || bgcolor || !isHomePage
-      ? 'text-gray-700 hover:text-primary'
-      : 'text-white hover:text-primary-300'
-  }`;
+  const navLinkClasses = `relative group px-4 py-2 font-medium transition-colors duration-200 text-gray-700 hover:text-primary`;
 
   return (
     <>
       {/* Top Info Bar - Only on Homepage and Desktop */}
       {isHomePage && (
-        <div className="fixed top-0 left-0 right-0 z-40 hidden lg:block bg-gradient-to-r from-primary via-primary-600 to-primary-700 text-white py-2 h-10">
+        <div className="fixed top-0 left-0 right-0 z-40 hidden lg:block bg-primary text-white py-2 h-10">
           <div className="container mx-auto flex justify-between items-center text-sm px-4 h-full">
             <div className="flex items-center space-x-4 xl:space-x-6">
               {quickActions.map((action, index) => (
                 <div
                   key={index}
-                  className={`flex items-center space-x-1 xl:space-x-2 hover:text-primary-200 transition-colors duration-200 ${
+                  className={`flex items-center space-x-1 xl:space-x-2 hover:text-white/80 transition-colors duration-200 ${
                     index === 2 ? 'hidden xl:flex' : ''
                   }`}
                 >
@@ -140,7 +136,7 @@ export default function HeaderTwo({ bgcolor = false }: HeaderTwoProps) {
                 <div key={item.href}>
                   <Link href={item.href} className={navLinkClasses}>
                     {item.label}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-600 group-hover:w-full transition-all duration-200"></span>
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-200"></span>
                   </Link>
                 </div>
               ))}
@@ -150,7 +146,7 @@ export default function HeaderTwo({ bgcolor = false }: HeaderTwoProps) {
             <div className="hidden lg:block">
               <Button
                 asChild
-                className="relative overflow-hidden bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group"
+                className="relative overflow-hidden bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group"
               >
                 <Link href="/contact-us">
                   <span className="relative z-10">Contact Us</span>
@@ -184,21 +180,9 @@ export default function HeaderTwo({ bgcolor = false }: HeaderTwoProps) {
                           transition={{ duration: 0.15 }}
                         >
                           {isMobileMenuOpen ? (
-                            <X
-                              className={`w-6 h-6 ${
-                                isScrolled || bgcolor || !isHomePage
-                                  ? 'text-gray-700'
-                                  : 'text-white'
-                              }`}
-                            />
+                            <X className="w-6 h-6 text-gray-700" />
                           ) : (
-                            <Menu
-                              className={`w-6 h-6 ${
-                                isScrolled || bgcolor || !isHomePage
-                                  ? 'text-gray-700'
-                                  : 'text-white'
-                              }`}
-                            />
+                            <Menu className="w-6 h-6 text-gray-700" />
                           )}
                         </motion.div>
                       </motion.div>
@@ -207,7 +191,7 @@ export default function HeaderTwo({ bgcolor = false }: HeaderTwoProps) {
                 </SheetTrigger>
                 <SheetContent
                   side="right"
-                  className="w-full sm:w-80 bg-white/95 backdrop-blur-lg border-l border-primary/20 overflow-y-auto"
+                  className="w-full sm:w-80 bg-white border-l border-gray-200 overflow-y-auto"
                 >
                   <SheetHeader className="space-y-4 pb-6">
                     <div className="flex items-center space-x-3">
@@ -231,10 +215,10 @@ export default function HeaderTwo({ bgcolor = false }: HeaderTwoProps) {
                         </div>
                       ))}
 
-                      <div className="pt-6 border-t border-primary/20">
+                      <div className="pt-6 border-t border-gray-200">
                         <Button
                           asChild
-                          className="w-full bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white py-3 rounded-full font-semibold shadow-lg transition-all duration-200"
+                          className="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-full font-semibold shadow-lg transition-all duration-200"
                         >
                           <Link
                             href="/contact-us"
@@ -246,7 +230,7 @@ export default function HeaderTwo({ bgcolor = false }: HeaderTwoProps) {
                       </div>
 
                       {/* Mobile Quick Actions */}
-                      <div className="space-y-4 pt-6 border-t border-primary/20">
+                      <div className="space-y-4 pt-6 border-t border-gray-200">
                         {quickActions.map((action, index) => (
                           <div
                             key={index}

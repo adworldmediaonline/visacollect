@@ -40,7 +40,7 @@ const dataList: DataItem[] = [
 
 export default function WhyChooseUsTwo() {
   return (
-    <section className="py-16 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image Side */}
@@ -60,10 +60,10 @@ export default function WhyChooseUsTwo() {
           <div className="space-y-8">
             {/* Header */}
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Why Choose <span className="text-primary">Visacollect?</span>
               </h2>
-              <p className="text-lg text-gray-300">
+              <p className="text-lg text-gray-600">
                 Wander in wonder, leave the paperwork blues to us.
               </p>
             </div>
@@ -78,10 +78,10 @@ export default function WhyChooseUsTwo() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-gray-300 leading-relaxed">{item.pera}</p>
+                    <p className="text-gray-600 leading-relaxed">{item.pera}</p>
                   </div>
                 </div>
               ))}
