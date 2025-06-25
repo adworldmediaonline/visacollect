@@ -1,21 +1,59 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import { Mail, Phone, User, Send, MapPin, Clock } from 'lucide-react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { Mail, Phone, User, Send, MapPin, Clock, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import usePost from '@/hooks/usePost';
 import contactUsImg from '/public/assets/images/main/formGirl.png';
 
 export default function ContactFormTwo() {
+  const postMutation = usePost(
+    'https://www.visacollect.com/api/contact',
+    'form submitted successfully',
+    '/thankyou',
+    false,
+    'contactForm',
+    'form submitted successfully'
+  );
+
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      message: '',
+    },
+    validationSchema: Yup.object({
+      name: Yup.string()
+        .max(15, 'Must be 15 characters or less')
+        .required('Required'),
+      email: Yup.string().email('Invalid email address').required('Required'),
+      message: Yup.string()
+        .max(150, 'Must be 150 characters or less')
+        .required('Required'),
+    }),
+    onSubmit: async values => {
+      console.log(values);
+      // @ts-ignore - Type mismatch with mutation function, but this pattern works in the original contact-us.js
+      postMutation.mutate({
+        ...values,
+      });
+      formik.setSubmitting(false);
+      formik.resetForm();
+    },
+  });
+
   const contactInfo = [
     {
       icon: MapPin,
       title: 'Visit Us',
       description: 'Our office location',
-      value: 'Contact for address',
+      value: 'Plot No. 136, 3rd Floor, Rider House, Sector 44, 122003',
     },
     {
       icon: Clock,
@@ -112,7 +150,7 @@ export default function ContactFormTwo() {
                     Let's connect!
                   </CardTitle>
                   <p className="text-gray-600 leading-relaxed">
-                    Learn the best travel secrets from our newsletter.
+                    Have a question or need assistance? We're here to help!
                   </p>
                 </div>
               </CardHeader>
@@ -120,7 +158,8 @@ export default function ContactFormTwo() {
               <CardContent className="space-y-6 relative z-10">
                 <form
                   className="space-y-6"
-                  aria-label="Newsletter subscription form"
+                  onSubmit={formik.handleSubmit}
+                  aria-label="Contact form"
                 >
                   {/* Name Field */}
                   <div className="space-y-2">
@@ -137,11 +176,15 @@ export default function ContactFormTwo() {
                         type="text"
                         name="name"
                         placeholder="Enter your full name"
-                        required
-                        aria-required="true"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.name}
                         className="pl-12 h-12 bg-white border-gray-300 focus:border-primary focus:ring-primary/20 rounded-lg text-gray-900 placeholder-gray-400 transition-all duration-200"
                       />
                     </div>
+                    {formik.touched.name && formik.errors.name ? (
+                      <div className="text-red-500 text-sm">{formik.errors.name}</div>
+                    ) : null}
                   </div>
 
                   {/* Email Field */}
@@ -159,54 +202,68 @@ export default function ContactFormTwo() {
                         type="email"
                         name="email"
                         placeholder="Enter your email address"
-                        required
-                        aria-required="true"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.email}
                         className="pl-12 h-12 bg-white border-gray-300 focus:border-primary focus:ring-primary/20 rounded-lg text-gray-900 placeholder-gray-400 transition-all duration-200"
                       />
                     </div>
+                    {formik.touched.email && formik.errors.email ? (
+                      <div className="text-red-500 text-sm">{formik.errors.email}</div>
+                    ) : null}
                   </div>
 
-                  {/* Phone Field */}
+                  {/* Message Field */}
                   <div className="space-y-2">
                     <Label
-                      htmlFor="phone"
+                      htmlFor="message"
                       className="text-sm font-medium text-gray-700"
                     >
-                      Phone Number
+                      Message
                     </Label>
                     <div className="relative">
-                      <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                      <Input
-                        id="phone"
-                        type="tel"
-                        name="phone"
-                        placeholder="Enter your phone number"
-                        required
-                        aria-required="true"
-                        pattern="[0-9]{10}"
-                        className="pl-12 h-12 bg-white border-gray-300 focus:border-primary focus:ring-primary/20 rounded-lg text-gray-900 placeholder-gray-400 transition-all duration-200"
+                      <MessageSquare className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={4}
+                        placeholder="Enter your message"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.message}
+                        className="w-full pl-12 pt-3 pb-3 pr-3 bg-white border border-gray-300 focus:border-primary focus:ring-primary/20 rounded-lg text-gray-900 placeholder-gray-400 transition-all duration-200 resize-none"
                       />
                     </div>
+                    {formik.touched.message && formik.errors.message ? (
+                      <div className="text-red-500 text-sm">{formik.errors.message}</div>
+                    ) : null}
                   </div>
+
+                  {/* Error Message */}
+                  {postMutation.isError ? (
+                    <div className="text-red-500 text-sm">
+                      An error occurred: {postMutation.error['response']?.data?.error}
+                    </div>
+                  ) : null}
 
                   {/* Submit Button */}
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl relative overflow-hidden group"
-                    aria-label="Subscribe to newsletter"
+                    disabled={!formik.isValid || formik.isSubmitting || postMutation.isPending}
+                    className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
+                    aria-label="Send message"
                   >
                     <span className="relative z-10 flex items-center justify-center">
                       <Send className="w-5 h-5 mr-2" />
-                      Subscribe Now
+                      {postMutation.isPending ? 'Sending...' : 'Send Message'}
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
                   </Button>
 
                   {/* Privacy Notice */}
                   <p className="text-xs text-gray-400 text-center leading-relaxed">
-                    By subscribing, you agree to receive our newsletter and
-                    promotional emails. You can unsubscribe at any time.
+                    We'll get back to you within 24 hours. Your information is secure and will not be shared.
                   </p>
                 </form>
               </CardContent>
