@@ -18,7 +18,7 @@ const SuccessPage = ({ message, messageDescription }) => {
             {message}
           </h2>
           <p className="text-xl">{messageDescription}</p>
-          <Link href="/contact-us">
+          <Link href="/">
             <div className="py-8">
               <button
                 className={`cursor-pointer w-fit items-center gap-3 rounded-lg font-semibold text-white bg-primary px-8 py-3`}

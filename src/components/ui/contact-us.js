@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 export default function ContactUs() {
   const postMutation = usePost(
-    'https://www.visacollect.com/api/contact',
+    '/api/contact',
     'form submitted successfully',
     '/thankyou',
     false,
