@@ -164,88 +164,81 @@ export default function OurPopularDestinationTwo() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {popularDestinations?.map((destination, index) => (
             <div key={destination.id} className="group">
-              <Card className="relative overflow-hidden bg-white border border-gray-200 shadow-lg group-hover:shadow-xl transition-all duration-300 h-full">
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/15 to-primary-600/15 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+              <Card className="relative overflow-hidden bg-white border border-gray-200 shadow-lg group-hover:shadow-xl transition-all duration-300 h-full rounded-xl">
+                {/* Full Image Container */}
+                <div className="relative h-full group/card">
+                  <Image
+                    src={destination.imgSrc}
+                    width={400}
+                    height={300}
+                    className="object-cover w-full h-full transition-all duration-500 group-hover:scale-105 rounded-xl"
+                    alt={destination.altText}
+                    loading="lazy"
+                  />
 
-                <div className="relative overflow-hidden">
-                  <div className="aspect-[4/3] relative">
-                    <Image
-                      src={destination.imgSrc}
-                      width={400}
-                      height={300}
-                      className="object-cover w-full h-full transition-all duration-500 group-hover:scale-105"
-                      alt={destination.altText}
-                      loading="lazy"
-                    />
+                  {/* Minimal gradient overlay only at edges */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10" />
 
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300" />
+                  {/* Country Badge - Small, Bottom Left */}
+                  <div className="absolute bottom-3 left-3 z-20">
+                    <Badge className="bg-white/90 backdrop-blur-md text-gray-900 border-0 px-2 py-1 font-medium text-xs shadow-lg">
+                      <MapPin className="w-3 h-3 mr-1 text-primary" />
+                      {destination.title}
+                    </Badge>
+                  </div>
 
-                    {/* Country Badge */}
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <Badge className="bg-white text-gray-900 border-0 px-3 py-1.5 font-semibold text-sm shadow-lg">
-                        <MapPin className="w-4 h-4 mr-1.5 text-primary" />
-                        {destination.title}
-                      </Badge>
-                    </div>
-
-                    {/* Coming Soon Overlay */}
-                    {destination.comingSoon && (
-                      <div className="absolute inset-0 bg-gray-900/80 backdrop-blur-sm flex items-center justify-center">
-                        <Badge className="bg-white text-gray-800 border-0 px-4 py-2 text-sm font-bold shadow-xl">
-                          Coming Soon
-                        </Badge>
-                      </div>
-                    )}
-
-                    {/* Hover Effect Plane */}
-                    <div className="absolute top-4 right-4 text-white/0 group-hover:text-white transition-all duration-200">
-                      <div className="p-2 bg-primary/20 backdrop-blur-sm rounded-full border border-white/20">
-                        <Plane className="w-4 h-4" />
-                      </div>
+                  {/* Apply Button - Appears on Hover, Center Bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 z-30 transform translate-y-full group-hover/card:translate-y-0 transition-transform duration-300 ease-out">
+                    <div className="bg-gradient-to-t from-black/60 to-transparent p-4">
+                      <Link
+                        href={destination.comingSoon ? '#' : destination.link}
+                        className={`group/link inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 relative overflow-hidden w-full ${
+                          destination.comingSoon
+                            ? 'text-gray-700 cursor-not-allowed bg-white/95 backdrop-blur-sm px-4 py-2.5 rounded-lg text-sm shadow-lg'
+                            : 'text-white bg-primary hover:bg-primary/90 backdrop-blur-sm px-4 py-2.5 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02]'
+                        }`}
+                        aria-label={`Apply for ${destination.title} visa`}
+                      >
+                        <span className="relative z-10 text-sm font-bold">Apply for Visa</span>
+                        {!destination.comingSoon && (
+                          <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-150 relative z-10" />
+                        )}
+                      </Link>
                     </div>
                   </div>
-                </div>
 
-                <CardContent className="p-5 relative">
-                  <div className="text-center">
+                  {/* Quick Action Button - Top Right Corner */}
+                  <div className="absolute top-3 right-3 z-20 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
                     <Link
                       href={destination.comingSoon ? '#' : destination.link}
-                      className={`group/link inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 relative overflow-hidden ${
+                      className={`inline-flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 ${
                         destination.comingSoon
-                          ? 'text-gray-400 cursor-not-allowed bg-gray-100 px-5 py-2.5 rounded-lg text-sm'
-                          : 'text-white bg-primary hover:bg-primary/90 px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-102'
-                      }`}
-                      aria-label={`Read more about ${destination.title} visa`}
+                          ? 'bg-gray-100/90 text-gray-400 cursor-not-allowed'
+                          : 'bg-primary/90 hover:bg-primary text-white shadow-lg hover:shadow-xl transform hover:scale-110'
+                      } backdrop-blur-sm`}
+                      aria-label={`Quick apply for ${destination.title} visa`}
                     >
-                      <span className="relative z-10">Apply for Visa</span>
-                      {!destination.comingSoon && (
-                        <>
-                          <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-150 relative z-10" />
-                          <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover/link:opacity-100 transition-opacity duration-200"></div>
-                        </>
-                      )}
+                      <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
-                </CardContent>
+
+                  {/* Coming Soon Overlay */}
+                  {destination.comingSoon && (
+                    <div className="absolute inset-0 bg-gray-900/80 backdrop-blur-sm flex items-center justify-center z-40">
+                      <Badge className="bg-white text-gray-800 border-0 px-4 py-2 text-sm font-bold shadow-xl">
+                        Coming Soon
+                      </Badge>
+                    </div>
+                  )}
+                </div>
               </Card>
             </div>
           ))}
         </div>
 
-        {/* All destinations message */}
-        <div className="text-center">
-          <div className="inline-flex items-center gap-3 bg-white border border-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold shadow-lg">
-            <div className="p-1.5 bg-green-100 rounded-full">
-              <Globe className="w-4 h-4 text-green-600" />
-            </div>
-            <span>
-              All {popularDestinations.length} destinations available!
-            </span>
-          </div>
-        </div>
+
       </div>
     </section>
   );
 }
+

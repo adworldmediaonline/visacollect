@@ -14,12 +14,12 @@ import contactUsImg from '/public/assets/images/main/formGirl.png';
 
 export default function ContactFormTwo() {
   const postMutation = usePost(
-    'https://www.visacollect.com/api/contact',
+    '/api/contact',
     'form submitted successfully',
     '/thankyou',
     false,
     'contactForm',
-    'form submitted successfully'
+    'Message sent successfully! We will get back to you soon.'
   );
 
   const formik = useFormik({
@@ -239,10 +239,32 @@ export default function ContactFormTwo() {
                     ) : null}
                   </div>
 
+                  {/* Success Message */}
+                  {postMutation.isSuccess ? (
+                    <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg text-sm flex items-center gap-2">
+                      <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <span>Message sent successfully! We'll get back to you within 24 hours.</span>
+                    </div>
+                  ) : null}
+
                   {/* Error Message */}
                   {postMutation.isError ? (
-                    <div className="text-red-500 text-sm">
-                      An error occurred: {postMutation.error['response']?.data?.error}
+                    <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg text-sm flex items-center gap-2">
+                      <div className="w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
+                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="font-medium">Failed to send message</p>
+                        <p className="text-xs mt-1">
+                          {(postMutation.error as any)?.response?.data?.message || postMutation.error?.message || 'Please try again later or contact us directly.'}
+                        </p>
+                      </div>
                     </div>
                   ) : null}
 
@@ -251,14 +273,28 @@ export default function ContactFormTwo() {
                     type="submit"
                     size="lg"
                     disabled={!formik.isValid || formik.isSubmitting || postMutation.isPending}
-                    className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full h-12 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                     aria-label="Send message"
                   >
                     <span className="relative z-10 flex items-center justify-center">
-                      <Send className="w-5 h-5 mr-2" />
-                      {postMutation.isPending ? 'Sending...' : 'Send Message'}
+                      {postMutation.isPending ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Sending Message...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-5 h-5 mr-2" />
+                          Send Message
+                        </>
+                      )}
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                    {!postMutation.isPending && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                    )}
                   </Button>
 
                   {/* Privacy Notice */}
