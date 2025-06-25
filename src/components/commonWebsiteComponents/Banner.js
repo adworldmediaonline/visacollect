@@ -32,46 +32,24 @@ export const Banner = ({
         />
       </div>
       <div className="container pt-8 pb-16">
-        <HomePageTitle pageTitle={pageTitle} />
-        <p className="mt-1 text-base">{pageTitleDescription ?? ''}</p>
-        <div className="mt-8">
-          <div className="flex flex-col gap-4 md:flex-row xl">
-            <div className="flex flex-shrink-0 gap-3">
-              <BannerInlineForm2 />
-            </div>
+        {/* Title and Apply Button Section */}
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
+          {/* Title and Description */}
+          <div className="flex-1">
+            <HomePageTitle pageTitle={pageTitle} />
+            <p className="mt-3 text-base text-gray-600 leading-relaxed">
+              {pageTitleDescription ?? ''}
+            </p>
           </div>
-        </div>
 
-        <div className="flex flex-col gap-8 p-4 mt-5 text-lg text-black border-t border-b border-l-8 border-r rounded-lg md:items-center md:flex-row border-primary">
-          <div className="flex flex-col items-start">
-            <span className="font-bold">Visa</span>
-            <span className="text-sm font-normal text-red-500">
-              REQUIRED FOR TRAVEL
-            </span>
-          </div>
-          <p className="flex items-center gap-2 text-sm">
-            <FaInfoCircle className="text-red-500" />
-            You need a Visa to travel to Australia if you have a passport from
-            United States.
-          </p>
-          <div className="md:ml-auto shrink-0">
-            <LinkButton href={link} className="px-10 py-4 text-base shrink-0">
+          {/* Apply Now Button */}
+          <div className="flex-shrink-0 lg:mt-4">
+            <LinkButton 
+              href={link} 
+              className="px-10 py-4 text-base font-semibold bg-primary hover:bg-primary/90 text-white rounded-lg transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
+            >
               Apply Now
             </LinkButton>
-          </div>
-        </div>
-
-        <div className="flex flex-col items-center justify-center w-full h-full space-y-5 "></div>
-
-        <div className="flex flex-wrap mt-6 md:space-x-5">
-          <div className="border-2 rounded-md border-primary basis-[250px]">
-            <div className="flex flex-col items-center py-3 space-y-2">
-              <p className="text-sm">{validity}</p>
-              <p className="text-sm">{entries}</p>
-              <p className="text-sm">Fee</p>
-              <p className="text-2xl">{price}</p>
-              <p className="text-sm">/applicant</p>
-            </div>
           </div>
         </div>
       </div>
