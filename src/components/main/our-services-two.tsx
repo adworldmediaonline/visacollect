@@ -214,97 +214,118 @@ export default function OurServicesTwo() {
           </div>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group"
-            >
-              <Card className="h-[400px] border shadow-lg hover:shadow-xl transition-all duration-300 bg-white border-gray-200 hover:border-primary/20 overflow-hidden relative">
-                {/* Simplified glow effect */}
-                <div className="absolute inset-0 bg-primary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* Services Slider */}
+        <div className="relative">
+          <div className="px-4">
+            <Slider ref={sliderRef} {...settings}>
+              {services.map((service, index) => (
+                <div key={service.id} className="px-4">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="group h-full"
+                  >
+                    <Card className="h-[550px] border shadow-lg hover:shadow-xl transition-all duration-300 bg-white border-gray-200 hover:border-primary/20 overflow-hidden relative">
+                      {/* Simplified glow effect */}
+                      <div className="absolute inset-0 bg-primary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                {/* Simplified background pattern */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full transform translate-x-12 -translate-y-12 group-hover:scale-125 transition-transform duration-400" />
+                      {/* Simplified background pattern */}
+                      <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full transform translate-x-12 -translate-y-12 group-hover:scale-125 transition-transform duration-400" />
 
-                <CardContent className="p-8 h-full flex flex-col relative z-10">
-                  {/* Optimized Icon Section */}
-                  <div className="relative mb-6">
-                    <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center relative overflow-hidden border border-gray-200 group-hover:scale-105 transition-transform duration-300">
-                      {/* Subtle background animation */}
-                      <div className="absolute inset-0 bg-primary/10 rounded-2xl transform group-hover:rotate-6 transition-transform duration-300" />
+                      <CardContent className="p-6 h-full flex flex-col relative z-10">
+                        {/* Optimized Icon Section */}
+                        <div className="relative mb-4">
+                          <div className="w-14 h-14 bg-gray-100 rounded-2xl flex items-center justify-center relative overflow-hidden border border-gray-200 group-hover:scale-105 transition-transform duration-300">
+                            {/* Subtle background animation */}
+                            <div className="absolute inset-0 bg-primary/10 rounded-2xl transform group-hover:rotate-6 transition-transform duration-300" />
 
-                      <service.icon className="w-8 h-8 text-primary relative z-10" />
-                    </div>
+                            <service.icon className="w-7 h-7 text-primary relative z-10" />
+                          </div>
 
-                    {/* Progress indicator */}
-                    <div className="absolute -bottom-2 -right-2">
-                      <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center shadow-lg border-2 border-white">
-                        <CheckCircle className="w-3 h-3 text-white" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 space-y-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300 mb-3">
-                        {service.name}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {service.desc}
-                      </p>
-                    </div>
-
-                    {/* Features List */}
-                    <div className="space-y-2 flex-1">
-                      {/* Features List */}
-                      <div className="space-y-2 flex-1">
-                        {/* Features List */}
-                      </div>
-                    </div>
-
-                    {/* Pricing */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="text-xs text-gray-500">Starting from</p>
-                          <p className="text-lg font-bold text-primary">
-                            {/* Pricing */}
-                          </p>
+                          {/* Progress indicator */}
+                          <div className="absolute -bottom-1 -right-1">
+                            <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+                              <CheckCircle className="w-2.5 h-2.5 text-white" />
+                            </div>
+                          </div>
                         </div>
-                        <div className="text-right">
-                          <p className="text-xs text-gray-500">Duration</p>
-                          <p className="text-sm font-semibold text-gray-700">
-                            {/* Duration */}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
-                  {/* CTA Button */}
-                  <div className="mt-6 pt-4 border-t border-gray-100">
-                    <Button
-                      className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-2.5 rounded-lg transition-all duration-200 transform group-hover:scale-[1.02] shadow-sm hover:shadow-md relative overflow-hidden group/btn"
-                      size="sm"
-                    >
-                      <span className="relative z-10 flex items-center justify-center gap-2">
-                        Learn More
-                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform duration-150" />
-                      </span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-200"></div>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                        {/* Content */}
+                        <div className="flex-1 flex flex-col">
+                          <div className="mb-4">
+                            <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors duration-300 mb-2 leading-tight">
+                              {service.name}
+                            </h3>
+                            <p className="text-gray-600 leading-relaxed text-sm">
+                              {service.desc}
+                            </p>
+                          </div>
+
+                          {/* Service Features */}
+                          <div className="mb-4">
+                            <Badge variant="secondary" className="bg-primary/10 text-primary border-0 text-xs mr-2">
+                              Fast Processing
+                            </Badge>
+                            <Badge variant="secondary" className="bg-gray-100 text-gray-600 border-0 text-xs">
+                              24/7 Support
+                            </Badge>
+                          </div>
+
+                          {/* Service Stats */}
+                          <div className="pt-3 border-t border-gray-100 mb-4">
+                            <div className="grid grid-cols-2 gap-4 text-center">
+                              <div>
+                                <p className="text-xs text-gray-500 mb-1">Success Rate</p>
+                                <p className="text-base font-bold text-primary">99%</p>
+                              </div>
+                              <div>
+                                <p className="text-xs text-gray-500 mb-1">Avg Time</p>
+                                <p className="text-base font-bold text-gray-700">2-3 Days</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* CTA Button - Always at bottom */}
+                          <div className="mt-auto pt-3 border-t border-gray-100">
+                            <Button
+                              className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-2.5 rounded-lg transition-all duration-200 transform group-hover:scale-[1.02] shadow-sm hover:shadow-md relative overflow-hidden group/btn"
+                              size="sm"
+                            >
+                              <span className="relative z-10 flex items-center justify-center gap-2">
+                                Learn More
+                                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform duration-150" />
+                              </span>
+                              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-200"></div>
+                            </Button>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+
+          {/* Slide indicators at bottom */}
+          <div className="flex justify-center mt-8">
+            <div className="flex gap-2">
+              {services.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => sliderRef.current?.slickGoTo(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                    currentSlide === index
+                      ? 'bg-primary w-6'
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Bottom CTA Section */}
