@@ -1,12 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
-import { FaInfoCircle } from 'react-icons/fa';
-import { getAllCountries } from '@/lib/getAllCountries';
+import Breadcrumb from '../Breadcrumbs';
 import HomePageTitle from '../common/countryHomePage/HomePageTitle';
 import LinkButton from '../ui/link-button';
-import Button from '../ui/button';
-import BannerInlineForm2 from '../ui/banner-inline-form-2';
-import Breadcrumb from '../Breadcrumbs';
 
 export const Banner = ({
   validity,
@@ -44,8 +38,8 @@ export const Banner = ({
 
           {/* Apply Now Button */}
           <div className="flex-shrink-0 lg:mt-4">
-            <LinkButton 
-              href={link} 
+            <LinkButton
+              href={link}
               className="px-10 py-4 text-base font-semibold bg-primary hover:bg-primary/90 text-white rounded-lg transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
             >
               Apply Now

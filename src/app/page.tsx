@@ -1,6 +1,4 @@
-import BannerMainFour from '@/components/main/banner-main-four';
 import BannerMainThree from '@/components/main/banner-main-three';
-import BannerMainTwo from '@/components/main/banner-main-two';
 import ContactFormTwo from '@/components/main/contact-form-two';
 import HowItWorksTwo from '@/components/main/how-it-works-two';
 import OurPopularDestinationTwo from '@/components/main/our-popular-destination-two';
