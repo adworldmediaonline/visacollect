@@ -9,6 +9,7 @@ import {
   CheckCircle,
   Clock,
   Globe,
+  Loader2,
   MapPin,
   Shield,
   Star,
@@ -76,6 +77,7 @@ const steps = [
 export default function BannerMainThree() {
   const router = useRouter();
   const [whereIAmGoingData, setWhereIAmGoingData] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     whereIAmFrom: '',
     whereIAmGoing: '',
@@ -86,19 +88,30 @@ export default function BannerMainThree() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.whereIAmFrom && formData.whereIAmGoing) {
-      const whereIAmFrom = formData?.whereIAmFrom.toLowerCase() ?? '';
-      const whereIAmGoing = formData?.whereIAmGoing.toLowerCase() ?? '';
-      const whereIAmFromData = whereIAmFromWhereIAmGoingData[whereIAmFrom];
-      const whereIAmGoingData =
-        whereIAmFromData?.whereIAmGoing?.to?.[whereIAmGoing];
-      router.push(whereIAmGoingData?.slug ?? '/all-countries');
-      setFormData({
-        whereIAmFrom: '',
-        whereIAmGoing: '',
-      });
+    if (formData.whereIAmFrom && formData.whereIAmGoing && !isLoading) {
+      setIsLoading(true);
+      try {
+        const whereIAmFrom = formData?.whereIAmFrom.toLowerCase() ?? '';
+        const whereIAmGoing = formData?.whereIAmGoing.toLowerCase() ?? '';
+        const whereIAmFromData = whereIAmFromWhereIAmGoingData[whereIAmFrom];
+        const whereIAmGoingData =
+          whereIAmFromData?.whereIAmGoing?.to?.[whereIAmGoing];
+
+        // Add a small delay to show loading state
+        await new Promise(resolve => setTimeout(resolve, 500));
+
+        router.push(whereIAmGoingData?.slug ?? '/all-countries');
+        setFormData({
+          whereIAmFrom: '',
+          whereIAmGoing: '',
+        });
+      } catch (error) {
+        console.error('Navigation error:', error);
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -307,14 +320,7 @@ export default function BannerMainThree() {
                         required
                       >
                         <option value="">Select your country</option>
-                        {/* {Object.keys(whereIAmFromWhereIAmGoingData).map(
-                          country => (
-                            <option key={country} value={country}>
-                              {countryNames[country] ||
-                                whereIAmFromWhereIAmGoingData[country].name}
-                            </option>
-                          )
-                        )} */}
+
                         {whereIAmFromCountry.map(country => (
                           <option key={country.isoCode} value={country.isoCode}>
                             {country.name.charAt(0).toUpperCase() +
@@ -359,11 +365,21 @@ export default function BannerMainThree() {
                   {/* Submit Button */}
                   <Button
                     type="submit"
-                    className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 sm:py-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl group text-sm sm:text-base"
+                    disabled={isLoading}
+                    className="w-full bg-primary hover:bg-primary/90 disabled:bg-primary/50 disabled:cursor-not-allowed text-white font-semibold py-3 sm:py-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl group text-sm sm:text-base"
                   >
                     <span className="flex items-center justify-center">
-                      Start Your Application
-                      <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-150" />
+                      {isLoading ? (
+                        <>
+                          <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-spin" />
+                          Processing...
+                        </>
+                      ) : (
+                        <>
+                          Start Your Application
+                          <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-150" />
+                        </>
+                      )}
                     </span>
                   </Button>
                 </form>
