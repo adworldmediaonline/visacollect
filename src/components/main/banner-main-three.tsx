@@ -1,103 +1,85 @@
 'use client';
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
-import {
-  Shield,
-  Clock,
-  CheckCircle,
-  ArrowRight,
-  Globe,
-  Users,
-  Award,
-  Star,
-  MapPin,
-  Zap,
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { whereIAmFromWhereIAmGoingData } from '@/lib/whereIAmFromWhereIAmGoingData';
+import {
+  ArrowRight,
+  Award,
+  CheckCircle,
+  Clock,
+  Globe,
+  MapPin,
+  Shield,
+  Star,
+  Users,
+  Zap,
+} from 'lucide-react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
 
 interface FormData {
   whereIAmFrom: string;
   whereIAmGoing: string;
 }
 
-// Country names mapping
-const countryNames = {
-  au: 'Australia',
-  uk: 'United Kingdom',
-  ca: 'Canada',
-  us: 'United States',
-  ae: 'United Arab Emirates',
-  sg: 'Singapore',
-};
+const whereIAmFromCountry = [
+  { name: 'australia', isoCode: 'au' },
+  { name: 'singapore', isoCode: 'sg' },
+  { name: 'united kingdom', isoCode: 'uk' },
+  { name: 'united states', isoCode: 'us' },
+  { name: 'United Arab Emirates', isoCode: 'ae' },
+  { name: 'Canada', isoCode: 'ca' },
+];
 
-// Destination names mapping for consistency
-const destinationNames = {
-  in: 'India',
-  au: 'Australia',
-  lk: 'Sri Lanka',
-  th: 'Thailand',
-  tr: 'Turkey',
-  my: 'Malaysia',
-  om: 'Oman',
-  eg: 'Egypt',
-  kh: 'Cambodia',
-  ma: 'Morocco',
-  jp: 'Japan',
-  sg: 'Singapore',
-  id: 'Indonesia',
-  uk: 'United Kingdom',
-};
+const stats = [
+  {
+    icon: Users,
+    number: '10K+',
+    label: 'Happy Customers',
+    color: 'from-blue-500 to-blue-600',
+  },
+  {
+    icon: Clock,
+    number: '24/7',
+    label: 'Support Available',
+    color: 'from-green-500 to-green-600',
+  },
+  {
+    icon: Globe,
+    number: '50+',
+    label: 'Countries Covered',
+    color: 'from-purple-500 to-purple-600',
+  },
+  {
+    icon: Award,
+    number: '99%',
+    label: 'Success Rate',
+    color: 'from-orange-500 to-orange-600',
+  },
+];
+
+const trustBadges = [
+  { icon: Shield, text: 'Secure Processing' },
+  { icon: Zap, text: 'Fast Approval' },
+  { icon: CheckCircle, text: 'Expert Support' },
+];
+
+const steps = [
+  'Choose destination',
+  'Fill application',
+  'Upload documents',
+  'Get your visa',
+];
 
 export default function BannerMainThree() {
   const router = useRouter();
+  const [whereIAmGoingData, setWhereIAmGoingData] = useState<any>(null);
   const [formData, setFormData] = useState<FormData>({
     whereIAmFrom: '',
     whereIAmGoing: '',
   });
-
-  const stats = [
-    {
-      icon: Users,
-      number: '10K+',
-      label: 'Happy Customers',
-      color: 'from-blue-500 to-blue-600',
-    },
-    {
-      icon: Clock,
-      number: '24/7',
-      label: 'Support Available',
-      color: 'from-green-500 to-green-600',
-    },
-    {
-      icon: Globe,
-      number: '50+',
-      label: 'Countries Covered',
-      color: 'from-purple-500 to-purple-600',
-    },
-    {
-      icon: Award,
-      number: '99%',
-      label: 'Success Rate',
-      color: 'from-orange-500 to-orange-600',
-    },
-  ];
-
-  const trustBadges = [
-    { icon: Shield, text: 'Secure Processing' },
-    { icon: Zap, text: 'Fast Approval' },
-    { icon: CheckCircle, text: 'Expert Support' },
-  ];
-
-  const steps = [
-    'Choose destination',
-    'Fill application',
-    'Upload documents',
-    'Get your visa',
-  ];
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -113,8 +95,20 @@ export default function BannerMainThree() {
       const whereIAmGoingData =
         whereIAmFromData?.whereIAmGoing?.to?.[whereIAmGoing];
       router.push(whereIAmGoingData?.slug ?? '/all-countries');
+      setFormData({
+        whereIAmFrom: '',
+        whereIAmGoing: '',
+      });
     }
   };
+
+  useEffect(() => {
+    if (formData.whereIAmFrom) {
+      const whereIAmFrom = formData?.whereIAmFrom.toLowerCase() ?? '';
+      const whereIAmFromData = whereIAmFromWhereIAmGoingData[whereIAmFrom];
+      setWhereIAmGoingData(whereIAmFromData?.whereIAmGoing?.to);
+    }
+  }, [formData]);
 
   return (
     <section className="relative min-h-[90vh] sm:min-h-[80vh] lg:min-h-[75vh] flex items-center overflow-hidden bg-white pt-28 pb-4 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-44 2xl:pt-48">
@@ -172,13 +166,9 @@ export default function BannerMainThree() {
                   <span className="text-gray-900">visa services</span>
                   <br />
                   <span className="text-gray-900">started </span>
-                  <span className="text-primary">
-                    anytime,
-                  </span>
+                  <span className="text-primary">anytime,</span>
                   <br />
-                  <span className="text-primary">
-                    anywhere
-                  </span>
+                  <span className="text-primary">anywhere</span>
                 </h1>
 
                 <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed max-w-lg">
@@ -316,20 +306,21 @@ export default function BannerMainThree() {
                         className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm"
                         required
                       >
-                        <option value="">
-                          Select your country
-                        </option>
-                        {Object.keys(whereIAmFromWhereIAmGoingData).map(
+                        <option value="">Select your country</option>
+                        {/* {Object.keys(whereIAmFromWhereIAmGoingData).map(
                           country => (
-                            <option
-                              key={country}
-                              value={country}
-                            >
+                            <option key={country} value={country}>
                               {countryNames[country] ||
                                 whereIAmFromWhereIAmGoingData[country].name}
                             </option>
                           )
-                        )}
+                        )} */}
+                        {whereIAmFromCountry.map(country => (
+                          <option key={country.isoCode} value={country.isoCode}>
+                            {country.name.charAt(0).toUpperCase() +
+                              country.name.slice(1)}
+                          </option>
+                        ))}
                       </select>
                     </div>
 
@@ -352,20 +343,13 @@ export default function BannerMainThree() {
                             : 'First select your country'}
                         </option>
                         {formData.whereIAmFrom &&
-                          whereIAmFromWhereIAmGoingData[formData.whereIAmFrom]
-                            ?.whereIAmGoing?.to &&
-                          Object.keys(
-                            whereIAmFromWhereIAmGoingData[formData.whereIAmFrom]
-                              .whereIAmGoing.to
-                          ).map(destination => (
-                            <option
-                              key={destination}
-                              value={destination}
-                            >
-                              {destinationNames[destination] ||
-                                whereIAmFromWhereIAmGoingData[
-                                  formData.whereIAmFrom
-                                ].whereIAmGoing.to[destination].name}
+                          whereIAmGoingData &&
+                          Object.keys(whereIAmGoingData).map(destination => (
+                            <option key={destination} value={destination}>
+                              {whereIAmGoingData[destination].name
+                                .charAt(0)
+                                .toUpperCase() +
+                                whereIAmGoingData[destination].name.slice(1)}
                             </option>
                           ))}
                       </select>

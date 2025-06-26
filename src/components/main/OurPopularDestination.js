@@ -1,10 +1,9 @@
 'use client';
-import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
-import HeadingSection from './HeadingSection';
-import { FaLongArrowAltRight } from 'react-icons/fa';
+import Link from 'next/link';
 import { useState } from 'react';
+import { FaLongArrowAltRight } from 'react-icons/fa';
+import HeadingSection from './HeadingSection';
 
 const data = [
   {
@@ -123,7 +122,7 @@ const OurPopularDestination = () => {
   );
 
   return (
-    <div className="py-12 space-y-12 md:py-12">
+    <div className="mt-24 py-12 space-y-12 md:py-12">
       {/* title start  */}
       <div className="max-w-3xl mx-auto text-center">
         <HeadingSection title="We Process Visas for" />
