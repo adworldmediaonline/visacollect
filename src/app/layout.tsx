@@ -1,20 +1,20 @@
-import type { Metadata } from 'next';
 import FooterTwo from '@/components/main/FooterTwo';
+import type { Metadata } from 'next';
 
-import HeaderTwo from '@/components/main/header-two';
 import ReactQueryProvider from '@/components/ReactQueryProvider';
+import HeaderTwo from '@/components/main/header-two';
 import { FormProvider } from '@/context/formContext';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Be_Vietnam_Pro } from 'next/font/google';
 import Script from 'next/script';
 import 'react-datepicker/dist/react-datepicker.css';
 import { ToastContainer } from 'react-toastify';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 
+import { Suspense } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
-import { Suspense } from 'react';
 import Loading from './loading';
 
 const beVietnamPro = Be_Vietnam_Pro({
@@ -29,16 +29,16 @@ export const metadata: Metadata = {
   //     index: false,
   //   },
   // },
-  title: '24X7 Online Visa Services | Get Your Visa Apply Today - Visa Collect',
+  title: '24x7 online visa services | get your visa apply today - visa collect',
   description:
-    'Visa Collect - Plan your stress-free travel with our 24/7 online visa services. Enjoy quick and reliable visa processing at any time. Apply Visa Today',
+    'visa collect - plan your stress-free travel with our 24/7 online visa services. enjoy quick and reliable visa processing at any time. apply visa today',
   metadataBase: new URL('https://www.visacollect.com'),
 
   alternates: {
     canonical: '/',
   },
   keywords:
-    'visa application, apply for visa, online visa application, visa services, apply visa online, online visa, online visa services, e visa services, apply for e visa, Online visa services apply Today',
+    'visa application, apply for visa, online visa application, visa services, apply visa online, online visa, online visa services, e visa services, apply for e visa, online visa services apply today',
 
   openGraph: {
     url: '/',

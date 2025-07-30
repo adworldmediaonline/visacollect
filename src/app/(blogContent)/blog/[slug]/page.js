@@ -1,8 +1,8 @@
+import Breadcrumb from '@/components/Breadcrumbs';
 import { getPostBySlug } from '@/lib/mdx';
-import BlogPreview2 from '../components/BlogPreview2';
 import { notFound } from 'next/navigation';
 import Script from 'next/script';
-import Breadcrumb from '@/components/Breadcrumbs';
+import BlogPreview2 from '../components/BlogPreview2';
 const base_url = 'https://www.visacollect.com';
 const getPageContent = async slug => {
   const { meta, content } = await getPostBySlug(slug);
@@ -16,8 +16,8 @@ export async function generateMetadata({ params }) {
     if (!meta) notFound();
 
     return {
-      title: meta.title,
-      description: meta.description,
+      title: meta.title?.toLowerCase(),
+      description: meta.description?.toLowerCase(),
       metadataBase: new URL('https://www.visacollect.com'),
 
       alternates: {
@@ -26,8 +26,8 @@ export async function generateMetadata({ params }) {
     };
   } catch (error) {
     return {
-      title: 'Not Found',
-      description: 'The page you are looking for does not exist',
+      title: 'not found',
+      description: 'the page you are looking for does not exist',
     };
   }
 }

@@ -25,8 +25,8 @@ export const australiaMDData = {
   blogs: [
     {
       metadata: {
-        title: `Australia Visa Requirements For Singapore Citizens`,
-        description: `Dive into the specifics of Australian  visa requirements for Singaporeans, including eligibility criteria and documentation. Prepare for your journey with ease.`,
+        title: `australia visa requirements for singapore citizens`,
+        description: `dive into the specifics of australian visa requirements for singaporeans, including eligibility criteria and documentation. prepare for your journey with ease.`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
@@ -50,8 +50,8 @@ export const australiaMDData = {
     },
     {
       metadata: {
-        title: `Australian ETA For UK Citizens`,
-        description: `Learn about the Australian ETA (Electronic Travel Authority) process for UK citizens. Find out how to apply, requirements, and essential information.`,
+        title: `australian eta for uk citizens`,
+        description: `learn about the australian eta (electronic travel authority) process for uk citizens. find out how to apply, requirements, and essential information.`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
@@ -75,8 +75,8 @@ export const australiaMDData = {
     },
     {
       metadata: {
-        title: `Australia Visa For US Citizens`,
-        description: `Navigate the process of obtaining an Australia visa for US citizens seamlessly, with expert tips and insights to streamline your travel plans`,
+        title: `australia visa for us citizens`,
+        description: `navigate the process of obtaining an australia visa for us citizens seamlessly, with expert tips and insights to streamline your travel plans`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {

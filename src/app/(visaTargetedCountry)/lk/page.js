@@ -1,14 +1,13 @@
-import React from 'react';
-import Divider from '@/components/common/Divider';
-import PageReview from './_homePage/PageReview';
-import PageWrapper from '@/app/(blogContent)/blog/components/PageWrapper';
-import MainWrapper from '@/app/(blogContent)/blog/components/MainWrapper';
-import AsideWrapper from '@/app/(blogContent)/blog/components/AsideWrapper';
 import AsideBlogCard from '@/app/(blogContent)/blog/components/AsideBlogCard';
+import AsideWrapper from '@/app/(blogContent)/blog/components/AsideWrapper';
+import MainWrapper from '@/app/(blogContent)/blog/components/MainWrapper';
+import PageWrapper from '@/app/(blogContent)/blog/components/PageWrapper';
+import { srilankaMDData } from '@/app/(visaCountries)/mainDirectoryData/srilankaMDData';
+import Divider from '@/components/common/Divider';
 import BlogSlider from '@/components/commonWebsiteComponents/BlogSlider';
 import Faq from '@/components/commonWebsiteComponents/Faq';
 import Banner2 from '@/components/ui/Banner2';
-import { srilankaMDData } from '@/app/(visaCountries)/mainDirectoryData/srilankaMDData';
+import PageReview from './_homePage/PageReview';
 
 export default async function Page() {
   return (
@@ -57,16 +56,16 @@ export const metadata = {
   //     index: false,
   //   },
   // },
-  title: 'Apply SriLanka Visa Online - Visa Collect',
+  title: 'apply srilanka visa online - visa collect',
   description:
-    'Get guaranteed approval on your SriLanka visa with Visa Collect, apply for Srilanka visa online and experience a quick, secure, and hassle-free application process.',
+    'get guaranteed approval on your srilanka visa with visa collect, apply for srilanka visa online and experience a quick, secure, and hassle-free application process.',
   metadataBase: new URL('https://www.visacollect.com'),
 
   alternates: {
     canonical: '/lk',
   },
   keywords:
-    'visa application, apply for visa, online visa application, visa services, apply visa online, online visa, online visa services, e visa services, apply for e visa, Online visa services apply Today',
+    'visa application, apply for visa, online visa application, visa services, apply visa online, online visa, online visa services, e visa services, apply for e visa, online visa services apply today',
 
   openGraph: {
     url: '/lk',
