@@ -1,28 +1,27 @@
-import Breadcrumb from "@/components/Breadcrumbs";
-import "./global.css";
+import './global.css';
 
 export const metadata = {
-    // robots: {
-    //   index: false,
-    //   googleBot: {
-    //     index: false,
-    //   },
-    // },
-    title: "Blogs | Visa Collect",
-    description:
-        "Stay updated with visa collect Get all the information you need about the latest visa requirements, immigration news, and visa application tips to make your travel dreams a reality.",
-    metadataBase: new URL("https://www.visacollect.com"),
+  // robots: {
+  //   index: false,
+  //   googleBot: {
+  //     index: false,
+  //   },
+  // },
+  title: 'blogs | visa collect',
+  description:
+    'stay updated with visa collect get all the information you need about the latest visa requirements, immigration news, and visa application tips to make your travel dreams a reality.',
+  metadataBase: new URL('https://www.visacollect.com'),
 
-    alternates: {
-        canonical: "/blog",
-    },
-    keywords:
-        "visa application, apply for visa, online visa application, visa services, apply visa online, online visa, online visa services, e visa services, apply for e visa, Online visa services apply Today",
+  alternates: {
+    canonical: '/blog',
+  },
+  keywords:
+    'visa application, apply for visa, online visa application, visa services, apply visa online, online visa, online visa services, e visa services, apply for e visa, online visa services apply today',
 
-    openGraph: {
-        url: "/blog",
-    },
+  openGraph: {
+    url: '/blog',
+  },
 };
 export default function RootLayout({ children }) {
-    return <>{children}</>;
+  return <>{children}</>;
 }
