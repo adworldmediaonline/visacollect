@@ -1,3 +1,4 @@
+import thailandTripImg from '../../../../public/assets/images/blog/thailandVisa/thailand-trip-15-things-thailand-is-famous-for.webp';
 import { ThailandHomePage } from '../mainDirectoryHomePages';
 import {
   CompleteThailandVisaGuideForUkCitizens,
@@ -13,7 +14,6 @@ import {
   travelToThailandFromUkImg,
 } from '../mainDirectoryHomePagesBlog/images/blogImages';
 import { thailandMDHomePageFaq } from '../mainDirectoryHomePagesFaq/thailandMDHomePageFaq';
-import thailandTripImg from '../../../../public/assets/images/blog/thailandVisa/thailand-trip-15-things-thailand-is-famous-for.webp';
 // MD => mainDirectory
 const thailandMDBlogBase = '/th/blog';
 export const thailandMDData = {
@@ -28,8 +28,8 @@ export const thailandMDData = {
   blogs: [
     {
       metadata: {
-        title: `1 Year Multi Entry Non Immigrant Visa`,
-        description: `Explore the benefits and requirements of a 1-year multi-entry non-immigrant visa, offering flexibility and convenience for frequent travelers .`,
+        title: `1 year multi entry non immigrant visa`,
+        description: `explore the benefits and requirements of a 1-year multi-entry non-immigrant visa, offering flexibility and convenience for frequent travelers .`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
@@ -52,8 +52,8 @@ export const thailandMDData = {
     },
     {
       metadata: {
-        title: `Complete Thailand Visa Guide For UK Citizens`,
-        description: `Find everything UK citizens need to know about obtaining a visa for Thailand with our comprehensive guide. From application processes to requirements .`,
+        title: `complete thailand visa guide for uk citizens`,
+        description: `find everything uk citizens need to know about obtaining a visa for thailand with our comprehensive guide. from application processes to requirements .`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
@@ -76,8 +76,8 @@ export const thailandMDData = {
     },
     {
       metadata: {
-        title: `How To Apply For Thailand Visa From UK`,
-        description: `Learn how to apply for a Thailand visa from the UK ! Discover step-by-step instructions, requirements, and essential tips to make your application process smooth and successful.`,
+        title: `how to apply for thailand visa from uk`,
+        description: `learn how to apply for a thailand visa from the uk ! discover step-by-step instructions, requirements, and essential tips to make your application process smooth and successful.`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
@@ -100,8 +100,8 @@ export const thailandMDData = {
     },
     {
       metadata: {
-        title: `Travel To Thailand From UK`,
-        description: `Embark on an exotic adventure from the UK to Thailand! Uncover every visa details, top attractions, and insider tips for an unforgettable Thai experience`,
+        title: `travel to thailand from uk`,
+        description: `embark on an exotic adventure from the uk to thailand! uncover every visa details, top attractions, and insider tips for an unforgettable thai experience`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
@@ -124,9 +124,9 @@ export const thailandMDData = {
     },
     {
       metadata: {
-        title: `Thailand Trip: 15 Things Thailand Is Famous For?`,
-        description: `Planning a trip to Thailand? Discover the 15 unforgettable things Thailand is famous for—from mouthwatering street food to stunning islands!`,
-        excerpt: `Thailand is a world of vibrant culture, pristine beaches, and flavor-packed food. But with so much to see and do, where do you even start? From iconic landmarks to unique traditions, these are the 15 things you absolutely MUST experience in Thailand. Get ready to explore the Land of Smiles like never before!`,
+        title: `thailand trip: 15 things thailand is famous for?`,
+        description: `planning a trip to thailand? discover the 15 unforgettable things thailand is famous for—from mouthwatering street food to stunning islands!`,
+        excerpt: `thailand is a world of vibrant culture, pristine beaches, and flavor-packed food. but with so much to see and do, where do you even start? from iconic landmarks to unique traditions, these are the 15 things you absolutely must experience in thailand. get ready to explore the land of smiles like never before!`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {

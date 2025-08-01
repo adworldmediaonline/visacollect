@@ -7,9 +7,9 @@ import {
   howToGetYourIndiaTouristVisaForUsCitizensImg,
   indianTouristVisaForUkCitizensImg,
   indianVisaForEmiratisCitizensImg,
+  journeyToParadiseKashmirTravelGuideImg,
   listOf30BestNationalParksInIndiaForWildlifeEnthusiastsImg,
   topThingsToDoInIndiaForFunAustraliaCitizensImg,
-  journeyToParadiseKashmirTravelGuideImg,
 } from '../mainDirectoryHomePagesBlog/images/blogImages';
 import {
   ApplyIndiaEVisaFromUK,
@@ -19,10 +19,10 @@ import {
   HowToGetYourIndiaTouristVisaForUSCitizens,
   IndianTouristVisaForUKCitizens,
   IndianVisaForEmiratisCitizens,
+  JourneyToParadiseKashmirTravelGuide,
   ListOf30BestNationalParksInIndiaForWildlifeEnthusiasts,
   StepsToApplyYourIndiaEVisaFromUSA,
   TopThingsToDoInIndiaForFunAustraliaCitizens,
-  JourneyToParadiseKashmirTravelGuide,
 } from '../mainDirectoryHomePagesBlog/india';
 import { indiaMDHomePageFaq } from '../mainDirectoryHomePagesFaq/indiaMDHomePageFaq';
 
@@ -39,8 +39,8 @@ export const indiaMDData = {
   blogs: [
     {
       metadata: {
-        title: `Top Fun Things to do in India | VisaCollect`,
-        description: `Looking for the fun things to do in India? Unlock the essence of India with our curated list of the top things to do in India! Dive into a world of cultural wonders and thrilling adventures.`,
+        title: `top fun things to do in india | visacollect`,
+        description: `looking for the fun things to do in india? unlock the essence of india with our curated list of the top things to do in india! dive into a world of cultural wonders and thrilling adventures.`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
@@ -63,8 +63,8 @@ export const indiaMDData = {
     },
     {
       metadata: {
-        title: `Best Things To Do In India For Australia Citizens`,
-        description: `Explore the top activities and attractions awaiting Australian travelers in India!  Find your perfect itinerary for an unforgettable Indian adventure.`,
+        title: `best things to do in india for australia citizens`,
+        description: `explore the top activities and attractions awaiting australian travelers in india!  find your perfect itinerary for an unforgettable indian adventure.`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
@@ -88,8 +88,8 @@ export const indiaMDData = {
     },
     {
       metadata: {
-        title: `Apply India Tourist Visa For Canadian Citizens`,
-        description: `Explore the straightforward process of obtaining a tourist visa to India for Canadian citizens. Find out the list of necessary documents.`,
+        title: `apply india tourist visa for canadian citizens`,
+        description: `explore the straightforward process of obtaining a tourist visa to india for canadian citizens. find out the list of necessary documents.`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
@@ -113,8 +113,8 @@ export const indiaMDData = {
     },
     {
       metadata: {
-        title: `Indian Visa For Emiratis Citizens`,
-        description: `Explore the top options available for Emirati citizens seeking an Indian visa. From e-visa applications to embassy submissions.`,
+        title: `indian visa for emiratis citizens`,
+        description: `explore the top options available for emirati citizens seeking an indian visa. from e-visa applications to embassy submissions.`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
@@ -138,8 +138,8 @@ export const indiaMDData = {
     },
     {
       metadata: {
-        title: `Apply India eVisa From UK`,
-        description: `Seeking to apply for an India eVisa from the UK? Explore the step-by-step guide, eligibility criteria, and valuable insights to ensure a smooth process. `,
+        title: `apply india evisa from uk`,
+        description: `seeking to apply for an india evisa from the uk? explore the step-by-step guide, eligibility criteria, and valuable insights to ensure a smooth process. `,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
@@ -162,8 +162,8 @@ export const indiaMDData = {
     },
     {
       metadata: {
-        title: `Indian tourist visa for uk Citizens`,
-        description: `Experience the wonders of India as a UK citizen with a hassle-free indian tourist visa process. From application guidelines to meeting all eligibility criteria`,
+        title: `indian tourist visa for uk citizens`,
+        description: `experience the wonders of india as a uk citizen with a hassle-free indian tourist visa process. from application guidelines to meeting all eligibility criteria`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
@@ -187,8 +187,8 @@ export const indiaMDData = {
     },
     {
       metadata: {
-        title: `How to get your India Tourist Visa for US Citizens`,
-        description: `Looking to get your India Tourist visa as a US citizen? This guide has all the information you need to successfully apply for your Indian visa.`,
+        title: `how to get your india tourist visa for us citizens`,
+        description: `looking to get your india tourist visa as a us citizen? this guide has all the information you need to successfully apply for your indian visa.`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
@@ -211,8 +211,8 @@ export const indiaMDData = {
     },
     {
       metadata: {
-        title: `Steps to apply your india e-visa from usa`,
-        description: `Learn how to effortlessly obtain your India e-Visa from the USA with our easy-to-follow application guide. Start your journey Smoothly.`,
+        title: `steps to apply your india e-visa from usa`,
+        description: `learn how to effortlessly obtain your india e-visa from the usa with our easy-to-follow application guide. start your journey smoothly.`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
@@ -236,8 +236,8 @@ export const indiaMDData = {
     },
     {
       metadata: {
-        title: `Essential Tips for Indian Business Visa for Business Visitors`,
-        description: `An Indian business visa is important for people who want to visit India. If you are touring or coming to work from another country you need a visa. You can take different visas as per your requirements.`,
+        title: `essential tips for indian business visa for business visitors`,
+        description: `an indian business visa is important for people who want to visit india. if you are touring or coming to work from another country you need a visa. you can take different visas as per your requirements.`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
@@ -260,8 +260,8 @@ export const indiaMDData = {
     },
     {
       metadata: {
-        title: `List of 30 Best National Parks in India for Wildlife Enthusiasts`,
-        description: `India is a land of diverse landscapes and rich biodiversity. One of the best ways to experience this natural beauty is by visiting its numerous national parks. Here is the list of 30 Best National Parks in India to make your travel smooth and hassle-free.`,
+        title: `list of 30 best national parks in india for wildlife enthusiasts`,
+        description: `india is a land of diverse landscapes and rich biodiversity. one of the best ways to experience this natural beauty is by visiting its numerous national parks. here is the list of 30 best national parks in india to make your travel smooth and hassle-free.`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
@@ -284,8 +284,8 @@ export const indiaMDData = {
     },
     {
       metadata: {
-        title: `Journey to paradise - The ultimate Kashmir travel guide`,
-        description: `Discover the breathtaking beauty of Kashmir with our ultimate travel guide. Explore stunning landscapes, vibrant culture, and warm hospitality.`,
+        title: `journey to paradise - the ultimate kashmir travel guide`,
+        description: `discover the breathtaking beauty of kashmir with our ultimate travel guide. explore stunning landscapes, vibrant culture, and warm hospitality.`,
         metadataBase: new URL('https://www.visacollect.com'),
 
         alternates: {
